@@ -79,7 +79,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class HorizontalList(__UIContainer, UIContainer):
+class HorizontalList():
     """dev.ultreon.quantum.client.gui.widget.HorizontalList"""
  
     @staticmethod
@@ -839,7 +839,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class HorizontalList(__UIContainer, UIContainer):
+class HorizontalList():
     """dev.ultreon.quantum.client.gui.widget.HorizontalList"""
  
     @staticmethod
@@ -1586,7 +1586,7 @@ __Bounds = __Bounds
 import java.util.Map as Map
 from builtins import int
  
-class Panel(__Widget, Widget):
+class Panel():
     """dev.ultreon.quantum.client.gui.widget.Panel"""
  
     @staticmethod
@@ -2140,7 +2140,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class UIContainer(__Widget, Widget):
+class UIContainer():
     """dev.ultreon.quantum.client.gui.widget.UIContainer"""
  
     @staticmethod
@@ -2733,7 +2733,7 @@ __Bounds = __Bounds
 import java.util.Map as Map
 from builtins import int
  
-class WorldGenTestPanel(__Rectangle, Rectangle):
+class WorldGenTestPanel():
     """dev.ultreon.quantum.client.gui.widget.WorldGenTestPanel"""
  
     @staticmethod
@@ -3364,7 +3364,7 @@ import java.util.Map as Map
 from builtins import int
 import java.util.List as List
  
-class ScrollableContainer(__UIContainer, UIContainer):
+class ScrollableContainer():
     """dev.ultreon.quantum.client.gui.widget.ScrollableContainer"""
  
     @staticmethod
@@ -4030,7 +4030,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class SelectionList(__UIContainer, UIContainer):
+class SelectionList():
     """dev.ultreon.quantum.client.gui.widget.SelectionList"""
  
     @staticmethod
@@ -4753,7 +4753,7 @@ __Bounds = __Bounds
 import java.util.Map as Map
 from builtins import int
  
-class IconButton(__Button, Button):
+class IconButton():
     """dev.ultreon.quantum.client.gui.widget.IconButton"""
  
     @staticmethod
@@ -5331,7 +5331,7 @@ __Bounds = __Bounds
 import java.util.Map as Map
 from builtins import int
  
-class ChatTextEntry(__TextEntry, TextEntry):
+class ChatTextEntry():
     """dev.ultreon.quantum.client.gui.widget.ChatTextEntry"""
  
     @staticmethod
@@ -5950,7 +5950,7 @@ __Bounds = __Bounds
 import java.util.Map as Map
 from builtins import int
  
-class Slider(__Widget, Widget):
+class Slider():
     """dev.ultreon.quantum.client.gui.widget.Slider"""
  
     @staticmethod
@@ -6486,7 +6486,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TabCompletePopup(client.__Renderable, util.Renderable):
+class TabCompletePopup():
     """dev.ultreon.quantum.client.gui.widget.TabCompletePopup"""
  
     @staticmethod
@@ -6691,7 +6691,7 @@ __Bounds = __Bounds
 import java.util.Map as Map
 from builtins import int
  
-class Tab(__Button, Button):
+class Tab():
     """dev.ultreon.quantum.client.gui.widget.Tab"""
  
     @staticmethod
@@ -7298,7 +7298,7 @@ __Bounds = __Bounds
 import java.util.Map as Map
 from builtins import int
  
-class Button(ABC, __Widget, Widget):
+class Button(ABC):
     """dev.ultreon.quantum.client.gui.widget.Button"""
  
     @staticmethod
@@ -7845,7 +7845,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Type(__Enum, Enum):
+class Type():
     """dev.ultreon.quantum.client.gui.widget.Button.Type"""
  
     @staticmethod
@@ -8049,7 +8049,7 @@ __Bounds = __Bounds
 import java.util.Map as Map
 from builtins import int
  
-class Widget(ABC, __StaticWidget, StaticWidget, pyquantum.__GameComponentHolder, component.GameComponentHolder):
+class Widget(ABC):
     """dev.ultreon.quantum.client.gui.widget.Widget"""
  
     @staticmethod
@@ -8538,7 +8538,7 @@ __Bounds = __Bounds
 import java.util.Map as Map
 from builtins import int
  
-class CycleButton(__Button, Button):
+class CycleButton():
     """dev.ultreon.quantum.client.gui.widget.CycleButton"""
  
     @staticmethod
@@ -9183,7 +9183,7 @@ __Bounds = __Bounds
 import java.util.Map as Map
 from builtins import int
  
-class Rectangle(__Widget, Widget):
+class Rectangle():
     """dev.ultreon.quantum.client.gui.widget.Rectangle"""
  
     @staticmethod
@@ -9759,7 +9759,7 @@ __Bounds = __Bounds
 import java.util.Map as Map
 from builtins import int
  
-class TextButton(__Button, Button):
+class TextButton():
     """dev.ultreon.quantum.client.gui.widget.TextButton"""
  
     @staticmethod
@@ -10375,7 +10375,7 @@ __Entry = __WorldCardList_Entry.Entry
 import java.util.List as List
 from builtins import int
  
-class WorldCardList(__HorizontalList, HorizontalList):
+class WorldCardList():
     """dev.ultreon.quantum.client.gui.widget.WorldCardList"""
  
     @staticmethod
@@ -11164,7 +11164,7 @@ import dev.ultreon.quantum.client.gui.widget.WorldCardList as __WorldCardList_En
 __Entry = __WorldCardList_Entry.Entry
 from builtins import int
  
-class Entry(__Entry, Entry):
+class Entry():
     """dev.ultreon.quantum.client.gui.widget.WorldCardList.Entry"""
  
     @staticmethod
@@ -11722,7 +11722,7 @@ __Bounds = __Bounds
 import java.util.Map as Map
 from builtins import int
  
-class Entry(ABC, __Widget, Widget):
+class Entry(ABC):
     """dev.ultreon.quantum.client.gui.widget.HorizontalList.Entry"""
  
     @staticmethod
@@ -12278,7 +12278,7 @@ __Bounds = __Bounds
 import java.util.Map as Map
 from builtins import int
  
-class TextEntry(__Widget, Widget):
+class TextEntry():
     """dev.ultreon.quantum.client.gui.widget.TextEntry"""
  
     @staticmethod
@@ -12908,7 +12908,7 @@ __Bounds = __Bounds
 import java.util.Map as Map
 from builtins import int
  
-class TitleButton(__Button, Button):
+class TitleButton():
     """dev.ultreon.quantum.client.gui.widget.TitleButton"""
  
     @staticmethod
@@ -13515,7 +13515,7 @@ __Bounds = __Bounds
 import java.util.Map as Map
 from builtins import int
  
-class Entry(__Widget, Widget):
+class Entry():
     """dev.ultreon.quantum.client.gui.widget.SelectionList.Entry"""
  
     @staticmethod
@@ -14117,7 +14117,7 @@ __Bounds = __Bounds
 import java.util.Map as Map
 from builtins import int
  
-class Label(__Widget, Widget):
+class Label():
     """dev.ultreon.quantum.client.gui.widget.Label"""
  
     @staticmethod

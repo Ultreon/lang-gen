@@ -53,7 +53,7 @@ except ImportError:
 
 from builtins import int
  
-class LoginClientPacketHandlerImpl(network.__LoginClientPacketHandler, client.LoginClientPacketHandler):
+class LoginClientPacketHandlerImpl():
     """dev.ultreon.quantum.client.network.LoginClientPacketHandlerImpl"""
  
     @staticmethod
@@ -255,7 +255,7 @@ except ImportError:
 
 from builtins import int
  
-class LoginClientPacketHandlerImpl(network.__LoginClientPacketHandler, client.LoginClientPacketHandler):
+class LoginClientPacketHandlerImpl():
     """dev.ultreon.quantum.client.network.LoginClientPacketHandlerImpl"""
  
     @staticmethod
@@ -447,7 +447,7 @@ import dev.ultreon.quantum.network.api.Network as __Network
 __Network = __Network
 from builtins import int
  
-class ClientNetwork(ABC, network.__Network, api.Network):
+class ClientNetwork(ABC):
     """dev.ultreon.quantum.client.network.ClientNetwork"""
  
     @staticmethod
@@ -591,14 +591,14 @@ except ImportError:
 import dev.ultreon.quantum.network.NetworkChannel as __NetworkChannel
 __NetworkChannel = __NetworkChannel
 try:
-    from pyquantum import text
-except ImportError:
-    text = __import_once__("pyquantum.text")
-
-try:
     from pycorelibs.commons.v0 import vector
 except ImportError:
     vector = __import_once__("pycorelibs.commons.v0.vector")
+
+try:
+    from pyquantum import text
+except ImportError:
+    text = __import_once__("pyquantum.text")
 
 try:
     from pyquantum import collection
@@ -680,15 +680,15 @@ try:
 except ImportError:
     system = __import_once__("pyquantum.network.system")
 
-from builtins import int
-import java.util.List as List
 try:
     from pyubo import types
 except ImportError:
     types = __import_once__("pyubo.types")
 
+import java.util.List as List
+from builtins import int
  
-class InGameClientPacketHandlerImpl(network.__InGameClientPacketHandler, client.InGameClientPacketHandler):
+class InGameClientPacketHandlerImpl():
     """dev.ultreon.quantum.client.network.InGameClientPacketHandlerImpl"""
  
     @staticmethod
@@ -825,15 +825,15 @@ class InGameClientPacketHandlerImpl(network.__InGameClientPacketHandler, client.
 
     @override
     @overload
-    def onAddEntity(self, arg0: int, arg1: 'EntityType', arg2: 'Vec3d', arg3: 'MapType'):
-        """public void dev.ultreon.quantum.client.network.InGameClientPacketHandlerImpl.onAddEntity(int,dev.ultreon.quantum.entity.EntityType<?>,dev.ultreon.libs.commons.v0.vector.Vec3d,dev.ultreon.ubo.types.MapType)"""
-        super(__InGameClientPacketHandlerImpl, self).onAddEntity(__int.valueOf(arg0), arg1, arg2, arg3)
-
-    @override
-    @overload
     def onAddPermission(self, arg0: 'AddPermissionPacket'):
         """public void dev.ultreon.quantum.client.network.InGameClientPacketHandlerImpl.onAddPermission(dev.ultreon.quantum.network.packets.AddPermissionPacket)"""
         super(__InGameClientPacketHandlerImpl, self).onAddPermission(arg0)
+
+    @override
+    @overload
+    def onAddEntity(self, arg0: int, arg1: 'EntityType', arg2: 'Vec3d', arg3: 'MapType'):
+        """public void dev.ultreon.quantum.client.network.InGameClientPacketHandlerImpl.onAddEntity(int,dev.ultreon.quantum.entity.EntityType<?>,dev.ultreon.libs.commons.v0.vector.Vec3d,dev.ultreon.ubo.types.MapType)"""
+        super(__InGameClientPacketHandlerImpl, self).onAddEntity(__int.valueOf(arg0), arg1, arg2, arg3)
 
     @override
     @overload
@@ -927,15 +927,15 @@ class InGameClientPacketHandlerImpl(network.__InGameClientPacketHandler, client.
 
     @override
     @overload
-    def onTimeChange(self, arg0: 'PacketContext', arg1: 'Operation', arg2: int):
-        """public void dev.ultreon.quantum.client.network.InGameClientPacketHandlerImpl.onTimeChange(dev.ultreon.quantum.network.PacketContext,dev.ultreon.quantum.network.packets.s2c.S2CTimePacket$Operation,int)"""
-        super(__InGameClientPacketHandlerImpl, self).onTimeChange(arg0, arg1, __int.valueOf(arg2))
-
-    @override
-    @overload
     def onBlockEntitySet(self, arg0: 'BlockPos', arg1: 'BlockEntityType'):
         """public void dev.ultreon.quantum.client.network.InGameClientPacketHandlerImpl.onBlockEntitySet(dev.ultreon.quantum.world.BlockPos,dev.ultreon.quantum.block.entity.BlockEntityType<?>)"""
         super(__InGameClientPacketHandlerImpl, self).onBlockEntitySet(arg0, arg1)
+
+    @override
+    @overload
+    def onTimeChange(self, arg0: 'PacketContext', arg1: 'Operation', arg2: int):
+        """public void dev.ultreon.quantum.client.network.InGameClientPacketHandlerImpl.onTimeChange(dev.ultreon.quantum.network.PacketContext,dev.ultreon.quantum.network.packets.s2c.S2CTimePacket$Operation,int)"""
+        super(__InGameClientPacketHandlerImpl, self).onTimeChange(arg0, arg1, __int.valueOf(arg2))
 
     @overload
     def reply(self, arg0: int) -> 'packets.Packet':

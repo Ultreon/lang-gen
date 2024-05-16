@@ -40,7 +40,7 @@ import com.badlogic.gdx.ai.utils.Ray as __Ray
 __Ray = __Ray
 from builtins import int
  
-class SingleRayConfiguration(__RayConfigurationBase, RayConfigurationBase):
+class SingleRayConfiguration():
     """com.badlogic.gdx.ai.steer.utils.rays.SingleRayConfiguration"""
  
     @staticmethod
@@ -211,7 +211,7 @@ import com.badlogic.gdx.ai.utils.Ray as __Ray
 __Ray = __Ray
 from builtins import int
  
-class SingleRayConfiguration(__RayConfigurationBase, RayConfigurationBase):
+class SingleRayConfiguration():
     """com.badlogic.gdx.ai.steer.utils.rays.SingleRayConfiguration"""
  
     @staticmethod
@@ -385,7 +385,7 @@ import com.badlogic.gdx.ai.utils.Ray as __Ray
 __Ray = __Ray
 from builtins import int
  
-class ParallelSideRayConfiguration(__RayConfigurationBase, RayConfigurationBase):
+class ParallelSideRayConfiguration():
     """com.badlogic.gdx.ai.steer.utils.rays.ParallelSideRayConfiguration"""
  
     @staticmethod
@@ -563,7 +563,7 @@ import com.badlogic.gdx.ai.utils.Ray as __Ray
 __Ray = __Ray
 from builtins import int
  
-class RayConfigurationBase(ABC, steer.__RayConfiguration, utils.RayConfiguration):
+class RayConfigurationBase(ABC):
     """com.badlogic.gdx.ai.steer.utils.rays.RayConfigurationBase"""
  
     @staticmethod
@@ -717,7 +717,7 @@ import com.badlogic.gdx.ai.utils.Ray as __Ray
 __Ray = __Ray
 from builtins import int
  
-class CentralRayWithWhiskersConfiguration(__RayConfigurationBase, RayConfigurationBase):
+class CentralRayWithWhiskersConfiguration():
     """com.badlogic.gdx.ai.steer.utils.rays.CentralRayWithWhiskersConfiguration"""
  
     @staticmethod

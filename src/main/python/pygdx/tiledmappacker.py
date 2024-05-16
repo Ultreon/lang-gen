@@ -279,7 +279,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TiledMapPackerTestRender(pygdx.__ApplicationAdapter, pygdx.ApplicationAdapter):
+class TiledMapPackerTestRender():
     """com.badlogic.gdx.tiledmappacker.TiledMapPackerTestRender"""
  
     @staticmethod
@@ -567,7 +567,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class TestType(__Enum, Enum):
+class TestType():
     """com.badlogic.gdx.tiledmappacker.TiledMapPackerTest.TestType"""
  
     @staticmethod

@@ -35,7 +35,7 @@ import dev.ultreon.quantum.client.config.gui.ConfigEntry as __ConfigEntry
 __ConfigEntry = __ConfigEntry
 from builtins import int
  
-class StringEntry(config.__ConfigEntry, gui.ConfigEntry):
+class StringEntry():
     """dev.ultreon.quantum.client.config.entries.StringEntry"""
  
     @staticmethod
@@ -208,7 +208,7 @@ import dev.ultreon.quantum.client.config.gui.ConfigEntry as __ConfigEntry
 __ConfigEntry = __ConfigEntry
 from builtins import int
  
-class StringEntry(config.__ConfigEntry, gui.ConfigEntry):
+class StringEntry():
     """dev.ultreon.quantum.client.config.entries.StringEntry"""
  
     @staticmethod
@@ -386,7 +386,7 @@ import dev.ultreon.quantum.client.config.gui.ConfigEntry as __ConfigEntry
 __ConfigEntry = __ConfigEntry
 from builtins import int
  
-class DoubleEntry(config.__ConfigEntry, gui.ConfigEntry):
+class DoubleEntry():
     """dev.ultreon.quantum.client.config.entries.DoubleEntry"""
  
     @staticmethod
@@ -569,7 +569,7 @@ import dev.ultreon.quantum.client.config.gui.ConfigEntry as __ConfigEntry
 __ConfigEntry = __ConfigEntry
 from builtins import int
  
-class FloatEntry(config.__ConfigEntry, gui.ConfigEntry):
+class FloatEntry():
     """dev.ultreon.quantum.client.config.entries.FloatEntry"""
  
     @staticmethod
@@ -751,7 +751,7 @@ import dev.ultreon.quantum.client.config.gui.ConfigEntry as __ConfigEntry
 __ConfigEntry = __ConfigEntry
 from builtins import int
  
-class UUIDEntry(config.__ConfigEntry, gui.ConfigEntry):
+class UUIDEntry():
     """dev.ultreon.quantum.client.config.entries.UUIDEntry"""
  
     @staticmethod
@@ -922,7 +922,7 @@ from builtins import int
 import dev.ultreon.quantum.client.config.gui.ConfigEntry as __ConfigEntry
 __ConfigEntry = __ConfigEntry
  
-class IntEntry(config.__ConfigEntry, gui.ConfigEntry):
+class IntEntry():
     """dev.ultreon.quantum.client.config.entries.IntEntry"""
  
     @staticmethod
@@ -1104,7 +1104,7 @@ import dev.ultreon.quantum.client.config.gui.ConfigEntry as __ConfigEntry
 __ConfigEntry = __ConfigEntry
 from builtins import int
  
-class BooleanEntry(config.__ConfigEntry, gui.ConfigEntry):
+class BooleanEntry():
     """dev.ultreon.quantum.client.config.entries.BooleanEntry"""
  
     @staticmethod
@@ -1275,7 +1275,7 @@ from builtins import int
 import dev.ultreon.quantum.client.config.gui.ConfigEntry as __ConfigEntry
 __ConfigEntry = __ConfigEntry
  
-class LongEntry(config.__ConfigEntry, gui.ConfigEntry):
+class LongEntry():
     """dev.ultreon.quantum.client.config.entries.LongEntry"""
  
     @staticmethod

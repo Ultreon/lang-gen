@@ -346,7 +346,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PropertiesFactory(__AbstractPropertiesFactory, AbstractPropertiesFactory):
+class PropertiesFactory():
     """org.apache.commons.collections4.properties.PropertiesFactory"""
  
     @staticmethod
@@ -512,7 +512,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 from builtins import int
  
-class SortedProperties(__Properties, Properties):
+class SortedProperties():
     """org.apache.commons.collections4.properties.SortedProperties"""
  
     @staticmethod
@@ -881,7 +881,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SortedPropertiesFactory(__AbstractPropertiesFactory, AbstractPropertiesFactory):
+class SortedPropertiesFactory():
     """org.apache.commons.collections4.properties.SortedPropertiesFactory"""
  
     @staticmethod

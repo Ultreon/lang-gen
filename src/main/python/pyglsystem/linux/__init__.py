@@ -51,7 +51,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.Sockaddr.Buffer"""
  
     @staticmethod
@@ -434,7 +434,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.Sockaddr.Buffer"""
  
     @staticmethod
@@ -808,7 +808,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XKeymapEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XKeymapEvent():
     """org.lwjgl.system.linux.XKeymapEvent"""
  
     @staticmethod
@@ -1288,7 +1288,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XNoExposeEvent.Buffer"""
  
     @staticmethod
@@ -1708,7 +1708,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.Statx.Buffer"""
  
     @staticmethod
@@ -2277,7 +2277,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.EpollEvent.Buffer"""
  
     @staticmethod
@@ -2638,7 +2638,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XColormapEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XColormapEvent():
     """org.lwjgl.system.linux.XColormapEvent"""
  
     @staticmethod
@@ -3140,7 +3140,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XSelectionRequestEvent.Buffer"""
  
     @staticmethod
@@ -3585,7 +3585,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Statx(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Statx():
     """org.lwjgl.system.linux.Statx"""
  
     @staticmethod
@@ -4541,7 +4541,7 @@ import org.lwjgl.system.linux.XResizeRequestEvent as __XResizeRequestEvent_Buffe
 __Buffer = __XResizeRequestEvent_Buffer.Buffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XResizeRequestEvent.Buffer"""
  
     @staticmethod
@@ -4947,7 +4947,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XCirculateEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XCirculateEvent():
     """org.lwjgl.system.linux.XCirculateEvent"""
  
     @staticmethod
@@ -5427,7 +5427,7 @@ import org.lwjgl.system.linux.Flock as __Flock_Buffer
 __Buffer = __Flock_Buffer.Buffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.Flock.Buffer"""
  
     @staticmethod
@@ -5824,7 +5824,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.Visual.Buffer"""
  
     @staticmethod
@@ -6252,7 +6252,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XCirculateEvent.Buffer"""
  
     @staticmethod
@@ -6658,7 +6658,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XErrorEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XErrorEvent():
     """org.lwjgl.system.linux.XErrorEvent"""
  
     @staticmethod
@@ -7126,7 +7126,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XSetWindowAttributes(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XSetWindowAttributes():
     """org.lwjgl.system.linux.XSetWindowAttributes"""
  
     @staticmethod
@@ -7776,7 +7776,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XCreateWindowEvent.Buffer"""
  
     @staticmethod
@@ -8232,7 +8232,7 @@ __Buffer = __XGravityEvent_Buffer.Buffer
 from builtins import bool
 from builtins import int
  
-class XGravityEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XGravityEvent():
     """org.lwjgl.system.linux.XGravityEvent"""
  
     @staticmethod
@@ -8987,7 +8987,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XDestroyWindowEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XDestroyWindowEvent():
     """org.lwjgl.system.linux.XDestroyWindowEvent"""
  
     @staticmethod
@@ -9433,7 +9433,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XMappingEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XMappingEvent():
     """org.lwjgl.system.linux.XMappingEvent"""
  
     @staticmethod
@@ -9934,7 +9934,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.KernelTimespec.Buffer"""
  
     @staticmethod
@@ -10290,7 +10290,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XVisibilityEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XVisibilityEvent():
     """org.lwjgl.system.linux.XVisibilityEvent"""
  
     @staticmethod
@@ -10750,7 +10750,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.CMsghdr.Buffer"""
  
     @staticmethod
@@ -11136,7 +11136,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XUnmapEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XUnmapEvent():
     """org.lwjgl.system.linux.XUnmapEvent"""
  
     @staticmethod
@@ -11605,7 +11605,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class IOVec(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class IOVec():
     """org.lwjgl.system.linux.IOVec"""
  
     @staticmethod
@@ -11922,7 +11922,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XMotionEvent.Buffer"""
  
     @staticmethod
@@ -12408,7 +12408,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XReparentEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XReparentEvent():
     """org.lwjgl.system.linux.XReparentEvent"""
  
     @staticmethod
@@ -12937,7 +12937,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LinuxLibrary(pyglsystem.__SharedLibrary_Default, pyglsystem.SharedLibrary$Default):
+class LinuxLibrary():
     """org.lwjgl.system.linux.LinuxLibrary"""
  
     @staticmethod
@@ -13294,7 +13294,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.EpollData.Buffer"""
  
     @staticmethod
@@ -13670,7 +13670,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XPropertyEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XPropertyEvent():
     """org.lwjgl.system.linux.XPropertyEvent"""
  
     @staticmethod
@@ -14172,7 +14172,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XSelectionEvent.Buffer"""
  
     @staticmethod
@@ -14613,7 +14613,7 @@ import java.nio.ByteBuffer as ByteBuffer
 import java.lang.Integer as __int
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.Msghdr.Buffer"""
  
     @staticmethod
@@ -15004,7 +15004,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XGenericEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XGenericEvent():
     """org.lwjgl.system.linux.XGenericEvent"""
  
     @staticmethod
@@ -15462,7 +15462,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XVisibilityEvent.Buffer"""
  
     @staticmethod
@@ -15857,7 +15857,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class Visual(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Visual():
     """org.lwjgl.system.linux.Visual"""
  
     @staticmethod
@@ -16367,7 +16367,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XClientMessageEvent.Buffer"""
  
     @staticmethod
@@ -16953,7 +16953,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XMapRequestEvent.Buffer"""
  
     @staticmethod
@@ -17358,7 +17358,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer):
+class Buffer():
     """org.lwjgl.system.linux.XTimeCoord.Buffer"""
  
     @staticmethod
@@ -17768,7 +17768,7 @@ import java.nio.ByteBuffer as ByteBuffer
 import org.lwjgl.system.linux.XConfigureEvent as __XConfigureEvent
 __XConfigureEvent = __XConfigureEvent
  
-class XEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XEvent():
     """org.lwjgl.system.linux.XEvent"""
  
     @staticmethod
@@ -18441,7 +18441,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XVisualInfo(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XVisualInfo():
     """org.lwjgl.system.linux.XVisualInfo"""
  
     @staticmethod
@@ -18975,7 +18975,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XCrossingEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XCrossingEvent():
     """org.lwjgl.system.linux.XCrossingEvent"""
  
     @staticmethod
@@ -19675,7 +19675,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XErrorEvent.Buffer"""
  
     @staticmethod
@@ -20081,7 +20081,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XKeyEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XKeyEvent():
     """org.lwjgl.system.linux.XKeyEvent"""
  
     @staticmethod
@@ -20737,7 +20737,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XCirculateRequestEvent.Buffer"""
  
     @staticmethod
@@ -21143,7 +21143,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XConfigureRequestEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XConfigureRequestEvent():
     """org.lwjgl.system.linux.XConfigureRequestEvent"""
  
     @staticmethod
@@ -21765,7 +21765,7 @@ import org.lwjgl.system.linux.XResizeRequestEvent as __XResizeRequestEvent_Buffe
 __Buffer = __XResizeRequestEvent_Buffer.Buffer
 from builtins import int
  
-class XResizeRequestEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XResizeRequestEvent():
     """org.lwjgl.system.linux.XResizeRequestEvent"""
  
     @staticmethod
@@ -22233,7 +22233,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XCirculateRequestEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XCirculateRequestEvent():
     """org.lwjgl.system.linux.XCirculateRequestEvent"""
  
     @staticmethod
@@ -22713,7 +22713,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XDestroyWindowEvent.Buffer"""
  
     @staticmethod
@@ -23108,7 +23108,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class FOwnerEx(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class FOwnerEx():
     """org.lwjgl.system.linux.FOwnerEx"""
  
     @staticmethod
@@ -23425,7 +23425,7 @@ import java.nio.ByteBuffer as ByteBuffer
 import java.lang.Integer as __int
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.IOVec.Buffer"""
  
     @staticmethod
@@ -23783,7 +23783,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CMsghdr(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class CMsghdr():
     """org.lwjgl.system.linux.CMsghdr"""
  
     @staticmethod
@@ -24153,7 +24153,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XSelectionClearEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XSelectionClearEvent():
     """org.lwjgl.system.linux.XSelectionClearEvent"""
  
     @staticmethod
@@ -24636,7 +24636,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XKeymapEvent.Buffer"""
  
     @staticmethod
@@ -25042,7 +25042,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XGraphicsExposeEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XGraphicsExposeEvent():
     """org.lwjgl.system.linux.XGraphicsExposeEvent"""
  
     @staticmethod
@@ -25619,7 +25619,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class OpenHow(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class OpenHow():
     """org.lwjgl.system.linux.OpenHow"""
  
     @staticmethod
@@ -25956,7 +25956,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.StatxTimestamp.Buffer"""
  
     @staticmethod
@@ -26324,7 +26324,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XSelectionClearEvent.Buffer"""
  
     @staticmethod
@@ -26744,7 +26744,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XGenericEventCookie.Buffer"""
  
     @staticmethod
@@ -27237,7 +27237,7 @@ import java.nio.ByteBuffer as ByteBuffer
 import org.lwjgl.system.linux.XConfigureEvent as __XConfigureEvent
 __XConfigureEvent = __XConfigureEvent
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XEvent.Buffer"""
  
     @staticmethod
@@ -27743,7 +27743,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XMapRequestEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XMapRequestEvent():
     """org.lwjgl.system.linux.XMapRequestEvent"""
  
     @staticmethod
@@ -28200,7 +28200,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.OpenHow.Buffer"""
  
     @staticmethod
@@ -28563,7 +28563,7 @@ import org.lwjgl.system.linux.XTimeCoord as __XTimeCoord_Buffer
 __Buffer = __XTimeCoord_Buffer.Buffer
 from builtins import int
  
-class XTimeCoord(pyglsystem.__Struct, pyglsystem.Struct):
+class XTimeCoord():
     """org.lwjgl.system.linux.XTimeCoord"""
  
     @staticmethod
@@ -28792,7 +28792,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XButtonEvent.Buffer"""
  
     @staticmethod
@@ -29279,7 +29279,7 @@ import org.lwjgl.system.linux.XMotionEvent as __XMotionEvent
 __XMotionEvent = __XMotionEvent
 from builtins import int
  
-class XMotionEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XMotionEvent():
     """org.lwjgl.system.linux.XMotionEvent"""
  
     @staticmethod
@@ -30080,7 +30080,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XGenericEvent.Buffer"""
  
     @staticmethod
@@ -30475,7 +30475,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class KernelTimespec(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class KernelTimespec():
     """org.lwjgl.system.linux.KernelTimespec"""
  
     @staticmethod
@@ -30706,14 +30706,14 @@ class KernelTimespec(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__Native
         return 'type.Class'.__wrap(super(object, self).getClass())
 
     @overload
-    def tv_sec(self) -> int:
-        """public long org.lwjgl.system.linux.KernelTimespec.tv_sec()"""
-        return int.__wrap(super(KernelTimespec, self).tv_sec())
-
-    @overload
     def tv_nsec(self) -> int:
         """public long org.lwjgl.system.linux.KernelTimespec.tv_nsec()"""
         return int.__wrap(super(KernelTimespec, self).tv_nsec())
+
+    @overload
+    def tv_sec(self) -> int:
+        """public long org.lwjgl.system.linux.KernelTimespec.tv_sec()"""
+        return int.__wrap(super(KernelTimespec, self).tv_sec())
 
     @staticmethod
     @overload
@@ -30793,7 +30793,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class XClientMessageEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XClientMessageEvent():
     """org.lwjgl.system.linux.XClientMessageEvent"""
  
     @staticmethod
@@ -31405,7 +31405,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XGraphicsExposeEvent.Buffer"""
  
     @staticmethod
@@ -31873,7 +31873,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XColormapEvent.Buffer"""
  
     @staticmethod
@@ -32300,7 +32300,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.FOwnerEx.Buffer"""
  
     @staticmethod
@@ -32668,7 +32668,7 @@ import org.lwjgl.system.linux.XConfigureEvent as __XConfigureEvent_Buffer
 __Buffer = __XConfigureEvent_Buffer.Buffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XConfigureEvent.Buffer"""
  
     @staticmethod
@@ -33124,7 +33124,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XFocusChangeEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XFocusChangeEvent():
     """org.lwjgl.system.linux.XFocusChangeEvent"""
  
     @staticmethod
@@ -33591,7 +33591,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class StatxTimestamp(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class StatxTimestamp():
     """org.lwjgl.system.linux.StatxTimestamp"""
  
     @staticmethod
@@ -33709,14 +33709,14 @@ class StatxTimestamp(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__Native
         return 'StatxTimestamp'.__wrap(super(__StatxTimestamp, self).set(arg0))
 
     @overload
-    def tv_sec(self, arg0: int) -> 'StatxTimestamp':
-        """public org.lwjgl.system.linux.StatxTimestamp org.lwjgl.system.linux.StatxTimestamp.tv_sec(long)"""
-        return 'StatxTimestamp'.__wrap(super(__StatxTimestamp, self).tv_sec(__long.valueOf(arg0)))
-
-    @overload
     def tv_nsec(self) -> int:
         """public int org.lwjgl.system.linux.StatxTimestamp.tv_nsec()"""
         return int.__wrap(super(StatxTimestamp, self).tv_nsec())
+
+    @overload
+    def tv_sec(self, arg0: int) -> 'StatxTimestamp':
+        """public org.lwjgl.system.linux.StatxTimestamp org.lwjgl.system.linux.StatxTimestamp.tv_sec(long)"""
+        return 'StatxTimestamp'.__wrap(super(__StatxTimestamp, self).tv_sec(__long.valueOf(arg0)))
 
     @staticmethod
     @overload
@@ -33907,7 +33907,7 @@ __Buffer = __Flock_Buffer.Buffer
 from builtins import bool
 from builtins import int
  
-class Flock(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Flock():
     """org.lwjgl.system.linux.Flock"""
  
     @staticmethod
@@ -34423,7 +34423,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XSetWindowAttributes.Buffer"""
  
     @staticmethod
@@ -34921,7 +34921,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XFocusChangeEvent.Buffer"""
  
     @staticmethod
@@ -35326,7 +35326,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class EpollData(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class EpollData():
     """org.lwjgl.system.linux.EpollData"""
  
     @staticmethod
@@ -35681,7 +35681,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XMapEvent.Buffer"""
  
     @staticmethod
@@ -36089,7 +36089,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class EpollEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class EpollEvent():
     """org.lwjgl.system.linux.EpollEvent"""
  
     @staticmethod
@@ -36410,7 +36410,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XCrossingEvent.Buffer"""
  
     @staticmethod
@@ -36510,14 +36510,14 @@ class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__Na
         super(object, self).notify()
 
     @overload
-    def root(self) -> int:
-        """public long org.lwjgl.system.linux.XCrossingEvent$Buffer.root()"""
-        return int.__wrap(super(Buffer, self).root())
-
-    @overload
     def detail(self) -> int:
         """public int org.lwjgl.system.linux.XCrossingEvent$Buffer.detail()"""
         return int.__wrap(super(Buffer, self).detail())
+
+    @overload
+    def root(self) -> int:
+        """public long org.lwjgl.system.linux.XCrossingEvent$Buffer.root()"""
+        return int.__wrap(super(Buffer, self).root())
 
     @overload
     def display(self) -> int:
@@ -36928,7 +36928,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XKeyEvent.Buffer"""
  
     @staticmethod
@@ -37426,7 +37426,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XPropertyEvent.Buffer"""
  
     @staticmethod
@@ -38071,7 +38071,7 @@ import org.lwjgl.system.linux.XMapEvent as __XMapEvent
 __XMapEvent = __XMapEvent
 from builtins import int
  
-class XMapEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XMapEvent():
     """org.lwjgl.system.linux.XMapEvent"""
  
     @staticmethod
@@ -38727,7 +38727,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XExposeEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XExposeEvent():
     """org.lwjgl.system.linux.XExposeEvent"""
  
     @staticmethod
@@ -39261,7 +39261,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XNoExposeEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XNoExposeEvent():
     """org.lwjgl.system.linux.XNoExposeEvent"""
  
     @staticmethod
@@ -39729,7 +39729,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XCreateWindowEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XCreateWindowEvent():
     """org.lwjgl.system.linux.XCreateWindowEvent"""
  
     @staticmethod
@@ -40319,7 +40319,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XConfigureRequestEvent.Buffer"""
  
     @staticmethod
@@ -40795,7 +40795,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XSelectionRequestEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XSelectionRequestEvent():
     """org.lwjgl.system.linux.XSelectionRequestEvent"""
  
     @staticmethod
@@ -41329,7 +41329,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XAnyEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XAnyEvent():
     """org.lwjgl.system.linux.XAnyEvent"""
  
     @staticmethod
@@ -41765,7 +41765,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XReparentEvent.Buffer"""
  
     @staticmethod
@@ -42213,7 +42213,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XAnyEvent.Buffer"""
  
     @staticmethod
@@ -42602,7 +42602,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Msghdr(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Msghdr():
     """org.lwjgl.system.linux.Msghdr"""
  
     @staticmethod
@@ -43020,7 +43020,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XVisualInfo.Buffer"""
  
     @staticmethod
@@ -43458,7 +43458,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XGenericEventCookie(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XGenericEventCookie():
     """org.lwjgl.system.linux.XGenericEventCookie"""
  
     @staticmethod
@@ -43948,7 +43948,7 @@ import org.lwjgl.system.linux.XConfigureEvent as __XConfigureEvent
 __XConfigureEvent = __XConfigureEvent
 from builtins import int
  
-class XConfigureEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XConfigureEvent():
     """org.lwjgl.system.linux.XConfigureEvent"""
  
     @staticmethod
@@ -44538,7 +44538,7 @@ import org.lwjgl.system.linux.XGravityEvent as __XGravityEvent_Buffer
 __Buffer = __XGravityEvent_Buffer.Buffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XGravityEvent.Buffer"""
  
     @staticmethod
@@ -44966,7 +44966,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XMappingEvent.Buffer"""
  
     @staticmethod
@@ -45394,7 +45394,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XExposeEvent.Buffer"""
  
     @staticmethod
@@ -45830,7 +45830,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XSelectionEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XSelectionEvent():
     """org.lwjgl.system.linux.XSelectionEvent"""
  
     @staticmethod
@@ -46345,7 +46345,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Sockaddr(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Sockaddr():
     """org.lwjgl.system.linux.Sockaddr"""
  
     @staticmethod
@@ -46683,7 +46683,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.XUnmapEvent.Buffer"""
  
     @staticmethod
@@ -47089,7 +47089,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class XButtonEvent(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class XButtonEvent():
     """org.lwjgl.system.linux.XButtonEvent"""
  
     @staticmethod

@@ -28,7 +28,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class DeviceType(__Enum, Enum):
+class DeviceType():
     """dev.ultreon.quantum.DeviceType"""
  
     @staticmethod
@@ -215,7 +215,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class DeviceType(__Enum, Enum):
+class DeviceType():
     """dev.ultreon.quantum.DeviceType"""
  
     @staticmethod
@@ -639,14 +639,14 @@ class GamePlatform(ABC):
         return bool.__wrap(super(GamePlatform, self).isShowingImGui())
 
     @overload
-    def getGameDir(self) -> 'Path':
-        """public java.nio.file.Path dev.ultreon.quantum.GamePlatform.getGameDir()"""
-        return 'Path'.__wrap(super(GamePlatform, self).getGameDir())
-
-    @overload
     def isDevEnvironment(self) -> bool:
         """public boolean dev.ultreon.quantum.GamePlatform.isDevEnvironment()"""
         return bool.__wrap(super(GamePlatform, self).isDevEnvironment())
+
+    @overload
+    def getGameDir(self) -> 'Path':
+        """public java.nio.file.Path dev.ultreon.quantum.GamePlatform.getGameDir()"""
+        return 'Path'.__wrap(super(GamePlatform, self).getGameDir())
 
     @overload
     def isDesktop(self) -> bool:
@@ -752,7 +752,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class StdoutLogger(pyquantum.__Logger, log.Logger):
+class StdoutLogger():
     """dev.ultreon.quantum.StdoutLogger"""
  
     @staticmethod
@@ -1072,7 +1072,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class HeadlessGameWindow(__GameWindow, GameWindow):
+class HeadlessGameWindow():
     """dev.ultreon.quantum.HeadlessGameWindow"""
  
     @staticmethod
@@ -1267,7 +1267,7 @@ import dev.ultreon.quantum.FieldsAreNonnullByDefault as __FieldsAreNonnullByDefa
 __FieldsAreNonnullByDefault = __FieldsAreNonnullByDefault
 from abc import abstractmethod, ABC
  
-class FieldsAreNonnullByDefault(ABC, __Annotation, Annotation):
+class FieldsAreNonnullByDefault(ABC):
     """dev.ultreon.quantum.FieldsAreNonnullByDefault"""
  
     @staticmethod
@@ -1756,7 +1756,7 @@ import java.lang.annotation.Annotation as __Annotation
 __Annotation = __Annotation
 from abc import abstractmethod, ABC
  
-class MethodsReturnNonnullByDefault(ABC, __Annotation, Annotation):
+class MethodsReturnNonnullByDefault(ABC):
     """dev.ultreon.quantum.MethodsReturnNonnullByDefault"""
  
     @staticmethod
@@ -1974,7 +1974,7 @@ import dev.ultreon.quantum.FieldsAreNullableByDefault as __FieldsAreNullableByDe
 __FieldsAreNullableByDefault = __FieldsAreNullableByDefault
 from abc import abstractmethod, ABC
  
-class FieldsAreNullableByDefault(ABC, __Annotation, Annotation):
+class FieldsAreNullableByDefault(ABC):
     """dev.ultreon.quantum.FieldsAreNullableByDefault"""
  
     @staticmethod
@@ -2154,7 +2154,7 @@ import dev.ultreon.quantum.UnsafeApi as __UnsafeApi
 __UnsafeApi = __UnsafeApi
 from abc import abstractmethod, ABC
  
-class UnsafeApi(ABC, __Annotation, Annotation):
+class UnsafeApi(ABC):
     """dev.ultreon.quantum.UnsafeApi"""
  
     @staticmethod
@@ -2347,7 +2347,7 @@ import dev.ultreon.quantum.TypeUsesAreNonnullByDefault as __TypeUsesAreNonnullBy
 __TypeUsesAreNonnullByDefault = __TypeUsesAreNonnullByDefault
 from abc import abstractmethod, ABC
  
-class TypeUsesAreNonnullByDefault(ABC, __Annotation, Annotation):
+class TypeUsesAreNonnullByDefault(ABC):
     """dev.ultreon.quantum.TypeUsesAreNonnullByDefault"""
  
     @staticmethod
@@ -2424,7 +2424,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class ModOrigin(__Enum, Enum):
+class ModOrigin():
     """dev.ultreon.quantum.ModOrigin"""
  
     @staticmethod
@@ -2766,7 +2766,7 @@ import dev.ultreon.quantum.TypeParametersAreNonnullByDefault as __TypeParameters
 __TypeParametersAreNonnullByDefault = __TypeParametersAreNonnullByDefault
 from abc import abstractmethod, ABC
  
-class TypeParametersAreNonnullByDefault(ABC, __Annotation, Annotation):
+class TypeParametersAreNonnullByDefault(ABC):
     """dev.ultreon.quantum.TypeParametersAreNonnullByDefault"""
  
     @staticmethod

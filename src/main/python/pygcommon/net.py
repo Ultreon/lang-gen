@@ -998,7 +998,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class HostAndPort(__Serializable, Serializable):
+class HostAndPort():
     """com.google.common.net.HostAndPort"""
  
     @staticmethod
@@ -1570,7 +1570,7 @@ import com.google.common.escape.Escaper as __Escaper
 __Escaper = __Escaper
 from builtins import int
  
-class PercentEscaper(pygcommon.__UnicodeEscaper, escape.UnicodeEscaper):
+class PercentEscaper():
     """com.google.common.net.PercentEscaper"""
  
     @staticmethod

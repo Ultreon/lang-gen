@@ -330,7 +330,7 @@ import java.util.Map as Map
 from builtins import bool
 from builtins import int
  
-class MutableTypeToInstanceMap(pygcollect.__ForwardingMap, pygcollect.ForwardingMap, __TypeToInstanceMap, TypeToInstanceMap):
+class MutableTypeToInstanceMap():
     """com.google.common.reflect.MutableTypeToInstanceMap"""
  
     @staticmethod
@@ -735,7 +735,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ClassInfo(__ResourceInfo, ResourceInfo):
+class ClassInfo():
     """com.google.common.reflect.ClassPath.ClassInfo"""
  
     @staticmethod
@@ -1015,7 +1015,7 @@ import java.lang.reflect.AnnotatedType as __AnnotatedType
 __AnnotatedType = __AnnotatedType
 from builtins import int
  
-class Parameter(__AnnotatedElement, AnnotatedElement):
+class Parameter():
     """com.google.common.reflect.Parameter"""
  
     @staticmethod
@@ -1300,7 +1300,7 @@ from builtins import bool
 import java.lang.reflect.Method as Method
 from builtins import int
  
-class AbstractInvocationHandler(ABC, __InvocationHandler, InvocationHandler):
+class AbstractInvocationHandler(ABC):
     """com.google.common.reflect.AbstractInvocationHandler"""
  
     @staticmethod
@@ -1447,7 +1447,7 @@ from builtins import int
 import java.lang.reflect.Method as Method
 import java.lang.reflect.Constructor as Constructor
  
-class Invokable(ABC, __AnnotatedElement, AnnotatedElement, __Member, Member):
+class Invokable(ABC):
     """com.google.common.reflect.Invokable"""
  
     @staticmethod
@@ -1762,7 +1762,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class ImmutableTypeToInstanceMap(pygcollect.__ForwardingMap, pygcollect.ForwardingMap, __TypeToInstanceMap, TypeToInstanceMap):
+class ImmutableTypeToInstanceMap():
     """com.google.common.reflect.ImmutableTypeToInstanceMap"""
  
     @staticmethod
@@ -2048,7 +2048,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class TypeSet(pygcollect.__ForwardingSet, pygcollect.ForwardingSet, __Serializable, Serializable):
+class TypeSet():
     """com.google.common.reflect.TypeToken.TypeSet"""
  
     @staticmethod
@@ -2278,7 +2278,7 @@ import java.lang.reflect.Method as Method
 from builtins import int
 import java.lang.reflect.Constructor as Constructor
  
-class TypeToken(ABC, __TypeCapture, TypeCapture, __Serializable, Serializable):
+class TypeToken(ABC):
     """com.google.common.reflect.TypeToken"""
  
     @staticmethod
@@ -2606,23 +2606,24 @@ class ResourceInfo():
  
  
 # CLASS: com.google.common.reflect.TypeToInstanceMap
-import com.google.common.reflect.TypeToInstanceMap as __TypeToInstanceMap
-__TypeToInstanceMap = __TypeToInstanceMap
+from pyquantum_helper import override
 import java.lang.Object as __object
-import java.util.function.BiConsumer as BiConsumer
 from builtins import type
 import java.util.Map as __Map
 __Map = __Map
-import java.lang.Object as __Object
-__Object = __Object
 from abc import abstractmethod, ABC
 from builtins import object
+import java.util.function.BiFunction as BiFunction
+import com.google.common.reflect.TypeToInstanceMap as __TypeToInstanceMap
+__TypeToInstanceMap = __TypeToInstanceMap
+import java.util.function.BiConsumer as BiConsumer
+import java.lang.Object as __Object
+__Object = __Object
 import java.util.function.Function as Function
 from builtins import bool
-import java.util.function.BiFunction as BiFunction
 import java.util.Map as Map
  
-class TypeToInstanceMap(ABC, __Map, Map):
+class TypeToInstanceMap(ABC):
     """com.google.common.reflect.TypeToInstanceMap"""
  
     @staticmethod
@@ -2818,7 +2819,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TypeParameter(ABC, __TypeCapture, TypeCapture):
+class TypeParameter(ABC):
     """com.google.common.reflect.TypeParameter"""
  
     @staticmethod

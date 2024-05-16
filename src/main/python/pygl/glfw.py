@@ -360,7 +360,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GLFWImage(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class GLFWImage():
     """org.lwjgl.glfw.GLFWImage"""
  
     @staticmethod
@@ -746,7 +746,7 @@ import org.lwjgl.glfw.GLFWMouseButtonCallbackI as __GLFWMouseButtonCallbackI
 __GLFWMouseButtonCallbackI = __GLFWMouseButtonCallbackI
 from builtins import int
  
-class GLFWMouseButtonCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __GLFWMouseButtonCallbackI, GLFWMouseButtonCallbackI):
+class GLFWMouseButtonCallback(ABC):
     """org.lwjgl.glfw.GLFWMouseButtonCallback"""
  
     @staticmethod
@@ -1060,7 +1060,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GLFWScrollCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __GLFWScrollCallbackI, GLFWScrollCallbackI):
+class GLFWScrollCallback(ABC):
     """org.lwjgl.glfw.GLFWScrollCallback"""
  
     @staticmethod
@@ -1267,7 +1267,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.glfw.GLFWImage.Buffer"""
  
     @staticmethod
@@ -1741,7 +1741,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GLFWWindowPosCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __GLFWWindowPosCallbackI, GLFWWindowPosCallbackI):
+class GLFWWindowPosCallback(ABC):
     """org.lwjgl.glfw.GLFWWindowPosCallback"""
  
     @staticmethod
@@ -1908,6 +1908,7 @@ __GLFWWindowRefreshCallbackI = __GLFWWindowRefreshCallbackI
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.system.CallbackI as __CallbackI
 __CallbackI = __CallbackI
 from abc import abstractmethod, ABC
@@ -1918,7 +1919,7 @@ except ImportError:
 
 from builtins import int
  
-class GLFWWindowRefreshCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class GLFWWindowRefreshCallbackI(ABC):
     """org.lwjgl.glfw.GLFWWindowRefreshCallbackI"""
  
     @staticmethod
@@ -2012,7 +2013,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GLFWWindowMaximizeCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __GLFWWindowMaximizeCallbackI, GLFWWindowMaximizeCallbackI):
+class GLFWWindowMaximizeCallback(ABC):
     """org.lwjgl.glfw.GLFWWindowMaximizeCallback"""
  
     @staticmethod
@@ -2336,7 +2337,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GLFWWindowCloseCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __GLFWWindowCloseCallbackI, GLFWWindowCloseCallbackI):
+class GLFWWindowCloseCallback(ABC):
     """org.lwjgl.glfw.GLFWWindowCloseCallback"""
  
     @staticmethod
@@ -2501,6 +2502,7 @@ from pyquantum_helper import import_once as __import_once__
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.glfw.GLFWReallocateCallbackI as __GLFWReallocateCallbackI
 __GLFWReallocateCallbackI = __GLFWReallocateCallbackI
 import org.lwjgl.system.CallbackI as __CallbackI
@@ -2513,7 +2515,7 @@ except ImportError:
 
 from builtins import int
  
-class GLFWReallocateCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class GLFWReallocateCallbackI(ABC):
     """org.lwjgl.glfw.GLFWReallocateCallbackI"""
  
     @staticmethod
@@ -2572,6 +2574,7 @@ from pyquantum_helper import import_once as __import_once__
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.system.CallbackI as __CallbackI
 __CallbackI = __CallbackI
 import org.lwjgl.glfw.GLFWJoystickCallbackI as __GLFWJoystickCallbackI
@@ -2584,7 +2587,7 @@ except ImportError:
 
 from builtins import int
  
-class GLFWJoystickCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class GLFWJoystickCallbackI(ABC):
     """org.lwjgl.glfw.GLFWJoystickCallbackI"""
  
     @staticmethod
@@ -2689,7 +2692,7 @@ from builtins import int
 import org.lwjgl.glfw.GLFWReallocateCallback as __GLFWReallocateCallback
 __GLFWReallocateCallback = __GLFWReallocateCallback
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.glfw.GLFWAllocator.Buffer"""
  
     @staticmethod
@@ -3071,7 +3074,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GLFWWindowRefreshCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __GLFWWindowRefreshCallbackI, GLFWWindowRefreshCallbackI):
+class GLFWWindowRefreshCallback(ABC):
     """org.lwjgl.glfw.GLFWWindowRefreshCallback"""
  
     @staticmethod
@@ -3236,6 +3239,7 @@ from pyquantum_helper import import_once as __import_once__
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.glfw.GLFWDropCallbackI as __GLFWDropCallbackI
 __GLFWDropCallbackI = __GLFWDropCallbackI
 import org.lwjgl.system.CallbackI as __CallbackI
@@ -3248,7 +3252,7 @@ except ImportError:
 
 from builtins import int
  
-class GLFWDropCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class GLFWDropCallbackI(ABC):
     """org.lwjgl.glfw.GLFWDropCallbackI"""
  
     @staticmethod
@@ -3307,6 +3311,7 @@ from pyquantum_helper import import_once as __import_once__
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.system.CallbackI as __CallbackI
 __CallbackI = __CallbackI
 import org.lwjgl.glfw.GLFWAllocateCallbackI as __GLFWAllocateCallbackI
@@ -3319,7 +3324,7 @@ except ImportError:
 
 from builtins import int
  
-class GLFWAllocateCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class GLFWAllocateCallbackI(ABC):
     """org.lwjgl.glfw.GLFWAllocateCallbackI"""
  
     @staticmethod
@@ -3413,7 +3418,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GLFWWindowIconifyCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __GLFWWindowIconifyCallbackI, GLFWWindowIconifyCallbackI):
+class GLFWWindowIconifyCallback(ABC):
     """org.lwjgl.glfw.GLFWWindowIconifyCallback"""
  
     @staticmethod
@@ -3580,6 +3585,7 @@ __FFICIF = __FFICIF
 import java.lang.Long as __long
 import org.lwjgl.glfw.GLFWWindowIconifyCallbackI as __GLFWWindowIconifyCallbackI
 __GLFWWindowIconifyCallbackI = __GLFWWindowIconifyCallbackI
+from pyquantum_helper import override
 import org.lwjgl.system.CallbackI as __CallbackI
 __CallbackI = __CallbackI
 from abc import abstractmethod, ABC
@@ -3590,7 +3596,7 @@ except ImportError:
 
 from builtins import int
  
-class GLFWWindowIconifyCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class GLFWWindowIconifyCallbackI(ABC):
     """org.lwjgl.glfw.GLFWWindowIconifyCallbackI"""
  
     @staticmethod
@@ -3811,7 +3817,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GLFWAllocateCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __GLFWAllocateCallbackI, GLFWAllocateCallbackI):
+class GLFWAllocateCallback(ABC):
     """org.lwjgl.glfw.GLFWAllocateCallback"""
  
     @staticmethod
@@ -4073,6 +4079,7 @@ from pyquantum_helper import import_once as __import_once__
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.system.CallbackI as __CallbackI
 __CallbackI = __CallbackI
 import org.lwjgl.glfw.GLFWWindowMaximizeCallbackI as __GLFWWindowMaximizeCallbackI
@@ -4085,7 +4092,7 @@ except ImportError:
 
 from builtins import int
  
-class GLFWWindowMaximizeCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class GLFWWindowMaximizeCallbackI(ABC):
     """org.lwjgl.glfw.GLFWWindowMaximizeCallbackI"""
  
     @staticmethod
@@ -4327,7 +4334,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class GLFWVidMode(pyglsystem.__Struct, pyglsystem.Struct):
+class GLFWVidMode():
     """org.lwjgl.glfw.GLFWVidMode"""
  
     @staticmethod
@@ -4583,7 +4590,7 @@ import org.lwjgl.glfw.GLFWReallocateCallback as __GLFWReallocateCallback
 __GLFWReallocateCallback = __GLFWReallocateCallback
 from builtins import int
  
-class GLFWReallocateCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __GLFWReallocateCallbackI, GLFWReallocateCallbackI):
+class GLFWReallocateCallback(ABC):
     """org.lwjgl.glfw.GLFWReallocateCallback"""
  
     @staticmethod
@@ -4743,6 +4750,7 @@ from pyquantum_helper import import_once as __import_once__
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.system.CallbackI as __CallbackI
 __CallbackI = __CallbackI
 from abc import abstractmethod, ABC
@@ -4755,7 +4763,7 @@ except ImportError:
 
 from builtins import int
  
-class GLFWCharCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class GLFWCharCallbackI(ABC):
     """org.lwjgl.glfw.GLFWCharCallbackI"""
  
     @staticmethod
@@ -4816,6 +4824,7 @@ __FFICIF = __FFICIF
 import org.lwjgl.glfw.GLFWWindowFocusCallbackI as __GLFWWindowFocusCallbackI
 __GLFWWindowFocusCallbackI = __GLFWWindowFocusCallbackI
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.system.CallbackI as __CallbackI
 __CallbackI = __CallbackI
 from abc import abstractmethod, ABC
@@ -4826,7 +4835,7 @@ except ImportError:
 
 from builtins import int
  
-class GLFWWindowFocusCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class GLFWWindowFocusCallbackI(ABC):
     """org.lwjgl.glfw.GLFWWindowFocusCallbackI"""
  
     @staticmethod
@@ -4920,7 +4929,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GLFWWindowSizeCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __GLFWWindowSizeCallbackI, GLFWWindowSizeCallbackI):
+class GLFWWindowSizeCallback(ABC):
     """org.lwjgl.glfw.GLFWWindowSizeCallback"""
  
     @staticmethod
@@ -5085,6 +5094,7 @@ from pyquantum_helper import import_once as __import_once__
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.system.CallbackI as __CallbackI
 __CallbackI = __CallbackI
 from abc import abstractmethod, ABC
@@ -5097,7 +5107,7 @@ import org.lwjgl.glfw.GLFWDeallocateCallbackI as __GLFWDeallocateCallbackI
 __GLFWDeallocateCallbackI = __GLFWDeallocateCallbackI
 from builtins import int
  
-class GLFWDeallocateCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class GLFWDeallocateCallbackI(ABC):
     """org.lwjgl.glfw.GLFWDeallocateCallbackI"""
  
     @staticmethod
@@ -5191,7 +5201,7 @@ from builtins import int
 import org.lwjgl.glfw.GLFWDeallocateCallbackI as __GLFWDeallocateCallbackI
 __GLFWDeallocateCallbackI = __GLFWDeallocateCallbackI
  
-class GLFWDeallocateCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __GLFWDeallocateCallbackI, GLFWDeallocateCallbackI):
+class GLFWDeallocateCallback(ABC):
     """org.lwjgl.glfw.GLFWDeallocateCallback"""
  
     @staticmethod
@@ -5351,6 +5361,7 @@ from pyquantum_helper import import_once as __import_once__
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.system.CallbackI as __CallbackI
 __CallbackI = __CallbackI
 from abc import abstractmethod, ABC
@@ -5363,7 +5374,7 @@ import org.lwjgl.glfw.GLFWWindowPosCallbackI as __GLFWWindowPosCallbackI
 __GLFWWindowPosCallbackI = __GLFWWindowPosCallbackI
 from builtins import int
  
-class GLFWWindowPosCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class GLFWWindowPosCallbackI(ABC):
     """org.lwjgl.glfw.GLFWWindowPosCallbackI"""
  
     @staticmethod
@@ -5422,6 +5433,7 @@ from pyquantum_helper import import_once as __import_once__
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.system.CallbackI as __CallbackI
 __CallbackI = __CallbackI
 import org.lwjgl.glfw.GLFWWindowSizeCallbackI as __GLFWWindowSizeCallbackI
@@ -5434,7 +5446,7 @@ except ImportError:
 
 from builtins import int
  
-class GLFWWindowSizeCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class GLFWWindowSizeCallbackI(ABC):
     """org.lwjgl.glfw.GLFWWindowSizeCallbackI"""
  
     @staticmethod
@@ -5528,7 +5540,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GLFWKeyCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __GLFWKeyCallbackI, GLFWKeyCallbackI):
+class GLFWKeyCallback(ABC):
     """org.lwjgl.glfw.GLFWKeyCallback"""
  
     @staticmethod
@@ -5728,7 +5740,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GLFWMonitorCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __GLFWMonitorCallbackI, GLFWMonitorCallbackI):
+class GLFWMonitorCallback(ABC):
     """org.lwjgl.glfw.GLFWMonitorCallback"""
  
     @staticmethod
@@ -6066,7 +6078,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GLFWCharCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __GLFWCharCallbackI, GLFWCharCallbackI):
+class GLFWCharCallback(ABC):
     """org.lwjgl.glfw.GLFWCharCallback"""
  
     @staticmethod
@@ -6231,6 +6243,7 @@ from pyquantum_helper import import_once as __import_once__
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.glfw.GLFWErrorCallbackI as __GLFWErrorCallbackI
 __GLFWErrorCallbackI = __GLFWErrorCallbackI
 import org.lwjgl.system.CallbackI as __CallbackI
@@ -6243,7 +6256,7 @@ except ImportError:
 
 from builtins import int
  
-class GLFWErrorCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class GLFWErrorCallbackI(ABC):
     """org.lwjgl.glfw.GLFWErrorCallbackI"""
  
     @staticmethod
@@ -6472,7 +6485,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class GLFWGammaRamp(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class GLFWGammaRamp():
     """org.lwjgl.glfw.GLFWGammaRamp"""
  
     @staticmethod
@@ -6880,7 +6893,7 @@ import org.lwjgl.glfw.GLFWWindowContentScaleCallbackI as __GLFWWindowContentScal
 __GLFWWindowContentScaleCallbackI = __GLFWWindowContentScaleCallbackI
 from builtins import int
  
-class GLFWWindowContentScaleCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __GLFWWindowContentScaleCallbackI, GLFWWindowContentScaleCallbackI):
+class GLFWWindowContentScaleCallback(ABC):
     """org.lwjgl.glfw.GLFWWindowContentScaleCallback"""
  
     @staticmethod
@@ -7080,7 +7093,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GLFWDropCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __GLFWDropCallbackI, GLFWDropCallbackI):
+class GLFWDropCallback(ABC):
     """org.lwjgl.glfw.GLFWDropCallback"""
  
     @staticmethod
@@ -7455,6 +7468,7 @@ from pyquantum_helper import import_once as __import_once__
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.system.CallbackI as __CallbackI
 __CallbackI = __CallbackI
 from abc import abstractmethod, ABC
@@ -7467,7 +7481,7 @@ except ImportError:
 
 from builtins import int
  
-class GLFWWindowContentScaleCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class GLFWWindowContentScaleCallbackI(ABC):
     """org.lwjgl.glfw.GLFWWindowContentScaleCallbackI"""
  
     @staticmethod
@@ -7561,7 +7575,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GLFWCharModsCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __GLFWCharModsCallbackI, GLFWCharModsCallbackI):
+class GLFWCharModsCallback(ABC):
     """org.lwjgl.glfw.GLFWCharModsCallback"""
  
     @staticmethod
@@ -7762,7 +7776,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GLFWErrorCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __GLFWErrorCallbackI, GLFWErrorCallbackI):
+class GLFWErrorCallback(ABC):
     """org.lwjgl.glfw.GLFWErrorCallback"""
  
     @staticmethod
@@ -7951,6 +7965,7 @@ from pyquantum_helper import import_once as __import_once__
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.system.CallbackI as __CallbackI
 __CallbackI = __CallbackI
 from abc import abstractmethod, ABC
@@ -7963,7 +7978,7 @@ except ImportError:
 
 from builtins import int
  
-class GLFWMouseButtonCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class GLFWMouseButtonCallbackI(ABC):
     """org.lwjgl.glfw.GLFWMouseButtonCallbackI"""
  
     @staticmethod
@@ -8159,7 +8174,7 @@ __GLFWWindowFocusCallback = __GLFWWindowFocusCallback
 from builtins import bool
 from builtins import int
  
-class GLFWWindowFocusCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __GLFWWindowFocusCallbackI, GLFWWindowFocusCallbackI):
+class GLFWWindowFocusCallback(ABC):
     """org.lwjgl.glfw.GLFWWindowFocusCallback"""
  
     @staticmethod
@@ -8671,7 +8686,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GLFWCursorPosCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __GLFWCursorPosCallbackI, GLFWCursorPosCallbackI):
+class GLFWCursorPosCallback(ABC):
     """org.lwjgl.glfw.GLFWCursorPosCallback"""
  
     @staticmethod
@@ -8946,6 +8961,7 @@ __GLFWFramebufferSizeCallbackI = __GLFWFramebufferSizeCallbackI
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.system.CallbackI as __CallbackI
 __CallbackI = __CallbackI
 from abc import abstractmethod, ABC
@@ -8956,7 +8972,7 @@ except ImportError:
 
 from builtins import int
  
-class GLFWFramebufferSizeCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class GLFWFramebufferSizeCallbackI(ABC):
     """org.lwjgl.glfw.GLFWFramebufferSizeCallbackI"""
  
     @staticmethod
@@ -9051,7 +9067,7 @@ import org.lwjgl.glfw.GLFWGamepadState as __GLFWGamepadState
 __GLFWGamepadState = __GLFWGamepadState
 from builtins import int
  
-class GLFWGamepadState(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class GLFWGamepadState():
     """org.lwjgl.glfw.GLFWGamepadState"""
  
     @staticmethod
@@ -9420,6 +9436,7 @@ __GLFWCursorPosCallbackI = __GLFWCursorPosCallbackI
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.system.CallbackI as __CallbackI
 __CallbackI = __CallbackI
 from abc import abstractmethod, ABC
@@ -9430,7 +9447,7 @@ except ImportError:
 
 from builtins import int
  
-class GLFWCursorPosCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class GLFWCursorPosCallbackI(ABC):
     """org.lwjgl.glfw.GLFWCursorPosCallbackI"""
  
     @staticmethod
@@ -9489,6 +9506,7 @@ from pyquantum_helper import import_once as __import_once__
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.glfw.GLFWKeyCallbackI as __GLFWKeyCallbackI
 __GLFWKeyCallbackI = __GLFWKeyCallbackI
 import org.lwjgl.system.CallbackI as __CallbackI
@@ -9501,7 +9519,7 @@ except ImportError:
 
 from builtins import int
  
-class GLFWKeyCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class GLFWKeyCallbackI(ABC):
     """org.lwjgl.glfw.GLFWKeyCallbackI"""
  
     @staticmethod
@@ -9595,7 +9613,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GLFWJoystickCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __GLFWJoystickCallbackI, GLFWJoystickCallbackI):
+class GLFWJoystickCallback(ABC):
     """org.lwjgl.glfw.GLFWJoystickCallback"""
  
     @staticmethod
@@ -9803,7 +9821,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.glfw.GLFWGammaRamp.Buffer"""
  
     @staticmethod
@@ -10152,6 +10170,7 @@ __FFICIF = __FFICIF
 import java.lang.Long as __long
 import org.lwjgl.glfw.GLFWScrollCallbackI as __GLFWScrollCallbackI
 __GLFWScrollCallbackI = __GLFWScrollCallbackI
+from pyquantum_helper import override
 import org.lwjgl.system.CallbackI as __CallbackI
 __CallbackI = __CallbackI
 from abc import abstractmethod, ABC
@@ -10162,7 +10181,7 @@ except ImportError:
 
 from builtins import int
  
-class GLFWScrollCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class GLFWScrollCallbackI(ABC):
     """org.lwjgl.glfw.GLFWScrollCallbackI"""
  
     @staticmethod
@@ -11555,6 +11574,7 @@ from pyquantum_helper import import_once as __import_once__
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.system.CallbackI as __CallbackI
 __CallbackI = __CallbackI
 import org.lwjgl.glfw.GLFWCharModsCallbackI as __GLFWCharModsCallbackI
@@ -11567,7 +11587,7 @@ except ImportError:
 
 from builtins import int
  
-class GLFWCharModsCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class GLFWCharModsCallbackI(ABC):
     """org.lwjgl.glfw.GLFWCharModsCallbackI"""
  
     @staticmethod
@@ -11661,7 +11681,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GLFWCursorEnterCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __GLFWCursorEnterCallbackI, GLFWCursorEnterCallbackI):
+class GLFWCursorEnterCallback(ABC):
     """org.lwjgl.glfw.GLFWCursorEnterCallback"""
  
     @staticmethod
@@ -11826,6 +11846,7 @@ from pyquantum_helper import import_once as __import_once__
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.glfw.GLFWMonitorCallbackI as __GLFWMonitorCallbackI
 __GLFWMonitorCallbackI = __GLFWMonitorCallbackI
 import org.lwjgl.system.CallbackI as __CallbackI
@@ -11838,7 +11859,7 @@ except ImportError:
 
 from builtins import int
  
-class GLFWMonitorCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class GLFWMonitorCallbackI(ABC):
     """org.lwjgl.glfw.GLFWMonitorCallbackI"""
  
     @staticmethod
@@ -11935,7 +11956,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer):
+class Buffer():
     """org.lwjgl.glfw.GLFWVidMode.Buffer"""
  
     @staticmethod
@@ -12368,6 +12389,7 @@ from pyquantum_helper import import_once as __import_once__
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.glfw.GLFWCursorEnterCallbackI as __GLFWCursorEnterCallbackI
 __GLFWCursorEnterCallbackI = __GLFWCursorEnterCallbackI
 import org.lwjgl.system.CallbackI as __CallbackI
@@ -12380,7 +12402,7 @@ except ImportError:
 
 from builtins import int
  
-class GLFWCursorEnterCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class GLFWCursorEnterCallbackI(ABC):
     """org.lwjgl.glfw.GLFWCursorEnterCallbackI"""
  
     @staticmethod
@@ -12541,6 +12563,7 @@ from pyquantum_helper import import_once as __import_once__
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.system.CallbackI as __CallbackI
 __CallbackI = __CallbackI
 import org.lwjgl.glfw.GLFWWindowCloseCallbackI as __GLFWWindowCloseCallbackI
@@ -12553,7 +12576,7 @@ except ImportError:
 
 from builtins import int
  
-class GLFWWindowCloseCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class GLFWWindowCloseCallbackI(ABC):
     """org.lwjgl.glfw.GLFWWindowCloseCallbackI"""
  
     @staticmethod
@@ -12647,7 +12670,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GLFWFramebufferSizeCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __GLFWFramebufferSizeCallbackI, GLFWFramebufferSizeCallbackI):
+class GLFWFramebufferSizeCallback(ABC):
     """org.lwjgl.glfw.GLFWFramebufferSizeCallback"""
  
     @staticmethod
@@ -12860,7 +12883,7 @@ import java.nio.ByteBuffer as ByteBuffer
 import java.lang.Integer as __int
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.glfw.GLFWGamepadState.Buffer"""
  
     @staticmethod
@@ -13241,7 +13264,7 @@ from builtins import int
 import org.lwjgl.glfw.GLFWReallocateCallback as __GLFWReallocateCallback
 __GLFWReallocateCallback = __GLFWReallocateCallback
  
-class GLFWAllocator(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class GLFWAllocator():
     """org.lwjgl.glfw.GLFWAllocator"""
  
     @staticmethod
@@ -13359,15 +13382,15 @@ class GLFWAllocator(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeR
 
     @staticmethod
     @overload
-    def nuser(arg0: int) -> int:
-        """public static long org.lwjgl.glfw.GLFWAllocator.nuser(long)"""
-        return int.__wrap(__GLFWAllocator.nuser(__long.valueOf(arg0)))
-
-    @staticmethod
-    @overload
     def createSafe(arg0: int, arg1: int) -> 'Buffer':
         """public static org.lwjgl.glfw.GLFWAllocator$Buffer org.lwjgl.glfw.GLFWAllocator.createSafe(long,int)"""
         return Buffer.__wrap(__GLFWAllocator.createSafe(__long.valueOf(arg0), __int.valueOf(arg1)))
+
+    @staticmethod
+    @overload
+    def nuser(arg0: int) -> int:
+        """public static long org.lwjgl.glfw.GLFWAllocator.nuser(long)"""
+        return int.__wrap(__GLFWAllocator.nuser(__long.valueOf(arg0)))
 
     @override
     @overload

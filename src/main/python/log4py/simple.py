@@ -62,7 +62,7 @@ import org.apache.logging.log4j.Level as __Level
 __Level = __Level
 from builtins import int
  
-class SimpleLogger(log4py.__AbstractLogger, spi.AbstractLogger):
+class SimpleLogger():
     """org.apache.logging.log4j.simple.SimpleLogger"""
  
     @staticmethod
@@ -2721,7 +2721,7 @@ import org.apache.logging.log4j.Level as __Level
 __Level = __Level
 from builtins import int
  
-class SimpleLogger(log4py.__AbstractLogger, spi.AbstractLogger):
+class SimpleLogger():
     """org.apache.logging.log4j.simple.SimpleLogger"""
  
     @staticmethod
@@ -5326,9 +5326,9 @@ class SimpleLogger(log4py.__AbstractLogger, spi.AbstractLogger):
 # CLASS: org.apache.logging.log4j.simple.SimpleLoggerContextFactory
 from pyquantum_helper import import_once as __import_once__
 from builtins import str
+from pyquantum_helper import override
 import java.net.URI as URI
 import java.lang.Boolean as __boolean
-from pyquantum_helper import override
 import java.lang.Object as __object
 import org.apache.logging.log4j.simple.SimpleLoggerContextFactory as __SimpleLoggerContextFactory
 __SimpleLoggerContextFactory = __SimpleLoggerContextFactory
@@ -5355,7 +5355,7 @@ from builtins import int
 import org.apache.logging.log4j.spi.LoggerContextFactory as __LoggerContextFactory
 __LoggerContextFactory = __LoggerContextFactory
  
-class SimpleLoggerContextFactory(log4py.__LoggerContextFactory, spi.LoggerContextFactory):
+class SimpleLoggerContextFactory():
     """org.apache.logging.log4j.simple.SimpleLoggerContextFactory"""
  
     @staticmethod
@@ -5523,7 +5523,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SimpleLoggerContext(log4py.__LoggerContext, spi.LoggerContext):
+class SimpleLoggerContext():
     """org.apache.logging.log4j.simple.SimpleLoggerContext"""
  
     @staticmethod

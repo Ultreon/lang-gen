@@ -33,7 +33,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AirTerrainLayer(__TerrainLayer, TerrainLayer):
+class AirTerrainLayer():
     """dev.ultreon.quantum.world.gen.layer.AirTerrainLayer"""
  
     @staticmethod
@@ -181,7 +181,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AirTerrainLayer(__TerrainLayer, TerrainLayer):
+class AirTerrainLayer():
     """dev.ultreon.quantum.world.gen.layer.AirTerrainLayer"""
  
     @staticmethod
@@ -332,7 +332,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class VoidGuardTerrainLayer(__TerrainLayer, TerrainLayer):
+class VoidGuardTerrainLayer():
     """dev.ultreon.quantum.world.gen.layer.VoidGuardTerrainLayer"""
  
     @staticmethod
@@ -477,7 +477,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TerrainLayer(ABC, pygdx.__Disposable, utils.Disposable):
+class TerrainLayer(ABC):
     """dev.ultreon.quantum.world.gen.layer.TerrainLayer"""
  
     @staticmethod
@@ -627,7 +627,7 @@ import dev.ultreon.quantum.world.gen.layer.SurfaceTerrainLayer as __SurfaceTerra
 __SurfaceTerrainLayer = __SurfaceTerrainLayer
 from builtins import int
  
-class SurfaceTerrainLayer(__TerrainLayer, TerrainLayer):
+class SurfaceTerrainLayer():
     """dev.ultreon.quantum.world.gen.layer.SurfaceTerrainLayer"""
  
     @staticmethod
@@ -771,7 +771,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GroundTerrainLayer(__TerrainLayer, TerrainLayer):
+class GroundTerrainLayer():
     """dev.ultreon.quantum.world.gen.layer.GroundTerrainLayer"""
  
     @staticmethod
@@ -910,7 +910,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class WaterTerrainLayer(__TerrainLayer, TerrainLayer):
+class WaterTerrainLayer():
     """dev.ultreon.quantum.world.gen.layer.WaterTerrainLayer"""
  
     @staticmethod
@@ -1068,7 +1068,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class UndergroundTerrainLayer(__TerrainLayer, TerrainLayer):
+class UndergroundTerrainLayer():
     """dev.ultreon.quantum.world.gen.layer.UndergroundTerrainLayer"""
  
     @staticmethod
@@ -1212,7 +1212,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class StoneyPeaksTerrainLayer(__TerrainLayer, TerrainLayer):
+class StoneyPeaksTerrainLayer():
     """dev.ultreon.quantum.world.gen.layer.StoneyPeaksTerrainLayer"""
  
     @staticmethod

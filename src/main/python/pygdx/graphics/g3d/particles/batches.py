@@ -30,7 +30,7 @@ except ImportError:
 
 from abc import abstractmethod, ABC
  
-class ParticleBatch(ABC, graphics.__RenderableProvider, g3d.RenderableProvider, g3d.__ResourceData_Configurable, particles.ResourceData$Configurable):
+class ParticleBatch(ABC):
     """com.badlogic.gdx.graphics.g3d.particles.batches.ParticleBatch"""
  
     @staticmethod
@@ -121,7 +121,7 @@ except ImportError:
 
 from abc import abstractmethod, ABC
  
-class ParticleBatch(ABC, graphics.__RenderableProvider, g3d.RenderableProvider, g3d.__ResourceData_Configurable, particles.ResourceData$Configurable):
+class ParticleBatch(ABC):
     """com.badlogic.gdx.graphics.g3d.particles.batches.ParticleBatch"""
  
     @staticmethod
@@ -368,7 +368,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class BufferedParticleBatch(ABC, __ParticleBatch, ParticleBatch):
+class BufferedParticleBatch(ABC):
     """com.badlogic.gdx.graphics.g3d.particles.batches.BufferedParticleBatch"""
  
     @staticmethod
@@ -572,7 +572,7 @@ __BufferedParticleBatch = __BufferedParticleBatch
 from builtins import bool
 from builtins import int
  
-class PointSpriteParticleBatch(__BufferedParticleBatch, BufferedParticleBatch):
+class PointSpriteParticleBatch():
     """com.badlogic.gdx.graphics.g3d.particles.batches.PointSpriteParticleBatch"""
  
     @staticmethod
@@ -817,7 +817,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ModelInstanceParticleBatch(__ParticleBatch, ParticleBatch):
+class ModelInstanceParticleBatch():
     """com.badlogic.gdx.graphics.g3d.particles.batches.ModelInstanceParticleBatch"""
  
     @staticmethod
@@ -1015,7 +1015,7 @@ import com.badlogic.gdx.graphics.g3d.particles.batches.BufferedParticleBatch as 
 __BufferedParticleBatch = __BufferedParticleBatch
 from builtins import int
  
-class BillboardParticleBatch(__BufferedParticleBatch, BufferedParticleBatch):
+class BillboardParticleBatch():
     """com.badlogic.gdx.graphics.g3d.particles.batches.BillboardParticleBatch"""
  
     @staticmethod
@@ -1196,16 +1196,16 @@ class BillboardParticleBatch(__BufferedParticleBatch, BufferedParticleBatch):
         self.__dict__ = val.__dict__
         self.__wrapper = val
 
-    @overload
-    def isUseGPU(self) -> bool:
-        """public boolean com.badlogic.gdx.graphics.g3d.particles.batches.BillboardParticleBatch.isUseGPU()"""
-        return bool.__wrap(super(BillboardParticleBatch, self).isUseGPU())
-
     @override
     @overload
     def getRenderables(self, arg0: 'Array', arg1: 'Pool'):
         """public void com.badlogic.gdx.graphics.g3d.particles.batches.BillboardParticleBatch.getRenderables(com.badlogic.gdx.utils.Array<com.badlogic.gdx.graphics.g3d.Renderable>,com.badlogic.gdx.utils.Pool<com.badlogic.gdx.graphics.g3d.Renderable>)"""
         super(__BillboardParticleBatch, self).getRenderables(arg0, arg1)
+
+    @overload
+    def isUseGPU(self) -> bool:
+        """public boolean com.badlogic.gdx.graphics.g3d.particles.batches.BillboardParticleBatch.isUseGPU()"""
+        return bool.__wrap(super(BillboardParticleBatch, self).isUseGPU())
 
     @overload
     def setUseGpu(self, arg0: bool):

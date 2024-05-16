@@ -5,8 +5,8 @@ from overload import overload
  
 from pyquantum_helper import import_once as __import_once__
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import box2dLight.RayHandler as __RayHandler
 __RayHandler = __RayHandler
 try:
@@ -47,7 +47,7 @@ import com.badlogic.gdx.graphics.glutils.FrameBuffer as __FrameBuffer
 __FrameBuffer = __FrameBuffer
 from builtins import int
  
-class RayHandler(pygdx.__Disposable, utils.Disposable):
+class RayHandler():
     """box2dLight.RayHandler"""
  
     @staticmethod
@@ -304,8 +304,8 @@ class RayHandler(pygdx.__Disposable, utils.Disposable):
 # CLASS: box2dLight.RayHandler
 from pyquantum_helper import import_once as __import_once__
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import box2dLight.RayHandler as __RayHandler
 __RayHandler = __RayHandler
 try:
@@ -346,7 +346,7 @@ import com.badlogic.gdx.graphics.glutils.FrameBuffer as __FrameBuffer
 __FrameBuffer = __FrameBuffer
 from builtins import int
  
-class RayHandler(pygdx.__Disposable, utils.Disposable):
+class RayHandler():
     """box2dLight.RayHandler"""
  
     @staticmethod
@@ -652,7 +652,7 @@ except ImportError:
 
 from builtins import int
  
-class ConeLight(__PositionalLight, PositionalLight):
+class ConeLight():
     """box2dLight.ConeLight"""
  
     @staticmethod
@@ -1032,7 +1032,7 @@ except ImportError:
 
 from builtins import int
  
-class DirectionalLight(__Light, Light):
+class DirectionalLight():
     """box2dLight.DirectionalLight"""
  
     @staticmethod
@@ -1392,7 +1392,7 @@ except ImportError:
 
 from builtins import int
  
-class PointLight(__PositionalLight, PositionalLight):
+class PointLight():
     """box2dLight.PointLight"""
  
     @staticmethod
@@ -1770,7 +1770,7 @@ except ImportError:
 
 from builtins import int
  
-class PositionalLight(ABC, __Light, Light):
+class PositionalLight(ABC):
     """box2dLight.PositionalLight"""
  
     @staticmethod
@@ -2136,7 +2136,7 @@ except ImportError:
 
 from builtins import int
  
-class ChainLight(__Light, Light):
+class ChainLight():
     """box2dLight.ChainLight"""
  
     @staticmethod
@@ -2518,7 +2518,7 @@ except ImportError:
 
 from builtins import int
  
-class Light(ABC, pygdx.__Disposable, utils.Disposable):
+class Light(ABC):
     """box2dLight.Light"""
  
     @staticmethod

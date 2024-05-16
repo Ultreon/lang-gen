@@ -54,7 +54,7 @@ except ImportError:
 
 from builtins import int
  
-class DirectionalShadowLight(__DirectionalLight, DirectionalLight, __ShadowMap, ShadowMap, pygdx.__Disposable, utils.Disposable):
+class DirectionalShadowLight():
     """com.badlogic.gdx.graphics.g3d.environment.DirectionalShadowLight"""
  
     @staticmethod
@@ -307,7 +307,7 @@ except ImportError:
 
 from builtins import int
  
-class DirectionalShadowLight(__DirectionalLight, DirectionalLight, __ShadowMap, ShadowMap, pygdx.__Disposable, utils.Disposable):
+class DirectionalShadowLight():
     """com.badlogic.gdx.graphics.g3d.environment.DirectionalShadowLight"""
  
     @staticmethod
@@ -763,7 +763,7 @@ except ImportError:
 
 from builtins import int
  
-class SpotLight(__BaseLight, BaseLight):
+class SpotLight():
     """com.badlogic.gdx.graphics.g3d.environment.SpotLight"""
  
     @staticmethod
@@ -1152,7 +1152,7 @@ except ImportError:
 
 from builtins import int
  
-class DirectionalLight(__BaseLight, BaseLight):
+class DirectionalLight():
     """com.badlogic.gdx.graphics.g3d.environment.DirectionalLight"""
  
     @staticmethod
@@ -1483,7 +1483,7 @@ except ImportError:
 
 from builtins import int
  
-class PointLight(__BaseLight, BaseLight):
+class PointLight():
     """com.badlogic.gdx.graphics.g3d.environment.PointLight"""
  
     @staticmethod

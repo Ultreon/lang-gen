@@ -23,7 +23,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TrieEntry(__BasicEntry, BasicEntry):
+class TrieEntry():
     """org.apache.commons.collections4.trie.AbstractPatriciaTrie.TrieEntry"""
  
     @staticmethod
@@ -174,7 +174,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TrieEntry(__BasicEntry, BasicEntry):
+class TrieEntry():
     """org.apache.commons.collections4.trie.AbstractPatriciaTrie.TrieEntry"""
  
     @staticmethod
@@ -365,7 +365,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class UnmodifiableTrie(pyapache.__Trie, collections4.Trie, __Serializable, Serializable, pyapache.__Unmodifiable, collections4.Unmodifiable):
+class UnmodifiableTrie():
     """org.apache.commons.collections4.trie.UnmodifiableTrie"""
  
     @staticmethod
@@ -724,7 +724,7 @@ import java.util.function.ToDoubleFunction as ToDoubleFunction
 from builtins import bool
 from builtins import int
  
-class KeyAnalyzer(ABC, __Comparator, Comparator, __Serializable, Serializable):
+class KeyAnalyzer(ABC):
     """org.apache.commons.collections4.trie.KeyAnalyzer"""
  
     @staticmethod
@@ -933,7 +933,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class PatriciaTrie(__AbstractPatriciaTrie, AbstractPatriciaTrie):
+class PatriciaTrie():
     """org.apache.commons.collections4.trie.PatriciaTrie"""
  
     @staticmethod
@@ -1284,7 +1284,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class AbstractBitwiseTrie(ABC, __AbstractMap, AbstractMap, pyapache.__Trie, collections4.Trie, __Serializable, Serializable):
+class AbstractBitwiseTrie(ABC):
     """org.apache.commons.collections4.trie.AbstractBitwiseTrie"""
  
     @staticmethod

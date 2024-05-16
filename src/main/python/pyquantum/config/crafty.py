@@ -520,7 +520,7 @@ import dev.ultreon.quantum.config.crafty.ConfigEntry as __ConfigEntry
 __ConfigEntry = __ConfigEntry
 from abc import abstractmethod, ABC
  
-class ConfigEntry(ABC, __Annotation, Annotation):
+class ConfigEntry(ABC):
     """dev.ultreon.quantum.config.crafty.ConfigEntry"""
  
     @staticmethod
@@ -593,7 +593,7 @@ import dev.ultreon.quantum.config.crafty.RequiresRestart as __RequiresRestart
 __RequiresRestart = __RequiresRestart
 from abc import abstractmethod, ABC
  
-class RequiresRestart(ABC, __Annotation, Annotation):
+class RequiresRestart(ABC):
     """dev.ultreon.quantum.config.crafty.RequiresRestart"""
  
     @staticmethod
@@ -692,7 +692,7 @@ from abc import abstractmethod, ABC
 import dev.ultreon.quantum.config.crafty.ConfigInfo as __ConfigInfo
 __ConfigInfo = __ConfigInfo
  
-class ConfigInfo(ABC, __Annotation, Annotation):
+class ConfigInfo(ABC):
     """dev.ultreon.quantum.config.crafty.ConfigInfo"""
  
     @staticmethod
@@ -755,7 +755,7 @@ from abc import abstractmethod, ABC
 import dev.ultreon.quantum.config.crafty.Ranged as __Ranged
 __Ranged = __Ranged
  
-class Ranged(ABC, __Annotation, Annotation):
+class Ranged(ABC):
     """dev.ultreon.quantum.config.crafty.Ranged"""
  
     @staticmethod

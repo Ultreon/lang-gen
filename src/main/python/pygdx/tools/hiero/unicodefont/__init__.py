@@ -28,7 +28,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class RenderType(__Enum, Enum):
+class RenderType():
     """com.badlogic.gdx.tools.hiero.unicodefont.UnicodeFont.RenderType"""
  
     @staticmethod
@@ -187,7 +187,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class RenderType(__Enum, Enum):
+class RenderType():
     """com.badlogic.gdx.tools.hiero.unicodefont.UnicodeFont.RenderType"""
  
     @staticmethod

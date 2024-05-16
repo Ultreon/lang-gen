@@ -31,7 +31,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class BoundingBox(__Serializable, Serializable):
+class BoundingBox():
     """com.badlogic.gdx.math.collision.BoundingBox"""
  
     @staticmethod
@@ -354,7 +354,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class BoundingBox(__Serializable, Serializable):
+class BoundingBox():
     """com.badlogic.gdx.math.collision.BoundingBox"""
  
     @staticmethod
@@ -682,7 +682,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class OrientedBoundingBox(__Serializable, Serializable):
+class OrientedBoundingBox():
     """com.badlogic.gdx.math.collision.OrientedBoundingBox"""
  
     @staticmethod
@@ -920,7 +920,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class Sphere(__Serializable, Serializable):
+class Sphere():
     """com.badlogic.gdx.math.collision.Sphere"""
  
     @staticmethod
@@ -1052,7 +1052,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class Segment(__Serializable, Serializable):
+class Segment():
     """com.badlogic.gdx.math.collision.Segment"""
  
     @staticmethod
@@ -1187,7 +1187,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Ray(__Serializable, Serializable):
+class Ray():
     """com.badlogic.gdx.math.collision.Ray"""
  
     @staticmethod

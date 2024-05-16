@@ -29,7 +29,7 @@ import java.lang.Enum as __Enum
 __Enum = __Enum
 from builtins import int
  
-class BooleanEnum(__Enum, Enum):
+class BooleanEnum():
     """dev.ultreon.quantum.client.gui.screens.options.BooleanEnum"""
  
     @staticmethod
@@ -207,7 +207,7 @@ import java.lang.Enum as __Enum
 __Enum = __Enum
 from builtins import int
  
-class BooleanEnum(__Enum, Enum):
+class BooleanEnum():
     """dev.ultreon.quantum.client.gui.screens.options.BooleanEnum"""
  
     @staticmethod
@@ -387,7 +387,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Scale(__Enum, Enum):
+class Scale():
     """dev.ultreon.quantum.client.gui.screens.options.Scale"""
  
     @staticmethod

@@ -100,7 +100,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class SlabBlock(__Block, Block):
+class SlabBlock():
     """dev.ultreon.quantum.block.SlabBlock"""
  
     @staticmethod
@@ -510,7 +510,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class SlabBlock(__Block, Block):
+class SlabBlock():
     """dev.ultreon.quantum.block.SlabBlock"""
  
     @staticmethod
@@ -928,7 +928,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class EntityBlock(ABC, __Block, Block):
+class EntityBlock(ABC):
     """dev.ultreon.quantum.block.EntityBlock"""
  
     @staticmethod
@@ -1348,7 +1348,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class MetaSwitchTestBlock(__Block, Block):
+class MetaSwitchTestBlock():
     """dev.ultreon.quantum.block.MetaSwitchTestBlock"""
  
     @staticmethod
@@ -1757,14 +1757,14 @@ class Properties():
         self.__wrapper = val
 
     @overload
-    def dropsItems(self, *arg0: 'item.ItemStack') -> 'Properties':
-        """public dev.ultreon.quantum.block.Block$Properties dev.ultreon.quantum.block.Block$Properties.dropsItems(dev.ultreon.quantum.item.ItemStack...)"""
-        return 'Properties'.__wrap(super(__Properties, self).dropsItems(arg0))
-
-    @overload
     def usesCustomRender(self) -> 'Properties':
         """public dev.ultreon.quantum.block.Block$Properties dev.ultreon.quantum.block.Block$Properties.usesCustomRender()"""
         return 'Properties'.__wrap(super(Properties, self).usesCustomRender())
+
+    @overload
+    def dropsItems(self, *arg0: 'item.ItemStack') -> 'Properties':
+        """public dev.ultreon.quantum.block.Block$Properties dev.ultreon.quantum.block.Block$Properties.dropsItems(dev.ultreon.quantum.item.ItemStack...)"""
+        return 'Properties'.__wrap(super(__Properties, self).dropsItems(arg0))
 
     @override
     @overload
@@ -2051,7 +2051,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Type(__Enum, Enum):
+class Type():
     """dev.ultreon.quantum.block.SlabBlock.Type"""
  
     @staticmethod
@@ -2290,7 +2290,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class CactusBlock(__Block, Block):
+class CactusBlock():
     """dev.ultreon.quantum.block.CactusBlock"""
  
     @staticmethod
@@ -2891,7 +2891,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Block(pyquantum.__DataWriter, ubo.DataWriter):
+class Block():
     """dev.ultreon.quantum.block.Block"""
  
     @staticmethod
@@ -3276,7 +3276,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class BlastFurnaceBlock(__Block, Block):
+class BlastFurnaceBlock():
     """dev.ultreon.quantum.block.BlastFurnaceBlock"""
  
     @staticmethod
@@ -3677,7 +3677,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class CrateBlock(__EntityBlock, EntityBlock):
+class CrateBlock():
     """dev.ultreon.quantum.block.CrateBlock"""
  
     @staticmethod

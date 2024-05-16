@@ -25,7 +25,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ValueGraphBuilder(__AbstractGraphBuilder, AbstractGraphBuilder):
+class ValueGraphBuilder():
     """com.google.common.graph.ValueGraphBuilder"""
  
     @staticmethod
@@ -182,7 +182,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ValueGraphBuilder(__AbstractGraphBuilder, AbstractGraphBuilder):
+class ValueGraphBuilder():
     """com.google.common.graph.ValueGraphBuilder"""
  
     @staticmethod
@@ -341,7 +341,7 @@ import com.google.common.graph.AbstractGraph as __AbstractGraph
 __AbstractGraph = __AbstractGraph
 from builtins import int
  
-class ImmutableGraph(__ForwardingGraph, ForwardingGraph):
+class ImmutableGraph():
     """com.google.common.graph.ImmutableGraph"""
  
     @staticmethod
@@ -448,7 +448,7 @@ import com.google.common.graph.Network as __Network
 __Network = __Network
 from abc import abstractmethod, ABC
  
-class Network(ABC, __SuccessorsFunction, SuccessorsFunction, __PredecessorsFunction, PredecessorsFunction):
+class Network(ABC):
     """com.google.common.graph.Network"""
  
     @staticmethod
@@ -797,7 +797,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AbstractValueGraph(ABC, __AbstractBaseGraph, AbstractBaseGraph, __ValueGraph, ValueGraph):
+class AbstractValueGraph(ABC):
     """com.google.common.graph.AbstractValueGraph"""
  
     @staticmethod
@@ -988,7 +988,7 @@ __UnmodifiableIterator = __UnmodifiableIterator
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class EndpointPair(ABC, __Iterable, Iterable):
+class EndpointPair(ABC):
     """com.google.common.graph.EndpointPair"""
  
     @staticmethod
@@ -1138,7 +1138,7 @@ import com.google.common.graph.MutableValueGraph as __MutableValueGraph
 __MutableValueGraph = __MutableValueGraph
 from abc import abstractmethod, ABC
  
-class MutableValueGraph(ABC, __ValueGraph, ValueGraph):
+class MutableValueGraph(ABC):
     """com.google.common.graph.MutableValueGraph"""
  
     @staticmethod
@@ -1339,7 +1339,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AbstractNetwork(ABC, __Network, Network):
+class AbstractNetwork(ABC):
     """com.google.common.graph.AbstractNetwork"""
  
     @staticmethod
@@ -1594,7 +1594,7 @@ import com.google.common.graph.AbstractGraph as __AbstractGraph
 __AbstractGraph = __AbstractGraph
 from builtins import int
  
-class AbstractGraph(ABC, __AbstractBaseGraph, AbstractBaseGraph, __Graph, Graph):
+class AbstractGraph(ABC):
     """com.google.common.graph.AbstractGraph"""
  
     @staticmethod
@@ -1734,7 +1734,7 @@ import com.google.common.graph.MutableNetwork as __MutableNetwork
 __MutableNetwork = __MutableNetwork
 from abc import abstractmethod, ABC
  
-class MutableNetwork(ABC, __Network, Network):
+class MutableNetwork(ABC):
     """com.google.common.graph.MutableNetwork"""
  
     @staticmethod
@@ -1958,7 +1958,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GraphBuilder(__AbstractGraphBuilder, AbstractGraphBuilder):
+class GraphBuilder():
     """com.google.common.graph.GraphBuilder"""
  
     @staticmethod
@@ -2119,7 +2119,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ImmutableNetwork(__StandardNetwork, StandardNetwork):
+class ImmutableNetwork():
     """com.google.common.graph.ImmutableNetwork"""
  
     @staticmethod
@@ -2302,7 +2302,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Type(__Enum, Enum):
+class Type():
     """com.google.common.graph.ElementOrder.Type"""
  
     @staticmethod
@@ -2438,7 +2438,7 @@ import com.google.common.graph.Graph as __Graph
 __Graph = __Graph
 from abc import abstractmethod, ABC
  
-class Graph(ABC, __BaseGraph, BaseGraph):
+class Graph(ABC):
     """com.google.common.graph.Graph"""
  
     @staticmethod
@@ -2685,7 +2685,7 @@ import com.google.common.graph.MutableGraph as __MutableGraph
 __MutableGraph = __MutableGraph
 from abc import abstractmethod, ABC
  
-class MutableGraph(ABC, __Graph, Graph):
+class MutableGraph(ABC):
     """com.google.common.graph.MutableGraph"""
  
     @staticmethod
@@ -2854,7 +2854,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NetworkBuilder(__AbstractGraphBuilder, AbstractGraphBuilder):
+class NetworkBuilder():
     """com.google.common.graph.NetworkBuilder"""
  
     @staticmethod
@@ -3001,7 +3001,7 @@ import com.google.common.graph.ValueGraph as __ValueGraph
 __ValueGraph = __ValueGraph
 from abc import abstractmethod, ABC
  
-class ValueGraph(ABC, __BaseGraph, BaseGraph):
+class ValueGraph(ABC):
     """com.google.common.graph.ValueGraph"""
  
     @staticmethod
@@ -3169,7 +3169,7 @@ import com.google.common.graph.ElementOrder as __ElementOrder
 __ElementOrder = __ElementOrder
 from builtins import int
  
-class ImmutableValueGraph(__StandardValueGraph, StandardValueGraph):
+class ImmutableValueGraph():
     """com.google.common.graph.ImmutableValueGraph"""
  
     @staticmethod
@@ -3810,7 +3810,7 @@ __Object = __Object
 import java.lang.Integer as __int
 from builtins import int
  
-class Graphs(__GraphsBridgeMethods, GraphsBridgeMethods):
+class Graphs():
     """com.google.common.graph.Graphs"""
  
     @staticmethod

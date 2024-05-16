@@ -20,7 +20,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LoadBalancingScheduler(__SchedulerBase, SchedulerBase):
+class LoadBalancingScheduler():
     """com.badlogic.gdx.ai.sched.LoadBalancingScheduler"""
  
     @staticmethod
@@ -149,7 +149,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LoadBalancingScheduler(__SchedulerBase, SchedulerBase):
+class LoadBalancingScheduler():
     """com.badlogic.gdx.ai.sched.LoadBalancingScheduler"""
  
     @staticmethod
@@ -311,7 +311,7 @@ import com.badlogic.gdx.ai.sched.Scheduler as __Scheduler
 __Scheduler = __Scheduler
 from abc import abstractmethod, ABC
  
-class Scheduler(ABC, __Schedulable, Schedulable):
+class Scheduler(ABC):
     """com.badlogic.gdx.ai.sched.Scheduler"""
  
     @staticmethod
@@ -380,7 +380,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SchedulerBase(ABC, __Scheduler, Scheduler):
+class SchedulerBase(ABC):
     """com.badlogic.gdx.ai.sched.SchedulerBase"""
  
     @staticmethod
@@ -505,7 +505,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PriorityScheduler(__SchedulerBase, SchedulerBase):
+class PriorityScheduler():
     """com.badlogic.gdx.ai.sched.PriorityScheduler"""
  
     @staticmethod

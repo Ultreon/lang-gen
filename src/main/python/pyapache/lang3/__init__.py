@@ -26,7 +26,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Range(__Serializable, Serializable):
+class Range():
     """org.apache.commons.lang3.Range"""
  
     @staticmethod
@@ -257,7 +257,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Range(__Serializable, Serializable):
+class Range():
     """org.apache.commons.lang3.Range"""
  
     @staticmethod
@@ -1211,7 +1211,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ThreadIdPredicate(__ThreadPredicate, ThreadPredicate):
+class ThreadIdPredicate():
     """org.apache.commons.lang3.ThreadUtils.ThreadIdPredicate"""
  
     @staticmethod
@@ -1325,7 +1325,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Null(__Serializable, Serializable):
+class Null():
     """org.apache.commons.lang3.ObjectUtils.Null"""
  
     @staticmethod
@@ -1856,7 +1856,7 @@ from builtins import bool
 import java.lang.Double as Double
 from builtins import int
  
-class DoubleRange(__NumberRange, NumberRange):
+class DoubleRange():
     """org.apache.commons.lang3.DoubleRange"""
  
     @staticmethod
@@ -3060,7 +3060,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NotImplementedException(__UnsupportedOperationException, UnsupportedOperationException):
+class NotImplementedException():
     """org.apache.commons.lang3.NotImplementedException"""
  
     @staticmethod
@@ -3302,7 +3302,7 @@ import java.lang.Enum as __Enum
 __Enum = __Enum
 from builtins import int
  
-class JavaVersion(__Enum, Enum):
+class JavaVersion():
     """org.apache.commons.lang3.JavaVersion"""
  
     @staticmethod
@@ -3469,7 +3469,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Interfaces(__Enum, Enum):
+class Interfaces():
     """org.apache.commons.lang3.ClassUtils.Interfaces"""
  
     @staticmethod
@@ -3627,7 +3627,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class IntegerRange(__NumberRange, NumberRange):
+class IntegerRange():
     """org.apache.commons.lang3.IntegerRange"""
  
     @staticmethod
@@ -3998,9 +3998,9 @@ class CharSetUtils():
 # CLASS: org.apache.commons.lang3.Streams$ArrayCollector
 import java.util.function.Supplier as Supplier
 from builtins import str
+from pyquantum_helper import override
 import java.util.function.BinaryOperator as __BinaryOperator
 __BinaryOperator = __BinaryOperator
-from pyquantum_helper import override
 import java.lang.Object as __object
 from builtins import type
 import java.util.Set as __Set
@@ -4028,7 +4028,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ArrayCollector(__Collector, Collector):
+class ArrayCollector():
     """org.apache.commons.lang3.Streams.ArrayCollector"""
  
     @staticmethod
@@ -4176,7 +4176,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LongRange(__NumberRange, NumberRange):
+class LongRange():
     """org.apache.commons.lang3.LongRange"""
  
     @staticmethod
@@ -5401,15 +5401,15 @@ class SerializationUtils():
 
     @staticmethod
     @overload
-    def deserialize(arg0: bytes) -> object:
-        """public static <T> T org.apache.commons.lang3.SerializationUtils.deserialize(byte[])"""
-        return object.__wrap(__SerializationUtils.deserialize(bytes))
-
-    @staticmethod
-    @overload
     def serialize(arg0: 'Serializable') -> List[int]:
         """public static byte[] org.apache.commons.lang3.SerializationUtils.serialize(java.io.Serializable)"""
         return List[int].__wrap(__SerializationUtils.serialize(arg0))
+
+    @staticmethod
+    @overload
+    def deserialize(arg0: bytes) -> object:
+        """public static <T> T org.apache.commons.lang3.SerializationUtils.deserialize(byte[])"""
+        return object.__wrap(__SerializationUtils.deserialize(bytes))
 
     @override
     @overload
@@ -7644,7 +7644,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NamePredicate(__ThreadPredicate, ThreadPredicate, __ThreadGroupPredicate, ThreadGroupPredicate):
+class NamePredicate():
     """org.apache.commons.lang3.ThreadUtils.NamePredicate"""
  
     @staticmethod
@@ -10681,7 +10681,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CharSet(__Serializable, Serializable):
+class CharSet():
     """org.apache.commons.lang3.CharSet"""
  
     @staticmethod
@@ -12193,7 +12193,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NumberRange(__Range, Range):
+class NumberRange():
     """org.apache.commons.lang3.NumberRange"""
  
     @staticmethod
@@ -13218,7 +13218,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SerializationException(__RuntimeException, RuntimeException):
+class SerializationException():
     """org.apache.commons.lang3.SerializationException"""
  
     @staticmethod

@@ -385,7 +385,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DefaultTimepiece(__Timepiece, Timepiece):
+class DefaultTimepiece():
     """com.badlogic.gdx.ai.DefaultTimepiece"""
  
     @staticmethod
@@ -528,7 +528,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NullLogger(__Logger, Logger):
+class NullLogger():
     """com.badlogic.gdx.ai.NullLogger"""
  
     @staticmethod
@@ -682,7 +682,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class StdoutLogger(__Logger, Logger):
+class StdoutLogger():
     """com.badlogic.gdx.ai.StdoutLogger"""
  
     @staticmethod
@@ -923,7 +923,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GdxFileSystem(__FileSystem, FileSystem):
+class GdxFileSystem():
     """com.badlogic.gdx.ai.GdxFileSystem"""
  
     @staticmethod
@@ -1109,7 +1109,7 @@ import java.nio.ByteBuffer as ByteBuffer
 import java.lang.Integer as __int
 from builtins import int
  
-class DesktopFileHandle(pygdx.__FileHandle, files.FileHandle):
+class DesktopFileHandle():
     """com.badlogic.gdx.ai.StandaloneFileSystem.DesktopFileHandle"""
  
     @staticmethod
@@ -1499,7 +1499,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GdxLogger(__Logger, Logger):
+class GdxLogger():
     """com.badlogic.gdx.ai.GdxLogger"""
  
     @staticmethod
@@ -1724,7 +1724,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class StandaloneFileSystem(__FileSystem, FileSystem):
+class StandaloneFileSystem():
     """com.badlogic.gdx.ai.StandaloneFileSystem"""
  
     @staticmethod

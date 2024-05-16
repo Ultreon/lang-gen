@@ -31,7 +31,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GroupBehavior(ABC, __SteeringBehavior, SteeringBehavior):
+class GroupBehavior(ABC):
     """com.badlogic.gdx.ai.steer.GroupBehavior"""
  
     @staticmethod
@@ -201,7 +201,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GroupBehavior(ABC, __SteeringBehavior, SteeringBehavior):
+class GroupBehavior(ABC):
     """com.badlogic.gdx.ai.steer.GroupBehavior"""
  
     @staticmethod
@@ -360,7 +360,7 @@ __Location = __Location
 import com.badlogic.gdx.ai.steer.Limiter as __Limiter
 __Limiter = __Limiter
  
-class Steerable(ABC, ai.__Location, utils.Location, __Limiter, Limiter):
+class Steerable(ABC):
     """com.badlogic.gdx.ai.steer.Steerable"""
  
     @staticmethod
@@ -1008,8 +1008,8 @@ class ProximityCallback(ABC):
 # CLASS: com.badlogic.gdx.ai.steer.SteerableAdapter
 from pyquantum_helper import import_once as __import_once__
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 from builtins import float
@@ -1041,7 +1041,7 @@ except ImportError:
 
 from builtins import int
  
-class SteerableAdapter(__Steerable, Steerable):
+class SteerableAdapter():
     """com.badlogic.gdx.ai.steer.SteerableAdapter"""
  
     @staticmethod

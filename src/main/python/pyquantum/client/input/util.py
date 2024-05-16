@@ -31,7 +31,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Joystick(pygdx.__Vector2, math.Vector2):
+class Joystick():
     """dev.ultreon.quantum.client.input.util.Joystick"""
  
     @staticmethod
@@ -546,7 +546,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Joystick(pygdx.__Vector2, math.Vector2):
+class Joystick():
     """dev.ultreon.quantum.client.input.util.Joystick"""
  
     @staticmethod
@@ -1061,7 +1061,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class JoystickType(__Enum, Enum):
+class JoystickType():
     """dev.ultreon.quantum.client.input.util.JoystickType"""
  
     @staticmethod
@@ -1225,7 +1225,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class TriggerType(__Enum, Enum):
+class TriggerType():
     """dev.ultreon.quantum.client.input.util.TriggerType"""
  
     @staticmethod
@@ -1395,7 +1395,7 @@ except ImportError:
 
 from builtins import int
  
-class ControllerButton(__Enum, Enum):
+class ControllerButton():
     """dev.ultreon.quantum.client.input.util.ControllerButton"""
  
     @staticmethod

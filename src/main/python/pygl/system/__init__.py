@@ -696,7 +696,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Architecture(__Enum, Enum):
+class Architecture():
     """org.lwjgl.system.Platform.Architecture"""
  
     @staticmethod
@@ -1105,7 +1105,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Struct(ABC, __Default, Default):
+class Struct(ABC):
     """org.lwjgl.system.Struct"""
  
     @staticmethod
@@ -1544,7 +1544,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class Default(ABC, __Default, Default, __SharedLibrary, SharedLibrary):
+class Default(ABC):
     """org.lwjgl.system.SharedLibrary.Default"""
  
     @staticmethod
@@ -3073,11 +3073,12 @@ class MemoryUtil():
  
  
 # CLASS: org.lwjgl.system.NativeResource
+from pyquantum_helper import override
 import org.lwjgl.system.NativeResource as __NativeResource
 __NativeResource = __NativeResource
 from abc import abstractmethod, ABC
  
-class NativeResource(ABC, __AutoCloseable, AutoCloseable):
+class NativeResource(ABC):
     """org.lwjgl.system.NativeResource"""
  
     @staticmethod
@@ -12861,6 +12862,7 @@ class JNI():
 import org.lwjgl.system.SharedLibrary as __SharedLibrary
 __SharedLibrary = __SharedLibrary
 import java.lang.CharSequence as CharSequence
+from pyquantum_helper import override
 import org.lwjgl.system.NativeResource as __NativeResource
 __NativeResource = __NativeResource
 import org.lwjgl.system.Pointer as __Pointer
@@ -12871,7 +12873,7 @@ from abc import abstractmethod, ABC
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class SharedLibrary(ABC, __FunctionProvider, FunctionProvider, __NativeResource, NativeResource, __Pointer, Pointer):
+class SharedLibrary(ABC):
     """org.lwjgl.system.SharedLibrary"""
  
     @staticmethod
@@ -12963,7 +12965,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class Delegate(ABC, __SharedLibrary, SharedLibrary):
+class Delegate(ABC):
     """org.lwjgl.system.SharedLibrary.Delegate"""
  
     @staticmethod
@@ -13147,7 +13149,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Default(ABC, __Pointer, Pointer):
+class Default(ABC):
     """org.lwjgl.system.Pointer.Default"""
  
     @staticmethod
@@ -13342,7 +13344,7 @@ import java.nio.ByteBuffer as ByteBuffer
 import java.lang.Integer as __int
 from builtins import int
  
-class MemoryStack(__Default, Default, __AutoCloseable, AutoCloseable):
+class MemoryStack():
     """org.lwjgl.system.MemoryStack"""
  
     @staticmethod
@@ -14483,7 +14485,7 @@ from abc import abstractmethod, ABC
 import org.lwjgl.system.NativeType as __NativeType
 __NativeType = __NativeType
  
-class NativeType(ABC, __Annotation, Annotation):
+class NativeType(ABC):
     """org.lwjgl.system.NativeType"""
  
     @staticmethod
@@ -14599,7 +14601,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class APIVersion(__Comparable, Comparable):
+class APIVersion():
     """org.lwjgl.system.APIUtil.APIVersion"""
  
     @staticmethod
@@ -14766,7 +14768,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Callback(ABC, __Pointer, Pointer, __NativeResource, NativeResource):
+class Callback(ABC):
     """org.lwjgl.system.Callback"""
  
     @staticmethod
@@ -14914,7 +14916,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Platform(ABC, __Enum, Enum):
+class Platform(ABC):
     """org.lwjgl.system.Platform"""
  
     @staticmethod
@@ -15071,6 +15073,7 @@ class Platform(ABC, __Enum, Enum):
 # CLASS: org.lwjgl.system.FunctionProviderLocal
 import java.lang.CharSequence as CharSequence
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.system.FunctionProviderLocal as __FunctionProviderLocal
 __FunctionProviderLocal = __FunctionProviderLocal
 import org.lwjgl.system.FunctionProvider as __FunctionProvider
@@ -15079,7 +15082,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from abc import abstractmethod, ABC
 from builtins import int
  
-class FunctionProviderLocal(ABC, __FunctionProvider, FunctionProvider):
+class FunctionProviderLocal(ABC):
     """org.lwjgl.system.FunctionProviderLocal"""
  
     @staticmethod
@@ -15392,7 +15395,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Layout(__Member, Member):
+class Layout():
     """org.lwjgl.system.Struct.Layout"""
  
     @staticmethod
@@ -15519,7 +15522,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CustomBuffer(ABC, __Default, Default):
+class CustomBuffer(ABC):
     """org.lwjgl.system.CustomBuffer"""
  
     @staticmethod
@@ -15838,12 +15841,13 @@ class Configuration():
  
  
 # CLASS: org.lwjgl.system.CallbackI
+from pyquantum_helper import override
 import org.lwjgl.system.CallbackI as __CallbackI
 __CallbackI = __CallbackI
 from abc import abstractmethod, ABC
 from builtins import int
  
-class CallbackI(ABC, __Pointer, Pointer):
+class CallbackI(ABC):
     """org.lwjgl.system.CallbackI"""
  
     @staticmethod
@@ -15924,7 +15928,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class StructBuffer(ABC, __CustomBuffer, CustomBuffer, __Iterable, Iterable):
+class StructBuffer(ABC):
     """org.lwjgl.system.StructBuffer"""
  
     @staticmethod
@@ -16582,7 +16586,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Aggregate(__Enum, Enum):
+class Aggregate():
     """org.lwjgl.system.MemoryUtil.MemoryAllocationReport.Aggregate"""
  
     @staticmethod
@@ -16720,7 +16724,7 @@ import org.lwjgl.system.NonnullDefault as __NonnullDefault
 __NonnullDefault = __NonnullDefault
 from abc import abstractmethod, ABC
  
-class NonnullDefault(ABC, __Annotation, Annotation):
+class NonnullDefault(ABC):
     """org.lwjgl.system.NonnullDefault"""
  
     @staticmethod

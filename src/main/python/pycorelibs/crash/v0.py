@@ -32,7 +32,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CrashException(__RuntimeException, RuntimeException):
+class CrashException():
     """dev.ultreon.libs.crash.v0.CrashException"""
  
     @staticmethod
@@ -238,7 +238,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CrashException(__RuntimeException, RuntimeException):
+class CrashException():
     """dev.ultreon.libs.crash.v0.CrashException"""
  
     @staticmethod
@@ -568,7 +568,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class CrashLog(__CrashCategory, CrashCategory):
+class CrashLog():
     """dev.ultreon.libs.crash.v0.CrashLog"""
  
     @staticmethod

@@ -428,7 +428,7 @@ __AsyncResult = __AsyncResult
 from builtins import bool
 from builtins import int
  
-class AsyncExecutor(pygdx.__Disposable, utils.Disposable):
+class AsyncExecutor():
     """com.badlogic.gdx.utils.async.AsyncExecutor"""
  
     @staticmethod

@@ -34,7 +34,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NotifyManager(client.__Renderable, util.Renderable):
+class NotifyManager():
     """dev.ultreon.quantum.client.gui.NotifyManager"""
  
     @staticmethod
@@ -200,7 +200,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NotifyManager(client.__Renderable, util.Renderable):
+class NotifyManager():
     """dev.ultreon.quantum.client.gui.NotifyManager"""
  
     @staticmethod
@@ -421,7 +421,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class Screen(ABC, gui.__UIContainer, widget.UIContainer):
+class Screen(ABC):
     """dev.ultreon.quantum.client.gui.Screen"""
  
     @staticmethod
@@ -1076,7 +1076,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Hud(gui.__StaticWidget, widget.StaticWidget):
+class Hud():
     """dev.ultreon.quantum.client.gui.Hud"""
  
     @staticmethod
@@ -1386,7 +1386,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Size(pyquantum.__Copyable, util.Copyable):
+class Size():
     """dev.ultreon.quantum.client.gui.Size"""
  
     @staticmethod
@@ -2094,7 +2094,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class Dialog(gui.__UIContainer, widget.UIContainer):
+class Dialog():
     """dev.ultreon.quantum.client.gui.Dialog"""
  
     @staticmethod
@@ -2977,7 +2977,7 @@ __Bounds = __Bounds
 from builtins import bool
 from builtins import int
  
-class Bounds(pyquantum.__Copyable, util.Copyable):
+class Bounds():
     """dev.ultreon.quantum.client.gui.Bounds"""
  
     @staticmethod
@@ -3589,12 +3589,12 @@ __Class = __Class
 import java.lang.String as __string
 import com.badlogic.gdx.graphics.g2d.Batch as __Batch
 __Batch = __Batch
+import java.lang.Double as __double
 try:
     from pygdx import math
 except ImportError:
     math = __import_once__("pygdx.math")
 
-import java.lang.Double as __double
 from builtins import bool
 from builtins import str
 from pyquantum_helper import override
@@ -3613,11 +3613,11 @@ try:
 except ImportError:
     util = __import_once__("pyquantum.util")
 
-import com.badlogic.gdx.math.Matrix4 as __Matrix4
-__Matrix4 = __Matrix4
 import java.awt.geom.Ellipse2D as Ellipse2D
 import dev.ultreon.quantum.util.Color as __Color
 __Color = __Color
+import com.badlogic.gdx.math.Matrix4 as __Matrix4
+__Matrix4 = __Matrix4
 import java.lang.Long as __long
 import java.lang.Float as __float
 import java.lang.String as __String
@@ -3645,7 +3645,7 @@ except ImportError:
 import java.util.List as List
 from builtins import int
  
-class Renderer(pygdx.__Disposable, utils.Disposable):
+class Renderer():
     """dev.ultreon.quantum.client.gui.Renderer"""
  
     @staticmethod
@@ -5237,7 +5237,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Position(pyquantum.__Copyable, util.Copyable):
+class Position():
     """dev.ultreon.quantum.client.gui.Position"""
  
     @staticmethod
@@ -5487,7 +5487,7 @@ __Bounds = __Bounds
 import java.util.Map as Map
 from builtins import int
  
-class TitleWidget(gui.__Widget, widget.Widget):
+class TitleWidget():
     """dev.ultreon.quantum.client.gui.TitleWidget"""
  
     @staticmethod
@@ -6256,7 +6256,7 @@ import dev.ultreon.quantum.client.gui.Alignment as __Alignment
 __Alignment = __Alignment
 from builtins import int
  
-class Alignment(__Enum, Enum):
+class Alignment():
     """dev.ultreon.quantum.client.gui.Alignment"""
  
     @staticmethod

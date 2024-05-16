@@ -28,7 +28,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Vec3d(__Externalizable, Externalizable, __Cloneable, Cloneable):
+class Vec3d():
     """dev.ultreon.libs.commons.v0.vector.Vec3d"""
  
     @staticmethod
@@ -434,7 +434,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Vec3d(__Externalizable, Externalizable, __Cloneable, Cloneable):
+class Vec3d():
     """dev.ultreon.libs.commons.v0.vector.Vec3d"""
  
     @staticmethod
@@ -842,7 +842,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Vec3i(__Externalizable, Externalizable, __Cloneable, Cloneable):
+class Vec3i():
     """dev.ultreon.libs.commons.v0.vector.Vec3i"""
  
     @staticmethod
@@ -1225,7 +1225,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Vec4i(__Externalizable, Externalizable, __Cloneable, Cloneable):
+class Vec4i():
     """dev.ultreon.libs.commons.v0.vector.Vec4i"""
  
     @staticmethod
@@ -1619,7 +1619,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Vec2d(__Externalizable, Externalizable, __Cloneable, Cloneable):
+class Vec2d():
     """dev.ultreon.libs.commons.v0.vector.Vec2d"""
  
     @staticmethod
@@ -2013,7 +2013,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Vec3f(__Externalizable, Externalizable, __Cloneable, Cloneable):
+class Vec3f():
     """dev.ultreon.libs.commons.v0.vector.Vec3f"""
  
     @staticmethod
@@ -2417,7 +2417,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Vec4f(__Externalizable, Externalizable, __Cloneable, Cloneable):
+class Vec4f():
     """dev.ultreon.libs.commons.v0.vector.Vec4f"""
  
     @staticmethod
@@ -2836,7 +2836,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Vec2i(__Externalizable, Externalizable, __Cloneable, Cloneable):
+class Vec2i():
     """dev.ultreon.libs.commons.v0.vector.Vec2i"""
  
     @staticmethod
@@ -3227,7 +3227,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Vec4d(__Externalizable, Externalizable, __Cloneable, Cloneable):
+class Vec4d():
     """dev.ultreon.libs.commons.v0.vector.Vec4d"""
  
     @staticmethod
@@ -3641,7 +3641,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Vec2f(__Externalizable, Externalizable, __Cloneable, Cloneable):
+class Vec2f():
     """dev.ultreon.libs.commons.v0.vector.Vec2f"""
  
     @staticmethod

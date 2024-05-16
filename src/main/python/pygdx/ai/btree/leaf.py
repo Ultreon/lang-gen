@@ -33,7 +33,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Success(ai.__LeafTask, btree.LeafTask):
+class Success():
     """com.badlogic.gdx.ai.btree.leaf.Success"""
  
     @staticmethod
@@ -299,7 +299,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Success(ai.__LeafTask, btree.LeafTask):
+class Success():
     """com.badlogic.gdx.ai.btree.leaf.Success"""
  
     @staticmethod
@@ -574,7 +574,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Wait(ai.__LeafTask, btree.LeafTask):
+class Wait():
     """com.badlogic.gdx.ai.btree.leaf.Wait"""
  
     @staticmethod
@@ -852,7 +852,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Failure(ai.__LeafTask, btree.LeafTask):
+class Failure():
     """com.badlogic.gdx.ai.btree.leaf.Failure"""
  
     @staticmethod

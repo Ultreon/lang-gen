@@ -47,7 +47,7 @@ __Command = __Command
 import java.util.List as List
 from builtins import int
  
-class KillCommand(api.__Command, commands.Command):
+class KillCommand():
     """dev.ultreon.quantum.command.KillCommand"""
  
     @staticmethod
@@ -301,7 +301,7 @@ __Command = __Command
 import java.util.List as List
 from builtins import int
  
-class KillCommand(api.__Command, commands.Command):
+class KillCommand():
     """dev.ultreon.quantum.command.KillCommand"""
  
     @staticmethod
@@ -553,7 +553,7 @@ __Command = __Command
 import java.util.List as List
 from builtins import int
  
-class ChunkCommand(api.__Command, commands.Command):
+class ChunkCommand():
     """dev.ultreon.quantum.command.ChunkCommand"""
  
     @staticmethod
@@ -805,7 +805,7 @@ __Command = __Command
 import java.util.List as List
 from builtins import int
  
-class GamemodeCommand(api.__Command, commands.Command):
+class GamemodeCommand():
     """dev.ultreon.quantum.command.GamemodeCommand"""
  
     @staticmethod
@@ -1063,7 +1063,7 @@ __Command = __Command
 import java.util.List as List
 from builtins import int
  
-class GiveCommand(api.__Command, commands.Command):
+class GiveCommand():
     """dev.ultreon.quantum.command.GiveCommand"""
  
     @staticmethod
@@ -1315,7 +1315,7 @@ __Command = __Command
 import java.util.List as List
 from builtins import int
  
-class SetVarCommand(api.__Command, commands.Command):
+class SetVarCommand():
     """dev.ultreon.quantum.command.SetVarCommand"""
  
     @staticmethod
@@ -1567,7 +1567,7 @@ __Command = __Command
 import java.util.List as List
 from builtins import int
  
-class FlyCommand(api.__Command, commands.Command):
+class FlyCommand():
     """dev.ultreon.quantum.command.FlyCommand"""
  
     @staticmethod
@@ -1824,7 +1824,7 @@ __Command = __Command
 import java.util.List as List
 from builtins import int
  
-class InvincibleCommand(api.__Command, commands.Command):
+class InvincibleCommand():
     """dev.ultreon.quantum.command.InvincibleCommand"""
  
     @staticmethod
@@ -2096,7 +2096,7 @@ __Command = __Command
 import java.util.List as List
 from builtins import int
  
-class SummonCommand(api.__Command, commands.Command):
+class SummonCommand():
     """dev.ultreon.quantum.command.SummonCommand"""
  
     @staticmethod
@@ -2353,7 +2353,7 @@ __Command = __Command
 import java.util.List as List
 from builtins import int
  
-class TimeCommand(api.__Command, commands.Command):
+class TimeCommand():
     """dev.ultreon.quantum.command.TimeCommand"""
  
     @staticmethod
@@ -2625,7 +2625,7 @@ __Command = __Command
 import java.util.List as List
 from builtins import int
  
-class TeleportCommand(api.__Command, commands.Command):
+class TeleportCommand():
     """dev.ultreon.quantum.command.TeleportCommand"""
  
     @staticmethod
@@ -2892,7 +2892,7 @@ __Command = __Command
 import java.util.List as List
 from builtins import int
  
-class WhereAmICommand(api.__Command, commands.Command):
+class WhereAmICommand():
     """dev.ultreon.quantum.command.WhereAmICommand"""
  
     @staticmethod
@@ -3139,7 +3139,7 @@ __Command = __Command
 import java.util.List as List
 from builtins import int
  
-class PlayerCommand(api.__Command, commands.Command):
+class PlayerCommand():
     """dev.ultreon.quantum.command.PlayerCommand"""
  
     @staticmethod
@@ -3386,7 +3386,7 @@ __Command = __Command
 import java.util.List as List
 from builtins import int
  
-class SummonItemCommand(api.__Command, commands.Command):
+class SummonItemCommand():
     """dev.ultreon.quantum.command.SummonItemCommand"""
  
     @staticmethod

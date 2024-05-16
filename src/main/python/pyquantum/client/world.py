@@ -33,7 +33,7 @@ except ImportError:
 
 from builtins import int
  
-class ChunkMesh(pygdx.__Pool_Poolable, utils.Pool$Poolable):
+class ChunkMesh():
     """dev.ultreon.quantum.client.world.ChunkMesh"""
  
     @staticmethod
@@ -205,7 +205,7 @@ except ImportError:
 
 from builtins import int
  
-class ChunkMesh(pygdx.__Pool_Poolable, utils.Pool$Poolable):
+class ChunkMesh():
     """dev.ultreon.quantum.client.world.ChunkMesh"""
  
     @staticmethod
@@ -714,7 +714,7 @@ except ImportError:
     types = __import_once__("pyubo.types")
 
  
-class ClientChunk(pyquantum.__Chunk, world.Chunk):
+class ClientChunk():
     """dev.ultreon.quantum.client.world.ClientChunk"""
  
     @staticmethod
@@ -1074,15 +1074,15 @@ class ClientChunk(pyquantum.__Chunk, world.Chunk):
 
     @override
     @overload
-    def removeBlockEntity(self, arg0: 'BlockPos'):
-        """public void dev.ultreon.quantum.world.Chunk.removeBlockEntity(dev.ultreon.quantum.world.BlockPos)"""
-        super(__world.Chunk, self).removeBlockEntity(arg0)
-
-    @override
-    @overload
     def getBreaking(self) -> 'Map':
         """public java.util.Map<dev.ultreon.quantum.world.BlockPos, java.lang.Float> dev.ultreon.quantum.world.Chunk.getBreaking()"""
         return 'Map'.__wrap(super(world.Chunk, self).getBreaking())
+
+    @override
+    @overload
+    def removeBlockEntity(self, arg0: 'BlockPos'):
+        """public void dev.ultreon.quantum.world.Chunk.removeBlockEntity(dev.ultreon.quantum.world.BlockPos)"""
+        super(__world.Chunk, self).removeBlockEntity(arg0)
 
     @overload
     def destroyModels(self):
@@ -1189,13 +1189,13 @@ try:
 except ImportError:
     math = __import_once__("pygdx.math")
 
-import dev.ultreon.quantum.world.Biome as __Biome
-__Biome = __Biome
 try:
     from pyquantum import menu
 except ImportError:
     menu = __import_once__("pyquantum.menu")
 
+import dev.ultreon.quantum.world.Biome as __Biome
+__Biome = __Biome
 import dev.ultreon.quantum.util.RgbColor as __RgbColor
 __RgbColor = __RgbColor
 from builtins import str
@@ -1243,7 +1243,7 @@ except ImportError:
 
 import java.util.List as List
  
-class ClientWorld(pyquantum.__World, world.World, pygdx.__Disposable, utils.Disposable):
+class ClientWorld():
     """dev.ultreon.quantum.client.world.ClientWorld"""
  
     @staticmethod
@@ -1278,14 +1278,14 @@ class ClientWorld(pyquantum.__World, world.World, pygdx.__Disposable, utils.Disp
 
 
     @overload
-    def getHighest(self, arg0: int, arg1: int) -> int:
-        """public int dev.ultreon.quantum.world.World.getHighest(int,int)"""
-        return int.__wrap(super(__world.World, self).getHighest(__int.valueOf(arg0), __int.valueOf(arg1)))
-
-    @overload
     def unloadChunk(self, arg0: 'ChunkPos') -> bool:
         """public boolean dev.ultreon.quantum.world.World.unloadChunk(dev.ultreon.quantum.world.ChunkPos)"""
         return bool.__wrap(super(__world.World, self).unloadChunk(arg0))
+
+    @overload
+    def getHighest(self, arg0: int, arg1: int) -> int:
+        """public int dev.ultreon.quantum.world.World.getHighest(int,int)"""
+        return int.__wrap(super(__world.World, self).getHighest(__int.valueOf(arg0), __int.valueOf(arg1)))
 
     @override
     @overload
@@ -2197,7 +2197,7 @@ except ImportError:
 
 from builtins import int
  
-class WorldRenderer(pyquantum.__DisposableContainer, client.DisposableContainer):
+class WorldRenderer():
     """dev.ultreon.quantum.client.world.WorldRenderer"""
  
     @staticmethod
@@ -2470,7 +2470,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RenderablePool(pygdx.__FlushablePool, utils.FlushablePool):
+class RenderablePool():
     """dev.ultreon.quantum.client.world.RenderablePool"""
  
     @staticmethod

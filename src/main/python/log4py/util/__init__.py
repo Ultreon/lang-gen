@@ -29,7 +29,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PropertiesPropertySource(__PropertySource, PropertySource):
+class PropertiesPropertySource():
     """org.apache.logging.log4j.util.PropertiesPropertySource"""
  
     @staticmethod
@@ -189,7 +189,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PropertiesPropertySource(__PropertySource, PropertySource):
+class PropertiesPropertySource():
     """org.apache.logging.log4j.util.PropertiesPropertySource"""
  
     @staticmethod
@@ -351,7 +351,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SystemPropertiesPropertySource(__PropertySource, PropertySource):
+class SystemPropertiesPropertySource():
     """org.apache.logging.log4j.util.SystemPropertiesPropertySource"""
  
     @staticmethod
@@ -514,7 +514,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Status(__Enum, Enum):
+class Status():
     """org.apache.logging.log4j.util.Timer.Status"""
  
     @staticmethod
@@ -1013,9 +1013,9 @@ import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 import java.lang.Iterable as Iterable
-import java.util.Collection as Collection
 import org.apache.logging.log4j.util.PropertiesPropertySource as __PropertiesPropertySource
 __PropertiesPropertySource = __PropertiesPropertySource
+import java.util.Collection as Collection
 import java.util.Collection as __Collection
 __Collection = __Collection
 import java.lang.Long as __long
@@ -1034,7 +1034,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PropertyFilePropertySource(__PropertiesPropertySource, PropertiesPropertySource):
+class PropertyFilePropertySource():
     """org.apache.logging.log4j.util.PropertyFilePropertySource"""
  
     @staticmethod
@@ -1167,8 +1167,8 @@ class PropertyFilePropertySource(__PropertiesPropertySource, PropertiesPropertyS
  
 # CLASS: org.apache.logging.log4j.util.LazyBoolean
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 import org.apache.logging.log4j.util.LazyBoolean as __LazyBoolean
@@ -1185,7 +1185,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LazyBoolean(__BooleanSupplier, BooleanSupplier):
+class LazyBoolean():
     """org.apache.logging.log4j.util.LazyBoolean"""
  
     @staticmethod
@@ -1960,7 +1960,7 @@ __ObjectInputFilter = __ObjectInputFilter
 import java.lang.Integer as __int
 from builtins import int
  
-class FilteredObjectInputStream(__ObjectInputStream, ObjectInputStream):
+class FilteredObjectInputStream():
     """org.apache.logging.log4j.util.FilteredObjectInputStream"""
  
     @staticmethod
@@ -2473,7 +2473,7 @@ __ReadOnlyStringMap = __ReadOnlyStringMap
 import org.apache.logging.log4j.util.IndexedReadOnlyStringMap as __IndexedReadOnlyStringMap
 __IndexedReadOnlyStringMap = __IndexedReadOnlyStringMap
  
-class IndexedReadOnlyStringMap(ABC, __ReadOnlyStringMap, ReadOnlyStringMap):
+class IndexedReadOnlyStringMap(ABC):
     """org.apache.logging.log4j.util.IndexedReadOnlyStringMap"""
  
     @staticmethod
@@ -2815,7 +2815,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Timer(__Serializable, Serializable, __StringBuilderFormattable, StringBuilderFormattable):
+class Timer():
     """org.apache.logging.log4j.util.Timer"""
  
     @staticmethod
@@ -3125,7 +3125,7 @@ from abc import abstractmethod, ABC
 import org.apache.logging.log4j.util.ReadOnlyStringMap as __ReadOnlyStringMap
 __ReadOnlyStringMap = __ReadOnlyStringMap
  
-class ReadOnlyStringMap(ABC, __Serializable, Serializable):
+class ReadOnlyStringMap(ABC):
     """org.apache.logging.log4j.util.ReadOnlyStringMap"""
  
     @staticmethod
@@ -3324,7 +3324,7 @@ from abc import abstractmethod, ABC
 import org.apache.logging.log4j.util.PerformanceSensitive as __PerformanceSensitive
 __PerformanceSensitive = __PerformanceSensitive
  
-class PerformanceSensitive(ABC, __Annotation, Annotation):
+class PerformanceSensitive(ABC):
     """org.apache.logging.log4j.util.PerformanceSensitive"""
  
     @staticmethod
@@ -3405,7 +3405,7 @@ import java.util.function.ToDoubleFunction as ToDoubleFunction
 from builtins import bool
 from builtins import int
  
-class Comparator(__Comparator, Comparator, __Serializable, Serializable):
+class Comparator():
     """org.apache.logging.log4j.util.PropertySource.Comparator"""
  
     @staticmethod
@@ -4035,7 +4035,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class EnvironmentPropertySource(__PropertySource, PropertySource):
+class EnvironmentPropertySource():
     """org.apache.logging.log4j.util.EnvironmentPropertySource"""
  
     @staticmethod
@@ -4286,7 +4286,7 @@ __ReadOnlyStringMap = __ReadOnlyStringMap
 import org.apache.logging.log4j.util.IndexedReadOnlyStringMap as __IndexedReadOnlyStringMap
 __IndexedReadOnlyStringMap = __IndexedReadOnlyStringMap
  
-class IndexedStringMap(ABC, __IndexedReadOnlyStringMap, IndexedReadOnlyStringMap, __StringMap, StringMap):
+class IndexedStringMap(ABC):
     """org.apache.logging.log4j.util.IndexedStringMap"""
  
     @staticmethod
@@ -4435,7 +4435,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InternalException(__RuntimeException, RuntimeException):
+class InternalException():
     """org.apache.logging.log4j.util.InternalException"""
  
     @staticmethod
@@ -4613,6 +4613,7 @@ class InternalException(__RuntimeException, RuntimeException):
  
 # CLASS: org.apache.logging.log4j.util.Lazy
 import java.util.function.Supplier as Supplier
+from pyquantum_helper import override
 import java.lang.Object as __object
 import java.lang.Object as __Object
 __Object = __Object
@@ -4622,7 +4623,7 @@ from builtins import object
 from abc import abstractmethod, ABC
 import java.util.function.Function as Function
  
-class Lazy(ABC, __Supplier, Supplier):
+class Lazy(ABC):
     """org.apache.logging.log4j.util.Lazy"""
  
     @staticmethod
@@ -4885,7 +4886,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class SortedArrayStringMap(__IndexedStringMap, IndexedStringMap):
+class SortedArrayStringMap():
     """org.apache.logging.log4j.util.SortedArrayStringMap"""
  
     @staticmethod
@@ -5216,7 +5217,7 @@ from abc import abstractmethod, ABC
 import org.apache.logging.log4j.util.ReadOnlyStringMap as __ReadOnlyStringMap
 __ReadOnlyStringMap = __ReadOnlyStringMap
  
-class StringMap(ABC, __ReadOnlyStringMap, ReadOnlyStringMap):
+class StringMap(ABC):
     """org.apache.logging.log4j.util.StringMap"""
  
     @staticmethod
@@ -5376,7 +5377,7 @@ from abc import abstractmethod, ABC
 import org.apache.logging.log4j.message.Message as __Message
 __Message = __Message
  
-class MultiFormatStringBuilderFormattable(ABC, log4py.__MultiformatMessage, message.MultiformatMessage, __StringBuilderFormattable, StringBuilderFormattable):
+class MultiFormatStringBuilderFormattable(ABC):
     """org.apache.logging.log4j.util.MultiFormatStringBuilderFormattable"""
  
     @staticmethod
@@ -5454,7 +5455,7 @@ import org.apache.logging.log4j.util.InternalApi as __InternalApi
 __InternalApi = __InternalApi
 from abc import abstractmethod, ABC
  
-class InternalApi(ABC, __Annotation, Annotation):
+class InternalApi(ABC):
     """org.apache.logging.log4j.util.InternalApi"""
  
     @staticmethod

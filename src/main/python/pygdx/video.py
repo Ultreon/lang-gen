@@ -291,8 +291,8 @@ class VideoDecoderBuffers():
  
 # CLASS: com.badlogic.gdx.video.VideoDecoder
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 import java.nio.ByteBuffer as __ByteBuffer
@@ -315,7 +315,7 @@ __VideoDecoder = __VideoDecoder
 from builtins import bool
 from builtins import int
  
-class VideoDecoder(pygdx.__Disposable, utils.Disposable):
+class VideoDecoder():
     """com.badlogic.gdx.video.VideoDecoder"""
  
     @staticmethod
@@ -491,7 +491,7 @@ except ImportError:
 
 from builtins import int
  
-class CommonVideoPlayerDesktop(ABC, __AbstractVideoPlayer, AbstractVideoPlayer, __VideoPlayer, VideoPlayer):
+class CommonVideoPlayerDesktop(ABC):
     """com.badlogic.gdx.video.CommonVideoPlayerDesktop"""
  
     @staticmethod

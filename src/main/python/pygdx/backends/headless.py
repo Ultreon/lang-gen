@@ -383,7 +383,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class HeadlessApplicationLogger(pygdx.__ApplicationLogger, pygdx.ApplicationLogger):
+class HeadlessApplicationLogger():
     """com.badlogic.gdx.backends.headless.HeadlessApplicationLogger"""
  
     @staticmethod
@@ -580,7 +580,7 @@ import java.nio.ByteBuffer as ByteBuffer
 import java.lang.Integer as __int
 from builtins import int
  
-class HeadlessFileHandle(pygdx.__FileHandle, files.FileHandle):
+class HeadlessFileHandle():
     """com.badlogic.gdx.backends.headless.HeadlessFileHandle"""
  
     @staticmethod
@@ -984,7 +984,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class HeadlessNet(pygdx.__Net, pygdx.Net):
+class HeadlessNet():
     """com.badlogic.gdx.backends.headless.HeadlessNet"""
  
     @staticmethod
@@ -1159,7 +1159,7 @@ import java.lang.Throwable as Throwable
 import java.lang.Integer as __int
 from builtins import int
  
-class HeadlessApplication(pygdx.__Application, pygdx.Application):
+class HeadlessApplication():
     """com.badlogic.gdx.backends.headless.HeadlessApplication"""
  
     @staticmethod
@@ -1425,8 +1425,8 @@ except ImportError:
     pygdx = __import_once__("pygdx")
 
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import com.badlogic.gdx.Preferences as __Preferences
 __Preferences = __Preferences
 import java.lang.Object as __object
@@ -1455,7 +1455,7 @@ import java.util.Map as Map
 from builtins import bool
 from builtins import int
  
-class HeadlessPreferences(pygdx.__Preferences, pygdx.Preferences):
+class HeadlessPreferences():
     """com.badlogic.gdx.backends.headless.HeadlessPreferences"""
  
     @staticmethod
@@ -1694,7 +1694,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class HeadlessFiles(pygdx.__Files, pygdx.Files):
+class HeadlessFiles():
     """com.badlogic.gdx.backends.headless.HeadlessFiles"""
  
     @staticmethod

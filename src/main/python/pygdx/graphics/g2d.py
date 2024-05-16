@@ -28,7 +28,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GradientColorValue(__ParticleValue, ParticleValue):
+class GradientColorValue():
     """com.badlogic.gdx.graphics.g2d.ParticleEmitter.GradientColorValue"""
  
     @staticmethod
@@ -226,7 +226,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GradientColorValue(__ParticleValue, ParticleValue):
+class GradientColorValue():
     """com.badlogic.gdx.graphics.g2d.ParticleEmitter.GradientColorValue"""
  
     @staticmethod
@@ -614,14 +614,14 @@ class NinePatch():
         return str.__wrap(super(object, self).toString())
 
     @overload
-    def getRightWidth(self) -> float:
-        """public float com.badlogic.gdx.graphics.g2d.NinePatch.getRightWidth()"""
-        return float.__wrap(super(NinePatch, self).getRightWidth())
-
-    @overload
     def draw(self, arg0: 'Batch', arg1: float, arg2: float, arg3: float, arg4: float):
         """public void com.badlogic.gdx.graphics.g2d.NinePatch.draw(com.badlogic.gdx.graphics.g2d.Batch,float,float,float,float)"""
         super(__NinePatch, self).draw(arg0, __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4))
+
+    @overload
+    def getRightWidth(self) -> float:
+        """public float com.badlogic.gdx.graphics.g2d.NinePatch.getRightWidth()"""
+        return float.__wrap(super(NinePatch, self).getRightWidth())
 
     @overload
     def __init__(self, arg0: 'Texture', arg1: 'Color'):
@@ -726,13 +726,13 @@ class NinePatch():
 # CLASS: com.badlogic.gdx.graphics.g2d.ParticleEffect
 from pyquantum_helper import import_once as __import_once__
 from builtins import str
-import com.badlogic.gdx.graphics.g2d.ParticleEmitter as __ParticleEmitter
-__ParticleEmitter = __ParticleEmitter
 try:
     from pygdx import utils
 except ImportError:
     utils = __import_once__("pygdx.utils")
 
+import com.badlogic.gdx.graphics.g2d.ParticleEmitter as __ParticleEmitter
+__ParticleEmitter = __ParticleEmitter
 import java.lang.Boolean as __boolean
 from pyquantum_helper import override
 import java.lang.Object as __object
@@ -767,7 +767,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ParticleEffect(pygdx.__Disposable, utils.Disposable):
+class ParticleEffect():
     """com.badlogic.gdx.graphics.g2d.ParticleEffect"""
  
     @staticmethod
@@ -841,14 +841,14 @@ class ParticleEffect(pygdx.__Disposable, utils.Disposable):
         super(ParticleEffect, self).allowCompletion()
 
     @overload
-    def scaleEffect(self, arg0: float, arg1: float, arg2: float):
-        """public void com.badlogic.gdx.graphics.g2d.ParticleEffect.scaleEffect(float,float,float)"""
-        super(__ParticleEffect, self).scaleEffect(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2))
-
-    @overload
     def draw(self, arg0: 'Batch', arg1: float):
         """public void com.badlogic.gdx.graphics.g2d.ParticleEffect.draw(com.badlogic.gdx.graphics.g2d.Batch,float)"""
         super(__ParticleEffect, self).draw(arg0, __float.valueOf(arg1))
+
+    @overload
+    def scaleEffect(self, arg0: float, arg1: float, arg2: float):
+        """public void com.badlogic.gdx.graphics.g2d.ParticleEffect.scaleEffect(float,float,float)"""
+        super(__ParticleEffect, self).scaleEffect(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2))
 
     @overload
     def __init__(self):
@@ -1025,10 +1025,10 @@ __SpriteBatch = __SpriteBatch
 import com.badlogic.gdx.graphics.Color as __Color
 __Color = __Color
 from builtins import str
+from pyquantum_helper import override
 import java.lang.Boolean as __boolean
 import com.badlogic.gdx.graphics.glutils.ShaderProgram as __ShaderProgram
 __ShaderProgram = __ShaderProgram
-from pyquantum_helper import override
 import java.lang.Object as __object
 from builtins import type
 from builtins import float
@@ -1061,7 +1061,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class SpriteBatch(__Batch, Batch):
+class SpriteBatch():
     """com.badlogic.gdx.graphics.g2d.SpriteBatch"""
  
     @staticmethod
@@ -1444,7 +1444,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class Particle(__Sprite, Sprite):
+class Particle():
     """com.badlogic.gdx.graphics.g2d.ParticleEmitter.Particle"""
  
     @staticmethod
@@ -1750,15 +1750,15 @@ class Particle(__Sprite, Sprite):
 
     @override
     @overload
-    def setCenterY(self, arg0: float):
-        """public void com.badlogic.gdx.graphics.g2d.Sprite.setCenterY(float)"""
-        super(__Sprite, self).setCenterY(__float.valueOf(arg0))
-
-    @override
-    @overload
     def rotate90(self, arg0: bool):
         """public void com.badlogic.gdx.graphics.g2d.Sprite.rotate90(boolean)"""
         super(__Sprite, self).rotate90(__boolean.valueOf(arg0))
+
+    @override
+    @overload
+    def setCenterY(self, arg0: float):
+        """public void com.badlogic.gdx.graphics.g2d.Sprite.setCenterY(float)"""
+        super(__Sprite, self).setCenterY(__float.valueOf(arg0))
 
     @override
     @overload
@@ -2408,7 +2408,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class Gdx2DPixmap(pygdx.__Disposable, utils.Disposable):
+class Gdx2DPixmap():
     """com.badlogic.gdx.graphics.g2d.Gdx2DPixmap"""
  
     @staticmethod
@@ -2709,7 +2709,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class Sprite(__TextureRegion, TextureRegion):
+class Sprite():
     """com.badlogic.gdx.graphics.g2d.Sprite"""
  
     @staticmethod
@@ -2816,14 +2816,14 @@ class Sprite(__TextureRegion, TextureRegion):
         super(__TextureRegion, self).setRegionX(__int.valueOf(arg0))
 
     @overload
-    def translateX(self, arg0: float):
-        """public void com.badlogic.gdx.graphics.g2d.Sprite.translateX(float)"""
-        super(__Sprite, self).translateX(__float.valueOf(arg0))
-
-    @overload
     def setCenter(self, arg0: float, arg1: float):
         """public void com.badlogic.gdx.graphics.g2d.Sprite.setCenter(float,float)"""
         super(__Sprite, self).setCenter(__float.valueOf(arg0), __float.valueOf(arg1))
+
+    @overload
+    def translateX(self, arg0: float):
+        """public void com.badlogic.gdx.graphics.g2d.Sprite.translateX(float)"""
+        super(__Sprite, self).translateX(__float.valueOf(arg0))
 
     @overload
     def setFlip(self, arg0: bool, arg1: bool):
@@ -3077,14 +3077,14 @@ class Sprite(__TextureRegion, TextureRegion):
         return 'graphics.Texture'.__wrap(super(TextureRegion, self).getTexture())
 
     @overload
-    def getBoundingRectangle(self) -> 'math.Rectangle':
-        """public com.badlogic.gdx.math.Rectangle com.badlogic.gdx.graphics.g2d.Sprite.getBoundingRectangle()"""
-        return 'math.Rectangle'.__wrap(super(Sprite, self).getBoundingRectangle())
-
-    @overload
     def rotate90(self, arg0: bool):
         """public void com.badlogic.gdx.graphics.g2d.Sprite.rotate90(boolean)"""
         super(__Sprite, self).rotate90(__boolean.valueOf(arg0))
+
+    @overload
+    def getBoundingRectangle(self) -> 'math.Rectangle':
+        """public com.badlogic.gdx.math.Rectangle com.badlogic.gdx.graphics.g2d.Sprite.getBoundingRectangle()"""
+        return 'math.Rectangle'.__wrap(super(Sprite, self).getBoundingRectangle())
 
     @override
     @overload
@@ -3234,10 +3234,10 @@ try:
 except ImportError:
     utils = __import_once__("pygdx.utils")
 
+from pyquantum_helper import override
 import java.lang.Boolean as __boolean
 import com.badlogic.gdx.graphics.g2d.TextureAtlas as __TextureAtlas
 __TextureAtlas = __TextureAtlas
-from pyquantum_helper import override
 import java.lang.Object as __object
 from builtins import type
 import com.badlogic.gdx.math.Rectangle as __Rectangle
@@ -3270,7 +3270,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class PixmapPacker(pygdx.__Disposable, utils.Disposable):
+class PixmapPacker():
     """com.badlogic.gdx.graphics.g2d.PixmapPacker"""
  
     @staticmethod
@@ -3465,14 +3465,14 @@ class PixmapPacker(pygdx.__Disposable, utils.Disposable):
         return 'math.Rectangle'.__wrap(super(__PixmapPacker, self).pack(arg0))
 
     @overload
-    def getPageIndex(self, arg0: str) -> int:
-        """public synchronized int com.badlogic.gdx.graphics.g2d.PixmapPacker.getPageIndex(java.lang.String)"""
-        return int.__wrap(super(__PixmapPacker, self).getPageIndex(arg0))
-
-    @overload
     def getTransparentColor(self) -> 'graphics.Color':
         """public com.badlogic.gdx.graphics.Color com.badlogic.gdx.graphics.g2d.PixmapPacker.getTransparentColor()"""
         return 'graphics.Color'.__wrap(super(PixmapPacker, self).getTransparentColor())
+
+    @overload
+    def getPageIndex(self, arg0: str) -> int:
+        """public synchronized int com.badlogic.gdx.graphics.g2d.PixmapPacker.getPageIndex(java.lang.String)"""
+        return int.__wrap(super(__PixmapPacker, self).getPageIndex(arg0))
 
     @overload
     def getPage(self, arg0: str) -> 'Page':
@@ -3752,14 +3752,14 @@ class BitmapFontData():
         return int.__wrap(super(__BitmapFontData, self).getWrapIndex(arg0, __int.valueOf(arg1)))
 
     @overload
-    def isBreakChar(self, arg0: str) -> bool:
-        """public boolean com.badlogic.gdx.graphics.g2d.BitmapFont$BitmapFontData.isBreakChar(char)"""
-        return bool.__wrap(super(__BitmapFontData, self).isBreakChar(__char.valueOf(arg0)))
-
-    @overload
     def setGlyphRegion(self, arg0: 'Glyph', arg1: 'TextureRegion'):
         """public void com.badlogic.gdx.graphics.g2d.BitmapFont$BitmapFontData.setGlyphRegion(com.badlogic.gdx.graphics.g2d.BitmapFont$Glyph,com.badlogic.gdx.graphics.g2d.TextureRegion)"""
         super(__BitmapFontData, self).setGlyphRegion(arg0, arg1)
+
+    @overload
+    def isBreakChar(self, arg0: str) -> bool:
+        """public boolean com.badlogic.gdx.graphics.g2d.BitmapFont$BitmapFontData.isBreakChar(char)"""
+        return bool.__wrap(super(__BitmapFontData, self).isBreakChar(__char.valueOf(arg0)))
 
     @override
     @overload
@@ -3844,7 +3844,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PolygonRegionLoader(assets.__SynchronousAssetLoader, loaders.SynchronousAssetLoader):
+class PolygonRegionLoader():
     """com.badlogic.gdx.graphics.g2d.PolygonRegionLoader"""
  
     @staticmethod
@@ -3972,13 +3972,13 @@ class PolygonRegionLoader(assets.__SynchronousAssetLoader, loaders.SynchronousAs
 # CLASS: com.badlogic.gdx.graphics.g2d.ParticleEffectPool$PooledEffect
 from pyquantum_helper import import_once as __import_once__
 from builtins import str
-import com.badlogic.gdx.graphics.g2d.ParticleEmitter as __ParticleEmitter
-__ParticleEmitter = __ParticleEmitter
 try:
     from pygdx import utils
 except ImportError:
     utils = __import_once__("pygdx.utils")
 
+import com.badlogic.gdx.graphics.g2d.ParticleEmitter as __ParticleEmitter
+__ParticleEmitter = __ParticleEmitter
 from pyquantum_helper import override
 import java.lang.Boolean as __boolean
 import java.lang.Object as __object
@@ -4015,7 +4015,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PooledEffect(__ParticleEffect, ParticleEffect):
+class PooledEffect():
     """com.badlogic.gdx.graphics.g2d.ParticleEffectPool.PooledEffect"""
  
     @staticmethod
@@ -4171,15 +4171,15 @@ class PooledEffect(__ParticleEffect, ParticleEffect):
 
     @override
     @overload
-    def setDuration(self, arg0: int):
-        """public void com.badlogic.gdx.graphics.g2d.ParticleEffect.setDuration(int)"""
-        super(__ParticleEffect, self).setDuration(__int.valueOf(arg0))
-
-    @override
-    @overload
     def draw(self, arg0: 'Batch', arg1: float):
         """public void com.badlogic.gdx.graphics.g2d.ParticleEffect.draw(com.badlogic.gdx.graphics.g2d.Batch,float)"""
         super(__ParticleEffect, self).draw(arg0, __float.valueOf(arg1))
+
+    @override
+    @overload
+    def setDuration(self, arg0: int):
+        """public void com.badlogic.gdx.graphics.g2d.ParticleEffect.setDuration(int)"""
+        super(__ParticleEffect, self).setDuration(__int.valueOf(arg0))
 
     @override
     @overload
@@ -4328,7 +4328,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont as __BitmapFont
 __BitmapFont = __BitmapFont
 from builtins import int
  
-class BitmapFont(pygdx.__Disposable, utils.Disposable):
+class BitmapFont():
     """com.badlogic.gdx.graphics.g2d.BitmapFont"""
  
     @staticmethod
@@ -4662,7 +4662,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ParticleEffectPool(pygdx.__Pool, utils.Pool):
+class ParticleEffectPool():
     """com.badlogic.gdx.graphics.g2d.ParticleEffectPool"""
  
     @staticmethod
@@ -4815,7 +4815,7 @@ import com.badlogic.gdx.graphics.g2d.ParticleEmitter as __ParticleEmitter_SpawnE
 __SpawnEllipseSide = __ParticleEmitter_SpawnEllipseSide.SpawnEllipseSide
 from builtins import int
  
-class SpawnShapeValue(__ParticleValue, ParticleValue):
+class SpawnShapeValue():
     """com.badlogic.gdx.graphics.g2d.ParticleEmitter.SpawnShapeValue"""
  
     @staticmethod
@@ -4995,10 +4995,10 @@ from pyquantum_helper import import_once as __import_once__
 import com.badlogic.gdx.graphics.Color as __Color
 __Color = __Color
 from builtins import str
+from pyquantum_helper import override
 import java.lang.Boolean as __boolean
 import com.badlogic.gdx.graphics.glutils.ShaderProgram as __ShaderProgram
 __ShaderProgram = __ShaderProgram
-from pyquantum_helper import override
 import java.lang.Object as __object
 from builtins import type
 import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch as __PolygonSpriteBatch
@@ -5033,7 +5033,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class PolygonSpriteBatch(__PolygonBatch, PolygonBatch):
+class PolygonSpriteBatch():
     """com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch"""
  
     @staticmethod
@@ -5430,7 +5430,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GuillotineStrategy(__PackStrategy, PackStrategy):
+class GuillotineStrategy():
     """com.badlogic.gdx.graphics.g2d.PixmapPacker.GuillotineStrategy"""
  
     @staticmethod
@@ -5571,7 +5571,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SkylineStrategy(__PackStrategy, PackStrategy):
+class SkylineStrategy():
     """com.badlogic.gdx.graphics.g2d.PixmapPacker.SkylineStrategy"""
  
     @staticmethod
@@ -5892,7 +5892,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class SpawnShape(__Enum, Enum):
+class SpawnShape():
     """com.badlogic.gdx.graphics.g2d.ParticleEmitter.SpawnShape"""
  
     @staticmethod
@@ -6051,7 +6051,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class GlyphLayout(pygdx.__Pool_Poolable, utils.Pool$Poolable):
+class GlyphLayout():
     """com.badlogic.gdx.graphics.g2d.GlyphLayout"""
  
     @staticmethod
@@ -6408,14 +6408,14 @@ class ParticleEmitter():
         super(__ParticleEmitter, self).setBehind(__boolean.valueOf(arg0))
 
     @overload
-    def cleansUpBlendFunction(self) -> bool:
-        """public boolean com.badlogic.gdx.graphics.g2d.ParticleEmitter.cleansUpBlendFunction()"""
-        return bool.__wrap(super(ParticleEmitter, self).cleansUpBlendFunction())
-
-    @overload
     def setMinParticleCount(self, arg0: int):
         """public void com.badlogic.gdx.graphics.g2d.ParticleEmitter.setMinParticleCount(int)"""
         super(__ParticleEmitter, self).setMinParticleCount(__int.valueOf(arg0))
+
+    @overload
+    def cleansUpBlendFunction(self) -> bool:
+        """public boolean com.badlogic.gdx.graphics.g2d.ParticleEmitter.cleansUpBlendFunction()"""
+        return bool.__wrap(super(ParticleEmitter, self).cleansUpBlendFunction())
 
     @overload
     def getVelocity(self) -> 'ScaledNumericValue':
@@ -6507,6 +6507,11 @@ class ParticleEmitter():
         return 'ScaledNumericValue'.__wrap(super(ParticleEmitter, self).getTransparency())
 
     @overload
+    def getMaxParticleCount(self) -> int:
+        """public int com.badlogic.gdx.graphics.g2d.ParticleEmitter.getMaxParticleCount()"""
+        return int.__wrap(super(ParticleEmitter, self).getMaxParticleCount())
+
+    @overload
     def getSpriteMode(self) -> 'SpriteMode':
         """public com.badlogic.gdx.graphics.g2d.ParticleEmitter$SpriteMode com.badlogic.gdx.graphics.g2d.ParticleEmitter.getSpriteMode()"""
         return 'SpriteMode'.__wrap(super(ParticleEmitter, self).getSpriteMode())
@@ -6515,11 +6520,6 @@ class ParticleEmitter():
     def matchXSize(self, arg0: 'ParticleEmitter'):
         """public void com.badlogic.gdx.graphics.g2d.ParticleEmitter.matchXSize(com.badlogic.gdx.graphics.g2d.ParticleEmitter)"""
         super(__ParticleEmitter, self).matchXSize(arg0)
-
-    @overload
-    def getMaxParticleCount(self) -> int:
-        """public int com.badlogic.gdx.graphics.g2d.ParticleEmitter.getMaxParticleCount()"""
-        return int.__wrap(super(ParticleEmitter, self).getMaxParticleCount())
 
     @overload
     def __init__(self):
@@ -6585,14 +6585,14 @@ class ParticleEmitter():
         super(__ParticleEmitter, self).draw(arg0)
 
     @overload
-    def setSprites(self, arg0: 'Array'):
-        """public void com.badlogic.gdx.graphics.g2d.ParticleEmitter.setSprites(com.badlogic.gdx.utils.Array<com.badlogic.gdx.graphics.g2d.Sprite>)"""
-        super(__ParticleEmitter, self).setSprites(arg0)
-
-    @overload
     def getRotation(self) -> 'ScaledNumericValue':
         """public com.badlogic.gdx.graphics.g2d.ParticleEmitter$ScaledNumericValue com.badlogic.gdx.graphics.g2d.ParticleEmitter.getRotation()"""
         return 'ScaledNumericValue'.__wrap(super(ParticleEmitter, self).getRotation())
+
+    @overload
+    def setSprites(self, arg0: 'Array'):
+        """public void com.badlogic.gdx.graphics.g2d.ParticleEmitter.setSprites(com.badlogic.gdx.utils.Array<com.badlogic.gdx.graphics.g2d.Sprite>)"""
+        super(__ParticleEmitter, self).setSprites(arg0)
 
     @overload
     def setName(self, arg0: str):
@@ -6756,14 +6756,14 @@ class ParticleEmitter():
         super(__object, self).wait(__long.valueOf(arg0))
 
     @overload
-    def scaleMotion(self, arg0: float):
-        """public void com.badlogic.gdx.graphics.g2d.ParticleEmitter.scaleMotion(float)"""
-        super(__ParticleEmitter, self).scaleMotion(__float.valueOf(arg0))
-
-    @overload
     def getImagePaths(self) -> 'utils.Array':
         """public com.badlogic.gdx.utils.Array<java.lang.String> com.badlogic.gdx.graphics.g2d.ParticleEmitter.getImagePaths()"""
         return 'utils.Array'.__wrap(super(ParticleEmitter, self).getImagePaths())
+
+    @overload
+    def scaleMotion(self, arg0: float):
+        """public void com.badlogic.gdx.graphics.g2d.ParticleEmitter.scaleMotion(float)"""
+        super(__ParticleEmitter, self).scaleMotion(__float.valueOf(arg0))
 
     @override
     @overload
@@ -6814,14 +6814,14 @@ class ParticleEmitter():
         super(ParticleEmitter, self).addParticle()
 
     @overload
-    def getYOffsetValue(self) -> 'RangedNumericValue':
-        """public com.badlogic.gdx.graphics.g2d.ParticleEmitter$RangedNumericValue com.badlogic.gdx.graphics.g2d.ParticleEmitter.getYOffsetValue()"""
-        return 'RangedNumericValue'.__wrap(super(ParticleEmitter, self).getYOffsetValue())
-
-    @overload
     def isContinuous(self) -> bool:
         """public boolean com.badlogic.gdx.graphics.g2d.ParticleEmitter.isContinuous()"""
         return bool.__wrap(super(ParticleEmitter, self).isContinuous())
+
+    @overload
+    def getYOffsetValue(self) -> 'RangedNumericValue':
+        """public com.badlogic.gdx.graphics.g2d.ParticleEmitter$RangedNumericValue com.badlogic.gdx.graphics.g2d.ParticleEmitter.getYOffsetValue()"""
+        return 'RangedNumericValue'.__wrap(super(ParticleEmitter, self).getYOffsetValue())
 
     @overload
     def setAligned(self, arg0: bool):
@@ -6857,7 +6857,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PolygonRegionParameters(pygdx.__AssetLoaderParameters, assets.AssetLoaderParameters):
+class PolygonRegionParameters():
     """com.badlogic.gdx.graphics.g2d.PolygonRegionLoader.PolygonRegionParameters"""
  
     @staticmethod
@@ -6981,7 +6981,7 @@ import com.badlogic.gdx.graphics.g2d.ParticleEmitter as __ParticleEmitter_SpawnE
 __SpawnEllipseSide = __ParticleEmitter_SpawnEllipseSide.SpawnEllipseSide
 from builtins import int
  
-class SpawnEllipseSide(__Enum, Enum):
+class SpawnEllipseSide():
     """com.badlogic.gdx.graphics.g2d.ParticleEmitter.SpawnEllipseSide"""
  
     @staticmethod
@@ -7157,7 +7157,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class AtlasSprite(__Sprite, Sprite):
+class AtlasSprite():
     """com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasSprite"""
  
     @staticmethod
@@ -7946,14 +7946,14 @@ class BitmapFontCache():
         return 'type.Class'.__wrap(super(object, self).getClass())
 
     @overload
-    def addText(self, arg0: 'CharSequence', arg1: float, arg2: float) -> 'GlyphLayout':
-        """public com.badlogic.gdx.graphics.g2d.GlyphLayout com.badlogic.gdx.graphics.g2d.BitmapFontCache.addText(java.lang.CharSequence,float,float)"""
-        return 'GlyphLayout'.__wrap(super(__BitmapFontCache, self).addText(arg0, __float.valueOf(arg1), __float.valueOf(arg2)))
-
-    @overload
     def addText(self, arg0: 'CharSequence', arg1: float, arg2: float, arg3: int, arg4: int, arg5: float, arg6: int, arg7: bool) -> 'GlyphLayout':
         """public com.badlogic.gdx.graphics.g2d.GlyphLayout com.badlogic.gdx.graphics.g2d.BitmapFontCache.addText(java.lang.CharSequence,float,float,int,int,float,int,boolean)"""
         return 'GlyphLayout'.__wrap(super(__BitmapFontCache, self).addText(arg0, __float.valueOf(arg1), __float.valueOf(arg2), __int.valueOf(arg3), __int.valueOf(arg4), __float.valueOf(arg5), __int.valueOf(arg6), __boolean.valueOf(arg7)))
+
+    @overload
+    def addText(self, arg0: 'CharSequence', arg1: float, arg2: float) -> 'GlyphLayout':
+        """public com.badlogic.gdx.graphics.g2d.GlyphLayout com.badlogic.gdx.graphics.g2d.BitmapFontCache.addText(java.lang.CharSequence,float,float)"""
+        return 'GlyphLayout'.__wrap(super(__BitmapFontCache, self).addText(arg0, __float.valueOf(arg1), __float.valueOf(arg2)))
 
     @overload
     def setColor(self, arg0: 'Color'):
@@ -8150,7 +8150,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ScaledNumericValue(__RangedNumericValue, RangedNumericValue):
+class ScaledNumericValue():
     """com.badlogic.gdx.graphics.g2d.ParticleEmitter.ScaledNumericValue"""
  
     @staticmethod
@@ -8404,6 +8404,11 @@ class ScaledNumericValue(__RangedNumericValue, RangedNumericValue):
         super(object, self).wait()
 
     @overload
+    def newHighValue(self) -> float:
+        """public float com.badlogic.gdx.graphics.g2d.ParticleEmitter$ScaledNumericValue.newHighValue()"""
+        return float.__wrap(super(ScaledNumericValue, self).newHighValue())
+
+    @overload
     def setHigh(self, arg0: float, arg1: float):
         """public void com.badlogic.gdx.graphics.g2d.ParticleEmitter$ScaledNumericValue.setHigh(float,float)"""
         super(__ScaledNumericValue, self).setHigh(__float.valueOf(arg0), __float.valueOf(arg1))
@@ -8412,11 +8417,6 @@ class ScaledNumericValue(__RangedNumericValue, RangedNumericValue):
     def getScaling(self) -> List[float]:
         """public float[] com.badlogic.gdx.graphics.g2d.ParticleEmitter$ScaledNumericValue.getScaling()"""
         return List[float].__wrap(super(ScaledNumericValue, self).getScaling())
-
-    @overload
-    def newHighValue(self) -> float:
-        """public float com.badlogic.gdx.graphics.g2d.ParticleEmitter$ScaledNumericValue.newHighValue()"""
-        return float.__wrap(super(ScaledNumericValue, self).newHighValue())
 
     @overload
     def setRelative(self, arg0: bool):
@@ -8455,7 +8455,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NumericValue(__ParticleValue, ParticleValue):
+class NumericValue():
     """com.badlogic.gdx.graphics.g2d.ParticleEmitter.NumericValue"""
  
     @staticmethod
@@ -8635,7 +8635,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RangedNumericValue(__ParticleValue, ParticleValue):
+class RangedNumericValue():
     """com.badlogic.gdx.graphics.g2d.ParticleEmitter.RangedNumericValue"""
  
     @staticmethod
@@ -8851,7 +8851,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class ImageFormat(__Enum, Enum):
+class ImageFormat():
     """com.badlogic.gdx.graphics.g2d.PixmapPackerIO.ImageFormat"""
  
     @staticmethod
@@ -9186,7 +9186,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class CpuSpriteBatch(__SpriteBatch, SpriteBatch):
+class CpuSpriteBatch():
     """com.badlogic.gdx.graphics.g2d.CpuSpriteBatch"""
  
     @staticmethod
@@ -9566,7 +9566,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class IndependentScaledNumericValue(__ScaledNumericValue, ScaledNumericValue):
+class IndependentScaledNumericValue():
     """com.badlogic.gdx.graphics.g2d.ParticleEmitter.IndependentScaledNumericValue"""
  
     @staticmethod
@@ -10167,7 +10167,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GlyphRun(pygdx.__Pool_Poolable, utils.Pool$Poolable):
+class GlyphRun():
     """com.badlogic.gdx.graphics.g2d.GlyphLayout.GlyphRun"""
  
     @staticmethod
@@ -10417,9 +10417,9 @@ import com.badlogic.gdx.graphics.g2d.Sprite as __Sprite
 __Sprite = __Sprite
 import java.lang.Object as __Object
 __Object = __Object
-import java.lang.Integer as __int
 import com.badlogic.gdx.utils.ObjectSet as __ObjectSet
 __ObjectSet = __ObjectSet
+import java.lang.Integer as __int
 try:
     from pygdx import files
 except ImportError:
@@ -10433,7 +10433,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class TextureAtlas(pygdx.__Disposable, utils.Disposable):
+class TextureAtlas():
     """com.badlogic.gdx.graphics.g2d.TextureAtlas"""
  
     @staticmethod
@@ -10932,9 +10932,9 @@ import com.badlogic.gdx.graphics.Color as __Color
 __Color = __Color
 from builtins import str
 import java.lang.Boolean as __boolean
+from pyquantum_helper import override
 import com.badlogic.gdx.graphics.glutils.ShaderProgram as __ShaderProgram
 __ShaderProgram = __ShaderProgram
-from pyquantum_helper import override
 import java.lang.Object as __object
 from builtins import type
 from builtins import float
@@ -10969,7 +10969,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class SpriteCache(pygdx.__Disposable, utils.Disposable):
+class SpriteCache():
     """com.badlogic.gdx.graphics.g2d.SpriteCache"""
  
     @staticmethod
@@ -11726,7 +11726,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class PlayMode(__Enum, Enum):
+class PlayMode():
     """com.badlogic.gdx.graphics.g2d.Animation.PlayMode"""
  
     @staticmethod
@@ -11890,7 +11890,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class AtlasRegion(__TextureRegion, TextureRegion):
+class AtlasRegion():
     """com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion"""
  
     @staticmethod
@@ -12207,7 +12207,7 @@ except ImportError:
 import com.badlogic.gdx.utils.Disposable as __Disposable
 __Disposable = __Disposable
  
-class Batch(ABC, pygdx.__Disposable, utils.Disposable):
+class Batch(ABC):
     """com.badlogic.gdx.graphics.g2d.Batch"""
  
     @staticmethod
@@ -12450,7 +12450,7 @@ import com.badlogic.gdx.utils.Disposable as __Disposable
 __Disposable = __Disposable
 from builtins import int
  
-class PolygonBatch(ABC, __Batch, Batch):
+class PolygonBatch(ABC):
     """com.badlogic.gdx.graphics.g2d.PolygonBatch"""
  
     @staticmethod
@@ -12712,7 +12712,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class SpriteMode(__Enum, Enum):
+class SpriteMode():
     """com.badlogic.gdx.graphics.g2d.ParticleEmitter.SpriteMode"""
  
     @staticmethod
@@ -12903,7 +12903,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont as __BitmapFont
 __BitmapFont = __BitmapFont
 from builtins import int
  
-class DistanceFieldFont(__BitmapFont, BitmapFont):
+class DistanceFieldFont():
     """com.badlogic.gdx.graphics.g2d.DistanceFieldFont"""
  
     @staticmethod
@@ -13259,7 +13259,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PixmapPackerRectangle(pygdx.__Rectangle, math.Rectangle):
+class PixmapPackerRectangle():
     """com.badlogic.gdx.graphics.g2d.PixmapPacker.PixmapPackerRectangle"""
  
     @staticmethod

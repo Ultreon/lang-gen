@@ -52,7 +52,7 @@ import java.lang.StringBuilder as StringBuilder
 import java.lang.Integer as __int
 from builtins import int
  
-class StrBuilder(__CharSequence, CharSequence, __Appendable, Appendable, __Serializable, Serializable, lang3.__Builder, builder.Builder):
+class StrBuilder():
     """org.apache.commons.lang3.text.StrBuilder"""
  
     @staticmethod
@@ -926,7 +926,7 @@ import java.lang.StringBuilder as StringBuilder
 import java.lang.Integer as __int
 from builtins import int
  
-class StrBuilder(__CharSequence, CharSequence, __Appendable, Appendable, __Serializable, Serializable, lang3.__Builder, builder.Builder):
+class StrBuilder():
     """org.apache.commons.lang3.text.StrBuilder"""
  
     @staticmethod
@@ -1826,7 +1826,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CompositeFormat(__Format, Format):
+class CompositeFormat():
     """org.apache.commons.lang3.text.CompositeFormat"""
  
     @staticmethod
@@ -2346,7 +2346,7 @@ __Locale = __Locale
 import java.util.Map as Map
 from builtins import int
  
-class ExtendedMessageFormat(__MessageFormat, MessageFormat):
+class ExtendedMessageFormat():
     """org.apache.commons.lang3.text.ExtendedMessageFormat"""
  
     @staticmethod
@@ -3325,7 +3325,7 @@ from builtins import bool
 from builtins import int
 import java.util.List as List
  
-class StrTokenizer(__ListIterator, ListIterator, __Cloneable, Cloneable):
+class StrTokenizer():
     """org.apache.commons.lang3.text.StrTokenizer"""
  
     @staticmethod

@@ -30,7 +30,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SharedLibraryLoadRuntimeException(__RuntimeException, RuntimeException):
+class SharedLibraryLoadRuntimeException():
     """com.badlogic.gdx.utils.SharedLibraryLoadRuntimeException"""
  
     @staticmethod
@@ -236,7 +236,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SharedLibraryLoadRuntimeException(__RuntimeException, RuntimeException):
+class SharedLibraryLoadRuntimeException():
     """com.badlogic.gdx.utils.SharedLibraryLoadRuntimeException"""
  
     @staticmethod

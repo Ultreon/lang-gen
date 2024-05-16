@@ -179,7 +179,7 @@ except ImportError:
     types = __import_once__("pyubo.types")
 
  
-class LocalPlayer(__ClientPlayer, ClientPlayer):
+class LocalPlayer():
     """dev.ultreon.quantum.client.player.LocalPlayer"""
  
     @staticmethod
@@ -1326,7 +1326,7 @@ except ImportError:
     types = __import_once__("pyubo.types")
 
  
-class LocalPlayer(__ClientPlayer, ClientPlayer):
+class LocalPlayer():
     """dev.ultreon.quantum.client.player.LocalPlayer"""
  
     @staticmethod
@@ -2330,7 +2330,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ClientPermissionMap(server.__PermissionMap, player.PermissionMap):
+class ClientPermissionMap():
     """dev.ultreon.quantum.client.player.ClientPermissionMap"""
  
     @staticmethod
@@ -2605,7 +2605,7 @@ except ImportError:
     types = __import_once__("pyubo.types")
 
  
-class ClientPlayer(ABC, entity.__Player, player.Player):
+class ClientPlayer(ABC):
     """dev.ultreon.quantum.client.player.ClientPlayer"""
  
     @staticmethod
@@ -3557,7 +3557,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class SkinManager(pygdx.__Disposable, utils.Disposable):
+class SkinManager():
     """dev.ultreon.quantum.client.player.SkinManager"""
  
     @staticmethod
@@ -3835,7 +3835,7 @@ except ImportError:
     types = __import_once__("pyubo.types")
 
  
-class RemotePlayer(__ClientPlayer, ClientPlayer):
+class RemotePlayer():
     """dev.ultreon.quantum.client.player.RemotePlayer"""
  
     @staticmethod

@@ -26,12 +26,12 @@ __Tab = __Tab
 import java.util.Map as __Map
 __Map = __Map
 import java.util.Collection as Collection
-from abc import abstractmethod, ABC
 try:
     from pyquantum import text
 except ImportError:
     text = __import_once__("pyquantum.text")
 
+from abc import abstractmethod, ABC
 import java.util.function.Consumer as Consumer
 import dev.ultreon.quantum.client.gui.Dialog as __Dialog
 __Dialog = __Dialog
@@ -95,7 +95,7 @@ import java.util.Map as Map
 from builtins import int
 import java.util.List as List
  
-class TabbedUI(ABC, client.__Screen, gui.Screen):
+class TabbedUI(ABC):
     """dev.ultreon.quantum.client.gui.screens.tabs.TabbedUI"""
  
     @staticmethod
@@ -839,12 +839,12 @@ __Tab = __Tab
 import java.util.Map as __Map
 __Map = __Map
 import java.util.Collection as Collection
-from abc import abstractmethod, ABC
 try:
     from pyquantum import text
 except ImportError:
     text = __import_once__("pyquantum.text")
 
+from abc import abstractmethod, ABC
 import java.util.function.Consumer as Consumer
 import dev.ultreon.quantum.client.gui.Dialog as __Dialog
 __Dialog = __Dialog
@@ -908,7 +908,7 @@ import java.util.Map as Map
 from builtins import int
 import java.util.List as List
  
-class TabbedUI(ABC, client.__Screen, gui.Screen):
+class TabbedUI(ABC):
     """dev.ultreon.quantum.client.gui.screens.tabs.TabbedUI"""
  
     @staticmethod
@@ -1656,13 +1656,13 @@ try:
 except ImportError:
     client = __import_once__("pyquantum.client")
 
-import dev.ultreon.quantum.client.QuantumClient as __QuantumClient
-__QuantumClient = __QuantumClient
 try:
     from pyquantum import text
 except ImportError:
     text = __import_once__("pyquantum.text")
 
+import dev.ultreon.quantum.client.QuantumClient as __QuantumClient
+__QuantumClient = __QuantumClient
 import java.lang.Long as __long
 import java.lang.Class as __Class
 __Class = __Class
@@ -1857,7 +1857,7 @@ import dev.ultreon.quantum.client.gui.screens.tabs.TabbedUI as __TabbedUI_Tabbed
 __TabbedUIBuilder = __TabbedUI_TabbedUIBuilder.TabbedUIBuilder
 from builtins import int
  
-class TabbedUIBuilder(client.__GuiBuilder, gui.GuiBuilder):
+class TabbedUIBuilder():
     """dev.ultreon.quantum.client.gui.screens.tabs.TabbedUI.TabbedUIBuilder"""
  
     @staticmethod
@@ -2066,7 +2066,7 @@ import java.util.Map as Map
 from builtins import int
 import java.util.List as List
  
-class TabContent(gui.__ScrollableContainer, widget.ScrollableContainer):
+class TabContent():
     """dev.ultreon.quantum.client.gui.screens.tabs.TabContent"""
  
     @staticmethod

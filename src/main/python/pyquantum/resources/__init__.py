@@ -33,7 +33,7 @@ import de.marhali.json5.Json5Element as __Json5Element
 __Json5Element = __Json5Element
 from builtins import int
  
-class DynamicResource(ABC, __Resource, Resource):
+class DynamicResource(ABC):
     """dev.ultreon.quantum.resources.DynamicResource"""
  
     @staticmethod
@@ -209,7 +209,7 @@ import de.marhali.json5.Json5Element as __Json5Element
 __Json5Element = __Json5Element
 from builtins import int
  
-class DynamicResource(ABC, __Resource, Resource):
+class DynamicResource(ABC):
     """dev.ultreon.quantum.resources.DynamicResource"""
  
     @staticmethod
@@ -821,8 +821,8 @@ from pyquantum_helper import import_once as __import_once__
 from builtins import str
 import dev.ultreon.quantum.resources.ResourceManager as __ResourceManager
 __ResourceManager = __ResourceManager
-import java.net.URI as URI
 from pyquantum_helper import override
+import java.net.URI as URI
 import java.lang.Object as __object
 from builtins import type
 import java.io.File as File
@@ -852,7 +852,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class ResourceManager(__Closeable, Closeable):
+class ResourceManager():
     """dev.ultreon.quantum.resources.ResourceManager"""
  
     @staticmethod
@@ -1062,7 +1062,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class ResourcePackage(__Closeable, Closeable):
+class ResourcePackage():
     """dev.ultreon.quantum.resources.ResourcePackage"""
  
     @staticmethod
@@ -1255,7 +1255,7 @@ import de.marhali.json5.Json5Element as __Json5Element
 __Json5Element = __Json5Element
 from builtins import int
  
-class StaticResource(__Resource, Resource, __Closeable, Closeable):
+class StaticResource():
     """dev.ultreon.quantum.resources.StaticResource"""
  
     @staticmethod

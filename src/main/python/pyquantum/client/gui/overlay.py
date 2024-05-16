@@ -33,7 +33,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ChatOverlay(__Overlay, Overlay):
+class ChatOverlay():
     """dev.ultreon.quantum.client.gui.overlay.ChatOverlay"""
  
     @staticmethod
@@ -175,7 +175,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ChatOverlay(__Overlay, Overlay):
+class ChatOverlay():
     """dev.ultreon.quantum.client.gui.overlay.ChatOverlay"""
  
     @staticmethod
@@ -316,7 +316,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LoadingOverlay(gui.__StaticWidget, widget.StaticWidget):
+class LoadingOverlay():
     """dev.ultreon.quantum.client.gui.overlay.LoadingOverlay"""
  
     @staticmethod
@@ -453,7 +453,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class HungerOverlay(__Overlay, Overlay):
+class HungerOverlay():
     """dev.ultreon.quantum.client.gui.overlay.HungerOverlay"""
  
     @staticmethod
@@ -576,7 +576,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MemoryUsageOverlay(__Overlay, Overlay):
+class MemoryUsageOverlay():
     """dev.ultreon.quantum.client.gui.overlay.MemoryUsageOverlay"""
  
     @staticmethod
@@ -697,7 +697,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CrosshairOverlay(__Overlay, Overlay):
+class CrosshairOverlay():
     """dev.ultreon.quantum.client.gui.overlay.CrosshairOverlay"""
  
     @staticmethod
@@ -813,7 +813,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class HotbarOverlay(__Overlay, Overlay):
+class HotbarOverlay():
     """dev.ultreon.quantum.client.gui.overlay.HotbarOverlay"""
  
     @staticmethod
@@ -1232,7 +1232,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ManualCrashOverlay(gui.__StaticWidget, widget.StaticWidget):
+class ManualCrashOverlay():
     """dev.ultreon.quantum.client.gui.overlay.ManualCrashOverlay"""
  
     @staticmethod
@@ -1352,7 +1352,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class HealthOverlay(__Overlay, Overlay):
+class HealthOverlay():
     """dev.ultreon.quantum.client.gui.overlay.HealthOverlay"""
  
     @staticmethod

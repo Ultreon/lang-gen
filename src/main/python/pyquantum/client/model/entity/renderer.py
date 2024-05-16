@@ -57,7 +57,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PlayerRenderer(__LivingEntityRenderer, LivingEntityRenderer):
+class PlayerRenderer():
     """dev.ultreon.quantum.client.model.entity.renderer.PlayerRenderer"""
  
     @staticmethod
@@ -246,7 +246,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PlayerRenderer(__LivingEntityRenderer, LivingEntityRenderer):
+class PlayerRenderer():
     """dev.ultreon.quantum.client.model.entity.renderer.PlayerRenderer"""
  
     @staticmethod
@@ -433,7 +433,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DroppedItemRenderer(__EntityRenderer, EntityRenderer):
+class DroppedItemRenderer():
     """dev.ultreon.quantum.client.model.entity.renderer.DroppedItemRenderer"""
  
     @staticmethod
@@ -608,7 +608,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SomethingRenderer(__LivingEntityRenderer, LivingEntityRenderer):
+class SomethingRenderer():
     """dev.ultreon.quantum.client.model.entity.renderer.SomethingRenderer"""
  
     @staticmethod
@@ -770,7 +770,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class EntityRenderer(ABC, pygdx.__Disposable, utils.Disposable):
+class EntityRenderer(ABC):
     """dev.ultreon.quantum.client.model.entity.renderer.EntityRenderer"""
  
     @staticmethod
@@ -935,7 +935,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PigRenderer(__LivingEntityRenderer, LivingEntityRenderer):
+class PigRenderer():
     """dev.ultreon.quantum.client.model.entity.renderer.PigRenderer"""
  
     @staticmethod
@@ -1109,7 +1109,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LivingEntityRenderer(ABC, __EntityRenderer, EntityRenderer):
+class LivingEntityRenderer(ABC):
     """dev.ultreon.quantum.client.model.entity.renderer.LivingEntityRenderer"""
  
     @staticmethod

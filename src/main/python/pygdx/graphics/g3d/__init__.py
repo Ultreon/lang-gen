@@ -20,7 +20,7 @@ except ImportError:
     utils = __import_once__("pygdx.graphics.g3d.utils")
 
  
-class Shader(ABC, pygdx.__Disposable, utils.Disposable):
+class Shader(ABC):
     """com.badlogic.gdx.graphics.g3d.Shader"""
  
     @staticmethod
@@ -106,7 +106,7 @@ except ImportError:
     utils = __import_once__("pygdx.graphics.g3d.utils")
 
  
-class Shader(ABC, pygdx.__Disposable, utils.Disposable):
+class Shader(ABC):
     """com.badlogic.gdx.graphics.g3d.Shader"""
  
     @staticmethod
@@ -177,241 +177,6 @@ class Shader(ABC, pygdx.__Disposable, utils.Disposable):
 # CLASS: com.badlogic.gdx.graphics.g3d.Shader 
  
  
-# CLASS: com.badlogic.gdx.graphics.g3d.Model
-from pyquantum_helper import import_once as __import_once__
-import java.lang.Boolean as __boolean
-from builtins import type
-import com.badlogic.gdx.graphics.g3d.Model as __Model
-__Model = __Model
-import com.badlogic.gdx.graphics.g3d.model.Node as __Node
-__Node = __Node
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __string
-import com.badlogic.gdx.math.collision.BoundingBox as __BoundingBox
-__BoundingBox = __BoundingBox
-import com.badlogic.gdx.graphics.g3d.Material as __Material
-__Material = __Material
-from builtins import bool
-from builtins import str
-try:
-    from pygdx import utils
-except ImportError:
-    utils = __import_once__("pygdx.utils")
-
-from pyquantum_helper import override
-import java.lang.Object as __object
-import java.lang.Iterable as Iterable
-try:
-    from pygdx.math import collision
-except ImportError:
-    collision = __import_once__("pygdx.math.collision")
-
-import com.badlogic.gdx.graphics.g3d.model.Animation as __Animation
-__Animation = __Animation
-import java.lang.Long as __long
-try:
-    from pygdx.graphics.g3d import model
-except ImportError:
-    model = __import_once__("pygdx.graphics.g3d.model")
-
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
-try:
-    from pygdx.graphics.g3d.model import data
-except ImportError:
-    data = __import_once__("pygdx.graphics.g3d.model.data")
-
-try:
-    from pygdx.graphics.g3d import utils
-except ImportError:
-    utils = __import_once__("pygdx.graphics.g3d.utils")
-
-import java.lang.Iterable as __Iterable
-__Iterable = __Iterable
-from builtins import int
- 
-class Model(pygdx.__Disposable, utils.Disposable):
-    """com.badlogic.gdx.graphics.g3d.Model"""
- 
-    @staticmethod
-    def __wrap(java_value: __Model) -> 'Model':
-        return Model(__dynamic__=java_value)
- 
-    #
-    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
-    #
-    @overload
-    def __init__(self, __dynamic__: __Model):
-        """
-        Dynamic initializer for Model.
-        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
- 
-        :param __dynamic__: The java object to wrap
-        """
-        self.__dict__ = __dynamic__.__dict__
-        self.__wrapper = __dynamic__
- 
-    def __getattr__(self, name: str):
-        return getattr(self.__wrapper, name)
- 
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
- 
-    def __delattr__(self, name: str):
-        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
- 
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def getManagedDisposables(self) -> 'Iterable':
-        """public java.lang.Iterable<com.badlogic.gdx.utils.Disposable> com.badlogic.gdx.graphics.g3d.Model.getManagedDisposables()"""
-        return 'Iterable'.__wrap(super(Model, self).getManagedDisposables())
-
-    @overload
-    def getAnimation(self, arg0: str) -> 'model.Animation':
-        """public com.badlogic.gdx.graphics.g3d.model.Animation com.badlogic.gdx.graphics.g3d.Model.getAnimation(java.lang.String)"""
-        return 'model.Animation'.__wrap(super(__Model, self).getAnimation(arg0))
-
-    @overload
-    def __init__(self, arg0: 'ModelData'):
-        """public com.badlogic.gdx.graphics.g3d.Model(com.badlogic.gdx.graphics.g3d.model.data.ModelData)"""
-        val = __Model(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @overload
-    def getNode(self, arg0: str) -> 'model.Node':
-        """public com.badlogic.gdx.graphics.g3d.model.Node com.badlogic.gdx.graphics.g3d.Model.getNode(java.lang.String)"""
-        return 'model.Node'.__wrap(super(__Model, self).getNode(arg0))
-
-    @override
-    @overload
-    def notifyAll(self):
-        """public final native void java.lang.Object.notifyAll()"""
-        super(object, self).notifyAll()
-
-    @overload
-    def getAnimation(self, arg0: str, arg1: bool) -> 'model.Animation':
-        """public com.badlogic.gdx.graphics.g3d.model.Animation com.badlogic.gdx.graphics.g3d.Model.getAnimation(java.lang.String,boolean)"""
-        return 'model.Animation'.__wrap(super(__Model, self).getAnimation(arg0, __boolean.valueOf(arg1)))
-
-    @overload
-    def calculateTransforms(self):
-        """public void com.badlogic.gdx.graphics.g3d.Model.calculateTransforms()"""
-        super(Model, self).calculateTransforms()
-
-    @overload
-    def getNode(self, arg0: str, arg1: bool, arg2: bool) -> 'model.Node':
-        """public com.badlogic.gdx.graphics.g3d.model.Node com.badlogic.gdx.graphics.g3d.Model.getNode(java.lang.String,boolean,boolean)"""
-        return 'model.Node'.__wrap(super(__Model, self).getNode(arg0, __boolean.valueOf(arg1), __boolean.valueOf(arg2)))
-
-    @override
-    @overload
-    def notify(self):
-        """public final native void java.lang.Object.notify()"""
-        super(object, self).notify()
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @overload
-    def __init__(self, ):
-        """public com.badlogic.gdx.graphics.g3d.Model()"""
-        val = __Model()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @overload
-    def getMaterial(self, arg0: str) -> 'Material':
-        """public com.badlogic.gdx.graphics.g3d.Material com.badlogic.gdx.graphics.g3d.Model.getMaterial(java.lang.String)"""
-        return 'Material'.__wrap(super(__Model, self).getMaterial(arg0))
-
-    @overload
-    def manageDisposable(self, arg0: 'Disposable'):
-        """public void com.badlogic.gdx.graphics.g3d.Model.manageDisposable(com.badlogic.gdx.utils.Disposable)"""
-        super(__Model, self).manageDisposable(arg0)
-
-    @override
-    @overload
-    def dispose(self):
-        """public void com.badlogic.gdx.graphics.g3d.Model.dispose()"""
-        super(Model, self).dispose()
-
-    @overload
-    def getNode(self, arg0: str, arg1: bool) -> 'model.Node':
-        """public com.badlogic.gdx.graphics.g3d.model.Node com.badlogic.gdx.graphics.g3d.Model.getNode(java.lang.String,boolean)"""
-        return 'model.Node'.__wrap(super(__Model, self).getNode(arg0, __boolean.valueOf(arg1)))
-
-    @overload
-    def __init__(self, arg0: 'ModelData', arg1: 'TextureProvider'):
-        """public com.badlogic.gdx.graphics.g3d.Model(com.badlogic.gdx.graphics.g3d.model.data.ModelData,com.badlogic.gdx.graphics.g3d.utils.TextureProvider)"""
-        val = __Model(arg0, arg1)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @overload
-    def calculateBoundingBox(self, arg0: 'BoundingBox') -> 'collision.BoundingBox':
-        """public com.badlogic.gdx.math.collision.BoundingBox com.badlogic.gdx.graphics.g3d.Model.calculateBoundingBox(com.badlogic.gdx.math.collision.BoundingBox)"""
-        return 'collision.BoundingBox'.__wrap(super(__Model, self).calculateBoundingBox(arg0))
-
-    @override
-    @overload
-    def wait(self):
-        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
-        super(object, self).wait()
-
-    @overload
-    def getMaterial(self, arg0: str, arg1: bool) -> 'Material':
-        """public com.badlogic.gdx.graphics.g3d.Material com.badlogic.gdx.graphics.g3d.Model.getMaterial(java.lang.String,boolean)"""
-        return 'Material'.__wrap(super(__Model, self).getMaterial(arg0, __boolean.valueOf(arg1)))
-
-    @overload
-    def __init__(self):
-        """public com.badlogic.gdx.graphics.g3d.Model()"""
-        val = __Model()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @overload
-    def extendBoundingBox(self, arg0: 'BoundingBox') -> 'collision.BoundingBox':
-        """public com.badlogic.gdx.math.collision.BoundingBox com.badlogic.gdx.graphics.g3d.Model.extendBoundingBox(com.badlogic.gdx.math.collision.BoundingBox)"""
-        return 'collision.BoundingBox'.__wrap(super(__Model, self).extendBoundingBox(arg0)) 
- 
- 
 # CLASS: com.badlogic.gdx.graphics.g3d.ModelCache$TightMeshPool
 from pyquantum_helper import import_once as __import_once__
 from builtins import str
@@ -438,7 +203,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class TightMeshPool(__MeshPool, MeshPool):
+class TightMeshPool():
     """com.badlogic.gdx.graphics.g3d.ModelCache.TightMeshPool"""
  
     @staticmethod
@@ -606,7 +371,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Environment(__Attributes, Attributes):
+class Environment():
     """com.badlogic.gdx.graphics.g3d.Environment"""
  
     @staticmethod
@@ -960,7 +725,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RenderablePool(pygdx.__FlushablePool, utils.FlushablePool):
+class RenderablePool():
     """com.badlogic.gdx.graphics.g3d.ModelBatch.RenderablePool"""
  
     @staticmethod
@@ -1139,7 +904,7 @@ __Object = __Object
 import java.lang.Integer as __int
 from builtins import int
  
-class ModelInstance(__RenderableProvider, RenderableProvider):
+class ModelInstance():
     """com.badlogic.gdx.graphics.g3d.ModelInstance"""
  
     @staticmethod
@@ -1573,6 +1338,241 @@ class Renderable():
         super(__object, self).wait(__long.valueOf(arg0)) 
  
  
+# CLASS: com.badlogic.gdx.graphics.g3d.Model
+from pyquantum_helper import import_once as __import_once__
+import java.lang.Boolean as __boolean
+from builtins import type
+import com.badlogic.gdx.graphics.g3d.Model as __Model
+__Model = __Model
+import com.badlogic.gdx.graphics.g3d.model.Node as __Node
+__Node = __Node
+import java.lang.Class as __Class
+__Class = __Class
+import java.lang.String as __string
+import com.badlogic.gdx.math.collision.BoundingBox as __BoundingBox
+__BoundingBox = __BoundingBox
+import com.badlogic.gdx.graphics.g3d.Material as __Material
+__Material = __Material
+from builtins import bool
+from builtins import str
+try:
+    from pygdx import utils
+except ImportError:
+    utils = __import_once__("pygdx.utils")
+
+from pyquantum_helper import override
+import java.lang.Object as __object
+import java.lang.Iterable as Iterable
+try:
+    from pygdx.math import collision
+except ImportError:
+    collision = __import_once__("pygdx.math.collision")
+
+import com.badlogic.gdx.graphics.g3d.model.Animation as __Animation
+__Animation = __Animation
+import java.lang.Long as __long
+try:
+    from pygdx.graphics.g3d import model
+except ImportError:
+    model = __import_once__("pygdx.graphics.g3d.model")
+
+import java.lang.String as __String
+__String = __String
+import java.lang.Object as __Object
+__Object = __Object
+import java.lang.Integer as __int
+try:
+    from pygdx.graphics.g3d.model import data
+except ImportError:
+    data = __import_once__("pygdx.graphics.g3d.model.data")
+
+try:
+    from pygdx.graphics.g3d import utils
+except ImportError:
+    utils = __import_once__("pygdx.graphics.g3d.utils")
+
+import java.lang.Iterable as __Iterable
+__Iterable = __Iterable
+from builtins import int
+ 
+class Model():
+    """com.badlogic.gdx.graphics.g3d.Model"""
+ 
+    @staticmethod
+    def __wrap(java_value: __Model) -> 'Model':
+        return Model(__dynamic__=java_value)
+ 
+    #
+    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+    #
+    @overload
+    def __init__(self, __dynamic__: __Model):
+        """
+        Dynamic initializer for Model.
+        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+ 
+        :param __dynamic__: The java object to wrap
+        """
+        self.__dict__ = __dynamic__.__dict__
+        self.__wrapper = __dynamic__
+ 
+    def __getattr__(self, name: str):
+        return getattr(self.__wrapper, name)
+ 
+    def __setattr__(self, name: str, value: object):
+        return setattr(self.__wrapper, name, value)
+ 
+    def __delattr__(self, name: str):
+        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
+ 
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+
+    @overload
+    def getManagedDisposables(self) -> 'Iterable':
+        """public java.lang.Iterable<com.badlogic.gdx.utils.Disposable> com.badlogic.gdx.graphics.g3d.Model.getManagedDisposables()"""
+        return 'Iterable'.__wrap(super(Model, self).getManagedDisposables())
+
+    @overload
+    def getAnimation(self, arg0: str) -> 'model.Animation':
+        """public com.badlogic.gdx.graphics.g3d.model.Animation com.badlogic.gdx.graphics.g3d.Model.getAnimation(java.lang.String)"""
+        return 'model.Animation'.__wrap(super(__Model, self).getAnimation(arg0))
+
+    @overload
+    def __init__(self, arg0: 'ModelData'):
+        """public com.badlogic.gdx.graphics.g3d.Model(com.badlogic.gdx.graphics.g3d.model.data.ModelData)"""
+        val = __Model(arg0)
+        self.__dict__ = val.__dict__
+        self.__wrapper = val
+
+    @overload
+    def getNode(self, arg0: str) -> 'model.Node':
+        """public com.badlogic.gdx.graphics.g3d.model.Node com.badlogic.gdx.graphics.g3d.Model.getNode(java.lang.String)"""
+        return 'model.Node'.__wrap(super(__Model, self).getNode(arg0))
+
+    @override
+    @overload
+    def notifyAll(self):
+        """public final native void java.lang.Object.notifyAll()"""
+        super(object, self).notifyAll()
+
+    @overload
+    def getAnimation(self, arg0: str, arg1: bool) -> 'model.Animation':
+        """public com.badlogic.gdx.graphics.g3d.model.Animation com.badlogic.gdx.graphics.g3d.Model.getAnimation(java.lang.String,boolean)"""
+        return 'model.Animation'.__wrap(super(__Model, self).getAnimation(arg0, __boolean.valueOf(arg1)))
+
+    @overload
+    def calculateTransforms(self):
+        """public void com.badlogic.gdx.graphics.g3d.Model.calculateTransforms()"""
+        super(Model, self).calculateTransforms()
+
+    @overload
+    def getNode(self, arg0: str, arg1: bool, arg2: bool) -> 'model.Node':
+        """public com.badlogic.gdx.graphics.g3d.model.Node com.badlogic.gdx.graphics.g3d.Model.getNode(java.lang.String,boolean,boolean)"""
+        return 'model.Node'.__wrap(super(__Model, self).getNode(arg0, __boolean.valueOf(arg1), __boolean.valueOf(arg2)))
+
+    @override
+    @overload
+    def notify(self):
+        """public final native void java.lang.Object.notify()"""
+        super(object, self).notify()
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int.__wrap(super(object, self).hashCode())
+
+    @overload
+    def __init__(self, ):
+        """public com.badlogic.gdx.graphics.g3d.Model()"""
+        val = __Model()
+        self.__dict__ = val.__dict__
+        self.__wrapper = val
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool.__wrap(super(__object, self).equals(arg0))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str.__wrap(super(object, self).toString())
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(__object, self).wait(__long.valueOf(arg0))
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'.__wrap(super(object, self).getClass())
+
+    @overload
+    def manageDisposable(self, arg0: 'Disposable'):
+        """public void com.badlogic.gdx.graphics.g3d.Model.manageDisposable(com.badlogic.gdx.utils.Disposable)"""
+        super(__Model, self).manageDisposable(arg0)
+
+    @overload
+    def getMaterial(self, arg0: str) -> 'Material':
+        """public com.badlogic.gdx.graphics.g3d.Material com.badlogic.gdx.graphics.g3d.Model.getMaterial(java.lang.String)"""
+        return 'Material'.__wrap(super(__Model, self).getMaterial(arg0))
+
+    @override
+    @overload
+    def dispose(self):
+        """public void com.badlogic.gdx.graphics.g3d.Model.dispose()"""
+        super(Model, self).dispose()
+
+    @overload
+    def getNode(self, arg0: str, arg1: bool) -> 'model.Node':
+        """public com.badlogic.gdx.graphics.g3d.model.Node com.badlogic.gdx.graphics.g3d.Model.getNode(java.lang.String,boolean)"""
+        return 'model.Node'.__wrap(super(__Model, self).getNode(arg0, __boolean.valueOf(arg1)))
+
+    @overload
+    def __init__(self, arg0: 'ModelData', arg1: 'TextureProvider'):
+        """public com.badlogic.gdx.graphics.g3d.Model(com.badlogic.gdx.graphics.g3d.model.data.ModelData,com.badlogic.gdx.graphics.g3d.utils.TextureProvider)"""
+        val = __Model(arg0, arg1)
+        self.__dict__ = val.__dict__
+        self.__wrapper = val
+
+    @overload
+    def calculateBoundingBox(self, arg0: 'BoundingBox') -> 'collision.BoundingBox':
+        """public com.badlogic.gdx.math.collision.BoundingBox com.badlogic.gdx.graphics.g3d.Model.calculateBoundingBox(com.badlogic.gdx.math.collision.BoundingBox)"""
+        return 'collision.BoundingBox'.__wrap(super(__Model, self).calculateBoundingBox(arg0))
+
+    @override
+    @overload
+    def wait(self):
+        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
+        super(object, self).wait()
+
+    @overload
+    def getMaterial(self, arg0: str, arg1: bool) -> 'Material':
+        """public com.badlogic.gdx.graphics.g3d.Material com.badlogic.gdx.graphics.g3d.Model.getMaterial(java.lang.String,boolean)"""
+        return 'Material'.__wrap(super(__Model, self).getMaterial(arg0, __boolean.valueOf(arg1)))
+
+    @overload
+    def __init__(self):
+        """public com.badlogic.gdx.graphics.g3d.Model()"""
+        val = __Model()
+        self.__dict__ = val.__dict__
+        self.__wrapper = val
+
+    @overload
+    def extendBoundingBox(self, arg0: 'BoundingBox') -> 'collision.BoundingBox':
+        """public com.badlogic.gdx.math.collision.BoundingBox com.badlogic.gdx.graphics.g3d.Model.extendBoundingBox(com.badlogic.gdx.math.collision.BoundingBox)"""
+        return 'collision.BoundingBox'.__wrap(super(__Model, self).extendBoundingBox(arg0)) 
+ 
+ 
 # CLASS: com.badlogic.gdx.graphics.g3d.ModelCache$MeshPool
 from pyquantum_helper import import_once as __import_once__
 import com.badlogic.gdx.graphics.g3d.ModelCache as __ModelCache_MeshPool
@@ -1586,7 +1586,7 @@ except ImportError:
 import com.badlogic.gdx.utils.Disposable as __Disposable
 __Disposable = __Disposable
  
-class MeshPool(ABC, pygdx.__Disposable, utils.Disposable):
+class MeshPool(ABC):
     """com.badlogic.gdx.graphics.g3d.ModelCache.MeshPool"""
  
     @staticmethod
@@ -1668,7 +1668,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class Sorter(g3d.__RenderableSorter, utils.RenderableSorter, __Comparator, Comparator):
+class Sorter():
     """com.badlogic.gdx.graphics.g3d.ModelCache.Sorter"""
  
     @staticmethod
@@ -1857,7 +1857,7 @@ import com.badlogic.gdx.graphics.g3d.utils.RenderableSorter as __RenderableSorte
 __RenderableSorter = __RenderableSorter
 from builtins import int
  
-class ModelBatch(pygdx.__Disposable, utils.Disposable):
+class ModelBatch():
     """com.badlogic.gdx.graphics.g3d.ModelBatch"""
  
     @staticmethod
@@ -2149,7 +2149,7 @@ except ImportError:
 
 from builtins import int
  
-class ModelCache(pygdx.__Disposable, utils.Disposable, __RenderableProvider, RenderableProvider):
+class ModelCache():
     """com.badlogic.gdx.graphics.g3d.ModelCache"""
  
     @staticmethod
@@ -2345,7 +2345,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Material(__Attributes, Attributes):
+class Material():
     """com.badlogic.gdx.graphics.g3d.Material"""
  
     @staticmethod
@@ -2685,7 +2685,7 @@ import java.lang.Comparable as __Comparable
 __Comparable = __Comparable
 from builtins import int
  
-class Attribute(ABC, __Comparable, Comparable):
+class Attribute(ABC):
     """com.badlogic.gdx.graphics.g3d.Attribute"""
  
     @staticmethod
@@ -2837,7 +2837,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Attributes(__Iterable, Iterable, __Comparator, Comparator, __Comparable, Comparable):
+class Attributes():
     """com.badlogic.gdx.graphics.g3d.Attributes"""
  
     @staticmethod
@@ -3115,7 +3115,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class SimpleMeshPool(__MeshPool, MeshPool):
+class SimpleMeshPool():
     """com.badlogic.gdx.graphics.g3d.ModelCache.SimpleMeshPool"""
  
     @staticmethod

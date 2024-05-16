@@ -10,9 +10,9 @@ try:
 except ImportError:
     utils = __import_once__("pygdx.utils")
 
+from pyquantum_helper import override
 import com.badlogic.gdx.graphics.glutils.ShaderProgram as __ShaderProgram
 __ShaderProgram = __ShaderProgram
-from pyquantum_helper import override
 import java.lang.Object as __object
 from builtins import type
 import com.badlogic.gdx.graphics.g3d.decals.SimpleOrthoGroupStrategy as __SimpleOrthoGroupStrategy
@@ -33,7 +33,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SimpleOrthoGroupStrategy(__GroupStrategy, GroupStrategy):
+class SimpleOrthoGroupStrategy():
     """com.badlogic.gdx.graphics.g3d.decals.SimpleOrthoGroupStrategy"""
  
     @staticmethod
@@ -175,9 +175,9 @@ try:
 except ImportError:
     utils = __import_once__("pygdx.utils")
 
+from pyquantum_helper import override
 import com.badlogic.gdx.graphics.glutils.ShaderProgram as __ShaderProgram
 __ShaderProgram = __ShaderProgram
-from pyquantum_helper import override
 import java.lang.Object as __object
 from builtins import type
 import com.badlogic.gdx.graphics.g3d.decals.SimpleOrthoGroupStrategy as __SimpleOrthoGroupStrategy
@@ -198,7 +198,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SimpleOrthoGroupStrategy(__GroupStrategy, GroupStrategy):
+class SimpleOrthoGroupStrategy():
     """com.badlogic.gdx.graphics.g3d.decals.SimpleOrthoGroupStrategy"""
  
     @staticmethod
@@ -343,9 +343,9 @@ try:
 except ImportError:
     utils = __import_once__("pygdx.utils")
 
+from pyquantum_helper import override
 import com.badlogic.gdx.graphics.glutils.ShaderProgram as __ShaderProgram
 __ShaderProgram = __ShaderProgram
-from pyquantum_helper import override
 import java.lang.Object as __object
 from builtins import type
 import com.badlogic.gdx.graphics.Camera as __Camera
@@ -374,7 +374,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class CameraGroupStrategy(__GroupStrategy, GroupStrategy, pygdx.__Disposable, utils.Disposable):
+class CameraGroupStrategy():
     """com.badlogic.gdx.graphics.g3d.decals.CameraGroupStrategy"""
  
     @staticmethod
@@ -603,7 +603,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PluggableGroupStrategy(ABC, __GroupStrategy, GroupStrategy):
+class PluggableGroupStrategy(ABC):
     """com.badlogic.gdx.graphics.g3d.decals.PluggableGroupStrategy"""
  
     @staticmethod
@@ -833,7 +833,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DecalBatch(pygdx.__Disposable, utils.Disposable):
+class DecalBatch():
     """com.badlogic.gdx.graphics.g3d.decals.DecalBatch"""
  
     @staticmethod

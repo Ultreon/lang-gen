@@ -26,7 +26,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LinkedSubListIterator(__LinkedListIterator, LinkedListIterator):
+class LinkedSubListIterator():
     """org.apache.commons.collections4.list.AbstractLinkedList.LinkedSubListIterator"""
  
     @staticmethod
@@ -196,7 +196,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LinkedSubListIterator(__LinkedListIterator, LinkedListIterator):
+class LinkedSubListIterator():
     """org.apache.commons.collections4.list.AbstractLinkedList.LinkedSubListIterator"""
  
     @staticmethod
@@ -394,7 +394,7 @@ import java.util.List as List
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class TreeList(__AbstractList, AbstractList):
+class TreeList():
     """org.apache.commons.collections4.list.TreeList"""
  
     @staticmethod
@@ -758,7 +758,7 @@ import java.util.List as List
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class AbstractSerializableListDecorator(ABC, __AbstractListDecorator, AbstractListDecorator):
+class AbstractSerializableListDecorator(ABC):
     """org.apache.commons.collections4.list.AbstractSerializableListDecorator"""
  
     @staticmethod
@@ -1076,7 +1076,7 @@ import org.apache.commons.collections4.list.TransformedList as __TransformedList
 __TransformedListIterator = __TransformedList_TransformedListIterator.TransformedListIterator
 from builtins import int
  
-class TransformedListIterator(collections4.__AbstractListIteratorDecorator, iterators.AbstractListIteratorDecorator):
+class TransformedListIterator():
     """org.apache.commons.collections4.list.TransformedList.TransformedListIterator"""
  
     @staticmethod
@@ -1275,7 +1275,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class LazyList(__AbstractSerializableListDecorator, AbstractSerializableListDecorator):
+class LazyList():
     """org.apache.commons.collections4.list.LazyList"""
  
     @staticmethod
@@ -1630,7 +1630,7 @@ import java.util.List as List
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class CursorableLinkedList(__AbstractLinkedList, AbstractLinkedList, __Serializable, Serializable):
+class CursorableLinkedList():
     """org.apache.commons.collections4.list.CursorableLinkedList"""
  
     @staticmethod
@@ -1988,7 +1988,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SubCursor(__Cursor, Cursor):
+class SubCursor():
     """org.apache.commons.collections4.list.CursorableLinkedList.SubCursor"""
  
     @staticmethod
@@ -2138,7 +2138,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PredicatedListIterator(collections4.__AbstractListIteratorDecorator, iterators.AbstractListIteratorDecorator):
+class PredicatedListIterator():
     """org.apache.commons.collections4.list.PredicatedList.PredicatedListIterator"""
  
     @staticmethod
@@ -2331,7 +2331,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class UnmodifiableList(__AbstractSerializableListDecorator, AbstractSerializableListDecorator, pyapache.__Unmodifiable, collections4.Unmodifiable):
+class UnmodifiableList():
     """org.apache.commons.collections4.list.UnmodifiableList"""
  
     @staticmethod
@@ -2700,7 +2700,7 @@ import java.util.List as List
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class PredicatedList(collections4.__PredicatedCollection, collection.PredicatedCollection, __List, List):
+class PredicatedList():
     """org.apache.commons.collections4.list.PredicatedList"""
  
     @staticmethod
@@ -3063,7 +3063,7 @@ import java.util.List as List
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class AbstractLinkedList(ABC, __List, List):
+class AbstractLinkedList(ABC):
     """org.apache.commons.collections4.list.AbstractLinkedList"""
  
     @staticmethod
@@ -3416,7 +3416,7 @@ import java.util.List as List
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class FixedSizeList(__AbstractSerializableListDecorator, AbstractSerializableListDecorator, pyapache.__BoundedCollection, collections4.BoundedCollection):
+class FixedSizeList():
     """org.apache.commons.collections4.list.FixedSizeList"""
  
     @staticmethod
@@ -3777,7 +3777,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class GrowthList(__AbstractSerializableListDecorator, AbstractSerializableListDecorator):
+class GrowthList():
     """org.apache.commons.collections4.list.GrowthList"""
  
     @staticmethod
@@ -4145,7 +4145,7 @@ import java.util.List as List
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class NodeCachingLinkedList(__AbstractLinkedList, AbstractLinkedList, __Serializable, Serializable):
+class NodeCachingLinkedList():
     """org.apache.commons.collections4.list.NodeCachingLinkedList"""
  
     @staticmethod
@@ -4526,7 +4526,7 @@ import java.util.List as List
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class LinkedSubList(__AbstractList, AbstractList):
+class LinkedSubList():
     """org.apache.commons.collections4.list.AbstractLinkedList.LinkedSubList"""
  
     @staticmethod
@@ -4880,7 +4880,7 @@ import java.util.List as List
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class TransformedList(collections4.__TransformedCollection, collection.TransformedCollection, __List, List):
+class TransformedList():
     """org.apache.commons.collections4.list.TransformedList"""
  
     @staticmethod
@@ -5245,7 +5245,7 @@ import java.util.List as List
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class AbstractListDecorator(ABC, collections4.__AbstractCollectionDecorator, collection.AbstractCollectionDecorator, __List, List):
+class AbstractListDecorator(ABC):
     """org.apache.commons.collections4.list.AbstractListDecorator"""
  
     @staticmethod
@@ -5561,7 +5561,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LinkedListIterator(__ListIterator, ListIterator, pyapache.__OrderedIterator, collections4.OrderedIterator):
+class LinkedListIterator():
     """org.apache.commons.collections4.list.AbstractLinkedList.LinkedListIterator"""
  
     @staticmethod
@@ -5757,7 +5757,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class SetUniqueList(__AbstractSerializableListDecorator, AbstractSerializableListDecorator):
+class SetUniqueList():
     """org.apache.commons.collections4.list.SetUniqueList"""
  
     @staticmethod
@@ -6185,7 +6185,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Cursor(__LinkedListIterator, LinkedListIterator):
+class Cursor():
     """org.apache.commons.collections4.list.CursorableLinkedList.Cursor"""
  
     @staticmethod

@@ -281,7 +281,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class PointerBuffer(pyglsystem.__CustomBuffer, pyglsystem.CustomBuffer, __Comparable, Comparable):
+class PointerBuffer():
     """org.lwjgl.PointerBuffer"""
  
     @staticmethod
@@ -786,7 +786,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class CLongBuffer(pyglsystem.__CustomBuffer, pyglsystem.CustomBuffer, __Comparable, Comparable):
+class CLongBuffer():
     """org.lwjgl.CLongBuffer"""
  
     @staticmethod
@@ -1110,7 +1110,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class BuildType(__Enum, Enum):
+class BuildType():
     """org.lwjgl.Version.BuildType"""
  
     @staticmethod

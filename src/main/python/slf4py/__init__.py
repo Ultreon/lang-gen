@@ -1062,7 +1062,7 @@ import org.slf4j.Marker as __Marker
 __Marker = __Marker
 from abc import abstractmethod, ABC
  
-class Marker(ABC, __Serializable, Serializable):
+class Marker(ABC):
     """org.slf4j.Marker"""
  
     @staticmethod
@@ -1161,7 +1161,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MDCCloseable(__Closeable, Closeable):
+class MDCCloseable():
     """org.slf4j.MDC.MDCCloseable"""
  
     @staticmethod

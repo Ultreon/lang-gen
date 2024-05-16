@@ -9,7 +9,7 @@ import org.apache.logging.log4j.status.StatusListener as __StatusListener
 __StatusListener = __StatusListener
 from abc import abstractmethod, ABC
  
-class StatusListener(ABC, __Closeable, Closeable, __EventListener, EventListener):
+class StatusListener(ABC):
     """org.apache.logging.log4j.status.StatusListener"""
  
     @staticmethod
@@ -64,7 +64,7 @@ import org.apache.logging.log4j.status.StatusListener as __StatusListener
 __StatusListener = __StatusListener
 from abc import abstractmethod, ABC
  
-class StatusListener(ABC, __Closeable, Closeable, __EventListener, EventListener):
+class StatusListener(ABC):
     """org.apache.logging.log4j.status.StatusListener"""
  
     @staticmethod
@@ -155,7 +155,7 @@ import org.apache.logging.log4j.Level as __Level
 __Level = __Level
 from builtins import int
  
-class StatusData(__Serializable, Serializable):
+class StatusData():
     """org.apache.logging.log4j.status.StatusData"""
  
     @staticmethod
@@ -308,7 +308,7 @@ import org.apache.logging.log4j.Level as __Level
 __Level = __Level
 from builtins import int
  
-class StatusConsoleListener(__StatusListener, StatusListener):
+class StatusConsoleListener():
     """org.apache.logging.log4j.status.StatusConsoleListener"""
  
     @staticmethod
@@ -498,7 +498,7 @@ import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
 from builtins import int
  
-class StatusLogger(log4py.__AbstractLogger, spi.AbstractLogger):
+class StatusLogger():
     """org.apache.logging.log4j.status.StatusLogger"""
  
     @staticmethod

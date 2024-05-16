@@ -7,7 +7,7 @@ import dev.ultreon.quantum.premain.posix.CLibrary as __CLibrary
 __CLibrary = __CLibrary
 from abc import abstractmethod, ABC
  
-class CLibrary(ABC, __Library, Library):
+class CLibrary(ABC):
     """dev.ultreon.quantum.premain.posix.CLibrary"""
  
     @staticmethod
@@ -54,7 +54,7 @@ import dev.ultreon.quantum.premain.posix.CLibrary as __CLibrary
 __CLibrary = __CLibrary
 from abc import abstractmethod, ABC
  
-class CLibrary(ABC, __Library, Library):
+class CLibrary(ABC):
     """dev.ultreon.quantum.premain.posix.CLibrary"""
  
     @staticmethod

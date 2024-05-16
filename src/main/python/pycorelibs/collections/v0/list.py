@@ -464,7 +464,7 @@ import java.lang.Integer as __int
 import java.util.List as List
 from builtins import int
  
-class PagedList(__ArrayList, ArrayList):
+class PagedList():
     """dev.ultreon.libs.collections.v0.list.PagedList"""
  
     @staticmethod

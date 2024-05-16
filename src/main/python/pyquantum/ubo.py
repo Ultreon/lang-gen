@@ -344,7 +344,7 @@ except ImportError:
     types = __import_once__("pyubo.types")
 
  
-class DataHolder(ABC, __DataWriter, DataWriter, __DataReader, DataReader):
+class DataHolder(ABC):
     """dev.ultreon.quantum.ubo.DataHolder"""
  
     @staticmethod

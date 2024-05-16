@@ -30,7 +30,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ValueExistsException(__RuntimeException, RuntimeException):
+class ValueExistsException():
     """dev.ultreon.libs.collections.v0.exceptions.ValueExistsException"""
  
     @staticmethod
@@ -250,7 +250,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ValueExistsException(__RuntimeException, RuntimeException):
+class ValueExistsException():
     """dev.ultreon.libs.collections.v0.exceptions.ValueExistsException"""
  
     @staticmethod
@@ -473,7 +473,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class OutOfRangeException(__RuntimeException, RuntimeException):
+class OutOfRangeException():
     """dev.ultreon.libs.collections.v0.exceptions.OutOfRangeException"""
  
     @staticmethod

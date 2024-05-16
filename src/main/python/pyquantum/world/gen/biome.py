@@ -453,7 +453,7 @@ __Biome = __Biome
 from builtins import int
 import java.util.List as List
  
-class BiomeGenerator(pyquantum.__ServerDisposable, server.ServerDisposable):
+class BiomeGenerator():
     """dev.ultreon.quantum.world.gen.biome.BiomeGenerator"""
  
     @staticmethod

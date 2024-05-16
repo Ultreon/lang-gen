@@ -31,7 +31,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class DepthFunc(__Enum, Enum):
+class DepthFunc():
     """dev.ultreon.quantum.client.data.gen.provider.DepthFunc"""
  
     @staticmethod
@@ -228,7 +228,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class DepthFunc(__Enum, Enum):
+class DepthFunc():
     """dev.ultreon.quantum.client.data.gen.provider.DepthFunc"""
  
     @staticmethod

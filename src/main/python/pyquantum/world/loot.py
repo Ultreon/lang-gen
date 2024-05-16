@@ -156,7 +156,7 @@ __Iterable = __Iterable
 from builtins import int
 import java.util.List as List
  
-class ConstantLoot(__LootGenerator, LootGenerator):
+class ConstantLoot():
     """dev.ultreon.quantum.world.loot.ConstantLoot"""
  
     @staticmethod
@@ -308,7 +308,7 @@ except ImportError:
     types = __import_once__("pyubo.types")
 
  
-class CountLootEntry(__LootEntry, LootEntry):
+class CountLootEntry():
     """dev.ultreon.quantum.world.loot.RandomLoot.CountLootEntry"""
  
     @staticmethod
@@ -515,7 +515,7 @@ except ImportError:
     types = __import_once__("pyubo.types")
 
  
-class ChanceLootEntry(__LootEntry, LootEntry):
+class ChanceLootEntry():
     """dev.ultreon.quantum.world.loot.RandomLoot.ChanceLootEntry"""
  
     @staticmethod
@@ -665,7 +665,7 @@ import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
 from builtins import int
  
-class RandomLoot(__LootGenerator, LootGenerator):
+class RandomLoot():
     """dev.ultreon.quantum.world.loot.RandomLoot"""
  
     @staticmethod

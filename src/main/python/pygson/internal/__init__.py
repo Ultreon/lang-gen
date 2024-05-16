@@ -37,7 +37,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class LinkedTreeMap(__AbstractMap, AbstractMap, __Serializable, Serializable):
+class LinkedTreeMap():
     """com.google.gson.internal.LinkedTreeMap"""
  
     @staticmethod
@@ -310,7 +310,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class LinkedTreeMap(__AbstractMap, AbstractMap, __Serializable, Serializable):
+class LinkedTreeMap():
     """com.google.gson.internal.LinkedTreeMap"""
  
     @staticmethod
@@ -760,7 +760,7 @@ import java.lang.Number as __Number
 __Number = __Number
 from builtins import int
  
-class LazilyParsedNumber(__Number, Number):
+class LazilyParsedNumber():
     """com.google.gson.internal.LazilyParsedNumber"""
  
     @staticmethod
@@ -1059,7 +1059,7 @@ import java.util.List as List
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class NonNullElementWrapperList(__AbstractList, AbstractList, __RandomAccess, RandomAccess):
+class NonNullElementWrapperList():
     """com.google.gson.internal.NonNullElementWrapperList"""
  
     @staticmethod
@@ -2531,8 +2531,8 @@ except ImportError:
     pygson = __import_once__("pygson")
 
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 import com.google.gson.internal.Excluder as __Excluder
 __Excluder = __Excluder
@@ -2557,7 +2557,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Excluder(pygson.__TypeAdapterFactory, pygson.TypeAdapterFactory, __Cloneable, Cloneable):
+class Excluder():
     """com.google.gson.internal.Excluder"""
  
     @staticmethod

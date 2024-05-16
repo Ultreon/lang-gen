@@ -5,9 +5,9 @@ from overload import overload
  
 from pyquantum_helper import import_once as __import_once__
 from builtins import str
+from pyquantum_helper import override
 import dev.ultreon.quantum.resources.ResourceManager as __ResourceManager
 __ResourceManager = __ResourceManager
-from pyquantum_helper import override
 import java.lang.Object as __object
 from builtins import type
 import dev.ultreon.quantum.client.texture.TextureManager as __TextureManager
@@ -40,7 +40,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class TextureManager(pygdx.__Disposable, utils.Disposable):
+class TextureManager():
     """dev.ultreon.quantum.client.texture.TextureManager"""
  
     @staticmethod
@@ -182,9 +182,9 @@ class TextureManager(pygdx.__Disposable, utils.Disposable):
 # CLASS: dev.ultreon.quantum.client.texture.TextureManager
 from pyquantum_helper import import_once as __import_once__
 from builtins import str
+from pyquantum_helper import override
 import dev.ultreon.quantum.resources.ResourceManager as __ResourceManager
 __ResourceManager = __ResourceManager
-from pyquantum_helper import override
 import java.lang.Object as __object
 from builtins import type
 import dev.ultreon.quantum.client.texture.TextureManager as __TextureManager
@@ -217,7 +217,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class TextureManager(pygdx.__Disposable, utils.Disposable):
+class TextureManager():
     """dev.ultreon.quantum.client.texture.TextureManager"""
  
     @staticmethod

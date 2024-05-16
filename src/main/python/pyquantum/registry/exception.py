@@ -30,7 +30,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RegistryException(__IllegalStateException, IllegalStateException):
+class RegistryException():
     """dev.ultreon.quantum.registry.exception.RegistryException"""
  
     @staticmethod
@@ -250,7 +250,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RegistryException(__IllegalStateException, IllegalStateException):
+class RegistryException():
     """dev.ultreon.quantum.registry.exception.RegistryException"""
  
     @staticmethod

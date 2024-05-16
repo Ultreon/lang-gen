@@ -9,7 +9,7 @@ from abc import abstractmethod, ABC
 import com.badlogic.gdx.ai.pfa.Graph as __Graph
 __Graph = __Graph
  
-class IndexedGraph(ABC, ai.__Graph, pfa.Graph):
+class IndexedGraph(ABC):
     """com.badlogic.gdx.ai.pfa.indexed.IndexedGraph"""
  
     @staticmethod
@@ -64,7 +64,7 @@ from abc import abstractmethod, ABC
 import com.badlogic.gdx.ai.pfa.Graph as __Graph
 __Graph = __Graph
  
-class IndexedGraph(ABC, ai.__Graph, pfa.Graph):
+class IndexedGraph(ABC):
     """com.badlogic.gdx.ai.pfa.indexed.IndexedGraph"""
  
     @staticmethod
@@ -261,7 +261,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class IndexedAStarPathFinder(ai.__PathFinder, pfa.PathFinder):
+class IndexedAStarPathFinder():
     """com.badlogic.gdx.ai.pfa.indexed.IndexedAStarPathFinder"""
  
     @staticmethod
@@ -397,7 +397,7 @@ from builtins import int
 import com.badlogic.gdx.ai.pfa.Graph as __Graph
 __Graph = __Graph
  
-class IndexedHierarchicalGraph(ABC, __IndexedGraph, IndexedGraph, ai.__HierarchicalGraph, pfa.HierarchicalGraph):
+class IndexedHierarchicalGraph(ABC):
     """com.badlogic.gdx.ai.pfa.indexed.IndexedHierarchicalGraph"""
  
     @staticmethod

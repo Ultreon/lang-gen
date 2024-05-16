@@ -29,7 +29,7 @@ import com.badlogic.gdx.graphics.g3d.Attribute as __Attribute
 __Attribute = __Attribute
 from builtins import int
  
-class DirectionalLightsAttribute(graphics.__Attribute, g3d.Attribute):
+class DirectionalLightsAttribute():
     """com.badlogic.gdx.graphics.g3d.attributes.DirectionalLightsAttribute"""
  
     @staticmethod
@@ -192,7 +192,7 @@ import com.badlogic.gdx.graphics.g3d.Attribute as __Attribute
 __Attribute = __Attribute
 from builtins import int
  
-class DirectionalLightsAttribute(graphics.__Attribute, g3d.Attribute):
+class DirectionalLightsAttribute():
     """com.badlogic.gdx.graphics.g3d.attributes.DirectionalLightsAttribute"""
  
     @staticmethod
@@ -360,7 +360,7 @@ __Attribute = __Attribute
 from builtins import bool
 from builtins import int
  
-class DepthTestAttribute(graphics.__Attribute, g3d.Attribute):
+class DepthTestAttribute():
     """com.badlogic.gdx.graphics.g3d.attributes.DepthTestAttribute"""
  
     @staticmethod
@@ -563,7 +563,7 @@ __Attribute = __Attribute
 from builtins import bool
 from builtins import int
  
-class IntAttribute(graphics.__Attribute, g3d.Attribute):
+class IntAttribute():
     """com.badlogic.gdx.graphics.g3d.attributes.IntAttribute"""
  
     @staticmethod
@@ -717,7 +717,7 @@ import com.badlogic.gdx.graphics.g3d.Attribute as __Attribute
 __Attribute = __Attribute
 from builtins import int
  
-class SpotLightsAttribute(graphics.__Attribute, g3d.Attribute):
+class SpotLightsAttribute():
     """com.badlogic.gdx.graphics.g3d.attributes.SpotLightsAttribute"""
  
     @staticmethod
@@ -879,7 +879,7 @@ __Attribute = __Attribute
 from builtins import bool
 from builtins import int
  
-class FloatAttribute(graphics.__Attribute, g3d.Attribute):
+class FloatAttribute():
     """com.badlogic.gdx.graphics.g3d.attributes.FloatAttribute"""
  
     @staticmethod
@@ -1055,7 +1055,7 @@ except ImportError:
 
 from builtins import int
  
-class TextureAttribute(graphics.__Attribute, g3d.Attribute):
+class TextureAttribute():
     """com.badlogic.gdx.graphics.g3d.attributes.TextureAttribute"""
  
     @staticmethod
@@ -1343,7 +1343,7 @@ except ImportError:
 
 from builtins import int
  
-class CubemapAttribute(graphics.__Attribute, g3d.Attribute):
+class CubemapAttribute():
     """com.badlogic.gdx.graphics.g3d.attributes.CubemapAttribute"""
  
     @staticmethod
@@ -1513,7 +1513,7 @@ import com.badlogic.gdx.graphics.g3d.Attribute as __Attribute
 __Attribute = __Attribute
 from builtins import int
  
-class BlendingAttribute(graphics.__Attribute, g3d.Attribute):
+class BlendingAttribute():
     """com.badlogic.gdx.graphics.g3d.attributes.BlendingAttribute"""
  
     @staticmethod
@@ -1715,7 +1715,7 @@ except ImportError:
 
 from builtins import int
  
-class ColorAttribute(graphics.__Attribute, g3d.Attribute):
+class ColorAttribute():
     """com.badlogic.gdx.graphics.g3d.attributes.ColorAttribute"""
  
     @staticmethod
@@ -1967,7 +1967,7 @@ import com.badlogic.gdx.graphics.g3d.Attribute as __Attribute
 __Attribute = __Attribute
 from builtins import int
  
-class PointLightsAttribute(graphics.__Attribute, g3d.Attribute):
+class PointLightsAttribute():
     """com.badlogic.gdx.graphics.g3d.attributes.PointLightsAttribute"""
  
     @staticmethod

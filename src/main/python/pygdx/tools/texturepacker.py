@@ -489,7 +489,7 @@ import com.badlogic.gdx.tools.texturepacker.TexturePacker as __TexturePacker_Res
 __Resampling = __TexturePacker_Resampling.Resampling
 from builtins import int
  
-class Resampling(__Enum, Enum):
+class Resampling():
     """com.badlogic.gdx.tools.texturepacker.TexturePacker.Resampling"""
  
     @staticmethod
@@ -646,7 +646,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MaxRectsPacker(__Packer, Packer):
+class MaxRectsPacker():
     """com.badlogic.gdx.tools.texturepacker.MaxRectsPacker"""
  
     @staticmethod
@@ -917,7 +917,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TexturePackerFileProcessor(pygdx.__FileProcessor, tools.FileProcessor):
+class TexturePackerFileProcessor():
     """com.badlogic.gdx.tools.texturepacker.TexturePackerFileProcessor"""
  
     @staticmethod
@@ -1147,7 +1147,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Alias(__Comparable, Comparable):
+class Alias():
     """com.badlogic.gdx.tools.texturepacker.TexturePacker.Alias"""
  
     @staticmethod
@@ -1268,7 +1268,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TexturePackerTest(pygdx.__ApplicationAdapter, pygdx.ApplicationAdapter):
+class TexturePackerTest():
     """com.badlogic.gdx.tools.texturepacker.TexturePackerTest"""
  
     @staticmethod
@@ -1868,7 +1868,7 @@ __GridPacker = __GridPacker
 from builtins import bool
 from builtins import int
  
-class GridPacker(__Packer, Packer):
+class GridPacker():
     """com.badlogic.gdx.tools.texturepacker.GridPacker"""
  
     @staticmethod
@@ -1995,7 +1995,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class FreeRectChoiceHeuristic(__Enum, Enum):
+class FreeRectChoiceHeuristic():
     """com.badlogic.gdx.tools.texturepacker.MaxRectsPacker.FreeRectChoiceHeuristic"""
  
     @staticmethod
@@ -2486,7 +2486,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Rect(__Comparable, Comparable):
+class Rect():
     """com.badlogic.gdx.tools.texturepacker.TexturePacker.Rect"""
  
     @staticmethod

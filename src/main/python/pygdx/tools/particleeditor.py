@@ -200,7 +200,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class GradientEditor(__JPanel, JPanel):
+class GradientEditor():
     """com.badlogic.gdx.tools.particleeditor.GradientPanel.GradientEditor"""
  
     @staticmethod
@@ -2334,7 +2334,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class GradientEditor(__JPanel, JPanel):
+class GradientEditor():
     """com.badlogic.gdx.tools.particleeditor.GradientPanel.GradientEditor"""
  
     @staticmethod
@@ -4470,7 +4470,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class CustomShadingPanel(__EditorPanel, EditorPanel):
+class CustomShadingPanel():
     """com.badlogic.gdx.tools.particleeditor.CustomShadingPanel"""
  
     @staticmethod
@@ -6709,7 +6709,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class ColorPicker(__JPanel, JPanel):
+class ColorPicker():
     """com.badlogic.gdx.tools.particleeditor.GradientPanel.ColorSlider.ColorPicker"""
  
     @staticmethod
@@ -8830,7 +8830,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class ColorSlider(__JPanel, JPanel):
+class ColorSlider():
     """com.badlogic.gdx.tools.particleeditor.GradientPanel.ColorSlider"""
  
     @staticmethod
@@ -10978,7 +10978,7 @@ import java.awt.ImageCapabilities as ImageCapabilities
 import java.awt.Frame as __Frame
 __Frame = __Frame
  
-class ParticleEditor(__JFrame, JFrame):
+class ParticleEditor():
     """com.badlogic.gdx.tools.particleeditor.ParticleEditor"""
  
     @staticmethod
@@ -13183,7 +13183,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class Chart(__JPanel, JPanel):
+class Chart():
     """com.badlogic.gdx.tools.particleeditor.Chart"""
  
     @staticmethod

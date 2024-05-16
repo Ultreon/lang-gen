@@ -32,7 +32,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DefaultKeyValue(__AbstractKeyValue, AbstractKeyValue):
+class DefaultKeyValue():
     """org.apache.commons.collections4.keyvalue.DefaultKeyValue"""
  
     @staticmethod
@@ -210,7 +210,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DefaultKeyValue(__AbstractKeyValue, AbstractKeyValue):
+class DefaultKeyValue():
     """org.apache.commons.collections4.keyvalue.DefaultKeyValue"""
  
     @staticmethod
@@ -391,7 +391,7 @@ import org.apache.commons.collections4.keyvalue.AbstractMapEntry as __AbstractMa
 __AbstractMapEntry = __AbstractMapEntry
 from builtins import int
  
-class UnmodifiableMapEntry(__AbstractMapEntry, AbstractMapEntry, pyapache.__Unmodifiable, collections4.Unmodifiable):
+class UnmodifiableMapEntry():
     """org.apache.commons.collections4.keyvalue.UnmodifiableMapEntry"""
  
     @staticmethod
@@ -532,7 +532,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AbstractKeyValue(ABC, pyapache.__KeyValue, collections4.KeyValue):
+class AbstractKeyValue(ABC):
     """org.apache.commons.collections4.keyvalue.AbstractKeyValue"""
  
     @staticmethod
@@ -649,7 +649,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MultiKey(__Serializable, Serializable):
+class MultiKey():
     """org.apache.commons.collections4.keyvalue.MultiKey"""
  
     @staticmethod
@@ -820,7 +820,7 @@ import org.apache.commons.collections4.keyvalue.AbstractMapEntry as __AbstractMa
 __AbstractMapEntry = __AbstractMapEntry
 from builtins import int
  
-class DefaultMapEntry(__AbstractMapEntry, AbstractMapEntry):
+class DefaultMapEntry():
     """org.apache.commons.collections4.keyvalue.DefaultMapEntry"""
  
     @staticmethod
@@ -962,7 +962,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class TiedMapEntry(Map.__Map_Entry, Entry.Map$Entry, pyapache.__KeyValue, collections4.KeyValue, __Serializable, Serializable):
+class TiedMapEntry():
     """org.apache.commons.collections4.keyvalue.TiedMapEntry"""
  
     @staticmethod
@@ -1091,7 +1091,7 @@ import org.apache.commons.collections4.keyvalue.AbstractMapEntry as __AbstractMa
 __AbstractMapEntry = __AbstractMapEntry
 from builtins import int
  
-class AbstractMapEntry(ABC, __AbstractKeyValue, AbstractKeyValue, Map.__Map_Entry, Entry.Map$Entry):
+class AbstractMapEntry(ABC):
     """org.apache.commons.collections4.keyvalue.AbstractMapEntry"""
  
     @staticmethod
@@ -1212,7 +1212,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AbstractMapEntryDecorator(ABC, Map.__Map_Entry, Entry.Map$Entry, pyapache.__KeyValue, collections4.KeyValue):
+class AbstractMapEntryDecorator(ABC):
     """org.apache.commons.collections4.keyvalue.AbstractMapEntryDecorator"""
  
     @staticmethod

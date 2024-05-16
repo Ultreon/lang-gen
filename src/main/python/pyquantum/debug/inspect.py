@@ -410,7 +410,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class InspectionRoot(__InspectionNode, InspectionNode, pygdx.__Disposable, utils.Disposable):
+class InspectionRoot():
     """dev.ultreon.quantum.debug.inspect.InspectionRoot"""
  
     @staticmethod

@@ -57,7 +57,7 @@ __FrameBuffer = __FrameBuffer
 from builtins import bool
 from builtins import int
  
-class MainRenderNode(__RenderNode, RenderNode):
+class MainRenderNode():
     """dev.ultreon.quantum.client.render.pipeline.MainRenderNode"""
  
     @staticmethod
@@ -275,7 +275,7 @@ __FrameBuffer = __FrameBuffer
 from builtins import bool
 from builtins import int
  
-class MainRenderNode(__RenderNode, RenderNode):
+class MainRenderNode():
     """dev.ultreon.quantum.client.render.pipeline.MainRenderNode"""
  
     @staticmethod
@@ -682,7 +682,7 @@ import com.badlogic.gdx.graphics.glutils.FrameBuffer as __FrameBuffer
 __FrameBuffer = __FrameBuffer
 from builtins import int
  
-class WorldDepthNode(__WorldRenderNode, WorldRenderNode):
+class WorldDepthNode():
     """dev.ultreon.quantum.client.render.pipeline.WorldDepthNode"""
  
     @staticmethod
@@ -880,7 +880,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RenderableFlushablePool(pygdx.__FlushablePool, utils.FlushablePool):
+class RenderableFlushablePool():
     """dev.ultreon.quantum.client.render.pipeline.RenderPipeline.RenderNode.RenderableFlushablePool"""
  
     @staticmethod
@@ -1055,7 +1055,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RenderPipeline(pygdx.__Disposable, utils.Disposable):
+class RenderPipeline():
     """dev.ultreon.quantum.client.render.pipeline.RenderPipeline"""
  
     @staticmethod
@@ -1214,7 +1214,7 @@ __FrameBuffer = __FrameBuffer
 from builtins import bool
 from builtins import int
  
-class CollectNode(__RenderNode, RenderNode):
+class CollectNode():
     """dev.ultreon.quantum.client.render.pipeline.CollectNode"""
  
     @staticmethod
@@ -1416,7 +1416,7 @@ import com.badlogic.gdx.graphics.glutils.FrameBuffer as __FrameBuffer
 __FrameBuffer = __FrameBuffer
 from builtins import int
  
-class WorldRenderNode(ABC, __RenderNode, RenderNode):
+class WorldRenderNode(ABC):
     """dev.ultreon.quantum.client.render.pipeline.WorldRenderNode"""
  
     @staticmethod
@@ -1624,7 +1624,7 @@ __FrameBuffer = __FrameBuffer
 from builtins import bool
 from builtins import int
  
-class PostEffectsNode(__RenderNode, RenderNode):
+class PostEffectsNode():
     """dev.ultreon.quantum.client.render.pipeline.PostEffectsNode"""
  
     @staticmethod
@@ -1822,7 +1822,7 @@ import com.badlogic.gdx.graphics.glutils.FrameBuffer as __FrameBuffer
 __FrameBuffer = __FrameBuffer
 from builtins import int
  
-class BackgroundNode(__RenderNode, RenderNode):
+class BackgroundNode():
     """dev.ultreon.quantum.client.render.pipeline.BackgroundNode"""
  
     @staticmethod
@@ -2032,7 +2032,7 @@ import com.badlogic.gdx.graphics.glutils.FrameBuffer as __FrameBuffer
 __FrameBuffer = __FrameBuffer
 from builtins import int
  
-class WorldDiffuseNode(__WorldRenderNode, WorldRenderNode):
+class WorldDiffuseNode():
     """dev.ultreon.quantum.client.render.pipeline.WorldDiffuseNode"""
  
     @staticmethod

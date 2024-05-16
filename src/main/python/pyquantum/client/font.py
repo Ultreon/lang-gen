@@ -5,8 +5,8 @@ from overload import overload
  
 from pyquantum_helper import import_once as __import_once__
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import dev.ultreon.quantum.client.font.Font as __Font
 __Font = __Font
 import java.lang.Object as __object
@@ -49,7 +49,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class Font(pygdx.__Disposable, utils.Disposable):
+class Font():
     """dev.ultreon.quantum.client.font.Font"""
  
     @staticmethod
@@ -223,8 +223,8 @@ class Font(pygdx.__Disposable, utils.Disposable):
 # CLASS: dev.ultreon.quantum.client.font.Font
 from pyquantum_helper import import_once as __import_once__
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import dev.ultreon.quantum.client.font.Font as __Font
 __Font = __Font
 import java.lang.Object as __object
@@ -267,7 +267,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class Font(pygdx.__Disposable, utils.Disposable):
+class Font():
     """dev.ultreon.quantum.client.font.Font"""
  
     @staticmethod

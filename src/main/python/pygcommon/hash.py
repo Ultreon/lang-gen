@@ -553,7 +553,7 @@ __Predicate = __Predicate
 from builtins import bool
 from builtins import int
  
-class BloomFilter(pygcommon.__Predicate, base.Predicate, __Serializable, Serializable):
+class BloomFilter():
     """com.google.common.hash.BloomFilter"""
  
     @staticmethod
@@ -770,7 +770,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class HashingOutputStream(__FilterOutputStream, FilterOutputStream):
+class HashingOutputStream():
     """com.google.common.hash.HashingOutputStream"""
  
     @staticmethod
@@ -910,7 +910,7 @@ import java.nio.charset.Charset as Charset
 from abc import abstractmethod, ABC
 import java.nio.ByteBuffer as ByteBuffer
  
-class Hasher(ABC, __PrimitiveSink, PrimitiveSink):
+class Hasher(ABC):
     """com.google.common.hash.Hasher"""
  
     @staticmethod
@@ -1026,7 +1026,7 @@ import com.google.common.hash.Funnel as __Funnel
 __Funnel = __Funnel
 from abc import abstractmethod, ABC
  
-class Funnel(ABC, __Serializable, Serializable):
+class Funnel(ABC):
     """com.google.common.hash.Funnel"""
  
     @staticmethod
@@ -1239,7 +1239,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class HashingInputStream(__FilterInputStream, FilterInputStream):
+class HashingInputStream():
     """com.google.common.hash.HashingInputStream"""
  
     @staticmethod

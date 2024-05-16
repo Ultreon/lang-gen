@@ -34,7 +34,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AssetManagerImageResolver(__ImageResolver, ImageResolver):
+class AssetManagerImageResolver():
     """com.badlogic.gdx.maps.ImageResolver.AssetManagerImageResolver"""
  
     @staticmethod
@@ -164,7 +164,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AssetManagerImageResolver(__ImageResolver, ImageResolver):
+class AssetManagerImageResolver():
     """com.badlogic.gdx.maps.ImageResolver.AssetManagerImageResolver"""
  
     @staticmethod
@@ -371,7 +371,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class MapLayers(__Iterable, Iterable):
+class MapLayers():
     """com.badlogic.gdx.maps.MapLayers"""
  
     @staticmethod
@@ -793,7 +793,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Map(pygdx.__Disposable, utils.Disposable):
+class Map():
     """com.badlogic.gdx.maps.Map"""
  
     @staticmethod
@@ -939,7 +939,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DirectImageResolver(__ImageResolver, ImageResolver):
+class DirectImageResolver():
     """com.badlogic.gdx.maps.ImageResolver.DirectImageResolver"""
  
     @staticmethod
@@ -1073,7 +1073,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class MapObjects(__Iterable, Iterable):
+class MapObjects():
     """com.badlogic.gdx.maps.MapObjects"""
  
     @staticmethod
@@ -1266,7 +1266,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TextureAtlasImageResolver(__ImageResolver, ImageResolver):
+class TextureAtlasImageResolver():
     """com.badlogic.gdx.maps.ImageResolver.TextureAtlasImageResolver"""
  
     @staticmethod
@@ -1779,7 +1779,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MapGroupLayer(__MapLayer, MapLayer):
+class MapGroupLayer():
     """com.badlogic.gdx.maps.MapGroupLayer"""
  
     @staticmethod

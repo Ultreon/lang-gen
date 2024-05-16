@@ -507,7 +507,7 @@ except ImportError:
     types = __import_once__("pyubo.types")
 
  
-class Player(ABC, pyquantum.__LivingEntity, entity.LivingEntity):
+class Player(ABC):
     """dev.ultreon.quantum.entity.player.Player"""
  
     @staticmethod

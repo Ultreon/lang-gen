@@ -22,7 +22,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class KTXProcessorListener(pygdx.__ApplicationAdapter, pygdx.ApplicationAdapter):
+class KTXProcessorListener():
     """com.badlogic.gdx.tools.ktx.KTXProcessor.KTXProcessorListener"""
  
     @staticmethod
@@ -164,7 +164,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class KTXProcessorListener(pygdx.__ApplicationAdapter, pygdx.ApplicationAdapter):
+class KTXProcessorListener():
     """com.badlogic.gdx.tools.ktx.KTXProcessor.KTXProcessorListener"""
  
     @staticmethod

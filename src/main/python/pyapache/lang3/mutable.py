@@ -28,7 +28,7 @@ import java.lang.Number as __Number
 __Number = __Number
 from builtins import int
  
-class MutableByte(__Number, Number, __Comparable, Comparable, __Mutable, Mutable):
+class MutableByte():
     """org.apache.commons.lang3.mutable.MutableByte"""
  
     @staticmethod
@@ -307,7 +307,7 @@ import java.lang.Number as __Number
 __Number = __Number
 from builtins import int
  
-class MutableByte(__Number, Number, __Comparable, Comparable, __Mutable, Mutable):
+class MutableByte():
     """org.apache.commons.lang3.mutable.MutableByte"""
  
     @staticmethod
@@ -588,7 +588,7 @@ import java.lang.Number as __Number
 __Number = __Number
 from builtins import int
  
-class MutableLong(__Number, Number, __Comparable, Comparable, __Mutable, Mutable):
+class MutableLong():
     """org.apache.commons.lang3.mutable.MutableLong"""
  
     @staticmethod
@@ -865,7 +865,7 @@ import java.lang.Number as __Number
 __Number = __Number
 from builtins import int
  
-class MutableFloat(__Number, Number, __Comparable, Comparable, __Mutable, Mutable):
+class MutableFloat():
     """org.apache.commons.lang3.mutable.MutableFloat"""
  
     @staticmethod
@@ -1151,7 +1151,7 @@ import java.lang.Number as __Number
 __Number = __Number
 from builtins import int
  
-class MutableInt(__Number, Number, __Comparable, Comparable, __Mutable, Mutable):
+class MutableInt():
     """org.apache.commons.lang3.mutable.MutableInt"""
  
     @staticmethod
@@ -1421,7 +1421,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MutableObject(__Mutable, Mutable, __Serializable, Serializable):
+class MutableObject():
     """org.apache.commons.lang3.mutable.MutableObject"""
  
     @staticmethod
@@ -1564,7 +1564,7 @@ __Number = __Number
 import java.lang.Double as Double
 from builtins import int
  
-class MutableDouble(__Number, Number, __Comparable, Comparable, __Mutable, Mutable):
+class MutableDouble():
     """org.apache.commons.lang3.mutable.MutableDouble"""
  
     @staticmethod
@@ -1897,7 +1897,7 @@ import java.lang.Number as __Number
 __Number = __Number
 from builtins import int
  
-class MutableShort(__Number, Number, __Comparable, Comparable, __Mutable, Mutable):
+class MutableShort():
     """org.apache.commons.lang3.mutable.MutableShort"""
  
     @staticmethod
@@ -2170,7 +2170,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MutableBoolean(__Mutable, Mutable, __Serializable, Serializable, __Comparable, Comparable):
+class MutableBoolean():
     """org.apache.commons.lang3.mutable.MutableBoolean"""
  
     @staticmethod

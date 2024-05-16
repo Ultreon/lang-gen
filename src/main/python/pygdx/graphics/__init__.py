@@ -18,7 +18,7 @@ from abc import abstractmethod, ABC
 import java.nio.FloatBuffer as FloatBuffer
 from builtins import int
  
-class GL31(ABC, __GL30, GL30):
+class GL31(ABC):
     """com.badlogic.gdx.graphics.GL31"""
  
     @staticmethod
@@ -1692,7 +1692,7 @@ from abc import abstractmethod, ABC
 import java.nio.FloatBuffer as FloatBuffer
 from builtins import int
  
-class GL31(ABC, __GL30, GL30):
+class GL31(ABC):
     """com.badlogic.gdx.graphics.GL31"""
  
     @staticmethod
@@ -3430,8 +3430,8 @@ import com.badlogic.gdx.graphics.Pixmap as __Pixmap_Blending
 __Blending = __Pixmap_Blending.Blending
 import com.badlogic.gdx.graphics.Pixmap as __Pixmap
 __Pixmap = __Pixmap
-import java.nio.ByteBuffer as ByteBuffer
 import java.lang.Integer as __int
+import java.nio.ByteBuffer as ByteBuffer
 try:
     from pygdx import files
 except ImportError:
@@ -3440,7 +3440,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class Pixmap(pygdx.__Disposable, utils.Disposable):
+class Pixmap():
     """com.badlogic.gdx.graphics.Pixmap"""
  
     @staticmethod
@@ -3764,7 +3764,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Texture3D(__GLTexture, GLTexture):
+class Texture3D():
     """com.badlogic.gdx.graphics.Texture3D"""
  
     @staticmethod
@@ -4089,7 +4089,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PerspectiveCamera(__Camera, Camera):
+class PerspectiveCamera():
     """com.badlogic.gdx.graphics.PerspectiveCamera"""
  
     @staticmethod
@@ -5442,7 +5442,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class TextureWrap(__Enum, Enum):
+class TextureWrap():
     """com.badlogic.gdx.graphics.Texture.TextureWrap"""
  
     @staticmethod
@@ -5713,7 +5713,7 @@ __GL20 = __GL20
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class GL32(ABC, __GL31, GL31):
+class GL32(ABC):
     """com.badlogic.gdx.graphics.GL32"""
  
     @staticmethod
@@ -7605,7 +7605,7 @@ import java.lang.Enum as __Enum
 __Enum = __Enum
 from builtins import int
  
-class TextureFilter(__Enum, Enum):
+class TextureFilter():
     """com.badlogic.gdx.graphics.Texture.TextureFilter"""
  
     @staticmethod
@@ -7783,7 +7783,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class OrthographicCamera(__Camera, Camera):
+class OrthographicCamera():
     """com.badlogic.gdx.graphics.OrthographicCamera"""
  
     @staticmethod
@@ -8047,7 +8047,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class SystemCursor(__Enum, Enum):
+class SystemCursor():
     """com.badlogic.gdx.graphics.Cursor.SystemCursor"""
  
     @staticmethod
@@ -8635,7 +8635,7 @@ from abc import abstractmethod, ABC
 import java.nio.FloatBuffer as FloatBuffer
 from builtins import int
  
-class GL30(ABC, __GL20, GL20):
+class GL30(ABC):
     """com.badlogic.gdx.graphics.GL30"""
  
     @staticmethod
@@ -9977,7 +9977,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Format(__Enum, Enum):
+class Format():
     """com.badlogic.gdx.graphics.Pixmap.Format"""
  
     @staticmethod
@@ -10221,8 +10221,8 @@ class Texture3DData(ABC):
 # CLASS: com.badlogic.gdx.graphics.PixmapIO$PNG
 from pyquantum_helper import import_once as __import_once__
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 import java.lang.Long as __long
@@ -10244,7 +10244,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PNG(pygdx.__Disposable, utils.Disposable):
+class PNG():
     """com.badlogic.gdx.graphics.PixmapIO.PNG"""
  
     @staticmethod
@@ -10923,7 +10923,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class VertexDataType(__Enum, Enum):
+class VertexDataType():
     """com.badlogic.gdx.graphics.Mesh.VertexDataType"""
  
     @staticmethod
@@ -11256,12 +11256,12 @@ class VertexAttribute():
  
 # CLASS: com.badlogic.gdx.graphics.Cubemap
 from pyquantum_helper import import_once as __import_once__
+from builtins import str
 try:
     import pygdx
 except ImportError:
     pygdx = __import_once__("pygdx")
 
-from builtins import str
 from pyquantum_helper import override
 import java.lang.Boolean as __boolean
 import java.lang.Object as __object
@@ -11299,7 +11299,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class Cubemap(__GLTexture, GLTexture):
+class Cubemap():
     """com.badlogic.gdx.graphics.Cubemap"""
  
     @staticmethod
@@ -11620,7 +11620,7 @@ from abc import abstractmethod, ABC
 import com.badlogic.gdx.utils.Disposable as __Disposable
 __Disposable = __Disposable
  
-class Cursor(ABC, pygdx.__Disposable, utils.Disposable):
+class Cursor(ABC):
     """com.badlogic.gdx.graphics.Cursor"""
  
     @staticmethod
@@ -11923,8 +11923,8 @@ class Factory():
  
 # CLASS: com.badlogic.gdx.graphics.GLTexture
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 from builtins import float
@@ -11947,7 +11947,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GLTexture(ABC, pygdx.__Disposable, utils.Disposable):
+class GLTexture(ABC):
     """com.badlogic.gdx.graphics.GLTexture"""
  
     @staticmethod
@@ -12194,7 +12194,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class TextureDataType(__Enum, Enum):
+class TextureDataType():
     """com.badlogic.gdx.graphics.TextureData.TextureDataType"""
  
     @staticmethod
@@ -12351,7 +12351,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Filter(__Enum, Enum):
+class Filter():
     """com.badlogic.gdx.graphics.Pixmap.Filter"""
  
     @staticmethod
@@ -12508,7 +12508,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Blending(__Enum, Enum):
+class Blending():
     """com.badlogic.gdx.graphics.Pixmap.Blending"""
  
     @staticmethod
@@ -12685,7 +12685,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class Texture(__GLTexture, GLTexture):
+class Texture():
     """com.badlogic.gdx.graphics.Texture"""
  
     @staticmethod
@@ -13052,7 +13052,7 @@ import com.badlogic.gdx.graphics.Cubemap as __Cubemap_CubemapSide
 __CubemapSide = __Cubemap_CubemapSide.CubemapSide
 from builtins import int
  
-class CubemapSide(__Enum, Enum):
+class CubemapSide():
     """com.badlogic.gdx.graphics.Cubemap.CubemapSide"""
  
     @staticmethod
@@ -13236,7 +13236,7 @@ import com.badlogic.gdx.graphics.TextureArray as __TextureArray
 __TextureArray = __TextureArray
 from builtins import int
  
-class TextureArray(__GLTexture, GLTexture):
+class TextureArray():
     """com.badlogic.gdx.graphics.TextureArray"""
  
     @staticmethod
@@ -13630,7 +13630,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class VertexAttributes(__Iterable, Iterable, __Comparable, Comparable):
+class VertexAttributes():
     """com.badlogic.gdx.graphics.VertexAttributes"""
  
     @staticmethod
@@ -13844,7 +13844,7 @@ __FloatBuffer = __FloatBuffer
 import java.lang.Integer as __int
 from builtins import int
  
-class Mesh(pygdx.__Disposable, utils.Disposable):
+class Mesh():
     """com.badlogic.gdx.graphics.Mesh"""
  
     @staticmethod

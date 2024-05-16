@@ -374,7 +374,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BinTree(__InWindow, InWindow):
+class BinTree():
     """com.badlogic.gdx.utils.compression.lz.BinTree"""
  
     @staticmethod

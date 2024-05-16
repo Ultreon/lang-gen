@@ -427,8 +427,8 @@ class DestructionListener(ABC):
 # CLASS: com.badlogic.gdx.physics.box2d.Box2DDebugRenderer
 from pyquantum_helper import import_once as __import_once__
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer as __Box2DDebugRenderer
@@ -451,7 +451,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Box2DDebugRenderer(pygdx.__Disposable, utils.Disposable):
+class Box2DDebugRenderer():
     """com.badlogic.gdx.physics.box2d.Box2DDebugRenderer"""
  
     @staticmethod
@@ -954,7 +954,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class EdgeShape(__Shape, Shape):
+class EdgeShape():
     """com.badlogic.gdx.physics.box2d.EdgeShape"""
  
     @staticmethod
@@ -1371,7 +1371,7 @@ import com.badlogic.gdx.physics.box2d.ChainShape as __ChainShape
 __ChainShape = __ChainShape
 from builtins import int
  
-class ChainShape(__Shape, Shape):
+class ChainShape():
     """com.badlogic.gdx.physics.box2d.ChainShape"""
  
     @staticmethod
@@ -1618,8 +1618,8 @@ try:
 except ImportError:
     utils = __import_once__("pygdx.utils")
 
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 from builtins import float
@@ -1650,7 +1650,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class World(pygdx.__Disposable, utils.Disposable):
+class World():
     """com.badlogic.gdx.physics.box2d.World"""
  
     @staticmethod
@@ -1925,7 +1925,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class BodyType(__Enum, Enum):
+class BodyType():
     """com.badlogic.gdx.physics.box2d.BodyDef.BodyType"""
  
     @staticmethod
@@ -2507,7 +2507,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PolygonShape(__Shape, Shape):
+class PolygonShape():
     """com.badlogic.gdx.physics.box2d.PolygonShape"""
  
     @staticmethod
@@ -3249,7 +3249,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class JointType(__Enum, Enum):
+class JointType():
     """com.badlogic.gdx.physics.box2d.JointDef.JointType"""
  
     @staticmethod
@@ -3411,7 +3411,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class ManifoldType(__Enum, Enum):
+class ManifoldType():
     """com.badlogic.gdx.physics.box2d.Manifold.ManifoldType"""
  
     @staticmethod
@@ -3773,7 +3773,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Shape(ABC, pygdx.__Disposable, utils.Disposable):
+class Shape(ABC):
     """com.badlogic.gdx.physics.box2d.Shape"""
  
     @staticmethod
@@ -4155,7 +4155,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Type(__Enum, Enum):
+class Type():
     """com.badlogic.gdx.physics.box2d.Shape.Type"""
  
     @staticmethod
@@ -4318,7 +4318,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CircleShape(__Shape, Shape):
+class CircleShape():
     """com.badlogic.gdx.physics.box2d.CircleShape"""
  
     @staticmethod

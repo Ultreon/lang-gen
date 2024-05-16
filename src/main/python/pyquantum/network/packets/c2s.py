@@ -36,7 +36,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class C2SBlockBreakPacket(network.__Packet, packets.Packet):
+class C2SBlockBreakPacket():
     """dev.ultreon.quantum.network.packets.c2s.C2SBlockBreakPacket"""
  
     @staticmethod
@@ -181,7 +181,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class C2SBlockBreakPacket(network.__Packet, packets.Packet):
+class C2SBlockBreakPacket():
     """dev.ultreon.quantum.network.packets.c2s.C2SBlockBreakPacket"""
  
     @staticmethod
@@ -325,7 +325,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class C2SCommandPacket(network.__Packet, packets.Packet):
+class C2SCommandPacket():
     """dev.ultreon.quantum.network.packets.c2s.C2SCommandPacket"""
  
     @staticmethod
@@ -463,7 +463,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class C2SRespawnPacket(network.__Packet, packets.Packet):
+class C2SRespawnPacket():
     """dev.ultreon.quantum.network.packets.c2s.C2SRespawnPacket"""
  
     @staticmethod
@@ -609,7 +609,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class C2SMenuTakeItemPacket(network.__Packet, packets.Packet):
+class C2SMenuTakeItemPacket():
     """dev.ultreon.quantum.network.packets.c2s.C2SMenuTakeItemPacket"""
  
     @staticmethod
@@ -747,7 +747,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class C2SDropItemPacket(network.__Packet, packets.Packet):
+class C2SDropItemPacket():
     """dev.ultreon.quantum.network.packets.c2s.C2SDropItemPacket"""
  
     @staticmethod
@@ -892,7 +892,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class C2SPingPacket(network.__Packet, packets.Packet):
+class C2SPingPacket():
     """dev.ultreon.quantum.network.packets.c2s.C2SPingPacket"""
  
     @staticmethod
@@ -1042,7 +1042,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class C2SCraftRecipePacket(network.__Packet, packets.Packet):
+class C2SCraftRecipePacket():
     """dev.ultreon.quantum.network.packets.c2s.C2SCraftRecipePacket"""
  
     @staticmethod
@@ -1185,7 +1185,7 @@ __C2SItemUsePacket = __C2SItemUsePacket
 from builtins import bool
 from builtins import int
  
-class C2SItemUsePacket(network.__Packet, packets.Packet):
+class C2SItemUsePacket():
     """dev.ultreon.quantum.network.packets.c2s.C2SItemUsePacket"""
  
     @staticmethod
@@ -1324,7 +1324,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class C2SChatPacket(network.__Packet, packets.Packet):
+class C2SChatPacket():
     """dev.ultreon.quantum.network.packets.c2s.C2SChatPacket"""
  
     @staticmethod
@@ -1467,7 +1467,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class C2SBlockBreakingPacket(network.__Packet, packets.Packet):
+class C2SBlockBreakingPacket():
     """dev.ultreon.quantum.network.packets.c2s.C2SBlockBreakingPacket"""
  
     @staticmethod
@@ -1612,7 +1612,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class C2SModPacket(network.__Packet, packets.Packet):
+class C2SModPacket():
     """dev.ultreon.quantum.network.packets.c2s.C2SModPacket"""
  
     @staticmethod
@@ -1765,7 +1765,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class C2SOpenMenuPacket(network.__Packet, packets.Packet):
+class C2SOpenMenuPacket():
     """dev.ultreon.quantum.network.packets.c2s.C2SOpenMenuPacket"""
  
     @staticmethod
@@ -1903,7 +1903,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class C2SOpenInventoryPacket(network.__Packet, packets.Packet):
+class C2SOpenInventoryPacket():
     """dev.ultreon.quantum.network.packets.c2s.C2SOpenInventoryPacket"""
  
     @staticmethod
@@ -2045,7 +2045,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class BlockStatus(__Enum, Enum):
+class BlockStatus():
     """dev.ultreon.quantum.network.packets.c2s.C2SBlockBreakingPacket.BlockStatus"""
  
     @staticmethod
@@ -2223,7 +2223,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class C2SPlaceBlockPacket(network.__Packet, packets.Packet):
+class C2SPlaceBlockPacket():
     """dev.ultreon.quantum.network.packets.c2s.C2SPlaceBlockPacket"""
  
     @staticmethod
@@ -2362,7 +2362,7 @@ import java.lang.Double as __double
 from builtins import bool
 from builtins import int
  
-class C2SPlayerMovePacket(network.__Packet, packets.Packet):
+class C2SPlayerMovePacket():
     """dev.ultreon.quantum.network.packets.c2s.C2SPlayerMovePacket"""
  
     @staticmethod
@@ -2501,7 +2501,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class C2SDisconnectPacket(network.__Packet, packets.Packet):
+class C2SDisconnectPacket():
     """dev.ultreon.quantum.network.packets.c2s.C2SDisconnectPacket"""
  
     @staticmethod
@@ -2640,7 +2640,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class C2SLoginPacket(network.__Packet, packets.Packet):
+class C2SLoginPacket():
     """dev.ultreon.quantum.network.packets.c2s.C2SLoginPacket"""
  
     @staticmethod
@@ -2778,7 +2778,7 @@ __C2SKeepAlivePacket = __C2SKeepAlivePacket
 from builtins import bool
 from builtins import int
  
-class C2SKeepAlivePacket(network.__Packet, packets.Packet):
+class C2SKeepAlivePacket():
     """dev.ultreon.quantum.network.packets.c2s.C2SKeepAlivePacket"""
  
     @staticmethod
@@ -2928,7 +2928,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class C2SChunkStatusPacket(network.__Packet, packets.Packet):
+class C2SChunkStatusPacket():
     """dev.ultreon.quantum.network.packets.c2s.C2SChunkStatusPacket"""
  
     @staticmethod
@@ -3067,7 +3067,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class C2SRequestTabComplete(network.__Packet, packets.Packet):
+class C2SRequestTabComplete():
     """dev.ultreon.quantum.network.packets.c2s.C2SRequestTabComplete"""
  
     @staticmethod
@@ -3205,7 +3205,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class C2SCloseMenuPacket(network.__Packet, packets.Packet):
+class C2SCloseMenuPacket():
     """dev.ultreon.quantum.network.packets.c2s.C2SCloseMenuPacket"""
  
     @staticmethod
@@ -3350,7 +3350,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class C2SHotbarIndexPacket(network.__Packet, packets.Packet):
+class C2SHotbarIndexPacket():
     """dev.ultreon.quantum.network.packets.c2s.C2SHotbarIndexPacket"""
  
     @staticmethod

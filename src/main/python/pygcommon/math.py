@@ -1270,7 +1270,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Stats(__Serializable, Serializable):
+class Stats():
     """com.google.common.math.Stats"""
  
     @staticmethod
@@ -1647,7 +1647,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PairedStats(__Serializable, Serializable):
+class PairedStats():
     """com.google.common.math.PairedStats"""
  
     @staticmethod

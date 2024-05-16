@@ -429,7 +429,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GameLibGDXWrapper(pygdx.__ApplicationListener, pygdx.ApplicationListener):
+class GameLibGDXWrapper():
     """dev.ultreon.quantum.client.GameLibGDXWrapper"""
  
     @staticmethod
@@ -711,7 +711,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GameClipboard(__IClipboard, IClipboard):
+class GameClipboard():
     """dev.ultreon.quantum.client.GameClipboard"""
  
     @staticmethod
@@ -910,7 +910,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class DevScreen(client.__Screen, gui.Screen):
+class DevScreen():
     """dev.ultreon.quantum.client.DevScreen"""
  
     @staticmethod
@@ -1835,7 +1835,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 import java.util.List as List
  
-class IntegratedServer(pyquantum.__QuantumServer, server.QuantumServer):
+class IntegratedServer():
     """dev.ultreon.quantum.client.IntegratedServer"""
  
     @staticmethod
@@ -2433,7 +2433,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NullClipboard(__IClipboard, IClipboard):
+class NullClipboard():
     """dev.ultreon.quantum.client.NullClipboard"""
  
     @staticmethod
@@ -2639,7 +2639,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class RhinoExceptionScreen(client.__Screen, gui.Screen):
+class RhinoExceptionScreen():
     """dev.ultreon.quantum.client.RhinoExceptionScreen"""
  
     @staticmethod
@@ -3315,7 +3315,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class GameEnvironment(__Enum, Enum):
+class GameEnvironment():
     """dev.ultreon.quantum.client.GameEnvironment"""
  
     @staticmethod
@@ -3495,7 +3495,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FontManager(pygdx.__Disposable, utils.Disposable):
+class FontManager():
     """dev.ultreon.quantum.client.FontManager"""
  
     @staticmethod
@@ -3859,7 +3859,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class CrashScreen(client.__Screen, gui.Screen):
+class CrashScreen():
     """dev.ultreon.quantum.client.CrashScreen"""
  
     @staticmethod
@@ -4577,7 +4577,7 @@ from abc import abstractmethod, ABC
 import com.badlogic.gdx.utils.Disposable as __Disposable
 __Disposable = __Disposable
  
-class DisposableContainer(ABC, pygdx.__Disposable, utils.Disposable):
+class DisposableContainer(ABC):
     """dev.ultreon.quantum.client.DisposableContainer"""
  
     @staticmethod
@@ -4740,7 +4740,7 @@ import dev.ultreon.quantum.client.InternalApi as __InternalApi
 __InternalApi = __InternalApi
 from abc import abstractmethod, ABC
  
-class InternalApi(ABC, __Annotation, Annotation):
+class InternalApi(ABC):
     """dev.ultreon.quantum.client.InternalApi"""
  
     @staticmethod
@@ -4833,7 +4833,7 @@ import com.badlogic.gdx.graphics.g3d.utils.RenderContext as __RenderContext
 __RenderContext = __RenderContext
 from builtins import int
  
-class GameRenderer(pygdx.__Disposable, utils.Disposable):
+class GameRenderer():
     """dev.ultreon.quantum.client.GameRenderer"""
  
     @staticmethod
@@ -5035,7 +5035,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class OutOfMemoryScreen(client.__Screen, gui.Screen):
+class OutOfMemoryScreen():
     """dev.ultreon.quantum.client.OutOfMemoryScreen"""
  
     @staticmethod
@@ -6298,7 +6298,7 @@ except ImportError:
     rpc = __import_once__("pyquantum.client.rpc")
 
  
-class QuantumClient(pyquantum.__PollingExecutorService, util.PollingExecutorService, client.__DeferredDisposable, util.DeferredDisposable):
+class QuantumClient():
     """dev.ultreon.quantum.client.QuantumClient"""
  
     @staticmethod

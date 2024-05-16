@@ -53,7 +53,7 @@ __ScaledNumericValue = __ScaledNumericValue
 from builtins import bool
 from builtins import int
  
-class RegularEmitter(__Emitter, Emitter, pygdx.__Json_Serializable, utils.Json$Serializable):
+class RegularEmitter():
     """com.badlogic.gdx.graphics.g3d.particles.emitters.RegularEmitter"""
  
     @staticmethod
@@ -392,7 +392,7 @@ __ScaledNumericValue = __ScaledNumericValue
 from builtins import bool
 from builtins import int
  
-class RegularEmitter(__Emitter, Emitter, pygdx.__Json_Serializable, utils.Json$Serializable):
+class RegularEmitter():
     """com.badlogic.gdx.graphics.g3d.particles.emitters.RegularEmitter"""
  
     @staticmethod
@@ -720,7 +720,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Emitter(ABC, g3d.__ParticleControllerComponent, particles.ParticleControllerComponent, pygdx.__Json_Serializable, utils.Json$Serializable):
+class Emitter(ABC):
     """com.badlogic.gdx.graphics.g3d.particles.emitters.Emitter"""
  
     @staticmethod
@@ -969,7 +969,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class EmissionMode(__Enum, Enum):
+class EmissionMode():
     """com.badlogic.gdx.graphics.g3d.particles.emitters.RegularEmitter.EmissionMode"""
  
     @staticmethod

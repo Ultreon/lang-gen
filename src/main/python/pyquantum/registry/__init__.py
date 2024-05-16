@@ -336,7 +336,7 @@ import java.lang.Integer as __int
 import java.util.List as List
 from builtins import int
  
-class Registry(__AbstractRegistry, AbstractRegistry, __RawIdMap, RawIdMap, __Publisher, Publisher):
+class Registry():
     """dev.ultreon.quantum.registry.Registry"""
  
     @staticmethod
@@ -1727,7 +1727,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DeferredElement(__Supplier, Supplier):
+class DeferredElement():
     """dev.ultreon.quantum.registry.DeferredElement"""
  
     @staticmethod

@@ -103,7 +103,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class WorldSelectionScreen(client.__Screen, gui.Screen):
+class WorldSelectionScreen():
     """dev.ultreon.quantum.client.gui.screens.world.WorldSelectionScreen"""
  
     @staticmethod
@@ -893,7 +893,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class WorldSelectionScreen(client.__Screen, gui.Screen):
+class WorldSelectionScreen():
     """dev.ultreon.quantum.client.gui.screens.world.WorldSelectionScreen"""
  
     @staticmethod

@@ -358,7 +358,7 @@ except ImportError:
 import java.util.List as List
 from builtins import int
  
-class BBModelLoader(client.__ModelImporter, model.ModelImporter):
+class BBModelLoader():
     """dev.ultreon.quantum.client.model.blockbench.BBModelLoader"""
  
     @staticmethod
@@ -683,7 +683,7 @@ except ImportError:
 
 from builtins import int
  
-class BBModelElement(ABC, __BBModelNode, BBModelNode):
+class BBModelElement(ABC):
     """dev.ultreon.quantum.client.model.blockbench.BBModelElement"""
  
     @staticmethod
@@ -864,7 +864,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class BBColor(__Enum, Enum):
+class BBColor():
     """dev.ultreon.quantum.client.model.blockbench.BBColor"""
  
     @staticmethod
@@ -1089,7 +1089,7 @@ import java.lang.Integer as __int
 from builtins import int
 import java.util.List as List
  
-class BBModelGroup(__BBModelOutlineInfo, BBModelOutlineInfo, __BBModelNode, BBModelNode):
+class BBModelGroup():
     """dev.ultreon.quantum.client.model.blockbench.BBModelGroup"""
  
     @staticmethod
@@ -1281,7 +1281,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BBModelElementReference(__BBModelOutlineInfo, BBModelOutlineInfo):
+class BBModelElementReference():
     """dev.ultreon.quantum.client.model.blockbench.BBModelElementReference"""
  
     @staticmethod
@@ -1404,7 +1404,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class BBModelFormat(__Enum, Enum):
+class BBModelFormat():
     """dev.ultreon.quantum.client.model.blockbench.BBModelFormat"""
  
     @staticmethod
@@ -1606,7 +1606,7 @@ except ImportError:
 from builtins import int
 import java.util.List as List
  
-class BBCubeModelElement(__BBModelElement, BBModelElement):
+class BBCubeModelElement():
     """dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement"""
  
     @staticmethod
@@ -2594,7 +2594,7 @@ except ImportError:
 from builtins import int
 import java.util.List as List
  
-class BBMeshModelElement(__BBModelElement, BBModelElement):
+class BBMeshModelElement():
     """dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement"""
  
     @staticmethod

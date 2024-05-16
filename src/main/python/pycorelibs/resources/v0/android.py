@@ -42,7 +42,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class DeferredResourcePackage(resources.__ResourcePackage, v0.ResourcePackage):
+class DeferredResourcePackage():
     """dev.ultreon.libs.resources.v0.android.DeferredResourcePackage"""
  
     @staticmethod
@@ -197,7 +197,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class DeferredResourcePackage(resources.__ResourcePackage, v0.ResourcePackage):
+class DeferredResourcePackage():
     """dev.ultreon.libs.resources.v0.android.DeferredResourcePackage"""
  
     @staticmethod

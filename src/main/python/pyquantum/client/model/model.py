@@ -28,7 +28,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class ModelType(__Enum, Enum):
+class ModelType():
     """dev.ultreon.quantum.client.model.model.ModelType"""
  
     @staticmethod
@@ -200,7 +200,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class ModelType(__Enum, Enum):
+class ModelType():
     """dev.ultreon.quantum.client.model.model.ModelType"""
  
     @staticmethod
@@ -432,7 +432,7 @@ import java.util.Map as Map
 from builtins import int
 import java.util.List as List
  
-class Json5Model(model.__BlockModel, block.BlockModel, model.__ItemModel, item.ItemModel):
+class Json5Model():
     """dev.ultreon.quantum.client.model.model.Json5Model"""
  
     @staticmethod

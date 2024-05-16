@@ -26,7 +26,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class StandardLayout(__Layout, Layout):
+class StandardLayout():
     """dev.ultreon.quantum.client.gui.widget.layout.StandardLayout"""
  
     @staticmethod
@@ -156,7 +156,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class StandardLayout(__Layout, Layout):
+class StandardLayout():
     """dev.ultreon.quantum.client.gui.widget.layout.StandardLayout"""
  
     @staticmethod

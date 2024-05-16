@@ -20,7 +20,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FreeTypeFontLoaderParameter(pygdx.__AssetLoaderParameters, assets.AssetLoaderParameters):
+class FreeTypeFontLoaderParameter():
     """com.badlogic.gdx.graphics.g2d.freetype.FreetypeFontLoader.FreeTypeFontLoaderParameter"""
  
     @staticmethod
@@ -138,7 +138,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FreeTypeFontLoaderParameter(pygdx.__AssetLoaderParameters, assets.AssetLoaderParameters):
+class FreeTypeFontLoaderParameter():
     """com.badlogic.gdx.graphics.g2d.freetype.FreetypeFontLoader.FreeTypeFontLoaderParameter"""
  
     @staticmethod
@@ -243,8 +243,8 @@ class FreeTypeFontLoaderParameter(pygdx.__AssetLoaderParameters, assets.AssetLoa
  
 # CLASS: com.badlogic.gdx.graphics.g2d.freetype.FreeType$Glyph
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 import com.badlogic.gdx.graphics.g2d.freetype.FreeType as __FreeType_Glyph
@@ -262,7 +262,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Glyph(__Pointer, Pointer, pygdx.__Disposable, utils.Disposable):
+class Glyph():
     """com.badlogic.gdx.graphics.g2d.freetype.FreeType.Glyph"""
  
     @staticmethod
@@ -399,7 +399,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Face(__Pointer, Pointer, pygdx.__Disposable, utils.Disposable):
+class Face():
     """com.badlogic.gdx.graphics.g2d.freetype.FreeType.Face"""
  
     @staticmethod
@@ -586,14 +586,14 @@ class Face(__Pointer, Pointer, pygdx.__Disposable, utils.Disposable):
         return int.__wrap(super(Face, self).getFaceFlags())
 
     @overload
-    def getStyleFlags(self) -> int:
-        """public int com.badlogic.gdx.graphics.g2d.freetype.FreeType$Face.getStyleFlags()"""
-        return int.__wrap(super(Face, self).getStyleFlags())
-
-    @overload
     def getAscender(self) -> int:
         """public int com.badlogic.gdx.graphics.g2d.freetype.FreeType$Face.getAscender()"""
-        return int.__wrap(super(Face, self).getAscender()) 
+        return int.__wrap(super(Face, self).getAscender())
+
+    @overload
+    def getStyleFlags(self) -> int:
+        """public int com.badlogic.gdx.graphics.g2d.freetype.FreeType$Face.getStyleFlags()"""
+        return int.__wrap(super(Face, self).getStyleFlags()) 
  
  
 # CLASS: com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator$FreeTypeFontParameter
@@ -732,7 +732,7 @@ import com.badlogic.gdx.graphics.g2d.freetype.FreeType as __FreeType_SizeMetrics
 __SizeMetrics = __FreeType_SizeMetrics.SizeMetrics
 from builtins import int
  
-class Size(__Pointer, Pointer):
+class Size():
     """com.badlogic.gdx.graphics.g2d.freetype.FreeType.Size"""
  
     @staticmethod
@@ -839,7 +839,7 @@ import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGeneratorLoader as __F
 __FreeTypeFontGeneratorParameters = __FreeTypeFontGeneratorLoader_FreeTypeFontGeneratorParameters.FreeTypeFontGeneratorParameters
 from builtins import int
  
-class FreeTypeFontGeneratorParameters(pygdx.__AssetLoaderParameters, assets.AssetLoaderParameters):
+class FreeTypeFontGeneratorParameters():
     """com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGeneratorLoader.FreeTypeFontGeneratorParameters"""
  
     @staticmethod
@@ -942,8 +942,8 @@ from pyquantum_helper import import_once as __import_once__
 from builtins import str
 import com.badlogic.gdx.files.FileHandle as __FileHandle
 __FileHandle = __FileHandle
-import java.lang.CharSequence as CharSequence
 import java.lang.Character as __char
+import java.lang.CharSequence as CharSequence
 try:
     from pygdx import utils
 except ImportError:
@@ -982,7 +982,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont as __BitmapFont_BitmapFontData
 __BitmapFontData = __BitmapFont_BitmapFontData.BitmapFontData
 from builtins import int
  
-class FreeTypeBitmapFontData(graphics.__BitmapFont_BitmapFontData, g2d.BitmapFont$BitmapFontData, pygdx.__Disposable, utils.Disposable):
+class FreeTypeBitmapFontData():
     """com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator.FreeTypeBitmapFontData"""
  
     @staticmethod
@@ -1031,16 +1031,16 @@ class FreeTypeBitmapFontData(graphics.__BitmapFont_BitmapFontData, g2d.BitmapFon
         self.__dict__ = val.__dict__
         self.__wrapper = val
 
+    @overload
+    def getGlyph(self, arg0: str) -> 'g2d.BitmapFont$Glyph':
+        """public com.badlogic.gdx.graphics.g2d.BitmapFont$Glyph com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator$FreeTypeBitmapFontData.getGlyph(char)"""
+        return 'g2d.BitmapFont$Glyph'.__wrap(super(__FreeTypeBitmapFontData, self).getGlyph(__char.valueOf(arg0)))
+
     @override
     @overload
     def getGlyphs(self, arg0: 'GlyphRun', arg1: 'CharSequence', arg2: int, arg3: int, arg4: 'Glyph'):
         """public void com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator$FreeTypeBitmapFontData.getGlyphs(com.badlogic.gdx.graphics.g2d.GlyphLayout$GlyphRun,java.lang.CharSequence,int,int,com.badlogic.gdx.graphics.g2d.BitmapFont$Glyph)"""
         super(__FreeTypeBitmapFontData, self).getGlyphs(arg0, arg1, __int.valueOf(arg2), __int.valueOf(arg3), arg4)
-
-    @overload
-    def getGlyph(self, arg0: str) -> 'g2d.BitmapFont$Glyph':
-        """public com.badlogic.gdx.graphics.g2d.BitmapFont$Glyph com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator$FreeTypeBitmapFontData.getGlyph(char)"""
-        return 'g2d.BitmapFont$Glyph'.__wrap(super(__FreeTypeBitmapFontData, self).getGlyph(__char.valueOf(arg0)))
 
     @overload
     def isWhitespace(self, arg0: str) -> bool:
@@ -1200,7 +1200,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GlyphMetrics(__Pointer, Pointer):
+class GlyphMetrics():
     """com.badlogic.gdx.graphics.g2d.freetype.FreeType.GlyphMetrics"""
  
     @staticmethod
@@ -1348,7 +1348,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GlyphSlot(__Pointer, Pointer):
+class GlyphSlot():
     """com.badlogic.gdx.graphics.g2d.freetype.FreeType.GlyphSlot"""
  
     @staticmethod
@@ -1505,7 +1505,7 @@ import com.badlogic.gdx.graphics.g2d.freetype.FreeType as __FreeType_SizeMetrics
 __SizeMetrics = __FreeType_SizeMetrics.SizeMetrics
 from builtins import int
  
-class SizeMetrics(__Pointer, Pointer):
+class SizeMetrics():
     """com.badlogic.gdx.graphics.g2d.freetype.FreeType.SizeMetrics"""
  
     @staticmethod
@@ -1647,7 +1647,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Stroker(__Pointer, Pointer, pygdx.__Disposable, utils.Disposable):
+class Stroker():
     """com.badlogic.gdx.graphics.g2d.freetype.FreeType.Stroker"""
  
     @staticmethod
@@ -1887,7 +1887,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont as __BitmapFont
 __BitmapFont = __BitmapFont
 from builtins import int
  
-class FreeTypeFontGenerator(pygdx.__Disposable, utils.Disposable):
+class FreeTypeFontGenerator():
     """com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator"""
  
     @staticmethod
@@ -2079,7 +2079,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Hinting(__Enum, Enum):
+class Hinting():
     """com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator.Hinting"""
  
     @staticmethod
@@ -2370,7 +2370,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class Bitmap(__Pointer, Pointer):
+class Bitmap():
     """com.badlogic.gdx.graphics.g2d.freetype.FreeType.Bitmap"""
  
     @staticmethod
@@ -2537,7 +2537,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FreeTypeFontGeneratorLoader(assets.__SynchronousAssetLoader, loaders.SynchronousAssetLoader):
+class FreeTypeFontGeneratorLoader():
     """com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGeneratorLoader"""
  
     @staticmethod
@@ -2698,7 +2698,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont as __BitmapFont
 __BitmapFont = __BitmapFont
 from builtins import int
  
-class FreetypeFontLoader(assets.__AsynchronousAssetLoader, loaders.AsynchronousAssetLoader):
+class FreetypeFontLoader():
     """com.badlogic.gdx.graphics.g2d.freetype.FreetypeFontLoader"""
  
     @staticmethod
@@ -2834,17 +2834,17 @@ import java.lang.String as __String
 __String = __String
 import java.lang.Object as __Object
 __Object = __Object
-import java.nio.ByteBuffer as ByteBuffer
-import java.lang.Integer as __int
 try:
     from pygdx import files
 except ImportError:
     files = __import_once__("pygdx.files")
 
+import java.lang.Integer as __int
+import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class Library(__Pointer, Pointer, pygdx.__Disposable, utils.Disposable):
+class Library():
     """com.badlogic.gdx.graphics.g2d.freetype.FreeType.Library"""
  
     @staticmethod

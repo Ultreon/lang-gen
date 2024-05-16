@@ -616,7 +616,7 @@ import java.util.Map as Map
 from builtins import int
 import java.util.List as List
  
-class SettingsScreen(screens.__TabbedUI, tabs.TabbedUI):
+class SettingsScreen():
     """dev.ultreon.quantum.client.gui.screens.settings.SettingsScreen"""
  
     @staticmethod

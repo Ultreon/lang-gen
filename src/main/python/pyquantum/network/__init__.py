@@ -407,7 +407,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DataOverflowException(__PacketException, PacketException):
+class DataOverflowException():
     """dev.ultreon.quantum.network.DataOverflowException"""
  
     @staticmethod
@@ -576,7 +576,7 @@ from abc import abstractmethod, ABC
 import dev.ultreon.quantum.network.Networker as __Networker
 __Networker = __Networker
  
-class Networker(ABC, __Closeable, Closeable):
+class Networker(ABC):
     """dev.ultreon.quantum.network.Networker"""
  
     @staticmethod
@@ -1609,7 +1609,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PacketException(__RuntimeException, RuntimeException):
+class PacketException():
     """dev.ultreon.quantum.network.PacketException"""
  
     @staticmethod
@@ -1833,7 +1833,7 @@ except ImportError:
 import java.util.List as List
 from builtins import int
  
-class MemoryNetworker(__Networker, Networker):
+class MemoryNetworker():
     """dev.ultreon.quantum.network.MemoryNetworker"""
  
     @staticmethod
@@ -2123,7 +2123,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PacketOverflowException(__PacketException, PacketException):
+class PacketOverflowException():
     """dev.ultreon.quantum.network.PacketOverflowException"""
  
     @staticmethod
@@ -2548,7 +2548,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ServerHostingException(__ServerStatusException, ServerStatusException):
+class ServerHostingException():
     """dev.ultreon.quantum.network.ServerHostingException"""
  
     @staticmethod
@@ -2839,7 +2839,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PacketIntegrityException(__IOException, IOException):
+class PacketIntegrityException():
     """dev.ultreon.quantum.network.PacketIntegrityException"""
  
     @staticmethod
@@ -3189,7 +3189,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class S2CReplyPacket(network.__Packet, packets.Packet, __ReplyPacket, ReplyPacket):
+class S2CReplyPacket():
     """dev.ultreon.quantum.network.S2CReplyPacket"""
  
     @staticmethod
@@ -3608,7 +3608,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class WriteOnlyBufferException(__UnsupportedOperationException, UnsupportedOperationException):
+class WriteOnlyBufferException():
     """dev.ultreon.quantum.network.WriteOnlyBufferException"""
  
     @staticmethod
@@ -3805,7 +3805,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ServerStatusException(__IOException, IOException):
+class ServerStatusException():
     """dev.ultreon.quantum.network.ServerStatusException"""
  
     @staticmethod

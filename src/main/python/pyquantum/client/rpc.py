@@ -28,7 +28,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class GameActivity(__Enum, Enum):
+class GameActivity():
     """dev.ultreon.quantum.client.rpc.GameActivity"""
  
     @staticmethod
@@ -207,7 +207,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class GameActivity(__Enum, Enum):
+class GameActivity():
     """dev.ultreon.quantum.client.rpc.GameActivity"""
  
     @staticmethod

@@ -28,7 +28,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Slf4jLogger(pyquantum.__Logger, log.Logger):
+class Slf4jLogger():
     """dev.ultreon.quantum.desktop.DesktopLogger.Slf4jLogger"""
  
     @staticmethod
@@ -267,7 +267,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Slf4jLogger(pyquantum.__Logger, log.Logger):
+class Slf4jLogger():
     """dev.ultreon.quantum.desktop.DesktopLogger.Slf4jLogger"""
  
     @staticmethod

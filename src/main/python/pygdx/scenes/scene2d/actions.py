@@ -39,7 +39,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LayoutAction(scenes.__Action, scene2d.Action):
+class LayoutAction():
     """com.badlogic.gdx.scenes.scene2d.actions.LayoutAction"""
  
     @staticmethod
@@ -239,7 +239,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LayoutAction(scenes.__Action, scene2d.Action):
+class LayoutAction():
     """com.badlogic.gdx.scenes.scene2d.actions.LayoutAction"""
  
     @staticmethod
@@ -452,7 +452,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RotateToAction(__TemporalAction, TemporalAction):
+class RotateToAction():
     """com.badlogic.gdx.scenes.scene2d.actions.RotateToAction"""
  
     @staticmethod
@@ -509,15 +509,15 @@ class RotateToAction(__TemporalAction, TemporalAction):
 
     @override
     @overload
-    def setDuration(self, arg0: float):
-        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
-        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
-
-    @override
-    @overload
     def restart(self):
         """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.restart()"""
         super(TemporalAction, self).restart()
+
+    @override
+    @overload
+    def setDuration(self, arg0: float):
+        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
+        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
 
     @override
     @overload
@@ -737,7 +737,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SizeToAction(__TemporalAction, TemporalAction):
+class SizeToAction():
     """com.badlogic.gdx.scenes.scene2d.actions.SizeToAction"""
  
     @staticmethod
@@ -787,15 +787,15 @@ class SizeToAction(__TemporalAction, TemporalAction):
 
     @override
     @overload
-    def setDuration(self, arg0: float):
-        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
-        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
-
-    @override
-    @overload
     def restart(self):
         """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.restart()"""
         super(TemporalAction, self).restart()
+
+    @override
+    @overload
+    def setDuration(self, arg0: float):
+        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
+        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
 
     @override
     @overload
@@ -1020,7 +1020,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class MoveToAction(__TemporalAction, TemporalAction):
+class MoveToAction():
     """com.badlogic.gdx.scenes.scene2d.actions.MoveToAction"""
  
     @staticmethod
@@ -1070,15 +1070,15 @@ class MoveToAction(__TemporalAction, TemporalAction):
 
     @override
     @overload
-    def setDuration(self, arg0: float):
-        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
-        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
-
-    @override
-    @overload
     def restart(self):
         """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.restart()"""
         super(TemporalAction, self).restart()
+
+    @override
+    @overload
+    def setDuration(self, arg0: float):
+        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
+        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
 
     @override
     @overload
@@ -1324,7 +1324,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ParallelAction(scenes.__Action, scene2d.Action):
+class ParallelAction():
     """com.badlogic.gdx.scenes.scene2d.actions.ParallelAction"""
  
     @staticmethod
@@ -1567,7 +1567,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ScaleByAction(__RelativeTemporalAction, RelativeTemporalAction):
+class ScaleByAction():
     """com.badlogic.gdx.scenes.scene2d.actions.ScaleByAction"""
  
     @staticmethod
@@ -1627,15 +1627,15 @@ class ScaleByAction(__RelativeTemporalAction, RelativeTemporalAction):
 
     @override
     @overload
-    def setDuration(self, arg0: float):
-        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
-        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
-
-    @override
-    @overload
     def restart(self):
         """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.restart()"""
         super(TemporalAction, self).restart()
+
+    @override
+    @overload
+    def setDuration(self, arg0: float):
+        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
+        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
 
     @overload
     def setAmountX(self, arg0: float):
@@ -1855,7 +1855,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class IntAction(__TemporalAction, TemporalAction):
+class IntAction():
     """com.badlogic.gdx.scenes.scene2d.actions.IntAction"""
  
     @staticmethod
@@ -1905,15 +1905,15 @@ class IntAction(__TemporalAction, TemporalAction):
 
     @override
     @overload
-    def setDuration(self, arg0: float):
-        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
-        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
-
-    @override
-    @overload
     def restart(self):
         """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.restart()"""
         super(TemporalAction, self).restart()
+
+    @override
+    @overload
+    def setDuration(self, arg0: float):
+        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
+        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
 
     @overload
     def __init__(self, ):
@@ -2155,7 +2155,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AfterAction(__DelegateAction, DelegateAction):
+class AfterAction():
     """com.badlogic.gdx.scenes.scene2d.actions.AfterAction"""
  
     @staticmethod
@@ -2320,12 +2320,12 @@ class AfterAction(__DelegateAction, DelegateAction):
  
 # CLASS: com.badlogic.gdx.scenes.scene2d.actions.DelegateAction
 from pyquantum_helper import import_once as __import_once__
-from builtins import str
 try:
     from pygdx.scenes import scene2d
 except ImportError:
     scene2d = __import_once__("pygdx.scenes.scene2d")
 
+from builtins import str
 try:
     from pygdx import utils
 except ImportError:
@@ -2354,7 +2354,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DelegateAction(ABC, scenes.__Action, scene2d.Action):
+class DelegateAction(ABC):
     """com.badlogic.gdx.scenes.scene2d.actions.DelegateAction"""
  
     @staticmethod
@@ -2551,7 +2551,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AddAction(scenes.__Action, scene2d.Action):
+class AddAction():
     """com.badlogic.gdx.scenes.scene2d.actions.AddAction"""
  
     @staticmethod
@@ -2751,7 +2751,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RunnableAction(scenes.__Action, scene2d.Action):
+class RunnableAction():
     """com.badlogic.gdx.scenes.scene2d.actions.RunnableAction"""
  
     @staticmethod
@@ -2955,7 +2955,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class EventAction(ABC, scenes.__Action, scene2d.Action):
+class EventAction(ABC):
     """com.badlogic.gdx.scenes.scene2d.actions.EventAction"""
  
     @staticmethod
@@ -3153,7 +3153,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AddListenerAction(scenes.__Action, scene2d.Action):
+class AddListenerAction():
     """com.badlogic.gdx.scenes.scene2d.actions.AddListenerAction"""
  
     @staticmethod
@@ -3326,12 +3326,12 @@ class AddListenerAction(scenes.__Action, scene2d.Action):
  
 # CLASS: com.badlogic.gdx.scenes.scene2d.actions.RepeatAction
 from pyquantum_helper import import_once as __import_once__
-from builtins import str
 try:
     from pygdx.scenes import scene2d
 except ImportError:
     scene2d = __import_once__("pygdx.scenes.scene2d")
 
+from builtins import str
 try:
     from pygdx import utils
 except ImportError:
@@ -3362,7 +3362,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RepeatAction(__DelegateAction, DelegateAction):
+class RepeatAction():
     """com.badlogic.gdx.scenes.scene2d.actions.RepeatAction"""
  
     @staticmethod
@@ -3576,7 +3576,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RemoveActorAction(scenes.__Action, scene2d.Action):
+class RemoveActorAction():
     """com.badlogic.gdx.scenes.scene2d.actions.RemoveActorAction"""
  
     @staticmethod
@@ -3766,7 +3766,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RemoveListenerAction(scenes.__Action, scene2d.Action):
+class RemoveListenerAction():
     """com.badlogic.gdx.scenes.scene2d.actions.RemoveListenerAction"""
  
     @staticmethod
@@ -3984,7 +3984,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RelativeTemporalAction(ABC, __TemporalAction, TemporalAction):
+class RelativeTemporalAction(ABC):
     """com.badlogic.gdx.scenes.scene2d.actions.RelativeTemporalAction"""
  
     @staticmethod
@@ -4034,15 +4034,15 @@ class RelativeTemporalAction(ABC, __TemporalAction, TemporalAction):
 
     @override
     @overload
-    def setDuration(self, arg0: float):
-        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
-        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
-
-    @override
-    @overload
     def restart(self):
         """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.restart()"""
         super(TemporalAction, self).restart()
+
+    @override
+    @overload
+    def setDuration(self, arg0: float):
+        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
+        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
 
     @override
     @overload
@@ -4242,7 +4242,7 @@ __FloatAction = __FloatAction
 from builtins import bool
 from builtins import int
  
-class FloatAction(__TemporalAction, TemporalAction):
+class FloatAction():
     """com.badlogic.gdx.scenes.scene2d.actions.FloatAction"""
  
     @staticmethod
@@ -4297,15 +4297,15 @@ class FloatAction(__TemporalAction, TemporalAction):
 
     @override
     @overload
-    def setDuration(self, arg0: float):
-        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
-        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
-
-    @override
-    @overload
     def restart(self):
         """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.restart()"""
         super(TemporalAction, self).restart()
+
+    @override
+    @overload
+    def setDuration(self, arg0: float):
+        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
+        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
 
     @overload
     def setValue(self, arg0: float):
@@ -4542,7 +4542,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TouchableAction(scenes.__Action, scene2d.Action):
+class TouchableAction():
     """com.badlogic.gdx.scenes.scene2d.actions.TouchableAction"""
  
     @staticmethod
@@ -4750,7 +4750,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RotateByAction(__RelativeTemporalAction, RelativeTemporalAction):
+class RotateByAction():
     """com.badlogic.gdx.scenes.scene2d.actions.RotateByAction"""
  
     @staticmethod
@@ -4800,15 +4800,15 @@ class RotateByAction(__RelativeTemporalAction, RelativeTemporalAction):
 
     @override
     @overload
-    def setDuration(self, arg0: float):
-        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
-        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
-
-    @override
-    @overload
     def restart(self):
         """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.restart()"""
         super(TemporalAction, self).restart()
+
+    @override
+    @overload
+    def setDuration(self, arg0: float):
+        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
+        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
 
     @override
     @overload
@@ -4973,12 +4973,12 @@ class RotateByAction(__RelativeTemporalAction, RelativeTemporalAction):
  
 # CLASS: com.badlogic.gdx.scenes.scene2d.actions.DelayAction
 from pyquantum_helper import import_once as __import_once__
-from builtins import str
 try:
     from pygdx.scenes import scene2d
 except ImportError:
     scene2d = __import_once__("pygdx.scenes.scene2d")
 
+from builtins import str
 try:
     from pygdx import utils
 except ImportError:
@@ -5010,7 +5010,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DelayAction(__DelegateAction, DelegateAction):
+class DelayAction():
     """com.badlogic.gdx.scenes.scene2d.actions.DelayAction"""
  
     @staticmethod
@@ -5777,15 +5777,15 @@ class Actions():
 
     @staticmethod
     @overload
-    def scaleBy(arg0: float, arg1: float, arg2: float, arg3: 'Interpolation') -> 'ScaleByAction':
-        """public static com.badlogic.gdx.scenes.scene2d.actions.ScaleByAction com.badlogic.gdx.scenes.scene2d.actions.Actions.scaleBy(float,float,float,com.badlogic.gdx.math.Interpolation)"""
-        return ScaleByAction.__wrap(__Actions.scaleBy(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), arg3))
-
-    @staticmethod
-    @overload
     def scaleBy(arg0: float, arg1: float) -> 'ScaleByAction':
         """public static com.badlogic.gdx.scenes.scene2d.actions.ScaleByAction com.badlogic.gdx.scenes.scene2d.actions.Actions.scaleBy(float,float)"""
         return ScaleByAction.__wrap(__Actions.scaleBy(__float.valueOf(arg0), __float.valueOf(arg1)))
+
+    @staticmethod
+    @overload
+    def scaleBy(arg0: float, arg1: float, arg2: float, arg3: 'Interpolation') -> 'ScaleByAction':
+        """public static com.badlogic.gdx.scenes.scene2d.actions.ScaleByAction com.badlogic.gdx.scenes.scene2d.actions.Actions.scaleBy(float,float,float,com.badlogic.gdx.math.Interpolation)"""
+        return ScaleByAction.__wrap(__Actions.scaleBy(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), arg3))
 
     @staticmethod
     @overload
@@ -5896,7 +5896,7 @@ except ImportError:
 
 from builtins import int
  
-class ColorAction(__TemporalAction, TemporalAction):
+class ColorAction():
     """com.badlogic.gdx.scenes.scene2d.actions.ColorAction"""
  
     @staticmethod
@@ -5953,15 +5953,15 @@ class ColorAction(__TemporalAction, TemporalAction):
 
     @override
     @overload
-    def setDuration(self, arg0: float):
-        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
-        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
-
-    @override
-    @overload
     def restart(self):
         """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.restart()"""
         super(TemporalAction, self).restart()
+
+    @override
+    @overload
+    def setDuration(self, arg0: float):
+        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
+        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
 
     @override
     @overload
@@ -6167,7 +6167,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SequenceAction(__ParallelAction, ParallelAction):
+class SequenceAction():
     """com.badlogic.gdx.scenes.scene2d.actions.SequenceAction"""
  
     @staticmethod
@@ -6402,7 +6402,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class VisibleAction(scenes.__Action, scene2d.Action):
+class VisibleAction():
     """com.badlogic.gdx.scenes.scene2d.actions.VisibleAction"""
  
     @staticmethod
@@ -6610,7 +6610,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ScaleToAction(__TemporalAction, TemporalAction):
+class ScaleToAction():
     """com.badlogic.gdx.scenes.scene2d.actions.ScaleToAction"""
  
     @staticmethod
@@ -6665,15 +6665,15 @@ class ScaleToAction(__TemporalAction, TemporalAction):
 
     @override
     @overload
-    def setDuration(self, arg0: float):
-        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
-        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
-
-    @override
-    @overload
     def restart(self):
         """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.restart()"""
         super(TemporalAction, self).restart()
+
+    @override
+    @overload
+    def setDuration(self, arg0: float):
+        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
+        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
 
     @override
     @overload
@@ -6905,7 +6905,7 @@ except ImportError:
 
 from builtins import int
  
-class AlphaAction(__TemporalAction, TemporalAction):
+class AlphaAction():
     """com.badlogic.gdx.scenes.scene2d.actions.AlphaAction"""
  
     @staticmethod
@@ -6955,15 +6955,15 @@ class AlphaAction(__TemporalAction, TemporalAction):
 
     @override
     @overload
-    def setDuration(self, arg0: float):
-        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
-        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
-
-    @override
-    @overload
     def restart(self):
         """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.restart()"""
         super(TemporalAction, self).restart()
+
+    @override
+    @overload
+    def setDuration(self, arg0: float):
+        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
+        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
 
     @override
     @overload
@@ -7175,7 +7175,7 @@ import com.badlogic.gdx.scenes.scene2d.actions.CountdownEventAction as __Countdo
 __CountdownEventAction = __CountdownEventAction
 from builtins import int
  
-class CountdownEventAction(__EventAction, EventAction):
+class CountdownEventAction():
     """com.badlogic.gdx.scenes.scene2d.actions.CountdownEventAction"""
  
     @staticmethod
@@ -7383,7 +7383,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MoveByAction(__RelativeTemporalAction, RelativeTemporalAction):
+class MoveByAction():
     """com.badlogic.gdx.scenes.scene2d.actions.MoveByAction"""
  
     @staticmethod
@@ -7433,15 +7433,15 @@ class MoveByAction(__RelativeTemporalAction, RelativeTemporalAction):
 
     @override
     @overload
-    def setDuration(self, arg0: float):
-        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
-        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
-
-    @override
-    @overload
     def restart(self):
         """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.restart()"""
         super(TemporalAction, self).restart()
+
+    @override
+    @overload
+    def setDuration(self, arg0: float):
+        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
+        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
 
     @override
     @overload
@@ -7621,12 +7621,12 @@ class MoveByAction(__RelativeTemporalAction, RelativeTemporalAction):
  
 # CLASS: com.badlogic.gdx.scenes.scene2d.actions.TimeScaleAction
 from pyquantum_helper import import_once as __import_once__
-from builtins import str
 try:
     from pygdx.scenes import scene2d
 except ImportError:
     scene2d = __import_once__("pygdx.scenes.scene2d")
 
+from builtins import str
 import com.badlogic.gdx.scenes.scene2d.actions.TimeScaleAction as __TimeScaleAction
 __TimeScaleAction = __TimeScaleAction
 try:
@@ -7658,7 +7658,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TimeScaleAction(__DelegateAction, DelegateAction):
+class TimeScaleAction():
     """com.badlogic.gdx.scenes.scene2d.actions.TimeScaleAction"""
  
     @staticmethod
@@ -7867,7 +7867,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RemoveAction(scenes.__Action, scene2d.Action):
+class RemoveAction():
     """com.badlogic.gdx.scenes.scene2d.actions.RemoveAction"""
  
     @staticmethod
@@ -8073,7 +8073,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TemporalAction(ABC, scenes.__Action, scene2d.Action):
+class TemporalAction(ABC):
     """com.badlogic.gdx.scenes.scene2d.actions.TemporalAction"""
  
     @staticmethod
@@ -8335,7 +8335,7 @@ import com.badlogic.gdx.scenes.scene2d.actions.SizeByAction as __SizeByAction
 __SizeByAction = __SizeByAction
 from builtins import int
  
-class SizeByAction(__RelativeTemporalAction, RelativeTemporalAction):
+class SizeByAction():
     """com.badlogic.gdx.scenes.scene2d.actions.SizeByAction"""
  
     @staticmethod
@@ -8385,15 +8385,15 @@ class SizeByAction(__RelativeTemporalAction, RelativeTemporalAction):
 
     @override
     @overload
-    def setDuration(self, arg0: float):
-        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
-        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
-
-    @override
-    @overload
     def restart(self):
         """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.restart()"""
         super(TemporalAction, self).restart()
+
+    @override
+    @overload
+    def setDuration(self, arg0: float):
+        """public void com.badlogic.gdx.scenes.scene2d.actions.TemporalAction.setDuration(float)"""
+        super(__TemporalAction, self).setDuration(__float.valueOf(arg0))
 
     @override
     @overload

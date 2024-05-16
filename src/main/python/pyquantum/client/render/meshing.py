@@ -441,7 +441,7 @@ except ImportError:
 
 from builtins import int
  
-class AdvancedVertexInfo(g3d.__MeshPartBuilder_VertexInfo, utils.MeshPartBuilder$VertexInfo):
+class AdvancedVertexInfo():
     """dev.ultreon.quantum.client.render.meshing.AdvancedVertexInfo"""
  
     @staticmethod
@@ -834,7 +834,7 @@ except ImportError:
 import java.util.List as List
 from builtins import int
  
-class GreedyMesher(__Mesher, Mesher):
+class GreedyMesher():
     """dev.ultreon.quantum.client.render.meshing.GreedyMesher"""
  
     @staticmethod

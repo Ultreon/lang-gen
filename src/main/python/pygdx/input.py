@@ -24,7 +24,7 @@ import com.badlogic.gdx.input.GestureDetector as __GestureDetector
 __GestureDetector = __GestureDetector
 from builtins import int
  
-class GestureDetector(pygdx.__InputAdapter, pygdx.InputAdapter):
+class GestureDetector():
     """com.badlogic.gdx.input.GestureDetector"""
  
     @staticmethod
@@ -177,14 +177,14 @@ class GestureDetector(pygdx.__InputAdapter, pygdx.InputAdapter):
         return bool.__wrap(super(GestureDetector, self).isPanning())
 
     @overload
-    def setTapSquareSize(self, arg0: float):
-        """public void com.badlogic.gdx.input.GestureDetector.setTapSquareSize(float)"""
-        super(__GestureDetector, self).setTapSquareSize(__float.valueOf(arg0))
-
-    @overload
     def touchDragged(self, arg0: int, arg1: int, arg2: int) -> bool:
         """public boolean com.badlogic.gdx.input.GestureDetector.touchDragged(int,int,int)"""
         return bool.__wrap(super(__GestureDetector, self).touchDragged(__int.valueOf(arg0), __int.valueOf(arg1), __int.valueOf(arg2)))
+
+    @overload
+    def setTapSquareSize(self, arg0: float):
+        """public void com.badlogic.gdx.input.GestureDetector.setTapSquareSize(float)"""
+        super(__GestureDetector, self).setTapSquareSize(__float.valueOf(arg0))
 
     @overload
     def touchDown(self, arg0: int, arg1: int, arg2: int, arg3: int) -> bool:
@@ -268,7 +268,7 @@ import com.badlogic.gdx.input.GestureDetector as __GestureDetector
 __GestureDetector = __GestureDetector
 from builtins import int
  
-class GestureDetector(pygdx.__InputAdapter, pygdx.InputAdapter):
+class GestureDetector():
     """com.badlogic.gdx.input.GestureDetector"""
  
     @staticmethod
@@ -421,14 +421,14 @@ class GestureDetector(pygdx.__InputAdapter, pygdx.InputAdapter):
         return bool.__wrap(super(GestureDetector, self).isPanning())
 
     @overload
-    def setTapSquareSize(self, arg0: float):
-        """public void com.badlogic.gdx.input.GestureDetector.setTapSquareSize(float)"""
-        super(__GestureDetector, self).setTapSquareSize(__float.valueOf(arg0))
-
-    @overload
     def touchDragged(self, arg0: int, arg1: int, arg2: int) -> bool:
         """public boolean com.badlogic.gdx.input.GestureDetector.touchDragged(int,int,int)"""
         return bool.__wrap(super(__GestureDetector, self).touchDragged(__int.valueOf(arg0), __int.valueOf(arg1), __int.valueOf(arg2)))
+
+    @overload
+    def setTapSquareSize(self, arg0: float):
+        """public void com.badlogic.gdx.input.GestureDetector.setTapSquareSize(float)"""
+        super(__GestureDetector, self).setTapSquareSize(__float.valueOf(arg0))
 
     @overload
     def touchDown(self, arg0: int, arg1: int, arg2: int, arg3: int) -> bool:
@@ -518,7 +518,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class GestureAdapter(__GestureListener, GestureListener):
+class GestureAdapter():
     """com.badlogic.gdx.input.GestureDetector.GestureAdapter"""
  
     @staticmethod
@@ -627,16 +627,16 @@ class GestureAdapter(__GestureListener, GestureListener):
         """public native int java.lang.Object.hashCode()"""
         return int.__wrap(super(object, self).hashCode())
 
+    @overload
+    def touchDown(self, arg0: float, arg1: float, arg2: int, arg3: int) -> bool:
+        """public boolean com.badlogic.gdx.input.GestureDetector$GestureAdapter.touchDown(float,float,int,int)"""
+        return bool.__wrap(super(__GestureAdapter, self).touchDown(__float.valueOf(arg0), __float.valueOf(arg1), __int.valueOf(arg2), __int.valueOf(arg3)))
+
     @override
     @overload
     def pinchStop(self):
         """public void com.badlogic.gdx.input.GestureDetector$GestureAdapter.pinchStop()"""
         super(GestureAdapter, self).pinchStop()
-
-    @overload
-    def touchDown(self, arg0: float, arg1: float, arg2: int, arg3: int) -> bool:
-        """public boolean com.badlogic.gdx.input.GestureDetector$GestureAdapter.touchDown(float,float,int,int)"""
-        return bool.__wrap(super(__GestureAdapter, self).touchDown(__float.valueOf(arg0), __float.valueOf(arg1), __int.valueOf(arg2), __int.valueOf(arg3)))
 
     @overload
     def __init__(self, ):
@@ -683,7 +683,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RemoteSender(pygdx.__InputProcessor, pygdx.InputProcessor):
+class RemoteSender():
     """com.badlogic.gdx.input.RemoteSender"""
  
     @staticmethod
@@ -839,8 +839,8 @@ except ImportError:
 from builtins import str
 import com.badlogic.gdx.Input as __Input_Orientation
 __Orientation = __Input_Orientation.Orientation
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 from builtins import float
@@ -861,7 +861,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RemoteInput(__Runnable, Runnable, pygdx.__Input, pygdx.Input):
+class RemoteInput():
     """com.badlogic.gdx.input.RemoteInput"""
  
     @staticmethod
@@ -1393,13 +1393,13 @@ class GestureListener(ABC):
         pass
 
     @abstractmethod
-    def longPress(self, arg0: float, arg1: float):
-        """public abstract boolean com.badlogic.gdx.input.GestureDetector$GestureListener.longPress(float,float)"""
+    def tap(self, arg0: float, arg1: float, arg2: int, arg3: int):
+        """public abstract boolean com.badlogic.gdx.input.GestureDetector$GestureListener.tap(float,float,int,int)"""
         pass
 
     @abstractmethod
-    def tap(self, arg0: float, arg1: float, arg2: int, arg3: int):
-        """public abstract boolean com.badlogic.gdx.input.GestureDetector$GestureListener.tap(float,float,int,int)"""
+    def longPress(self, arg0: float, arg1: float):
+        """public abstract boolean com.badlogic.gdx.input.GestureDetector$GestureListener.longPress(float,float)"""
         pass
 
     @abstractmethod

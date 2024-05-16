@@ -62,7 +62,7 @@ except ImportError:
 
 from builtins import int
  
-class ParticleController(pygdx.__Json_Serializable, utils.Json$Serializable, __Configurable, Configurable):
+class ParticleController():
     """com.badlogic.gdx.graphics.g3d.particles.ParticleController"""
  
     @staticmethod
@@ -282,16 +282,16 @@ class ParticleController(pygdx.__Json_Serializable, utils.Json$Serializable, __C
         """public final native java.lang.Class<?> java.lang.Object.getClass()"""
         return 'type.Class'.__wrap(super(object, self).getClass())
 
-    @overload
-    def getTransform(self, arg0: 'Matrix4'):
-        """public void com.badlogic.gdx.graphics.g3d.particles.ParticleController.getTransform(com.badlogic.gdx.math.Matrix4)"""
-        super(__ParticleController, self).getTransform(arg0)
-
     @override
     @overload
     def load(self, arg0: 'AssetManager', arg1: 'ResourceData'):
         """public void com.badlogic.gdx.graphics.g3d.particles.ParticleController.load(com.badlogic.gdx.assets.AssetManager,com.badlogic.gdx.graphics.g3d.particles.ResourceData)"""
         super(__ParticleController, self).load(arg0, arg1)
+
+    @overload
+    def getTransform(self, arg0: 'Matrix4'):
+        """public void com.badlogic.gdx.graphics.g3d.particles.ParticleController.getTransform(com.badlogic.gdx.math.Matrix4)"""
+        super(__ParticleController, self).getTransform(arg0)
 
     @override
     @overload
@@ -383,7 +383,7 @@ except ImportError:
 
 from builtins import int
  
-class ParticleController(pygdx.__Json_Serializable, utils.Json$Serializable, __Configurable, Configurable):
+class ParticleController():
     """com.badlogic.gdx.graphics.g3d.particles.ParticleController"""
  
     @staticmethod
@@ -603,16 +603,16 @@ class ParticleController(pygdx.__Json_Serializable, utils.Json$Serializable, __C
         """public final native java.lang.Class<?> java.lang.Object.getClass()"""
         return 'type.Class'.__wrap(super(object, self).getClass())
 
-    @overload
-    def getTransform(self, arg0: 'Matrix4'):
-        """public void com.badlogic.gdx.graphics.g3d.particles.ParticleController.getTransform(com.badlogic.gdx.math.Matrix4)"""
-        super(__ParticleController, self).getTransform(arg0)
-
     @override
     @overload
     def load(self, arg0: 'AssetManager', arg1: 'ResourceData'):
         """public void com.badlogic.gdx.graphics.g3d.particles.ParticleController.load(com.badlogic.gdx.assets.AssetManager,com.badlogic.gdx.graphics.g3d.particles.ResourceData)"""
         super(__ParticleController, self).load(arg0, arg1)
+
+    @overload
+    def getTransform(self, arg0: 'Matrix4'):
+        """public void com.badlogic.gdx.graphics.g3d.particles.ParticleController.getTransform(com.badlogic.gdx.math.Matrix4)"""
+        super(__ParticleController, self).getTransform(arg0)
 
     @override
     @overload
@@ -781,7 +781,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Rotation2dInitializer(__ChannelInitializer, ChannelInitializer):
+class Rotation2dInitializer():
     """com.badlogic.gdx.graphics.g3d.particles.ParticleChannels.Rotation2dInitializer"""
  
     @staticmethod
@@ -923,7 +923,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SaveData(pygdx.__Json_Serializable, utils.Json$Serializable):
+class SaveData():
     """com.badlogic.gdx.graphics.g3d.particles.ResourceData.SaveData"""
  
     @staticmethod
@@ -1287,7 +1287,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class None(__ParticleSorter, ParticleSorter):
+class None():
     """com.badlogic.gdx.graphics.g3d.particles.ParticleSorter.None"""
  
     @staticmethod
@@ -1437,7 +1437,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class ParticleEffectSaveParameter(pygdx.__AssetLoaderParameters, assets.AssetLoaderParameters):
+class ParticleEffectSaveParameter():
     """com.badlogic.gdx.graphics.g3d.particles.ParticleEffectLoader.ParticleEffectSaveParameter"""
  
     @staticmethod
@@ -1561,7 +1561,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class ParticleType(__Enum, Enum):
+class ParticleType():
     """com.badlogic.gdx.graphics.g3d.particles.ParticleShader.ParticleType"""
  
     @staticmethod
@@ -1724,7 +1724,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ParticleSystem(graphics.__RenderableProvider, g3d.RenderableProvider):
+class ParticleSystem():
     """com.badlogic.gdx.graphics.g3d.particles.ParticleSystem"""
  
     @staticmethod
@@ -1920,7 +1920,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class AlignMode(__Enum, Enum):
+class AlignMode():
     """com.badlogic.gdx.graphics.g3d.particles.ParticleShader.AlignMode"""
  
     @staticmethod
@@ -2069,7 +2069,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Rotation3dInitializer(__ChannelInitializer, ChannelInitializer):
+class Rotation3dInitializer():
     """com.badlogic.gdx.graphics.g3d.particles.ParticleChannels.Rotation3dInitializer"""
  
     @staticmethod
@@ -2318,7 +2318,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class IntChannel(__Channel, Channel):
+class IntChannel():
     """com.badlogic.gdx.graphics.g3d.particles.ParallelArray.IntChannel"""
  
     @staticmethod
@@ -2479,7 +2479,7 @@ except ImportError:
 
 from builtins import int
  
-class ParticleShader(g3d.__BaseShader, shaders.BaseShader):
+class ParticleShader():
     """com.badlogic.gdx.graphics.g3d.particles.ParticleShader"""
  
     @staticmethod
@@ -2836,7 +2836,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ColorInitializer(__ChannelInitializer, ChannelInitializer):
+class ColorInitializer():
     """com.badlogic.gdx.graphics.g3d.particles.ParticleChannels.ColorInitializer"""
  
     @staticmethod
@@ -3132,7 +3132,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ParticleControllerComponent(ABC, pygdx.__Disposable, utils.Disposable, pygdx.__Json_Serializable, utils.Json$Serializable, __Configurable, Configurable):
+class ParticleControllerComponent(ABC):
     """com.badlogic.gdx.graphics.g3d.particles.ParticleControllerComponent"""
  
     @staticmethod
@@ -3324,7 +3324,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ObjectChannel(__Channel, Channel):
+class ObjectChannel():
     """com.badlogic.gdx.graphics.g3d.particles.ParallelArray.ObjectChannel"""
  
     @staticmethod
@@ -3450,7 +3450,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ScaleInitializer(__ChannelInitializer, ChannelInitializer):
+class ScaleInitializer():
     """com.badlogic.gdx.graphics.g3d.particles.ParticleChannels.ScaleInitializer"""
  
     @staticmethod
@@ -3606,7 +3606,7 @@ __ParticleEffect = __ParticleEffect
 from builtins import bool
 from builtins import int
  
-class ParticleEffect(pygdx.__Disposable, utils.Disposable, __Configurable, Configurable):
+class ParticleEffect():
     """com.badlogic.gdx.graphics.g3d.particles.ParticleEffect"""
  
     @staticmethod
@@ -3863,7 +3863,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class Distance(__ParticleSorter, ParticleSorter):
+class Distance():
     """com.badlogic.gdx.graphics.g3d.particles.ParticleSorter.Distance"""
  
     @staticmethod
@@ -4012,7 +4012,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ResourceData(pygdx.__Json_Serializable, utils.Json$Serializable):
+class ResourceData():
     """com.badlogic.gdx.graphics.g3d.particles.ResourceData"""
  
     @staticmethod
@@ -4178,7 +4178,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FloatChannel(__Channel, Channel):
+class FloatChannel():
     """com.badlogic.gdx.graphics.g3d.particles.ParallelArray.FloatChannel"""
  
     @staticmethod
@@ -4438,7 +4438,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AssetData(pygdx.__Json_Serializable, utils.Json$Serializable):
+class AssetData():
     """com.badlogic.gdx.graphics.g3d.particles.ResourceData.AssetData"""
  
     @staticmethod
@@ -4718,7 +4718,7 @@ __TextureRegionInitializer = __ParticleChannels_TextureRegionInitializer.Texture
 from builtins import bool
 from builtins import int
  
-class TextureRegionInitializer(__ChannelInitializer, ChannelInitializer):
+class TextureRegionInitializer():
     """com.badlogic.gdx.graphics.g3d.particles.ParticleChannels.TextureRegionInitializer"""
  
     @staticmethod
@@ -4877,7 +4877,7 @@ __ParticleEffect = __ParticleEffect
 from builtins import bool
 from builtins import int
  
-class ParticleEffectLoader(assets.__AsynchronousAssetLoader, loaders.AsynchronousAssetLoader):
+class ParticleEffectLoader():
     """com.badlogic.gdx.graphics.g3d.particles.ParticleEffectLoader"""
  
     @staticmethod
@@ -5023,7 +5023,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ParticleEffectLoadParameter(pygdx.__AssetLoaderParameters, assets.AssetLoaderParameters):
+class ParticleEffectLoadParameter():
     """com.badlogic.gdx.graphics.g3d.particles.ParticleEffectLoader.ParticleEffectLoadParameter"""
  
     @staticmethod

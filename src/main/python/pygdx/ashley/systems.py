@@ -42,7 +42,7 @@ except ImportError:
 
 from builtins import int
  
-class SortedIteratingSystem(ABC, ashley.__EntitySystem, core.EntitySystem, ashley.__EntityListener, core.EntityListener):
+class SortedIteratingSystem(ABC):
     """com.badlogic.ashley.systems.SortedIteratingSystem"""
  
     @staticmethod
@@ -245,7 +245,7 @@ except ImportError:
 
 from builtins import int
  
-class SortedIteratingSystem(ABC, ashley.__EntitySystem, core.EntitySystem, ashley.__EntityListener, core.EntityListener):
+class SortedIteratingSystem(ABC):
     """com.badlogic.ashley.systems.SortedIteratingSystem"""
  
     @staticmethod
@@ -453,7 +453,7 @@ except ImportError:
 
 from builtins import int
  
-class IntervalIteratingSystem(ABC, __IntervalSystem, IntervalSystem):
+class IntervalIteratingSystem(ABC):
     """com.badlogic.ashley.systems.IntervalIteratingSystem"""
  
     @staticmethod
@@ -642,7 +642,7 @@ except ImportError:
 
 from builtins import int
  
-class IteratingSystem(ABC, ashley.__EntitySystem, core.EntitySystem):
+class IteratingSystem(ABC):
     """com.badlogic.ashley.systems.IteratingSystem"""
  
     @staticmethod
@@ -817,7 +817,7 @@ except ImportError:
 
 from builtins import int
  
-class IntervalSystem(ABC, ashley.__EntitySystem, core.EntitySystem):
+class IntervalSystem(ABC):
     """com.badlogic.ashley.systems.IntervalSystem"""
  
     @staticmethod

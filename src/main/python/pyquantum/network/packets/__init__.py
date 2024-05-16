@@ -34,7 +34,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class InitialPermissionsPacket(__Packet, Packet):
+class InitialPermissionsPacket():
     """dev.ultreon.quantum.network.packets.InitialPermissionsPacket"""
  
     @staticmethod
@@ -182,7 +182,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class InitialPermissionsPacket(__Packet, Packet):
+class InitialPermissionsPacket():
     """dev.ultreon.quantum.network.packets.InitialPermissionsPacket"""
  
     @staticmethod
@@ -337,7 +337,7 @@ import dev.ultreon.quantum.network.packets.RemovePermissionPacket as __RemovePer
 __RemovePermissionPacket = __RemovePermissionPacket
 from builtins import int
  
-class RemovePermissionPacket(__Packet, Packet):
+class RemovePermissionPacket():
     """dev.ultreon.quantum.network.packets.RemovePermissionPacket"""
  
     @staticmethod
@@ -485,7 +485,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class C2SAttackPacket(__Packet, Packet):
+class C2SAttackPacket():
     """dev.ultreon.quantum.network.packets.C2SAttackPacket"""
  
     @staticmethod
@@ -630,7 +630,7 @@ import dev.ultreon.quantum.network.packets.AddPermissionPacket as __AddPermissio
 __AddPermissionPacket = __AddPermissionPacket
 from builtins import int
  
-class AddPermissionPacket(__Packet, Packet):
+class AddPermissionPacket():
     """dev.ultreon.quantum.network.packets.AddPermissionPacket"""
  
     @staticmethod

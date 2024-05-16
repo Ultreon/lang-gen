@@ -30,7 +30,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MalformedJsonException(__IOException, IOException):
+class MalformedJsonException():
     """com.google.gson.stream.MalformedJsonException"""
  
     @staticmethod
@@ -236,7 +236,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MalformedJsonException(__IOException, IOException):
+class MalformedJsonException():
     """com.google.gson.stream.MalformedJsonException"""
  
     @staticmethod
@@ -442,7 +442,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class JsonWriter(__Closeable, Closeable, __Flushable, Flushable):
+class JsonWriter():
     """com.google.gson.stream.JsonWriter"""
  
     @staticmethod
@@ -676,7 +676,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class JsonToken(__Enum, Enum):
+class JsonToken():
     """com.google.gson.stream.JsonToken"""
  
     @staticmethod
@@ -830,7 +830,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class JsonReader(__Closeable, Closeable):
+class JsonReader():
     """com.google.gson.stream.JsonReader"""
  
     @staticmethod

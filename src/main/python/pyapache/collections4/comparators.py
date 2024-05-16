@@ -30,7 +30,7 @@ from builtins import bool
 from builtins import int
 import java.util.List as List
  
-class ComparatorChain(__Comparator, Comparator, __Serializable, Serializable):
+class ComparatorChain():
     """org.apache.commons.collections4.comparators.ComparatorChain"""
  
     @staticmethod
@@ -267,7 +267,7 @@ from builtins import bool
 from builtins import int
 import java.util.List as List
  
-class ComparatorChain(__Comparator, Comparator, __Serializable, Serializable):
+class ComparatorChain():
     """org.apache.commons.collections4.comparators.ComparatorChain"""
  
     @staticmethod
@@ -505,7 +505,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class UnknownObjectBehavior(__Enum, Enum):
+class UnknownObjectBehavior():
     """org.apache.commons.collections4.comparators.FixedOrderComparator.UnknownObjectBehavior"""
  
     @staticmethod
@@ -663,7 +663,7 @@ import java.util.function.ToDoubleFunction as ToDoubleFunction
 from builtins import bool
 from builtins import int
  
-class BooleanComparator(__Comparator, Comparator, __Serializable, Serializable):
+class BooleanComparator():
     """org.apache.commons.collections4.comparators.BooleanComparator"""
  
     @staticmethod
@@ -858,7 +858,7 @@ __NullComparator = __NullComparator
 from builtins import bool
 from builtins import int
  
-class NullComparator(__Comparator, Comparator, __Serializable, Serializable):
+class NullComparator():
     """org.apache.commons.collections4.comparators.NullComparator"""
  
     @staticmethod
@@ -1049,7 +1049,7 @@ import java.util.function.ToDoubleFunction as ToDoubleFunction
 from builtins import bool
 from builtins import int
  
-class TransformingComparator(__Comparator, Comparator, __Serializable, Serializable):
+class TransformingComparator():
     """org.apache.commons.collections4.comparators.TransformingComparator"""
  
     @staticmethod
@@ -1217,7 +1217,7 @@ from builtins import bool
 from builtins import int
 import java.util.List as List
  
-class FixedOrderComparator(__Comparator, Comparator, __Serializable, Serializable):
+class FixedOrderComparator():
     """org.apache.commons.collections4.comparators.FixedOrderComparator"""
  
     @staticmethod
@@ -1421,7 +1421,7 @@ import java.util.function.ToDoubleFunction as ToDoubleFunction
 from builtins import bool
 from builtins import int
  
-class ComparableComparator(__Comparator, Comparator, __Serializable, Serializable):
+class ComparableComparator():
     """org.apache.commons.collections4.comparators.ComparableComparator"""
  
     @staticmethod
@@ -1591,7 +1591,7 @@ import java.util.function.ToDoubleFunction as ToDoubleFunction
 from builtins import bool
 from builtins import int
  
-class ReverseComparator(__Comparator, Comparator, __Serializable, Serializable):
+class ReverseComparator():
     """org.apache.commons.collections4.comparators.ReverseComparator"""
  
     @staticmethod

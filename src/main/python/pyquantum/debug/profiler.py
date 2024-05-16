@@ -4,8 +4,8 @@ from overload import overload
 
  
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 import dev.ultreon.quantum.debug.profiler.ProfileData as __ProfileData
 __ProfileData = __ProfileData
@@ -25,7 +25,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Profiler(pygdx.__Disposable, utils.Disposable):
+class Profiler():
     """dev.ultreon.quantum.debug.profiler.Profiler"""
  
     @staticmethod
@@ -158,8 +158,8 @@ class Profiler(pygdx.__Disposable, utils.Disposable):
  
 # CLASS: dev.ultreon.quantum.debug.profiler.Profiler
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 import dev.ultreon.quantum.debug.profiler.ProfileData as __ProfileData
 __ProfileData = __ProfileData
@@ -179,7 +179,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Profiler(pygdx.__Disposable, utils.Disposable):
+class Profiler():
     """dev.ultreon.quantum.debug.profiler.Profiler"""
  
     @staticmethod
@@ -512,14 +512,14 @@ class Section():
         return str.__wrap(super(Section, self).toString())
 
     @overload
-    def getEnd(self) -> int:
-        """public long dev.ultreon.quantum.debug.profiler.Section.getEnd()"""
-        return int.__wrap(super(Section, self).getEnd())
-
-    @overload
     def getNanos(self) -> int:
         """public long dev.ultreon.quantum.debug.profiler.Section.getNanos()"""
         return int.__wrap(super(Section, self).getNanos())
+
+    @overload
+    def getEnd(self) -> int:
+        """public long dev.ultreon.quantum.debug.profiler.Section.getEnd()"""
+        return int.__wrap(super(Section, self).getEnd())
 
     @overload
     def getStart(self) -> int:

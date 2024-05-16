@@ -57,7 +57,7 @@ except ImportError:
 
 from builtins import int
  
-class GraphDrawerDrawable(__ShapeDrawerDrawable, ShapeDrawerDrawable):
+class GraphDrawerDrawable():
     """space.earlygrey.shapedrawer.scene2d.GraphDrawerDrawable"""
  
     @staticmethod
@@ -440,7 +440,7 @@ except ImportError:
 
 from builtins import int
  
-class GraphDrawerDrawable(__ShapeDrawerDrawable, ShapeDrawerDrawable):
+class GraphDrawerDrawable():
     """space.earlygrey.shapedrawer.scene2d.GraphDrawerDrawable"""
  
     @staticmethod
@@ -808,7 +808,7 @@ import space.earlygrey.shapedrawer.scene2d.ShapeDrawerDrawable as __ShapeDrawerD
 __ShapeDrawerDrawable = __ShapeDrawerDrawable
 from builtins import int
  
-class ShapeDrawerDrawable(ABC, scene2d.__BaseDrawable, utils.BaseDrawable):
+class ShapeDrawerDrawable(ABC):
     """space.earlygrey.shapedrawer.scene2d.ShapeDrawerDrawable"""
  
     @staticmethod

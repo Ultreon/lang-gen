@@ -30,7 +30,7 @@ import dev.ultreon.libs.datetime.v0.Month as __Month
 __Month = __Month
 from builtins import int
  
-class Month(__Enum, Enum):
+class Month():
     """dev.ultreon.libs.datetime.v0.Month"""
  
     @staticmethod
@@ -222,7 +222,7 @@ import dev.ultreon.libs.datetime.v0.Month as __Month
 __Month = __Month
 from builtins import int
  
-class Month(__Enum, Enum):
+class Month():
     """dev.ultreon.libs.datetime.v0.Month"""
  
     @staticmethod
@@ -417,7 +417,7 @@ import dev.ultreon.libs.datetime.v0.DayPeriod as __DayPeriod
 __DayPeriod = __DayPeriod
 from builtins import int
  
-class DayPeriod(__Enum, Enum):
+class DayPeriod():
     """dev.ultreon.libs.datetime.v0.DayPeriod"""
  
     @staticmethod
@@ -586,7 +586,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Duration(__Comparable, Comparable, __Serializable, Serializable, __Cloneable, Cloneable):
+class Duration():
     """dev.ultreon.libs.datetime.v0.Duration"""
  
     @staticmethod
@@ -1015,7 +1015,7 @@ import dev.ultreon.libs.datetime.v0.DayPeriod as __DayPeriod
 __DayPeriod = __DayPeriod
 from builtins import int
  
-class Time(__Comparable, Comparable, __Serializable, Serializable, __Cloneable, Cloneable):
+class Time():
     """dev.ultreon.libs.datetime.v0.Time"""
  
     @staticmethod
@@ -1290,7 +1290,7 @@ import dev.ultreon.libs.datetime.v0.TimeSpan as __TimeSpan
 __TimeSpan = __TimeSpan
 from builtins import int
  
-class Date(__Serializable, Serializable, __Comparable, Comparable, __Cloneable, Cloneable):
+class Date():
     """dev.ultreon.libs.datetime.v0.Date"""
  
     @staticmethod
@@ -1551,7 +1551,7 @@ import dev.ultreon.libs.datetime.v0.TimeSpan as __TimeSpan
 __TimeSpan = __TimeSpan
 from builtins import int
  
-class TimeSpan(__Serializable, Serializable, __Cloneable, Cloneable):
+class TimeSpan():
     """dev.ultreon.libs.datetime.v0.TimeSpan"""
  
     @staticmethod
@@ -1716,7 +1716,7 @@ import dev.ultreon.libs.datetime.v0.Month as __Month
 __Month = __Month
 from builtins import int
  
-class DateTime(__Comparable, Comparable, __Serializable, Serializable, __Cloneable, Cloneable):
+class DateTime():
     """dev.ultreon.libs.datetime.v0.DateTime"""
  
     @staticmethod
@@ -2088,7 +2088,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class MeteorologicalSeason(__Enum, Enum):
+class MeteorologicalSeason():
     """dev.ultreon.libs.datetime.v0.MeteorologicalSeason"""
  
     @staticmethod

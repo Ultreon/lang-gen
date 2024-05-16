@@ -458,7 +458,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class PacketDestination(__Enum, Enum):
+class PacketDestination():
     """dev.ultreon.quantum.network.api.PacketDestination"""
  
     @staticmethod

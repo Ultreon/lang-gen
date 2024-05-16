@@ -316,7 +316,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PlayerModel(__LivingEntityModel, LivingEntityModel):
+class PlayerModel():
     """dev.ultreon.quantum.client.model.entity.PlayerModel"""
  
     @staticmethod
@@ -590,7 +590,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LivingEntityModel(ABC, __EntityModel, EntityModel):
+class LivingEntityModel(ABC):
     """dev.ultreon.quantum.client.model.entity.LivingEntityModel"""
  
     @staticmethod

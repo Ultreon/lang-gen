@@ -20,7 +20,7 @@ __ProfilerDebugPage = __ProfilerDebugPage
 from builtins import bool
 from builtins import int
  
-class ProfilerDebugPage(__DebugPage, DebugPage):
+class ProfilerDebugPage():
     """dev.ultreon.quantum.client.gui.debug.ProfilerDebugPage"""
  
     @staticmethod
@@ -148,7 +148,7 @@ __ProfilerDebugPage = __ProfilerDebugPage
 from builtins import bool
 from builtins import int
  
-class ProfilerDebugPage(__DebugPage, DebugPage):
+class ProfilerDebugPage():
     """dev.ultreon.quantum.client.gui.debug.ProfilerDebugPage"""
  
     @staticmethod
@@ -465,7 +465,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InspectorDebugPage(__DebugPage, DebugPage):
+class InspectorDebugPage():
     """dev.ultreon.quantum.client.gui.debug.InspectorDebugPage"""
  
     @staticmethod
@@ -591,7 +591,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SystemInfoDebugPage(__DebugPage, DebugPage):
+class SystemInfoDebugPage():
     """dev.ultreon.quantum.client.gui.debug.SystemInfoDebugPage"""
  
     @staticmethod
@@ -762,7 +762,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SimpleDebugPage(__DebugPage, DebugPage):
+class SimpleDebugPage():
     """dev.ultreon.quantum.client.gui.debug.SimpleDebugPage"""
  
     @staticmethod
@@ -944,13 +944,13 @@ class DebugPageContext(ABC):
         pass
 
     @abstractmethod
-    def client(self, ):
-        """public abstract dev.ultreon.quantum.client.QuantumClient dev.ultreon.quantum.client.gui.debug.DebugPageContext.client()"""
+    def right(self, ):
+        """public abstract dev.ultreon.quantum.client.gui.debug.DebugPageContext dev.ultreon.quantum.client.gui.debug.DebugPageContext.right()"""
         pass
 
     @abstractmethod
-    def right(self, ):
-        """public abstract dev.ultreon.quantum.client.gui.debug.DebugPageContext dev.ultreon.quantum.client.gui.debug.DebugPageContext.right()"""
+    def client(self, ):
+        """public abstract dev.ultreon.quantum.client.QuantumClient dev.ultreon.quantum.client.gui.debug.DebugPageContext.client()"""
         pass
 
     @abstractmethod
@@ -1007,7 +1007,7 @@ __GenericDebugPage = __GenericDebugPage
 from builtins import bool
 from builtins import int
  
-class GenericDebugPage(__DebugPage, DebugPage):
+class GenericDebugPage():
     """dev.ultreon.quantum.client.gui.debug.GenericDebugPage"""
  
     @staticmethod

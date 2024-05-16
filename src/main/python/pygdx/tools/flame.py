@@ -200,7 +200,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class GradientEditor(__JPanel, JPanel):
+class GradientEditor():
     """com.badlogic.gdx.tools.flame.GradientPanel.GradientEditor"""
  
     @staticmethod
@@ -2334,7 +2334,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class GradientEditor(__JPanel, JPanel):
+class GradientEditor():
     """com.badlogic.gdx.tools.flame.GradientPanel.GradientEditor"""
  
     @staticmethod
@@ -4301,7 +4301,7 @@ import java.awt.Component as Component
 from builtins import bool
 from builtins import int
  
-class CustomCardLayout(__CardLayout, CardLayout):
+class CustomCardLayout():
     """com.badlogic.gdx.tools.flame.CustomCardLayout"""
  
     @staticmethod
@@ -4755,7 +4755,7 @@ import java.awt.ImageCapabilities as ImageCapabilities
 import java.awt.Frame as __Frame
 __Frame = __Frame
  
-class PreAlpha(__JFrame, JFrame):
+class PreAlpha():
     """com.badlogic.gdx.tools.flame.PreAlpha"""
  
     @staticmethod
@@ -7057,7 +7057,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class Slider(__JPanel, JPanel):
+class Slider():
     """com.badlogic.gdx.tools.flame.Slider"""
  
     @staticmethod
@@ -9210,7 +9210,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class LoaderButton(ABC, __JButton, JButton):
+class LoaderButton(ABC):
     """com.badlogic.gdx.tools.flame.LoaderButton"""
  
     @staticmethod
@@ -11763,7 +11763,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class ColorSlider(__JPanel, JPanel):
+class ColorSlider():
     """com.badlogic.gdx.tools.flame.GradientPanel.ColorSlider"""
  
     @staticmethod
@@ -13946,7 +13946,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class ColorPicker(__JPanel, JPanel):
+class ColorPicker():
     """com.badlogic.gdx.tools.flame.GradientPanel.ColorSlider.ColorPicker"""
  
     @staticmethod
@@ -16071,7 +16071,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class SavePanel(__EditorPanel, EditorPanel):
+class SavePanel():
     """com.badlogic.gdx.tools.flame.SavePanel"""
  
     @staticmethod
@@ -18262,7 +18262,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class TemplatePickerPanel(__EditorPanel, EditorPanel, __Listener, Listener):
+class TemplatePickerPanel():
     """com.badlogic.gdx.tools.flame.TemplatePickerPanel"""
  
     @staticmethod
@@ -20497,7 +20497,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class DynamicsInfluencerPanel(__InfluencerPanel, InfluencerPanel):
+class DynamicsInfluencerPanel():
     """com.badlogic.gdx.tools.flame.DynamicsInfluencerPanel"""
  
     @staticmethod
@@ -22688,7 +22688,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class BillboardBatchPanel(__EditorPanel, EditorPanel):
+class BillboardBatchPanel():
     """com.badlogic.gdx.tools.flame.BillboardBatchPanel"""
  
     @staticmethod
@@ -24880,7 +24880,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class RegionPickerPanel(__JPanel, JPanel):
+class RegionPickerPanel():
     """com.badlogic.gdx.tools.flame.RegionPickerPanel"""
  
     @staticmethod
@@ -27075,7 +27075,7 @@ import java.awt.ImageCapabilities as ImageCapabilities
 import java.awt.Frame as __Frame
 __Frame = __Frame
  
-class FlameMain(__JFrame, JFrame, pygdx.__AssetErrorListener, assets.AssetErrorListener):
+class FlameMain():
     """com.badlogic.gdx.tools.flame.FlameMain"""
  
     @staticmethod
@@ -29529,7 +29529,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class RegularEmitterPanel(__EditorPanel, EditorPanel):
+class RegularEmitterPanel():
     """com.badlogic.gdx.tools.flame.RegularEmitterPanel"""
  
     @staticmethod
@@ -31761,7 +31761,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class PointSpriteBatchPanel(__EditorPanel, EditorPanel):
+class PointSpriteBatchPanel():
     """com.badlogic.gdx.tools.flame.PointSpriteBatchPanel"""
  
     @staticmethod
@@ -34002,7 +34002,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class ModelLoaderButton(__LoaderButton, LoaderButton):
+class ModelLoaderButton():
     """com.badlogic.gdx.tools.flame.LoaderButton.ModelLoaderButton"""
  
     @staticmethod
@@ -36566,7 +36566,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class ColorInfluencerPanel(__InfluencerPanel, InfluencerPanel):
+class ColorInfluencerPanel():
     """com.badlogic.gdx.tools.flame.ColorInfluencerPanel"""
  
     @staticmethod
@@ -38757,7 +38757,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class InfluencerPanel(ABC, __EditorPanel, EditorPanel):
+class InfluencerPanel(ABC):
     """com.badlogic.gdx.tools.flame.InfluencerPanel"""
  
     @staticmethod
@@ -40949,7 +40949,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class TextureLoaderPanel(__EditorPanel, EditorPanel):
+class TextureLoaderPanel():
     """com.badlogic.gdx.tools.flame.TextureLoaderPanel"""
  
     @staticmethod
@@ -43149,7 +43149,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class ParticleEffectLoaderButton(__LoaderButton, LoaderButton):
+class ParticleEffectLoaderButton():
     """com.badlogic.gdx.tools.flame.LoaderButton.ParticleEffectLoaderButton"""
  
     @staticmethod
@@ -45718,7 +45718,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class RegionInfluencerPanel(__InfluencerPanel, InfluencerPanel, __Listener, Listener):
+class RegionInfluencerPanel():
     """com.badlogic.gdx.tools.flame.RegionInfluencerPanel"""
  
     @staticmethod
@@ -47926,7 +47926,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class TexturePanel(__ImagePanel, ImagePanel):
+class TexturePanel():
     """com.badlogic.gdx.tools.flame.TexturePanel"""
  
     @staticmethod
@@ -49942,7 +49942,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class ControllerType(__Enum, Enum):
+class ControllerType():
     """com.badlogic.gdx.tools.flame.FlameMain.ControllerType"""
  
     @staticmethod
@@ -50285,7 +50285,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class TextureAtlasPanel(__JPanel, JPanel):
+class TextureAtlasPanel():
     """com.badlogic.gdx.tools.flame.TextureAtlasPanel"""
  
     @staticmethod
@@ -52453,7 +52453,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class ModelInfluencerPanel(__InfluencerPanel, InfluencerPanel, __Listener, Listener, __Listener, Listener):
+class ModelInfluencerPanel():
     """com.badlogic.gdx.tools.flame.ModelInfluencerPanel"""
  
     @staticmethod
@@ -54654,7 +54654,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class ScaleInfluencerPanel(__InfluencerPanel, InfluencerPanel):
+class ScaleInfluencerPanel():
     """com.badlogic.gdx.tools.flame.ScaleInfluencerPanel"""
  
     @staticmethod
@@ -56844,7 +56844,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class StrengthVelocityPanel(__EditorPanel, EditorPanel):
+class StrengthVelocityPanel():
     """com.badlogic.gdx.tools.flame.StrengthVelocityPanel"""
  
     @staticmethod
@@ -59036,7 +59036,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class AngularVelocityPanel(__EditorPanel, EditorPanel):
+class AngularVelocityPanel():
     """com.badlogic.gdx.tools.flame.AngularVelocityPanel"""
  
     @staticmethod
@@ -61235,7 +61235,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class EmptyPanel(__EditorPanel, EditorPanel):
+class EmptyPanel():
     """com.badlogic.gdx.tools.flame.EmptyPanel"""
  
     @staticmethod
@@ -63431,7 +63431,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class ParticleControllerInfluencerPanel(__InfluencerPanel, InfluencerPanel, __Listener, Listener, __Listener, Listener, __Listener, Listener):
+class ParticleControllerInfluencerPanel():
     """com.badlogic.gdx.tools.flame.ParticleControllerInfluencerPanel"""
  
     @staticmethod
@@ -65631,7 +65631,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class DrawPanel(__EditorPanel, EditorPanel):
+class DrawPanel():
     """com.badlogic.gdx.tools.flame.DrawPanel"""
  
     @staticmethod
@@ -67822,7 +67822,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class ParticleValuePanel(__EditorPanel, EditorPanel):
+class ParticleValuePanel():
     """com.badlogic.gdx.tools.flame.ParticleValuePanel"""
  
     @staticmethod
@@ -70018,7 +70018,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class EditorPanel(ABC, __JPanel, JPanel):
+class EditorPanel(ABC):
     """com.badlogic.gdx.tools.flame.EditorPanel"""
  
     @staticmethod
@@ -72198,7 +72198,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class ImagePanel(__JPanel, JPanel):
+class ImagePanel():
     """com.badlogic.gdx.tools.flame.ImagePanel"""
  
     @staticmethod

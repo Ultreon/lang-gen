@@ -210,21 +210,21 @@ public class PythonFinalClassBuilder {
             addImport("from abc import ABC");
         }
 
-        if (superclass != null && superclass != Object.class) {
-            builder.append(", ").append(toPyAnno(superclass, "__").replace("'", ""))
-                    .append(", ").append(toPyAnno(superclass).replace("'", ""));
-
-            addImport(toPyImport(superclass));
-            addImport(toJavaImport(superclass));
-        }
-
-        for (Class<?> anInterface : interfaces) {
-            builder.append(", ").append(toPyAnno(anInterface, "__").replace("'", ""))
-                    .append(", ").append(toPyAnno(anInterface).replace("'", ""));
-
-            addImport(toPyImport(anInterface));
-            addImport(toJavaImport(anInterface));
-        }
+//        if (superclass != null && superclass != Object.class) {
+//            builder.append(", ").append(toPyAnno(superclass, "__").replace("'", ""))
+//                    .append(", ").append(toPyAnno(superclass).replace("'", ""));
+//
+//            addImport(toPyImport(superclass));
+//            addImport(toJavaImport(superclass));
+//        }
+//
+//        for (Class<?> anInterface : interfaces) {
+//            builder.append(", ").append(toPyAnno(anInterface, "__").replace("'", ""))
+//                    .append(", ").append(toPyAnno(anInterface).replace("'", ""));
+//
+//            addImport(toPyImport(anInterface));
+//            addImport(toJavaImport(anInterface));
+//        }
 
         String string = builder.toString();
         if (string.startsWith(", ")) {
@@ -442,6 +442,7 @@ public class PythonFinalClassBuilder {
                     try {
                         interfaceClass.getMethod(name, method.getParameterTypes());
                         override = "@override\n";
+                        this.addImport("from pyquantum_helper import override");
                     } catch (NoSuchMethodException ignored) {
 
                     }
@@ -452,6 +453,7 @@ public class PythonFinalClassBuilder {
                 try {
                     interfaceClass.getMethod(name, method.getParameterTypes());
                     override = "@override\n";
+                    this.addImport("from pyquantum_helper import override");
                 } catch (NoSuchMethodException ignored) {
                 }
             }

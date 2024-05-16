@@ -105,7 +105,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class ContainerScreen(ABC, client.__Screen, gui.Screen):
+class ContainerScreen(ABC):
     """dev.ultreon.quantum.client.gui.screens.container.ContainerScreen"""
  
     @staticmethod
@@ -908,7 +908,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class ContainerScreen(ABC, client.__Screen, gui.Screen):
+class ContainerScreen(ABC):
     """dev.ultreon.quantum.client.gui.screens.container.ContainerScreen"""
  
     @staticmethod
@@ -1719,7 +1719,7 @@ __Bounds = __Bounds
 import java.util.Map as Map
 import java.util.List as List
  
-class InventoryScreen(__ContainerScreen, ContainerScreen):
+class InventoryScreen():
     """dev.ultreon.quantum.client.gui.screens.container.InventoryScreen"""
  
     @staticmethod
@@ -2557,7 +2557,7 @@ __Bounds = __Bounds
 import java.util.Map as Map
 import java.util.List as List
  
-class CrateScreen(__ContainerScreen, ContainerScreen):
+class CrateScreen():
     """dev.ultreon.quantum.client.gui.screens.container.CrateScreen"""
  
     @staticmethod

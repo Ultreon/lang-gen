@@ -25,7 +25,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CountingOutputStream(__FilterOutputStream, FilterOutputStream):
+class CountingOutputStream():
     """com.google.common.io.CountingOutputStream"""
  
     @staticmethod
@@ -182,7 +182,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CountingOutputStream(__FilterOutputStream, FilterOutputStream):
+class CountingOutputStream():
     """com.google.common.io.CountingOutputStream"""
  
     @staticmethod
@@ -564,7 +564,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Closer(__Closeable, Closeable):
+class Closer():
     """com.google.common.io.Closer"""
  
     @staticmethod
@@ -1011,7 +1011,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CountingInputStream(__FilterInputStream, FilterInputStream):
+class CountingInputStream():
     """com.google.common.io.CountingInputStream"""
  
     @staticmethod
@@ -1217,7 +1217,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class FileWriteMode(__Enum, Enum):
+class FileWriteMode():
     """com.google.common.io.FileWriteMode"""
  
     @staticmethod
@@ -1489,7 +1489,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class RecursiveDeleteOption(__Enum, Enum):
+class RecursiveDeleteOption():
     """com.google.common.io.RecursiveDeleteOption"""
  
     @staticmethod
@@ -1687,7 +1687,7 @@ import java.util.regex.Pattern as Pattern
 from builtins import bool
 from builtins import int
  
-class PatternFilenameFilter(__FilenameFilter, FilenameFilter):
+class PatternFilenameFilter():
     """com.google.common.io.PatternFilenameFilter"""
  
     @staticmethod
@@ -1795,7 +1795,7 @@ import com.google.common.io.ByteArrayDataOutput as __ByteArrayDataOutput
 __ByteArrayDataOutput = __ByteArrayDataOutput
 from abc import abstractmethod, ABC
  
-class ByteArrayDataOutput(ABC, __DataOutput, DataOutput):
+class ByteArrayDataOutput(ABC):
     """com.google.common.io.ByteArrayDataOutput"""
  
     @staticmethod
@@ -1931,7 +1931,7 @@ import java.nio.file.FileSystemException as __FileSystemException
 __FileSystemException = __FileSystemException
 from builtins import int
  
-class InsecureRecursiveDeleteException(__FileSystemException, FileSystemException):
+class InsecureRecursiveDeleteException():
     """com.google.common.io.InsecureRecursiveDeleteException"""
  
     @staticmethod
@@ -2289,7 +2289,7 @@ import java.lang.Double as __double
 from builtins import bool
 from builtins import int
  
-class LittleEndianDataOutputStream(__FilterOutputStream, FilterOutputStream, __DataOutput, DataOutput):
+class LittleEndianDataOutputStream():
     """com.google.common.io.LittleEndianDataOutputStream"""
  
     @staticmethod
@@ -2508,7 +2508,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LittleEndianDataInputStream(__FilterInputStream, FilterInputStream, __DataInput, DataInput):
+class LittleEndianDataInputStream():
     """com.google.common.io.LittleEndianDataInputStream"""
  
     @staticmethod
@@ -3397,7 +3397,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DecodingException(__IOException, IOException):
+class DecodingException():
     """com.google.common.io.BaseEncoding.DecodingException"""
  
     @staticmethod
@@ -3557,7 +3557,7 @@ import com.google.common.io.ByteArrayDataInput as __ByteArrayDataInput
 __ByteArrayDataInput = __ByteArrayDataInput
 from abc import abstractmethod, ABC
  
-class ByteArrayDataInput(ABC, __DataInput, DataInput):
+class ByteArrayDataInput(ABC):
     """com.google.common.io.ByteArrayDataInput"""
  
     @staticmethod
@@ -3789,14 +3789,14 @@ class CharSource(ABC):
         return 'ByteSource'.__wrap(super(__CharSource, self).asByteSource(charset))
 
     @overload
-    def readLines(self, processor: 'LineProcessor') -> object:
-        """public <T> T com.google.common.io.CharSource.readLines(com.google.common.io.LineProcessor<T>) throws java.io.IOException"""
-        return object.__wrap(super(__CharSource, self).readLines(processor))
-
-    @overload
     def readLines(self) -> 'pygcollect.ImmutableList':
         """public com.google.common.collect.ImmutableList<java.lang.String> com.google.common.io.CharSource.readLines() throws java.io.IOException"""
         return 'pygcollect.ImmutableList'.__wrap(super(CharSource, self).readLines())
+
+    @overload
+    def readLines(self, processor: 'LineProcessor') -> object:
+        """public <T> T com.google.common.io.CharSource.readLines(com.google.common.io.LineProcessor<T>) throws java.io.IOException"""
+        return object.__wrap(super(__CharSource, self).readLines(processor))
 
     @override
     @overload
@@ -4273,7 +4273,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FileBackedOutputStream(__OutputStream, OutputStream):
+class FileBackedOutputStream():
     """com.google.common.io.FileBackedOutputStream"""
  
     @staticmethod

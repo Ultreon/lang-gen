@@ -409,7 +409,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class G3DModel(__BlockModel, BlockModel):
+class G3DModel():
     """dev.ultreon.quantum.client.model.block.G3DModel"""
  
     @staticmethod
@@ -594,7 +594,7 @@ from builtins import int
 import dev.ultreon.quantum.client.atlas.TextureAtlas as __TextureAtlas
 __TextureAtlas = __TextureAtlas
  
-class BakedModelRegistry(pygdx.__Disposable, utils.Disposable):
+class BakedModelRegistry():
     """dev.ultreon.quantum.client.model.block.BakedModelRegistry"""
  
     @staticmethod
@@ -1141,7 +1141,7 @@ import dev.ultreon.quantum.client.model.block.ModelProperties as __ModelProperti
 __ModelProperties = __ModelProperties
 from builtins import int
  
-class BakedCubeModel(client.__BakedModel, model.BakedModel, __BlockModel, BlockModel):
+class BakedCubeModel():
     """dev.ultreon.quantum.client.model.block.BakedCubeModel"""
  
     @staticmethod
@@ -1384,7 +1384,7 @@ except ImportError:
 import dev.ultreon.quantum.client.resources.LoadableResource as __LoadableResource
 __LoadableResource = __LoadableResource
  
-class BlockModel(ABC, client.__LoadableResource, resources.LoadableResource):
+class BlockModel(ABC):
     """dev.ultreon.quantum.client.model.block.BlockModel"""
  
     @staticmethod

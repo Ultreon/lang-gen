@@ -21,7 +21,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SimpleCell(__Cell, Cell):
+class SimpleCell():
     """dev.ultreon.libs.collections.v0.tables.AbstractTable.SimpleCell"""
  
     @staticmethod
@@ -151,7 +151,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SimpleCell(__Cell, Cell):
+class SimpleCell():
     """dev.ultreon.libs.collections.v0.tables.AbstractTable.SimpleCell"""
  
     @staticmethod
@@ -346,7 +346,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class AbstractTable(ABC, __Table, Table):
+class AbstractTable(ABC):
     """dev.ultreon.libs.collections.v0.tables.AbstractTable"""
  
     @staticmethod
@@ -631,7 +631,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SimpleIndex(__Index, Index):
+class SimpleIndex():
     """dev.ultreon.libs.collections.v0.tables.AbstractTable.SimpleIndex"""
  
     @staticmethod
@@ -770,7 +770,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class HashTable(__AbstractTable, AbstractTable):
+class HashTable():
     """dev.ultreon.libs.collections.v0.tables.HashTable"""
  
     @staticmethod
@@ -1067,7 +1067,7 @@ import dev.ultreon.libs.collections.v0.tables.Table as __Table_Cell
 __Cell = __Table_Cell.Cell
 from abc import abstractmethod, ABC
  
-class Cell(ABC, __Index, Index):
+class Cell(ABC):
     """dev.ultreon.libs.collections.v0.tables.Table.Cell"""
  
     @staticmethod

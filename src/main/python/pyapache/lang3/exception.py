@@ -693,7 +693,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CloneFailedException(__RuntimeException, RuntimeException):
+class CloneFailedException():
     """org.apache.commons.lang3.exception.CloneFailedException"""
  
     @staticmethod
@@ -896,7 +896,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class UncheckedException(__RuntimeException, RuntimeException):
+class UncheckedException():
     """org.apache.commons.lang3.exception.UncheckedException"""
  
     @staticmethod
@@ -1085,7 +1085,7 @@ import org.apache.commons.lang3.exception.UncheckedInterruptedException as __Unc
 __UncheckedInterruptedException = __UncheckedInterruptedException
 from builtins import int
  
-class UncheckedInterruptedException(__UncheckedException, UncheckedException):
+class UncheckedInterruptedException():
     """org.apache.commons.lang3.exception.UncheckedInterruptedException"""
  
     @staticmethod
@@ -1274,7 +1274,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class UncheckedIllegalAccessException(__UncheckedReflectiveOperationException, UncheckedReflectiveOperationException):
+class UncheckedIllegalAccessException():
     """org.apache.commons.lang3.exception.UncheckedIllegalAccessException"""
  
     @staticmethod
@@ -1533,7 +1533,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class DefaultExceptionContext(__ExceptionContext, ExceptionContext, __Serializable, Serializable):
+class DefaultExceptionContext():
     """org.apache.commons.lang3.exception.DefaultExceptionContext"""
  
     @staticmethod
@@ -1703,7 +1703,7 @@ import java.lang.Integer as __int
 import java.util.List as List
 from builtins import int
  
-class ContextedRuntimeException(__RuntimeException, RuntimeException, __ExceptionContext, ExceptionContext):
+class ContextedRuntimeException():
     """org.apache.commons.lang3.exception.ContextedRuntimeException"""
  
     @staticmethod
@@ -1977,7 +1977,7 @@ import java.lang.Integer as __int
 import java.util.List as List
 from builtins import int
  
-class ContextedException(__Exception, Exception, __ExceptionContext, ExceptionContext):
+class ContextedException():
     """org.apache.commons.lang3.exception.ContextedException"""
  
     @staticmethod
@@ -2243,7 +2243,7 @@ __UncheckedReflectiveOperationException = __UncheckedReflectiveOperationExceptio
 from builtins import bool
 from builtins import int
  
-class UncheckedReflectiveOperationException(__UncheckedException, UncheckedException):
+class UncheckedReflectiveOperationException():
     """org.apache.commons.lang3.exception.UncheckedReflectiveOperationException"""
  
     @staticmethod

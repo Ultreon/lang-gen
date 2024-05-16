@@ -6,6 +6,7 @@ from overload import overload
 import org.apache.commons.collections4.BoundedCollection as __BoundedCollection
 __BoundedCollection = __BoundedCollection
 import java.util.function.Predicate as Predicate
+from pyquantum_helper import override
 import java.util.function.IntFunction as IntFunction
 import java.util.stream.Stream as __Stream
 __Stream = __Stream
@@ -26,7 +27,7 @@ from builtins import bool
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class BoundedCollection(ABC, __Collection, Collection):
+class BoundedCollection(ABC):
     """org.apache.commons.collections4.BoundedCollection"""
  
     @staticmethod
@@ -182,6 +183,7 @@ class BoundedCollection(ABC, __Collection, Collection):
 import org.apache.commons.collections4.BoundedCollection as __BoundedCollection
 __BoundedCollection = __BoundedCollection
 import java.util.function.Predicate as Predicate
+from pyquantum_helper import override
 import java.util.function.IntFunction as IntFunction
 import java.util.stream.Stream as __Stream
 __Stream = __Stream
@@ -202,7 +204,7 @@ from builtins import bool
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class BoundedCollection(ABC, __Collection, Collection):
+class BoundedCollection(ABC):
     """org.apache.commons.collections4.BoundedCollection"""
  
     @staticmethod
@@ -358,6 +360,7 @@ class BoundedCollection(ABC, __Collection, Collection):
  
  
 # CLASS: org.apache.commons.collections4.OrderedMapIterator
+from pyquantum_helper import override
 import java.util.Iterator as __Iterator
 __Iterator = __Iterator
 import org.apache.commons.collections4.OrderedMapIterator as __OrderedMapIterator
@@ -367,7 +370,7 @@ import org.apache.commons.collections4.MapIterator as __MapIterator
 __MapIterator = __MapIterator
 import java.util.function.Consumer as Consumer
  
-class OrderedMapIterator(ABC, __MapIterator, MapIterator, __OrderedIterator, OrderedIterator):
+class OrderedMapIterator(ABC):
     """org.apache.commons.collections4.OrderedMapIterator"""
  
     @staticmethod
@@ -888,6 +891,7 @@ class Transformer(ABC):
 # CLASS: org.apache.commons.collections4.BoundedMap
 import org.apache.commons.collections4.Put as __Put
 __Put = __Put
+from pyquantum_helper import override
 import java.lang.Object as __object
 import java.util.Map as __Map
 __Map = __Map
@@ -907,7 +911,7 @@ import java.util.function.Function as Function
 from builtins import bool
 import java.util.Map as Map
  
-class BoundedMap(ABC, __IterableMap, IterableMap):
+class BoundedMap(ABC):
     """org.apache.commons.collections4.BoundedMap"""
  
     @staticmethod
@@ -1178,6 +1182,7 @@ class Unmodifiable(ABC):
 # CLASS: org.apache.commons.collections4.OrderedMap
 import org.apache.commons.collections4.Put as __Put
 __Put = __Put
+from pyquantum_helper import override
 import java.lang.Object as __object
 import java.util.Map as __Map
 __Map = __Map
@@ -1195,7 +1200,7 @@ import java.util.function.Function as Function
 from builtins import bool
 import java.util.Map as Map
  
-class OrderedMap(ABC, __IterableMap, IterableMap):
+class OrderedMap(ABC):
     """org.apache.commons.collections4.OrderedMap"""
  
     @staticmethod
@@ -1493,7 +1498,7 @@ __MultiValuedMap = __MultiValuedMap
 from abc import abstractmethod, ABC
 import java.util.Map as Map
  
-class SetValuedMap(ABC, __MultiValuedMap, MultiValuedMap):
+class SetValuedMap(ABC):
     """org.apache.commons.collections4.SetValuedMap"""
  
     @staticmethod
@@ -1620,13 +1625,8 @@ class SetValuedMap(ABC, __MultiValuedMap, MultiValuedMap):
  
  
 # CLASS: org.apache.commons.collections4.SortedBidiMap
-import org.apache.commons.collections4.BidiMap as __BidiMap
-__BidiMap = __BidiMap
 import org.apache.commons.collections4.Put as __Put
 __Put = __Put
-import java.util.SortedMap as __SortedMap
-__SortedMap = __SortedMap
-import java.lang.Object as __object
 import java.util.Map as __Map_Entry
 __Entry = __Map_Entry.Entry
 import java.util.Map as __Map
@@ -1636,28 +1636,34 @@ __SortedBidiMap = __SortedBidiMap
 from abc import abstractmethod, ABC
 import org.apache.commons.collections4.Get as __Get
 __Get = __Get
-from builtins import object
-import java.util.function.BiFunction as BiFunction
-import java.util.SequencedMap as __SequencedMap
-__SequencedMap = __SequencedMap
 import java.util.SequencedCollection as SequencedCollection
 import java.util.Map.Entry as Entry
-import java.util.function.BiConsumer as BiConsumer
-import java.lang.Object as __Object
-__Object = __Object
-import java.util.SequencedSet as __SequencedSet
-__SequencedSet = __SequencedSet
 import org.apache.commons.collections4.OrderedMap as __OrderedMap
 __OrderedMap = __OrderedMap
 import java.util.SortedMap as SortedMap
 import java.util.SequencedCollection as __SequencedCollection
 __SequencedCollection = __SequencedCollection
-import java.util.function.Function as Function
 import java.util.SequencedSet as SequencedSet
 from builtins import bool
+import org.apache.commons.collections4.BidiMap as __BidiMap
+__BidiMap = __BidiMap
+from pyquantum_helper import override
+import java.util.SortedMap as __SortedMap
+__SortedMap = __SortedMap
+import java.lang.Object as __object
+from builtins import object
+import java.util.function.BiFunction as BiFunction
+import java.util.SequencedMap as __SequencedMap
+__SequencedMap = __SequencedMap
+import java.util.function.BiConsumer as BiConsumer
+import java.lang.Object as __Object
+__Object = __Object
+import java.util.SequencedSet as __SequencedSet
+__SequencedSet = __SequencedSet
+import java.util.function.Function as Function
 import java.util.Map as Map
  
-class SortedBidiMap(ABC, __OrderedBidiMap, OrderedBidiMap, __SortedMap, SortedMap):
+class SortedBidiMap(ABC):
     """org.apache.commons.collections4.SortedBidiMap"""
  
     @staticmethod
@@ -2176,6 +2182,7 @@ class EnumerationUtils():
  
  
 # CLASS: org.apache.commons.collections4.MapIterator
+from pyquantum_helper import override
 import java.util.Iterator as __Iterator
 __Iterator = __Iterator
 from abc import abstractmethod, ABC
@@ -2183,7 +2190,7 @@ import org.apache.commons.collections4.MapIterator as __MapIterator
 __MapIterator = __MapIterator
 import java.util.function.Consumer as Consumer
  
-class MapIterator(ABC, __Iterator, Iterator):
+class MapIterator(ABC):
     """org.apache.commons.collections4.MapIterator"""
  
     @staticmethod
@@ -3176,6 +3183,7 @@ class CollectionUtils():
  
 # CLASS: org.apache.commons.collections4.Bag
 import java.util.function.Predicate as Predicate
+from pyquantum_helper import override
 import java.util.function.IntFunction as IntFunction
 import java.util.stream.Stream as __Stream
 __Stream = __Stream
@@ -3198,7 +3206,7 @@ from builtins import bool
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Bag(ABC, __Collection, Collection):
+class Bag(ABC):
     """org.apache.commons.collections4.Bag"""
  
     @staticmethod
@@ -3365,7 +3373,7 @@ from abc import abstractmethod, ABC
 import org.apache.commons.collections4.Get as __Get
 __Get = __Get
  
-class IterableGet(ABC, __Get, Get):
+class IterableGet(ABC):
     """org.apache.commons.collections4.IterableGet"""
  
     @staticmethod
@@ -3567,6 +3575,7 @@ class SplitMapUtils():
  
 # CLASS: org.apache.commons.collections4.SortedBag
 import java.util.function.Predicate as Predicate
+from pyquantum_helper import override
 import java.util.function.IntFunction as IntFunction
 import java.util.stream.Stream as __Stream
 __Stream = __Stream
@@ -3591,7 +3600,7 @@ from builtins import bool
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class SortedBag(ABC, __Bag, Bag):
+class SortedBag(ABC):
     """org.apache.commons.collections4.SortedBag"""
  
     @staticmethod
@@ -3769,6 +3778,7 @@ class SortedBag(ABC, __Bag, Bag):
 # CLASS: org.apache.commons.collections4.IterableSortedMap
 import org.apache.commons.collections4.Put as __Put
 __Put = __Put
+from pyquantum_helper import override
 import java.util.SortedMap as __SortedMap
 __SortedMap = __SortedMap
 import java.lang.Object as __object
@@ -3802,7 +3812,7 @@ import java.util.function.Function as Function
 from builtins import bool
 import java.util.Map as Map
  
-class IterableSortedMap(ABC, __SortedMap, SortedMap, __OrderedMap, OrderedMap):
+class IterableSortedMap(ABC):
     """org.apache.commons.collections4.IterableSortedMap"""
  
     @staticmethod
@@ -4296,7 +4306,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FunctorException(__RuntimeException, RuntimeException):
+class FunctorException():
     """org.apache.commons.collections4.FunctorException"""
  
     @staticmethod
@@ -4530,7 +4540,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class SetView(ABC, __AbstractSet, AbstractSet):
+class SetView(ABC):
     """org.apache.commons.collections4.SetUtils.SetView"""
  
     @staticmethod
@@ -4952,7 +4962,7 @@ import java.util.List as List
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class FluentIterable(__Iterable, Iterable):
+class FluentIterable():
     """org.apache.commons.collections4.FluentIterable"""
  
     @staticmethod
@@ -7428,7 +7438,7 @@ __MultiValuedMap = __MultiValuedMap
 from abc import abstractmethod, ABC
 import java.util.Map as Map
  
-class ListValuedMap(ABC, __MultiValuedMap, MultiValuedMap):
+class ListValuedMap(ABC):
     """org.apache.commons.collections4.ListValuedMap"""
  
     @staticmethod
@@ -7557,6 +7567,7 @@ class ListValuedMap(ABC, __MultiValuedMap, MultiValuedMap):
 # CLASS: org.apache.commons.collections4.Trie
 import org.apache.commons.collections4.Put as __Put
 __Put = __Put
+from pyquantum_helper import override
 import java.util.SortedMap as __SortedMap
 __SortedMap = __SortedMap
 import java.lang.Object as __object
@@ -7590,7 +7601,7 @@ import java.util.Map as Map
 import org.apache.commons.collections4.Trie as __Trie
 __Trie = __Trie
  
-class Trie(ABC, __IterableSortedMap, IterableSortedMap):
+class Trie(ABC):
     """org.apache.commons.collections4.Trie"""
  
     @staticmethod
@@ -7927,6 +7938,7 @@ class Trie(ABC, __IterableSortedMap, IterableSortedMap):
  
  
 # CLASS: org.apache.commons.collections4.OrderedIterator
+from pyquantum_helper import override
 import java.util.Iterator as __Iterator
 __Iterator = __Iterator
 import org.apache.commons.collections4.OrderedIterator as __OrderedIterator
@@ -7934,7 +7946,7 @@ __OrderedIterator = __OrderedIterator
 from abc import abstractmethod, ABC
 import java.util.function.Consumer as Consumer
  
-class OrderedIterator(ABC, __Iterator, Iterator):
+class OrderedIterator(ABC):
     """org.apache.commons.collections4.OrderedIterator"""
  
     @staticmethod
@@ -7999,6 +8011,7 @@ class OrderedIterator(ABC, __Iterator, Iterator):
  
 # CLASS: org.apache.commons.collections4.MultiSet
 import java.util.function.Predicate as Predicate
+from pyquantum_helper import override
 import java.util.function.IntFunction as IntFunction
 import java.util.stream.Stream as __Stream
 __Stream = __Stream
@@ -8021,7 +8034,7 @@ from builtins import bool
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class MultiSet(ABC, __Collection, Collection):
+class MultiSet(ABC):
     """org.apache.commons.collections4.MultiSet"""
  
     @staticmethod
@@ -8698,6 +8711,7 @@ class TransformerUtils():
  
  
 # CLASS: org.apache.commons.collections4.ResettableIterator
+from pyquantum_helper import override
 import java.util.Iterator as __Iterator
 __Iterator = __Iterator
 import org.apache.commons.collections4.ResettableIterator as __ResettableIterator
@@ -8705,7 +8719,7 @@ __ResettableIterator = __ResettableIterator
 from abc import abstractmethod, ABC
 import java.util.function.Consumer as Consumer
  
-class ResettableIterator(ABC, __Iterator, Iterator):
+class ResettableIterator(ABC):
     """org.apache.commons.collections4.ResettableIterator"""
  
     @staticmethod
@@ -9014,7 +9028,7 @@ import java.lang.Integer as __int
 from builtins import int
 import java.util.List as List
  
-class ArrayStack(__ArrayList, ArrayList):
+class ArrayStack():
     """org.apache.commons.collections4.ArrayStack"""
  
     @staticmethod
@@ -9382,6 +9396,7 @@ import org.apache.commons.collections4.BidiMap as __BidiMap
 __BidiMap = __BidiMap
 import org.apache.commons.collections4.Put as __Put
 __Put = __Put
+from pyquantum_helper import override
 import java.lang.Object as __object
 import java.util.Map as __Map
 __Map = __Map
@@ -9399,7 +9414,7 @@ import java.util.function.Function as Function
 from builtins import bool
 import java.util.Map as Map
  
-class BidiMap(ABC, __IterableMap, IterableMap):
+class BidiMap(ABC):
     """org.apache.commons.collections4.BidiMap"""
  
     @staticmethod
@@ -9632,6 +9647,7 @@ import org.apache.commons.collections4.MultiMap as __MultiMap
 __MultiMap = __MultiMap
 import org.apache.commons.collections4.Put as __Put
 __Put = __Put
+from pyquantum_helper import override
 import java.lang.Object as __object
 import java.util.Map as __Map
 __Map = __Map
@@ -9649,7 +9665,7 @@ import java.util.function.Function as Function
 from builtins import bool
 import java.util.Map as Map
  
-class MultiMap(ABC, __IterableMap, IterableMap):
+class MultiMap(ABC):
     """org.apache.commons.collections4.MultiMap"""
  
     @staticmethod
@@ -10037,6 +10053,7 @@ import org.apache.commons.collections4.BidiMap as __BidiMap
 __BidiMap = __BidiMap
 import org.apache.commons.collections4.Put as __Put
 __Put = __Put
+from pyquantum_helper import override
 import org.apache.commons.collections4.OrderedBidiMap as __OrderedBidiMap
 __OrderedBidiMap = __OrderedBidiMap
 import java.lang.Object as __object
@@ -10056,7 +10073,7 @@ import java.util.function.Function as Function
 from builtins import bool
 import java.util.Map as Map
  
-class OrderedBidiMap(ABC, __BidiMap, BidiMap, __OrderedMap, OrderedMap):
+class OrderedBidiMap(ABC):
     """org.apache.commons.collections4.OrderedBidiMap"""
  
     @staticmethod
@@ -10307,6 +10324,7 @@ class OrderedBidiMap(ABC, __BidiMap, BidiMap, __OrderedMap, OrderedMap):
 # CLASS: org.apache.commons.collections4.ResettableListIterator
 import java.util.ListIterator as __ListIterator
 __ListIterator = __ListIterator
+from pyquantum_helper import override
 import java.util.Iterator as __Iterator
 __Iterator = __Iterator
 import org.apache.commons.collections4.OrderedIterator as __OrderedIterator
@@ -10318,7 +10336,7 @@ import org.apache.commons.collections4.ResettableIterator as __ResettableIterato
 __ResettableIterator = __ResettableIterator
 import java.util.function.Consumer as Consumer
  
-class ResettableListIterator(ABC, __ListIterator, ListIterator, __ResettableIterator, ResettableIterator, __OrderedIterator, OrderedIterator):
+class ResettableListIterator(ABC):
     """org.apache.commons.collections4.ResettableListIterator"""
  
     @staticmethod
@@ -10420,6 +10438,7 @@ import org.apache.commons.collections4.IterableMap as __IterableMap
 __IterableMap = __IterableMap
 import org.apache.commons.collections4.Put as __Put
 __Put = __Put
+from pyquantum_helper import override
 import java.lang.Object as __object
 import java.util.Map as __Map
 __Map = __Map
@@ -10437,7 +10456,7 @@ import java.util.function.Function as Function
 from builtins import bool
 import java.util.Map as Map
  
-class IterableMap(ABC, __Map, Map, __Put, Put, __IterableGet, IterableGet):
+class IterableMap(ABC):
     """org.apache.commons.collections4.IterableMap"""
  
     @staticmethod

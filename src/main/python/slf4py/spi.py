@@ -197,7 +197,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DefaultLoggingEventBuilder(__LoggingEventBuilder, LoggingEventBuilder, __CallerBoundaryAware, CallerBoundaryAware):
+class DefaultLoggingEventBuilder():
     """org.slf4j.spi.DefaultLoggingEventBuilder"""
  
     @staticmethod
@@ -493,7 +493,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NOPLoggingEventBuilder(__LoggingEventBuilder, LoggingEventBuilder):
+class NOPLoggingEventBuilder():
     """org.slf4j.spi.NOPLoggingEventBuilder"""
  
     @staticmethod
@@ -663,6 +663,7 @@ class NOPLoggingEventBuilder(__LoggingEventBuilder, LoggingEventBuilder):
 from pyquantum_helper import import_once as __import_once__
 import org.slf4j.spi.LoggingEventBuilder as __LoggingEventBuilder
 __LoggingEventBuilder = __LoggingEventBuilder
+from pyquantum_helper import override
 try:
     from slf4py import event
 except ImportError:
@@ -682,7 +683,7 @@ from builtins import bool
 import org.slf4j.Logger as __Logger
 __Logger = __Logger
  
-class LocationAwareLogger(ABC, slf4py.__Logger, slf4py.Logger):
+class LocationAwareLogger(ABC):
     """org.slf4j.spi.LocationAwareLogger"""
  
     @staticmethod

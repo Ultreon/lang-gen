@@ -40,7 +40,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class OutlineWobbleEffect(__OutlineEffect, OutlineEffect):
+class OutlineWobbleEffect():
     """com.badlogic.gdx.tools.hiero.unicodefont.effects.OutlineWobbleEffect"""
  
     @staticmethod
@@ -251,7 +251,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class OutlineWobbleEffect(__OutlineEffect, OutlineEffect):
+class OutlineWobbleEffect():
     """com.badlogic.gdx.tools.hiero.unicodefont.effects.OutlineWobbleEffect"""
  
     @staticmethod
@@ -463,7 +463,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class OutlineEffect(__ConfigurableEffect, ConfigurableEffect):
+class OutlineEffect():
     """com.badlogic.gdx.tools.hiero.unicodefont.effects.OutlineEffect"""
  
     @staticmethod
@@ -661,7 +661,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class GradientEffect(__ConfigurableEffect, ConfigurableEffect):
+class GradientEffect():
     """com.badlogic.gdx.tools.hiero.unicodefont.effects.GradientEffect"""
  
     @staticmethod
@@ -863,7 +863,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class DistanceFieldEffect(__ConfigurableEffect, ConfigurableEffect):
+class DistanceFieldEffect():
     """com.badlogic.gdx.tools.hiero.unicodefont.effects.DistanceFieldEffect"""
  
     @staticmethod
@@ -1008,7 +1008,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FilterEffect(__Effect, Effect):
+class FilterEffect():
     """com.badlogic.gdx.tools.hiero.unicodefont.effects.FilterEffect"""
  
     @staticmethod
@@ -1167,7 +1167,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class OutlineZigzagEffect(__OutlineEffect, OutlineEffect):
+class OutlineZigzagEffect():
     """com.badlogic.gdx.tools.hiero.unicodefont.effects.OutlineZigzagEffect"""
  
     @staticmethod
@@ -1370,7 +1370,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class ColorEffect(__ConfigurableEffect, ConfigurableEffect):
+class ColorEffect():
     """com.badlogic.gdx.tools.hiero.unicodefont.effects.ColorEffect"""
  
     @staticmethod
@@ -1519,7 +1519,7 @@ except ImportError:
 
 import java.util.List as List
  
-class ConfigurableEffect(ABC, __Effect, Effect):
+class ConfigurableEffect(ABC):
     """com.badlogic.gdx.tools.hiero.unicodefont.effects.ConfigurableEffect"""
  
     @staticmethod
@@ -1835,7 +1835,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class ShadowEffect(__ConfigurableEffect, ConfigurableEffect):
+class ShadowEffect():
     """com.badlogic.gdx.tools.hiero.unicodefont.effects.ShadowEffect"""
  
     @staticmethod

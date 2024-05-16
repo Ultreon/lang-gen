@@ -75,7 +75,7 @@ except ImportError:
 
 from builtins import int
  
-class DesktopInput(__GameInput, GameInput):
+class DesktopInput():
     """dev.ultreon.quantum.client.input.DesktopInput"""
  
     @staticmethod
@@ -454,7 +454,7 @@ except ImportError:
 
 from builtins import int
  
-class DesktopInput(__GameInput, GameInput):
+class DesktopInput():
     """dev.ultreon.quantum.client.input.DesktopInput"""
  
     @staticmethod
@@ -964,7 +964,7 @@ __Ray = __Ray
 import java.lang.Integer as __int
 from builtins import int
  
-class GameCamera(pygdx.__PerspectiveCamera, graphics.PerspectiveCamera):
+class GameCamera():
     """dev.ultreon.quantum.client.input.GameCamera"""
  
     @staticmethod
@@ -1265,7 +1265,7 @@ except ImportError:
 
 from builtins import int
  
-class TouchscreenInput(__GameInput, GameInput):
+class TouchscreenInput():
     """dev.ultreon.quantum.client.input.TouchscreenInput"""
  
     @staticmethod
@@ -1561,12 +1561,12 @@ except ImportError:
     util = __import_once__("pyquantum.client.input.util")
 
 from builtins import str
+from pyquantum_helper import override
 try:
     from pyquantum.entity import player
 except ImportError:
     player = __import_once__("pyquantum.entity.player")
 
-from pyquantum_helper import override
 import java.lang.Object as __object
 from builtins import type
 from abc import abstractmethod, ABC
@@ -1605,7 +1605,7 @@ except ImportError:
 
 from builtins import int
  
-class GameInput(ABC, pygdx.__InputProcessor, pygdx.InputProcessor, pygdx.__ControllerListener, controllers.ControllerListener, pygdx.__Disposable, utils.Disposable):
+class GameInput(ABC):
     """dev.ultreon.quantum.client.input.GameInput"""
  
     @staticmethod
@@ -1896,7 +1896,7 @@ except ImportError:
 
 from builtins import int
  
-class GyroscopeInput(__GameInput, GameInput):
+class GyroscopeInput():
     """dev.ultreon.quantum.client.input.GyroscopeInput"""
  
     @staticmethod

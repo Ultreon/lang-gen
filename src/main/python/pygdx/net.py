@@ -248,7 +248,7 @@ __Disposable = __Disposable
 import com.badlogic.gdx.net.ServerSocket as __ServerSocket
 __ServerSocket = __ServerSocket
  
-class ServerSocket(ABC, pygdx.__Disposable, utils.Disposable):
+class ServerSocket(ABC):
     """com.badlogic.gdx.net.ServerSocket"""
  
     @staticmethod
@@ -633,7 +633,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NetJavaSocketImpl(__Socket, Socket):
+class NetJavaSocketImpl():
     """com.badlogic.gdx.net.NetJavaSocketImpl"""
  
     @staticmethod
@@ -790,7 +790,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NetJavaServerSocketImpl(__ServerSocket, ServerSocket):
+class NetJavaServerSocketImpl():
     """com.badlogic.gdx.net.NetJavaServerSocketImpl"""
  
     @staticmethod
@@ -1056,7 +1056,7 @@ from abc import abstractmethod, ABC
 import com.badlogic.gdx.utils.Disposable as __Disposable
 __Disposable = __Disposable
  
-class Socket(ABC, pygdx.__Disposable, utils.Disposable):
+class Socket(ABC):
     """com.badlogic.gdx.net.Socket"""
  
     @staticmethod

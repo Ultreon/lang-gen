@@ -56,7 +56,7 @@ __Object = __Object
 import java.lang.Integer as __int
 from builtins import int
  
-class AnimatedTiledMapTile(maps.__TiledMapTile, tiled.TiledMapTile):
+class AnimatedTiledMapTile():
     """com.badlogic.gdx.maps.tiled.tiles.AnimatedTiledMapTile"""
  
     @staticmethod
@@ -313,7 +313,7 @@ __Object = __Object
 import java.lang.Integer as __int
 from builtins import int
  
-class AnimatedTiledMapTile(maps.__TiledMapTile, tiled.TiledMapTile):
+class AnimatedTiledMapTile():
     """com.badlogic.gdx.maps.tiled.tiles.AnimatedTiledMapTile"""
  
     @staticmethod
@@ -563,7 +563,7 @@ except ImportError:
     tiled = __import_once__("pygdx.maps.tiled")
 
  
-class StaticTiledMapTile(maps.__TiledMapTile, tiled.TiledMapTile):
+class StaticTiledMapTile():
     """com.badlogic.gdx.maps.tiled.tiles.StaticTiledMapTile"""
  
     @staticmethod

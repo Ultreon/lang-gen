@@ -289,7 +289,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class IllegalCallerException(__RuntimeException, RuntimeException):
+class IllegalCallerException():
     """dev.ultreon.libs.commons.v0.util.IllegalCallerException"""
  
     @staticmethod
@@ -502,7 +502,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FileUtils(commons.__UtilityClass, v0.UtilityClass):
+class FileUtils():
     """dev.ultreon.libs.commons.v0.util.FileUtils"""
  
     @staticmethod
@@ -646,7 +646,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ColorUtils(commons.__UtilityClass, v0.UtilityClass):
+class ColorUtils():
     """dev.ultreon.libs.commons.v0.util.ColorUtils"""
  
     @staticmethod
@@ -784,7 +784,7 @@ __StringUtils = __StringUtils
 import java.util.List as List
 from builtins import int
  
-class StringUtils(commons.__UtilityClass, v0.UtilityClass):
+class StringUtils():
     """dev.ultreon.libs.commons.v0.util.StringUtils"""
  
     @staticmethod
@@ -953,7 +953,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ExceptionUtils(commons.__UtilityClass, v0.UtilityClass):
+class ExceptionUtils():
     """dev.ultreon.libs.commons.v0.util.ExceptionUtils"""
  
     @staticmethod
@@ -1093,7 +1093,7 @@ import dev.ultreon.libs.commons.v0.util.ClassUtils as __ClassUtils
 __ClassUtils = __ClassUtils
 from builtins import int
  
-class ClassUtils(commons.__UtilityClass, v0.UtilityClass):
+class ClassUtils():
     """dev.ultreon.libs.commons.v0.util.ClassUtils"""
  
     @staticmethod
@@ -1358,7 +1358,7 @@ import java.lang.Double as __double
 from builtins import bool
 from builtins import int
  
-class TimeUtils(commons.__UtilityClass, v0.UtilityClass):
+class TimeUtils():
     """dev.ultreon.libs.commons.v0.util.TimeUtils"""
  
     @staticmethod

@@ -13,7 +13,7 @@ except ImportError:
 import com.badlogic.gdx.ai.fsm.StateMachine as __StateMachine
 __StateMachine = __StateMachine
  
-class StateMachine(ABC, ai.__Telegraph, msg.Telegraph):
+class StateMachine(ABC):
     """com.badlogic.gdx.ai.fsm.StateMachine"""
  
     @staticmethod
@@ -107,7 +107,7 @@ except ImportError:
 import com.badlogic.gdx.ai.fsm.StateMachine as __StateMachine
 __StateMachine = __StateMachine
  
-class StateMachine(ABC, ai.__Telegraph, msg.Telegraph):
+class StateMachine(ABC):
     """com.badlogic.gdx.ai.fsm.StateMachine"""
  
     @staticmethod
@@ -220,7 +220,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DefaultStateMachine(__StateMachine, StateMachine):
+class DefaultStateMachine():
     """com.badlogic.gdx.ai.fsm.DefaultStateMachine"""
  
     @staticmethod
@@ -498,7 +498,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class StackStateMachine(__DefaultStateMachine, DefaultStateMachine):
+class StackStateMachine():
     """com.badlogic.gdx.ai.fsm.StackStateMachine"""
  
     @staticmethod

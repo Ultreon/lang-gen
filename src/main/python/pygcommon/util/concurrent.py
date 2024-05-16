@@ -41,13 +41,13 @@ class Service(ABC):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @abstractmethod
-    def stopAsync(self, ):
-        """public abstract com.google.common.util.concurrent.Service com.google.common.util.concurrent.Service.stopAsync()"""
+    def failureCause(self, ):
+        """public abstract java.lang.Throwable com.google.common.util.concurrent.Service.failureCause()"""
         pass
 
     @abstractmethod
-    def failureCause(self, ):
-        """public abstract java.lang.Throwable com.google.common.util.concurrent.Service.failureCause()"""
+    def stopAsync(self, ):
+        """public abstract com.google.common.util.concurrent.Service com.google.common.util.concurrent.Service.stopAsync()"""
         pass
 
     @overload
@@ -142,13 +142,13 @@ class Service(ABC):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @abstractmethod
-    def stopAsync(self, ):
-        """public abstract com.google.common.util.concurrent.Service com.google.common.util.concurrent.Service.stopAsync()"""
+    def failureCause(self, ):
+        """public abstract java.lang.Throwable com.google.common.util.concurrent.Service.failureCause()"""
         pass
 
     @abstractmethod
-    def failureCause(self, ):
-        """public abstract java.lang.Throwable com.google.common.util.concurrent.Service.failureCause()"""
+    def stopAsync(self, ):
+        """public abstract com.google.common.util.concurrent.Service com.google.common.util.concurrent.Service.stopAsync()"""
         pass
 
     @overload
@@ -483,7 +483,7 @@ __FutureTask = __FutureTask
 from builtins import bool
 from builtins import int
  
-class ListenableFutureTask(__FutureTask, FutureTask, __ListenableFuture, ListenableFuture):
+class ListenableFutureTask():
     """com.google.common.util.concurrent.ListenableFutureTask"""
  
     @staticmethod
@@ -660,7 +660,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class AtomicLongMap(__Serializable, Serializable):
+class AtomicLongMap():
     """com.google.common.util.concurrent.AtomicLongMap"""
  
     @staticmethod
@@ -942,7 +942,7 @@ import com.google.common.util.concurrent.ForwardingFuture as __ForwardingFuture
 __ForwardingFuture = __ForwardingFuture
 from builtins import int
  
-class ForwardingListenableFuture(ABC, __ForwardingFuture, ForwardingFuture, __ListenableFuture, ListenableFuture):
+class ForwardingListenableFuture(ABC):
     """com.google.common.util.concurrent.ForwardingListenableFuture"""
  
     @staticmethod
@@ -1107,7 +1107,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Policies(ABC, __Enum, Enum, __Policy, Policy):
+class Policies(ABC):
     """com.google.common.util.concurrent.CycleDetectingLockFactory.Policies"""
  
     @staticmethod
@@ -1266,7 +1266,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Combiner2(__Combiner, Combiner):
+class Combiner2():
     """com.google.common.util.concurrent.ClosingFuture.Combiner2"""
  
     @staticmethod
@@ -1516,7 +1516,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class ForwardingExecutorService(ABC, pygcollect.__ForwardingObject, pygcollect.ForwardingObject, __ExecutorService, ExecutorService):
+class ForwardingExecutorService(ABC):
     """com.google.common.util.concurrent.ForwardingExecutorService"""
  
     @staticmethod
@@ -1866,7 +1866,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AbstractService(ABC, __Service, Service):
+class AbstractService(ABC):
     """com.google.common.util.concurrent.AbstractService"""
  
     @staticmethod
@@ -2154,7 +2154,7 @@ import com.google.common.util.concurrent.ForwardingFuture as __ForwardingFuture
 __ForwardingFuture = __ForwardingFuture
 from builtins import int
  
-class SimpleForwardingListenableFuture(ABC, __ForwardingListenableFuture, ForwardingListenableFuture):
+class SimpleForwardingListenableFuture(ABC):
     """com.google.common.util.concurrent.ForwardingListenableFuture.SimpleForwardingListenableFuture"""
  
     @staticmethod
@@ -2585,7 +2585,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ServiceManager(__ServiceManagerBridge, ServiceManagerBridge):
+class ServiceManager():
     """com.google.common.util.concurrent.ServiceManager"""
  
     @staticmethod
@@ -2770,7 +2770,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class UncheckedExecutionException(__RuntimeException, RuntimeException):
+class UncheckedExecutionException():
     """com.google.common.util.concurrent.UncheckedExecutionException"""
  
     @staticmethod
@@ -3132,7 +3132,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ForwardingBlockingQueue(ABC, pygcollect.__ForwardingQueue, pygcollect.ForwardingQueue, __BlockingQueue, BlockingQueue):
+class ForwardingBlockingQueue(ABC):
     """com.google.common.util.concurrent.ForwardingBlockingQueue"""
  
     @staticmethod
@@ -3508,8 +3508,8 @@ class Callables():
  
 # CLASS: com.google.common.util.concurrent.ForwardingFuture
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 import java.util.concurrent.Future.State as State
@@ -3537,7 +3537,7 @@ import com.google.common.util.concurrent.ForwardingFuture as __ForwardingFuture
 __ForwardingFuture = __ForwardingFuture
 from builtins import int
  
-class ForwardingFuture(ABC, pygcollect.__ForwardingObject, pygcollect.ForwardingObject, __Future, Future):
+class ForwardingFuture(ABC):
     """com.google.common.util.concurrent.ForwardingFuture"""
  
     @staticmethod
@@ -3668,6 +3668,7 @@ class ForwardingFuture(ABC, pygcollect.__ForwardingObject, pygcollect.Forwarding
  
  
 # CLASS: com.google.common.util.concurrent.ListeningExecutorService
+from pyquantum_helper import override
 import java.lang.Runnable as Runnable
 import java.time.Duration as Duration
 import java.util.Collection as Collection
@@ -3688,7 +3689,7 @@ import java.util.concurrent.Callable as Callable
 from builtins import bool
 import java.util.List as List
  
-class ListeningExecutorService(ABC, __ExecutorService, ExecutorService):
+class ListeningExecutorService(ABC):
     """com.google.common.util.concurrent.ListeningExecutorService"""
  
     @staticmethod
@@ -3846,7 +3847,7 @@ import java.lang.Throwable as Throwable
 import java.lang.Integer as __int
 from builtins import int
  
-class FluentFuture(ABC, __GwtFluentFutureCatchingSpecialization, GwtFluentFutureCatchingSpecialization):
+class FluentFuture(ABC):
     """com.google.common.util.concurrent.FluentFuture"""
  
     @staticmethod
@@ -4176,7 +4177,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class WithExplicitOrdering(__CycleDetectingLockFactory, CycleDetectingLockFactory):
+class WithExplicitOrdering():
     """com.google.common.util.concurrent.CycleDetectingLockFactory.WithExplicitOrdering"""
  
     @staticmethod
@@ -4315,6 +4316,7 @@ class WithExplicitOrdering(__CycleDetectingLockFactory, CycleDetectingLockFactor
 # CLASS: com.google.common.util.concurrent.ListenableScheduledFuture
 import com.google.common.util.concurrent.ListenableFuture as __ListenableFuture
 __ListenableFuture = __ListenableFuture
+from pyquantum_helper import override
 import java.util.concurrent.Future.State as State
 import java.util.concurrent.Future as __Future
 __Future = __Future
@@ -4337,7 +4339,7 @@ import java.lang.Throwable as Throwable
 import java.lang.Comparable as __Comparable
 __Comparable = __Comparable
  
-class ListenableScheduledFuture(ABC, __ScheduledFuture, ScheduledFuture, __ListenableFuture, ListenableFuture):
+class ListenableScheduledFuture(ABC):
     """com.google.common.util.concurrent.ListenableScheduledFuture"""
  
     @staticmethod
@@ -4502,7 +4504,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ExecutionError(__Error, Error):
+class ExecutionError():
     """com.google.common.util.concurrent.ExecutionError"""
  
     @staticmethod
@@ -4942,7 +4944,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SettableFuture(__TrustedFuture, TrustedFuture):
+class SettableFuture():
     """com.google.common.util.concurrent.SettableFuture"""
  
     @staticmethod
@@ -5130,7 +5132,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AbstractFuture(ABC, concurrent.__InternalFutureFailureAccess, internal.InternalFutureFailureAccess, __ListenableFuture, ListenableFuture):
+class AbstractFuture(ABC):
     """com.google.common.util.concurrent.AbstractFuture"""
  
     @staticmethod
@@ -6187,7 +6189,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ForwardingBlockingDeque(ABC, pygcollect.__ForwardingDeque, pygcollect.ForwardingDeque, __BlockingDeque, BlockingDeque):
+class ForwardingBlockingDeque(ABC):
     """com.google.common.util.concurrent.ForwardingBlockingDeque"""
  
     @staticmethod
@@ -6618,7 +6620,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AbstractScheduledService(ABC, __Service, Service):
+class AbstractScheduledService(ABC):
     """com.google.common.util.concurrent.AbstractScheduledService"""
  
     @staticmethod
@@ -6656,6 +6658,12 @@ class AbstractScheduledService(ABC, __Service, Service):
 
     @override
     @overload
+    def awaitTerminated(self, timeout: int, unit: 'TimeUnit'):
+        """public final void com.google.common.util.concurrent.AbstractScheduledService.awaitTerminated(long,java.util.concurrent.TimeUnit) throws java.util.concurrent.TimeoutException"""
+        super(__AbstractScheduledService, self).awaitTerminated(__long.valueOf(timeout), unit)
+
+    @override
+    @overload
     def isRunning(self) -> bool:
         """public final boolean com.google.common.util.concurrent.AbstractScheduledService.isRunning()"""
         return bool.__wrap(super(AbstractScheduledService, self).isRunning())
@@ -6665,12 +6673,6 @@ class AbstractScheduledService(ABC, __Service, Service):
     def startAsync(self) -> 'Service':
         """public final com.google.common.util.concurrent.Service com.google.common.util.concurrent.AbstractScheduledService.startAsync()"""
         return 'Service'.__wrap(super(AbstractScheduledService, self).startAsync())
-
-    @override
-    @overload
-    def awaitTerminated(self, timeout: int, unit: 'TimeUnit'):
-        """public final void com.google.common.util.concurrent.AbstractScheduledService.awaitTerminated(long,java.util.concurrent.TimeUnit) throws java.util.concurrent.TimeoutException"""
-        super(__AbstractScheduledService, self).awaitTerminated(__long.valueOf(timeout), unit)
 
     @override
     @overload
@@ -6796,7 +6798,7 @@ from builtins import bool
 from builtins import int
 import java.util.function.DoubleUnaryOperator as DoubleUnaryOperator
  
-class AtomicDoubleArray(__Serializable, Serializable):
+class AtomicDoubleArray():
     """com.google.common.util.concurrent.AtomicDoubleArray"""
  
     @staticmethod
@@ -6987,7 +6989,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AbstractExecutionThreadService(ABC, __Service, Service):
+class AbstractExecutionThreadService(ABC):
     """com.google.common.util.concurrent.AbstractExecutionThreadService"""
  
     @staticmethod
@@ -7121,15 +7123,15 @@ class AbstractExecutionThreadService(ABC, __Service, Service):
 
     @override
     @overload
-    def stopAsync(self) -> 'Service':
-        """public final com.google.common.util.concurrent.Service com.google.common.util.concurrent.AbstractExecutionThreadService.stopAsync()"""
-        return 'Service'.__wrap(super(AbstractExecutionThreadService, self).stopAsync())
-
-    @override
-    @overload
     def awaitTerminated(self, timeout: 'Duration'):
         """public final void com.google.common.util.concurrent.AbstractExecutionThreadService.awaitTerminated(java.time.Duration) throws java.util.concurrent.TimeoutException"""
         super(__AbstractExecutionThreadService, self).awaitTerminated(timeout)
+
+    @override
+    @overload
+    def stopAsync(self) -> 'Service':
+        """public final com.google.common.util.concurrent.Service com.google.common.util.concurrent.AbstractExecutionThreadService.stopAsync()"""
+        return 'Service'.__wrap(super(AbstractExecutionThreadService, self).stopAsync())
 
     @override
     @overload
@@ -7181,7 +7183,7 @@ import java.lang.Integer as __int
 import java.util.List as List
 from builtins import int
  
-class AbstractListeningExecutorService(ABC, __AbstractExecutorService, AbstractExecutorService, __ListeningExecutorService, ListeningExecutorService):
+class AbstractListeningExecutorService(ABC):
     """com.google.common.util.concurrent.AbstractListeningExecutorService"""
  
     @staticmethod
@@ -7674,7 +7676,7 @@ import com.google.common.util.concurrent.SimpleTimeLimiter as __SimpleTimeLimite
 __SimpleTimeLimiter = __SimpleTimeLimiter
 from builtins import int
  
-class SimpleTimeLimiter(__TimeLimiter, TimeLimiter):
+class SimpleTimeLimiter():
     """com.google.common.util.concurrent.SimpleTimeLimiter"""
  
     @staticmethod
@@ -7841,7 +7843,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Combiner3(__Combiner, Combiner):
+class Combiner3():
     """com.google.common.util.concurrent.ClosingFuture.Combiner3"""
  
     @staticmethod
@@ -7973,7 +7975,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AbstractIdleService(ABC, __Service, Service):
+class AbstractIdleService(ABC):
     """com.google.common.util.concurrent.AbstractIdleService"""
  
     @staticmethod
@@ -8158,7 +8160,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PotentialDeadlockException(__ExampleStackTrace, ExampleStackTrace):
+class PotentialDeadlockException():
     """com.google.common.util.concurrent.CycleDetectingLockFactory.PotentialDeadlockException"""
  
     @staticmethod
@@ -8341,7 +8343,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Combiner4(__Combiner, Combiner):
+class Combiner4():
     """com.google.common.util.concurrent.ClosingFuture.Combiner4"""
  
     @staticmethod
@@ -8633,7 +8635,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FakeTimeLimiter(__TimeLimiter, TimeLimiter):
+class FakeTimeLimiter():
     """com.google.common.util.concurrent.FakeTimeLimiter"""
  
     @staticmethod
@@ -9052,7 +9054,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class State(__Enum, Enum):
+class State():
     """com.google.common.util.concurrent.Service.State"""
  
     @staticmethod
@@ -9666,7 +9668,7 @@ import com.google.common.util.concurrent.ForwardingFuture as __ForwardingFuture
 __ForwardingFuture = __ForwardingFuture
 from builtins import int
  
-class SimpleForwardingFuture(ABC, __ForwardingFuture, ForwardingFuture):
+class SimpleForwardingFuture(ABC):
     """com.google.common.util.concurrent.ForwardingFuture.SimpleForwardingFuture"""
  
     @staticmethod
@@ -9797,6 +9799,7 @@ class SimpleForwardingFuture(ABC, __ForwardingFuture, ForwardingFuture):
  
  
 # CLASS: com.google.common.util.concurrent.ListeningScheduledExecutorService
+from pyquantum_helper import override
 import java.lang.Runnable as Runnable
 import java.time.Duration as Duration
 import java.util.concurrent.ExecutorService as __ExecutorService
@@ -9821,7 +9824,7 @@ import java.util.concurrent.Callable as Callable
 from builtins import bool
 import java.util.List as List
  
-class ListeningScheduledExecutorService(ABC, __ScheduledExecutorService, ScheduledExecutorService, __ListeningExecutorService, ListeningExecutorService):
+class ListeningScheduledExecutorService(ABC):
     """com.google.common.util.concurrent.ListeningScheduledExecutorService"""
  
     @staticmethod
@@ -10288,7 +10291,7 @@ __Number = __Number
 from builtins import int
 import java.util.function.DoubleUnaryOperator as DoubleUnaryOperator
  
-class AtomicDouble(__Number, Number, __Serializable, Serializable):
+class AtomicDouble():
     """com.google.common.util.concurrent.AtomicDouble"""
  
     @staticmethod
@@ -10608,7 +10611,7 @@ import java.lang.Integer as __int
 import java.util.List as List
 from builtins import int
  
-class ForwardingListeningExecutorService(ABC, __ForwardingExecutorService, ForwardingExecutorService, __ListeningExecutorService, ListeningExecutorService):
+class ForwardingListeningExecutorService(ABC):
     """com.google.common.util.concurrent.ForwardingListeningExecutorService"""
  
     @staticmethod
@@ -10811,7 +10814,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class UncheckedTimeoutException(__RuntimeException, RuntimeException):
+class UncheckedTimeoutException():
     """com.google.common.util.concurrent.UncheckedTimeoutException"""
  
     @staticmethod
@@ -11023,7 +11026,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CustomScheduler(ABC, __Scheduler, Scheduler):
+class CustomScheduler(ABC):
     """com.google.common.util.concurrent.AbstractScheduledService.CustomScheduler"""
  
     @staticmethod
@@ -11187,25 +11190,26 @@ class ClosingFunction(ABC):
  
  
 # CLASS: com.google.common.util.concurrent.ListenableFuture
-import java.util.concurrent.Future as __Future_State
-__State = __Future_State.State
 import com.google.common.util.concurrent.ListenableFuture as __ListenableFuture
 __ListenableFuture = __ListenableFuture
-import java.util.concurrent.TimeUnit as TimeUnit
+from pyquantum_helper import override
 import java.util.concurrent.Future.State as State
 import java.util.concurrent.Future as __Future
 __Future = __Future
 import java.lang.Runnable as Runnable
 import java.lang.Throwable as __Throwable
 __Throwable = __Throwable
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Throwable as Throwable
 import java.util.concurrent.Executor as Executor
 from abc import abstractmethod, ABC
 from builtins import object
+import java.util.concurrent.Future as __Future_State
+__State = __Future_State.State
+import java.util.concurrent.TimeUnit as TimeUnit
+import java.lang.Object as __Object
+__Object = __Object
+import java.lang.Throwable as Throwable
  
-class ListenableFuture(ABC, __Future, Future):
+class ListenableFuture(ABC):
     """com.google.common.util.concurrent.ListenableFuture"""
  
     @staticmethod
@@ -11307,7 +11311,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Combiner5(__Combiner, Combiner):
+class Combiner5():
     """com.google.common.util.concurrent.ClosingFuture.Combiner5"""
  
     @staticmethod
@@ -11499,7 +11503,7 @@ import java.lang.Throwable as Throwable
 import java.lang.Integer as __int
 from builtins import int
  
-class Futures(__GwtFuturesCatchingSpecialization, GwtFuturesCatchingSpecialization):
+class Futures():
     """com.google.common.util.concurrent.Futures"""
  
     @staticmethod

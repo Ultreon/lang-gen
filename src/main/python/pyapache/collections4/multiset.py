@@ -45,7 +45,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class UniqueSet(__AbstractSet, AbstractSet):
+class UniqueSet():
     """org.apache.commons.collections4.multiset.AbstractMultiSet.UniqueSet"""
  
     @staticmethod
@@ -278,7 +278,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class UniqueSet(__AbstractSet, AbstractSet):
+class UniqueSet():
     """org.apache.commons.collections4.multiset.AbstractMultiSet.UniqueSet"""
  
     @staticmethod
@@ -492,7 +492,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AbstractEntry(ABC, pyapache.__MultiSet_Entry, collections4.MultiSet$Entry):
+class AbstractEntry(ABC):
     """org.apache.commons.collections4.multiset.AbstractMultiSet.AbstractEntry"""
  
     @staticmethod
@@ -630,7 +630,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class AbstractMapMultiSet(ABC, __AbstractMultiSet, AbstractMultiSet):
+class AbstractMapMultiSet(ABC):
     """org.apache.commons.collections4.multiset.AbstractMapMultiSet"""
  
     @staticmethod
@@ -903,7 +903,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class SynchronizedMultiSet(collections4.__SynchronizedCollection, collection.SynchronizedCollection, pyapache.__MultiSet, collections4.MultiSet):
+class SynchronizedMultiSet():
     """org.apache.commons.collections4.multiset.SynchronizedMultiSet"""
  
     @staticmethod
@@ -1178,7 +1178,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class EntrySet(__AbstractSet, AbstractSet):
+class EntrySet():
     """org.apache.commons.collections4.multiset.AbstractMultiSet.EntrySet"""
  
     @staticmethod
@@ -1423,7 +1423,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class PredicatedMultiSet(collections4.__PredicatedCollection, collection.PredicatedCollection, pyapache.__MultiSet, collections4.MultiSet):
+class PredicatedMultiSet():
     """org.apache.commons.collections4.multiset.PredicatedMultiSet"""
  
     @staticmethod
@@ -1691,7 +1691,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class UniqueSetIterator(collections4.__AbstractIteratorDecorator, iterators.AbstractIteratorDecorator):
+class UniqueSetIterator():
     """org.apache.commons.collections4.multiset.AbstractMapMultiSet.UniqueSetIterator"""
  
     @staticmethod
@@ -1820,7 +1820,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MultiSetEntry(__AbstractEntry, AbstractEntry):
+class MultiSetEntry():
     """org.apache.commons.collections4.multiset.AbstractMapMultiSet.MultiSetEntry"""
  
     @staticmethod
@@ -1968,7 +1968,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class UnmodifiableMultiSet(__AbstractMultiSetDecorator, AbstractMultiSetDecorator, pyapache.__Unmodifiable, collections4.Unmodifiable):
+class UnmodifiableMultiSet():
     """org.apache.commons.collections4.multiset.UnmodifiableMultiSet"""
  
     @staticmethod
@@ -2236,7 +2236,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class AbstractMultiSetDecorator(ABC, collections4.__AbstractCollectionDecorator, collection.AbstractCollectionDecorator, pyapache.__MultiSet, collections4.MultiSet):
+class AbstractMultiSetDecorator(ABC):
     """org.apache.commons.collections4.multiset.AbstractMultiSetDecorator"""
  
     @staticmethod
@@ -2498,7 +2498,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class AbstractMultiSet(ABC, __AbstractCollection, AbstractCollection, pyapache.__MultiSet, collections4.MultiSet):
+class AbstractMultiSet(ABC):
     """org.apache.commons.collections4.multiset.AbstractMultiSet"""
  
     @staticmethod
@@ -2764,7 +2764,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class HashMultiSet(__AbstractMapMultiSet, AbstractMapMultiSet, __Serializable, Serializable):
+class HashMultiSet():
     """org.apache.commons.collections4.multiset.HashMultiSet"""
  
     @staticmethod
@@ -3034,7 +3034,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class EntrySetIterator(__Iterator, Iterator):
+class EntrySetIterator():
     """org.apache.commons.collections4.multiset.AbstractMapMultiSet.EntrySetIterator"""
  
     @staticmethod

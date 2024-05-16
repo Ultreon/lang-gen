@@ -90,15 +90,15 @@ class Chat():
 
     @staticmethod
     @overload
-    def sendFatal(arg0: 'CommandSender', arg1: str):
-        """public static void dev.ultreon.quantum.server.chat.Chat.sendFatal(dev.ultreon.quantum.api.commands.CommandSender,java.lang.String)"""
-        __Chat.sendFatal(arg0, arg1)
-
-    @staticmethod
-    @overload
     def sendDenied(arg0: 'CommandSender', arg1: str):
         """public static void dev.ultreon.quantum.server.chat.Chat.sendDenied(dev.ultreon.quantum.api.commands.CommandSender,java.lang.String)"""
         __Chat.sendDenied(arg0, arg1)
+
+    @staticmethod
+    @overload
+    def sendFatal(arg0: 'CommandSender', arg1: str):
+        """public static void dev.ultreon.quantum.server.chat.Chat.sendFatal(dev.ultreon.quantum.api.commands.CommandSender,java.lang.String)"""
+        __Chat.sendFatal(arg0, arg1)
 
     @staticmethod
     @overload
@@ -180,15 +180,15 @@ class Chat():
 
     @staticmethod
     @overload
-    def sendFatal(arg0: 'CommandSender', arg1: 'MessageCode', arg2: str):
-        """public static void dev.ultreon.quantum.server.chat.Chat.sendFatal(dev.ultreon.quantum.api.commands.CommandSender,dev.ultreon.quantum.api.commands.MessageCode,java.lang.String)"""
-        __Chat.sendFatal(arg0, arg1, arg2)
-
-    @staticmethod
-    @overload
     def formatDebug(arg0: 'CommandSender', arg1: str) -> 'text.MutableText':
         """public static dev.ultreon.quantum.text.MutableText dev.ultreon.quantum.server.chat.Chat.formatDebug(dev.ultreon.quantum.api.commands.CommandSender,java.lang.String)"""
         return text.MutableText.__wrap(__Chat.formatDebug(arg0, arg1))
+
+    @staticmethod
+    @overload
+    def sendFatal(arg0: 'CommandSender', arg1: 'MessageCode', arg2: str):
+        """public static void dev.ultreon.quantum.server.chat.Chat.sendFatal(dev.ultreon.quantum.api.commands.CommandSender,dev.ultreon.quantum.api.commands.MessageCode,java.lang.String)"""
+        __Chat.sendFatal(arg0, arg1, arg2)
 
     @override
     @overload
@@ -354,15 +354,15 @@ class Chat():
 
     @staticmethod
     @overload
-    def sendFatal(arg0: 'CommandSender', arg1: str):
-        """public static void dev.ultreon.quantum.server.chat.Chat.sendFatal(dev.ultreon.quantum.api.commands.CommandSender,java.lang.String)"""
-        __Chat.sendFatal(arg0, arg1)
-
-    @staticmethod
-    @overload
     def sendDenied(arg0: 'CommandSender', arg1: str):
         """public static void dev.ultreon.quantum.server.chat.Chat.sendDenied(dev.ultreon.quantum.api.commands.CommandSender,java.lang.String)"""
         __Chat.sendDenied(arg0, arg1)
+
+    @staticmethod
+    @overload
+    def sendFatal(arg0: 'CommandSender', arg1: str):
+        """public static void dev.ultreon.quantum.server.chat.Chat.sendFatal(dev.ultreon.quantum.api.commands.CommandSender,java.lang.String)"""
+        __Chat.sendFatal(arg0, arg1)
 
     @staticmethod
     @overload
@@ -444,15 +444,15 @@ class Chat():
 
     @staticmethod
     @overload
-    def sendFatal(arg0: 'CommandSender', arg1: 'MessageCode', arg2: str):
-        """public static void dev.ultreon.quantum.server.chat.Chat.sendFatal(dev.ultreon.quantum.api.commands.CommandSender,dev.ultreon.quantum.api.commands.MessageCode,java.lang.String)"""
-        __Chat.sendFatal(arg0, arg1, arg2)
-
-    @staticmethod
-    @overload
     def formatDebug(arg0: 'CommandSender', arg1: str) -> 'text.MutableText':
         """public static dev.ultreon.quantum.text.MutableText dev.ultreon.quantum.server.chat.Chat.formatDebug(dev.ultreon.quantum.api.commands.CommandSender,java.lang.String)"""
         return text.MutableText.__wrap(__Chat.formatDebug(arg0, arg1))
+
+    @staticmethod
+    @overload
+    def sendFatal(arg0: 'CommandSender', arg1: 'MessageCode', arg2: str):
+        """public static void dev.ultreon.quantum.server.chat.Chat.sendFatal(dev.ultreon.quantum.api.commands.CommandSender,dev.ultreon.quantum.api.commands.MessageCode,java.lang.String)"""
+        __Chat.sendFatal(arg0, arg1, arg2)
 
     @override
     @overload

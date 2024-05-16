@@ -35,7 +35,7 @@ import java.util.Locale as __Locale
 __Locale = __Locale
 from builtins import int
  
-class FastDatePrinter(__DatePrinter, DatePrinter, __Serializable, Serializable):
+class FastDatePrinter():
     """org.apache.commons.lang3.time.FastDatePrinter"""
  
     @staticmethod
@@ -227,7 +227,7 @@ import java.util.Locale as __Locale
 __Locale = __Locale
 from builtins import int
  
-class FastDatePrinter(__DatePrinter, DatePrinter, __Serializable, Serializable):
+class FastDatePrinter():
     """org.apache.commons.lang3.time.FastDatePrinter"""
  
     @staticmethod
@@ -1154,7 +1154,7 @@ import java.util.Locale as __Locale
 __Locale = __Locale
 from builtins import int
  
-class FastDateFormat(__Format, Format, __DateParser, DateParser, __DatePrinter, DatePrinter):
+class FastDateFormat():
     """org.apache.commons.lang3.time.FastDateFormat"""
  
     @staticmethod
@@ -1485,7 +1485,7 @@ import java.util.Locale as __Locale
 __Locale = __Locale
 from builtins import int
  
-class FastDateParser(__DateParser, DateParser, __Serializable, Serializable):
+class FastDateParser():
     """org.apache.commons.lang3.time.FastDateParser"""
  
     @staticmethod

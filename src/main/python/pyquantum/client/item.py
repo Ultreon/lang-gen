@@ -61,7 +61,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class ItemRenderer(pygdx.__Disposable, utils.Disposable):
+class ItemRenderer():
     """dev.ultreon.quantum.client.item.ItemRenderer"""
  
     @staticmethod
@@ -264,7 +264,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class ItemRenderer(pygdx.__Disposable, utils.Disposable):
+class ItemRenderer():
     """dev.ultreon.quantum.client.item.ItemRenderer"""
  
     @staticmethod

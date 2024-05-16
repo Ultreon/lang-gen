@@ -34,7 +34,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FloatType(__DataType, DataType):
+class FloatType():
     """dev.ultreon.ubo.types.FloatType"""
  
     @staticmethod
@@ -205,7 +205,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FloatType(__DataType, DataType):
+class FloatType():
     """dev.ultreon.ubo.types.FloatType"""
  
     @staticmethod
@@ -405,7 +405,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 from builtins import int
  
-class MapType(__DataType, DataType):
+class MapType():
     """dev.ultreon.ubo.types.MapType"""
  
     @staticmethod
@@ -990,7 +990,7 @@ from builtins import bool
 import java.lang.Double as Double
 from builtins import int
  
-class DoubleType(__DataType, DataType):
+class DoubleType():
     """dev.ultreon.ubo.types.DoubleType"""
  
     @staticmethod
@@ -1159,7 +1159,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BigIntType(__DataType, DataType):
+class BigIntType():
     """dev.ultreon.ubo.types.BigIntType"""
  
     @staticmethod
@@ -1334,7 +1334,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LongType(__DataType, DataType):
+class LongType():
     """dev.ultreon.ubo.types.LongType"""
  
     @staticmethod
@@ -1502,7 +1502,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DoubleArrayType(__DataType, DataType):
+class DoubleArrayType():
     """dev.ultreon.ubo.types.DoubleArrayType"""
  
     @staticmethod
@@ -1685,7 +1685,7 @@ import java.util.List as List
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ListType(__DataType, DataType, __Iterable, Iterable):
+class ListType():
     """dev.ultreon.ubo.types.ListType"""
  
     @staticmethod
@@ -1944,7 +1944,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LongArrayType(__DataType, DataType):
+class LongArrayType():
     """dev.ultreon.ubo.types.LongArrayType"""
  
     @staticmethod
@@ -2118,7 +2118,7 @@ __ShortType = __ShortType
 from builtins import bool
 from builtins import int
  
-class ShortType(__DataType, DataType):
+class ShortType():
     """dev.ultreon.ubo.types.ShortType"""
  
     @staticmethod
@@ -2292,7 +2292,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class StringType(__DataType, DataType):
+class StringType():
     """dev.ultreon.ubo.types.StringType"""
  
     @staticmethod
@@ -2459,7 +2459,7 @@ import dev.ultreon.ubo.types.CharArrayType as __CharArrayType
 __CharArrayType = __CharArrayType
 from builtins import int
  
-class CharArrayType(__DataType, DataType):
+class CharArrayType():
     """dev.ultreon.ubo.types.CharArrayType"""
  
     @staticmethod
@@ -2631,7 +2631,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class IntArrayType(__DataType, DataType):
+class IntArrayType():
     """dev.ultreon.ubo.types.IntArrayType"""
  
     @staticmethod
@@ -2804,7 +2804,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FloatArrayType(__DataType, DataType):
+class FloatArrayType():
     """dev.ultreon.ubo.types.FloatArrayType"""
  
     @staticmethod
@@ -2976,7 +2976,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ShortArrayType(__DataType, DataType):
+class ShortArrayType():
     """dev.ultreon.ubo.types.ShortArrayType"""
  
     @staticmethod
@@ -3151,7 +3151,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CharType(__DataType, DataType):
+class CharType():
     """dev.ultreon.ubo.types.CharType"""
  
     @staticmethod
@@ -3322,7 +3322,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class ByteArrayType(__DataType, DataType):
+class ByteArrayType():
     """dev.ultreon.ubo.types.ByteArrayType"""
  
     @staticmethod
@@ -3537,7 +3537,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class IntType(__DataType, DataType):
+class IntType():
     """dev.ultreon.ubo.types.IntType"""
  
     @staticmethod
@@ -3706,7 +3706,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ByteType(__DataType, DataType):
+class ByteType():
     """dev.ultreon.ubo.types.ByteType"""
  
     @staticmethod
@@ -3883,7 +3883,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BooleanType(__DataType, DataType):
+class BooleanType():
     """dev.ultreon.ubo.types.BooleanType"""
  
     @staticmethod
@@ -4054,7 +4054,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BitSetType(__DataType, DataType):
+class BitSetType():
     """dev.ultreon.ubo.types.BitSetType"""
  
     @staticmethod
@@ -4375,7 +4375,7 @@ import dev.ultreon.ubo.types.UUIDType as __UUIDType
 __UUIDType = __UUIDType
 from builtins import int
  
-class UUIDType(__DataType, DataType):
+class UUIDType():
     """dev.ultreon.ubo.types.UUIDType"""
  
     @staticmethod
@@ -4544,7 +4544,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BigDecType(__DataType, DataType):
+class BigDecType():
     """dev.ultreon.ubo.types.BigDecType"""
  
     @staticmethod

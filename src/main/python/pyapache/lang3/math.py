@@ -911,7 +911,7 @@ import java.lang.Number as __Number
 __Number = __Number
 from builtins import int
  
-class Fraction(__Number, Number, __Comparable, Comparable):
+class Fraction():
     """org.apache.commons.lang3.math.Fraction"""
  
     @staticmethod

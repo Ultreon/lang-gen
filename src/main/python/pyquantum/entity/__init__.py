@@ -329,7 +329,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Operation(__Enum, Enum):
+class Operation():
     """dev.ultreon.quantum.entity.AttributeModifier.Operation"""
  
     @staticmethod
@@ -581,7 +581,7 @@ from builtins import int
 import dev.ultreon.quantum.world.rng.RNG as __RNG
 __RNG = __RNG
  
-class DroppedItem(__Entity, Entity):
+class DroppedItem():
     """dev.ultreon.quantum.entity.DroppedItem"""
  
     @staticmethod
@@ -1329,7 +1329,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Pose(__Enum, Enum):
+class Pose():
     """dev.ultreon.quantum.entity.Entity.Pose"""
  
     @staticmethod
@@ -1585,7 +1585,7 @@ from builtins import int
 import dev.ultreon.quantum.world.rng.RNG as __RNG
 __RNG = __RNG
  
-class LivingEntity(__Entity, Entity):
+class LivingEntity():
     """dev.ultreon.quantum.entity.LivingEntity"""
  
     @staticmethod
@@ -2579,7 +2579,7 @@ from builtins import int
 import dev.ultreon.quantum.world.rng.RNG as __RNG
 __RNG = __RNG
  
-class Entity(api.__CommandSender, commands.CommandSender):
+class Entity():
     """dev.ultreon.quantum.entity.Entity"""
  
     @staticmethod
@@ -3275,7 +3275,7 @@ except ImportError:
     types = __import_once__("pyubo.types")
 
  
-class Something(__LivingEntity, LivingEntity):
+class Something():
     """dev.ultreon.quantum.entity.Something"""
  
     @staticmethod
@@ -3958,7 +3958,7 @@ except ImportError:
     types = __import_once__("pyubo.types")
 
  
-class S2CEntityPipeline(network.__Packet, packets.Packet):
+class S2CEntityPipeline():
     """dev.ultreon.quantum.entity.S2CEntityPipeline"""
  
     @staticmethod
@@ -4367,7 +4367,7 @@ except ImportError:
     types = __import_once__("pyubo.types")
 
  
-class Pig(__LivingEntity, LivingEntity):
+class Pig():
     """dev.ultreon.quantum.entity.Pig"""
  
     @staticmethod

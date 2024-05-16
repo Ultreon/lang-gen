@@ -58,7 +58,7 @@ except ImportError:
 
 from builtins import int
  
-class FitViewport(__ScalingViewport, ScalingViewport):
+class FitViewport():
     """com.badlogic.gdx.utils.viewport.FitViewport"""
  
     @staticmethod
@@ -106,16 +106,16 @@ class FitViewport(__ScalingViewport, ScalingViewport):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
         super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
 
+    @overload
+    def project(self, arg0: 'Vector2') -> 'math.Vector2':
+        """public com.badlogic.gdx.math.Vector2 com.badlogic.gdx.utils.viewport.Viewport.project(com.badlogic.gdx.math.Vector2)"""
+        return 'math.Vector2'.__wrap(super(__Viewport, self).project(arg0))
+
     @override
     @overload
     def getTopGutterHeight(self) -> int:
         """public int com.badlogic.gdx.utils.viewport.Viewport.getTopGutterHeight()"""
         return int.__wrap(super(Viewport, self).getTopGutterHeight())
-
-    @overload
-    def project(self, arg0: 'Vector2') -> 'math.Vector2':
-        """public com.badlogic.gdx.math.Vector2 com.badlogic.gdx.utils.viewport.Viewport.project(com.badlogic.gdx.math.Vector2)"""
-        return 'math.Vector2'.__wrap(super(__Viewport, self).project(arg0))
 
     @override
     @overload
@@ -147,16 +147,16 @@ class FitViewport(__ScalingViewport, ScalingViewport):
         """public float com.badlogic.gdx.utils.viewport.Viewport.getWorldHeight()"""
         return float.__wrap(super(Viewport, self).getWorldHeight())
 
+    @overload
+    def project(self, arg0: 'Vector3') -> 'math.Vector3':
+        """public com.badlogic.gdx.math.Vector3 com.badlogic.gdx.utils.viewport.Viewport.project(com.badlogic.gdx.math.Vector3)"""
+        return 'math.Vector3'.__wrap(super(__Viewport, self).project(arg0))
+
     @override
     @overload
     def setScreenBounds(self, arg0: int, arg1: int, arg2: int, arg3: int):
         """public void com.badlogic.gdx.utils.viewport.Viewport.setScreenBounds(int,int,int,int)"""
         super(__Viewport, self).setScreenBounds(__int.valueOf(arg0), __int.valueOf(arg1), __int.valueOf(arg2), __int.valueOf(arg3))
-
-    @overload
-    def project(self, arg0: 'Vector3') -> 'math.Vector3':
-        """public com.badlogic.gdx.math.Vector3 com.badlogic.gdx.utils.viewport.Viewport.project(com.badlogic.gdx.math.Vector3)"""
-        return 'math.Vector3'.__wrap(super(__Viewport, self).project(arg0))
 
     @override
     @overload
@@ -242,16 +242,16 @@ class FitViewport(__ScalingViewport, ScalingViewport):
         """public void com.badlogic.gdx.utils.viewport.ScalingViewport.setScaling(com.badlogic.gdx.utils.Scaling)"""
         super(__ScalingViewport, self).setScaling(arg0)
 
+    @overload
+    def getPickRay(self, arg0: float, arg1: float) -> 'collision.Ray':
+        """public com.badlogic.gdx.math.collision.Ray com.badlogic.gdx.utils.viewport.Viewport.getPickRay(float,float)"""
+        return 'collision.Ray'.__wrap(super(__Viewport, self).getPickRay(__float.valueOf(arg0), __float.valueOf(arg1)))
+
     @override
     @overload
     def setScreenPosition(self, arg0: int, arg1: int):
         """public void com.badlogic.gdx.utils.viewport.Viewport.setScreenPosition(int,int)"""
         super(__Viewport, self).setScreenPosition(__int.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def getPickRay(self, arg0: float, arg1: float) -> 'collision.Ray':
-        """public com.badlogic.gdx.math.collision.Ray com.badlogic.gdx.utils.viewport.Viewport.getPickRay(float,float)"""
-        return 'collision.Ray'.__wrap(super(__Viewport, self).getPickRay(__float.valueOf(arg0), __float.valueOf(arg1)))
 
     @overload
     def equals(self, arg0: object) -> bool:
@@ -430,7 +430,7 @@ except ImportError:
 
 from builtins import int
  
-class FitViewport(__ScalingViewport, ScalingViewport):
+class FitViewport():
     """com.badlogic.gdx.utils.viewport.FitViewport"""
  
     @staticmethod
@@ -478,16 +478,16 @@ class FitViewport(__ScalingViewport, ScalingViewport):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
         super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
 
+    @overload
+    def project(self, arg0: 'Vector2') -> 'math.Vector2':
+        """public com.badlogic.gdx.math.Vector2 com.badlogic.gdx.utils.viewport.Viewport.project(com.badlogic.gdx.math.Vector2)"""
+        return 'math.Vector2'.__wrap(super(__Viewport, self).project(arg0))
+
     @override
     @overload
     def getTopGutterHeight(self) -> int:
         """public int com.badlogic.gdx.utils.viewport.Viewport.getTopGutterHeight()"""
         return int.__wrap(super(Viewport, self).getTopGutterHeight())
-
-    @overload
-    def project(self, arg0: 'Vector2') -> 'math.Vector2':
-        """public com.badlogic.gdx.math.Vector2 com.badlogic.gdx.utils.viewport.Viewport.project(com.badlogic.gdx.math.Vector2)"""
-        return 'math.Vector2'.__wrap(super(__Viewport, self).project(arg0))
 
     @override
     @overload
@@ -519,16 +519,16 @@ class FitViewport(__ScalingViewport, ScalingViewport):
         """public float com.badlogic.gdx.utils.viewport.Viewport.getWorldHeight()"""
         return float.__wrap(super(Viewport, self).getWorldHeight())
 
+    @overload
+    def project(self, arg0: 'Vector3') -> 'math.Vector3':
+        """public com.badlogic.gdx.math.Vector3 com.badlogic.gdx.utils.viewport.Viewport.project(com.badlogic.gdx.math.Vector3)"""
+        return 'math.Vector3'.__wrap(super(__Viewport, self).project(arg0))
+
     @override
     @overload
     def setScreenBounds(self, arg0: int, arg1: int, arg2: int, arg3: int):
         """public void com.badlogic.gdx.utils.viewport.Viewport.setScreenBounds(int,int,int,int)"""
         super(__Viewport, self).setScreenBounds(__int.valueOf(arg0), __int.valueOf(arg1), __int.valueOf(arg2), __int.valueOf(arg3))
-
-    @overload
-    def project(self, arg0: 'Vector3') -> 'math.Vector3':
-        """public com.badlogic.gdx.math.Vector3 com.badlogic.gdx.utils.viewport.Viewport.project(com.badlogic.gdx.math.Vector3)"""
-        return 'math.Vector3'.__wrap(super(__Viewport, self).project(arg0))
 
     @override
     @overload
@@ -614,16 +614,16 @@ class FitViewport(__ScalingViewport, ScalingViewport):
         """public void com.badlogic.gdx.utils.viewport.ScalingViewport.setScaling(com.badlogic.gdx.utils.Scaling)"""
         super(__ScalingViewport, self).setScaling(arg0)
 
+    @overload
+    def getPickRay(self, arg0: float, arg1: float) -> 'collision.Ray':
+        """public com.badlogic.gdx.math.collision.Ray com.badlogic.gdx.utils.viewport.Viewport.getPickRay(float,float)"""
+        return 'collision.Ray'.__wrap(super(__Viewport, self).getPickRay(__float.valueOf(arg0), __float.valueOf(arg1)))
+
     @override
     @overload
     def setScreenPosition(self, arg0: int, arg1: int):
         """public void com.badlogic.gdx.utils.viewport.Viewport.setScreenPosition(int,int)"""
         super(__Viewport, self).setScreenPosition(__int.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def getPickRay(self, arg0: float, arg1: float) -> 'collision.Ray':
-        """public com.badlogic.gdx.math.collision.Ray com.badlogic.gdx.utils.viewport.Viewport.getPickRay(float,float)"""
-        return 'collision.Ray'.__wrap(super(__Viewport, self).getPickRay(__float.valueOf(arg0), __float.valueOf(arg1)))
 
     @overload
     def equals(self, arg0: object) -> bool:
@@ -801,7 +801,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class ExtendViewport(__Viewport, Viewport):
+class ExtendViewport():
     """com.badlogic.gdx.utils.viewport.ExtendViewport"""
  
     @staticmethod
@@ -1048,16 +1048,16 @@ class ExtendViewport(__Viewport, Viewport):
         """public void com.badlogic.gdx.utils.viewport.Viewport.setWorldSize(float,float)"""
         super(__Viewport, self).setWorldSize(__float.valueOf(arg0), __float.valueOf(arg1))
 
+    @overload
+    def project(self, arg0: 'Vector3') -> 'math.Vector3':
+        """public com.badlogic.gdx.math.Vector3 com.badlogic.gdx.utils.viewport.Viewport.project(com.badlogic.gdx.math.Vector3)"""
+        return 'math.Vector3'.__wrap(super(__Viewport, self).project(arg0))
+
     @override
     @overload
     def setScreenBounds(self, arg0: int, arg1: int, arg2: int, arg3: int):
         """public void com.badlogic.gdx.utils.viewport.Viewport.setScreenBounds(int,int,int,int)"""
         super(__Viewport, self).setScreenBounds(__int.valueOf(arg0), __int.valueOf(arg1), __int.valueOf(arg2), __int.valueOf(arg3))
-
-    @overload
-    def project(self, arg0: 'Vector3') -> 'math.Vector3':
-        """public com.badlogic.gdx.math.Vector3 com.badlogic.gdx.utils.viewport.Viewport.project(com.badlogic.gdx.math.Vector3)"""
-        return 'math.Vector3'.__wrap(super(__Viewport, self).project(arg0))
 
     @override
     @overload
@@ -1218,7 +1218,7 @@ except ImportError:
 
 from builtins import int
  
-class StretchViewport(__ScalingViewport, ScalingViewport):
+class StretchViewport():
     """com.badlogic.gdx.utils.viewport.StretchViewport"""
  
     @staticmethod
@@ -1266,16 +1266,16 @@ class StretchViewport(__ScalingViewport, ScalingViewport):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
         super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
 
+    @overload
+    def project(self, arg0: 'Vector2') -> 'math.Vector2':
+        """public com.badlogic.gdx.math.Vector2 com.badlogic.gdx.utils.viewport.Viewport.project(com.badlogic.gdx.math.Vector2)"""
+        return 'math.Vector2'.__wrap(super(__Viewport, self).project(arg0))
+
     @override
     @overload
     def getTopGutterHeight(self) -> int:
         """public int com.badlogic.gdx.utils.viewport.Viewport.getTopGutterHeight()"""
         return int.__wrap(super(Viewport, self).getTopGutterHeight())
-
-    @overload
-    def project(self, arg0: 'Vector2') -> 'math.Vector2':
-        """public com.badlogic.gdx.math.Vector2 com.badlogic.gdx.utils.viewport.Viewport.project(com.badlogic.gdx.math.Vector2)"""
-        return 'math.Vector2'.__wrap(super(__Viewport, self).project(arg0))
 
     @override
     @overload
@@ -1307,16 +1307,16 @@ class StretchViewport(__ScalingViewport, ScalingViewport):
         """public float com.badlogic.gdx.utils.viewport.Viewport.getWorldHeight()"""
         return float.__wrap(super(Viewport, self).getWorldHeight())
 
+    @overload
+    def project(self, arg0: 'Vector3') -> 'math.Vector3':
+        """public com.badlogic.gdx.math.Vector3 com.badlogic.gdx.utils.viewport.Viewport.project(com.badlogic.gdx.math.Vector3)"""
+        return 'math.Vector3'.__wrap(super(__Viewport, self).project(arg0))
+
     @override
     @overload
     def setScreenBounds(self, arg0: int, arg1: int, arg2: int, arg3: int):
         """public void com.badlogic.gdx.utils.viewport.Viewport.setScreenBounds(int,int,int,int)"""
         super(__Viewport, self).setScreenBounds(__int.valueOf(arg0), __int.valueOf(arg1), __int.valueOf(arg2), __int.valueOf(arg3))
-
-    @overload
-    def project(self, arg0: 'Vector3') -> 'math.Vector3':
-        """public com.badlogic.gdx.math.Vector3 com.badlogic.gdx.utils.viewport.Viewport.project(com.badlogic.gdx.math.Vector3)"""
-        return 'math.Vector3'.__wrap(super(__Viewport, self).project(arg0))
 
     @overload
     def __init__(self, arg0: float, arg1: float):
@@ -1395,16 +1395,16 @@ class StretchViewport(__ScalingViewport, ScalingViewport):
         """public void com.badlogic.gdx.utils.viewport.ScalingViewport.setScaling(com.badlogic.gdx.utils.Scaling)"""
         super(__ScalingViewport, self).setScaling(arg0)
 
+    @overload
+    def getPickRay(self, arg0: float, arg1: float) -> 'collision.Ray':
+        """public com.badlogic.gdx.math.collision.Ray com.badlogic.gdx.utils.viewport.Viewport.getPickRay(float,float)"""
+        return 'collision.Ray'.__wrap(super(__Viewport, self).getPickRay(__float.valueOf(arg0), __float.valueOf(arg1)))
+
     @override
     @overload
     def setScreenPosition(self, arg0: int, arg1: int):
         """public void com.badlogic.gdx.utils.viewport.Viewport.setScreenPosition(int,int)"""
         super(__Viewport, self).setScreenPosition(__int.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def getPickRay(self, arg0: float, arg1: float) -> 'collision.Ray':
-        """public com.badlogic.gdx.math.collision.Ray com.badlogic.gdx.utils.viewport.Viewport.getPickRay(float,float)"""
-        return 'collision.Ray'.__wrap(super(__Viewport, self).getPickRay(__float.valueOf(arg0), __float.valueOf(arg1)))
 
     @overload
     def equals(self, arg0: object) -> bool:
@@ -1586,7 +1586,7 @@ except ImportError:
 
 from builtins import int
  
-class ScalingViewport(__Viewport, Viewport):
+class ScalingViewport():
     """com.badlogic.gdx.utils.viewport.ScalingViewport"""
  
     @staticmethod
@@ -1634,16 +1634,16 @@ class ScalingViewport(__Viewport, Viewport):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
         super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
 
+    @overload
+    def project(self, arg0: 'Vector2') -> 'math.Vector2':
+        """public com.badlogic.gdx.math.Vector2 com.badlogic.gdx.utils.viewport.Viewport.project(com.badlogic.gdx.math.Vector2)"""
+        return 'math.Vector2'.__wrap(super(__Viewport, self).project(arg0))
+
     @override
     @overload
     def getTopGutterHeight(self) -> int:
         """public int com.badlogic.gdx.utils.viewport.Viewport.getTopGutterHeight()"""
         return int.__wrap(super(Viewport, self).getTopGutterHeight())
-
-    @overload
-    def project(self, arg0: 'Vector2') -> 'math.Vector2':
-        """public com.badlogic.gdx.math.Vector2 com.badlogic.gdx.utils.viewport.Viewport.project(com.badlogic.gdx.math.Vector2)"""
-        return 'math.Vector2'.__wrap(super(__Viewport, self).project(arg0))
 
     @override
     @overload
@@ -1675,16 +1675,16 @@ class ScalingViewport(__Viewport, Viewport):
         """public float com.badlogic.gdx.utils.viewport.Viewport.getWorldHeight()"""
         return float.__wrap(super(Viewport, self).getWorldHeight())
 
+    @overload
+    def project(self, arg0: 'Vector3') -> 'math.Vector3':
+        """public com.badlogic.gdx.math.Vector3 com.badlogic.gdx.utils.viewport.Viewport.project(com.badlogic.gdx.math.Vector3)"""
+        return 'math.Vector3'.__wrap(super(__Viewport, self).project(arg0))
+
     @override
     @overload
     def setScreenBounds(self, arg0: int, arg1: int, arg2: int, arg3: int):
         """public void com.badlogic.gdx.utils.viewport.Viewport.setScreenBounds(int,int,int,int)"""
         super(__Viewport, self).setScreenBounds(__int.valueOf(arg0), __int.valueOf(arg1), __int.valueOf(arg2), __int.valueOf(arg3))
-
-    @overload
-    def project(self, arg0: 'Vector3') -> 'math.Vector3':
-        """public com.badlogic.gdx.math.Vector3 com.badlogic.gdx.utils.viewport.Viewport.project(com.badlogic.gdx.math.Vector3)"""
-        return 'math.Vector3'.__wrap(super(__Viewport, self).project(arg0))
 
     @override
     @overload
@@ -1755,16 +1755,16 @@ class ScalingViewport(__Viewport, Viewport):
         """public com.badlogic.gdx.utils.Scaling com.badlogic.gdx.utils.viewport.ScalingViewport.getScaling()"""
         return 'utils.Scaling'.__wrap(super(ScalingViewport, self).getScaling())
 
+    @overload
+    def getPickRay(self, arg0: float, arg1: float) -> 'collision.Ray':
+        """public com.badlogic.gdx.math.collision.Ray com.badlogic.gdx.utils.viewport.Viewport.getPickRay(float,float)"""
+        return 'collision.Ray'.__wrap(super(__Viewport, self).getPickRay(__float.valueOf(arg0), __float.valueOf(arg1)))
+
     @override
     @overload
     def setScreenPosition(self, arg0: int, arg1: int):
         """public void com.badlogic.gdx.utils.viewport.Viewport.setScreenPosition(int,int)"""
         super(__Viewport, self).setScreenPosition(__int.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def getPickRay(self, arg0: float, arg1: float) -> 'collision.Ray':
-        """public com.badlogic.gdx.math.collision.Ray com.badlogic.gdx.utils.viewport.Viewport.getPickRay(float,float)"""
-        return 'collision.Ray'.__wrap(super(__Viewport, self).getPickRay(__float.valueOf(arg0), __float.valueOf(arg1)))
 
     @overload
     def equals(self, arg0: object) -> bool:
@@ -1945,7 +1945,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class ScreenViewport(__Viewport, Viewport):
+class ScreenViewport():
     """com.badlogic.gdx.utils.viewport.ScreenViewport"""
  
     @staticmethod
@@ -2168,16 +2168,16 @@ class ScreenViewport(__Viewport, Viewport):
         """public void com.badlogic.gdx.utils.viewport.Viewport.setWorldSize(float,float)"""
         super(__Viewport, self).setWorldSize(__float.valueOf(arg0), __float.valueOf(arg1))
 
+    @overload
+    def project(self, arg0: 'Vector3') -> 'math.Vector3':
+        """public com.badlogic.gdx.math.Vector3 com.badlogic.gdx.utils.viewport.Viewport.project(com.badlogic.gdx.math.Vector3)"""
+        return 'math.Vector3'.__wrap(super(__Viewport, self).project(arg0))
+
     @override
     @overload
     def setScreenBounds(self, arg0: int, arg1: int, arg2: int, arg3: int):
         """public void com.badlogic.gdx.utils.viewport.Viewport.setScreenBounds(int,int,int,int)"""
         super(__Viewport, self).setScreenBounds(__int.valueOf(arg0), __int.valueOf(arg1), __int.valueOf(arg2), __int.valueOf(arg3))
-
-    @overload
-    def project(self, arg0: 'Vector3') -> 'math.Vector3':
-        """public com.badlogic.gdx.math.Vector3 com.badlogic.gdx.utils.viewport.Viewport.project(com.badlogic.gdx.math.Vector3)"""
-        return 'math.Vector3'.__wrap(super(__Viewport, self).project(arg0))
 
     @override
     @overload
@@ -2320,7 +2320,7 @@ except ImportError:
 
 from builtins import int
  
-class FillViewport(__ScalingViewport, ScalingViewport):
+class FillViewport():
     """com.badlogic.gdx.utils.viewport.FillViewport"""
  
     @staticmethod
@@ -2368,16 +2368,16 @@ class FillViewport(__ScalingViewport, ScalingViewport):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
         super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
 
+    @overload
+    def project(self, arg0: 'Vector2') -> 'math.Vector2':
+        """public com.badlogic.gdx.math.Vector2 com.badlogic.gdx.utils.viewport.Viewport.project(com.badlogic.gdx.math.Vector2)"""
+        return 'math.Vector2'.__wrap(super(__Viewport, self).project(arg0))
+
     @override
     @overload
     def getTopGutterHeight(self) -> int:
         """public int com.badlogic.gdx.utils.viewport.Viewport.getTopGutterHeight()"""
         return int.__wrap(super(Viewport, self).getTopGutterHeight())
-
-    @overload
-    def project(self, arg0: 'Vector2') -> 'math.Vector2':
-        """public com.badlogic.gdx.math.Vector2 com.badlogic.gdx.utils.viewport.Viewport.project(com.badlogic.gdx.math.Vector2)"""
-        return 'math.Vector2'.__wrap(super(__Viewport, self).project(arg0))
 
     @override
     @overload
@@ -2409,16 +2409,16 @@ class FillViewport(__ScalingViewport, ScalingViewport):
         """public float com.badlogic.gdx.utils.viewport.Viewport.getWorldHeight()"""
         return float.__wrap(super(Viewport, self).getWorldHeight())
 
+    @overload
+    def project(self, arg0: 'Vector3') -> 'math.Vector3':
+        """public com.badlogic.gdx.math.Vector3 com.badlogic.gdx.utils.viewport.Viewport.project(com.badlogic.gdx.math.Vector3)"""
+        return 'math.Vector3'.__wrap(super(__Viewport, self).project(arg0))
+
     @override
     @overload
     def setScreenBounds(self, arg0: int, arg1: int, arg2: int, arg3: int):
         """public void com.badlogic.gdx.utils.viewport.Viewport.setScreenBounds(int,int,int,int)"""
         super(__Viewport, self).setScreenBounds(__int.valueOf(arg0), __int.valueOf(arg1), __int.valueOf(arg2), __int.valueOf(arg3))
-
-    @overload
-    def project(self, arg0: 'Vector3') -> 'math.Vector3':
-        """public com.badlogic.gdx.math.Vector3 com.badlogic.gdx.utils.viewport.Viewport.project(com.badlogic.gdx.math.Vector3)"""
-        return 'math.Vector3'.__wrap(super(__Viewport, self).project(arg0))
 
     @override
     @overload
@@ -2504,16 +2504,16 @@ class FillViewport(__ScalingViewport, ScalingViewport):
         """public void com.badlogic.gdx.utils.viewport.ScalingViewport.setScaling(com.badlogic.gdx.utils.Scaling)"""
         super(__ScalingViewport, self).setScaling(arg0)
 
+    @overload
+    def getPickRay(self, arg0: float, arg1: float) -> 'collision.Ray':
+        """public com.badlogic.gdx.math.collision.Ray com.badlogic.gdx.utils.viewport.Viewport.getPickRay(float,float)"""
+        return 'collision.Ray'.__wrap(super(__Viewport, self).getPickRay(__float.valueOf(arg0), __float.valueOf(arg1)))
+
     @override
     @overload
     def setScreenPosition(self, arg0: int, arg1: int):
         """public void com.badlogic.gdx.utils.viewport.Viewport.setScreenPosition(int,int)"""
         super(__Viewport, self).setScreenPosition(__int.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def getPickRay(self, arg0: float, arg1: float) -> 'collision.Ray':
-        """public com.badlogic.gdx.math.collision.Ray com.badlogic.gdx.utils.viewport.Viewport.getPickRay(float,float)"""
-        return 'collision.Ray'.__wrap(super(__Viewport, self).getPickRay(__float.valueOf(arg0), __float.valueOf(arg1)))
 
     @overload
     def equals(self, arg0: object) -> bool:
@@ -2716,14 +2716,14 @@ class Viewport(ABC):
         super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
 
     @overload
-    def setWorldHeight(self, arg0: float):
-        """public void com.badlogic.gdx.utils.viewport.Viewport.setWorldHeight(float)"""
-        super(__Viewport, self).setWorldHeight(__float.valueOf(arg0))
-
-    @overload
     def project(self, arg0: 'Vector2') -> 'math.Vector2':
         """public com.badlogic.gdx.math.Vector2 com.badlogic.gdx.utils.viewport.Viewport.project(com.badlogic.gdx.math.Vector2)"""
         return 'math.Vector2'.__wrap(super(__Viewport, self).project(arg0))
+
+    @overload
+    def setWorldHeight(self, arg0: float):
+        """public void com.badlogic.gdx.utils.viewport.Viewport.setWorldHeight(float)"""
+        super(__Viewport, self).setWorldHeight(__float.valueOf(arg0))
 
     @overload
     def setScreenWidth(self, arg0: int):
@@ -2823,6 +2823,11 @@ class Viewport(ABC):
         self.__wrapper = val
 
     @overload
+    def getPickRay(self, arg0: float, arg1: float) -> 'collision.Ray':
+        """public com.badlogic.gdx.math.collision.Ray com.badlogic.gdx.utils.viewport.Viewport.getPickRay(float,float)"""
+        return 'collision.Ray'.__wrap(super(__Viewport, self).getPickRay(__float.valueOf(arg0), __float.valueOf(arg1)))
+
+    @overload
     def getWorldHeight(self) -> float:
         """public float com.badlogic.gdx.utils.viewport.Viewport.getWorldHeight()"""
         return float.__wrap(super(Viewport, self).getWorldHeight())
@@ -2831,11 +2836,6 @@ class Viewport(ABC):
     def getRightGutterX(self) -> int:
         """public int com.badlogic.gdx.utils.viewport.Viewport.getRightGutterX()"""
         return int.__wrap(super(Viewport, self).getRightGutterX())
-
-    @overload
-    def getPickRay(self, arg0: float, arg1: float) -> 'collision.Ray':
-        """public com.badlogic.gdx.math.collision.Ray com.badlogic.gdx.utils.viewport.Viewport.getPickRay(float,float)"""
-        return 'collision.Ray'.__wrap(super(__Viewport, self).getPickRay(__float.valueOf(arg0), __float.valueOf(arg1)))
 
     @overload
     def equals(self, arg0: object) -> bool:
@@ -2889,14 +2889,14 @@ class Viewport(ABC):
         super(Viewport, self).apply()
 
     @overload
-    def setScreenHeight(self, arg0: int):
-        """public void com.badlogic.gdx.utils.viewport.Viewport.setScreenHeight(int)"""
-        super(__Viewport, self).setScreenHeight(__int.valueOf(arg0))
-
-    @overload
     def setCamera(self, arg0: 'Camera'):
         """public void com.badlogic.gdx.utils.viewport.Viewport.setCamera(com.badlogic.gdx.graphics.Camera)"""
         super(__Viewport, self).setCamera(arg0)
+
+    @overload
+    def setScreenHeight(self, arg0: int):
+        """public void com.badlogic.gdx.utils.viewport.Viewport.setScreenHeight(int)"""
+        super(__Viewport, self).setScreenHeight(__int.valueOf(arg0))
 
     @override
     @overload

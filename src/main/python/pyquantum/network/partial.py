@@ -28,7 +28,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PacketCombiner(__MessageToMessageDecoder, MessageToMessageDecoder):
+class PacketCombiner():
     """dev.ultreon.quantum.network.partial.PacketCombiner"""
  
     @staticmethod
@@ -231,7 +231,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PacketCombiner(__MessageToMessageDecoder, MessageToMessageDecoder):
+class PacketCombiner():
     """dev.ultreon.quantum.network.partial.PacketCombiner"""
  
     @staticmethod
@@ -439,7 +439,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PartialPacketEncoder(__MessageToByteEncoder, MessageToByteEncoder):
+class PartialPacketEncoder():
     """dev.ultreon.quantum.network.partial.PartialPacketEncoder"""
  
     @staticmethod
@@ -642,7 +642,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PartialPacketDecoder(__ByteToMessageDecoder, ByteToMessageDecoder):
+class PartialPacketDecoder():
     """dev.ultreon.quantum.network.partial.PartialPacketDecoder"""
  
     @staticmethod
@@ -1016,7 +1016,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PacketSplitter(__MessageToMessageEncoder, MessageToMessageEncoder):
+class PacketSplitter():
     """dev.ultreon.quantum.network.partial.PacketSplitter"""
  
     @staticmethod

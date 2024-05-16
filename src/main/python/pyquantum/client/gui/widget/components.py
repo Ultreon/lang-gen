@@ -34,7 +34,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RangedValueComponent(__UIComponent, UIComponent):
+class RangedValueComponent():
     """dev.ultreon.quantum.client.gui.widget.components.RangedValueComponent"""
  
     @staticmethod
@@ -191,7 +191,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RangedValueComponent(__UIComponent, UIComponent):
+class RangedValueComponent():
     """dev.ultreon.quantum.client.gui.widget.components.RangedValueComponent"""
  
     @staticmethod
@@ -359,7 +359,7 @@ __TextComponent = __TextComponent
 from builtins import bool
 from builtins import int
  
-class TextComponent(__UIComponent, UIComponent):
+class TextComponent():
     """dev.ultreon.quantum.client.gui.widget.components.TextComponent"""
  
     @staticmethod
@@ -536,7 +536,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ColorComponent(__UIComponent, UIComponent):
+class ColorComponent():
     """dev.ultreon.quantum.client.gui.widget.components.ColorComponent"""
  
     @staticmethod
@@ -716,7 +716,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class UIComponent(pyquantum.__GameComponent, component.GameComponent):
+class UIComponent():
     """dev.ultreon.quantum.client.gui.widget.components.UIComponent"""
  
     @staticmethod
@@ -864,7 +864,7 @@ import dev.ultreon.quantum.client.gui.Alignment as __Alignment
 __Alignment = __Alignment
 from builtins import int
  
-class AlignmentComponent(__UIComponent, UIComponent):
+class AlignmentComponent():
     """dev.ultreon.quantum.client.gui.widget.components.AlignmentComponent"""
  
     @staticmethod
@@ -1014,7 +1014,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CallbackComponent(__UIComponent, UIComponent):
+class CallbackComponent():
     """dev.ultreon.quantum.client.gui.widget.components.CallbackComponent"""
  
     @staticmethod
@@ -1164,7 +1164,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ScaleComponent(__UIComponent, UIComponent):
+class ScaleComponent():
     """dev.ultreon.quantum.client.gui.widget.components.ScaleComponent"""
  
     @staticmethod

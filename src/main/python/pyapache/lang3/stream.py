@@ -786,9 +786,9 @@ class FailableStream():
 # CLASS: org.apache.commons.lang3.stream.Streams$ArrayCollector
 import java.util.function.Supplier as Supplier
 from builtins import str
+from pyquantum_helper import override
 import java.util.function.BinaryOperator as __BinaryOperator
 __BinaryOperator = __BinaryOperator
-from pyquantum_helper import override
 import java.lang.Object as __object
 from builtins import type
 import java.util.Set as __Set
@@ -816,7 +816,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ArrayCollector(__Collector, Collector):
+class ArrayCollector():
     """org.apache.commons.lang3.stream.Streams.ArrayCollector"""
  
     @staticmethod

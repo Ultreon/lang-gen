@@ -51,7 +51,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class UnmodifiableSortedSet(__AbstractSortedSetDecorator, AbstractSortedSetDecorator, pyapache.__Unmodifiable, collections4.Unmodifiable):
+class UnmodifiableSortedSet():
     """org.apache.commons.collections4.set.UnmodifiableSortedSet"""
  
     @staticmethod
@@ -371,7 +371,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class UnmodifiableSortedSet(__AbstractSortedSetDecorator, AbstractSortedSetDecorator, pyapache.__Unmodifiable, collections4.Unmodifiable):
+class UnmodifiableSortedSet():
     """org.apache.commons.collections4.set.UnmodifiableSortedSet"""
  
     @staticmethod
@@ -668,8 +668,8 @@ import org.apache.commons.collections4.set.AbstractSetDecorator as __AbstractSet
 __AbstractSetDecorator = __AbstractSetDecorator
 from builtins import bool
 from builtins import str
-import java.util.NavigableSet as NavigableSet
 from pyquantum_helper import override
+import java.util.NavigableSet as NavigableSet
 import java.lang.Object as __object
 import java.util.Iterator as __Iterator
 __Iterator = __Iterator
@@ -698,7 +698,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class AbstractNavigableSetDecorator(ABC, __AbstractSortedSetDecorator, AbstractSortedSetDecorator, __NavigableSet, NavigableSet):
+class AbstractNavigableSetDecorator(ABC):
     """org.apache.commons.collections4.set.AbstractNavigableSetDecorator"""
  
     @staticmethod
@@ -1060,7 +1060,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class MapBackedSet(__Set, Set, __Serializable, Serializable):
+class MapBackedSet():
     """org.apache.commons.collections4.set.MapBackedSet"""
  
     @staticmethod
@@ -1315,7 +1315,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class TransformedSet(collections4.__TransformedCollection, collection.TransformedCollection, __Set, Set):
+class TransformedSet():
     """org.apache.commons.collections4.set.TransformedSet"""
  
     @staticmethod
@@ -1590,7 +1590,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class TransformedSortedSet(__TransformedSet, TransformedSet, __SortedSet, SortedSet):
+class TransformedSortedSet():
     """org.apache.commons.collections4.set.TransformedSortedSet"""
  
     @staticmethod
@@ -1944,7 +1944,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class UnmodifiableNavigableSet(__AbstractNavigableSetDecorator, AbstractNavigableSetDecorator, pyapache.__Unmodifiable, collections4.Unmodifiable):
+class UnmodifiableNavigableSet():
     """org.apache.commons.collections4.set.UnmodifiableNavigableSet"""
  
     @staticmethod
@@ -2319,7 +2319,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class AbstractSortedSetDecorator(ABC, __AbstractSetDecorator, AbstractSetDecorator, __SortedSet, SortedSet):
+class AbstractSortedSetDecorator(ABC):
     """org.apache.commons.collections4.set.AbstractSortedSetDecorator"""
  
     @staticmethod
@@ -2625,7 +2625,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class AbstractSerializableSetDecorator(ABC, __AbstractSetDecorator, AbstractSetDecorator):
+class AbstractSerializableSetDecorator(ABC):
     """org.apache.commons.collections4.set.AbstractSerializableSetDecorator"""
  
     @staticmethod
@@ -2854,7 +2854,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class AbstractSetDecorator(ABC, collections4.__AbstractCollectionDecorator, collection.AbstractCollectionDecorator, __Set, Set):
+class AbstractSetDecorator(ABC):
     """org.apache.commons.collections4.set.AbstractSetDecorator"""
  
     @staticmethod
@@ -3086,7 +3086,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class UnmodifiableSet(__AbstractSerializableSetDecorator, AbstractSerializableSetDecorator, pyapache.__Unmodifiable, collections4.Unmodifiable):
+class UnmodifiableSet():
     """org.apache.commons.collections4.set.UnmodifiableSet"""
  
     @staticmethod
@@ -3288,7 +3288,7 @@ __SetMutator = __CompositeSet_SetMutator.SetMutator
 from abc import abstractmethod, ABC
 import java.util.List as List
  
-class SetMutator(ABC, __Serializable, Serializable):
+class SetMutator(ABC):
     """org.apache.commons.collections4.set.CompositeSet.SetMutator"""
  
     @staticmethod
@@ -3365,8 +3365,8 @@ from builtins import bool
 import org.apache.commons.collections4.collection.TransformedCollection as __TransformedCollection
 __TransformedCollection = __TransformedCollection
 from builtins import str
-import java.util.NavigableSet as NavigableSet
 from pyquantum_helper import override
+import java.util.NavigableSet as NavigableSet
 import java.lang.Object as __object
 import java.util.Iterator as __Iterator
 __Iterator = __Iterator
@@ -3403,7 +3403,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class TransformedNavigableSet(__TransformedSortedSet, TransformedSortedSet, __NavigableSet, NavigableSet):
+class TransformedNavigableSet():
     """org.apache.commons.collections4.set.TransformedNavigableSet"""
  
     @staticmethod
@@ -3808,8 +3808,8 @@ import org.apache.commons.collections4.set.PredicatedSortedSet as __PredicatedSo
 __PredicatedSortedSet = __PredicatedSortedSet
 from builtins import bool
 from builtins import str
-import java.util.NavigableSet as NavigableSet
 from pyquantum_helper import override
+import java.util.NavigableSet as NavigableSet
 import java.lang.Object as __object
 import java.util.Iterator as __Iterator
 __Iterator = __Iterator
@@ -3842,7 +3842,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class PredicatedNavigableSet(__PredicatedSortedSet, PredicatedSortedSet, __NavigableSet, NavigableSet):
+class PredicatedNavigableSet():
     """org.apache.commons.collections4.set.PredicatedNavigableSet"""
  
     @staticmethod
@@ -4263,7 +4263,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class PredicatedSortedSet(__PredicatedSet, PredicatedSet, __SortedSet, SortedSet):
+class PredicatedSortedSet():
     """org.apache.commons.collections4.set.PredicatedSortedSet"""
  
     @staticmethod
@@ -4613,7 +4613,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class PredicatedSet(collections4.__PredicatedCollection, collection.PredicatedCollection, __Set, Set):
+class PredicatedSet():
     """org.apache.commons.collections4.set.PredicatedSet"""
  
     @staticmethod
@@ -4868,7 +4868,7 @@ import java.util.List as List
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class CompositeSet(__Set, Set, __Serializable, Serializable):
+class CompositeSet():
     """org.apache.commons.collections4.set.CompositeSet"""
  
     @staticmethod
@@ -5171,7 +5171,7 @@ import java.util.List as List
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ListOrderedSet(__AbstractSerializableSetDecorator, AbstractSerializableSetDecorator):
+class ListOrderedSet():
     """org.apache.commons.collections4.set.ListOrderedSet"""
  
     @staticmethod

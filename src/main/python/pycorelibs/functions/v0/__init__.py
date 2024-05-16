@@ -4,6 +4,7 @@ from overload import overload
 
  
 from pyquantum_helper import transform as __transform
+from pyquantum_helper import override
 import java.util.function.BiFunction as __BiFunction
 __BiFunction = __BiFunction
 import dev.ultreon.libs.functions.v0.BiByte2ByteFunction as __BiByte2ByteFunction
@@ -13,7 +14,7 @@ import java.util.function.Function as Function
 import java.lang.Byte as Byte
 import java.util.function.BiFunction as BiFunction
  
-class BiByte2ByteFunction(ABC, __BiFunction, BiFunction):
+class BiByte2ByteFunction(ABC):
     """dev.ultreon.libs.functions.v0.BiByte2ByteFunction"""
  
     @staticmethod
@@ -123,6 +124,7 @@ class BiByte2ByteFunction(ABC, __BiFunction, BiFunction):
  
 # CLASS: dev.ultreon.libs.functions.v0.BiByte2ByteFunction
 from pyquantum_helper import transform as __transform
+from pyquantum_helper import override
 import java.util.function.BiFunction as __BiFunction
 __BiFunction = __BiFunction
 import dev.ultreon.libs.functions.v0.BiByte2ByteFunction as __BiByte2ByteFunction
@@ -132,7 +134,7 @@ import java.util.function.Function as Function
 import java.lang.Byte as Byte
 import java.util.function.BiFunction as BiFunction
  
-class BiByte2ByteFunction(ABC, __BiFunction, BiFunction):
+class BiByte2ByteFunction(ABC):
     """dev.ultreon.libs.functions.v0.BiByte2ByteFunction"""
  
     @staticmethod
@@ -246,6 +248,7 @@ class BiByte2ByteFunction(ABC, __BiFunction, BiFunction):
 # CLASS: dev.ultreon.libs.functions.v0.BiLong2LongFunction
 from pyquantum_helper import transform as __transform
 import java.lang.Long as Long
+from pyquantum_helper import override
 import java.util.function.BiFunction as __BiFunction
 __BiFunction = __BiFunction
 from abc import abstractmethod, ABC
@@ -254,7 +257,7 @@ import dev.ultreon.libs.functions.v0.BiLong2LongFunction as __BiLong2LongFunctio
 __BiLong2LongFunction = __BiLong2LongFunction
 import java.util.function.BiFunction as BiFunction
  
-class BiLong2LongFunction(ABC, __BiFunction, BiFunction):
+class BiLong2LongFunction(ABC):
     """dev.ultreon.libs.functions.v0.BiLong2LongFunction"""
  
     @staticmethod
@@ -362,6 +365,7 @@ class BiLong2LongFunction(ABC, __BiFunction, BiFunction):
  
 # CLASS: dev.ultreon.libs.functions.v0.Int2IntFunction
 from pyquantum_helper import transform as __transform
+from pyquantum_helper import override
 import java.lang.Integer as Integer
 import java.util.function.Function as __Function
 __Function = __Function
@@ -371,7 +375,7 @@ import java.lang.Integer as __int
 from abc import abstractmethod, ABC
 import java.util.function.Function as Function
  
-class Int2IntFunction(ABC, __Function, Function):
+class Int2IntFunction(ABC):
     """dev.ultreon.libs.functions.v0.Int2IntFunction"""
  
     @staticmethod
@@ -602,13 +606,14 @@ __Long2LongFunction = __Long2LongFunction
 import java.lang.Long as __long
 from pyquantum_helper import transform as __transform
 import java.lang.Long as Long
+from pyquantum_helper import override
 import java.util.function.Function as __Function
 __Function = __Function
 from abc import abstractmethod, ABC
 import java.lang.Integer as __int
 import java.util.function.Function as Function
  
-class Long2LongFunction(ABC, __Function, Function):
+class Long2LongFunction(ABC):
     """dev.ultreon.libs.functions.v0.Long2LongFunction"""
  
     @staticmethod
@@ -839,6 +844,7 @@ from pyquantum_helper import transform as __transform
 import dev.ultreon.libs.functions.v0.Float2FloatFunction as __Float2FloatFunction
 __Float2FloatFunction = __Float2FloatFunction
 import java.lang.Float as __float
+from pyquantum_helper import override
 try:
     from pycorelibs.functions.v0 import supplier
 except ImportError:
@@ -851,7 +857,7 @@ from abc import abstractmethod, ABC
 import java.lang.Integer as __int
 import java.util.function.Function as Function
  
-class Float2FloatFunction(ABC, __Function, Function):
+class Float2FloatFunction(ABC):
     """dev.ultreon.libs.functions.v0.Float2FloatFunction"""
  
     @staticmethod
@@ -1108,6 +1114,7 @@ class Float2FloatFunction(ABC, __Function, Function):
  
 # CLASS: dev.ultreon.libs.functions.v0.Double2DoubleFunction
 from pyquantum_helper import transform as __transform
+from pyquantum_helper import override
 import java.util.function.Function as __Function
 __Function = __Function
 import java.lang.Double as __double
@@ -1118,7 +1125,7 @@ import java.lang.Double as Double
 import dev.ultreon.libs.functions.v0.Double2DoubleFunction as __Double2DoubleFunction
 __Double2DoubleFunction = __Double2DoubleFunction
  
-class Double2DoubleFunction(ABC, __Function, Function):
+class Double2DoubleFunction(ABC):
     """dev.ultreon.libs.functions.v0.Double2DoubleFunction"""
  
     @staticmethod
@@ -1341,6 +1348,7 @@ class Double2DoubleFunction(ABC, __Function, Function):
 import dev.ultreon.libs.functions.v0.Byte2ByteFunction as __Byte2ByteFunction
 __Byte2ByteFunction = __Byte2ByteFunction
 from pyquantum_helper import transform as __transform
+from pyquantum_helper import override
 import java.lang.Byte as __byte
 import java.util.function.Function as __Function
 __Function = __Function
@@ -1349,7 +1357,7 @@ import java.lang.Integer as __int
 import java.util.function.Function as Function
 import java.lang.Byte as Byte
  
-class Byte2ByteFunction(ABC, __Function, Function):
+class Byte2ByteFunction(ABC):
     """dev.ultreon.libs.functions.v0.Byte2ByteFunction"""
  
     @staticmethod
@@ -1576,6 +1584,7 @@ class Byte2ByteFunction(ABC, __Function, Function):
  
 # CLASS: dev.ultreon.libs.functions.v0.BiDouble2DoubleFunction
 from pyquantum_helper import transform as __transform
+from pyquantum_helper import override
 import java.util.function.BiFunction as __BiFunction
 __BiFunction = __BiFunction
 from abc import abstractmethod, ABC
@@ -1585,7 +1594,7 @@ __BiDouble2DoubleFunction = __BiDouble2DoubleFunction
 import java.util.function.BiFunction as BiFunction
 import java.lang.Double as Double
  
-class BiDouble2DoubleFunction(ABC, __BiFunction, BiFunction):
+class BiDouble2DoubleFunction(ABC):
     """dev.ultreon.libs.functions.v0.BiDouble2DoubleFunction"""
  
     @staticmethod
@@ -1681,6 +1690,7 @@ class BiDouble2DoubleFunction(ABC, __BiFunction, BiFunction):
  
 # CLASS: dev.ultreon.libs.functions.v0.BiShort2ShortFunction
 from pyquantum_helper import transform as __transform
+from pyquantum_helper import override
 import java.lang.Short as Short
 import java.util.function.BiFunction as __BiFunction
 __BiFunction = __BiFunction
@@ -1690,7 +1700,7 @@ import dev.ultreon.libs.functions.v0.BiShort2ShortFunction as __BiShort2ShortFun
 __BiShort2ShortFunction = __BiShort2ShortFunction
 import java.util.function.BiFunction as BiFunction
  
-class BiShort2ShortFunction(ABC, __BiFunction, BiFunction):
+class BiShort2ShortFunction(ABC):
     """dev.ultreon.libs.functions.v0.BiShort2ShortFunction"""
  
     @staticmethod
@@ -1800,6 +1810,7 @@ class BiShort2ShortFunction(ABC, __BiFunction, BiFunction):
 import dev.ultreon.libs.functions.v0.BiInt2IntFunction as __BiInt2IntFunction
 __BiInt2IntFunction = __BiInt2IntFunction
 from pyquantum_helper import transform as __transform
+from pyquantum_helper import override
 import java.util.function.BiFunction as __BiFunction
 __BiFunction = __BiFunction
 import java.lang.Integer as Integer
@@ -1807,7 +1818,7 @@ from abc import abstractmethod, ABC
 import java.util.function.Function as Function
 import java.util.function.BiFunction as BiFunction
  
-class BiInt2IntFunction(ABC, __BiFunction, BiFunction):
+class BiInt2IntFunction(ABC):
     """dev.ultreon.libs.functions.v0.BiInt2IntFunction"""
  
     @staticmethod
@@ -1956,6 +1967,7 @@ class TriFunction(ABC):
  
 # CLASS: dev.ultreon.libs.functions.v0.BiFloat2FloatFunction
 from pyquantum_helper import transform as __transform
+from pyquantum_helper import override
 import java.util.function.BiFunction as __BiFunction
 __BiFunction = __BiFunction
 import java.lang.Float as Float
@@ -1965,7 +1977,7 @@ from abc import abstractmethod, ABC
 import java.util.function.Function as Function
 import java.util.function.BiFunction as BiFunction
  
-class BiFloat2FloatFunction(ABC, __BiFunction, BiFunction):
+class BiFloat2FloatFunction(ABC):
     """dev.ultreon.libs.functions.v0.BiFloat2FloatFunction"""
  
     @staticmethod
@@ -2061,6 +2073,7 @@ class BiFloat2FloatFunction(ABC, __BiFunction, BiFunction):
  
 # CLASS: dev.ultreon.libs.functions.v0.Short2ShortFunction
 from pyquantum_helper import transform as __transform
+from pyquantum_helper import override
 import java.lang.Short as Short
 import java.lang.Short as __short
 import java.util.function.Function as __Function
@@ -2071,7 +2084,7 @@ from abc import abstractmethod, ABC
 import java.lang.Integer as __int
 import java.util.function.Function as Function
  
-class Short2ShortFunction(ABC, __Function, Function):
+class Short2ShortFunction(ABC):
     """dev.ultreon.libs.functions.v0.Short2ShortFunction"""
  
     @staticmethod

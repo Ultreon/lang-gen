@@ -47,7 +47,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class ArrayListValuedHashMap(__AbstractListValuedMap, AbstractListValuedMap, __Serializable, Serializable):
+class ArrayListValuedHashMap():
     """org.apache.commons.collections4.multimap.ArrayListValuedHashMap"""
  
     @staticmethod
@@ -329,7 +329,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class ArrayListValuedHashMap(__AbstractListValuedMap, AbstractListValuedMap, __Serializable, Serializable):
+class ArrayListValuedHashMap():
     """org.apache.commons.collections4.multimap.ArrayListValuedHashMap"""
  
     @staticmethod
@@ -607,7 +607,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class AbstractMultiValuedMap(ABC, pyapache.__MultiValuedMap, collections4.MultiValuedMap):
+class AbstractMultiValuedMap(ABC):
     """org.apache.commons.collections4.multimap.AbstractMultiValuedMap"""
  
     @staticmethod
@@ -837,7 +837,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class HashSetValuedHashMap(__AbstractSetValuedMap, AbstractSetValuedMap, __Serializable, Serializable):
+class HashSetValuedHashMap():
     """org.apache.commons.collections4.multimap.HashSetValuedHashMap"""
  
     @staticmethod
@@ -1110,7 +1110,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class AbstractListValuedMap(ABC, __AbstractMultiValuedMap, AbstractMultiValuedMap, pyapache.__ListValuedMap, collections4.ListValuedMap):
+class AbstractListValuedMap(ABC):
     """org.apache.commons.collections4.multimap.AbstractListValuedMap"""
  
     @staticmethod
@@ -1338,7 +1338,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class TransformedMultiValuedMap(__AbstractMultiValuedMapDecorator, AbstractMultiValuedMapDecorator):
+class TransformedMultiValuedMap():
     """org.apache.commons.collections4.multimap.TransformedMultiValuedMap"""
  
     @staticmethod
@@ -1578,7 +1578,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class UnmodifiableMultiValuedMap(__AbstractMultiValuedMapDecorator, AbstractMultiValuedMapDecorator, pyapache.__Unmodifiable, collections4.Unmodifiable):
+class UnmodifiableMultiValuedMap():
     """org.apache.commons.collections4.multimap.UnmodifiableMultiValuedMap"""
  
     @staticmethod
@@ -1812,7 +1812,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class AbstractSetValuedMap(ABC, __AbstractMultiValuedMap, AbstractMultiValuedMap, pyapache.__SetValuedMap, collections4.SetValuedMap):
+class AbstractSetValuedMap(ABC):
     """org.apache.commons.collections4.multimap.AbstractSetValuedMap"""
  
     @staticmethod
@@ -2038,7 +2038,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class AbstractMultiValuedMapDecorator(ABC, pyapache.__MultiValuedMap, collections4.MultiValuedMap, __Serializable, Serializable):
+class AbstractMultiValuedMapDecorator(ABC):
     """org.apache.commons.collections4.multimap.AbstractMultiValuedMapDecorator"""
  
     @staticmethod

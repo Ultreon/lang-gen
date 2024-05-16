@@ -118,7 +118,7 @@ import com.google.gson.JsonStreamParser as __JsonStreamParser
 __JsonStreamParser = __JsonStreamParser
 from builtins import int
  
-class JsonStreamParser(__Iterator, Iterator):
+class JsonStreamParser():
     """com.google.gson.JsonStreamParser"""
  
     @staticmethod
@@ -316,7 +316,7 @@ import java.lang.Character as Character
 from builtins import bool
 from builtins import int
  
-class JsonPrimitive(__JsonElement, JsonElement):
+class JsonPrimitive():
     """com.google.gson.JsonPrimitive"""
  
     @staticmethod
@@ -597,7 +597,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class LongSerializationPolicy(ABC, __Enum, Enum):
+class LongSerializationPolicy(ABC):
     """com.google.gson.LongSerializationPolicy"""
  
     @staticmethod
@@ -1036,7 +1036,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class FilterResult(__Enum, Enum):
+class FilterResult():
     """com.google.gson.ReflectionAccessFilter.FilterResult"""
  
     @staticmethod
@@ -1207,7 +1207,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 from builtins import int
  
-class JsonObject(__JsonElement, JsonElement):
+class JsonObject():
     """com.google.gson.JsonObject"""
  
     @staticmethod
@@ -2352,7 +2352,7 @@ import java.util.List as List
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class JsonArray(__JsonElement, JsonElement, __Iterable, Iterable):
+class JsonArray():
     """com.google.gson.JsonArray"""
  
     @staticmethod
@@ -2701,7 +2701,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class FieldNamingPolicy(ABC, __Enum, Enum, __FieldNamingStrategy, FieldNamingStrategy):
+class FieldNamingPolicy(ABC):
     """com.google.gson.FieldNamingPolicy"""
  
     @staticmethod
@@ -2865,7 +2865,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class JsonSyntaxException(__JsonParseException, JsonParseException):
+class JsonSyntaxException():
     """com.google.gson.JsonSyntaxException"""
  
     @staticmethod
@@ -3163,7 +3163,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class JsonParseException(__RuntimeException, RuntimeException):
+class JsonParseException():
     """com.google.gson.JsonParseException"""
  
     @staticmethod
@@ -3456,7 +3456,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class JsonIOException(__JsonParseException, JsonParseException):
+class JsonIOException():
     """com.google.gson.JsonIOException"""
  
     @staticmethod
@@ -3667,7 +3667,7 @@ import com.google.gson.ToNumberPolicy as __ToNumberPolicy
 __ToNumberPolicy = __ToNumberPolicy
 from builtins import int
  
-class ToNumberPolicy(ABC, __Enum, Enum, __ToNumberStrategy, ToNumberStrategy):
+class ToNumberPolicy(ABC):
     """com.google.gson.ToNumberPolicy"""
  
     @staticmethod
@@ -4183,7 +4183,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class JsonNull(__JsonElement, JsonElement):
+class JsonNull():
     """com.google.gson.JsonNull"""
  
     @staticmethod

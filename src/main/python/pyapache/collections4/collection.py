@@ -42,7 +42,7 @@ import java.util.List as List
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class CompositeCollection(__Collection, Collection, __Serializable, Serializable):
+class CompositeCollection():
     """org.apache.commons.collections4.collection.CompositeCollection"""
  
     @staticmethod
@@ -342,7 +342,7 @@ import java.util.List as List
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class CompositeCollection(__Collection, Collection, __Serializable, Serializable):
+class CompositeCollection():
     """org.apache.commons.collections4.collection.CompositeCollection"""
  
     @staticmethod
@@ -642,7 +642,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class AbstractCollectionDecorator(ABC, __Collection, Collection, __Serializable, Serializable):
+class AbstractCollectionDecorator(ABC):
     """org.apache.commons.collections4.collection.AbstractCollectionDecorator"""
  
     @staticmethod
@@ -876,7 +876,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class IndexedCollection(__AbstractCollectionDecorator, AbstractCollectionDecorator):
+class IndexedCollection():
     """org.apache.commons.collections4.collection.IndexedCollection"""
  
     @staticmethod
@@ -1145,7 +1145,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class UnmodifiableBoundedCollection(__AbstractCollectionDecorator, AbstractCollectionDecorator, pyapache.__BoundedCollection, collections4.BoundedCollection, pyapache.__Unmodifiable, collections4.Unmodifiable):
+class UnmodifiableBoundedCollection():
     """org.apache.commons.collections4.collection.UnmodifiableBoundedCollection"""
  
     @staticmethod
@@ -1394,7 +1394,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class SynchronizedCollection(__Collection, Collection, __Serializable, Serializable):
+class SynchronizedCollection():
     """org.apache.commons.collections4.collection.SynchronizedCollection"""
  
     @staticmethod
@@ -1635,7 +1635,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class PredicatedCollection(__AbstractCollectionDecorator, AbstractCollectionDecorator):
+class PredicatedCollection():
     """org.apache.commons.collections4.collection.PredicatedCollection"""
  
     @staticmethod
@@ -2082,7 +2082,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class TransformedCollection(__AbstractCollectionDecorator, AbstractCollectionDecorator):
+class TransformedCollection():
     """org.apache.commons.collections4.collection.TransformedCollection"""
  
     @staticmethod
@@ -2321,7 +2321,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class UnmodifiableCollection(__AbstractCollectionDecorator, AbstractCollectionDecorator, pyapache.__Unmodifiable, collections4.Unmodifiable):
+class UnmodifiableCollection():
     """org.apache.commons.collections4.collection.UnmodifiableCollection"""
  
     @staticmethod
@@ -2522,7 +2522,7 @@ import java.util.Collection as Collection
 from abc import abstractmethod, ABC
 import java.util.List as List
  
-class CollectionMutator(ABC, __Serializable, Serializable):
+class CollectionMutator(ABC):
     """org.apache.commons.collections4.collection.CompositeCollection.CollectionMutator"""
  
     @staticmethod

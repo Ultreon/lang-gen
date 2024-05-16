@@ -30,7 +30,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Pass1ShaderProvider(g3d.__DepthShaderProvider, utils.DepthShaderProvider, __OpenShaderProvider, OpenShaderProvider):
+class Pass1ShaderProvider():
     """dev.ultreon.quantum.client.render.shader.Pass1ShaderProvider"""
  
     @staticmethod
@@ -174,7 +174,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Pass1ShaderProvider(g3d.__DepthShaderProvider, utils.DepthShaderProvider, __OpenShaderProvider, OpenShaderProvider):
+class Pass1ShaderProvider():
     """dev.ultreon.quantum.client.render.shader.Pass1ShaderProvider"""
  
     @staticmethod
@@ -311,7 +311,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Config(g3d.__DepthShader_Config, shaders.DepthShader$Config):
+class Config():
     """dev.ultreon.quantum.client.render.shader.Pass1Shader.Config"""
  
     @staticmethod
@@ -437,7 +437,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MRTShaderProvider(g3d.__BaseShaderProvider, utils.BaseShaderProvider, __OpenShaderProvider, OpenShaderProvider):
+class MRTShaderProvider():
     """dev.ultreon.quantum.client.render.shader.MRTShaderProvider"""
  
     @staticmethod
@@ -585,7 +585,7 @@ except ImportError:
 
 from builtins import int
  
-class MRTShader(graphics.__Shader, g3d.Shader):
+class MRTShader():
     """dev.ultreon.quantum.client.render.shader.MRTShader"""
  
     @staticmethod
@@ -773,7 +773,7 @@ except ImportError:
 
 from builtins import int
  
-class Pass1Shader(g3d.__DepthShader, shaders.DepthShader):
+class Pass1Shader():
     """dev.ultreon.quantum.client.render.shader.Pass1Shader"""
  
     @staticmethod
@@ -1309,7 +1309,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GameShaderProvider(g3d.__BaseShaderProvider, utils.BaseShaderProvider):
+class GameShaderProvider():
     """dev.ultreon.quantum.client.render.shader.GameShaderProvider"""
  
     @staticmethod

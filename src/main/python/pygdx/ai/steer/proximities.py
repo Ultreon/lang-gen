@@ -35,7 +35,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class RadiusProximity(__ProximityBase, ProximityBase):
+class RadiusProximity():
     """com.badlogic.gdx.ai.steer.proximities.RadiusProximity"""
  
     @staticmethod
@@ -113,14 +113,14 @@ class RadiusProximity(__ProximityBase, ProximityBase):
         return 'type.Class'.__wrap(super(object, self).getClass())
 
     @overload
-    def findNeighbors(self, arg0: 'ProximityCallback') -> int:
-        """public int com.badlogic.gdx.ai.steer.proximities.RadiusProximity.findNeighbors(com.badlogic.gdx.ai.steer.Proximity$ProximityCallback<T>)"""
-        return int.__wrap(super(__RadiusProximity, self).findNeighbors(arg0))
-
-    @overload
     def getRadius(self) -> float:
         """public float com.badlogic.gdx.ai.steer.proximities.RadiusProximity.getRadius()"""
         return float.__wrap(super(RadiusProximity, self).getRadius())
+
+    @overload
+    def findNeighbors(self, arg0: 'ProximityCallback') -> int:
+        """public int com.badlogic.gdx.ai.steer.proximities.RadiusProximity.findNeighbors(com.badlogic.gdx.ai.steer.Proximity$ProximityCallback<T>)"""
+        return int.__wrap(super(__RadiusProximity, self).findNeighbors(arg0))
 
     @override
     @overload
@@ -200,7 +200,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class RadiusProximity(__ProximityBase, ProximityBase):
+class RadiusProximity():
     """com.badlogic.gdx.ai.steer.proximities.RadiusProximity"""
  
     @staticmethod
@@ -278,14 +278,14 @@ class RadiusProximity(__ProximityBase, ProximityBase):
         return 'type.Class'.__wrap(super(object, self).getClass())
 
     @overload
-    def findNeighbors(self, arg0: 'ProximityCallback') -> int:
-        """public int com.badlogic.gdx.ai.steer.proximities.RadiusProximity.findNeighbors(com.badlogic.gdx.ai.steer.Proximity$ProximityCallback<T>)"""
-        return int.__wrap(super(__RadiusProximity, self).findNeighbors(arg0))
-
-    @overload
     def getRadius(self) -> float:
         """public float com.badlogic.gdx.ai.steer.proximities.RadiusProximity.getRadius()"""
         return float.__wrap(super(RadiusProximity, self).getRadius())
+
+    @overload
+    def findNeighbors(self, arg0: 'ProximityCallback') -> int:
+        """public int com.badlogic.gdx.ai.steer.proximities.RadiusProximity.findNeighbors(com.badlogic.gdx.ai.steer.Proximity$ProximityCallback<T>)"""
+        return int.__wrap(super(__RadiusProximity, self).findNeighbors(arg0))
 
     @override
     @overload
@@ -367,7 +367,7 @@ import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
 from builtins import int
  
-class ProximityBase(ABC, ai.__Proximity, steer.Proximity):
+class ProximityBase(ABC):
     """com.badlogic.gdx.ai.steer.proximities.ProximityBase"""
  
     @staticmethod
@@ -516,7 +516,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class InfiniteProximity(__ProximityBase, ProximityBase):
+class InfiniteProximity():
     """com.badlogic.gdx.ai.steer.proximities.InfiniteProximity"""
  
     @staticmethod
@@ -669,7 +669,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class FieldOfViewProximity(__ProximityBase, ProximityBase):
+class FieldOfViewProximity():
     """com.badlogic.gdx.ai.steer.proximities.FieldOfViewProximity"""
  
     @staticmethod

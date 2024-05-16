@@ -28,7 +28,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Type(__Enum, Enum):
+class Type():
     """dev.ultreon.quantum.client.atlas.TextureStitcher.Type"""
  
     @staticmethod
@@ -194,7 +194,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Type(__Enum, Enum):
+class Type():
     """dev.ultreon.quantum.client.atlas.TextureStitcher.Type"""
  
     @staticmethod
@@ -368,7 +368,7 @@ import dev.ultreon.quantum.client.atlas.TextureAtlas as __TextureAtlas
 __TextureAtlas = __TextureAtlas
 from builtins import int
  
-class TextureStitcher(pygdx.__Disposable, utils.Disposable):
+class TextureStitcher():
     """dev.ultreon.quantum.client.atlas.TextureStitcher"""
  
     @staticmethod
@@ -519,7 +519,7 @@ import dev.ultreon.quantum.client.atlas.TextureAtlas as __TextureAtlas
 __TextureAtlas = __TextureAtlas
 from builtins import int
  
-class TextureAtlas(pygdx.__Disposable, utils.Disposable):
+class TextureAtlas():
     """dev.ultreon.quantum.client.atlas.TextureAtlas"""
  
     @staticmethod

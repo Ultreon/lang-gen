@@ -22,7 +22,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ChunkBuildEvent(__Event, Event):
+class ChunkBuildEvent():
     """dev.ultreon.quantum.client.jfr.ChunkBuildEvent"""
  
     @staticmethod
@@ -148,7 +148,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ChunkBuildEvent(__Event, Event):
+class ChunkBuildEvent():
     """dev.ultreon.quantum.client.jfr.ChunkBuildEvent"""
  
     @staticmethod

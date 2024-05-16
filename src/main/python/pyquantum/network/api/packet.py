@@ -327,7 +327,7 @@ except ImportError:
 
 from builtins import int
  
-class ModPacketContext(pyquantum.__PacketContext, network.PacketContext):
+class ModPacketContext():
     """dev.ultreon.quantum.network.api.packet.ModPacketContext"""
  
     @staticmethod
@@ -481,7 +481,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ModPacketToServer(ABC, __ModPacket, ModPacket, __ServerEndpoint, ServerEndpoint):
+class ModPacketToServer(ABC):
     """dev.ultreon.quantum.network.api.packet.ModPacketToServer"""
  
     @staticmethod
@@ -622,7 +622,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ModPacketToClient(ABC, __ModPacket, ModPacket, __ClientEndpoint, ClientEndpoint):
+class ModPacketToClient(ABC):
     """dev.ultreon.quantum.network.api.packet.ModPacketToClient"""
  
     @staticmethod
@@ -833,7 +833,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BiDirectionalModPacket(ABC, __ModPacket, ModPacket, __ClientEndpoint, ClientEndpoint, __ServerEndpoint, ServerEndpoint):
+class BiDirectionalModPacket(ABC):
     """dev.ultreon.quantum.network.api.packet.BiDirectionalModPacket"""
  
     @staticmethod

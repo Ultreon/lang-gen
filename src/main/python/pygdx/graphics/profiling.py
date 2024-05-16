@@ -40,7 +40,7 @@ import java.nio.Buffer as __Buffer
 __Buffer = __Buffer
 from builtins import int
  
-class GL30Interceptor(__GLInterceptor, GLInterceptor, pygdx.__GL30, graphics.GL30):
+class GL30Interceptor():
     """com.badlogic.gdx.graphics.profiling.GL30Interceptor"""
  
     @staticmethod
@@ -1721,7 +1721,7 @@ import java.nio.Buffer as __Buffer
 __Buffer = __Buffer
 from builtins import int
  
-class GL30Interceptor(__GLInterceptor, GLInterceptor, pygdx.__GL30, graphics.GL30):
+class GL30Interceptor():
     """com.badlogic.gdx.graphics.profiling.GL30Interceptor"""
  
     @staticmethod
@@ -3415,7 +3415,7 @@ import java.nio.Buffer as __Buffer
 __Buffer = __Buffer
 from builtins import int
  
-class GL32Interceptor(__GL31Interceptor, GL31Interceptor, pygdx.__GL32, graphics.GL32):
+class GL32Interceptor():
     """com.badlogic.gdx.graphics.profiling.GL32Interceptor"""
  
     @staticmethod
@@ -5746,7 +5746,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GLInterceptor(ABC, pygdx.__GL20, graphics.GL20):
+class GLInterceptor(ABC):
     """com.badlogic.gdx.graphics.profiling.GLInterceptor"""
  
     @staticmethod
@@ -6711,7 +6711,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class GL20Interceptor(__GLInterceptor, GLInterceptor, pygdx.__GL20, graphics.GL20):
+class GL20Interceptor():
     """com.badlogic.gdx.graphics.profiling.GL20Interceptor"""
  
     @staticmethod
@@ -8058,7 +8058,7 @@ except ImportError:
 
 from builtins import int
  
-class GL31Interceptor(__GL30Interceptor, GL30Interceptor, pygdx.__GL31, graphics.GL31):
+class GL31Interceptor():
     """com.badlogic.gdx.graphics.profiling.GL31Interceptor"""
  
     @staticmethod

@@ -38,7 +38,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class LongMap(__Iterable, Iterable):
+class LongMap():
     """com.badlogic.gdx.utils.LongMap"""
  
     @staticmethod
@@ -303,7 +303,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class LongMap(__Iterable, Iterable):
+class LongMap():
     """com.badlogic.gdx.utils.LongMap"""
  
     @staticmethod
@@ -926,7 +926,7 @@ import java.io.DataInputStream as __DataInputStream
 __DataInputStream = __DataInputStream
 from builtins import int
  
-class DataInput(__DataInputStream, DataInputStream):
+class DataInput():
     """com.badlogic.gdx.utils.DataInput"""
  
     @staticmethod
@@ -1213,7 +1213,7 @@ import com.badlogic.gdx.utils.Null as __Null
 __Null = __Null
 from abc import abstractmethod, ABC
  
-class Null(ABC, __Annotation, Annotation):
+class Null(ABC):
     """com.badlogic.gdx.utils.Null"""
  
     @staticmethod
@@ -1293,7 +1293,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ObjectSet(__Iterable, Iterable):
+class ObjectSet():
     """com.badlogic.gdx.utils.ObjectSet"""
  
     @staticmethod
@@ -1547,7 +1547,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LittleEndianInputStream(__FilterInputStream, FilterInputStream, __DataInput, DataInput):
+class LittleEndianInputStream():
     """com.badlogic.gdx.utils.LittleEndianInputStream"""
  
     @staticmethod
@@ -2139,7 +2139,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Keys(__Iterable, Iterable, __Iterator, Iterator):
+class Keys():
     """com.badlogic.gdx.utils.ArrayMap.Keys"""
  
     @staticmethod
@@ -2725,7 +2725,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class IntMap(__Iterable, Iterable):
+class IntMap():
     """com.badlogic.gdx.utils.IntMap"""
  
     @staticmethod
@@ -3612,7 +3612,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Iterator(__Iterator, Iterator):
+class Iterator():
     """com.badlogic.gdx.utils.SortedIntList.Iterator"""
  
     @staticmethod
@@ -3855,7 +3855,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class IdentityMap(__ObjectMap, ObjectMap):
+class IdentityMap():
     """com.badlogic.gdx.utils.IdentityMap"""
  
     @staticmethod
@@ -4126,7 +4126,7 @@ import java.util.stream.IntStream as IntStream
 from builtins import bool
 from builtins import int
  
-class StringBuilder(__Appendable, Appendable, __CharSequence, CharSequence):
+class StringBuilder():
     """com.badlogic.gdx.utils.StringBuilder"""
  
     @staticmethod
@@ -4633,7 +4633,7 @@ import com.badlogic.gdx.utils.LongArray as __LongArray
 __LongArray = __LongArray
 from builtins import int
  
-class Keys(__MapIterator, MapIterator):
+class Keys():
     """com.badlogic.gdx.utils.LongMap.Keys"""
  
     @staticmethod
@@ -4767,7 +4767,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class QueueIterable(__Iterable, Iterable):
+class QueueIterable():
     """com.badlogic.gdx.utils.Queue.QueueIterable"""
  
     @staticmethod
@@ -4914,7 +4914,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class OrderedMapValues(__Values, Values):
+class OrderedMapValues():
     """com.badlogic.gdx.utils.OrderedMap.OrderedMapValues"""
  
     @staticmethod
@@ -5092,7 +5092,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Entries(__MapIterator, MapIterator):
+class Entries():
     """com.badlogic.gdx.utils.ObjectMap.Entries"""
  
     @staticmethod
@@ -5239,7 +5239,7 @@ import com.badlogic.gdx.utils.LongArray as __LongArray
 __LongArray = __LongArray
 from builtins import int
  
-class Values(__MapIterator, MapIterator):
+class Values():
     """com.badlogic.gdx.utils.ObjectLongMap.Values"""
  
     @staticmethod
@@ -5389,7 +5389,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ObjectMap(__Iterable, Iterable):
+class ObjectMap():
     """com.badlogic.gdx.utils.ObjectMap"""
  
     @staticmethod
@@ -5648,7 +5648,7 @@ import java.lang.Double as __double
 from builtins import bool
 from builtins import int
  
-class UBJsonWriter(__Closeable, Closeable):
+class UBJsonWriter():
     """com.badlogic.gdx.utils.UBJsonWriter"""
  
     @staticmethod
@@ -6142,7 +6142,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ArrayIterator(__Iterator, Iterator, __Iterable, Iterable):
+class ArrayIterator():
     """com.badlogic.gdx.utils.Array.ArrayIterator"""
  
     @staticmethod
@@ -6312,7 +6312,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class QuadTreeFloat(__Poolable, Poolable):
+class QuadTreeFloat():
     """com.badlogic.gdx.utils.QuadTreeFloat"""
  
     @staticmethod
@@ -6672,12 +6672,12 @@ __Object = __Object
 import java.io.InputStream as InputStream
 import com.badlogic.gdx.utils.Json as __Json_Serializer
 __Serializer = __Json_Serializer.Serializer
+import java.lang.Integer as __int
 try:
     from pygdx import files
 except ImportError:
     files = __import_once__("pygdx.files")
 
-import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
@@ -6759,14 +6759,14 @@ class Json():
         super(object, self).notify()
 
     @overload
-    def writeArrayStart(self, arg0: str):
-        """public void com.badlogic.gdx.utils.Json.writeArrayStart(java.lang.String)"""
-        super(__Json, self).writeArrayStart(arg0)
-
-    @overload
     def writeField(self, arg0: object, arg1: str, arg2: str):
         """public void com.badlogic.gdx.utils.Json.writeField(java.lang.Object,java.lang.String,java.lang.String)"""
         super(__Json, self).writeField(arg0, arg1, arg2)
+
+    @overload
+    def writeArrayStart(self, arg0: str):
+        """public void com.badlogic.gdx.utils.Json.writeArrayStart(java.lang.String)"""
+        super(__Json, self).writeArrayStart(arg0)
 
     @overload
     def getSerializer(self, arg0: 'Class') -> 'Serializer':
@@ -6996,6 +6996,11 @@ class Json():
         return object.__wrap(super(__Json, self).fromJson(arg0, arg1))
 
     @overload
+    def writeField(self, arg0: object, arg1: str, arg2: str, arg3: 'Class'):
+        """public void com.badlogic.gdx.utils.Json.writeField(java.lang.Object,java.lang.String,java.lang.String,java.lang.Class)"""
+        super(__Json, self).writeField(arg0, arg1, arg2, arg3)
+
+    @overload
     def setTypeName(self, arg0: str):
         """public void com.badlogic.gdx.utils.Json.setTypeName(java.lang.String)"""
         super(__Json, self).setTypeName(arg0)
@@ -7004,11 +7009,6 @@ class Json():
     def writeType(self, arg0: 'Class'):
         """public void com.badlogic.gdx.utils.Json.writeType(java.lang.Class)"""
         super(__Json, self).writeType(arg0)
-
-    @overload
-    def writeField(self, arg0: object, arg1: str, arg2: str, arg3: 'Class'):
-        """public void com.badlogic.gdx.utils.Json.writeField(java.lang.Object,java.lang.String,java.lang.String,java.lang.Class)"""
-        super(__Json, self).writeField(arg0, arg1, arg2, arg3)
 
     @overload
     def setEnumNames(self, arg0: bool):
@@ -7059,9 +7059,9 @@ class Json():
         super(__Json, self).writeField(arg0, arg1, arg2)
 
     @overload
-    def setDeprecated(self, arg0: 'Class', arg1: str, arg2: bool):
-        """public void com.badlogic.gdx.utils.Json.setDeprecated(java.lang.Class,java.lang.String,boolean)"""
-        super(__Json, self).setDeprecated(arg0, arg1, __boolean.valueOf(arg2))
+    def writeValue(self, arg0: str, arg1: object):
+        """public void com.badlogic.gdx.utils.Json.writeValue(java.lang.String,java.lang.Object)"""
+        super(__Json, self).writeValue(arg0, arg1)
 
     @overload
     def prettyPrint(self, arg0: str, arg1: 'PrettyPrintSettings') -> str:
@@ -7069,9 +7069,9 @@ class Json():
         return str.__wrap(super(__Json, self).prettyPrint(arg0, arg1))
 
     @overload
-    def writeValue(self, arg0: str, arg1: object):
-        """public void com.badlogic.gdx.utils.Json.writeValue(java.lang.String,java.lang.Object)"""
-        super(__Json, self).writeValue(arg0, arg1)
+    def setDeprecated(self, arg0: 'Class', arg1: str, arg2: bool):
+        """public void com.badlogic.gdx.utils.Json.setDeprecated(java.lang.Class,java.lang.String,boolean)"""
+        super(__Json, self).setDeprecated(arg0, arg1, __boolean.valueOf(arg2))
 
     @overload
     def setDefaultSerializer(self, arg0: 'Serializer'):
@@ -7100,11 +7100,6 @@ class Json():
         super(__object, self).wait(__long.valueOf(arg0))
 
     @overload
-    def setIgnoreDeprecated(self, arg0: bool):
-        """public void com.badlogic.gdx.utils.Json.setIgnoreDeprecated(boolean)"""
-        super(__Json, self).setIgnoreDeprecated(__boolean.valueOf(arg0))
-
-    @overload
     def writeValue(self, arg0: str, arg1: object, arg2: 'Class', arg3: 'Class'):
         """public void com.badlogic.gdx.utils.Json.writeValue(java.lang.String,java.lang.Object,java.lang.Class,java.lang.Class)"""
         super(__Json, self).writeValue(arg0, arg1, arg2, arg3)
@@ -7115,14 +7110,19 @@ class Json():
         super(__Json, self).readField(arg0, arg1, arg2, arg3)
 
     @overload
-    def readField(self, arg0: object, arg1: 'Field', arg2: str, arg3: 'Class', arg4: 'JsonValue'):
-        """public void com.badlogic.gdx.utils.Json.readField(java.lang.Object,com.badlogic.gdx.utils.reflect.Field,java.lang.String,java.lang.Class,com.badlogic.gdx.utils.JsonValue)"""
-        super(__Json, self).readField(arg0, arg1, arg2, arg3, arg4)
+    def setIgnoreDeprecated(self, arg0: bool):
+        """public void com.badlogic.gdx.utils.Json.setIgnoreDeprecated(boolean)"""
+        super(__Json, self).setIgnoreDeprecated(__boolean.valueOf(arg0))
 
     @overload
     def readField(self, arg0: object, arg1: str, arg2: 'JsonValue'):
         """public void com.badlogic.gdx.utils.Json.readField(java.lang.Object,java.lang.String,com.badlogic.gdx.utils.JsonValue)"""
         super(__Json, self).readField(arg0, arg1, arg2)
+
+    @overload
+    def readField(self, arg0: object, arg1: 'Field', arg2: str, arg3: 'Class', arg4: 'JsonValue'):
+        """public void com.badlogic.gdx.utils.Json.readField(java.lang.Object,com.badlogic.gdx.utils.reflect.Field,java.lang.String,java.lang.Class,com.badlogic.gdx.utils.JsonValue)"""
+        super(__Json, self).readField(arg0, arg1, arg2, arg3, arg4)
 
     @override
     @overload
@@ -7156,14 +7156,14 @@ class Json():
         super(__Json, self).setReadDeprecated(__boolean.valueOf(arg0))
 
     @overload
-    def setElementType(self, arg0: 'Class', arg1: str, arg2: 'Class'):
-        """public void com.badlogic.gdx.utils.Json.setElementType(java.lang.Class,java.lang.String,java.lang.Class)"""
-        super(__Json, self).setElementType(arg0, arg1, arg2)
-
-    @overload
     def writeValue(self, arg0: object):
         """public void com.badlogic.gdx.utils.Json.writeValue(java.lang.Object)"""
         super(__Json, self).writeValue(arg0)
+
+    @overload
+    def setElementType(self, arg0: 'Class', arg1: str, arg2: 'Class'):
+        """public void com.badlogic.gdx.utils.Json.setElementType(java.lang.Class,java.lang.String,java.lang.Class)"""
+        super(__Json, self).setElementType(arg0, arg1, arg2)
 
     @overload
     def prettyPrint(self, arg0: str) -> str:
@@ -7207,7 +7207,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class ValueType(__Enum, Enum):
+class ValueType():
     """com.badlogic.gdx.utils.JsonValue.ValueType"""
  
     @staticmethod
@@ -7359,7 +7359,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Values(__MapIterator, MapIterator):
+class Values():
     """com.badlogic.gdx.utils.IntFloatMap.Values"""
  
     @staticmethod
@@ -7738,7 +7738,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Queue(__Iterable, Iterable):
+class Queue():
     """com.badlogic.gdx.utils.Queue"""
  
     @staticmethod
@@ -8997,7 +8997,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Entries(__MapIterator, MapIterator, __Iterable, Iterable, __Iterator, Iterator):
+class Entries():
     """com.badlogic.gdx.utils.IntFloatMap.Entries"""
  
     @staticmethod
@@ -9159,7 +9159,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Values(__MapIterator, MapIterator):
+class Values():
     """com.badlogic.gdx.utils.ObjectMap.Values"""
  
     @staticmethod
@@ -9324,7 +9324,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class SortedIntList(__Iterable, Iterable):
+class SortedIntList():
     """com.badlogic.gdx.utils.SortedIntList"""
  
     @staticmethod
@@ -9508,7 +9508,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class OrderedMap(__ObjectMap, ObjectMap):
+class OrderedMap():
     """com.badlogic.gdx.utils.OrderedMap"""
  
     @staticmethod
@@ -9948,7 +9948,7 @@ from builtins import int
 import java.io.ByteArrayOutputStream as __ByteArrayOutputStream
 __ByteArrayOutputStream = __ByteArrayOutputStream
  
-class OptimizedByteArrayOutputStream(__ByteArrayOutputStream, ByteArrayOutputStream):
+class OptimizedByteArrayOutputStream():
     """com.badlogic.gdx.utils.StreamUtils.OptimizedByteArrayOutputStream"""
  
     @staticmethod
@@ -10154,7 +10154,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Entries(__MapIterator, MapIterator, __Iterable, Iterable, __Iterator, Iterator):
+class Entries():
     """com.badlogic.gdx.utils.IntIntMap.Entries"""
  
     @staticmethod
@@ -10310,7 +10310,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Keys(__MapIterator, MapIterator, __Iterable, Iterable, __Iterator, Iterator):
+class Keys():
     """com.badlogic.gdx.utils.ObjectFloatMap.Keys"""
  
     @staticmethod
@@ -10582,7 +10582,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Task(ABC, __Runnable, Runnable):
+class Task(ABC):
     """com.badlogic.gdx.utils.Timer.Task"""
  
     @staticmethod
@@ -10731,7 +10731,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class OrderedMapKeys(__Keys, Keys):
+class OrderedMapKeys():
     """com.badlogic.gdx.utils.OrderedMap.OrderedMapKeys"""
  
     @staticmethod
@@ -11037,7 +11037,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class IntFloatMap(__Iterable, Iterable):
+class IntFloatMap():
     """com.badlogic.gdx.utils.IntFloatMap"""
  
     @staticmethod
@@ -11551,14 +11551,14 @@ class BufferUtils():
 
     @staticmethod
     @overload
-    def copy(arg0: 'long', arg1: int, arg2: 'Buffer', arg3: int):
-        """public static void com.badlogic.gdx.utils.BufferUtils.copy(long[],int,java.nio.Buffer,int)"""
+    def copy(arg0: 'double', arg1: int, arg2: 'Buffer', arg3: int):
+        """public static void com.badlogic.gdx.utils.BufferUtils.copy(double[],int,java.nio.Buffer,int)"""
         __BufferUtils.copy(arg0, __int.valueOf(arg1), arg2, __int.valueOf(arg3))
 
     @staticmethod
     @overload
-    def copy(arg0: 'double', arg1: int, arg2: 'Buffer', arg3: int):
-        """public static void com.badlogic.gdx.utils.BufferUtils.copy(double[],int,java.nio.Buffer,int)"""
+    def copy(arg0: 'long', arg1: int, arg2: 'Buffer', arg3: int):
+        """public static void com.badlogic.gdx.utils.BufferUtils.copy(long[],int,java.nio.Buffer,int)"""
         __BufferUtils.copy(arg0, __int.valueOf(arg1), arg2, __int.valueOf(arg3))
 
     @override
@@ -12050,7 +12050,7 @@ __ReadOnlySerializer = __Json_ReadOnlySerializer.ReadOnlySerializer
 from builtins import bool
 from builtins import int
  
-class ReadOnlySerializer(ABC, __Serializer, Serializer):
+class ReadOnlySerializer(ABC):
     """com.badlogic.gdx.utils.Json.ReadOnlySerializer"""
  
     @staticmethod
@@ -12183,7 +12183,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PredicateIterator(__Iterator, Iterator):
+class PredicateIterator():
     """com.badlogic.gdx.utils.Predicate.PredicateIterator"""
  
     @staticmethod
@@ -12343,7 +12343,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Entries(__MapIterator, MapIterator, __Iterable, Iterable, __Iterator, Iterator):
+class Entries():
     """com.badlogic.gdx.utils.ObjectLongMap.Entries"""
  
     @staticmethod
@@ -12615,7 +12615,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Entries(__Iterable, Iterable, __Iterator, Iterator):
+class Entries():
     """com.badlogic.gdx.utils.ArrayMap.Entries"""
  
     @staticmethod
@@ -13089,7 +13089,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ReflectionPool(__Pool, Pool):
+class ReflectionPool():
     """com.badlogic.gdx.utils.ReflectionPool"""
  
     @staticmethod
@@ -13250,7 +13250,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Keys(__MapIterator, MapIterator):
+class Keys():
     """com.badlogic.gdx.utils.IntMap.Keys"""
  
     @staticmethod
@@ -13376,7 +13376,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Values(__MapIterator, MapIterator):
+class Values():
     """com.badlogic.gdx.utils.IntIntMap.Values"""
  
     @staticmethod
@@ -13527,7 +13527,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ArrayMap(__Iterable, Iterable):
+class ArrayMap():
     """com.badlogic.gdx.utils.ArrayMap"""
  
     @staticmethod
@@ -13746,14 +13746,14 @@ class ArrayMap(__Iterable, Iterable):
         return int.__wrap(super(__ArrayMap, self).put(arg0, arg1, __int.valueOf(arg2)))
 
     @overload
-    def peekKey(self) -> object:
-        """public K com.badlogic.gdx.utils.ArrayMap.peekKey()"""
-        return object.__wrap(super(ArrayMap, self).peekKey())
-
-    @overload
     def getKeyAt(self, arg0: int) -> object:
         """public K com.badlogic.gdx.utils.ArrayMap.getKeyAt(int)"""
         return object.__wrap(super(__ArrayMap, self).getKeyAt(__int.valueOf(arg0)))
+
+    @overload
+    def peekKey(self) -> object:
+        """public K com.badlogic.gdx.utils.ArrayMap.peekKey()"""
+        return object.__wrap(super(ArrayMap, self).peekKey())
 
     @override
     @overload
@@ -13887,7 +13887,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class QueueIterator(__Iterator, Iterator, __Iterable, Iterable):
+class QueueIterator():
     """com.badlogic.gdx.utils.Queue.QueueIterator"""
  
     @staticmethod
@@ -14060,7 +14060,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GdxRuntimeException(__RuntimeException, RuntimeException):
+class GdxRuntimeException():
     """com.badlogic.gdx.utils.GdxRuntimeException"""
  
     @staticmethod
@@ -14270,7 +14270,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class DelayedRemovalArray(__Array, Array):
+class DelayedRemovalArray():
     """com.badlogic.gdx.utils.DelayedRemovalArray"""
  
     @staticmethod
@@ -14766,7 +14766,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 from builtins import int
  
-class PauseableThread(__Thread, Thread):
+class PauseableThread():
     """com.badlogic.gdx.utils.PauseableThread"""
  
     @staticmethod
@@ -15160,9 +15160,9 @@ class PauseableThread(__Thread, Thread):
  
 # CLASS: com.badlogic.gdx.utils.ObjectIntMap$Entries
 from builtins import str
+from pyquantum_helper import override
 import com.badlogic.gdx.utils.ObjectIntMap as __ObjectIntMap_Entry
 __Entry = __ObjectIntMap_Entry.Entry
-from pyquantum_helper import override
 import java.lang.Object as __object
 import java.util.Iterator as __Iterator
 __Iterator = __Iterator
@@ -15186,7 +15186,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Entries(__MapIterator, MapIterator, __Iterable, Iterable, __Iterator, Iterator):
+class Entries():
     """com.badlogic.gdx.utils.ObjectIntMap.Entries"""
  
     @staticmethod
@@ -15453,7 +15453,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class XmlWriter(__Writer, Writer):
+class XmlWriter():
     """com.badlogic.gdx.utils.XmlWriter"""
  
     @staticmethod
@@ -15652,7 +15652,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Values(__MapIterator, MapIterator):
+class Values():
     """com.badlogic.gdx.utils.ObjectIntMap.Values"""
  
     @staticmethod
@@ -15798,7 +15798,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Values(__Iterable, Iterable, __Iterator, Iterator):
+class Values():
     """com.badlogic.gdx.utils.ArrayMap.Values"""
  
     @staticmethod
@@ -15973,7 +15973,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ArrayIterable(__Iterable, Iterable):
+class ArrayIterable():
     """com.badlogic.gdx.utils.Array.ArrayIterable"""
  
     @staticmethod
@@ -16170,7 +16170,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Values(__MapIterator, MapIterator, __Iterable, Iterable, __Iterator, Iterator):
+class Values():
     """com.badlogic.gdx.utils.LongMap.Values"""
  
     @staticmethod
@@ -16757,7 +16757,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class JsonReader(__BaseJsonReader, BaseJsonReader):
+class JsonReader():
     """com.badlogic.gdx.utils.JsonReader"""
  
     @staticmethod
@@ -16919,7 +16919,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Entries(__MapIterator, MapIterator, __Iterable, Iterable, __Iterator, Iterator):
+class Entries():
     """com.badlogic.gdx.utils.LongMap.Entries"""
  
     @staticmethod
@@ -17072,7 +17072,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class OutputType(__Enum, Enum):
+class OutputType():
     """com.badlogic.gdx.utils.JsonWriter.OutputType"""
  
     @staticmethod
@@ -17399,7 +17399,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SerializationException(__RuntimeException, RuntimeException):
+class SerializationException():
     """com.badlogic.gdx.utils.SerializationException"""
  
     @staticmethod
@@ -18572,7 +18572,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class OrderedSetIterator(__ObjectSetIterator, ObjectSetIterator):
+class OrderedSetIterator():
     """com.badlogic.gdx.utils.OrderedSet.OrderedSetIterator"""
  
     @staticmethod
@@ -18724,9 +18724,9 @@ class OrderedSetIterator(__ObjectSetIterator, ObjectSetIterator):
  
 # CLASS: com.badlogic.gdx.utils.ObjectFloatMap$Entries
 from builtins import str
+from pyquantum_helper import override
 import com.badlogic.gdx.utils.ObjectFloatMap as __ObjectFloatMap_Entry
 __Entry = __ObjectFloatMap_Entry.Entry
-from pyquantum_helper import override
 import java.lang.Object as __object
 import java.util.Iterator as __Iterator
 __Iterator = __Iterator
@@ -18750,7 +18750,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Entries(__MapIterator, MapIterator, __Iterable, Iterable, __Iterator, Iterator):
+class Entries():
     """com.badlogic.gdx.utils.ObjectFloatMap.Entries"""
  
     @staticmethod
@@ -18906,7 +18906,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Keys(__MapIterator, MapIterator, __Iterable, Iterable, __Iterator, Iterator):
+class Keys():
     """com.badlogic.gdx.utils.ObjectIntMap.Keys"""
  
     @staticmethod
@@ -19072,7 +19072,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Keys(__MapIterator, MapIterator):
+class Keys():
     """com.badlogic.gdx.utils.ObjectMap.Keys"""
  
     @staticmethod
@@ -19230,7 +19230,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FlushablePool(ABC, __Pool, Pool):
+class FlushablePool(ABC):
     """com.badlogic.gdx.utils.FlushablePool"""
  
     @staticmethod
@@ -19416,7 +19416,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ObjectIntMap(__Iterable, Iterable):
+class ObjectIntMap():
     """com.badlogic.gdx.utils.ObjectIntMap"""
  
     @staticmethod
@@ -19677,7 +19677,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class JsonIterator(__Iterator, Iterator, __Iterable, Iterable):
+class JsonIterator():
     """com.badlogic.gdx.utils.JsonValue.JsonIterator"""
  
     @staticmethod
@@ -20001,7 +20001,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class SnapshotArray(__Array, Array):
+class SnapshotArray():
     """com.badlogic.gdx.utils.SnapshotArray"""
  
     @staticmethod
@@ -20481,7 +20481,7 @@ __Entries = __ObjectFloatMap_Entries.Entries
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ObjectFloatMap(__Iterable, Iterable):
+class ObjectFloatMap():
     """com.badlogic.gdx.utils.ObjectFloatMap"""
  
     @staticmethod
@@ -20974,7 +20974,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class JsonWriter(__Writer, Writer):
+class JsonWriter():
     """com.badlogic.gdx.utils.JsonWriter"""
  
     @staticmethod
@@ -21223,7 +21223,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Values(__MapIterator, MapIterator, __Iterable, Iterable, __Iterator, Iterator):
+class Values():
     """com.badlogic.gdx.utils.IntMap.Values"""
  
     @staticmethod
@@ -21812,7 +21812,7 @@ __Entries = __ObjectLongMap_Entries.Entries
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ObjectLongMap(__Iterable, Iterable):
+class ObjectLongMap():
     """com.badlogic.gdx.utils.ObjectLongMap"""
  
     @staticmethod
@@ -22268,7 +22268,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Keys(__MapIterator, MapIterator):
+class Keys():
     """com.badlogic.gdx.utils.IntIntMap.Keys"""
  
     @staticmethod
@@ -22402,7 +22402,7 @@ from builtins import bool
 import java.io.DataInputStream as DataInputStream
 from builtins import int
  
-class UBJsonReader(__BaseJsonReader, BaseJsonReader):
+class UBJsonReader():
     """com.badlogic.gdx.utils.UBJsonReader"""
  
     @staticmethod
@@ -22545,7 +22545,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class OrderedMapEntries(__Entries, Entries):
+class OrderedMapEntries():
     """com.badlogic.gdx.utils.OrderedMap.OrderedMapEntries"""
  
     @staticmethod
@@ -22705,7 +22705,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Values(__MapIterator, MapIterator):
+class Values():
     """com.badlogic.gdx.utils.ObjectFloatMap.Values"""
  
     @staticmethod
@@ -23842,7 +23842,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Keys(__MapIterator, MapIterator, __Iterable, Iterable, __Iterator, Iterator):
+class Keys():
     """com.badlogic.gdx.utils.ObjectLongMap.Keys"""
  
     @staticmethod
@@ -24017,7 +24017,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class JsonValue(__Iterable, Iterable):
+class JsonValue():
     """com.badlogic.gdx.utils.JsonValue"""
  
     @staticmethod
@@ -24633,7 +24633,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Keys(__MapIterator, MapIterator):
+class Keys():
     """com.badlogic.gdx.utils.IntFloatMap.Keys"""
  
     @staticmethod
@@ -24768,7 +24768,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Entries(__MapIterator, MapIterator, __Iterable, Iterable, __Iterator, Iterator):
+class Entries():
     """com.badlogic.gdx.utils.IntMap.Entries"""
  
     @staticmethod
@@ -24924,7 +24924,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ObjectSetIterator(__Iterable, Iterable, __Iterator, Iterator):
+class ObjectSetIterator():
     """com.badlogic.gdx.utils.ObjectSet.ObjectSetIterator"""
  
     @staticmethod
@@ -25106,7 +25106,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class IntIntMap(__Iterable, Iterable):
+class IntIntMap():
     """com.badlogic.gdx.utils.IntIntMap"""
  
     @staticmethod
@@ -25415,7 +25415,7 @@ import java.lang.Double as __double
 from builtins import bool
 from builtins import int
  
-class DataOutput(__DataOutputStream, DataOutputStream):
+class DataOutput():
     """com.badlogic.gdx.utils.DataOutput"""
  
     @staticmethod
@@ -26256,7 +26256,7 @@ import java.lang.Double as __double
 from builtins import bool
 from builtins import int
  
-class DataBuffer(__DataOutput, DataOutput):
+class DataBuffer():
     """com.badlogic.gdx.utils.DataBuffer"""
  
     @staticmethod
@@ -26522,7 +26522,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Array(__Iterable, Iterable):
+class Array():
     """com.badlogic.gdx.utils.Array"""
  
     @staticmethod
@@ -26958,7 +26958,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class OrderedSet(__ObjectSet, ObjectSet):
+class OrderedSet():
     """com.badlogic.gdx.utils.OrderedSet"""
  
     @staticmethod
@@ -27260,7 +27260,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class PredicateIterable(__Iterable, Iterable):
+class PredicateIterable():
     """com.badlogic.gdx.utils.Predicate.PredicateIterable"""
  
     @staticmethod

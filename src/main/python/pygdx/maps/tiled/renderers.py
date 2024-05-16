@@ -56,7 +56,7 @@ except ImportError:
 
 from builtins import int
  
-class IsometricTiledMapRenderer(__BatchTiledMapRenderer, BatchTiledMapRenderer):
+class IsometricTiledMapRenderer():
     """com.badlogic.gdx.maps.tiled.renderers.IsometricTiledMapRenderer"""
  
     @staticmethod
@@ -308,7 +308,7 @@ except ImportError:
 
 from builtins import int
  
-class IsometricTiledMapRenderer(__BatchTiledMapRenderer, BatchTiledMapRenderer):
+class IsometricTiledMapRenderer():
     """com.badlogic.gdx.maps.tiled.renderers.IsometricTiledMapRenderer"""
  
     @staticmethod
@@ -563,7 +563,7 @@ except ImportError:
 
 from builtins import int
  
-class IsometricStaggeredTiledMapRenderer(__BatchTiledMapRenderer, BatchTiledMapRenderer):
+class IsometricStaggeredTiledMapRenderer():
     """com.badlogic.gdx.maps.tiled.renderers.IsometricStaggeredTiledMapRenderer"""
  
     @staticmethod
@@ -814,7 +814,7 @@ except ImportError:
 
 from builtins import int
  
-class BatchTiledMapRenderer(ABC, maps.__TiledMapRenderer, tiled.TiledMapRenderer, pygdx.__Disposable, utils.Disposable):
+class BatchTiledMapRenderer(ABC):
     """com.badlogic.gdx.maps.tiled.renderers.BatchTiledMapRenderer"""
  
     @staticmethod
@@ -1007,8 +1007,8 @@ class BatchTiledMapRenderer(ABC, maps.__TiledMapRenderer, tiled.TiledMapRenderer
 # CLASS: com.badlogic.gdx.maps.tiled.renderers.OrthoCachedTiledMapRenderer
 from pyquantum_helper import import_once as __import_once__
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 try:
     from pygdx.graphics import g2d
 except ImportError:
@@ -1052,7 +1052,7 @@ except ImportError:
     tiled = __import_once__("pygdx.maps.tiled")
 
  
-class OrthoCachedTiledMapRenderer(maps.__TiledMapRenderer, tiled.TiledMapRenderer, pygdx.__Disposable, utils.Disposable):
+class OrthoCachedTiledMapRenderer():
     """com.badlogic.gdx.maps.tiled.renderers.OrthoCachedTiledMapRenderer"""
  
     @staticmethod
@@ -1295,7 +1295,7 @@ except ImportError:
 
 from builtins import int
  
-class HexagonalTiledMapRenderer(__BatchTiledMapRenderer, BatchTiledMapRenderer):
+class HexagonalTiledMapRenderer():
     """com.badlogic.gdx.maps.tiled.renderers.HexagonalTiledMapRenderer"""
  
     @staticmethod
@@ -1545,7 +1545,7 @@ except ImportError:
 
 from builtins import int
  
-class OrthogonalTiledMapRenderer(__BatchTiledMapRenderer, BatchTiledMapRenderer):
+class OrthogonalTiledMapRenderer():
     """com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer"""
  
     @staticmethod

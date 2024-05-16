@@ -783,7 +783,7 @@ import java.awt.ImageCapabilities as ImageCapabilities
 import java.awt.Frame as __Frame
 __Frame = __Frame
  
-class Hiero(__JFrame, JFrame):
+class Hiero():
     """com.badlogic.gdx.tools.hiero.Hiero"""
  
     @staticmethod

@@ -288,7 +288,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AtomicInitializer(ABC, __ConcurrentInitializer, ConcurrentInitializer):
+class AtomicInitializer(ABC):
     """org.apache.commons.lang3.concurrent.AtomicInitializer"""
  
     @staticmethod
@@ -411,7 +411,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AtomicSafeInitializer(ABC, __ConcurrentInitializer, ConcurrentInitializer):
+class AtomicSafeInitializer(ABC):
     """org.apache.commons.lang3.concurrent.AtomicSafeInitializer"""
  
     @staticmethod
@@ -543,7 +543,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MultiBackgroundInitializer(__BackgroundInitializer, BackgroundInitializer):
+class MultiBackgroundInitializer():
     """org.apache.commons.lang3.concurrent.MultiBackgroundInitializer"""
  
     @staticmethod
@@ -921,7 +921,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LazyInitializer(ABC, __ConcurrentInitializer, ConcurrentInitializer):
+class LazyInitializer(ABC):
     """org.apache.commons.lang3.concurrent.LazyInitializer"""
  
     @staticmethod
@@ -1045,7 +1045,7 @@ import org.apache.commons.lang3.concurrent.AbstractCircuitBreaker as __AbstractC
 __AbstractCircuitBreaker = __AbstractCircuitBreaker
 from builtins import int
  
-class AbstractCircuitBreaker(ABC, __CircuitBreaker, CircuitBreaker):
+class AbstractCircuitBreaker(ABC):
     """org.apache.commons.lang3.concurrent.AbstractCircuitBreaker"""
  
     @staticmethod
@@ -1351,7 +1351,7 @@ import org.apache.commons.lang3.concurrent.AbstractCircuitBreaker as __AbstractC
 __AbstractCircuitBreaker = __AbstractCircuitBreaker
 from builtins import int
  
-class EventCountCircuitBreaker(__AbstractCircuitBreaker, AbstractCircuitBreaker):
+class EventCountCircuitBreaker():
     """org.apache.commons.lang3.concurrent.EventCountCircuitBreaker"""
  
     @staticmethod
@@ -1555,7 +1555,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class State(ABC, __Enum, Enum):
+class State(ABC):
     """org.apache.commons.lang3.concurrent.AbstractCircuitBreaker.State"""
  
     @staticmethod
@@ -1692,6 +1692,7 @@ class State(ABC, __Enum, Enum):
  
  
 # CLASS: org.apache.commons.lang3.concurrent.UncheckedFuture
+from pyquantum_helper import override
 import java.util.concurrent.Future.State as State
 import java.util.concurrent.Future as __Future
 __Future = __Future
@@ -1715,7 +1716,7 @@ import java.lang.Throwable as Throwable
 import org.apache.commons.lang3.concurrent.UncheckedFuture as __UncheckedFuture
 __UncheckedFuture = __UncheckedFuture
  
-class UncheckedFuture(ABC, __Future, Future):
+class UncheckedFuture(ABC):
     """org.apache.commons.lang3.concurrent.UncheckedFuture"""
  
     @staticmethod
@@ -1835,7 +1836,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ConcurrentException(__Exception, Exception):
+class ConcurrentException():
     """org.apache.commons.lang3.concurrent.ConcurrentException"""
  
     @staticmethod
@@ -2032,7 +2033,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CallableBackgroundInitializer(__BackgroundInitializer, BackgroundInitializer):
+class CallableBackgroundInitializer():
     """org.apache.commons.lang3.concurrent.CallableBackgroundInitializer"""
  
     @staticmethod
@@ -2199,7 +2200,7 @@ from builtins import bool
 import java.util.concurrent.ThreadFactory as ThreadFactory
 from builtins import int
  
-class BasicThreadFactory(__ThreadFactory, ThreadFactory):
+class BasicThreadFactory():
     """org.apache.commons.lang3.concurrent.BasicThreadFactory"""
  
     @staticmethod
@@ -2339,7 +2340,7 @@ import org.apache.commons.lang3.concurrent.Memoizer as __Memoizer
 __Memoizer = __Memoizer
 from builtins import int
  
-class Memoizer(__Computable, Computable):
+class Memoizer():
     """org.apache.commons.lang3.concurrent.Memoizer"""
  
     @staticmethod
@@ -2656,7 +2657,7 @@ import org.apache.commons.lang3.concurrent.ConstantInitializer as __ConstantInit
 __ConstantInitializer = __ConstantInitializer
 from builtins import int
  
-class ConstantInitializer(__ConcurrentInitializer, ConcurrentInitializer):
+class ConstantInitializer():
     """org.apache.commons.lang3.concurrent.ConstantInitializer"""
  
     @staticmethod
@@ -2760,8 +2761,8 @@ class ConstantInitializer(__ConcurrentInitializer, ConcurrentInitializer):
  
 # CLASS: org.apache.commons.lang3.concurrent.AbstractFutureProxy
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 import java.util.concurrent.Future.State as State
@@ -2788,7 +2789,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AbstractFutureProxy(ABC, __Future, Future):
+class AbstractFutureProxy(ABC):
     """org.apache.commons.lang3.concurrent.AbstractFutureProxy"""
  
     @staticmethod
@@ -2952,7 +2953,7 @@ import org.apache.commons.lang3.concurrent.AbstractCircuitBreaker as __AbstractC
 __AbstractCircuitBreaker = __AbstractCircuitBreaker
 from builtins import int
  
-class ThresholdCircuitBreaker(__AbstractCircuitBreaker, AbstractCircuitBreaker):
+class ThresholdCircuitBreaker():
     """org.apache.commons.lang3.concurrent.ThresholdCircuitBreaker"""
  
     @staticmethod
@@ -3123,7 +3124,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ConcurrentRuntimeException(__RuntimeException, RuntimeException):
+class ConcurrentRuntimeException():
     """org.apache.commons.lang3.concurrent.ConcurrentRuntimeException"""
  
     @staticmethod
@@ -3319,7 +3320,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class UncheckedExecutionException(lang3.__UncheckedException, exception.UncheckedException):
+class UncheckedExecutionException():
     """org.apache.commons.lang3.concurrent.UncheckedExecutionException"""
  
     @staticmethod
@@ -3508,7 +3509,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class UncheckedTimeoutException(lang3.__UncheckedException, exception.UncheckedException):
+class UncheckedTimeoutException():
     """org.apache.commons.lang3.concurrent.UncheckedTimeoutException"""
  
     @staticmethod
@@ -3694,7 +3695,7 @@ from builtins import bool
 import java.util.concurrent.ThreadFactory as ThreadFactory
 from builtins import int
  
-class Builder(lang3.__Builder, builder.Builder):
+class Builder():
     """org.apache.commons.lang3.concurrent.BasicThreadFactory.Builder"""
  
     @staticmethod
@@ -3856,7 +3857,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CircuitBreakingException(__RuntimeException, RuntimeException):
+class CircuitBreakingException():
     """org.apache.commons.lang3.concurrent.CircuitBreakingException"""
  
     @staticmethod
@@ -4071,7 +4072,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BackgroundInitializer(ABC, __ConcurrentInitializer, ConcurrentInitializer):
+class BackgroundInitializer(ABC):
     """org.apache.commons.lang3.concurrent.BackgroundInitializer"""
  
     @staticmethod

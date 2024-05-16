@@ -48,7 +48,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BlockItemModel(__ItemModel, ItemModel):
+class BlockItemModel():
     """dev.ultreon.quantum.client.model.item.BlockItemModel"""
  
     @staticmethod
@@ -217,7 +217,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BlockItemModel(__ItemModel, ItemModel):
+class BlockItemModel():
     """dev.ultreon.quantum.client.model.item.BlockItemModel"""
  
     @staticmethod
@@ -354,16 +354,16 @@ try:
 except ImportError:
     client = __import_once__("pyquantum.client")
 
+from abc import abstractmethod, ABC
 try:
     from pygdx import math
 except ImportError:
     math = __import_once__("pygdx.math")
 
-from abc import abstractmethod, ABC
 import dev.ultreon.quantum.client.resources.LoadableResource as __LoadableResource
 __LoadableResource = __LoadableResource
  
-class ItemModel(ABC, client.__LoadableResource, resources.LoadableResource):
+class ItemModel(ABC):
     """dev.ultreon.quantum.client.model.item.ItemModel"""
  
     @staticmethod
@@ -456,7 +456,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BakedItemModel(client.__BakedModel, model.BakedModel):
+class BakedItemModel():
     """dev.ultreon.quantum.client.model.item.BakedItemModel"""
  
     @staticmethod
@@ -618,7 +618,7 @@ import dev.ultreon.quantum.client.model.item.FlatItemModel as __FlatItemModel
 __FlatItemModel = __FlatItemModel
 from builtins import int
  
-class FlatItemModel(__ItemModel, ItemModel):
+class FlatItemModel():
     """dev.ultreon.quantum.client.model.item.FlatItemModel"""
  
     @staticmethod

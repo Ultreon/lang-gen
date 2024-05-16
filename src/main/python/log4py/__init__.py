@@ -6,6 +6,7 @@ from overload import overload
 import java.util.function.Predicate as Predicate
 import org.apache.logging.log4j.ThreadContext as __ThreadContext_ContextStack
 __ContextStack = __ThreadContext_ContextStack.ContextStack
+from pyquantum_helper import override
 import java.util.function.IntFunction as IntFunction
 import java.util.stream.Stream as __Stream
 __Stream = __Stream
@@ -26,7 +27,7 @@ from builtins import bool
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ContextStack(ABC, __Serializable, Serializable, __Collection, Collection):
+class ContextStack(ABC):
     """org.apache.logging.log4j.ThreadContext.ContextStack"""
  
     @staticmethod
@@ -212,6 +213,7 @@ class ContextStack(ABC, __Serializable, Serializable, __Collection, Collection):
 import java.util.function.Predicate as Predicate
 import org.apache.logging.log4j.ThreadContext as __ThreadContext_ContextStack
 __ContextStack = __ThreadContext_ContextStack.ContextStack
+from pyquantum_helper import override
 import java.util.function.IntFunction as IntFunction
 import java.util.stream.Stream as __Stream
 __Stream = __Stream
@@ -232,7 +234,7 @@ from builtins import bool
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ContextStack(ABC, __Serializable, Serializable, __Collection, Collection):
+class ContextStack(ABC):
     """org.apache.logging.log4j.ThreadContext.ContextStack"""
  
     @staticmethod
@@ -577,7 +579,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class Instance(__AutoCloseable, AutoCloseable):
+class Instance():
     """org.apache.logging.log4j.CloseableThreadContext.Instance"""
  
     @staticmethod
@@ -850,7 +852,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Log4jMarker(__Marker, Marker, log4py.__StringBuilderFormattable, util.StringBuilderFormattable):
+class Log4jMarker():
     """org.apache.logging.log4j.MarkerManager.Log4jMarker"""
  
     @staticmethod
@@ -1595,7 +1597,7 @@ import org.apache.logging.log4j.Level as __Level
 __Level = __Level
 from builtins import int
  
-class Level(__Comparable, Comparable, __Serializable, Serializable):
+class Level():
     """org.apache.logging.log4j.Level"""
  
     @staticmethod
@@ -1794,7 +1796,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LoggingException(__RuntimeException, RuntimeException):
+class LoggingException():
     """org.apache.logging.log4j.LoggingException"""
  
     @staticmethod
@@ -1975,7 +1977,7 @@ import org.apache.logging.log4j.Marker as __Marker
 __Marker = __Marker
 from abc import abstractmethod, ABC
  
-class Marker(ABC, __Serializable, Serializable):
+class Marker(ABC):
     """org.apache.logging.log4j.Marker"""
  
     @staticmethod

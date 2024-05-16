@@ -10,6 +10,7 @@ __PacketDestination = __PacketDestination
 import dev.ultreon.quantum.network.client.ClientPacketHandler as __ClientPacketHandler
 __ClientPacketHandler = __ClientPacketHandler
 import java.lang.Long as __long
+from pyquantum_helper import override
 import dev.ultreon.quantum.network.PacketHandler as __PacketHandler
 __PacketHandler = __PacketHandler
 import dev.ultreon.quantum.network.packets.Packet as __Packet
@@ -29,7 +30,7 @@ except ImportError:
 
 from builtins import bool
  
-class LoginClientPacketHandler(ABC, __ClientPacketHandler, ClientPacketHandler):
+class LoginClientPacketHandler(ABC):
     """dev.ultreon.quantum.network.client.LoginClientPacketHandler"""
  
     @staticmethod
@@ -123,6 +124,7 @@ __PacketDestination = __PacketDestination
 import dev.ultreon.quantum.network.client.ClientPacketHandler as __ClientPacketHandler
 __ClientPacketHandler = __ClientPacketHandler
 import java.lang.Long as __long
+from pyquantum_helper import override
 import dev.ultreon.quantum.network.PacketHandler as __PacketHandler
 __PacketHandler = __PacketHandler
 import dev.ultreon.quantum.network.packets.Packet as __Packet
@@ -142,7 +144,7 @@ except ImportError:
 
 from builtins import bool
  
-class LoginClientPacketHandler(ABC, __ClientPacketHandler, ClientPacketHandler):
+class LoginClientPacketHandler(ABC):
     """dev.ultreon.quantum.network.client.LoginClientPacketHandler"""
  
     @staticmethod
@@ -238,6 +240,7 @@ __ClientPacketHandler = __ClientPacketHandler
 import dev.ultreon.quantum.network.api.PacketDestination as __PacketDestination
 __PacketDestination = __PacketDestination
 import java.lang.Long as __long
+from pyquantum_helper import override
 import dev.ultreon.quantum.network.PacketHandler as __PacketHandler
 __PacketHandler = __PacketHandler
 import dev.ultreon.quantum.network.packets.Packet as __Packet
@@ -255,7 +258,7 @@ except ImportError:
 
 from builtins import bool
  
-class ClientPacketHandler(ABC, pyquantum.__PacketHandler, network.PacketHandler):
+class ClientPacketHandler(ABC):
     """dev.ultreon.quantum.network.client.ClientPacketHandler"""
  
     @staticmethod
@@ -362,7 +365,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class C2SReplyPacket(network.__Packet, packets.Packet, pyquantum.__ReplyPacket, network.ReplyPacket):
+class C2SReplyPacket():
     """dev.ultreon.quantum.network.client.C2SReplyPacket"""
  
     @staticmethod
@@ -493,14 +496,14 @@ except ImportError:
 
 from abc import abstractmethod, ABC
 try:
-    from pyquantum import text
-except ImportError:
-    text = __import_once__("pyquantum.text")
-
-try:
     from pycorelibs.commons.v0 import vector
 except ImportError:
     vector = __import_once__("pycorelibs.commons.v0.vector")
+
+try:
+    from pyquantum import text
+except ImportError:
+    text = __import_once__("pyquantum.text")
 
 try:
     from pyquantum import collection
@@ -520,6 +523,7 @@ except ImportError:
 from builtins import str
 import dev.ultreon.quantum.network.client.ClientPacketHandler as __ClientPacketHandler
 __ClientPacketHandler = __ClientPacketHandler
+from pyquantum_helper import override
 try:
     from pyquantum import item
 except ImportError:
@@ -564,14 +568,14 @@ except ImportError:
     particles = __import_once__("pyquantum.world.particles")
 
 import java.util.Map as Map
-import java.util.List as List
 try:
     from pyubo import types
 except ImportError:
     types = __import_once__("pyubo.types")
 
+import java.util.List as List
  
-class InGameClientPacketHandler(ABC, __ClientPacketHandler, ClientPacketHandler):
+class InGameClientPacketHandler(ABC):
     """dev.ultreon.quantum.network.client.InGameClientPacketHandler"""
  
     @staticmethod
@@ -623,13 +627,13 @@ class InGameClientPacketHandler(ABC, __ClientPacketHandler, ClientPacketHandler)
         pass
 
     @abstractmethod
-    def onAddPlayer(self, arg0: 'UUID', arg1: str, arg2: 'Vec3d'):
-        """public abstract void dev.ultreon.quantum.network.client.InGameClientPacketHandler.onAddPlayer(java.util.UUID,java.lang.String,dev.ultreon.libs.commons.v0.vector.Vec3d)"""
+    def onKeepAlive(self, ):
+        """public abstract void dev.ultreon.quantum.network.client.InGameClientPacketHandler.onKeepAlive()"""
         pass
 
     @abstractmethod
-    def onKeepAlive(self, ):
-        """public abstract void dev.ultreon.quantum.network.client.InGameClientPacketHandler.onKeepAlive()"""
+    def onAddPlayer(self, arg0: 'UUID', arg1: str, arg2: 'Vec3d'):
+        """public abstract void dev.ultreon.quantum.network.client.InGameClientPacketHandler.onAddPlayer(java.util.UUID,java.lang.String,dev.ultreon.libs.commons.v0.vector.Vec3d)"""
         pass
 
     @abstractmethod
@@ -648,13 +652,13 @@ class InGameClientPacketHandler(ABC, __ClientPacketHandler, ClientPacketHandler)
         pass
 
     @abstractmethod
-    def onTabCompleteResult(self, arg0: 'String'):
-        """public abstract void dev.ultreon.quantum.network.client.InGameClientPacketHandler.onTabCompleteResult(java.lang.String[])"""
+    def onAddEntity(self, arg0: int, arg1: 'EntityType', arg2: 'Vec3d', arg3: 'MapType'):
+        """public abstract void dev.ultreon.quantum.network.client.InGameClientPacketHandler.onAddEntity(int,dev.ultreon.quantum.entity.EntityType<?>,dev.ultreon.libs.commons.v0.vector.Vec3d,dev.ultreon.ubo.types.MapType)"""
         pass
 
     @abstractmethod
-    def onAddEntity(self, arg0: int, arg1: 'EntityType', arg2: 'Vec3d', arg3: 'MapType'):
-        """public abstract void dev.ultreon.quantum.network.client.InGameClientPacketHandler.onAddEntity(int,dev.ultreon.quantum.entity.EntityType<?>,dev.ultreon.libs.commons.v0.vector.Vec3d,dev.ultreon.ubo.types.MapType)"""
+    def onTabCompleteResult(self, arg0: 'String'):
+        """public abstract void dev.ultreon.quantum.network.client.InGameClientPacketHandler.onTabCompleteResult(java.lang.String[])"""
         pass
 
     @abstractmethod
@@ -694,13 +698,13 @@ class InGameClientPacketHandler(ABC, __ClientPacketHandler, ClientPacketHandler)
         pass
 
     @abstractmethod
-    def onOpenContainerMenu(self, arg0: 'Identifier', arg1: 'List'):
-        """public abstract void dev.ultreon.quantum.network.client.InGameClientPacketHandler.onOpenContainerMenu(dev.ultreon.quantum.util.Identifier,java.util.List<dev.ultreon.quantum.item.ItemStack>)"""
+    def onModPacket(self, arg0: 'NetworkChannel', arg1: 'ModPacket'):
+        """public abstract void dev.ultreon.quantum.network.client.InGameClientPacketHandler.onModPacket(dev.ultreon.quantum.network.NetworkChannel,dev.ultreon.quantum.network.api.packet.ModPacket<?>)"""
         pass
 
     @abstractmethod
-    def onModPacket(self, arg0: 'NetworkChannel', arg1: 'ModPacket'):
-        """public abstract void dev.ultreon.quantum.network.client.InGameClientPacketHandler.onModPacket(dev.ultreon.quantum.network.NetworkChannel,dev.ultreon.quantum.network.api.packet.ModPacket<?>)"""
+    def onOpenContainerMenu(self, arg0: 'Identifier', arg1: 'List'):
+        """public abstract void dev.ultreon.quantum.network.client.InGameClientPacketHandler.onOpenContainerMenu(dev.ultreon.quantum.util.Identifier,java.util.List<dev.ultreon.quantum.item.ItemStack>)"""
         pass
 
     @abstractmethod
@@ -780,13 +784,13 @@ class InGameClientPacketHandler(ABC, __ClientPacketHandler, ClientPacketHandler)
         pass
 
     @abstractmethod
-    def onMenuItemChanged(self, arg0: int, arg1: 'ItemStack'):
-        """public abstract void dev.ultreon.quantum.network.client.InGameClientPacketHandler.onMenuItemChanged(int,dev.ultreon.quantum.item.ItemStack)"""
+    def onRemovePermission(self, arg0: 'RemovePermissionPacket'):
+        """public abstract void dev.ultreon.quantum.network.client.InGameClientPacketHandler.onRemovePermission(dev.ultreon.quantum.network.packets.RemovePermissionPacket)"""
         pass
 
     @abstractmethod
-    def onRemovePermission(self, arg0: 'RemovePermissionPacket'):
-        """public abstract void dev.ultreon.quantum.network.client.InGameClientPacketHandler.onRemovePermission(dev.ultreon.quantum.network.packets.RemovePermissionPacket)"""
+    def onMenuItemChanged(self, arg0: int, arg1: 'ItemStack'):
+        """public abstract void dev.ultreon.quantum.network.client.InGameClientPacketHandler.onMenuItemChanged(int,dev.ultreon.quantum.item.ItemStack)"""
         pass
 
     @abstractmethod

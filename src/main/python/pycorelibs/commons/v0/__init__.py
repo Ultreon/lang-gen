@@ -21,7 +21,7 @@ import dev.ultreon.libs.commons.v0.Progress as __Progress
 __Progress = __Progress
 from builtins import int
  
-class Progress(__Cloneable, Cloneable, __Comparable, Comparable, __Serializable, Serializable):
+class Progress():
     """dev.ultreon.libs.commons.v0.Progress"""
  
     @staticmethod
@@ -170,7 +170,7 @@ import dev.ultreon.libs.commons.v0.Progress as __Progress
 __Progress = __Progress
 from builtins import int
  
-class Progress(__Cloneable, Cloneable, __Comparable, Comparable, __Serializable, Serializable):
+class Progress():
     """dev.ultreon.libs.commons.v0.Progress"""
  
     @staticmethod
@@ -752,7 +752,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Percentage(__Serializable, Serializable, __Comparable, Comparable):
+class Percentage():
     """dev.ultreon.libs.commons.v0.Percentage"""
  
     @staticmethod
@@ -887,7 +887,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Pixel(__Serializable, Serializable):
+class Pixel():
     """dev.ultreon.libs.commons.v0.Pixel"""
  
     @staticmethod
@@ -1025,7 +1025,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MessengerImpl(__Messenger, Messenger):
+class MessengerImpl():
     """dev.ultreon.libs.commons.v0.MessengerImpl"""
  
     @staticmethod
@@ -1144,7 +1144,7 @@ import dev.ultreon.libs.commons.v0.Progress as __Progress
 __Progress = __Progress
 from builtins import int
  
-class ProgressMessenger(__Progress, Progress):
+class ProgressMessenger():
     """dev.ultreon.libs.commons.v0.ProgressMessenger"""
  
     @staticmethod
@@ -1415,7 +1415,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Level(__Enum, Enum):
+class Level():
     """dev.ultreon.libs.commons.v0.Logger.Level"""
  
     @staticmethod
@@ -1572,7 +1572,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class VersionType(__Enum, Enum):
+class VersionType():
     """dev.ultreon.libs.commons.v0.VersionType"""
  
     @staticmethod
@@ -1979,7 +1979,7 @@ from builtins import bool
 import java.util.concurrent.CompletableFuture as CompletableFuture
 from builtins import int
  
-class Downloader(__IDownloader, IDownloader):
+class Downloader():
     """dev.ultreon.libs.commons.v0.Downloader"""
  
     @staticmethod
@@ -2139,7 +2139,7 @@ import dev.ultreon.libs.commons.v0.Version as __Version
 __Version = __Version
 from builtins import int
  
-class Version(__Serializable, Serializable):
+class Version():
     """dev.ultreon.libs.commons.v0.Version"""
  
     @staticmethod
@@ -2526,7 +2526,7 @@ import dev.ultreon.libs.commons.v0.Insets as __Insets
 __Insets = __Insets
 from builtins import int
  
-class Insets(__Insets, Insets):
+class Insets():
     """dev.ultreon.libs.commons.v0.Insets"""
  
     @staticmethod
@@ -2901,7 +2901,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DummyMessenger(__MessengerImpl, MessengerImpl):
+class DummyMessenger():
     """dev.ultreon.libs.commons.v0.DummyMessenger"""
  
     @staticmethod
@@ -3031,7 +3031,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Anchor(__Enum, Enum):
+class Anchor():
     """dev.ultreon.libs.commons.v0.Anchor"""
  
     @staticmethod

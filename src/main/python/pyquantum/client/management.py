@@ -45,7 +45,7 @@ import dev.ultreon.quantum.client.atlas.TextureAtlas as __TextureAtlas
 __TextureAtlas = __TextureAtlas
 from builtins import int
  
-class TextureAtlasManager(__Manager, Manager):
+class TextureAtlasManager():
     """dev.ultreon.quantum.client.management.TextureAtlasManager"""
  
     @staticmethod
@@ -203,7 +203,7 @@ import dev.ultreon.quantum.client.atlas.TextureAtlas as __TextureAtlas
 __TextureAtlas = __TextureAtlas
 from builtins import int
  
-class TextureAtlasManager(__Manager, Manager):
+class TextureAtlasManager():
     """dev.ultreon.quantum.client.management.TextureAtlasManager"""
  
     @staticmethod
@@ -325,9 +325,9 @@ class TextureAtlasManager(__Manager, Manager):
 from pyquantum_helper import import_once as __import_once__
 import java.util.function.Supplier as Supplier
 from builtins import str
+from pyquantum_helper import override
 import com.badlogic.gdx.graphics.glutils.ShaderProgram as __ShaderProgram
 __ShaderProgram = __ShaderProgram
-from pyquantum_helper import override
 import java.lang.Object as __object
 from builtins import type
 import dev.ultreon.quantum.client.management.Manager as __Manager
@@ -362,7 +362,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ShaderProgramManager(__Manager, Manager):
+class ShaderProgramManager():
     """dev.ultreon.quantum.client.management.ShaderProgramManager"""
  
     @staticmethod
@@ -532,7 +532,7 @@ except ImportError:
 
 from builtins import int
  
-class ShaderProviderManager(__Manager, Manager):
+class ShaderProviderManager():
     """dev.ultreon.quantum.client.management.ShaderProviderManager"""
  
     @staticmethod
@@ -664,6 +664,7 @@ try:
 except ImportError:
     util = __import_once__("pyquantum.util")
 
+from pyquantum_helper import override
 import dev.ultreon.quantum.client.management.Manager as __Manager
 __Manager = __Manager
 from abc import abstractmethod, ABC
@@ -673,7 +674,7 @@ except ImportError:
     resources = __import_once__("pyquantum.resources")
 
  
-class Manager(ABC, client.__ContextAwareReloadable, resources.ContextAwareReloadable):
+class Manager(ABC):
     """dev.ultreon.quantum.client.management.Manager"""
  
     @staticmethod
@@ -763,7 +764,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class CubemapManager(__Manager, Manager, pygdx.__Disposable, utils.Disposable):
+class CubemapManager():
     """dev.ultreon.quantum.client.management.CubemapManager"""
  
     @staticmethod
@@ -930,7 +931,7 @@ __Material = __Material
 from builtins import bool
 from builtins import int
  
-class MaterialManager(__Manager, Manager):
+class MaterialManager():
     """dev.ultreon.quantum.client.management.MaterialManager"""
  
     @staticmethod

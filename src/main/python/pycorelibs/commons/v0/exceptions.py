@@ -30,7 +30,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SyntaxException(__IllegalArgumentException, IllegalArgumentException):
+class SyntaxException():
     """dev.ultreon.libs.commons.v0.exceptions.SyntaxException"""
  
     @staticmethod
@@ -250,7 +250,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SyntaxException(__IllegalArgumentException, IllegalArgumentException):
+class SyntaxException():
     """dev.ultreon.libs.commons.v0.exceptions.SyntaxException"""
  
     @staticmethod
@@ -473,7 +473,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidValueException(__RuntimeException, RuntimeException):
+class InvalidValueException():
     """dev.ultreon.libs.commons.v0.exceptions.InvalidValueException"""
  
     @staticmethod

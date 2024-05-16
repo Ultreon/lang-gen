@@ -30,7 +30,7 @@ import java.util.function.ToDoubleFunction as ToDoubleFunction
 from builtins import bool
 from builtins import int
  
-class StringKeyAnalyzer(collections4.__KeyAnalyzer, trie.KeyAnalyzer):
+class StringKeyAnalyzer():
     """org.apache.commons.collections4.trie.analyzer.StringKeyAnalyzer"""
  
     @staticmethod
@@ -225,7 +225,7 @@ import java.util.function.ToDoubleFunction as ToDoubleFunction
 from builtins import bool
 from builtins import int
  
-class StringKeyAnalyzer(collections4.__KeyAnalyzer, trie.KeyAnalyzer):
+class StringKeyAnalyzer():
     """org.apache.commons.collections4.trie.analyzer.StringKeyAnalyzer"""
  
     @staticmethod

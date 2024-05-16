@@ -192,7 +192,7 @@ import dev.ultreon.quantum.api.commands.variables.ObjectType as __ObjectType
 __ObjectType = __ObjectType
 from builtins import int
  
-class ObjectType(__ObjectSource, ObjectSource):
+class ObjectType():
     """dev.ultreon.quantum.api.commands.variables.ObjectType"""
  
     @staticmethod
@@ -422,7 +422,7 @@ import dev.ultreon.quantum.api.commands.variables.RootVariableSource as __RootVa
 __RootVariableSource = __RootVariableSource
 from builtins import int
  
-class RootVariableSource(__ObjectSource, ObjectSource):
+class RootVariableSource():
     """dev.ultreon.quantum.api.commands.variables.RootVariableSource"""
  
     @staticmethod
@@ -1125,7 +1125,7 @@ import dev.ultreon.quantum.api.commands.variables.ObjectType as __ObjectType
 __ObjectType = __ObjectType
 from builtins import int
  
-class ObjectField(__ObjectSource, ObjectSource):
+class ObjectField():
     """dev.ultreon.quantum.api.commands.variables.ObjectField"""
  
     @staticmethod
@@ -1303,7 +1303,7 @@ import dev.ultreon.quantum.api.commands.variables.ObjectType as __ObjectType
 __ObjectType = __ObjectType
 from builtins import int
  
-class SelectorObjectSource(__ObjectSource, ObjectSource):
+class SelectorObjectSource():
     """dev.ultreon.quantum.api.commands.variables.SelectorObjectSource"""
  
     @staticmethod

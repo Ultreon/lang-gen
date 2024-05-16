@@ -5,12 +5,13 @@ from overload import overload
  
 import dev.ultreon.libs.functions.v0.supplier.CharSupplier as __CharSupplier
 __CharSupplier = __CharSupplier
+from pyquantum_helper import override
 import java.lang.Character as __Character
 __Character = __Character
 import java.lang.Character as Character
 from abc import abstractmethod, ABC
  
-class CharSupplier(ABC, __Supplier, Supplier):
+class CharSupplier(ABC):
     """dev.ultreon.libs.functions.v0.supplier.CharSupplier"""
  
     @staticmethod
@@ -57,12 +58,13 @@ class CharSupplier(ABC, __Supplier, Supplier):
 # CLASS: dev.ultreon.libs.functions.v0.supplier.CharSupplier
 import dev.ultreon.libs.functions.v0.supplier.CharSupplier as __CharSupplier
 __CharSupplier = __CharSupplier
+from pyquantum_helper import override
 import java.lang.Character as __Character
 __Character = __Character
 import java.lang.Character as Character
 from abc import abstractmethod, ABC
  
-class CharSupplier(ABC, __Supplier, Supplier):
+class CharSupplier(ABC):
     """dev.ultreon.libs.functions.v0.supplier.CharSupplier"""
  
     @staticmethod
@@ -113,12 +115,13 @@ class CharSupplier(ABC, __Supplier, Supplier):
 from pyquantum_helper import transform as __transform
 import dev.ultreon.libs.functions.v0.supplier.LongSupplier as __LongSupplier
 __LongSupplier = __LongSupplier
+from pyquantum_helper import override
 import dev.ultreon.libs.functions.v0.supplier.DoubleSupplier as __DoubleSupplier
 __DoubleSupplier = __DoubleSupplier
 from abc import abstractmethod, ABC
 import java.lang.Double as Double
  
-class DoubleSupplier(ABC, __Supplier, Supplier):
+class DoubleSupplier(ABC):
     """dev.ultreon.libs.functions.v0.supplier.DoubleSupplier"""
  
     @staticmethod
@@ -257,6 +260,7 @@ class DoubleSupplier(ABC, __Supplier, Supplier):
  
 # CLASS: dev.ultreon.libs.functions.v0.supplier.FloatSupplier
 from pyquantum_helper import transform as __transform
+from pyquantum_helper import override
 import dev.ultreon.libs.functions.v0.supplier.IntSupplier as __IntSupplier
 __IntSupplier = __IntSupplier
 import java.lang.Float as Float
@@ -264,7 +268,7 @@ from abc import abstractmethod, ABC
 import dev.ultreon.libs.functions.v0.supplier.FloatSupplier as __FloatSupplier
 __FloatSupplier = __FloatSupplier
  
-class FloatSupplier(ABC, __Supplier, Supplier):
+class FloatSupplier(ABC):
     """dev.ultreon.libs.functions.v0.supplier.FloatSupplier"""
  
     @staticmethod
@@ -403,13 +407,14 @@ class FloatSupplier(ABC, __Supplier, Supplier):
  
 # CLASS: dev.ultreon.libs.functions.v0.supplier.BooleanSupplier
 import java.lang.Boolean as Boolean
+from pyquantum_helper import override
 import dev.ultreon.libs.functions.v0.supplier.BooleanSupplier as __BooleanSupplier
 __BooleanSupplier = __BooleanSupplier
 import java.lang.Boolean as __Boolean
 __Boolean = __Boolean
 from abc import abstractmethod, ABC
  
-class BooleanSupplier(ABC, __Supplier, Supplier):
+class BooleanSupplier(ABC):
     """dev.ultreon.libs.functions.v0.supplier.BooleanSupplier"""
  
     @staticmethod
@@ -453,12 +458,13 @@ class BooleanSupplier(ABC, __Supplier, Supplier):
  
 # CLASS: dev.ultreon.libs.functions.v0.supplier.ShortSupplier
 from pyquantum_helper import transform as __transform
+from pyquantum_helper import override
 import java.lang.Short as Short
 import dev.ultreon.libs.functions.v0.supplier.ShortSupplier as __ShortSupplier
 __ShortSupplier = __ShortSupplier
 from abc import abstractmethod, ABC
  
-class ShortSupplier(ABC, __Supplier, Supplier):
+class ShortSupplier(ABC):
     """dev.ultreon.libs.functions.v0.supplier.ShortSupplier"""
  
     @staticmethod
@@ -604,10 +610,11 @@ class ShortSupplier(ABC, __Supplier, Supplier):
 import dev.ultreon.libs.functions.v0.supplier.LongSupplier as __LongSupplier
 __LongSupplier = __LongSupplier
 from pyquantum_helper import transform as __transform
+from pyquantum_helper import override
 import java.lang.Long as Long
 from abc import abstractmethod, ABC
  
-class LongSupplier(ABC, __Supplier, Supplier):
+class LongSupplier(ABC):
     """dev.ultreon.libs.functions.v0.supplier.LongSupplier"""
  
     @staticmethod
@@ -751,12 +758,13 @@ class LongSupplier(ABC, __Supplier, Supplier):
  
 # CLASS: dev.ultreon.libs.functions.v0.supplier.IntSupplier
 from pyquantum_helper import transform as __transform
+from pyquantum_helper import override
 import dev.ultreon.libs.functions.v0.supplier.IntSupplier as __IntSupplier
 __IntSupplier = __IntSupplier
 import java.lang.Integer as Integer
 from abc import abstractmethod, ABC
  
-class IntSupplier(ABC, __Supplier, Supplier):
+class IntSupplier(ABC):
     """dev.ultreon.libs.functions.v0.supplier.IntSupplier"""
  
     @staticmethod
@@ -900,12 +908,13 @@ class IntSupplier(ABC, __Supplier, Supplier):
  
 # CLASS: dev.ultreon.libs.functions.v0.supplier.ByteSupplier
 from pyquantum_helper import transform as __transform
+from pyquantum_helper import override
 import dev.ultreon.libs.functions.v0.supplier.ByteSupplier as __ByteSupplier
 __ByteSupplier = __ByteSupplier
 from abc import abstractmethod, ABC
 import java.lang.Byte as Byte
  
-class ByteSupplier(ABC, __Supplier, Supplier):
+class ByteSupplier(ABC):
     """dev.ultreon.libs.functions.v0.supplier.ByteSupplier"""
  
     @staticmethod

@@ -27,7 +27,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Uniform(__Validator, Validator):
+class Uniform():
     """com.badlogic.gdx.graphics.g3d.shaders.BaseShader.Uniform"""
  
     @staticmethod
@@ -171,7 +171,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Uniform(__Validator, Validator):
+class Uniform():
     """com.badlogic.gdx.graphics.g3d.shaders.BaseShader.Uniform"""
  
     @staticmethod
@@ -320,7 +320,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GlobalSetter(ABC, __Setter, Setter):
+class GlobalSetter(ABC):
     """com.badlogic.gdx.graphics.g3d.shaders.BaseShader.GlobalSetter"""
  
     @staticmethod
@@ -477,7 +477,7 @@ except ImportError:
 
 from builtins import int
  
-class BaseShader(ABC, graphics.__Shader, g3d.Shader):
+class BaseShader(ABC):
     """com.badlogic.gdx.graphics.g3d.shaders.BaseShader"""
  
     @staticmethod
@@ -775,7 +775,7 @@ __LocalSetter = __BaseShader_LocalSetter.LocalSetter
 from builtins import bool
 from builtins import int
  
-class Bones(__LocalSetter, LocalSetter):
+class Bones():
     """com.badlogic.gdx.graphics.g3d.shaders.DefaultShader.Setters.Bones"""
  
     @staticmethod
@@ -896,7 +896,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Config(__Config, Config):
+class Config():
     """com.badlogic.gdx.graphics.g3d.shaders.DepthShader.Config"""
  
     @staticmethod
@@ -1096,7 +1096,7 @@ except ImportError:
 
 from builtins import int
  
-class DefaultShader(__BaseShader, BaseShader):
+class DefaultShader():
     """com.badlogic.gdx.graphics.g3d.shaders.DefaultShader"""
  
     @staticmethod
@@ -1753,7 +1753,7 @@ __LocalSetter = __BaseShader_LocalSetter.LocalSetter
 from builtins import bool
 from builtins import int
  
-class ACubemap(__LocalSetter, LocalSetter):
+class ACubemap():
     """com.badlogic.gdx.graphics.g3d.shaders.DefaultShader.Setters.ACubemap"""
  
     @staticmethod
@@ -1905,7 +1905,7 @@ except ImportError:
 
 from builtins import int
  
-class DepthShader(__DefaultShader, DefaultShader):
+class DepthShader():
     """com.badlogic.gdx.graphics.g3d.shaders.DepthShader"""
  
     @staticmethod
@@ -2281,7 +2281,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LocalSetter(ABC, __Setter, Setter):
+class LocalSetter(ABC):
     """com.badlogic.gdx.graphics.g3d.shaders.BaseShader.LocalSetter"""
  
     @staticmethod

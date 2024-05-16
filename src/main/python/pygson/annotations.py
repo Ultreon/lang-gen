@@ -9,7 +9,7 @@ import com.google.gson.annotations.Expose as __Expose
 __Expose = __Expose
 from abc import abstractmethod, ABC
  
-class Expose(ABC, __Annotation, Annotation):
+class Expose(ABC):
     """com.google.gson.annotations.Expose"""
  
     @staticmethod
@@ -79,7 +79,7 @@ import com.google.gson.annotations.Expose as __Expose
 __Expose = __Expose
 from abc import abstractmethod, ABC
  
-class Expose(ABC, __Annotation, Annotation):
+class Expose(ABC):
     """com.google.gson.annotations.Expose"""
  
     @staticmethod
@@ -152,7 +152,7 @@ import com.google.gson.annotations.Until as __Until
 __Until = __Until
 from abc import abstractmethod, ABC
  
-class Until(ABC, __Annotation, Annotation):
+class Until(ABC):
     """com.google.gson.annotations.Until"""
  
     @staticmethod
@@ -215,7 +215,7 @@ import com.google.gson.annotations.Since as __Since
 __Since = __Since
 from abc import abstractmethod, ABC
  
-class Since(ABC, __Annotation, Annotation):
+class Since(ABC):
     """com.google.gson.annotations.Since"""
  
     @staticmethod
@@ -278,7 +278,7 @@ import com.google.gson.annotations.JsonAdapter as __JsonAdapter
 __JsonAdapter = __JsonAdapter
 from abc import abstractmethod, ABC
  
-class JsonAdapter(ABC, __Annotation, Annotation):
+class JsonAdapter(ABC):
     """com.google.gson.annotations.JsonAdapter"""
  
     @staticmethod
@@ -346,7 +346,7 @@ from abc import abstractmethod, ABC
 import com.google.gson.annotations.SerializedName as __SerializedName
 __SerializedName = __SerializedName
  
-class SerializedName(ABC, __Annotation, Annotation):
+class SerializedName(ABC):
     """com.google.gson.annotations.SerializedName"""
  
     @staticmethod

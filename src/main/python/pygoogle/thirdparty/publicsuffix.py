@@ -29,7 +29,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class PublicSuffixType(__Enum, Enum):
+class PublicSuffixType():
     """com.google.thirdparty.publicsuffix.PublicSuffixType"""
  
     @staticmethod
@@ -189,7 +189,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class PublicSuffixType(__Enum, Enum):
+class PublicSuffixType():
     """com.google.thirdparty.publicsuffix.PublicSuffixType"""
  
     @staticmethod

@@ -53,7 +53,7 @@ import com.badlogic.gdx.graphics.g3d.particles.values.PrimitiveSpawnShapeValue a
 __PrimitiveSpawnShapeValue = __PrimitiveSpawnShapeValue
 from builtins import int
  
-class RectangleSpawnShapeValue(__PrimitiveSpawnShapeValue, PrimitiveSpawnShapeValue):
+class RectangleSpawnShapeValue():
     """com.badlogic.gdx.graphics.g3d.particles.values.RectangleSpawnShapeValue"""
  
     @staticmethod
@@ -318,7 +318,7 @@ import com.badlogic.gdx.graphics.g3d.particles.values.PrimitiveSpawnShapeValue a
 __PrimitiveSpawnShapeValue = __PrimitiveSpawnShapeValue
 from builtins import int
  
-class RectangleSpawnShapeValue(__PrimitiveSpawnShapeValue, PrimitiveSpawnShapeValue):
+class RectangleSpawnShapeValue():
     """com.badlogic.gdx.graphics.g3d.particles.values.RectangleSpawnShapeValue"""
  
     @staticmethod
@@ -594,7 +594,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class UnweightedMeshSpawnShapeValue(__MeshSpawnShapeValue, MeshSpawnShapeValue):
+class UnweightedMeshSpawnShapeValue():
     """com.badlogic.gdx.graphics.g3d.particles.values.UnweightedMeshSpawnShapeValue"""
  
     @staticmethod
@@ -811,7 +811,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NumericValue(__ParticleValue, ParticleValue):
+class NumericValue():
     """com.badlogic.gdx.graphics.g3d.particles.values.NumericValue"""
  
     @staticmethod
@@ -1004,7 +1004,7 @@ import com.badlogic.gdx.graphics.g3d.particles.values.PrimitiveSpawnShapeValue a
 __PrimitiveSpawnShapeValue = __PrimitiveSpawnShapeValue
 from builtins import int
  
-class PrimitiveSpawnShapeValue(ABC, __SpawnShapeValue, SpawnShapeValue):
+class PrimitiveSpawnShapeValue(ABC):
     """com.badlogic.gdx.graphics.g3d.particles.values.PrimitiveSpawnShapeValue"""
  
     @staticmethod
@@ -1266,7 +1266,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class MeshSpawnShapeValue(ABC, __SpawnShapeValue, SpawnShapeValue):
+class MeshSpawnShapeValue(ABC):
     """com.badlogic.gdx.graphics.g3d.particles.values.MeshSpawnShapeValue"""
  
     @staticmethod
@@ -1501,7 +1501,7 @@ import com.badlogic.gdx.graphics.g3d.particles.values.PrimitiveSpawnShapeValue a
 __PrimitiveSpawnShapeValue = __PrimitiveSpawnShapeValue
 from builtins import int
  
-class LineSpawnShapeValue(__PrimitiveSpawnShapeValue, PrimitiveSpawnShapeValue):
+class LineSpawnShapeValue():
     """com.badlogic.gdx.graphics.g3d.particles.values.LineSpawnShapeValue"""
  
     @staticmethod
@@ -1745,7 +1745,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ScaledNumericValue(__RangedNumericValue, RangedNumericValue):
+class ScaledNumericValue():
     """com.badlogic.gdx.graphics.g3d.particles.values.ScaledNumericValue"""
  
     @staticmethod
@@ -1931,14 +1931,14 @@ class ScaledNumericValue(__RangedNumericValue, RangedNumericValue):
         super(__ScaledNumericValue, self).read(arg0, arg1)
 
     @overload
-    def setHigh(self, arg0: float):
-        """public void com.badlogic.gdx.graphics.g3d.particles.values.ScaledNumericValue.setHigh(float)"""
-        super(__ScaledNumericValue, self).setHigh(__float.valueOf(arg0))
-
-    @overload
     def setHigh(self, arg0: float, arg1: float):
         """public void com.badlogic.gdx.graphics.g3d.particles.values.ScaledNumericValue.setHigh(float,float)"""
         super(__ScaledNumericValue, self).setHigh(__float.valueOf(arg0), __float.valueOf(arg1))
+
+    @overload
+    def setHigh(self, arg0: float):
+        """public void com.badlogic.gdx.graphics.g3d.particles.values.ScaledNumericValue.setHigh(float)"""
+        super(__ScaledNumericValue, self).setHigh(__float.valueOf(arg0))
 
     @override
     @overload
@@ -2047,7 +2047,7 @@ import com.badlogic.gdx.graphics.g3d.particles.values.PrimitiveSpawnShapeValue a
 __PrimitiveSpawnShapeValue = __PrimitiveSpawnShapeValue
 from builtins import int
  
-class PointSpawnShapeValue(__PrimitiveSpawnShapeValue, PrimitiveSpawnShapeValue):
+class PointSpawnShapeValue():
     """com.badlogic.gdx.graphics.g3d.particles.values.PointSpawnShapeValue"""
  
     @staticmethod
@@ -2289,7 +2289,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GradientColorValue(__ParticleValue, ParticleValue):
+class GradientColorValue():
     """com.badlogic.gdx.graphics.g3d.particles.values.GradientColorValue"""
  
     @staticmethod
@@ -2481,7 +2481,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RangedNumericValue(__ParticleValue, ParticleValue):
+class RangedNumericValue():
     """com.badlogic.gdx.graphics.g3d.particles.values.RangedNumericValue"""
  
     @staticmethod
@@ -2700,7 +2700,7 @@ import com.badlogic.gdx.graphics.g3d.particles.values.PrimitiveSpawnShapeValue a
 __PrimitiveSpawnShapeValue = __PrimitiveSpawnShapeValue
 from builtins import int
  
-class CylinderSpawnShapeValue(__PrimitiveSpawnShapeValue, PrimitiveSpawnShapeValue):
+class CylinderSpawnShapeValue():
     """com.badlogic.gdx.graphics.g3d.particles.values.CylinderSpawnShapeValue"""
  
     @staticmethod
@@ -2937,7 +2937,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ParticleValue(pygdx.__Json_Serializable, utils.Json$Serializable):
+class ParticleValue():
     """com.badlogic.gdx.graphics.g3d.particles.values.ParticleValue"""
  
     @staticmethod
@@ -3257,7 +3257,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class WeightMeshSpawnShapeValue(__MeshSpawnShapeValue, MeshSpawnShapeValue):
+class WeightMeshSpawnShapeValue():
     """com.badlogic.gdx.graphics.g3d.particles.values.WeightMeshSpawnShapeValue"""
  
     @staticmethod
@@ -3476,7 +3476,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class SpawnSide(__Enum, Enum):
+class SpawnSide():
     """com.badlogic.gdx.graphics.g3d.particles.values.PrimitiveSpawnShapeValue.SpawnSide"""
  
     @staticmethod
@@ -3660,7 +3660,7 @@ import com.badlogic.gdx.graphics.g3d.particles.values.PrimitiveSpawnShapeValue a
 __PrimitiveSpawnShapeValue = __PrimitiveSpawnShapeValue
 from builtins import int
  
-class EllipseSpawnShapeValue(__PrimitiveSpawnShapeValue, PrimitiveSpawnShapeValue):
+class EllipseSpawnShapeValue():
     """com.badlogic.gdx.graphics.g3d.particles.values.EllipseSpawnShapeValue"""
  
     @staticmethod
@@ -3928,7 +3928,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SpawnShapeValue(ABC, __ParticleValue, ParticleValue, g3d.__ResourceData_Configurable, particles.ResourceData$Configurable, pygdx.__Json_Serializable, utils.Json$Serializable):
+class SpawnShapeValue(ABC):
     """com.badlogic.gdx.graphics.g3d.particles.values.SpawnShapeValue"""
  
     @staticmethod

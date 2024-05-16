@@ -24,7 +24,7 @@ from builtins import bool
 from builtins import int
 import java.util.Random as Random
  
-class JavaRNG(__RNG, RNG):
+class JavaRNG():
     """dev.ultreon.quantum.world.rng.JavaRNG"""
  
     @staticmethod
@@ -213,7 +213,7 @@ from builtins import bool
 from builtins import int
 import java.util.Random as Random
  
-class JavaRNG(__RNG, RNG):
+class JavaRNG():
     """dev.ultreon.quantum.world.rng.JavaRNG"""
  
     @staticmethod

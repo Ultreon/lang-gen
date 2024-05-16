@@ -24,7 +24,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FloatDistribution(ABC, __Distribution, Distribution):
+class FloatDistribution(ABC):
     """com.badlogic.gdx.ai.utils.random.FloatDistribution"""
  
     @staticmethod
@@ -169,7 +169,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FloatDistribution(ABC, __Distribution, Distribution):
+class FloatDistribution(ABC):
     """com.badlogic.gdx.ai.utils.random.FloatDistribution"""
  
     @staticmethod
@@ -316,7 +316,7 @@ __ConstantIntegerDistribution = __ConstantIntegerDistribution
 from builtins import bool
 from builtins import int
  
-class ConstantIntegerDistribution(__IntegerDistribution, IntegerDistribution):
+class ConstantIntegerDistribution():
     """com.badlogic.gdx.ai.utils.random.ConstantIntegerDistribution"""
  
     @staticmethod
@@ -458,7 +458,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class UniformFloatDistribution(__FloatDistribution, FloatDistribution):
+class UniformFloatDistribution():
     """com.badlogic.gdx.ai.utils.random.UniformFloatDistribution"""
  
     @staticmethod
@@ -611,7 +611,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class UniformIntegerDistribution(__IntegerDistribution, IntegerDistribution):
+class UniformIntegerDistribution():
     """com.badlogic.gdx.ai.utils.random.UniformIntegerDistribution"""
  
     @staticmethod
@@ -765,7 +765,7 @@ import java.lang.Double as __double
 from builtins import bool
 from builtins import int
  
-class ConstantDoubleDistribution(__DoubleDistribution, DoubleDistribution):
+class ConstantDoubleDistribution():
     """com.badlogic.gdx.ai.utils.random.ConstantDoubleDistribution"""
  
     @staticmethod
@@ -907,7 +907,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LongDistribution(ABC, __Distribution, Distribution):
+class LongDistribution(ABC):
     """com.badlogic.gdx.ai.utils.random.LongDistribution"""
  
     @staticmethod
@@ -1049,7 +1049,7 @@ __UniformLongDistribution = __UniformLongDistribution
 from builtins import bool
 from builtins import int
  
-class UniformLongDistribution(__LongDistribution, LongDistribution):
+class UniformLongDistribution():
     """com.badlogic.gdx.ai.utils.random.UniformLongDistribution"""
  
     @staticmethod
@@ -1203,7 +1203,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TriangularIntegerDistribution(__IntegerDistribution, IntegerDistribution):
+class TriangularIntegerDistribution():
     """com.badlogic.gdx.ai.utils.random.TriangularIntegerDistribution"""
  
     @staticmethod
@@ -1369,7 +1369,7 @@ import java.lang.Double as __double
 from builtins import bool
 from builtins import int
  
-class TriangularDoubleDistribution(__DoubleDistribution, DoubleDistribution):
+class TriangularDoubleDistribution():
     """com.badlogic.gdx.ai.utils.random.TriangularDoubleDistribution"""
  
     @staticmethod
@@ -1535,7 +1535,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ConstantFloatDistribution(__FloatDistribution, FloatDistribution):
+class ConstantFloatDistribution():
     """com.badlogic.gdx.ai.utils.random.ConstantFloatDistribution"""
  
     @staticmethod
@@ -1677,7 +1677,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TriangularFloatDistribution(__FloatDistribution, FloatDistribution):
+class TriangularFloatDistribution():
     """com.badlogic.gdx.ai.utils.random.TriangularFloatDistribution"""
  
     @staticmethod
@@ -1843,7 +1843,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class IntegerDistribution(ABC, __Distribution, Distribution):
+class IntegerDistribution(ABC):
     """com.badlogic.gdx.ai.utils.random.IntegerDistribution"""
  
     @staticmethod
@@ -1986,7 +1986,7 @@ import com.badlogic.gdx.ai.utils.random.TriangularLongDistribution as __Triangul
 __TriangularLongDistribution = __TriangularLongDistribution
 from builtins import int
  
-class TriangularLongDistribution(__LongDistribution, LongDistribution):
+class TriangularLongDistribution():
     """com.badlogic.gdx.ai.utils.random.TriangularLongDistribution"""
  
     @staticmethod
@@ -2152,7 +2152,7 @@ import java.lang.Double as __double
 from builtins import bool
 from builtins import int
  
-class UniformDoubleDistribution(__DoubleDistribution, DoubleDistribution):
+class UniformDoubleDistribution():
     """com.badlogic.gdx.ai.utils.random.UniformDoubleDistribution"""
  
     @staticmethod
@@ -2305,7 +2305,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ConstantLongDistribution(__LongDistribution, LongDistribution):
+class ConstantLongDistribution():
     """com.badlogic.gdx.ai.utils.random.ConstantLongDistribution"""
  
     @staticmethod
@@ -2503,7 +2503,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DoubleDistribution(ABC, __Distribution, Distribution):
+class DoubleDistribution(ABC):
     """com.badlogic.gdx.ai.utils.random.DoubleDistribution"""
  
     @staticmethod
@@ -2646,7 +2646,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GaussianFloatDistribution(__FloatDistribution, FloatDistribution):
+class GaussianFloatDistribution():
     """com.badlogic.gdx.ai.utils.random.GaussianFloatDistribution"""
  
     @staticmethod
@@ -2683,14 +2683,14 @@ class GaussianFloatDistribution(__FloatDistribution, FloatDistribution):
         super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
 
     @overload
-    def getMean(self) -> float:
-        """public float com.badlogic.gdx.ai.utils.random.GaussianFloatDistribution.getMean()"""
-        return float.__wrap(super(GaussianFloatDistribution, self).getMean())
-
-    @overload
     def getStandardDeviation(self) -> float:
         """public float com.badlogic.gdx.ai.utils.random.GaussianFloatDistribution.getStandardDeviation()"""
         return float.__wrap(super(GaussianFloatDistribution, self).getStandardDeviation())
+
+    @overload
+    def getMean(self) -> float:
+        """public float com.badlogic.gdx.ai.utils.random.GaussianFloatDistribution.getMean()"""
+        return float.__wrap(super(GaussianFloatDistribution, self).getMean())
 
     @override
     @overload
@@ -2793,7 +2793,7 @@ import java.lang.Double as __double
 from builtins import bool
 from builtins import int
  
-class GaussianDoubleDistribution(__DoubleDistribution, DoubleDistribution):
+class GaussianDoubleDistribution():
     """com.badlogic.gdx.ai.utils.random.GaussianDoubleDistribution"""
  
     @staticmethod

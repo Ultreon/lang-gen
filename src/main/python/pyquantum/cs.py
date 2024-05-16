@@ -20,7 +20,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GuiPosition(__Component, Component):
+class GuiPosition():
     """dev.ultreon.quantum.cs.GuiPosition"""
  
     @staticmethod
@@ -224,7 +224,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GuiPosition(__Component, Component):
+class GuiPosition():
     """dev.ultreon.quantum.cs.GuiPosition"""
  
     @staticmethod
@@ -482,7 +482,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class WorldPosition(__Component, Component):
+class WorldPosition():
     """dev.ultreon.quantum.cs.WorldPosition"""
  
     @staticmethod

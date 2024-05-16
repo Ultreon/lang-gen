@@ -503,7 +503,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AssetManager(pygdx.__Disposable, utils.Disposable):
+class AssetManager():
     """com.badlogic.gdx.assets.AssetManager"""
  
     @staticmethod

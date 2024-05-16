@@ -596,7 +596,7 @@ import java.lang.Integer as __int
 from builtins import int
 import java.util.List as List
  
-class LanguageData(__ArrayList, ArrayList):
+class LanguageData():
     """dev.ultreon.quantum.client.text.LanguageData"""
  
     @staticmethod

@@ -37,7 +37,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class JNINativeMethod(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class JNINativeMethod():
     """org.lwjgl.system.jni.JNINativeMethod"""
  
     @staticmethod
@@ -442,7 +442,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class JNINativeMethod(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class JNINativeMethod():
     """org.lwjgl.system.jni.JNINativeMethod"""
  
     @staticmethod
@@ -862,7 +862,7 @@ import java.nio.ByteBuffer as ByteBuffer
 import java.lang.Integer as __int
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.jni.JNINativeMethod.Buffer"""
  
     @staticmethod

@@ -45,7 +45,7 @@ import java.util.Map as Map
 from builtins import int
 import java.util.List as List
  
-class OrderedHashMap(__Map, Map, __Cloneable, Cloneable, __Externalizable, Externalizable):
+class OrderedHashMap():
     """dev.ultreon.libs.collections.v0.maps.OrderedHashMap"""
  
     @staticmethod
@@ -415,7 +415,7 @@ import java.util.Map as Map
 from builtins import int
 import java.util.List as List
  
-class OrderedHashMap(__Map, Map, __Cloneable, Cloneable, __Externalizable, Externalizable):
+class OrderedHashMap():
     """dev.ultreon.libs.collections.v0.maps.OrderedHashMap"""
  
     @staticmethod

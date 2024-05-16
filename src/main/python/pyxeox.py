@@ -1336,7 +1336,7 @@ import dev.ultreon.xeox.loader.ModImportException as __ModImportException
 __ModImportException = __ModImportException
 from builtins import int
  
-class ModImportException(__IOException, IOException):
+class ModImportException():
     """dev.ultreon.xeox.loader.ModImportException"""
  
     @staticmethod
@@ -1694,7 +1694,7 @@ import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
 from builtins import int
  
-class XeoxMod(pyquantum.__Mod, pyquantum.Mod):
+class XeoxMod():
     """dev.ultreon.xeox.loader.XeoxMod"""
  
     @staticmethod

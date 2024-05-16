@@ -40,7 +40,7 @@ except ImportError:
 
 from builtins import int
  
-class SerializationDelegatingTypeAdapter(ABC, pygson.__TypeAdapter, pygson.TypeAdapter):
+class SerializationDelegatingTypeAdapter(ABC):
     """com.google.gson.internal.bind.SerializationDelegatingTypeAdapter"""
  
     @staticmethod
@@ -230,7 +230,7 @@ except ImportError:
 
 from builtins import int
  
-class SerializationDelegatingTypeAdapter(ABC, pygson.__TypeAdapter, pygson.TypeAdapter):
+class SerializationDelegatingTypeAdapter(ABC):
     """com.google.gson.internal.bind.SerializationDelegatingTypeAdapter"""
  
     @staticmethod
@@ -426,7 +426,7 @@ except ImportError:
 
 from builtins import int
  
-class NumberTypeAdapter(pygson.__TypeAdapter, pygson.TypeAdapter):
+class NumberTypeAdapter():
     """com.google.gson.internal.bind.NumberTypeAdapter"""
  
     @staticmethod
@@ -746,7 +746,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MapTypeAdapterFactory(pygson.__TypeAdapterFactory, pygson.TypeAdapterFactory):
+class MapTypeAdapterFactory():
     """com.google.gson.internal.bind.MapTypeAdapterFactory"""
  
     @staticmethod
@@ -881,7 +881,7 @@ except ImportError:
 
 from builtins import int
  
-class JsonTreeWriter(pygson.__JsonWriter, stream.JsonWriter):
+class JsonTreeWriter():
     """com.google.gson.internal.bind.JsonTreeWriter"""
  
     @staticmethod
@@ -1153,7 +1153,7 @@ except ImportError:
 
 from builtins import int
  
-class DefaultDateTypeAdapter(pygson.__TypeAdapter, pygson.TypeAdapter):
+class DefaultDateTypeAdapter():
     """com.google.gson.internal.bind.DefaultDateTypeAdapter"""
  
     @staticmethod
@@ -1323,7 +1323,7 @@ except ImportError:
 
 from builtins import int
  
-class ObjectTypeAdapter(pygson.__TypeAdapter, pygson.TypeAdapter):
+class ObjectTypeAdapter():
     """com.google.gson.internal.bind.ObjectTypeAdapter"""
  
     @staticmethod
@@ -1496,7 +1496,7 @@ except ImportError:
 
 from builtins import int
  
-class JsonTreeReader(pygson.__JsonReader, stream.JsonReader):
+class JsonTreeReader():
     """com.google.gson.internal.bind.JsonTreeReader"""
  
     @staticmethod
@@ -1743,7 +1743,7 @@ except ImportError:
 
 from builtins import int
  
-class Adapter(ABC, pygson.__TypeAdapter, pygson.TypeAdapter):
+class Adapter(ABC):
     """com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.Adapter"""
  
     @staticmethod
@@ -1915,7 +1915,7 @@ except ImportError:
 
 from builtins import int
  
-class DateTypeAdapter(pygson.__TypeAdapter, pygson.TypeAdapter):
+class DateTypeAdapter():
     """com.google.gson.internal.bind.DateTypeAdapter"""
  
     @staticmethod
@@ -2228,7 +2228,7 @@ from builtins import bool
 from builtins import int
 import java.util.List as List
  
-class ReflectiveTypeAdapterFactory(pygson.__TypeAdapterFactory, pygson.TypeAdapterFactory):
+class ReflectiveTypeAdapterFactory():
     """com.google.gson.internal.bind.ReflectiveTypeAdapterFactory"""
  
     @staticmethod
@@ -2361,7 +2361,7 @@ except ImportError:
 
 from builtins import int
  
-class ArrayTypeAdapter(pygson.__TypeAdapter, pygson.TypeAdapter):
+class ArrayTypeAdapter():
     """com.google.gson.internal.bind.ArrayTypeAdapter"""
  
     @staticmethod
@@ -2536,7 +2536,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class JsonAdapterAnnotationTypeAdapterFactory(pygson.__TypeAdapterFactory, pygson.TypeAdapterFactory):
+class JsonAdapterAnnotationTypeAdapterFactory():
     """com.google.gson.internal.bind.JsonAdapterAnnotationTypeAdapterFactory"""
  
     @staticmethod
@@ -2677,7 +2677,7 @@ except ImportError:
 
 from builtins import int
  
-class TreeTypeAdapter(__SerializationDelegatingTypeAdapter, SerializationDelegatingTypeAdapter):
+class TreeTypeAdapter():
     """com.google.gson.internal.bind.TreeTypeAdapter"""
  
     @staticmethod
@@ -2883,7 +2883,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CollectionTypeAdapterFactory(pygson.__TypeAdapterFactory, pygson.TypeAdapterFactory):
+class CollectionTypeAdapterFactory():
     """com.google.gson.internal.bind.CollectionTypeAdapterFactory"""
  
     @staticmethod

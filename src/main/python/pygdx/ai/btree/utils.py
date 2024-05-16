@@ -31,7 +31,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class IntegerAdapter(ABC, __Adapter, Adapter):
+class IntegerAdapter(ABC):
     """com.badlogic.gdx.ai.btree.utils.DistributionAdapters.IntegerAdapter"""
  
     @staticmethod
@@ -187,7 +187,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class IntegerAdapter(ABC, __Adapter, Adapter):
+class IntegerAdapter(ABC):
     """com.badlogic.gdx.ai.btree.utils.DistributionAdapters.IntegerAdapter"""
  
     @staticmethod
@@ -616,7 +616,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FloatAdapter(ABC, __Adapter, Adapter):
+class FloatAdapter(ABC):
     """com.badlogic.gdx.ai.btree.utils.DistributionAdapters.FloatAdapter"""
  
     @staticmethod
@@ -898,7 +898,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BehaviorTreeLoader(assets.__AsynchronousAssetLoader, loaders.AsynchronousAssetLoader):
+class BehaviorTreeLoader():
     """com.badlogic.gdx.ai.btree.utils.BehaviorTreeLoader"""
  
     @staticmethod
@@ -1046,7 +1046,7 @@ import com.badlogic.gdx.ai.btree.utils.BehaviorTreeLibrary as __BehaviorTreeLibr
 __BehaviorTreeLibrary = __BehaviorTreeLibrary
 from builtins import int
  
-class PooledBehaviorTreeLibrary(__BehaviorTreeLibrary, BehaviorTreeLibrary):
+class PooledBehaviorTreeLibrary():
     """com.badlogic.gdx.ai.btree.utils.PooledBehaviorTreeLibrary"""
  
     @staticmethod
@@ -1373,9 +1373,9 @@ class BehaviorTreeLibrary():
 from pyquantum_helper import import_once as __import_once__
 from builtins import str
 from pyquantum_helper import override
+import java.lang.Object as __object
 import com.badlogic.gdx.ai.btree.BehaviorTree as __BehaviorTree
 __BehaviorTree = __BehaviorTree
-import java.lang.Object as __object
 from builtins import type
 import java.lang.Long as __long
 import java.lang.Class as __Class
@@ -1707,7 +1707,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DoubleAdapter(ABC, __Adapter, Adapter):
+class DoubleAdapter(ABC):
     """com.badlogic.gdx.ai.btree.utils.DistributionAdapters.DoubleAdapter"""
  
     @staticmethod
@@ -1864,7 +1864,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class DefaultBehaviorTreeReader(__BehaviorTreeReader, BehaviorTreeReader):
+class DefaultBehaviorTreeReader():
     """com.badlogic.gdx.ai.btree.utils.BehaviorTreeParser.DefaultBehaviorTreeReader"""
  
     @staticmethod
@@ -2027,7 +2027,7 @@ import com.badlogic.gdx.ai.btree.utils.BehaviorTreeLoader as __BehaviorTreeLoade
 __BehaviorTreeParameter = __BehaviorTreeLoader_BehaviorTreeParameter.BehaviorTreeParameter
 from builtins import int
  
-class BehaviorTreeParameter(pygdx.__AssetLoaderParameters, assets.AssetLoaderParameters):
+class BehaviorTreeParameter():
     """com.badlogic.gdx.ai.btree.utils.BehaviorTreeLoader.BehaviorTreeParameter"""
  
     @staticmethod
@@ -2167,7 +2167,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DistributionFormatException(__RuntimeException, RuntimeException):
+class DistributionFormatException():
     """com.badlogic.gdx.ai.btree.utils.DistributionAdapters.DistributionFormatException"""
  
     @staticmethod
@@ -2718,7 +2718,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LongAdapter(ABC, __Adapter, Adapter):
+class LongAdapter(ABC):
     """com.badlogic.gdx.ai.btree.utils.DistributionAdapters.LongAdapter"""
  
     @staticmethod

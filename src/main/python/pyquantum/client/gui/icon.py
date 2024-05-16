@@ -36,7 +36,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ImageIcon(__Icon, Icon):
+class ImageIcon():
     """dev.ultreon.quantum.client.gui.icon.ImageIcon"""
  
     @staticmethod
@@ -224,7 +224,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ImageIcon(__Icon, Icon):
+class ImageIcon():
     """dev.ultreon.quantum.client.gui.icon.ImageIcon"""
  
     @staticmethod
@@ -415,7 +415,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MessageIcon(__Icon, Icon):
+class MessageIcon():
     """dev.ultreon.quantum.client.gui.icon.MessageIcon"""
  
     @staticmethod
@@ -699,7 +699,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GenericIcon(__Icon, Icon):
+class GenericIcon():
     """dev.ultreon.quantum.client.gui.icon.GenericIcon"""
  
     @staticmethod

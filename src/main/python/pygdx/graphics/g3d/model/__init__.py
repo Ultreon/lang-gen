@@ -256,13 +256,13 @@ from builtins import type
 import java.lang.Iterable as Iterable
 import com.badlogic.gdx.graphics.g3d.model.Node as __Node
 __Node = __Node
-import com.badlogic.gdx.math.Matrix4 as __Matrix4
-__Matrix4 = __Matrix4
 try:
     from pygdx.math import collision
 except ImportError:
     collision = __import_once__("pygdx.math.collision")
 
+import com.badlogic.gdx.math.Matrix4 as __Matrix4
+__Matrix4 = __Matrix4
 import java.lang.Long as __long
 import java.lang.Class as __Class
 __Class = __Class

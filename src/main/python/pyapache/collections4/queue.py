@@ -41,7 +41,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class AbstractQueueDecorator(ABC, collections4.__AbstractCollectionDecorator, collection.AbstractCollectionDecorator, __Queue, Queue):
+class AbstractQueueDecorator(ABC):
     """org.apache.commons.collections4.queue.AbstractQueueDecorator"""
  
     @staticmethod
@@ -299,7 +299,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class AbstractQueueDecorator(ABC, collections4.__AbstractCollectionDecorator, collection.AbstractCollectionDecorator, __Queue, Queue):
+class AbstractQueueDecorator(ABC):
     """org.apache.commons.collections4.queue.AbstractQueueDecorator"""
  
     @staticmethod
@@ -565,7 +565,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class UnmodifiableQueue(__AbstractQueueDecorator, AbstractQueueDecorator, pyapache.__Unmodifiable, collections4.Unmodifiable):
+class UnmodifiableQueue():
     """org.apache.commons.collections4.queue.UnmodifiableQueue"""
  
     @staticmethod
@@ -841,7 +841,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class TransformedQueue(collections4.__TransformedCollection, collection.TransformedCollection, __Queue, Queue):
+class TransformedQueue():
     """org.apache.commons.collections4.queue.TransformedQueue"""
  
     @staticmethod
@@ -1137,7 +1137,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class PredicatedQueue(collections4.__PredicatedCollection, collection.PredicatedCollection, __Queue, Queue):
+class PredicatedQueue():
     """org.apache.commons.collections4.queue.PredicatedQueue"""
  
     @staticmethod
@@ -1417,7 +1417,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class CircularFifoQueue(__AbstractCollection, AbstractCollection, __Queue, Queue, pyapache.__BoundedCollection, collections4.BoundedCollection, __Serializable, Serializable):
+class CircularFifoQueue():
     """org.apache.commons.collections4.queue.CircularFifoQueue"""
  
     @staticmethod
@@ -1730,7 +1730,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class SynchronizedQueue(collections4.__SynchronizedCollection, collection.SynchronizedCollection, __Queue, Queue):
+class SynchronizedQueue():
     """org.apache.commons.collections4.queue.SynchronizedQueue"""
  
     @staticmethod

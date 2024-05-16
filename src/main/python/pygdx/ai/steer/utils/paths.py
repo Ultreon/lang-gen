@@ -40,7 +40,7 @@ import com.badlogic.gdx.math.Vector as __Vector
 __Vector = __Vector
 from builtins import int
  
-class LinePath(steer.__Path, utils.Path):
+class LinePath():
     """com.badlogic.gdx.ai.steer.utils.paths.LinePath"""
  
     @staticmethod
@@ -176,16 +176,16 @@ class LinePath(steer.__Path, utils.Path):
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @overload
+    def calculateTargetPosition(self, arg0: 'Vector', arg1: 'LinePathParam', arg2: float):
+        """public void com.badlogic.gdx.ai.steer.utils.paths.LinePath.calculateTargetPosition(T,com.badlogic.gdx.ai.steer.utils.paths.LinePath$LinePathParam,float)"""
+        super(__LinePath, self).calculateTargetPosition(arg0, arg1, __float.valueOf(arg2))
+
     @override
     @overload
     def getEndPoint(self) -> 'math.Vector':
         """public T com.badlogic.gdx.ai.steer.utils.paths.LinePath.getEndPoint()"""
         return 'math.Vector'.__wrap(super(LinePath, self).getEndPoint())
-
-    @overload
-    def calculateTargetPosition(self, arg0: 'Vector', arg1: 'LinePathParam', arg2: float):
-        """public void com.badlogic.gdx.ai.steer.utils.paths.LinePath.calculateTargetPosition(T,com.badlogic.gdx.ai.steer.utils.paths.LinePath$LinePathParam,float)"""
-        super(__LinePath, self).calculateTargetPosition(arg0, arg1, __float.valueOf(arg2))
 
     @overload
     def equals(self, arg0: object) -> bool:
@@ -233,7 +233,7 @@ import com.badlogic.gdx.math.Vector as __Vector
 __Vector = __Vector
 from builtins import int
  
-class LinePath(steer.__Path, utils.Path):
+class LinePath():
     """com.badlogic.gdx.ai.steer.utils.paths.LinePath"""
  
     @staticmethod
@@ -369,16 +369,16 @@ class LinePath(steer.__Path, utils.Path):
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @overload
+    def calculateTargetPosition(self, arg0: 'Vector', arg1: 'LinePathParam', arg2: float):
+        """public void com.badlogic.gdx.ai.steer.utils.paths.LinePath.calculateTargetPosition(T,com.badlogic.gdx.ai.steer.utils.paths.LinePath$LinePathParam,float)"""
+        super(__LinePath, self).calculateTargetPosition(arg0, arg1, __float.valueOf(arg2))
+
     @override
     @overload
     def getEndPoint(self) -> 'math.Vector':
         """public T com.badlogic.gdx.ai.steer.utils.paths.LinePath.getEndPoint()"""
         return 'math.Vector'.__wrap(super(LinePath, self).getEndPoint())
-
-    @overload
-    def calculateTargetPosition(self, arg0: 'Vector', arg1: 'LinePathParam', arg2: float):
-        """public void com.badlogic.gdx.ai.steer.utils.paths.LinePath.calculateTargetPosition(T,com.badlogic.gdx.ai.steer.utils.paths.LinePath$LinePathParam,float)"""
-        super(__LinePath, self).calculateTargetPosition(arg0, arg1, __float.valueOf(arg2))
 
     @overload
     def equals(self, arg0: object) -> bool:
@@ -542,7 +542,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LinePathParam(steer.__Path_PathParam, utils.Path$PathParam):
+class LinePathParam():
     """com.badlogic.gdx.ai.steer.utils.paths.LinePath.LinePathParam"""
  
     @staticmethod

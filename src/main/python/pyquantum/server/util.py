@@ -30,7 +30,7 @@ import dev.ultreon.quantum.server.util.TimeFormatException as __TimeFormatExcept
 __TimeFormatException = __TimeFormatException
 from builtins import int
  
-class TimeFormatException(__IllegalArgumentException, IllegalArgumentException):
+class TimeFormatException():
     """dev.ultreon.quantum.server.util.TimeFormatException"""
  
     @staticmethod
@@ -250,7 +250,7 @@ import dev.ultreon.quantum.server.util.TimeFormatException as __TimeFormatExcept
 __TimeFormatException = __TimeFormatException
 from builtins import int
  
-class TimeFormatException(__IllegalArgumentException, IllegalArgumentException):
+class TimeFormatException():
     """dev.ultreon.quantum.server.util.TimeFormatException"""
  
     @staticmethod

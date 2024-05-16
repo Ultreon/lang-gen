@@ -203,7 +203,7 @@ import java.awt.ImageCapabilities as ImageCapabilities
 import java.awt.Frame as __Frame
 __Frame = __Frame
  
-class DedicatedServerGui(__JFrame, JFrame):
+class DedicatedServerGui():
     """dev.ultreon.quantum.server.dedicated.gui.DedicatedServerGui"""
  
     @staticmethod
@@ -2388,7 +2388,7 @@ import java.awt.ImageCapabilities as ImageCapabilities
 import java.awt.Frame as __Frame
 __Frame = __Frame
  
-class DedicatedServerGui(__JFrame, JFrame):
+class DedicatedServerGui():
     """dev.ultreon.quantum.server.dedicated.gui.DedicatedServerGui"""
  
     @staticmethod
@@ -4578,7 +4578,7 @@ import javax.swing.ActionMap as __ActionMap
 __ActionMap = __ActionMap
 import java.awt.ImageCapabilities as ImageCapabilities
  
-class ServerLogGui(__JScrollPane, JScrollPane):
+class ServerLogGui():
     """dev.ultreon.quantum.server.dedicated.gui.ServerLogGui"""
  
     @staticmethod

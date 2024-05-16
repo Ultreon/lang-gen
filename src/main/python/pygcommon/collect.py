@@ -175,7 +175,7 @@ import java.util.Map as Map
 from builtins import bool
 from builtins import int
  
-class Builder(__Builder, Builder):
+class Builder():
     """com.google.common.collect.ImmutableBiMap.Builder"""
  
     @staticmethod
@@ -377,7 +377,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ImmutableSortedSet(ABC, __CachingAsList, CachingAsList, __NavigableSet, NavigableSet, __SortedIterable, SortedIterable):
+class ImmutableSortedSet(ABC):
     """com.google.common.collect.ImmutableSortedSet"""
  
     @staticmethod
@@ -971,7 +971,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Builder(__Builder, Builder):
+class Builder():
     """com.google.common.collect.ImmutableList.Builder"""
  
     @staticmethod
@@ -1118,7 +1118,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Builder(__Builder, Builder):
+class Builder():
     """com.google.common.collect.ImmutableMultiset.Builder"""
  
     @staticmethod
@@ -1303,7 +1303,7 @@ import java.util.stream.Stream as Stream
 import java.lang.Integer as __int
 from builtins import int
  
-class StandardKeySet(__SortedKeySet, SortedKeySet):
+class StandardKeySet():
     """com.google.common.collect.ForwardingSortedMap.StandardKeySet"""
  
     @staticmethod
@@ -1597,7 +1597,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Builder(__Builder, Builder):
+class Builder():
     """com.google.common.collect.ImmutableListMultimap.Builder"""
  
     @staticmethod
@@ -1913,7 +1913,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ImmutableCollection(ABC, __AbstractCollection, AbstractCollection, __Serializable, Serializable):
+class ImmutableCollection(ABC):
     """com.google.common.collect.ImmutableCollection"""
  
     @staticmethod
@@ -2414,7 +2414,7 @@ __ForwardingMultiset = __ForwardingMultiset
 from builtins import int
 import java.util.function.ObjIntConsumer as ObjIntConsumer
  
-class ForwardingSortedMultiset(ABC, __ForwardingMultiset, ForwardingMultiset, __SortedMultiset, SortedMultiset):
+class ForwardingSortedMultiset(ABC):
     """com.google.common.collect.ForwardingSortedMultiset"""
  
     @staticmethod
@@ -3077,7 +3077,7 @@ import com.google.common.collect.HashMultimap as __HashMultimap
 __HashMultimap = __HashMultimap
 import java.lang.Integer as __int
  
-class HashMultimap(__HashMultimapGwtSerializationDependencies, HashMultimapGwtSerializationDependencies):
+class HashMultimap():
     """com.google.common.collect.HashMultimap"""
  
     @staticmethod
@@ -3201,7 +3201,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ForwardingCollection(ABC, __ForwardingObject, ForwardingObject, __Collection, Collection):
+class ForwardingCollection(ABC):
     """com.google.common.collect.ForwardingCollection"""
  
     @staticmethod
@@ -3435,7 +3435,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ForwardingDeque(ABC, __ForwardingQueue, ForwardingQueue, __Deque, Deque):
+class ForwardingDeque(ABC):
     """com.google.common.collect.ForwardingDeque"""
  
     @staticmethod
@@ -3798,23 +3798,24 @@ class DoubleFunctionWithIndex(ABC):
  
  
 # CLASS: com.google.common.collect.ClassToInstanceMap
-import com.google.common.collect.ClassToInstanceMap as __ClassToInstanceMap
-__ClassToInstanceMap = __ClassToInstanceMap
+from pyquantum_helper import override
 import java.lang.Object as __object
-import java.util.function.BiConsumer as BiConsumer
 from builtins import type
 import java.util.Map as __Map
 __Map = __Map
-import java.lang.Object as __Object
-__Object = __Object
 from abc import abstractmethod, ABC
 from builtins import object
+import java.util.function.BiFunction as BiFunction
+import com.google.common.collect.ClassToInstanceMap as __ClassToInstanceMap
+__ClassToInstanceMap = __ClassToInstanceMap
+import java.util.function.BiConsumer as BiConsumer
+import java.lang.Object as __Object
+__Object = __Object
 import java.util.function.Function as Function
 from builtins import bool
-import java.util.function.BiFunction as BiFunction
 import java.util.Map as Map
  
-class ClassToInstanceMap(ABC, __Map, Map):
+class ClassToInstanceMap(ABC):
     """com.google.common.collect.ClassToInstanceMap"""
  
     @staticmethod
@@ -4296,7 +4297,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class ImmutableClassToInstanceMap(__ForwardingMap, ForwardingMap, __ClassToInstanceMap, ClassToInstanceMap, __Serializable, Serializable):
+class ImmutableClassToInstanceMap():
     """com.google.common.collect.ImmutableClassToInstanceMap"""
  
     @staticmethod
@@ -4578,7 +4579,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 from builtins import int
  
-class ImmutableMap(ABC, __Map, Map, __Serializable, Serializable):
+class ImmutableMap(ABC):
     """com.google.common.collect.ImmutableMap"""
  
     @staticmethod
@@ -5101,7 +5102,7 @@ import java.util.Map as Map
 from builtins import bool
 from builtins import int
  
-class Builder(__Builder, Builder):
+class Builder():
     """com.google.common.collect.ImmutableSortedMap.Builder"""
  
     @staticmethod
@@ -5264,7 +5265,7 @@ import java.lang.Comparable as __Comparable
 __Comparable = __Comparable
 from builtins import int
  
-class Range(__RangeGwtSerializationDependencies, RangeGwtSerializationDependencies, pygcommon.__Predicate, base.Predicate, __Serializable, Serializable):
+class Range():
     """com.google.common.collect.Range"""
  
     @staticmethod
@@ -5321,16 +5322,16 @@ class Range(__RangeGwtSerializationDependencies, RangeGwtSerializationDependenci
         """public static <C extends java.lang.Comparable<?>> com.google.common.collect.Range<C> com.google.common.collect.Range.open(C,C)"""
         return Range.__wrap(__Range.open(lower, upper))
 
-    @overload
-    def upperEndpoint(self) -> 'Comparable':
-        """public C com.google.common.collect.Range.upperEndpoint()"""
-        return 'Comparable'.__wrap(super(Range, self).upperEndpoint())
-
     @staticmethod
     @overload
     def downTo(endpoint: 'Comparable', boundType: 'BoundType') -> 'Range':
         """public static <C extends java.lang.Comparable<?>> com.google.common.collect.Range<C> com.google.common.collect.Range.downTo(C,com.google.common.collect.BoundType)"""
         return Range.__wrap(__Range.downTo(endpoint, boundType))
+
+    @overload
+    def upperEndpoint(self) -> 'Comparable':
+        """public C com.google.common.collect.Range.upperEndpoint()"""
+        return 'Comparable'.__wrap(super(Range, self).upperEndpoint())
 
     @overload
     def hasLowerBound(self) -> bool:
@@ -5818,7 +5819,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class SetView(ABC, __AbstractSet, AbstractSet):
+class SetView(ABC):
     """com.google.common.collect.Sets.SetView"""
  
     @staticmethod
@@ -6015,6 +6016,7 @@ class SetView(ABC, __AbstractSet, AbstractSet):
  
  
 # CLASS: com.google.common.collect.BiMap
+from pyquantum_helper import override
 import java.lang.Object as __object
 import java.util.function.BiConsumer as BiConsumer
 import java.util.Map as __Map
@@ -6030,7 +6032,7 @@ import java.util.function.BiFunction as BiFunction
 import com.google.common.collect.BiMap as __BiMap
 __BiMap = __BiMap
  
-class BiMap(ABC, __Map, Map):
+class BiMap(ABC):
     """com.google.common.collect.BiMap"""
  
     @staticmethod
@@ -6242,7 +6244,7 @@ import java.lang.Integer as __int
 from builtins import int
 import java.util.function.ObjIntConsumer as ObjIntConsumer
  
-class EnumMultiset(__AbstractMultiset, AbstractMultiset, __Serializable, Serializable):
+class EnumMultiset():
     """com.google.common.collect.EnumMultiset"""
  
     @staticmethod
@@ -6506,6 +6508,7 @@ class Interner(ABC):
  
 # CLASS: com.google.common.collect.SortedMultiset
 import java.util.function.Predicate as Predicate
+from pyquantum_helper import override
 import java.util.function.IntFunction as IntFunction
 import com.google.common.collect.SortedMultiset as __SortedMultiset
 __SortedMultiset = __SortedMultiset
@@ -6529,7 +6532,7 @@ import java.util.stream.Stream as Stream
 from builtins import bool
 import java.util.function.ObjIntConsumer as ObjIntConsumer
  
-class SortedMultiset(ABC, __SortedMultisetBridge, SortedMultisetBridge, __SortedIterable, SortedIterable):
+class SortedMultiset(ABC):
     """com.google.common.collect.SortedMultiset"""
  
     @staticmethod
@@ -6788,7 +6791,7 @@ import com.google.common.collect.ImmutableMultimap as __ImmutableMultimap
 __ImmutableMultimap = __ImmutableMultimap
 from builtins import int
  
-class ImmutableMultimap(ABC, __BaseImmutableMultimap, BaseImmutableMultimap, __Serializable, Serializable):
+class ImmutableMultimap(ABC):
     """com.google.common.collect.ImmutableMultimap"""
  
     @staticmethod
@@ -7031,7 +7034,7 @@ __ImmutableSortedMultiset = __ImmutableSortedMultiset
 from builtins import bool
 from builtins import int
  
-class Builder(__Builder, Builder):
+class Builder():
     """com.google.common.collect.ImmutableSortedMultiset.Builder"""
  
     @staticmethod
@@ -7170,7 +7173,7 @@ import com.google.common.collect.ArrayListMultimap as __ArrayListMultimap
 __ArrayListMultimap = __ArrayListMultimap
 import java.lang.Integer as __int
  
-class ArrayListMultimap(__ArrayListMultimapGwtSerializationDependencies, ArrayListMultimapGwtSerializationDependencies):
+class ArrayListMultimap():
     """com.google.common.collect.ArrayListMultimap"""
  
     @staticmethod
@@ -7319,7 +7322,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class StandardDescendingMap(__DescendingMap, DescendingMap):
+class StandardDescendingMap():
     """com.google.common.collect.ForwardingNavigableMap.StandardDescendingMap"""
  
     @staticmethod
@@ -7720,7 +7723,7 @@ import com.google.common.collect.TreeMultimap as __TreeMultimap
 __TreeMultimap = __TreeMultimap
 import java.lang.Integer as __int
  
-class TreeMultimap(__AbstractSortedKeySortedSetMultimap, AbstractSortedKeySortedSetMultimap):
+class TreeMultimap():
     """com.google.common.collect.TreeMultimap"""
  
     @staticmethod
@@ -7835,6 +7838,7 @@ class TreeMultimap(__AbstractSortedKeySortedSetMultimap, AbstractSortedKeySorted
  
 # CLASS: com.google.common.collect.Multiset
 import java.util.function.Predicate as Predicate
+from pyquantum_helper import override
 import java.util.function.IntFunction as IntFunction
 import java.util.stream.Stream as __Stream
 __Stream = __Stream
@@ -7856,7 +7860,7 @@ import java.util.stream.Stream as Stream
 from builtins import bool
 import java.util.function.ObjIntConsumer as ObjIntConsumer
  
-class Multiset(ABC, __Collection, Collection):
+class Multiset(ABC):
     """com.google.common.collect.Multiset"""
  
     @staticmethod
@@ -8456,7 +8460,7 @@ import com.google.common.collect.HashBasedTable as __HashBasedTable
 __HashBasedTable = __HashBasedTable
 import java.lang.Integer as __int
  
-class HashBasedTable(__StandardTable, StandardTable):
+class HashBasedTable():
     """com.google.common.collect.HashBasedTable"""
  
     @staticmethod
@@ -8681,7 +8685,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Builder(__Builder, Builder):
+class Builder():
     """com.google.common.collect.ImmutableSet.Builder"""
  
     @staticmethod
@@ -8836,7 +8840,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class ArrayTable(__AbstractTable, AbstractTable, __Serializable, Serializable):
+class ArrayTable():
     """com.google.common.collect.ArrayTable"""
  
     @staticmethod
@@ -9363,7 +9367,7 @@ __ForwardingMultiset = __ForwardingMultiset
 from builtins import int
 import java.util.function.ObjIntConsumer as ObjIntConsumer
  
-class StandardDescendingMultiset(ABC, __DescendingMultiset, DescendingMultiset):
+class StandardDescendingMultiset(ABC):
     """com.google.common.collect.ForwardingSortedMultiset.StandardDescendingMultiset"""
  
     @staticmethod
@@ -9687,7 +9691,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class ForwardingMultimap(ABC, __ForwardingObject, ForwardingObject, __Multimap, Multimap):
+class ForwardingMultimap(ABC):
     """com.google.common.collect.ForwardingMultimap"""
  
     @staticmethod
@@ -10064,7 +10068,7 @@ import com.google.common.collect.UnmodifiableIterator as __UnmodifiableIterator
 __UnmodifiableIterator = __UnmodifiableIterator
 from builtins import int
  
-class UnmodifiableIterator(ABC, __Iterator, Iterator):
+class UnmodifiableIterator(ABC):
     """com.google.common.collect.UnmodifiableIterator"""
  
     @staticmethod
@@ -10177,7 +10181,7 @@ import com.google.common.collect.RowSortedTable as __RowSortedTable
 __RowSortedTable = __RowSortedTable
 from abc import abstractmethod, ABC
  
-class RowSortedTable(ABC, __Table, Table):
+class RowSortedTable(ABC):
     """com.google.common.collect.RowSortedTable"""
  
     @staticmethod
@@ -10359,7 +10363,7 @@ import java.lang.Integer as __int
 from builtins import int
 import java.util.function.ObjIntConsumer as ObjIntConsumer
  
-class TreeMultiset(__AbstractSortedMultiset, AbstractSortedMultiset, __Serializable, Serializable):
+class TreeMultiset():
     """com.google.common.collect.TreeMultiset"""
  
     @staticmethod
@@ -10630,7 +10634,7 @@ import com.google.common.collect.ImmutableMultimap as __ImmutableMultimap
 __ImmutableMultimap = __ImmutableMultimap
 from builtins import int
  
-class ImmutableSetMultimap(__ImmutableMultimap, ImmutableMultimap, __SetMultimap, SetMultimap):
+class ImmutableSetMultimap():
     """com.google.common.collect.ImmutableSetMultimap"""
  
     @staticmethod
@@ -10940,7 +10944,7 @@ import com.google.common.collect.UnmodifiableIterator as __UnmodifiableIterator
 __UnmodifiableIterator = __UnmodifiableIterator
 from builtins import int
  
-class AbstractSequentialIterator(ABC, __UnmodifiableIterator, UnmodifiableIterator):
+class AbstractSequentialIterator(ABC):
     """com.google.common.collect.AbstractSequentialIterator"""
  
     @staticmethod
@@ -11080,7 +11084,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class HashBiMap(__IteratorBasedAbstractMap, IteratorBasedAbstractMap, __BiMap, BiMap, __Serializable, Serializable):
+class HashBiMap():
     """com.google.common.collect.HashBiMap"""
  
     @staticmethod
@@ -11448,6 +11452,7 @@ class Builder():
 # CLASS: com.google.common.collect.SortedSetMultimap
 import com.google.common.collect.Multimap as __Multimap
 __Multimap = __Multimap
+from pyquantum_helper import override
 import java.util.function.BiConsumer as BiConsumer
 import com.google.common.collect.SortedSetMultimap as __SortedSetMultimap
 __SortedSetMultimap = __SortedSetMultimap
@@ -11456,7 +11461,7 @@ from abc import abstractmethod, ABC
 import com.google.common.collect.SetMultimap as __SetMultimap
 __SetMultimap = __SetMultimap
  
-class SortedSetMultimap(ABC, __SetMultimap, SetMultimap):
+class SortedSetMultimap(ABC):
     """com.google.common.collect.SortedSetMultimap"""
  
     @staticmethod
@@ -11653,7 +11658,7 @@ import java.util.function.Function as Function
 from builtins import int
 import java.util.function.ObjIntConsumer as ObjIntConsumer
  
-class ImmutableMultiset(ABC, __ImmutableMultisetGwtSerializationDependencies, ImmutableMultisetGwtSerializationDependencies, __Multiset, Multiset):
+class ImmutableMultiset(ABC):
     """com.google.common.collect.ImmutableMultiset"""
  
     @staticmethod
@@ -12005,7 +12010,7 @@ import java.util.stream.Stream as Stream
 import java.lang.Integer as __int
 from builtins import int
  
-class StandardValues(__Values, Values):
+class StandardValues():
     """com.google.common.collect.ForwardingMap.StandardValues"""
  
     @staticmethod
@@ -12233,7 +12238,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class ForwardingMap(ABC, __ForwardingObject, ForwardingObject, __Map, Map):
+class ForwardingMap(ABC):
     """com.google.common.collect.ForwardingMap"""
  
     @staticmethod
@@ -12489,7 +12494,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ImmutableSet(ABC, __ImmutableCollection, ImmutableCollection, __Set, Set):
+class ImmutableSet(ABC):
     """com.google.common.collect.ImmutableSet"""
  
     @staticmethod
@@ -12805,7 +12810,7 @@ import java.util.function.Function as Function
 import java.util.List as List
 from builtins import int
  
-class Ordering(ABC, __Comparator, Comparator):
+class Ordering(ABC):
     """com.google.common.collect.Ordering"""
  
     @staticmethod
@@ -13125,7 +13130,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SetMultimapBuilder(ABC, __MultimapBuilder, MultimapBuilder):
+class SetMultimapBuilder(ABC):
     """com.google.common.collect.MultimapBuilder.SetMultimapBuilder"""
  
     @staticmethod
@@ -13336,7 +13341,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ImmutableRangeSet(__AbstractRangeSet, AbstractRangeSet, __Serializable, Serializable):
+class ImmutableRangeSet():
     """com.google.common.collect.ImmutableRangeSet"""
  
     @staticmethod
@@ -13629,7 +13634,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class ForwardingNavigableMap(ABC, __ForwardingSortedMap, ForwardingSortedMap, __NavigableMap, NavigableMap):
+class ForwardingNavigableMap(ABC):
     """com.google.common.collect.ForwardingNavigableMap"""
  
     @staticmethod
@@ -14040,7 +14045,7 @@ import java.util.stream.Stream as Stream
 import java.lang.Integer as __int
 from builtins import int
  
-class HashMultiset(__AbstractMapBasedMultiset, AbstractMapBasedMultiset):
+class HashMultiset():
     """com.google.common.collect.HashMultiset"""
  
     @staticmethod
@@ -14241,7 +14246,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ForwardingIterator(ABC, __ForwardingObject, ForwardingObject, __Iterator, Iterator):
+class ForwardingIterator(ABC):
     """com.google.common.collect.ForwardingIterator"""
  
     @staticmethod
@@ -14390,7 +14395,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ForwardingQueue(ABC, __ForwardingCollection, ForwardingCollection, __Queue, Queue):
+class ForwardingQueue(ABC):
     """com.google.common.collect.ForwardingQueue"""
  
     @staticmethod
@@ -14674,7 +14679,7 @@ import java.lang.Integer as __int
 from builtins import int
 import java.util.function.ObjIntConsumer as ObjIntConsumer
  
-class ImmutableSortedMultiset(ABC, __ImmutableMultiset, ImmutableMultiset, __SortedMultiset, SortedMultiset):
+class ImmutableSortedMultiset(ABC):
     """com.google.common.collect.ImmutableSortedMultiset"""
  
     @staticmethod
@@ -15235,7 +15240,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ForwardingSet(ABC, __ForwardingCollection, ForwardingCollection, __Set, Set):
+class ForwardingSet(ABC):
     """com.google.common.collect.ForwardingSet"""
  
     @staticmethod
@@ -15930,7 +15935,7 @@ import com.google.common.collect.ForwardingConcurrentMap as __ForwardingConcurre
 __ForwardingConcurrentMap = __ForwardingConcurrentMap
 from builtins import int
  
-class ForwardingConcurrentMap(ABC, __ForwardingMap, ForwardingMap, __ConcurrentMap, ConcurrentMap):
+class ForwardingConcurrentMap(ABC):
     """com.google.common.collect.ForwardingConcurrentMap"""
  
     @staticmethod
@@ -16477,7 +16482,7 @@ import com.google.common.collect.ListMultimap as __ListMultimap
 __ListMultimap = __ListMultimap
 from builtins import int
  
-class ListMultimapBuilder(ABC, __MultimapBuilder, MultimapBuilder):
+class ListMultimapBuilder(ABC):
     """com.google.common.collect.MultimapBuilder.ListMultimapBuilder"""
  
     @staticmethod
@@ -16648,7 +16653,7 @@ import java.util.Map as Map
 from builtins import bool
 from builtins import int
  
-class MutableClassToInstanceMap(__ForwardingMap, ForwardingMap, __ClassToInstanceMap, ClassToInstanceMap, __Serializable, Serializable):
+class MutableClassToInstanceMap():
     """com.google.common.collect.MutableClassToInstanceMap"""
  
     @staticmethod
@@ -17059,7 +17064,7 @@ import com.google.common.collect.ImmutableMultimap as __ImmutableMultimap
 __ImmutableMultimap = __ImmutableMultimap
 from builtins import int
  
-class ImmutableListMultimap(__ImmutableMultimap, ImmutableMultimap, __ListMultimap, ListMultimap):
+class ImmutableListMultimap():
     """com.google.common.collect.ImmutableListMultimap"""
  
     @staticmethod
@@ -17904,7 +17909,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TreeRangeSet(__AbstractRangeSet, AbstractRangeSet, __Serializable, Serializable):
+class TreeRangeSet():
     """com.google.common.collect.TreeRangeSet"""
  
     @staticmethod
@@ -18105,7 +18110,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class TreeRangeMap(__RangeMap, RangeMap):
+class TreeRangeMap():
     """com.google.common.collect.TreeRangeMap"""
  
     @staticmethod
@@ -18311,7 +18316,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class StandardElementSet(__ElementSet, ElementSet):
+class StandardElementSet():
     """com.google.common.collect.ForwardingMultiset.StandardElementSet"""
  
     @staticmethod
@@ -18549,7 +18554,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class StandardEntrySet(ABC, __EntrySet, EntrySet):
+class StandardEntrySet(ABC):
     """com.google.common.collect.ForwardingMap.StandardEntrySet"""
  
     @staticmethod
@@ -18930,7 +18935,7 @@ import java.util.stream.Stream as Stream
 import java.lang.Integer as __int
 from builtins import int
  
-class StandardKeySet(__KeySet, KeySet):
+class StandardKeySet():
     """com.google.common.collect.ForwardingMap.StandardKeySet"""
  
     @staticmethod
@@ -19271,7 +19276,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ForwardingMapEntry(ABC, __ForwardingObject, ForwardingObject, Map.__Map_Entry, Entry.Map$Entry):
+class ForwardingMapEntry(ABC):
     """com.google.common.collect.ForwardingMapEntry"""
  
     @staticmethod
@@ -19573,7 +19578,7 @@ import java.lang.Integer as __int
 from builtins import int
 import java.util.function.ObjIntConsumer as ObjIntConsumer
  
-class ConcurrentHashMultiset(__AbstractMultiset, AbstractMultiset, __Serializable, Serializable):
+class ConcurrentHashMultiset():
     """com.google.common.collect.ConcurrentHashMultiset"""
  
     @staticmethod
@@ -20123,7 +20128,7 @@ import java.lang.Integer as __int
 import com.google.common.collect.TreeBasedTable as __TreeBasedTable
 __TreeBasedTable = __TreeBasedTable
  
-class TreeBasedTable(__StandardRowSortedTable, StandardRowSortedTable):
+class TreeBasedTable():
     """com.google.common.collect.TreeBasedTable"""
  
     @staticmethod
@@ -20238,13 +20243,14 @@ class TreeBasedTable(__StandardRowSortedTable, StandardRowSortedTable):
 # CLASS: com.google.common.collect.ListMultimap
 import com.google.common.collect.Multimap as __Multimap
 __Multimap = __Multimap
+from pyquantum_helper import override
 import java.util.function.BiConsumer as BiConsumer
 import java.lang.Iterable as Iterable
 from abc import abstractmethod, ABC
 import com.google.common.collect.ListMultimap as __ListMultimap
 __ListMultimap = __ListMultimap
  
-class ListMultimap(ABC, __Multimap, Multimap):
+class ListMultimap(ABC):
     """com.google.common.collect.ListMultimap"""
  
     @staticmethod
@@ -20426,7 +20432,7 @@ import java.lang.Integer as __int
 from builtins import int
 import java.util.function.ObjIntConsumer as ObjIntConsumer
  
-class ForwardingMultiset(ABC, __ForwardingCollection, ForwardingCollection, __Multiset, Multiset):
+class ForwardingMultiset(ABC):
     """com.google.common.collect.ForwardingMultiset"""
  
     @staticmethod
@@ -21006,7 +21012,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class ForwardingTable(ABC, __ForwardingObject, ForwardingObject, __Table, Table):
+class ForwardingTable(ABC):
     """com.google.common.collect.ForwardingTable"""
  
     @staticmethod
@@ -21293,7 +21299,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 from builtins import int
  
-class ImmutableBiMap(ABC, __ImmutableMap, ImmutableMap, __BiMap, BiMap):
+class ImmutableBiMap(ABC):
     """com.google.common.collect.ImmutableBiMap"""
  
     @staticmethod
@@ -21750,7 +21756,7 @@ import com.google.common.collect.UnmodifiableIterator as __UnmodifiableIterator
 __UnmodifiableIterator = __UnmodifiableIterator
 from builtins import int
  
-class AbstractIterator(ABC, __UnmodifiableIterator, UnmodifiableIterator):
+class AbstractIterator(ABC):
     """com.google.common.collect.AbstractIterator"""
  
     @staticmethod
@@ -21897,7 +21903,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ImmutableRangeMap(__RangeMap, RangeMap, __Serializable, Serializable):
+class ImmutableRangeMap():
     """com.google.common.collect.ImmutableRangeMap"""
  
     @staticmethod
@@ -22133,7 +22139,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class StandardDescendingSet(__DescendingSet, DescendingSet):
+class StandardDescendingSet():
     """com.google.common.collect.ForwardingNavigableSet.StandardDescendingSet"""
  
     @staticmethod
@@ -22511,7 +22517,7 @@ import java.util.List as List
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ForwardingList(ABC, __ForwardingCollection, ForwardingCollection, __List, List):
+class ForwardingList(ABC):
     """com.google.common.collect.ForwardingList"""
  
     @staticmethod
@@ -22864,7 +22870,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class StandardElementSet(__NavigableElementSet, NavigableElementSet):
+class StandardElementSet():
     """com.google.common.collect.ForwardingSortedMultiset.StandardElementSet"""
  
     @staticmethod
@@ -23215,7 +23221,7 @@ from builtins import bool
 from builtins import int
 import java.util.List as List
  
-class LinkedListMultimap(__AbstractMultimap, AbstractMultimap, __ListMultimap, ListMultimap, __Serializable, Serializable):
+class LinkedListMultimap():
     """com.google.common.collect.LinkedListMultimap"""
  
     @staticmethod
@@ -23369,13 +23375,14 @@ class LinkedListMultimap(__AbstractMultimap, AbstractMultimap, __ListMultimap, L
 # CLASS: com.google.common.collect.SetMultimap
 import com.google.common.collect.Multimap as __Multimap
 __Multimap = __Multimap
+from pyquantum_helper import override
 import java.util.function.BiConsumer as BiConsumer
 import java.lang.Iterable as Iterable
 import com.google.common.collect.SetMultimap as __SetMultimap
 __SetMultimap = __SetMultimap
 from abc import abstractmethod, ABC
  
-class SetMultimap(ABC, __Multimap, Multimap):
+class SetMultimap(ABC):
     """com.google.common.collect.SetMultimap"""
  
     @staticmethod
@@ -23681,7 +23688,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ForwardingListIterator(ABC, __ForwardingIterator, ForwardingIterator, __ListIterator, ListIterator):
+class ForwardingListIterator(ABC):
     """com.google.common.collect.ForwardingListIterator"""
  
     @staticmethod
@@ -23865,7 +23872,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class ForwardingListMultimap(ABC, __ForwardingMultimap, ForwardingMultimap, __ListMultimap, ListMultimap):
+class ForwardingListMultimap(ABC):
     """com.google.common.collect.ForwardingListMultimap"""
  
     @staticmethod
@@ -24079,7 +24086,7 @@ import com.google.common.collect.UnmodifiableIterator as __UnmodifiableIterator
 __UnmodifiableIterator = __UnmodifiableIterator
 from builtins import int
  
-class UnmodifiableListIterator(ABC, __UnmodifiableIterator, UnmodifiableIterator, __ListIterator, ListIterator):
+class UnmodifiableListIterator(ABC):
     """com.google.common.collect.UnmodifiableListIterator"""
  
     @staticmethod
@@ -24218,6 +24225,7 @@ class UnmodifiableListIterator(ABC, __UnmodifiableIterator, UnmodifiableIterator
  
  
 # CLASS: com.google.common.collect.PeekingIterator
+from pyquantum_helper import override
 import java.util.Iterator as __Iterator
 __Iterator = __Iterator
 import com.google.common.collect.PeekingIterator as __PeekingIterator
@@ -24225,7 +24233,7 @@ __PeekingIterator = __PeekingIterator
 from abc import abstractmethod, ABC
 import java.util.function.Consumer as Consumer
  
-class PeekingIterator(ABC, __Iterator, Iterator):
+class PeekingIterator(ABC):
     """com.google.common.collect.PeekingIterator"""
  
     @staticmethod
@@ -24650,7 +24658,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Builder(__Builder, Builder):
+class Builder():
     """com.google.common.collect.ImmutableSortedSet.Builder"""
  
     @staticmethod
@@ -24822,7 +24830,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class FluentIterable(ABC, __Iterable, Iterable):
+class FluentIterable(ABC):
     """com.google.common.collect.FluentIterable"""
  
     @staticmethod
@@ -25159,7 +25167,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class BoundType(__Enum, Enum):
+class BoundType():
     """com.google.common.collect.BoundType"""
  
     @staticmethod
@@ -25342,7 +25350,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class ForwardingSortedMap(ABC, __ForwardingMap, ForwardingMap, __SortedMap, SortedMap):
+class ForwardingSortedMap(ABC):
     """com.google.common.collect.ForwardingSortedMap"""
  
     @staticmethod
@@ -25661,7 +25669,7 @@ import java.lang.Integer as __int
 import com.google.common.collect.LinkedHashMultimap as __LinkedHashMultimap
 __LinkedHashMultimap = __LinkedHashMultimap
  
-class LinkedHashMultimap(__LinkedHashMultimapGwtSerializationDependencies, LinkedHashMultimapGwtSerializationDependencies):
+class LinkedHashMultimap():
     """com.google.common.collect.LinkedHashMultimap"""
  
     @staticmethod
@@ -25812,7 +25820,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class ForwardingSetMultimap(ABC, __ForwardingMultimap, ForwardingMultimap, __SetMultimap, SetMultimap):
+class ForwardingSetMultimap(ABC):
     """com.google.common.collect.ForwardingSetMultimap"""
  
     @staticmethod
@@ -26063,7 +26071,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ForwardingSortedSet(ABC, __ForwardingSet, ForwardingSet, __SortedSet, SortedSet):
+class ForwardingSortedSet(ABC):
     """com.google.common.collect.ForwardingSortedSet"""
  
     @staticmethod
@@ -26389,7 +26397,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ContiguousSet(ABC, __ImmutableSortedSet, ImmutableSortedSet):
+class ContiguousSet(ABC):
     """com.google.common.collect.ContiguousSet"""
  
     @staticmethod
@@ -27012,7 +27020,7 @@ from abc import abstractmethod, ABC
 import com.google.common.collect.SortedMapDifference as __SortedMapDifference
 __SortedMapDifference = __SortedMapDifference
  
-class SortedMapDifference(ABC, __MapDifference, MapDifference):
+class SortedMapDifference(ABC):
     """com.google.common.collect.SortedMapDifference"""
  
     @staticmethod
@@ -27123,7 +27131,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 from builtins import int
  
-class ForwardingSortedSetMultimap(ABC, __ForwardingSetMultimap, ForwardingSetMultimap, __SortedSetMultimap, SortedSetMultimap):
+class ForwardingSortedSetMultimap(ABC):
     """com.google.common.collect.ForwardingSortedSetMultimap"""
  
     @staticmethod
@@ -27346,7 +27354,7 @@ import java.util.Map as Map
 from builtins import bool
 from builtins import int
  
-class EnumBiMap(__AbstractBiMap, AbstractBiMap):
+class EnumBiMap():
     """com.google.common.collect.EnumBiMap"""
  
     @staticmethod
@@ -27578,7 +27586,7 @@ import java.lang.Integer as __int
 from builtins import int
 import java.util.List as List
  
-class ImmutableList(ABC, __ImmutableCollection, ImmutableCollection, __List, List, __RandomAccess, RandomAccess):
+class ImmutableList(ABC):
     """com.google.common.collect.ImmutableList"""
  
     @staticmethod
@@ -28215,7 +28223,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ComputationException(__RuntimeException, RuntimeException):
+class ComputationException():
     """com.google.common.collect.ComputationException"""
  
     @staticmethod
@@ -28441,7 +28449,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 from builtins import int
  
-class ImmutableSortedMap(__ImmutableMap, ImmutableMap, __NavigableMap, NavigableMap):
+class ImmutableSortedMap():
     """com.google.common.collect.ImmutableSortedMap"""
  
     @staticmethod
@@ -29316,8 +29324,8 @@ import com.google.common.collect.ForwardingSet as __ForwardingSet
 __ForwardingSet = __ForwardingSet
 from builtins import bool
 from builtins import str
-import java.util.NavigableSet as NavigableSet
 from pyquantum_helper import override
+import java.util.NavigableSet as NavigableSet
 import java.lang.Object as __object
 import java.util.Iterator as __Iterator
 __Iterator = __Iterator
@@ -29348,7 +29356,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ForwardingNavigableSet(ABC, __ForwardingSortedSet, ForwardingSortedSet, __NavigableSet, NavigableSet):
+class ForwardingNavigableSet(ABC):
     """com.google.common.collect.ForwardingNavigableSet"""
  
     @staticmethod
@@ -29727,7 +29735,7 @@ import java.util.stream.Stream as Stream
 import java.lang.Integer as __int
 from builtins import int
  
-class StandardNavigableKeySet(__NavigableKeySet, NavigableKeySet):
+class StandardNavigableKeySet():
     """com.google.common.collect.ForwardingNavigableMap.StandardNavigableKeySet"""
  
     @staticmethod
@@ -30080,7 +30088,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Builder(__Builder, Builder):
+class Builder():
     """com.google.common.collect.ImmutableSetMultimap.Builder"""
  
     @staticmethod
@@ -30271,7 +30279,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class MinMaxPriorityQueue(__AbstractQueue, AbstractQueue):
+class MinMaxPriorityQueue():
     """com.google.common.collect.MinMaxPriorityQueue"""
  
     @staticmethod
@@ -31272,7 +31280,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class EvictingQueue(__ForwardingQueue, ForwardingQueue, __Serializable, Serializable):
+class EvictingQueue():
     """com.google.common.collect.EvictingQueue"""
  
     @staticmethod
@@ -31899,7 +31907,7 @@ import java.util.Map as Map
 from builtins import bool
 from builtins import int
  
-class EnumHashBiMap(__AbstractBiMap, AbstractBiMap):
+class EnumHashBiMap():
     """com.google.common.collect.EnumHashBiMap"""
  
     @staticmethod
@@ -32109,7 +32117,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SortedSetMultimapBuilder(ABC, __SetMultimapBuilder, SetMultimapBuilder):
+class SortedSetMultimapBuilder(ABC):
     """com.google.common.collect.MultimapBuilder.SortedSetMultimapBuilder"""
  
     @staticmethod
@@ -32294,7 +32302,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ForwardingBlockingDeque(ABC, __ForwardingDeque, ForwardingDeque, __BlockingDeque, BlockingDeque):
+class ForwardingBlockingDeque(ABC):
     """com.google.common.collect.ForwardingBlockingDeque"""
  
     @staticmethod
@@ -32728,7 +32736,7 @@ import java.util.function.Function as Function
 import java.lang.Integer as __int
 from builtins import bool
  
-class ImmutableTable(ABC, __AbstractTable, AbstractTable, __Serializable, Serializable):
+class ImmutableTable(ABC):
     """com.google.common.collect.ImmutableTable"""
  
     @staticmethod
@@ -32951,7 +32959,7 @@ import java.util.stream.Stream as Stream
 import java.lang.Integer as __int
 from builtins import int
  
-class LinkedHashMultiset(__AbstractMapBasedMultiset, AbstractMapBasedMultiset):
+class LinkedHashMultiset():
     """com.google.common.collect.LinkedHashMultiset"""
  
     @staticmethod

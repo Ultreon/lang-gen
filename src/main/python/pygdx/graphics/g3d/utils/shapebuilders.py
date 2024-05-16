@@ -36,7 +36,7 @@ except ImportError:
 
 from builtins import int
  
-class FrustumShapeBuilder(__BaseShapeBuilder, BaseShapeBuilder):
+class FrustumShapeBuilder():
     """com.badlogic.gdx.graphics.g3d.utils.shapebuilders.FrustumShapeBuilder"""
  
     @staticmethod
@@ -188,7 +188,7 @@ except ImportError:
 
 from builtins import int
  
-class FrustumShapeBuilder(__BaseShapeBuilder, BaseShapeBuilder):
+class FrustumShapeBuilder():
     """com.badlogic.gdx.graphics.g3d.utils.shapebuilders.FrustumShapeBuilder"""
  
     @staticmethod
@@ -334,7 +334,7 @@ except ImportError:
 
 from builtins import int
  
-class ArrowShapeBuilder(__BaseShapeBuilder, BaseShapeBuilder):
+class ArrowShapeBuilder():
     """com.badlogic.gdx.graphics.g3d.utils.shapebuilders.ArrowShapeBuilder"""
  
     @staticmethod
@@ -473,7 +473,7 @@ except ImportError:
 
 from builtins import int
  
-class RenderableShapeBuilder(__BaseShapeBuilder, BaseShapeBuilder):
+class RenderableShapeBuilder():
     """com.badlogic.gdx.graphics.g3d.utils.shapebuilders.RenderableShapeBuilder"""
  
     @staticmethod
@@ -619,7 +619,7 @@ except ImportError:
 
 from builtins import int
  
-class SphereShapeBuilder(__BaseShapeBuilder, BaseShapeBuilder):
+class SphereShapeBuilder():
     """com.badlogic.gdx.graphics.g3d.utils.shapebuilders.SphereShapeBuilder"""
  
     @staticmethod
@@ -767,7 +767,7 @@ except ImportError:
 
 from builtins import int
  
-class CylinderShapeBuilder(__BaseShapeBuilder, BaseShapeBuilder):
+class CylinderShapeBuilder():
     """com.badlogic.gdx.graphics.g3d.utils.shapebuilders.CylinderShapeBuilder"""
  
     @staticmethod
@@ -918,7 +918,7 @@ except ImportError:
 
 from builtins import int
  
-class BoxShapeBuilder(__BaseShapeBuilder, BaseShapeBuilder):
+class BoxShapeBuilder():
     """com.badlogic.gdx.graphics.g3d.utils.shapebuilders.BoxShapeBuilder"""
  
     @staticmethod
@@ -1082,7 +1082,7 @@ except ImportError:
 
 from builtins import int
  
-class PatchShapeBuilder(__BaseShapeBuilder, BaseShapeBuilder):
+class PatchShapeBuilder():
     """com.badlogic.gdx.graphics.g3d.utils.shapebuilders.PatchShapeBuilder"""
  
     @staticmethod
@@ -1344,7 +1344,7 @@ except ImportError:
 
 from builtins import int
  
-class EllipseShapeBuilder(__BaseShapeBuilder, BaseShapeBuilder):
+class EllipseShapeBuilder():
     """com.badlogic.gdx.graphics.g3d.utils.shapebuilders.EllipseShapeBuilder"""
  
     @staticmethod
@@ -1587,7 +1587,7 @@ except ImportError:
 
 from builtins import int
  
-class CapsuleShapeBuilder(__BaseShapeBuilder, BaseShapeBuilder):
+class CapsuleShapeBuilder():
     """com.badlogic.gdx.graphics.g3d.utils.shapebuilders.CapsuleShapeBuilder"""
  
     @staticmethod
@@ -1717,7 +1717,7 @@ except ImportError:
 
 from builtins import int
  
-class ConeShapeBuilder(__BaseShapeBuilder, BaseShapeBuilder):
+class ConeShapeBuilder():
     """com.badlogic.gdx.graphics.g3d.utils.shapebuilders.ConeShapeBuilder"""
  
     @staticmethod

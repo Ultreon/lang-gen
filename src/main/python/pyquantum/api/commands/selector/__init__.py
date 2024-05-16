@@ -322,7 +322,7 @@ __Result = __BaseSelector_Result.Result
 import java.lang.Integer as __int
 from builtins import int
  
-class EntityBaseSelector(__BaseSelector, BaseSelector):
+class EntityBaseSelector():
     """dev.ultreon.quantum.api.commands.selector.EntityBaseSelector"""
  
     @staticmethod
@@ -697,7 +697,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PlayerBaseSelector(__BaseSelector, BaseSelector):
+class PlayerBaseSelector():
     """dev.ultreon.quantum.api.commands.selector.PlayerBaseSelector"""
  
     @staticmethod
@@ -899,7 +899,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CommandSenderBaseSelector(__BaseSelector, BaseSelector):
+class CommandSenderBaseSelector():
     """dev.ultreon.quantum.api.commands.selector.CommandSenderBaseSelector"""
  
     @staticmethod
@@ -1092,7 +1092,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Selector(__BaseSelector, BaseSelector):
+class Selector():
     """dev.ultreon.quantum.api.commands.selector.Selector"""
  
     @staticmethod
@@ -1605,7 +1605,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class OfflinePlayerBaseSelector(__BaseSelector, BaseSelector):
+class OfflinePlayerBaseSelector():
     """dev.ultreon.quantum.api.commands.selector.OfflinePlayerBaseSelector"""
  
     @staticmethod
@@ -1806,7 +1806,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class WorldBaseSelector(__BaseSelector, BaseSelector):
+class WorldBaseSelector():
     """dev.ultreon.quantum.api.commands.selector.WorldBaseSelector"""
  
     @staticmethod
@@ -2002,7 +2002,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AnyPlayerBaseSelector(__BaseSelector, BaseSelector):
+class AnyPlayerBaseSelector():
     """dev.ultreon.quantum.api.commands.selector.AnyPlayerBaseSelector"""
  
     @staticmethod
@@ -2186,7 +2186,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class SelectorKey(__Enum, Enum):
+class SelectorKey():
     """dev.ultreon.quantum.api.commands.selector.SelectorKey"""
  
     @staticmethod
@@ -2398,7 +2398,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ItemBaseSelector(__BaseSelector, BaseSelector):
+class ItemBaseSelector():
     """dev.ultreon.quantum.api.commands.selector.ItemBaseSelector"""
  
     @staticmethod

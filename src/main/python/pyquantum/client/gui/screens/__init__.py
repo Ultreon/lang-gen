@@ -99,7 +99,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class WorldEditScreen(client.__Screen, gui.Screen):
+class WorldEditScreen():
     """dev.ultreon.quantum.client.gui.screens.WorldEditScreen"""
  
     @staticmethod
@@ -853,7 +853,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class WorldEditScreen(client.__Screen, gui.Screen):
+class WorldEditScreen():
     """dev.ultreon.quantum.client.gui.screens.WorldEditScreen"""
  
     @staticmethod
@@ -1603,7 +1603,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class MessageScreen(client.__Screen, gui.Screen):
+class MessageScreen():
     """dev.ultreon.quantum.client.gui.screens.MessageScreen"""
  
     @staticmethod
@@ -2365,7 +2365,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class MultiplayerScreen(client.__Screen, gui.Screen):
+class MultiplayerScreen():
     """dev.ultreon.quantum.client.gui.screens.MultiplayerScreen"""
  
     @staticmethod
@@ -3119,7 +3119,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class ModImportFailedScreen(client.__Screen, gui.Screen):
+class ModImportFailedScreen():
     """dev.ultreon.quantum.client.gui.screens.ModImportFailedScreen"""
  
     @staticmethod
@@ -3866,7 +3866,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class DisconnectedScreen(client.__Screen, gui.Screen):
+class DisconnectedScreen():
     """dev.ultreon.quantum.client.gui.screens.DisconnectedScreen"""
  
     @staticmethod
@@ -4606,7 +4606,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class RestartConfirmScreen(client.__Screen, gui.Screen):
+class RestartConfirmScreen():
     """dev.ultreon.quantum.client.gui.screens.RestartConfirmScreen"""
  
     @staticmethod
@@ -5359,7 +5359,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class LanguageScreen(client.__Screen, gui.Screen):
+class LanguageScreen():
     """dev.ultreon.quantum.client.gui.screens.LanguageScreen"""
  
     @staticmethod
@@ -6127,7 +6127,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class WorldCreationScreen(client.__Screen, gui.Screen):
+class WorldCreationScreen():
     """dev.ultreon.quantum.client.gui.screens.WorldCreationScreen"""
  
     @staticmethod
@@ -6901,7 +6901,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class WorldLoadScreen(client.__Screen, gui.Screen):
+class WorldLoadScreen():
     """dev.ultreon.quantum.client.gui.screens.WorldLoadScreen"""
  
     @staticmethod
@@ -7676,7 +7676,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class TitleScreen(client.__Screen, gui.Screen):
+class TitleScreen():
     """dev.ultreon.quantum.client.gui.screens.TitleScreen"""
  
     @staticmethod
@@ -8465,7 +8465,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class WorldDeleteConfirmScreen(client.__Screen, gui.Screen):
+class WorldDeleteConfirmScreen():
     """dev.ultreon.quantum.client.gui.screens.WorldDeleteConfirmScreen"""
  
     @staticmethod
@@ -9214,7 +9214,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class ModListScreen(client.__Screen, gui.Screen):
+class ModListScreen():
     """dev.ultreon.quantum.client.gui.screens.ModListScreen"""
  
     @staticmethod
@@ -9987,7 +9987,7 @@ __Bounds = __Bounds
 import java.util.Map as Map
 import java.util.List as List
  
-class PauseScreen(client.__Screen, gui.Screen):
+class PauseScreen():
     """dev.ultreon.quantum.client.gui.screens.PauseScreen"""
  
     @staticmethod
@@ -10774,7 +10774,7 @@ import it.unimi.dsi.fastutil.longs.LongList as LongList
 import java.util.List as List
 from builtins import int
  
-class ChatScreen(client.__Screen, gui.Screen):
+class ChatScreen():
     """dev.ultreon.quantum.client.gui.screens.ChatScreen"""
  
     @staticmethod
@@ -11568,7 +11568,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class DeathScreen(client.__Screen, gui.Screen):
+class DeathScreen():
     """dev.ultreon.quantum.client.gui.screens.DeathScreen"""
  
     @staticmethod
@@ -12323,7 +12323,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class WorldGenTestScreen(client.__Screen, gui.Screen):
+class WorldGenTestScreen():
     """dev.ultreon.quantum.client.gui.screens.WorldGenTestScreen"""
  
     @staticmethod

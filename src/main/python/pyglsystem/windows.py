@@ -444,7 +444,7 @@ import org.lwjgl.system.windows.LARGE_INTEGER as __LARGE_INTEGER_Buffer
 __Buffer = __LARGE_INTEGER_Buffer.Buffer
 from builtins import int
  
-class LARGE_INTEGER(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class LARGE_INTEGER():
     """org.lwjgl.system.windows.LARGE_INTEGER"""
  
     @staticmethod
@@ -776,7 +776,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.windows.POINT.Buffer"""
  
     @staticmethod
@@ -1131,7 +1131,7 @@ import org.lwjgl.system.windows.MOUSEINPUT as __MOUSEINPUT
 __MOUSEINPUT = __MOUSEINPUT
 from builtins import int
  
-class MOUSEINPUT(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class MOUSEINPUT():
     """org.lwjgl.system.windows.MOUSEINPUT"""
  
     @staticmethod
@@ -2637,7 +2637,7 @@ import java.nio.ByteBuffer as ByteBuffer
 import java.lang.Integer as __int
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.windows.DATA_BLOB.Buffer"""
  
     @staticmethod
@@ -2999,7 +2999,7 @@ import org.lwjgl.system.windows.LARGE_INTEGER as __LARGE_INTEGER_Buffer
 __Buffer = __LARGE_INTEGER_Buffer.Buffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.windows.LARGE_INTEGER.Buffer"""
  
     @staticmethod
@@ -3380,7 +3380,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.windows.WINDOWPLACEMENT.Buffer"""
  
     @staticmethod
@@ -3764,6 +3764,7 @@ __FFICIF = __FFICIF
 import org.lwjgl.system.windows.WindowProcI as __WindowProcI
 __WindowProcI = __WindowProcI
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.system.CallbackI as __CallbackI
 __CallbackI = __CallbackI
 from abc import abstractmethod, ABC
@@ -3774,7 +3775,7 @@ except ImportError:
 
 from builtins import int
  
-class WindowProcI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class WindowProcI(ABC):
     """org.lwjgl.system.windows.WindowProcI"""
  
     @staticmethod
@@ -3976,7 +3977,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.windows.KEYBDINPUT.Buffer"""
  
     @staticmethod
@@ -4363,7 +4364,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class DATA_BLOB(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class DATA_BLOB():
     """org.lwjgl.system.windows.DATA_BLOB"""
  
     @staticmethod
@@ -4666,7 +4667,7 @@ import org.lwjgl.system.windows.MONITORINFOEX as __MONITORINFOEX
 __MONITORINFOEX = __MONITORINFOEX
 from builtins import int
  
-class MONITORINFOEX(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class MONITORINFOEX():
     """org.lwjgl.system.windows.MONITORINFOEX"""
  
     @staticmethod
@@ -5045,7 +5046,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class POINT(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class POINT():
     """org.lwjgl.system.windows.POINT"""
  
     @staticmethod
@@ -5413,7 +5414,7 @@ import java.nio.ByteBuffer as ByteBuffer
 import java.lang.Integer as __int
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.windows.DEVMODE.Buffer"""
  
     @staticmethod
@@ -5975,7 +5976,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.windows.TOUCHINPUT.Buffer"""
  
     @staticmethod
@@ -6470,7 +6471,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class HARDWAREINPUT(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class HARDWAREINPUT():
     """org.lwjgl.system.windows.HARDWAREINPUT"""
  
     @staticmethod
@@ -6848,7 +6849,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class WINDOWPLACEMENT(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class WINDOWPLACEMENT():
     """org.lwjgl.system.windows.WINDOWPLACEMENT"""
  
     @staticmethod
@@ -7318,7 +7319,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.windows.WNDCLASSEX.Buffer"""
  
     @staticmethod
@@ -7797,7 +7798,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.windows.MSG.Buffer"""
  
     @staticmethod
@@ -8201,7 +8202,7 @@ __WNDCLASSEX = __WNDCLASSEX
 from builtins import bool
 from builtins import int
  
-class WNDCLASSEX(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class WNDCLASSEX():
     """org.lwjgl.system.windows.WNDCLASSEX"""
  
     @staticmethod
@@ -8803,7 +8804,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class MSG(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class MSG():
     """org.lwjgl.system.windows.MSG"""
  
     @staticmethod
@@ -9429,7 +9430,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.windows.INPUT.Buffer"""
  
     @staticmethod
@@ -9819,7 +9820,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CRYPTPROTECT_PROMPTSTRUCT(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class CRYPTPROTECT_PROMPTSTRUCT():
     """org.lwjgl.system.windows.CRYPTPROTECT_PROMPTSTRUCT"""
  
     @staticmethod
@@ -10147,7 +10148,7 @@ __Buffer = __KEYBDINPUT_Buffer.Buffer
 from builtins import bool
 from builtins import int
  
-class KEYBDINPUT(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class KEYBDINPUT():
     """org.lwjgl.system.windows.KEYBDINPUT"""
  
     @staticmethod
@@ -10576,7 +10577,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.windows.RECT.Buffer"""
  
     @staticmethod
@@ -10963,7 +10964,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.windows.POINTL.Buffer"""
  
     @staticmethod
@@ -11318,7 +11319,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class TOUCHINPUT(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class TOUCHINPUT():
     """org.lwjgl.system.windows.TOUCHINPUT"""
  
     @staticmethod
@@ -11834,7 +11835,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class WindowProc(ABC, pyglsystem.__Callback, pyglsystem.Callback, __WindowProcI, WindowProcI):
+class WindowProc(ABC):
     """org.lwjgl.system.windows.WindowProc"""
  
     @staticmethod
@@ -12034,7 +12035,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.windows.MOUSEINPUT.Buffer"""
  
     @staticmethod
@@ -12436,7 +12437,7 @@ from builtins import int
 import org.lwjgl.system.windows.MOUSEINPUT as __MOUSEINPUT
 __MOUSEINPUT = __MOUSEINPUT
  
-class INPUT(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class INPUT():
     """org.lwjgl.system.windows.INPUT"""
  
     @staticmethod
@@ -12956,7 +12957,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.windows.HARDWAREINPUT.Buffer"""
  
     @staticmethod
@@ -13317,7 +13318,7 @@ __WindowsLibrary = __WindowsLibrary
 from builtins import bool
 from builtins import int
  
-class WindowsLibrary(pyglsystem.__SharedLibrary_Default, pyglsystem.SharedLibrary$Default):
+class WindowsLibrary():
     """org.lwjgl.system.windows.WindowsLibrary"""
  
     @staticmethod
@@ -13502,7 +13503,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.windows.PIXELFORMATDESCRIPTOR.Buffer"""
  
     @staticmethod
@@ -14097,7 +14098,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class RECT(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class RECT():
     """org.lwjgl.system.windows.RECT"""
  
     @staticmethod
@@ -14497,7 +14498,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class DEVMODE(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class DEVMODE():
     """org.lwjgl.system.windows.DEVMODE"""
  
     @staticmethod
@@ -15288,7 +15289,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.windows.MONITORINFOEX.Buffer"""
  
     @staticmethod
@@ -15660,7 +15661,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class PIXELFORMATDESCRIPTOR(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class PIXELFORMATDESCRIPTOR():
     """org.lwjgl.system.windows.PIXELFORMATDESCRIPTOR"""
  
     @staticmethod
@@ -16541,7 +16542,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class DISPLAY_DEVICE(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class DISPLAY_DEVICE():
     """org.lwjgl.system.windows.DISPLAY_DEVICE"""
  
     @staticmethod
@@ -16614,15 +16615,15 @@ class DISPLAY_DEVICE(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__Native
 
     @staticmethod
     @overload
-    def mallocStack(arg0: 'MemoryStack') -> 'DISPLAY_DEVICE':
-        """public static org.lwjgl.system.windows.DISPLAY_DEVICE org.lwjgl.system.windows.DISPLAY_DEVICE.mallocStack(org.lwjgl.system.MemoryStack)"""
-        return DISPLAY_DEVICE.__wrap(__DISPLAY_DEVICE.mallocStack(arg0))
-
-    @staticmethod
-    @overload
     def mallocStack(arg0: int) -> 'Buffer':
         """public static org.lwjgl.system.windows.DISPLAY_DEVICE$Buffer org.lwjgl.system.windows.DISPLAY_DEVICE.mallocStack(int)"""
         return Buffer.__wrap(__DISPLAY_DEVICE.mallocStack(__int.valueOf(arg0)))
+
+    @staticmethod
+    @overload
+    def mallocStack(arg0: 'MemoryStack') -> 'DISPLAY_DEVICE':
+        """public static org.lwjgl.system.windows.DISPLAY_DEVICE org.lwjgl.system.windows.DISPLAY_DEVICE.mallocStack(org.lwjgl.system.MemoryStack)"""
+        return DISPLAY_DEVICE.__wrap(__DISPLAY_DEVICE.mallocStack(arg0))
 
     @overload
     def isNull(self, arg0: int) -> bool:
@@ -16977,7 +16978,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.windows.SECURITY_ATTRIBUTES.Buffer"""
  
     @staticmethod
@@ -17343,7 +17344,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class SECURITY_ATTRIBUTES(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class SECURITY_ATTRIBUTES():
     """org.lwjgl.system.windows.SECURITY_ATTRIBUTES"""
  
     @staticmethod
@@ -18050,7 +18051,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.windows.DISPLAY_DEVICE.Buffer"""
  
     @staticmethod
@@ -18440,7 +18441,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class POINTL(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class POINTL():
     """org.lwjgl.system.windows.POINTL"""
  
     @staticmethod

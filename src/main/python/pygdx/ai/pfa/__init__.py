@@ -131,7 +131,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DefaultConnection(__Connection, Connection):
+class DefaultConnection():
     """com.badlogic.gdx.ai.pfa.DefaultConnection"""
  
     @staticmethod
@@ -298,7 +298,7 @@ from abc import abstractmethod, ABC
 import com.badlogic.gdx.ai.pfa.Graph as __Graph
 __Graph = __Graph
  
-class HierarchicalGraph(ABC, __Graph, Graph):
+class HierarchicalGraph(ABC):
     """com.badlogic.gdx.ai.pfa.HierarchicalGraph"""
  
     @staticmethod
@@ -529,7 +529,7 @@ import com.badlogic.gdx.ai.pfa.PathFinderQueue as __PathFinderQueue
 __PathFinderQueue = __PathFinderQueue
 from builtins import int
  
-class PathFinderQueue(ai.__Schedulable, sched.Schedulable, ai.__Telegraph, msg.Telegraph):
+class PathFinderQueue():
     """com.badlogic.gdx.ai.pfa.PathFinderQueue"""
  
     @staticmethod
@@ -638,6 +638,7 @@ class PathFinderQueue(ai.__Schedulable, sched.Schedulable, ai.__Telegraph, msg.T
  
 # CLASS: com.badlogic.gdx.ai.pfa.GraphPath
 import java.util.Spliterator as Spliterator
+from pyquantum_helper import override
 import com.badlogic.gdx.ai.pfa.GraphPath as __GraphPath
 __GraphPath = __GraphPath
 from abc import abstractmethod, ABC
@@ -647,7 +648,7 @@ import java.util.Spliterator as __Spliterator
 __Spliterator = __Spliterator
 import java.util.function.Consumer as Consumer
  
-class GraphPath(ABC, __Iterable, Iterable):
+class GraphPath(ABC):
     """com.badlogic.gdx.ai.pfa.GraphPath"""
  
     @staticmethod
@@ -765,6 +766,7 @@ class Graph(ABC):
 import com.badlogic.gdx.ai.pfa.SmoothableGraphPath as __SmoothableGraphPath
 __SmoothableGraphPath = __SmoothableGraphPath
 import java.util.Spliterator as Spliterator
+from pyquantum_helper import override
 import com.badlogic.gdx.ai.pfa.GraphPath as __GraphPath
 __GraphPath = __GraphPath
 from abc import abstractmethod, ABC
@@ -774,7 +776,7 @@ import java.util.Spliterator as __Spliterator
 __Spliterator = __Spliterator
 import java.util.function.Consumer as Consumer
  
-class SmoothableGraphPath(ABC, __GraphPath, GraphPath):
+class SmoothableGraphPath(ABC):
     """com.badlogic.gdx.ai.pfa.SmoothableGraphPath"""
  
     @staticmethod
@@ -896,7 +898,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class DefaultGraphPath(__GraphPath, GraphPath):
+class DefaultGraphPath():
     """com.badlogic.gdx.ai.pfa.DefaultGraphPath"""
  
     @staticmethod
@@ -1073,7 +1075,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class HierarchicalPathFinder(__PathFinder, PathFinder):
+class HierarchicalPathFinder():
     """com.badlogic.gdx.ai.pfa.HierarchicalPathFinder"""
  
     @staticmethod

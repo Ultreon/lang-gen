@@ -28,7 +28,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class JoinType(__Enum, Enum):
+class JoinType():
     """space.earlygrey.shapedrawer.JoinType"""
  
     @staticmethod
@@ -187,7 +187,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class JoinType(__Enum, Enum):
+class JoinType():
     """space.earlygrey.shapedrawer.JoinType"""
  
     @staticmethod
@@ -907,7 +907,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class ShapeDrawer(__AbstractShapeDrawer, AbstractShapeDrawer):
+class ShapeDrawer():
     """space.earlygrey.shapedrawer.ShapeDrawer"""
  
     @staticmethod
@@ -1966,7 +1966,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DefaultSideEstimator(__SideEstimator, SideEstimator):
+class DefaultSideEstimator():
     """space.earlygrey.shapedrawer.DefaultSideEstimator"""
  
     @staticmethod

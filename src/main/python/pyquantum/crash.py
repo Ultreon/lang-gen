@@ -41,7 +41,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class CrashLog(__CrashCategory, CrashCategory):
+class CrashLog():
     """dev.ultreon.quantum.crash.CrashLog"""
  
     @staticmethod
@@ -257,7 +257,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class CrashLog(__CrashCategory, CrashCategory):
+class CrashLog():
     """dev.ultreon.quantum.crash.CrashLog"""
  
     @staticmethod
@@ -467,7 +467,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ApplicationCrash(__Error, Error):
+class ApplicationCrash():
     """dev.ultreon.quantum.crash.ApplicationCrash"""
  
     @staticmethod
@@ -680,7 +680,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CrashException(__RuntimeException, RuntimeException):
+class CrashException():
     """dev.ultreon.quantum.crash.CrashException"""
  
     @staticmethod

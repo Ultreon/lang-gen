@@ -179,7 +179,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class ContainerInteraction(__Enum, Enum):
+class ContainerInteraction():
     """dev.ultreon.quantum.world.container.ContainerInteraction"""
  
     @staticmethod
@@ -340,12 +340,12 @@ except ImportError:
     world = __import_once__("pyquantum.world")
 
 from builtins import str
+from pyquantum_helper import override
 try:
     from pyquantum.entity import player
 except ImportError:
     player = __import_once__("pyquantum.entity.player")
 
-from pyquantum_helper import override
 import java.lang.Object as __object
 from builtins import type
 try:
@@ -383,7 +383,7 @@ except ImportError:
 from builtins import int
 import java.util.List as List
  
-class Container(ABC, __ContainerView, ContainerView):
+class Container(ABC):
     """dev.ultreon.quantum.world.container.Container"""
  
     @staticmethod

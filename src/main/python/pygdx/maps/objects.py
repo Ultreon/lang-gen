@@ -48,7 +48,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class EllipseMapObject(pygdx.__MapObject, maps.MapObject):
+class EllipseMapObject():
     """com.badlogic.gdx.maps.objects.EllipseMapObject"""
  
     @staticmethod
@@ -260,7 +260,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class EllipseMapObject(pygdx.__MapObject, maps.MapObject):
+class EllipseMapObject():
     """com.badlogic.gdx.maps.objects.EllipseMapObject"""
  
     @staticmethod
@@ -475,7 +475,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class PolylineMapObject(pygdx.__MapObject, maps.MapObject):
+class PolylineMapObject():
     """com.badlogic.gdx.maps.objects.PolylineMapObject"""
  
     @staticmethod
@@ -697,7 +697,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class RectangleMapObject(pygdx.__MapObject, maps.MapObject):
+class RectangleMapObject():
     """com.badlogic.gdx.maps.objects.RectangleMapObject"""
  
     @staticmethod
@@ -907,7 +907,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class TextureMapObject(pygdx.__MapObject, maps.MapObject):
+class TextureMapObject():
     """com.badlogic.gdx.maps.objects.TextureMapObject"""
  
     @staticmethod
@@ -1192,7 +1192,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class CircleMapObject(pygdx.__MapObject, maps.MapObject):
+class CircleMapObject():
     """com.badlogic.gdx.maps.objects.CircleMapObject"""
  
     @staticmethod
@@ -1402,7 +1402,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class PolygonMapObject(pygdx.__MapObject, maps.MapObject):
+class PolygonMapObject():
     """com.badlogic.gdx.maps.objects.PolygonMapObject"""
  
     @staticmethod

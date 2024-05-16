@@ -42,7 +42,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class EnumerationMutationHandler(ABC, pyglsystem.__Callback, pyglsystem.Callback, __EnumerationMutationHandlerI, EnumerationMutationHandlerI):
+class EnumerationMutationHandler(ABC):
     """org.lwjgl.system.macosx.EnumerationMutationHandler"""
  
     @staticmethod
@@ -239,7 +239,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class EnumerationMutationHandler(ABC, pyglsystem.__Callback, pyglsystem.Callback, __EnumerationMutationHandlerI, EnumerationMutationHandlerI):
+class EnumerationMutationHandler(ABC):
     """org.lwjgl.system.macosx.EnumerationMutationHandler"""
  
     @staticmethod
@@ -538,7 +538,7 @@ import org.lwjgl.system.macosx.MacOSXLibraryBundle as __MacOSXLibraryBundle
 __MacOSXLibraryBundle = __MacOSXLibraryBundle
 from builtins import int
  
-class MacOSXLibraryBundle(__MacOSXLibrary, MacOSXLibrary):
+class MacOSXLibraryBundle():
     """org.lwjgl.system.macosx.MacOSXLibraryBundle"""
  
     @staticmethod
@@ -1035,7 +1035,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CGEventTapCallBack(ABC, pyglsystem.__Callback, pyglsystem.Callback, __CGEventTapCallBackI, CGEventTapCallBackI):
+class CGEventTapCallBack(ABC):
     """org.lwjgl.system.macosx.CGEventTapCallBack"""
  
     @staticmethod
@@ -1236,7 +1236,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.macosx.CGEventTapInformation.Buffer"""
  
     @staticmethod
@@ -1593,6 +1593,7 @@ from pyquantum_helper import import_once as __import_once__
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.system.CallbackI as __CallbackI
 __CallbackI = __CallbackI
 import org.lwjgl.system.macosx.EnumerationMutationHandlerI as __EnumerationMutationHandlerI
@@ -1605,7 +1606,7 @@ except ImportError:
 
 from builtins import int
  
-class EnumerationMutationHandlerI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class EnumerationMutationHandlerI(ABC):
     """org.lwjgl.system.macosx.EnumerationMutationHandlerI"""
  
     @staticmethod
@@ -3109,7 +3110,7 @@ __MacOSXLibraryDL = __MacOSXLibraryDL
 from builtins import bool
 from builtins import int
  
-class MacOSXLibraryDL(__MacOSXLibrary, MacOSXLibrary):
+class MacOSXLibraryDL():
     """org.lwjgl.system.macosx.MacOSXLibraryDL"""
  
     @staticmethod
@@ -3306,7 +3307,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.macosx.CGPoint.Buffer"""
  
     @staticmethod
@@ -3776,7 +3777,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class MacOSXLibrary(ABC, pyglsystem.__SharedLibrary_Default, pyglsystem.SharedLibrary$Default):
+class MacOSXLibrary(ABC):
     """org.lwjgl.system.macosx.MacOSXLibrary"""
  
     @staticmethod
@@ -4380,7 +4381,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class ObjCMethodDescription(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class ObjCMethodDescription():
     """org.lwjgl.system.macosx.ObjCMethodDescription"""
  
     @staticmethod
@@ -4724,7 +4725,7 @@ import java.nio.ByteBuffer as ByteBuffer
 import java.lang.Integer as __int
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.macosx.ObjCPropertyAttribute.Buffer"""
  
     @staticmethod
@@ -5103,7 +5104,7 @@ import java.nio.ByteBuffer as ByteBuffer
 import java.lang.Integer as __int
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.macosx.ObjCMethodDescription.Buffer"""
  
     @staticmethod
@@ -5455,7 +5456,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ObjCPropertyAttribute(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class ObjCPropertyAttribute():
     """org.lwjgl.system.macosx.ObjCPropertyAttribute"""
  
     @staticmethod
@@ -5835,7 +5836,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class CGEventTapInformation(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class CGEventTapInformation():
     """org.lwjgl.system.macosx.CGEventTapInformation"""
  
     @staticmethod
@@ -6214,6 +6215,7 @@ from pyquantum_helper import import_once as __import_once__
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.system.macosx.CGEventTapCallBackI as __CGEventTapCallBackI
 __CGEventTapCallBackI = __CGEventTapCallBackI
 import org.lwjgl.system.CallbackI as __CallbackI
@@ -6226,7 +6228,7 @@ except ImportError:
 
 from builtins import int
  
-class CGEventTapCallBackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class CGEventTapCallBackI(ABC):
     """org.lwjgl.system.macosx.CGEventTapCallBackI"""
  
     @staticmethod
@@ -6417,7 +6419,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class CGPoint(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class CGPoint():
     """org.lwjgl.system.macosx.CGPoint"""
  
     @staticmethod

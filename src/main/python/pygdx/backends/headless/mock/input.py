@@ -12,8 +12,8 @@ except ImportError:
 from builtins import str
 import com.badlogic.gdx.Input as __Input_Orientation
 __Orientation = __Input_Orientation.Orientation
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 from builtins import float
@@ -33,7 +33,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MockInput(pygdx.__Input, pygdx.Input):
+class MockInput():
     """com.badlogic.gdx.backends.headless.mock.input.MockInput"""
  
     @staticmethod
@@ -437,8 +437,8 @@ except ImportError:
 from builtins import str
 import com.badlogic.gdx.Input as __Input_Orientation
 __Orientation = __Input_Orientation.Orientation
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 from builtins import float
@@ -458,7 +458,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MockInput(pygdx.__Input, pygdx.Input):
+class MockInput():
     """com.badlogic.gdx.backends.headless.mock.input.MockInput"""
  
     @staticmethod

@@ -59,7 +59,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MemoryConnection(ABC, __IConnection, IConnection):
+class MemoryConnection(ABC):
     """dev.ultreon.quantum.network.system.MemoryConnection"""
  
     @staticmethod
@@ -212,16 +212,16 @@ class MemoryConnection(ABC, __IConnection, IConnection):
         """public void dev.ultreon.quantum.network.system.MemoryConnection.disconnect(java.lang.String)"""
         super(__MemoryConnection, self).disconnect(arg0)
 
+    @overload
+    def setHandler(self, arg0: 'PacketHandler'):
+        """public void dev.ultreon.quantum.network.system.MemoryConnection.setHandler(OurHandler)"""
+        super(__MemoryConnection, self).setHandler(arg0)
+
     @override
     @overload
     def setPlayer(self, arg0: 'ServerPlayer'):
         """public void dev.ultreon.quantum.network.system.MemoryConnection.setPlayer(dev.ultreon.quantum.server.player.ServerPlayer)"""
         super(__MemoryConnection, self).setPlayer(arg0)
-
-    @overload
-    def setHandler(self, arg0: 'PacketHandler'):
-        """public void dev.ultreon.quantum.network.system.MemoryConnection.setHandler(OurHandler)"""
-        super(__MemoryConnection, self).setHandler(arg0)
 
     @override
     @overload
@@ -347,7 +347,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MemoryConnection(ABC, __IConnection, IConnection):
+class MemoryConnection(ABC):
     """dev.ultreon.quantum.network.system.MemoryConnection"""
  
     @staticmethod
@@ -500,16 +500,16 @@ class MemoryConnection(ABC, __IConnection, IConnection):
         """public void dev.ultreon.quantum.network.system.MemoryConnection.disconnect(java.lang.String)"""
         super(__MemoryConnection, self).disconnect(arg0)
 
+    @overload
+    def setHandler(self, arg0: 'PacketHandler'):
+        """public void dev.ultreon.quantum.network.system.MemoryConnection.setHandler(OurHandler)"""
+        super(__MemoryConnection, self).setHandler(arg0)
+
     @override
     @overload
     def setPlayer(self, arg0: 'ServerPlayer'):
         """public void dev.ultreon.quantum.network.system.MemoryConnection.setPlayer(dev.ultreon.quantum.server.player.ServerPlayer)"""
         super(__MemoryConnection, self).setPlayer(arg0)
-
-    @overload
-    def setHandler(self, arg0: 'PacketHandler'):
-        """public void dev.ultreon.quantum.network.system.MemoryConnection.setHandler(OurHandler)"""
-        super(__MemoryConnection, self).setHandler(arg0)
 
     @override
     @overload
@@ -650,7 +650,7 @@ __Object = __Object
 import java.lang.Integer as __int
 from builtins import int
  
-class ServerMemoryConnection(__MemoryConnection, MemoryConnection):
+class ServerMemoryConnection():
     """dev.ultreon.quantum.network.system.ServerMemoryConnection"""
  
     @staticmethod
@@ -913,7 +913,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class TcpNetworker(__ConnectionReceiver, ConnectionReceiver, pyquantum.__Networker, network.Networker):
+class TcpNetworker():
     """dev.ultreon.quantum.network.system.TcpNetworker"""
  
     @staticmethod
@@ -1079,7 +1079,7 @@ except ImportError:
 
 from builtins import bool
  
-class IConnection(ABC, __Closeable, Closeable):
+class IConnection(ABC):
     """dev.ultreon.quantum.network.system.IConnection"""
  
     @staticmethod
@@ -1284,7 +1284,7 @@ __Object = __Object
 import java.lang.Integer as __int
 from builtins import int
  
-class ServerTcpConnection(__Connection, Connection):
+class ServerTcpConnection():
     """dev.ultreon.quantum.network.system.ServerTcpConnection"""
  
     @staticmethod
@@ -1584,7 +1584,7 @@ __Object = __Object
 import java.lang.Integer as __int
 from builtins import int
  
-class Connection(ABC, __IConnection, IConnection, __Closeable, Closeable):
+class Connection(ABC):
     """dev.ultreon.quantum.network.system.Connection"""
  
     @staticmethod
@@ -1812,7 +1812,7 @@ import dev.ultreon.quantum.network.system.ConnectionReceiver as __ConnectionRece
 __ConnectionReceiver = __ConnectionReceiver
 from abc import abstractmethod, ABC
  
-class ConnectionReceiver(ABC, __Closeable, Closeable):
+class ConnectionReceiver(ABC):
     """dev.ultreon.quantum.network.system.ConnectionReceiver"""
  
     @staticmethod
@@ -1881,7 +1881,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ReadOnlyConnectionException(__RuntimeException, RuntimeException):
+class ReadOnlyConnectionException():
     """dev.ultreon.quantum.network.system.ReadOnlyConnectionException"""
  
     @staticmethod

@@ -30,7 +30,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidValueException(__RuntimeException, RuntimeException):
+class InvalidValueException():
     """dev.ultreon.quantum.client.util.InvalidValueException"""
  
     @staticmethod
@@ -250,7 +250,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidValueException(__RuntimeException, RuntimeException):
+class InvalidValueException():
     """dev.ultreon.quantum.client.util.InvalidValueException"""
  
     @staticmethod
@@ -616,7 +616,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class RenderableArray(pygdx.__Array, utils.Array):
+class RenderableArray():
     """dev.ultreon.quantum.client.util.RenderableArray"""
  
     @staticmethod
@@ -1068,7 +1068,7 @@ from abc import abstractmethod, ABC
 import com.badlogic.gdx.utils.Disposable as __Disposable
 __Disposable = __Disposable
  
-class DeferredDisposable(ABC, pygdx.__Disposable, utils.Disposable):
+class DeferredDisposable(ABC):
     """dev.ultreon.quantum.client.util.DeferredDisposable"""
  
     @staticmethod
@@ -1239,7 +1239,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidThreadError(__Error, Error):
+class InvalidThreadError():
     """dev.ultreon.quantum.client.util.InvalidThreadError"""
  
     @staticmethod
@@ -1604,7 +1604,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DuplicateException(__IllegalArgumentException, IllegalArgumentException):
+class DuplicateException():
     """dev.ultreon.quantum.client.util.DuplicateException"""
  
     @staticmethod
@@ -2491,7 +2491,7 @@ import dev.ultreon.quantum.client.util.Resizer as __Resizer_Orientation
 __Orientation = __Resizer_Orientation.Orientation
 from builtins import int
  
-class Orientation(__Enum, Enum):
+class Orientation():
     """dev.ultreon.quantum.client.util.Resizer.Orientation"""
  
     @staticmethod
@@ -2789,7 +2789,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class PlayerView(__Enum, Enum):
+class PlayerView():
     """dev.ultreon.quantum.client.util.PlayerView"""
  
     @staticmethod

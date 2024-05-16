@@ -354,7 +354,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Orientation(__Enum, Enum):
+class Orientation():
     """com.badlogic.gdx.Input.Orientation"""
  
     @staticmethod
@@ -963,7 +963,7 @@ except ImportError:
 
 from builtins import int
  
-class AbstractGraphics(ABC, __Graphics, Graphics):
+class AbstractGraphics(ABC):
     """com.badlogic.gdx.AbstractGraphics"""
  
     @staticmethod
@@ -1472,7 +1472,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Game(ABC, __ApplicationListener, ApplicationListener):
+class Game(ABC):
     """com.badlogic.gdx.Game"""
  
     @staticmethod
@@ -1687,7 +1687,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class FileType(__Enum, Enum):
+class FileType():
     """com.badlogic.gdx.Files.FileType"""
  
     @staticmethod
@@ -2079,13 +2079,13 @@ class Application(ABC):
         pass
 
     @abstractmethod
-    def getPreferences(self, arg0: str):
-        """public abstract com.badlogic.gdx.Preferences com.badlogic.gdx.Application.getPreferences(java.lang.String)"""
+    def getLogLevel(self, ):
+        """public abstract int com.badlogic.gdx.Application.getLogLevel()"""
         pass
 
     @abstractmethod
-    def getLogLevel(self, ):
-        """public abstract int com.badlogic.gdx.Application.getLogLevel()"""
+    def getPreferences(self, arg0: str):
+        """public abstract com.badlogic.gdx.Preferences com.badlogic.gdx.Application.getPreferences(java.lang.String)"""
         pass
 
     @abstractmethod
@@ -2215,7 +2215,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class VibrationType(__Enum, Enum):
+class VibrationType():
     """com.badlogic.gdx.Input.VibrationType"""
  
     @staticmethod
@@ -2778,7 +2778,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class GraphicsType(__Enum, Enum):
+class GraphicsType():
     """com.badlogic.gdx.Graphics.GraphicsType"""
  
     @staticmethod
@@ -2911,8 +2911,8 @@ class GraphicsType(__Enum, Enum):
  
 # CLASS: com.badlogic.gdx.AbstractInput
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 import com.badlogic.gdx.AbstractInput as __AbstractInput
@@ -2932,7 +2932,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AbstractInput(ABC, __Input, Input):
+class AbstractInput(ABC):
     """com.badlogic.gdx.AbstractInput"""
  
     @staticmethod
@@ -3318,7 +3318,7 @@ import com.badlogic.gdx.InputMultiplexer as __InputMultiplexer
 __InputMultiplexer = __InputMultiplexer
 from builtins import int
  
-class InputMultiplexer(__InputProcessor, InputProcessor):
+class InputMultiplexer():
     """com.badlogic.gdx.InputMultiplexer"""
  
     @staticmethod
@@ -3831,7 +3831,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Protocol(__Enum, Enum):
+class Protocol():
     """com.badlogic.gdx.Net.Protocol"""
  
     @staticmethod
@@ -3988,7 +3988,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Peripheral(__Enum, Enum):
+class Peripheral():
     """com.badlogic.gdx.Input.Peripheral"""
  
     @staticmethod
@@ -4597,7 +4597,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ScreenAdapter(__Screen, Screen):
+class ScreenAdapter():
     """com.badlogic.gdx.ScreenAdapter"""
  
     @staticmethod
@@ -4943,7 +4943,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ApplicationAdapter(ABC, __ApplicationListener, ApplicationListener):
+class ApplicationAdapter(ABC):
     """com.badlogic.gdx.ApplicationAdapter"""
  
     @staticmethod
@@ -5079,8 +5079,8 @@ class ApplicationAdapter(ABC, __ApplicationListener, ApplicationListener):
  
 # CLASS: com.badlogic.gdx.Net$HttpRequest
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 import java.util.Map as __Map
@@ -5103,7 +5103,7 @@ import java.util.Map as Map
 from builtins import bool
 from builtins import int
  
-class HttpRequest(pygdx.__Pool_Poolable, utils.Pool$Poolable):
+class HttpRequest():
     """com.badlogic.gdx.Net.HttpRequest"""
  
     @staticmethod
@@ -5325,7 +5325,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class ApplicationType(__Enum, Enum):
+class ApplicationType():
     """com.badlogic.gdx.Application.ApplicationType"""
  
     @staticmethod
@@ -5476,7 +5476,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InputAdapter(__InputProcessor, InputProcessor):
+class InputAdapter():
     """com.badlogic.gdx.InputAdapter"""
  
     @staticmethod
@@ -5645,7 +5645,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class OnscreenKeyboardType(__Enum, Enum):
+class OnscreenKeyboardType():
     """com.badlogic.gdx.Input.OnscreenKeyboardType"""
  
     @staticmethod

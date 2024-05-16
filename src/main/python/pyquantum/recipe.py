@@ -467,7 +467,7 @@ except ImportError:
 
 from builtins import int
  
-class RecipeRegistry(pyquantum.__AbstractRegistry, registry.AbstractRegistry):
+class RecipeRegistry():
     """dev.ultreon.quantum.recipe.RecipeRegistry"""
  
     @staticmethod
@@ -656,14 +656,14 @@ import dev.ultreon.quantum.recipe.CraftingRecipe as __CraftingRecipe
 __CraftingRecipe = __CraftingRecipe
 from builtins import bool
 from builtins import int
-import java.util.List as List
 try:
     from pyquantum import menu
 except ImportError:
     menu = __import_once__("pyquantum.menu")
 
+import java.util.List as List
  
-class CraftingRecipe(__Recipe, Recipe):
+class CraftingRecipe():
     """dev.ultreon.quantum.recipe.CraftingRecipe"""
  
     @staticmethod

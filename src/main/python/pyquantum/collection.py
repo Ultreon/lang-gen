@@ -42,7 +42,7 @@ except ImportError:
 
 import java.util.List as List
  
-class PaletteStorage(pyquantum.__ServerDisposable, server.ServerDisposable, __Storage, Storage):
+class PaletteStorage():
     """dev.ultreon.quantum.collection.PaletteStorage"""
  
     @staticmethod
@@ -268,7 +268,7 @@ except ImportError:
 
 import java.util.List as List
  
-class PaletteStorage(pyquantum.__ServerDisposable, server.ServerDisposable, __Storage, Storage):
+class PaletteStorage():
     """dev.ultreon.quantum.collection.PaletteStorage"""
  
     @staticmethod
@@ -485,7 +485,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PaletteIndexException(__RuntimeException, RuntimeException):
+class PaletteIndexException():
     """dev.ultreon.quantum.collection.PaletteIndexException"""
  
     @staticmethod
@@ -715,7 +715,7 @@ except ImportError:
 from builtins import int
 import java.util.List as List
  
-class FlatStorage(__Storage, Storage):
+class FlatStorage():
     """dev.ultreon.quantum.collection.FlatStorage"""
  
     @staticmethod
@@ -921,7 +921,7 @@ import java.util.Map as Map
 from builtins import int
 import java.util.List as List
  
-class OrderedMap(__AbstractMap, AbstractMap):
+class OrderedMap():
     """dev.ultreon.quantum.collection.OrderedMap"""
  
     @staticmethod

@@ -45,7 +45,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class KeySet(__View, View, __Set, Set):
+class KeySet():
     """org.apache.commons.collections4.bidimap.AbstractDualBidiMap.KeySet"""
  
     @staticmethod
@@ -278,7 +278,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class KeySet(__View, View, __Set, Set):
+class KeySet():
     """org.apache.commons.collections4.bidimap.AbstractDualBidiMap.KeySet"""
  
     @staticmethod
@@ -514,7 +514,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class EntrySet(__View, View, __Set, Set):
+class EntrySet():
     """org.apache.commons.collections4.bidimap.AbstractDualBidiMap.EntrySet"""
  
     @staticmethod
@@ -744,7 +744,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class AbstractOrderedBidiMapDecorator(ABC, __AbstractBidiMapDecorator, AbstractBidiMapDecorator, pyapache.__OrderedBidiMap, collections4.OrderedBidiMap):
+class AbstractOrderedBidiMapDecorator(ABC):
     """org.apache.commons.collections4.bidimap.AbstractOrderedBidiMapDecorator"""
  
     @staticmethod
@@ -1035,7 +1035,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class View(ABC, collections4.__AbstractCollectionDecorator, collection.AbstractCollectionDecorator):
+class View(ABC):
     """org.apache.commons.collections4.bidimap.AbstractDualBidiMap.View"""
  
     @staticmethod
@@ -1249,7 +1249,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class EntrySetIterator(collections4.__AbstractIteratorDecorator, iterators.AbstractIteratorDecorator):
+class EntrySetIterator():
     """org.apache.commons.collections4.bidimap.AbstractDualBidiMap.EntrySetIterator"""
  
     @staticmethod
@@ -1417,7 +1417,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class ViewMap(collections4.__AbstractSortedMapDecorator, map.AbstractSortedMapDecorator):
+class ViewMap():
     """org.apache.commons.collections4.bidimap.DualTreeBidiMap.ViewMap"""
  
     @staticmethod
@@ -1773,7 +1773,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class TreeBidiMap(pyapache.__OrderedBidiMap, collections4.OrderedBidiMap, __Serializable, Serializable):
+class TreeBidiMap():
     """org.apache.commons.collections4.bidimap.TreeBidiMap"""
  
     @staticmethod
@@ -2088,7 +2088,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class UnmodifiableBidiMap(__AbstractBidiMapDecorator, AbstractBidiMapDecorator, pyapache.__Unmodifiable, collections4.Unmodifiable):
+class UnmodifiableBidiMap():
     """org.apache.commons.collections4.bidimap.UnmodifiableBidiMap"""
  
     @staticmethod
@@ -2348,7 +2348,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ValuesIterator(collections4.__AbstractIteratorDecorator, iterators.AbstractIteratorDecorator):
+class ValuesIterator():
     """org.apache.commons.collections4.bidimap.AbstractDualBidiMap.ValuesIterator"""
  
     @staticmethod
@@ -2496,7 +2496,7 @@ import org.apache.commons.collections4.map.AbstractMapDecorator as __AbstractMap
 __AbstractMapDecorator = __AbstractMapDecorator
 from builtins import int
  
-class AbstractBidiMapDecorator(ABC, collections4.__AbstractMapDecorator, map.AbstractMapDecorator, pyapache.__BidiMap, collections4.BidiMap):
+class AbstractBidiMapDecorator(ABC):
     """org.apache.commons.collections4.bidimap.AbstractBidiMapDecorator"""
  
     @staticmethod
@@ -2770,7 +2770,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class UnmodifiableOrderedBidiMap(__AbstractOrderedBidiMapDecorator, AbstractOrderedBidiMapDecorator, pyapache.__Unmodifiable, collections4.Unmodifiable):
+class UnmodifiableOrderedBidiMap():
     """org.apache.commons.collections4.bidimap.UnmodifiableOrderedBidiMap"""
  
     @staticmethod
@@ -3096,7 +3096,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class UnmodifiableSortedBidiMap(__AbstractSortedBidiMapDecorator, AbstractSortedBidiMapDecorator, pyapache.__Unmodifiable, collections4.Unmodifiable):
+class UnmodifiableSortedBidiMap():
     """org.apache.commons.collections4.bidimap.UnmodifiableSortedBidiMap"""
  
     @staticmethod
@@ -3479,7 +3479,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class DualLinkedHashBidiMap(__AbstractDualBidiMap, AbstractDualBidiMap, __Serializable, Serializable):
+class DualLinkedHashBidiMap():
     """org.apache.commons.collections4.bidimap.DualLinkedHashBidiMap"""
  
     @staticmethod
@@ -3791,7 +3791,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class AbstractSortedBidiMapDecorator(ABC, __AbstractOrderedBidiMapDecorator, AbstractOrderedBidiMapDecorator, pyapache.__SortedBidiMap, collections4.SortedBidiMap):
+class AbstractSortedBidiMapDecorator(ABC):
     """org.apache.commons.collections4.bidimap.AbstractSortedBidiMapDecorator"""
  
     @staticmethod
@@ -4178,7 +4178,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Values(__View, View, __Set, Set):
+class Values():
     """org.apache.commons.collections4.bidimap.AbstractDualBidiMap.Values"""
  
     @staticmethod
@@ -4388,7 +4388,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BidiMapIterator(pyapache.__MapIterator, collections4.MapIterator, pyapache.__ResettableIterator, collections4.ResettableIterator):
+class BidiMapIterator():
     """org.apache.commons.collections4.bidimap.AbstractDualBidiMap.BidiMapIterator"""
  
     @staticmethod
@@ -4578,7 +4578,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class DualTreeBidiMap(__AbstractDualBidiMap, AbstractDualBidiMap, pyapache.__SortedBidiMap, collections4.SortedBidiMap, __Serializable, Serializable):
+class DualTreeBidiMap():
     """org.apache.commons.collections4.bidimap.DualTreeBidiMap"""
  
     @staticmethod
@@ -4975,7 +4975,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BidiOrderedMapIterator(pyapache.__OrderedMapIterator, collections4.OrderedMapIterator, pyapache.__ResettableIterator, collections4.ResettableIterator):
+class BidiOrderedMapIterator():
     """org.apache.commons.collections4.bidimap.DualTreeBidiMap.BidiOrderedMapIterator"""
  
     @staticmethod
@@ -5156,7 +5156,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class AbstractDualBidiMap(ABC, pyapache.__BidiMap, collections4.BidiMap):
+class AbstractDualBidiMap(ABC):
     """org.apache.commons.collections4.bidimap.AbstractDualBidiMap"""
  
     @staticmethod
@@ -5426,7 +5426,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class DualHashBidiMap(__AbstractDualBidiMap, AbstractDualBidiMap, __Serializable, Serializable):
+class DualHashBidiMap():
     """org.apache.commons.collections4.bidimap.DualHashBidiMap"""
  
     @staticmethod
@@ -5698,7 +5698,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MapEntry(collections4.__AbstractMapEntryDecorator, keyvalue.AbstractMapEntryDecorator):
+class MapEntry():
     """org.apache.commons.collections4.bidimap.AbstractDualBidiMap.MapEntry"""
  
     @staticmethod
@@ -5823,7 +5823,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class KeySetIterator(collections4.__AbstractIteratorDecorator, iterators.AbstractIteratorDecorator):
+class KeySetIterator():
     """org.apache.commons.collections4.bidimap.AbstractDualBidiMap.KeySetIterator"""
  
     @staticmethod

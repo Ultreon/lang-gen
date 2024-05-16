@@ -92,7 +92,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class CraftyConfigGui(client.__Screen, gui.Screen):
+class CraftyConfigGui():
     """dev.ultreon.quantum.client.config.gui.CraftyConfigGui"""
  
     @staticmethod
@@ -827,7 +827,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class CraftyConfigGui(client.__Screen, gui.Screen):
+class CraftyConfigGui():
     """dev.ultreon.quantum.client.config.gui.CraftyConfigGui"""
  
     @staticmethod

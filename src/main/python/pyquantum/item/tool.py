@@ -64,7 +64,7 @@ import java.lang.Integer as __int
 import java.util.List as List
 from builtins import int
  
-class ShovelItem(__ToolItem, ToolItem):
+class ShovelItem():
     """dev.ultreon.quantum.item.tool.ShovelItem"""
  
     @staticmethod
@@ -276,7 +276,7 @@ import java.lang.Integer as __int
 import java.util.List as List
 from builtins import int
  
-class ShovelItem(__ToolItem, ToolItem):
+class ShovelItem():
     """dev.ultreon.quantum.item.tool.ShovelItem"""
  
     @staticmethod
@@ -455,7 +455,7 @@ import dev.ultreon.quantum.item.tool.ToolType as __ToolType
 __ToolType = __ToolType
 from builtins import int
  
-class ToolType(__Enum, Enum):
+class ToolType():
     """dev.ultreon.quantum.item.tool.ToolType"""
  
     @staticmethod
@@ -658,7 +658,7 @@ import java.lang.Integer as __int
 import java.util.List as List
 from builtins import int
  
-class PickaxeItem(__ToolItem, ToolItem):
+class PickaxeItem():
     """dev.ultreon.quantum.item.tool.PickaxeItem"""
  
     @staticmethod
@@ -868,7 +868,7 @@ import java.lang.Integer as __int
 import java.util.List as List
 from builtins import int
  
-class AxeItem(__ToolItem, ToolItem):
+class AxeItem():
     """dev.ultreon.quantum.item.tool.AxeItem"""
  
     @staticmethod
@@ -1075,7 +1075,7 @@ import java.lang.Integer as __int
 import java.util.List as List
 from builtins import int
  
-class ToolItem(ABC, pyquantum.__Item, item.Item):
+class ToolItem(ABC):
     """dev.ultreon.quantum.item.tool.ToolItem"""
  
     @staticmethod

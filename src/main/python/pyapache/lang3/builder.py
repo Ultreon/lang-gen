@@ -35,7 +35,7 @@ import java.util.List as List
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class DiffResult(__Iterable, Iterable):
+class DiffResult():
     """org.apache.commons.lang3.builder.DiffResult"""
  
     @staticmethod
@@ -202,7 +202,7 @@ import java.util.List as List
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class DiffResult(__Iterable, Iterable):
+class DiffResult():
     """org.apache.commons.lang3.builder.DiffResult"""
  
     @staticmethod
@@ -378,7 +378,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Diff(ABC, lang3.__Pair, tuple.Pair):
+class Diff(ABC):
     """org.apache.commons.lang3.builder.Diff"""
  
     @staticmethod
@@ -551,7 +551,7 @@ import java.lang.annotation.Annotation as __Annotation
 __Annotation = __Annotation
 from abc import abstractmethod, ABC
  
-class EqualsExclude(ABC, __Annotation, Annotation):
+class EqualsExclude(ABC):
     """org.apache.commons.lang3.builder.EqualsExclude"""
  
     @staticmethod
@@ -674,7 +674,7 @@ from builtins import bool
 from builtins import int
 import java.util.List as List
  
-class EqualsBuilder(__Builder, Builder):
+class EqualsBuilder():
     """org.apache.commons.lang3.builder.EqualsBuilder"""
  
     @staticmethod
@@ -950,7 +950,7 @@ import org.apache.commons.lang3.builder.ToStringSummary as __ToStringSummary
 __ToStringSummary = __ToStringSummary
 from abc import abstractmethod, ABC
  
-class ToStringSummary(ABC, __Annotation, Annotation):
+class ToStringSummary(ABC):
     """org.apache.commons.lang3.builder.ToStringSummary"""
  
     @staticmethod
@@ -1033,7 +1033,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 from builtins import int
  
-class ToStringStyle(ABC, __Serializable, Serializable):
+class ToStringStyle(ABC):
     """org.apache.commons.lang3.builder.ToStringStyle"""
  
     @staticmethod
@@ -1263,7 +1263,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CompareToBuilder(__Builder, Builder):
+class CompareToBuilder():
     """org.apache.commons.lang3.builder.CompareToBuilder"""
  
     @staticmethod
@@ -1536,7 +1536,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class HashCodeBuilder(__Builder, Builder):
+class HashCodeBuilder():
     """org.apache.commons.lang3.builder.HashCodeBuilder"""
  
     @staticmethod
@@ -1790,7 +1790,7 @@ import org.apache.commons.lang3.builder.DiffExclude as __DiffExclude
 __DiffExclude = __DiffExclude
 from abc import abstractmethod, ABC
  
-class DiffExclude(ABC, __Annotation, Annotation):
+class DiffExclude(ABC):
     """org.apache.commons.lang3.builder.DiffExclude"""
  
     @staticmethod
@@ -1848,7 +1848,7 @@ import org.apache.commons.lang3.builder.HashCodeExclude as __HashCodeExclude
 __HashCodeExclude = __HashCodeExclude
 from abc import abstractmethod, ABC
  
-class HashCodeExclude(ABC, __Annotation, Annotation):
+class HashCodeExclude(ABC):
     """org.apache.commons.lang3.builder.HashCodeExclude"""
  
     @staticmethod
@@ -1933,7 +1933,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 from builtins import int
  
-class RecursiveToStringStyle(__ToStringStyle, ToStringStyle):
+class RecursiveToStringStyle():
     """org.apache.commons.lang3.builder.RecursiveToStringStyle"""
  
     @staticmethod
@@ -2206,7 +2206,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ToStringBuilder(__Builder, Builder):
+class ToStringBuilder():
     """org.apache.commons.lang3.builder.ToStringBuilder"""
  
     @staticmethod
@@ -2649,7 +2649,7 @@ __Object = __Object
 import java.lang.Integer as __int
 from builtins import int
  
-class ReflectionToStringBuilder(__ToStringBuilder, ToStringBuilder):
+class ReflectionToStringBuilder():
     """org.apache.commons.lang3.builder.ReflectionToStringBuilder"""
  
     @staticmethod
@@ -3227,7 +3227,7 @@ import org.apache.commons.lang3.builder.DiffBuilder as __DiffBuilder
 __DiffBuilder = __DiffBuilder
 from builtins import int
  
-class DiffBuilder(__Builder, Builder):
+class DiffBuilder():
     """org.apache.commons.lang3.builder.DiffBuilder"""
  
     @staticmethod
@@ -3460,7 +3460,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 from builtins import int
  
-class StandardToStringStyle(__ToStringStyle, ToStringStyle):
+class StandardToStringStyle():
     """org.apache.commons.lang3.builder.StandardToStringStyle"""
  
     @staticmethod
@@ -3903,7 +3903,7 @@ import org.apache.commons.lang3.builder.ToStringExclude as __ToStringExclude
 __ToStringExclude = __ToStringExclude
 from abc import abstractmethod, ABC
  
-class ToStringExclude(ABC, __Annotation, Annotation):
+class ToStringExclude(ABC):
     """org.apache.commons.lang3.builder.ToStringExclude"""
  
     @staticmethod
@@ -3975,7 +3975,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ReflectionDiffBuilder(__Builder, Builder):
+class ReflectionDiffBuilder():
     """org.apache.commons.lang3.builder.ReflectionDiffBuilder"""
  
     @staticmethod
@@ -4116,7 +4116,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 from builtins import int
  
-class MultilineRecursiveToStringStyle(__RecursiveToStringStyle, RecursiveToStringStyle):
+class MultilineRecursiveToStringStyle():
     """org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle"""
  
     @staticmethod

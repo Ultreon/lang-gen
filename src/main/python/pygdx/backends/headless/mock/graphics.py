@@ -62,7 +62,7 @@ import com.badlogic.gdx.Graphics as __Graphics_BufferFormat
 __BufferFormat = __Graphics_BufferFormat.BufferFormat
 from builtins import int
  
-class MockGraphics(pygdx.__AbstractGraphics, pygdx.AbstractGraphics):
+class MockGraphics():
     """com.badlogic.gdx.backends.headless.mock.graphics.MockGraphics"""
  
     @staticmethod
@@ -367,14 +367,14 @@ class MockGraphics(pygdx.__AbstractGraphics, pygdx.AbstractGraphics):
         super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
 
     @overload
-    def setFullscreenMode(self, arg0: 'DisplayMode') -> bool:
-        """public boolean com.badlogic.gdx.backends.headless.mock.graphics.MockGraphics.setFullscreenMode(com.badlogic.gdx.Graphics$DisplayMode)"""
-        return bool.__wrap(super(__MockGraphics, self).setFullscreenMode(arg0))
-
-    @overload
     def incrementFrameId(self):
         """public void com.badlogic.gdx.backends.headless.mock.graphics.MockGraphics.incrementFrameId()"""
         super(MockGraphics, self).incrementFrameId()
+
+    @overload
+    def setFullscreenMode(self, arg0: 'DisplayMode') -> bool:
+        """public boolean com.badlogic.gdx.backends.headless.mock.graphics.MockGraphics.setFullscreenMode(com.badlogic.gdx.Graphics$DisplayMode)"""
+        return bool.__wrap(super(__MockGraphics, self).setFullscreenMode(arg0))
 
     @override
     @overload
@@ -561,7 +561,7 @@ import com.badlogic.gdx.Graphics as __Graphics_BufferFormat
 __BufferFormat = __Graphics_BufferFormat.BufferFormat
 from builtins import int
  
-class MockGraphics(pygdx.__AbstractGraphics, pygdx.AbstractGraphics):
+class MockGraphics():
     """com.badlogic.gdx.backends.headless.mock.graphics.MockGraphics"""
  
     @staticmethod
@@ -866,14 +866,14 @@ class MockGraphics(pygdx.__AbstractGraphics, pygdx.AbstractGraphics):
         super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
 
     @overload
-    def setFullscreenMode(self, arg0: 'DisplayMode') -> bool:
-        """public boolean com.badlogic.gdx.backends.headless.mock.graphics.MockGraphics.setFullscreenMode(com.badlogic.gdx.Graphics$DisplayMode)"""
-        return bool.__wrap(super(__MockGraphics, self).setFullscreenMode(arg0))
-
-    @overload
     def incrementFrameId(self):
         """public void com.badlogic.gdx.backends.headless.mock.graphics.MockGraphics.incrementFrameId()"""
         super(MockGraphics, self).incrementFrameId()
+
+    @overload
+    def setFullscreenMode(self, arg0: 'DisplayMode') -> bool:
+        """public boolean com.badlogic.gdx.backends.headless.mock.graphics.MockGraphics.setFullscreenMode(com.badlogic.gdx.Graphics$DisplayMode)"""
+        return bool.__wrap(super(__MockGraphics, self).setFullscreenMode(arg0))
 
     @override
     @overload

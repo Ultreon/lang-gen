@@ -288,7 +288,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Objects(__ExtraObjectsMethodsForWeb, ExtraObjectsMethodsForWeb):
+class Objects():
     """com.google.common.base.Objects"""
  
     @staticmethod
@@ -410,7 +410,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class StandardSystemProperty(__Enum, Enum):
+class StandardSystemProperty():
     """com.google.common.base.StandardSystemProperty"""
  
     @staticmethod
@@ -576,7 +576,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Equivalence(ABC, __BiPredicate, BiPredicate):
+class Equivalence(ABC):
     """com.google.common.base.Equivalence"""
  
     @staticmethod
@@ -751,7 +751,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class VerifyException(__RuntimeException, RuntimeException):
+class VerifyException():
     """com.google.common.base.VerifyException"""
  
     @staticmethod
@@ -943,6 +943,7 @@ class VerifyException(__RuntimeException, RuntimeException):
  
 # CLASS: com.google.common.base.Predicate
 import java.util.function.Predicate as Predicate
+from pyquantum_helper import override
 import java.lang.Object as __object
 import java.util.function.Predicate as __Predicate
 __Predicate = __Predicate
@@ -951,7 +952,7 @@ __Predicate = __Predicate
 from abc import abstractmethod, ABC
 from builtins import bool
  
-class Predicate(ABC, __Predicate, Predicate):
+class Predicate(ABC):
     """com.google.common.base.Predicate"""
  
     @staticmethod
@@ -1463,7 +1464,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FinalizablePhantomReference(ABC, __PhantomReference, PhantomReference, __FinalizableReference, FinalizableReference):
+class FinalizablePhantomReference(ABC):
     """com.google.common.base.FinalizablePhantomReference"""
  
     @staticmethod
@@ -1606,7 +1607,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Wrapper(__Serializable, Serializable):
+class Wrapper():
     """com.google.common.base.Equivalence.Wrapper"""
  
     @staticmethod
@@ -2275,7 +2276,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FinalizableWeakReference(ABC, __WeakReference, WeakReference, __FinalizableReference, FinalizableReference):
+class FinalizableWeakReference(ABC):
     """com.google.common.base.FinalizableWeakReference"""
  
     @staticmethod
@@ -2588,47 +2589,6 @@ class Throwables():
         return bool.__wrap(super(__object, self).equals(arg0)) 
  
  
-# CLASS: com.google.common.base.Supplier
-import com.google.common.base.Supplier as __Supplier
-__Supplier = __Supplier
-from abc import abstractmethod, ABC
- 
-class Supplier(ABC, __Supplier, Supplier):
-    """com.google.common.base.Supplier"""
- 
-    @staticmethod
-    def __wrap(java_value: __Supplier) -> 'Supplier':
-        return Supplier(__dynamic__=java_value)
- 
-    #
-    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
-    #
-    @overload
-    def __init__(self, __dynamic__: __Supplier):
-        """
-        Dynamic initializer for Supplier.
-        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
- 
-        :param __dynamic__: The java object to wrap
-        """
-        self.__dict__ = __dynamic__.__dict__
-        self.__wrapper = __dynamic__
- 
-    def __getattr__(self, name: str):
-        return getattr(self.__wrapper, name)
- 
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
- 
-    def __delattr__(self, name: str):
-        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
- 
-    @abstractmethod
-    def get(self, ):
-        """public abstract T com.google.common.base.Supplier.get()"""
-        pass 
- 
- 
 # CLASS: com.google.common.base.Optional
 from pyquantum_helper import override
 import java.lang.Object as __object
@@ -2649,7 +2609,7 @@ __Optional = __Optional
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Optional(ABC, __Serializable, Serializable):
+class Optional(ABC):
     """com.google.common.base.Optional"""
  
     @staticmethod
@@ -2840,7 +2800,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class CaseFormat(ABC, __Enum, Enum):
+class CaseFormat(ABC):
     """com.google.common.base.CaseFormat"""
  
     @staticmethod
@@ -3006,7 +2966,7 @@ import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
 from builtins import int
  
-class Converter(ABC, __Function, Function):
+class Converter(ABC):
     """com.google.common.base.Converter"""
  
     @staticmethod
@@ -3638,7 +3598,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FinalizableReferenceQueue(__Closeable, Closeable):
+class FinalizableReferenceQueue():
     """com.google.common.base.FinalizableReferenceQueue"""
  
     @staticmethod
@@ -3743,6 +3703,7 @@ class FinalizableReferenceQueue(__Closeable, Closeable):
  
  
 # CLASS: com.google.common.base.Function
+from pyquantum_helper import override
 import java.util.function.Function as __Function
 __Function = __Function
 import com.google.common.base.Function as __Function
@@ -3750,7 +3711,7 @@ __Function = __Function
 from abc import abstractmethod, ABC
 import java.util.function.Function as Function
  
-class Function(ABC, __Function, Function):
+class Function(ABC):
     """com.google.common.base.Function"""
  
     @staticmethod
@@ -3828,7 +3789,7 @@ __Predicate = __Predicate
 from builtins import bool
 from builtins import int
  
-class CharMatcher(ABC, __Predicate, Predicate):
+class CharMatcher(ABC):
     """com.google.common.base.CharMatcher"""
  
     @staticmethod
@@ -4386,6 +4347,47 @@ class Utf8():
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
         super(__object, self).wait(__long.valueOf(arg0)) 
+ 
+ 
+# CLASS: com.google.common.base.Supplier
+import com.google.common.base.Supplier as __Supplier
+__Supplier = __Supplier
+from abc import abstractmethod, ABC
+ 
+class Supplier(ABC):
+    """com.google.common.base.Supplier"""
+ 
+    @staticmethod
+    def __wrap(java_value: __Supplier) -> 'Supplier':
+        return Supplier(__dynamic__=java_value)
+ 
+    #
+    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+    #
+    @overload
+    def __init__(self, __dynamic__: __Supplier):
+        """
+        Dynamic initializer for Supplier.
+        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+ 
+        :param __dynamic__: The java object to wrap
+        """
+        self.__dict__ = __dynamic__.__dict__
+        self.__wrapper = __dynamic__
+ 
+    def __getattr__(self, name: str):
+        return getattr(self.__wrapper, name)
+ 
+    def __setattr__(self, name: str, value: object):
+        return setattr(self.__wrapper, name, value)
+ 
+    def __delattr__(self, name: str):
+        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
+ 
+    @abstractmethod
+    def get(self, ):
+        """public abstract T com.google.common.base.Supplier.get()"""
+        pass 
  
  
 # CLASS: com.google.common.base.Splitter
@@ -5697,7 +5699,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FinalizableSoftReference(ABC, __SoftReference, SoftReference, __FinalizableReference, FinalizableReference):
+class FinalizableSoftReference(ABC):
     """com.google.common.base.FinalizableSoftReference"""
  
     @staticmethod

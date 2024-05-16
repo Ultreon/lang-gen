@@ -412,7 +412,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LoginPacketStage(__PacketStage, PacketStage):
+class LoginPacketStage():
     """dev.ultreon.quantum.network.stage.LoginPacketStage"""
  
     @staticmethod
@@ -542,7 +542,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InGamePacketStage(__PacketStage, PacketStage):
+class InGamePacketStage():
     """dev.ultreon.quantum.network.stage.InGamePacketStage"""
  
     @staticmethod

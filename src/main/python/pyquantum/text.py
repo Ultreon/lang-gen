@@ -28,7 +28,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class TextDecoration(__Enum, Enum):
+class TextDecoration():
     """dev.ultreon.quantum.text.TextDecoration"""
  
     @staticmethod
@@ -200,7 +200,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class TextDecoration(__Enum, Enum):
+class TextDecoration():
     """dev.ultreon.quantum.text.TextDecoration"""
  
     @staticmethod
@@ -353,8 +353,8 @@ class TextDecoration(__Enum, Enum):
 from pyquantum_helper import import_once as __import_once__
 import com.badlogic.gdx.graphics.Color as __Color
 __Color = __Color
-from pyquantum_helper import transform as __transform
 import java.lang.Character as __char
+from pyquantum_helper import transform as __transform
 from builtins import type
 import java.lang.Class as __Class
 __Class = __Class
@@ -393,7 +393,7 @@ except ImportError:
 
 from builtins import int
  
-class ColorCode(__Enum, Enum, pyquantum.__Color, util.Color):
+class ColorCode():
     """dev.ultreon.quantum.text.ColorCode"""
  
     @staticmethod
@@ -783,7 +783,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class TextObject(ABC, __Iterable, Iterable):
+class TextObject(ABC):
     """dev.ultreon.quantum.text.TextObject"""
  
     @staticmethod
@@ -999,7 +999,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class LiteralText(__MutableText, MutableText):
+class LiteralText():
     """dev.ultreon.quantum.text.LiteralText"""
  
     @staticmethod
@@ -1432,6 +1432,7 @@ class Formatter():
  
 # CLASS: dev.ultreon.quantum.text.FormatSequence
 import java.util.Spliterator as Spliterator
+from pyquantum_helper import override
 from abc import abstractmethod, ABC
 import dev.ultreon.quantum.text.FormatSequence as __FormatSequence
 __FormatSequence = __FormatSequence
@@ -1441,7 +1442,7 @@ import java.util.Spliterator as __Spliterator
 __Spliterator = __Spliterator
 import java.util.function.Consumer as Consumer
  
-class FormatSequence(ABC, __Iterable, Iterable):
+class FormatSequence(ABC):
     """dev.ultreon.quantum.text.FormatSequence"""
  
     @staticmethod
@@ -1889,7 +1890,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class TranslationText(__MutableText, MutableText):
+class TranslationText():
     """dev.ultreon.quantum.text.TranslationText"""
  
     @staticmethod
@@ -2431,7 +2432,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Action(__Enum, Enum):
+class Action():
     """dev.ultreon.quantum.text.HoverEvent.Action"""
  
     @staticmethod
@@ -2600,7 +2601,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ClickEvent(__Serializable, Serializable):
+class ClickEvent():
     """dev.ultreon.quantum.text.ClickEvent"""
  
     @staticmethod
@@ -3259,7 +3260,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class HoverEvent(__Serializable, Serializable):
+class HoverEvent():
     """dev.ultreon.quantum.text.HoverEvent"""
  
     @staticmethod
@@ -3601,7 +3602,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Action(__Enum, Enum):
+class Action():
     """dev.ultreon.quantum.text.ClickEvent.Action"""
  
     @staticmethod
@@ -4082,7 +4083,7 @@ except ImportError:
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class MutableText(ABC, __TextObject, TextObject):
+class MutableText(ABC):
     """dev.ultreon.quantum.text.MutableText"""
  
     @staticmethod

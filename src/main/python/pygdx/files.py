@@ -60,7 +60,7 @@ import java.nio.ByteBuffer as ByteBuffer
 import java.lang.Integer as __int
 from builtins import int
  
-class FileHandleStream(ABC, __FileHandle, FileHandle):
+class FileHandleStream(ABC):
     """com.badlogic.gdx.files.FileHandleStream"""
  
     @staticmethod
@@ -483,7 +483,7 @@ import java.nio.ByteBuffer as ByteBuffer
 import java.lang.Integer as __int
 from builtins import int
  
-class FileHandleStream(ABC, __FileHandle, FileHandle):
+class FileHandleStream(ABC):
     """com.badlogic.gdx.files.FileHandleStream"""
  
     @staticmethod

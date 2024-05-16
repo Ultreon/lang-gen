@@ -24,7 +24,7 @@ import java.util.Map as Map
 from builtins import bool
 from builtins import int
  
-class ConcurrentMapFactory(__MapFactory, MapFactory):
+class ConcurrentMapFactory():
     """org.apache.logging.log4j.spi.LoggerRegistry.ConcurrentMapFactory"""
  
     @staticmethod
@@ -164,7 +164,7 @@ import java.util.Map as Map
 from builtins import bool
 from builtins import int
  
-class ConcurrentMapFactory(__MapFactory, MapFactory):
+class ConcurrentMapFactory():
     """org.apache.logging.log4j.spi.LoggerRegistry.ConcurrentMapFactory"""
  
     @staticmethod
@@ -316,7 +316,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class DefaultThreadContextMap(__ThreadContextMap, ThreadContextMap, log4py.__ReadOnlyStringMap, util.ReadOnlyStringMap):
+class DefaultThreadContextMap():
     """org.apache.logging.log4j.spi.DefaultThreadContextMap"""
  
     @staticmethod
@@ -532,7 +532,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class StandardLevel(__Enum, Enum):
+class StandardLevel():
     """org.apache.logging.log4j.spi.StandardLevel"""
  
     @staticmethod
@@ -696,7 +696,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class NoOpThreadContextMap(__ThreadContextMap, ThreadContextMap):
+class NoOpThreadContextMap():
     """org.apache.logging.log4j.spi.NoOpThreadContextMap"""
  
     @staticmethod
@@ -847,7 +847,7 @@ import org.apache.logging.log4j.spi.LoggerAdapter as __LoggerAdapter
 __LoggerAdapter = __LoggerAdapter
 from abc import abstractmethod, ABC
  
-class LoggerAdapter(ABC, __Closeable, Closeable):
+class LoggerAdapter(ABC):
     """org.apache.logging.log4j.spi.LoggerAdapter"""
  
     @staticmethod
@@ -1298,7 +1298,7 @@ import java.lang.Throwable as Throwable
 import java.lang.Integer as __int
 from builtins import int
  
-class AbstractLogger(ABC, __ExtendedLogger, ExtendedLogger, __LocationAwareLogger, LocationAwareLogger, __Serializable, Serializable):
+class AbstractLogger(ABC):
     """org.apache.logging.log4j.spi.AbstractLogger"""
  
     @staticmethod
@@ -3957,7 +3957,7 @@ import org.apache.logging.log4j.Level as __Level
 __Level = __Level
 from builtins import int
  
-class ExtendedLoggerWrapper(__AbstractLogger, AbstractLogger):
+class ExtendedLoggerWrapper():
     """org.apache.logging.log4j.spi.ExtendedLoggerWrapper"""
  
     @staticmethod
@@ -6762,7 +6762,7 @@ import java.util.List as List
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class MutableThreadContextStack(__ThreadContextStack, ThreadContextStack, log4py.__StringBuilderFormattable, util.StringBuilderFormattable):
+class MutableThreadContextStack():
     """org.apache.logging.log4j.spi.MutableThreadContextStack"""
  
     @staticmethod
@@ -7112,7 +7112,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MessageFactory2Adapter(log4py.__MessageFactory2, message.MessageFactory2):
+class MessageFactory2Adapter():
     """org.apache.logging.log4j.spi.MessageFactory2Adapter"""
  
     @staticmethod
@@ -7445,7 +7445,7 @@ import java.util.concurrent.ConcurrentMap as __ConcurrentMap
 __ConcurrentMap = __ConcurrentMap
 from builtins import int
  
-class AbstractLoggerAdapter(ABC, __LoggerAdapter, LoggerAdapter, __LoggerContextShutdownAware, LoggerContextShutdownAware):
+class AbstractLoggerAdapter(ABC):
     """org.apache.logging.log4j.spi.AbstractLoggerAdapter"""
  
     @staticmethod
@@ -7578,7 +7578,7 @@ __ThreadContextMap2 = __ThreadContextMap2
 from abc import abstractmethod, ABC
 import java.util.Map as Map
  
-class ThreadContextMap2(ABC, __ThreadContextMap, ThreadContextMap):
+class ThreadContextMap2(ABC):
     """org.apache.logging.log4j.spi.ThreadContextMap2"""
  
     @staticmethod
@@ -7670,7 +7670,7 @@ __ThreadContextMap2 = __ThreadContextMap2
 from abc import abstractmethod, ABC
 import java.util.Map as Map
  
-class CleanableThreadContextMap(ABC, __ThreadContextMap2, ThreadContextMap2):
+class CleanableThreadContextMap(ABC):
     """org.apache.logging.log4j.spi.CleanableThreadContextMap"""
  
     @staticmethod
@@ -8076,7 +8076,7 @@ import java.util.Map as Map
 from builtins import bool
 from builtins import int
  
-class WeakMapFactory(__MapFactory, MapFactory):
+class WeakMapFactory():
     """org.apache.logging.log4j.spi.LoggerRegistry.WeakMapFactory"""
  
     @staticmethod
@@ -8245,7 +8245,7 @@ import java.util.List as List
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class DefaultThreadContextStack(__ThreadContextStack, ThreadContextStack, log4py.__StringBuilderFormattable, util.StringBuilderFormattable):
+class DefaultThreadContextStack():
     """org.apache.logging.log4j.spi.DefaultThreadContextStack"""
  
     @staticmethod
@@ -8499,8 +8499,19 @@ from pyquantum_helper import import_once as __import_once__
 import org.apache.logging.log4j.Logger as __Logger
 __Logger = __Logger
 import java.lang.CharSequence as CharSequence
+from pyquantum_helper import override
 import org.apache.logging.log4j.LogBuilder as __LogBuilder
 __LogBuilder = __LogBuilder
+import org.apache.logging.log4j.spi.ExtendedLogger as __ExtendedLogger
+__ExtendedLogger = __ExtendedLogger
+from abc import abstractmethod, ABC
+try:
+    from log4py import message
+except ImportError:
+    message = __import_once__("log4py.message")
+
+from builtins import object
+import java.lang.StackTraceElement as StackTraceElement
 import java.lang.String as __string
 try:
     from log4py import util
@@ -8513,18 +8524,8 @@ except ImportError:
     log4py = __import_once__("log4py")
 
 import java.lang.Throwable as Throwable
-import org.apache.logging.log4j.spi.ExtendedLogger as __ExtendedLogger
-__ExtendedLogger = __ExtendedLogger
-from abc import abstractmethod, ABC
-try:
-    from log4py import message
-except ImportError:
-    message = __import_once__("log4py.message")
-
-from builtins import object
-import java.lang.StackTraceElement as StackTraceElement
  
-class ExtendedLogger(ABC, log4py.__Logger, log4py.Logger):
+class ExtendedLogger(ABC):
     """org.apache.logging.log4j.spi.ExtendedLogger"""
  
     @staticmethod
@@ -10877,7 +10878,7 @@ __ThreadContextMap2 = __ThreadContextMap2
 from abc import abstractmethod, ABC
 import java.util.Map as Map
  
-class ObjectThreadContextMap(ABC, __CleanableThreadContextMap, CleanableThreadContextMap):
+class ObjectThreadContextMap(ABC):
     """org.apache.logging.log4j.spi.ObjectThreadContextMap"""
  
     @staticmethod
@@ -10982,6 +10983,7 @@ class ObjectThreadContextMap(ABC, __CleanableThreadContextMap, CleanableThreadCo
 import java.util.function.Predicate as Predicate
 import org.apache.logging.log4j.ThreadContext as __ThreadContext_ContextStack
 __ContextStack = __ThreadContext_ContextStack.ContextStack
+from pyquantum_helper import override
 import java.util.function.IntFunction as IntFunction
 import java.util.stream.Stream as __Stream
 __Stream = __Stream
@@ -11004,7 +11006,7 @@ from builtins import bool
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ThreadContextStack(ABC, log4py.__ThreadContext_ContextStack, log4py.ThreadContext$ContextStack):
+class ThreadContextStack(ABC):
     """org.apache.logging.log4j.spi.ThreadContextStack"""
  
     @staticmethod

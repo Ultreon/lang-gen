@@ -30,7 +30,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DateTimeError(__Error, Error):
+class DateTimeError():
     """dev.ultreon.libs.datetime.v0.exceptions.DateTimeError"""
  
     @staticmethod
@@ -250,7 +250,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DateTimeError(__Error, Error):
+class DateTimeError():
     """dev.ultreon.libs.datetime.v0.exceptions.DateTimeError"""
  
     @staticmethod
@@ -474,7 +474,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidOrderException(__RuntimeException, RuntimeException):
+class InvalidOrderException():
     """dev.ultreon.libs.datetime.v0.exceptions.InvalidOrderException"""
  
     @staticmethod
@@ -699,7 +699,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DateTimeException(__IllegalArgumentException, IllegalArgumentException):
+class DateTimeException():
     """dev.ultreon.libs.datetime.v0.exceptions.DateTimeException"""
  
     @staticmethod

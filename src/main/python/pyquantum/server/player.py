@@ -285,7 +285,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CachedPlayer(__CacheablePlayer, CacheablePlayer):
+class CachedPlayer():
     """dev.ultreon.quantum.server.player.CachedPlayer"""
  
     @staticmethod
@@ -426,7 +426,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MutablePermissionMap(__PermissionMap, PermissionMap):
+class MutablePermissionMap():
     """dev.ultreon.quantum.server.player.MutablePermissionMap"""
  
     @staticmethod
@@ -773,7 +773,7 @@ except ImportError:
     types = __import_once__("pyubo.types")
 
  
-class ServerPlayer(entity.__Player, player.Player, __CacheablePlayer, CacheablePlayer):
+class ServerPlayer():
     """dev.ultreon.quantum.server.player.ServerPlayer"""
  
     @staticmethod
@@ -1851,7 +1851,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class S2CPlayerAttackPacket(network.__Packet, packets.Packet):
+class S2CPlayerAttackPacket():
     """dev.ultreon.quantum.server.player.S2CPlayerAttackPacket"""
  
     @staticmethod

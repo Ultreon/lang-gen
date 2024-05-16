@@ -29,7 +29,7 @@ import java.util.stream.IntStream as IntStream
 from builtins import bool
 from builtins import int
  
-class FluentBitSet(__Cloneable, Cloneable, __Serializable, Serializable):
+class FluentBitSet():
     """org.apache.commons.lang3.util.FluentBitSet"""
  
     @staticmethod
@@ -360,7 +360,7 @@ import java.util.stream.IntStream as IntStream
 from builtins import bool
 from builtins import int
  
-class FluentBitSet(__Cloneable, Cloneable, __Serializable, Serializable):
+class FluentBitSet():
     """org.apache.commons.lang3.util.FluentBitSet"""
  
     @staticmethod

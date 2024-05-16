@@ -24,7 +24,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class OctalUnescaper(__CharSequenceTranslator, CharSequenceTranslator):
+class OctalUnescaper():
     """org.apache.commons.lang3.text.translate.OctalUnescaper"""
  
     @staticmethod
@@ -173,7 +173,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class OctalUnescaper(__CharSequenceTranslator, CharSequenceTranslator):
+class OctalUnescaper():
     """org.apache.commons.lang3.text.translate.OctalUnescaper"""
  
     @staticmethod
@@ -329,7 +329,7 @@ import org.apache.commons.lang3.text.translate.NumericEntityUnescaper as __Numer
 __OPTION = __NumericEntityUnescaper_OPTION.OPTION
 from builtins import int
  
-class OPTION(__Enum, Enum):
+class OPTION():
     """org.apache.commons.lang3.text.translate.NumericEntityUnescaper.OPTION"""
  
     @staticmethod
@@ -487,7 +487,7 @@ __UnicodeEscaper = __UnicodeEscaper
 from builtins import bool
 from builtins import int
  
-class JavaUnicodeEscaper(__UnicodeEscaper, UnicodeEscaper):
+class JavaUnicodeEscaper():
     """org.apache.commons.lang3.text.translate.JavaUnicodeEscaper"""
  
     @staticmethod
@@ -682,7 +682,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NumericEntityEscaper(__CodePointTranslator, CodePointTranslator):
+class NumericEntityEscaper():
     """org.apache.commons.lang3.text.translate.NumericEntityEscaper"""
  
     @staticmethod
@@ -860,7 +860,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class UnicodeEscaper(__CodePointTranslator, CodePointTranslator):
+class UnicodeEscaper():
     """org.apache.commons.lang3.text.translate.UnicodeEscaper"""
  
     @staticmethod
@@ -1036,7 +1036,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NumericEntityUnescaper(__CharSequenceTranslator, CharSequenceTranslator):
+class NumericEntityUnescaper():
     """org.apache.commons.lang3.text.translate.NumericEntityUnescaper"""
  
     @staticmethod
@@ -1182,7 +1182,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LookupTranslator(__CharSequenceTranslator, CharSequenceTranslator):
+class LookupTranslator():
     """org.apache.commons.lang3.text.translate.LookupTranslator"""
  
     @staticmethod
@@ -1324,7 +1324,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class UnicodeUnpairedSurrogateRemover(__CodePointTranslator, CodePointTranslator):
+class UnicodeUnpairedSurrogateRemover():
     """org.apache.commons.lang3.text.translate.UnicodeUnpairedSurrogateRemover"""
  
     @staticmethod
@@ -1476,7 +1476,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class UnicodeUnescaper(__CharSequenceTranslator, CharSequenceTranslator):
+class UnicodeUnescaper():
     """org.apache.commons.lang3.text.translate.UnicodeUnescaper"""
  
     @staticmethod
@@ -1807,7 +1807,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CodePointTranslator(ABC, __CharSequenceTranslator, CharSequenceTranslator):
+class CodePointTranslator(ABC):
     """org.apache.commons.lang3.text.translate.CodePointTranslator"""
  
     @staticmethod
@@ -1959,7 +1959,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AggregateTranslator(__CharSequenceTranslator, CharSequenceTranslator):
+class AggregateTranslator():
     """org.apache.commons.lang3.text.translate.AggregateTranslator"""
  
     @staticmethod

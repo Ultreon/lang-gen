@@ -46,7 +46,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class SubstituteLoggingEvent(__LoggingEvent, LoggingEvent):
+class SubstituteLoggingEvent():
     """org.slf4j.event.SubstituteLoggingEvent"""
  
     @staticmethod
@@ -306,7 +306,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class SubstituteLoggingEvent(__LoggingEvent, LoggingEvent):
+class SubstituteLoggingEvent():
     """org.slf4j.event.SubstituteLoggingEvent"""
  
     @staticmethod
@@ -571,7 +571,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class EventRecordingLogger(slf4py.__LegacyAbstractLogger, helpers.LegacyAbstractLogger):
+class EventRecordingLogger():
     """org.slf4j.event.EventRecordingLogger"""
  
     @staticmethod
@@ -1103,7 +1103,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class DefaultLoggingEvent(__LoggingEvent, LoggingEvent):
+class DefaultLoggingEvent():
     """org.slf4j.event.DefaultLoggingEvent"""
  
     @staticmethod
@@ -1536,7 +1536,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Level(__Enum, Enum):
+class Level():
     """org.slf4j.event.Level"""
  
     @staticmethod

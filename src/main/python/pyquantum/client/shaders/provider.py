@@ -41,7 +41,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class SkyboxShaderProvider(g3d.__DefaultShaderProvider, utils.DefaultShaderProvider, render.__OpenShaderProvider, shader.OpenShaderProvider):
+class SkyboxShaderProvider():
     """dev.ultreon.quantum.client.shaders.provider.SkyboxShaderProvider"""
  
     @staticmethod
@@ -217,7 +217,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class SkyboxShaderProvider(g3d.__DefaultShaderProvider, utils.DefaultShaderProvider, render.__OpenShaderProvider, shader.OpenShaderProvider):
+class SkyboxShaderProvider():
     """dev.ultreon.quantum.client.shaders.provider.SkyboxShaderProvider"""
  
     @staticmethod
@@ -396,7 +396,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class ModelViewShaderProvider(g3d.__DefaultShaderProvider, utils.DefaultShaderProvider, render.__OpenShaderProvider, shader.OpenShaderProvider):
+class ModelViewShaderProvider():
     """dev.ultreon.quantum.client.shaders.provider.ModelViewShaderProvider"""
  
     @staticmethod
@@ -570,7 +570,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class WorldShaderProvider(g3d.__DefaultShaderProvider, utils.DefaultShaderProvider, render.__OpenShaderProvider, shader.OpenShaderProvider):
+class WorldShaderProvider():
     """dev.ultreon.quantum.client.shaders.provider.WorldShaderProvider"""
  
     @staticmethod

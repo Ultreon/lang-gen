@@ -532,7 +532,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class BBAnimChannel(__Enum, Enum):
+class BBAnimChannel():
     """dev.ultreon.quantum.client.model.blockbench.anim.BBAnimChannel"""
  
     @staticmethod
@@ -891,7 +891,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Loop(__Enum, Enum):
+class Loop():
     """dev.ultreon.quantum.client.model.blockbench.anim.BBAnimation.Loop"""
  
     @staticmethod
@@ -1055,7 +1055,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class BBAnimInterpolation(__Enum, Enum):
+class BBAnimInterpolation():
     """dev.ultreon.quantum.client.model.blockbench.anim.BBAnimInterpolation"""
  
     @staticmethod
@@ -1231,7 +1231,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Type(__Enum, Enum):
+class Type():
     """dev.ultreon.quantum.client.model.blockbench.anim.BBAnimator.Type"""
  
     @staticmethod

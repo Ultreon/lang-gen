@@ -47,7 +47,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class DeferredResourcePackage(pyquantum.__ResourcePackage, resources.ResourcePackage):
+class DeferredResourcePackage():
     """dev.ultreon.quantum.resources.android.DeferredResourcePackage"""
  
     @staticmethod
@@ -83,16 +83,16 @@ class DeferredResourcePackage(pyquantum.__ResourcePackage, resources.ResourcePac
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
         super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
 
-    @overload
-    def hasCategory(self, arg0: str) -> bool:
-        """public boolean dev.ultreon.quantum.resources.ResourcePackage.hasCategory(java.lang.String)"""
-        return bool.__wrap(super(__resources.ResourcePackage, self).hasCategory(arg0))
-
     @override
     @overload
     def mapEntries(self) -> 'Map':
         """public java.util.Map<dev.ultreon.quantum.util.Identifier, dev.ultreon.quantum.resources.StaticResource> dev.ultreon.quantum.resources.ResourcePackage.mapEntries()"""
         return 'Map'.__wrap(super(resources.ResourcePackage, self).mapEntries())
+
+    @overload
+    def hasCategory(self, arg0: str) -> bool:
+        """public boolean dev.ultreon.quantum.resources.ResourcePackage.hasCategory(java.lang.String)"""
+        return bool.__wrap(super(__resources.ResourcePackage, self).hasCategory(arg0))
 
     @override
     @overload
@@ -229,7 +229,7 @@ import java.util.Map as Map
 import java.util.List as List
 from builtins import int
  
-class DeferredResourcePackage(pyquantum.__ResourcePackage, resources.ResourcePackage):
+class DeferredResourcePackage():
     """dev.ultreon.quantum.resources.android.DeferredResourcePackage"""
  
     @staticmethod
@@ -265,16 +265,16 @@ class DeferredResourcePackage(pyquantum.__ResourcePackage, resources.ResourcePac
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
         super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
 
-    @overload
-    def hasCategory(self, arg0: str) -> bool:
-        """public boolean dev.ultreon.quantum.resources.ResourcePackage.hasCategory(java.lang.String)"""
-        return bool.__wrap(super(__resources.ResourcePackage, self).hasCategory(arg0))
-
     @override
     @overload
     def mapEntries(self) -> 'Map':
         """public java.util.Map<dev.ultreon.quantum.util.Identifier, dev.ultreon.quantum.resources.StaticResource> dev.ultreon.quantum.resources.ResourcePackage.mapEntries()"""
         return 'Map'.__wrap(super(resources.ResourcePackage, self).mapEntries())
+
+    @overload
+    def hasCategory(self, arg0: str) -> bool:
+        """public boolean dev.ultreon.quantum.resources.ResourcePackage.hasCategory(java.lang.String)"""
+        return bool.__wrap(super(__resources.ResourcePackage, self).hasCategory(arg0))
 
     @override
     @overload

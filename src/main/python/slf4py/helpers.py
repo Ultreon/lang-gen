@@ -376,7 +376,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class SubstituteLoggerFactory(slf4py.__ILoggerFactory, slf4py.ILoggerFactory):
+class SubstituteLoggerFactory():
     """org.slf4j.helpers.SubstituteLoggerFactory"""
  
     @staticmethod
@@ -687,7 +687,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SubstituteLogger(slf4py.__Logger, slf4py.Logger):
+class SubstituteLogger():
     """org.slf4j.helpers.SubstituteLogger"""
  
     @staticmethod
@@ -1239,7 +1239,7 @@ import java.util.Map as Map
 from builtins import bool
 from builtins import int
  
-class NOPMDCAdapter(slf4py.__MDCAdapter, spi.MDCAdapter):
+class NOPMDCAdapter():
     """org.slf4j.helpers.NOPMDCAdapter"""
  
     @staticmethod
@@ -1435,7 +1435,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NOPLogger(__NamedLoggerBase, NamedLoggerBase, slf4py.__Logger, slf4py.Logger):
+class NOPLogger():
     """org.slf4j.helpers.NOPLogger"""
  
     @staticmethod
@@ -1952,7 +1952,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BasicMarkerFactory(slf4py.__IMarkerFactory, slf4py.IMarkerFactory):
+class BasicMarkerFactory():
     """org.slf4j.helpers.BasicMarkerFactory"""
  
     @staticmethod
@@ -2249,7 +2249,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AbstractLogger(ABC, slf4py.__Logger, slf4py.Logger, __Serializable, Serializable):
+class AbstractLogger(ABC):
     """org.slf4j.helpers.AbstractLogger"""
  
     @staticmethod
@@ -2783,7 +2783,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NOP_FallbackServiceProvider(slf4py.__SLF4JServiceProvider, spi.SLF4JServiceProvider):
+class NOP_FallbackServiceProvider():
     """org.slf4j.helpers.NOP_FallbackServiceProvider"""
  
     @staticmethod
@@ -2939,7 +2939,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BasicMarker(slf4py.__Marker, slf4py.Marker):
+class BasicMarker():
     """org.slf4j.helpers.BasicMarker"""
  
     @staticmethod
@@ -3110,7 +3110,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MarkerIgnoringBase(ABC, __NamedLoggerBase, NamedLoggerBase, slf4py.__Logger, slf4py.Logger):
+class MarkerIgnoringBase(ABC):
     """org.slf4j.helpers.MarkerIgnoringBase"""
  
     @staticmethod
@@ -3749,7 +3749,7 @@ import org.slf4j.helpers.SubstituteServiceProvider as __SubstituteServiceProvide
 __SubstituteServiceProvider = __SubstituteServiceProvider
 from builtins import int
  
-class SubstituteServiceProvider(slf4py.__SLF4JServiceProvider, spi.SLF4JServiceProvider):
+class SubstituteServiceProvider():
     """org.slf4j.helpers.SubstituteServiceProvider"""
  
     @staticmethod
@@ -4082,7 +4082,7 @@ import java.util.Map as Map
 from builtins import bool
 from builtins import int
  
-class BasicMDCAdapter(slf4py.__MDCAdapter, spi.MDCAdapter):
+class BasicMDCAdapter():
     """org.slf4j.helpers.BasicMDCAdapter"""
  
     @staticmethod
@@ -4249,7 +4249,7 @@ import org.slf4j.helpers.CheckReturnValue as __CheckReturnValue
 __CheckReturnValue = __CheckReturnValue
 from abc import abstractmethod, ABC
  
-class CheckReturnValue(ABC, __Annotation, Annotation):
+class CheckReturnValue(ABC):
     """org.slf4j.helpers.CheckReturnValue"""
  
     @staticmethod
@@ -4327,7 +4327,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NOPLoggerFactory(slf4py.__ILoggerFactory, slf4py.ILoggerFactory):
+class NOPLoggerFactory():
     """org.slf4j.helpers.NOPLoggerFactory"""
  
     @staticmethod
@@ -4474,7 +4474,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LegacyAbstractLogger(ABC, __AbstractLogger, AbstractLogger):
+class LegacyAbstractLogger(ABC):
     """org.slf4j.helpers.LegacyAbstractLogger"""
  
     @staticmethod

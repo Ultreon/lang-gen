@@ -45,7 +45,7 @@ import com.badlogic.gdx.graphics.g3d.particles.renderers.ParticleControllerRende
 __ParticleControllerRenderer = __ParticleControllerRenderer
 from builtins import int
  
-class ModelInstanceRenderer(__ParticleControllerRenderer, ParticleControllerRenderer):
+class ModelInstanceRenderer():
     """com.badlogic.gdx.graphics.g3d.particles.renderers.ModelInstanceRenderer"""
  
     @staticmethod
@@ -289,7 +289,7 @@ import com.badlogic.gdx.graphics.g3d.particles.renderers.ParticleControllerRende
 __ParticleControllerRenderer = __ParticleControllerRenderer
 from builtins import int
  
-class ModelInstanceRenderer(__ParticleControllerRenderer, ParticleControllerRenderer):
+class ModelInstanceRenderer():
     """com.badlogic.gdx.graphics.g3d.particles.renderers.ModelInstanceRenderer"""
  
     @staticmethod
@@ -536,7 +536,7 @@ import com.badlogic.gdx.graphics.g3d.particles.renderers.ParticleControllerRende
 __ParticleControllerRenderer = __ParticleControllerRenderer
 from builtins import int
  
-class BillboardRenderer(__ParticleControllerRenderer, ParticleControllerRenderer):
+class BillboardRenderer():
     """com.badlogic.gdx.graphics.g3d.particles.renderers.BillboardRenderer"""
  
     @staticmethod
@@ -753,7 +753,7 @@ __PointSpriteControllerRenderData = __PointSpriteControllerRenderData
 from builtins import bool
 from builtins import int
  
-class PointSpriteControllerRenderData(__ParticleControllerRenderData, ParticleControllerRenderData):
+class PointSpriteControllerRenderData():
     """com.badlogic.gdx.graphics.g3d.particles.renderers.PointSpriteControllerRenderData"""
  
     @staticmethod
@@ -869,7 +869,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BillboardControllerRenderData(__ParticleControllerRenderData, ParticleControllerRenderData):
+class BillboardControllerRenderData():
     """com.badlogic.gdx.graphics.g3d.particles.renderers.BillboardControllerRenderData"""
  
     @staticmethod
@@ -1009,7 +1009,7 @@ __ParticleControllerRenderer = __ParticleControllerRenderer
 from builtins import bool
 from builtins import int
  
-class ParticleControllerRenderer(ABC, g3d.__ParticleControllerComponent, particles.ParticleControllerComponent):
+class ParticleControllerRenderer(ABC):
     """com.badlogic.gdx.graphics.g3d.particles.renderers.ParticleControllerRenderer"""
  
     @staticmethod
@@ -1229,7 +1229,7 @@ import com.badlogic.gdx.graphics.g3d.particles.renderers.ParticleControllerRende
 __ParticleControllerRenderer = __ParticleControllerRenderer
 from builtins import int
  
-class ParticleControllerControllerRenderer(__ParticleControllerRenderer, ParticleControllerRenderer):
+class ParticleControllerControllerRenderer():
     """com.badlogic.gdx.graphics.g3d.particles.renderers.ParticleControllerControllerRenderer"""
  
     @staticmethod
@@ -1439,7 +1439,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ModelInstanceControllerRenderData(__ParticleControllerRenderData, ParticleControllerRenderData):
+class ModelInstanceControllerRenderData():
     """com.badlogic.gdx.graphics.g3d.particles.renderers.ModelInstanceControllerRenderData"""
  
     @staticmethod
@@ -1696,7 +1696,7 @@ import com.badlogic.gdx.graphics.g3d.particles.renderers.ParticleControllerRende
 __ParticleControllerRenderer = __ParticleControllerRenderer
 from builtins import int
  
-class PointSpriteRenderer(__ParticleControllerRenderer, ParticleControllerRenderer):
+class PointSpriteRenderer():
     """com.badlogic.gdx.graphics.g3d.particles.renderers.PointSpriteRenderer"""
  
     @staticmethod

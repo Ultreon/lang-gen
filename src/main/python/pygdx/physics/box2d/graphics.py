@@ -63,7 +63,7 @@ __Object = __Object
 import java.lang.Integer as __int
 from builtins import int
  
-class ParticleEmitterBox2D(graphics.__ParticleEmitter, g2d.ParticleEmitter):
+class ParticleEmitterBox2D():
     """com.badlogic.gdx.physics.box2d.graphics.ParticleEmitterBox2D"""
  
     @staticmethod
@@ -426,12 +426,6 @@ class ParticleEmitterBox2D(graphics.__ParticleEmitter, g2d.ParticleEmitter):
 
     @override
     @overload
-    def allowCompletion(self):
-        """public void com.badlogic.gdx.graphics.g2d.ParticleEmitter.allowCompletion()"""
-        super(g2d.ParticleEmitter, self).allowCompletion()
-
-    @override
-    @overload
     def isComplete(self) -> bool:
         """public boolean com.badlogic.gdx.graphics.g2d.ParticleEmitter.isComplete()"""
         return bool.__wrap(super(g2d.ParticleEmitter, self).isComplete())
@@ -441,6 +435,12 @@ class ParticleEmitterBox2D(graphics.__ParticleEmitter, g2d.ParticleEmitter):
     def setContinuous(self, arg0: bool):
         """public void com.badlogic.gdx.graphics.g2d.ParticleEmitter.setContinuous(boolean)"""
         super(__g2d.ParticleEmitter, self).setContinuous(__boolean.valueOf(arg0))
+
+    @override
+    @overload
+    def allowCompletion(self):
+        """public void com.badlogic.gdx.graphics.g2d.ParticleEmitter.allowCompletion()"""
+        super(g2d.ParticleEmitter, self).allowCompletion()
 
     @override
     @overload
@@ -474,6 +474,12 @@ class ParticleEmitterBox2D(graphics.__ParticleEmitter, g2d.ParticleEmitter):
 
     @override
     @overload
+    def getLife(self) -> 'g2d.ParticleEmitter$ScaledNumericValue':
+        """public com.badlogic.gdx.graphics.g2d.ParticleEmitter$ScaledNumericValue com.badlogic.gdx.graphics.g2d.ParticleEmitter.getLife()"""
+        return 'g2d.ParticleEmitter$ScaledNumericValue'.__wrap(super(g2d.ParticleEmitter, self).getLife())
+
+    @override
+    @overload
     def scaleMotion(self, arg0: float):
         """public void com.badlogic.gdx.graphics.g2d.ParticleEmitter.scaleMotion(float)"""
         super(__g2d.ParticleEmitter, self).scaleMotion(__float.valueOf(arg0))
@@ -483,12 +489,6 @@ class ParticleEmitterBox2D(graphics.__ParticleEmitter, g2d.ParticleEmitter):
     def matchMotion(self, arg0: 'ParticleEmitter'):
         """public void com.badlogic.gdx.graphics.g2d.ParticleEmitter.matchMotion(com.badlogic.gdx.graphics.g2d.ParticleEmitter)"""
         super(__g2d.ParticleEmitter, self).matchMotion(arg0)
-
-    @override
-    @overload
-    def getLife(self) -> 'g2d.ParticleEmitter$ScaledNumericValue':
-        """public com.badlogic.gdx.graphics.g2d.ParticleEmitter$ScaledNumericValue com.badlogic.gdx.graphics.g2d.ParticleEmitter.getLife()"""
-        return 'g2d.ParticleEmitter$ScaledNumericValue'.__wrap(super(g2d.ParticleEmitter, self).getLife())
 
     @overload
     def __init__(self, arg0: 'World', arg1: 'ParticleEmitter'):
@@ -663,7 +663,7 @@ __Object = __Object
 import java.lang.Integer as __int
 from builtins import int
  
-class ParticleEmitterBox2D(graphics.__ParticleEmitter, g2d.ParticleEmitter):
+class ParticleEmitterBox2D():
     """com.badlogic.gdx.physics.box2d.graphics.ParticleEmitterBox2D"""
  
     @staticmethod
@@ -1026,12 +1026,6 @@ class ParticleEmitterBox2D(graphics.__ParticleEmitter, g2d.ParticleEmitter):
 
     @override
     @overload
-    def allowCompletion(self):
-        """public void com.badlogic.gdx.graphics.g2d.ParticleEmitter.allowCompletion()"""
-        super(g2d.ParticleEmitter, self).allowCompletion()
-
-    @override
-    @overload
     def isComplete(self) -> bool:
         """public boolean com.badlogic.gdx.graphics.g2d.ParticleEmitter.isComplete()"""
         return bool.__wrap(super(g2d.ParticleEmitter, self).isComplete())
@@ -1041,6 +1035,12 @@ class ParticleEmitterBox2D(graphics.__ParticleEmitter, g2d.ParticleEmitter):
     def setContinuous(self, arg0: bool):
         """public void com.badlogic.gdx.graphics.g2d.ParticleEmitter.setContinuous(boolean)"""
         super(__g2d.ParticleEmitter, self).setContinuous(__boolean.valueOf(arg0))
+
+    @override
+    @overload
+    def allowCompletion(self):
+        """public void com.badlogic.gdx.graphics.g2d.ParticleEmitter.allowCompletion()"""
+        super(g2d.ParticleEmitter, self).allowCompletion()
 
     @override
     @overload
@@ -1074,6 +1074,12 @@ class ParticleEmitterBox2D(graphics.__ParticleEmitter, g2d.ParticleEmitter):
 
     @override
     @overload
+    def getLife(self) -> 'g2d.ParticleEmitter$ScaledNumericValue':
+        """public com.badlogic.gdx.graphics.g2d.ParticleEmitter$ScaledNumericValue com.badlogic.gdx.graphics.g2d.ParticleEmitter.getLife()"""
+        return 'g2d.ParticleEmitter$ScaledNumericValue'.__wrap(super(g2d.ParticleEmitter, self).getLife())
+
+    @override
+    @overload
     def scaleMotion(self, arg0: float):
         """public void com.badlogic.gdx.graphics.g2d.ParticleEmitter.scaleMotion(float)"""
         super(__g2d.ParticleEmitter, self).scaleMotion(__float.valueOf(arg0))
@@ -1083,12 +1089,6 @@ class ParticleEmitterBox2D(graphics.__ParticleEmitter, g2d.ParticleEmitter):
     def matchMotion(self, arg0: 'ParticleEmitter'):
         """public void com.badlogic.gdx.graphics.g2d.ParticleEmitter.matchMotion(com.badlogic.gdx.graphics.g2d.ParticleEmitter)"""
         super(__g2d.ParticleEmitter, self).matchMotion(arg0)
-
-    @override
-    @overload
-    def getLife(self) -> 'g2d.ParticleEmitter$ScaledNumericValue':
-        """public com.badlogic.gdx.graphics.g2d.ParticleEmitter$ScaledNumericValue com.badlogic.gdx.graphics.g2d.ParticleEmitter.getLife()"""
-        return 'g2d.ParticleEmitter$ScaledNumericValue'.__wrap(super(g2d.ParticleEmitter, self).getLife())
 
     @overload
     def __init__(self, arg0: 'World', arg1: 'ParticleEmitter'):

@@ -24,7 +24,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class EventListenerSupport(__Serializable, Serializable):
+class EventListenerSupport():
     """org.apache.commons.lang3.event.EventListenerSupport"""
  
     @staticmethod
@@ -177,7 +177,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class EventListenerSupport(__Serializable, Serializable):
+class EventListenerSupport():
     """org.apache.commons.lang3.event.EventListenerSupport"""
  
     @staticmethod
@@ -331,7 +331,7 @@ from builtins import bool
 import java.lang.reflect.Method as Method
 from builtins import int
  
-class ProxyInvocationHandler(__InvocationHandler, InvocationHandler):
+class ProxyInvocationHandler():
     """org.apache.commons.lang3.event.EventListenerSupport.ProxyInvocationHandler"""
  
     @staticmethod

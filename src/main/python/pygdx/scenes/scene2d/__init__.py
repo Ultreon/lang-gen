@@ -31,7 +31,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Action(ABC, pygdx.__Pool_Poolable, utils.Pool$Poolable):
+class Action(ABC):
     """com.badlogic.gdx.scenes.scene2d.Action"""
  
     @staticmethod
@@ -206,7 +206,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Action(ABC, pygdx.__Pool_Poolable, utils.Pool$Poolable):
+class Action(ABC):
     """com.badlogic.gdx.scenes.scene2d.Action"""
  
     @staticmethod
@@ -357,8 +357,8 @@ class Action(ABC, pygdx.__Pool_Poolable, utils.Pool$Poolable):
  
 # CLASS: com.badlogic.gdx.scenes.scene2d.Event
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 import com.badlogic.gdx.scenes.scene2d.Event as __Event
@@ -378,7 +378,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Event(pygdx.__Pool_Poolable, utils.Pool$Poolable):
+class Event():
     """com.badlogic.gdx.scenes.scene2d.Event"""
  
     @staticmethod
@@ -629,7 +629,7 @@ except ImportError:
 
 from builtins import int
  
-class Group(__Actor, Actor, scene2d.__Cullable, utils.Cullable):
+class Group():
     """com.badlogic.gdx.scenes.scene2d.Group"""
  
     @staticmethod
@@ -1447,7 +1447,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Touchable(__Enum, Enum):
+class Touchable():
     """com.badlogic.gdx.scenes.scene2d.Touchable"""
  
     @staticmethod
@@ -1647,7 +1647,7 @@ except ImportError:
 
 from builtins import int
  
-class Stage(pygdx.__InputAdapter, pygdx.InputAdapter, pygdx.__Disposable, utils.Disposable):
+class Stage():
     """com.badlogic.gdx.scenes.scene2d.Stage"""
  
     @staticmethod
@@ -2073,7 +2073,7 @@ __Stage = __Stage
 from builtins import bool
 from builtins import int
  
-class InputEvent(__Event, Event):
+class InputEvent():
     """com.badlogic.gdx.scenes.scene2d.InputEvent"""
  
     @staticmethod
@@ -2454,7 +2454,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InputListener(__EventListener, EventListener):
+class InputListener():
     """com.badlogic.gdx.scenes.scene2d.InputListener"""
  
     @staticmethod
@@ -2625,7 +2625,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TouchFocus(pygdx.__Pool_Poolable, utils.Pool$Poolable):
+class TouchFocus():
     """com.badlogic.gdx.scenes.scene2d.Stage.TouchFocus"""
  
     @staticmethod
@@ -3416,7 +3416,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Type(__Enum, Enum):
+class Type():
     """com.badlogic.gdx.scenes.scene2d.InputEvent.Type"""
  
     @staticmethod

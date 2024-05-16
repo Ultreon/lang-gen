@@ -117,7 +117,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Unit(__Enum, Enum):
+class Unit():
     """dev.ultreon.quantum.util.DataSizes.Unit"""
  
     @staticmethod
@@ -651,7 +651,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Task(__Runnable, Runnable):
+class Task():
     """dev.ultreon.quantum.util.Task"""
  
     @staticmethod
@@ -801,7 +801,7 @@ __BoundingBox = __BoundingBox
 import java.util.List as List
 from builtins import int
  
-class BoundingBox(__Serializable, Serializable):
+class BoundingBox():
     """dev.ultreon.quantum.util.BoundingBox"""
  
     @staticmethod
@@ -1116,7 +1116,7 @@ from builtins import bool
 import java.util.Random as Random
 from builtins import int
  
-class RandomValueSource(__ValueSource, ValueSource):
+class RandomValueSource():
     """dev.ultreon.quantum.util.RandomValueSource"""
  
     @staticmethod
@@ -1240,7 +1240,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class IllegalThreadError(__Error, Error):
+class IllegalThreadError():
     """dev.ultreon.quantum.util.IllegalThreadError"""
  
     @staticmethod
@@ -1442,7 +1442,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Env(__Enum, Enum):
+class Env():
     """dev.ultreon.quantum.util.Env"""
  
     @staticmethod
@@ -1627,7 +1627,7 @@ import java.lang.Integer as __int
 import java.util.List as List
 from builtins import int
  
-class PagedList(__ArrayList, ArrayList):
+class PagedList():
     """dev.ultreon.quantum.util.PagedList"""
  
     @staticmethod
@@ -3018,7 +3018,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class RgbColor(__Color, Color):
+class RgbColor():
     """dev.ultreon.quantum.util.RgbColor"""
  
     @staticmethod
@@ -3815,7 +3815,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class FaceRotation(__Enum, Enum):
+class FaceRotation():
     """dev.ultreon.quantum.util.MathHelper.FaceRotation"""
  
     @staticmethod
@@ -3987,7 +3987,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ValidationError(__Error, Error):
+class ValidationError():
     """dev.ultreon.quantum.util.ValidationError"""
  
     @staticmethod
@@ -4189,7 +4189,7 @@ import java.util.concurrent.CompletableFuture as CompletableFuture
 import java.util.List as List
 from builtins import int
  
-class PollingExecutorService(__ExecutorService, ExecutorService):
+class PollingExecutorService():
     """dev.ultreon.quantum.util.PollingExecutorService"""
  
     @staticmethod
@@ -4471,7 +4471,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SanityCheckException(__RuntimeException, RuntimeException):
+class SanityCheckException():
     """dev.ultreon.quantum.util.SanityCheckException"""
  
     @staticmethod
@@ -4712,7 +4712,7 @@ from builtins import int
 import dev.ultreon.quantum.util.Ray as __Ray
 __Ray = __Ray
  
-class EntityHitResult(__HitResult, HitResult):
+class EntityHitResult():
     """dev.ultreon.quantum.util.EntityHitResult"""
  
     @staticmethod
@@ -5335,7 +5335,7 @@ import dev.ultreon.quantum.util.Ray as __Ray
 __Ray = __Ray
 from builtins import int
  
-class Ray(__Serializable, Serializable):
+class Ray():
     """dev.ultreon.quantum.util.Ray"""
  
     @staticmethod
@@ -5641,7 +5641,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BlockMetaPredicate(__Predicate, Predicate):
+class BlockMetaPredicate():
     """dev.ultreon.quantum.util.BlockMetaPredicate"""
  
     @staticmethod
@@ -5799,7 +5799,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidThreadException(__RuntimeException, RuntimeException):
+class InvalidThreadException():
     """dev.ultreon.quantum.util.InvalidThreadException"""
  
     @staticmethod
@@ -6204,7 +6204,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Difficulty(__Enum, Enum):
+class Difficulty():
     """dev.ultreon.quantum.util.Difficulty"""
  
     @staticmethod
@@ -6412,7 +6412,7 @@ __Object = __Object
 import java.lang.Integer as __int
 from builtins import int
  
-class BlockHitResult(__HitResult, HitResult):
+class BlockHitResult():
     """dev.ultreon.quantum.util.BlockHitResult"""
  
     @staticmethod
@@ -6636,7 +6636,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class IllegalThreadInterruptionError(__Error, Error):
+class IllegalThreadInterruptionError():
     """dev.ultreon.quantum.util.IllegalThreadInterruptionError"""
  
     @staticmethod
@@ -6839,7 +6839,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Axis(__Enum, Enum):
+class Axis():
     """dev.ultreon.quantum.util.Axis"""
  
     @staticmethod
@@ -7141,7 +7141,7 @@ import dev.ultreon.quantum.util.PosOutOfBoundsException as __PosOutOfBoundsExcep
 __PosOutOfBoundsException = __PosOutOfBoundsException
 from builtins import int
  
-class PosOutOfBoundsException(__RuntimeException, RuntimeException):
+class PosOutOfBoundsException():
     """dev.ultreon.quantum.util.PosOutOfBoundsException"""
  
     @staticmethod
@@ -7351,7 +7351,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class GameMode(__Enum, Enum):
+class GameMode():
     """dev.ultreon.quantum.util.GameMode"""
  
     @staticmethod
@@ -7536,7 +7536,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BlockPredicate(__Predicate, Predicate):
+class BlockPredicate():
     """dev.ultreon.quantum.util.BlockPredicate"""
  
     @staticmethod
@@ -7691,7 +7691,7 @@ import dev.ultreon.quantum.util.OverwriteError as __OverwriteError
 __OverwriteError = __OverwriteError
 from builtins import int
  
-class OverwriteError(__Error, Error):
+class OverwriteError():
     """dev.ultreon.quantum.util.OverwriteError"""
  
     @staticmethod

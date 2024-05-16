@@ -20,7 +20,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GearJointDef(physics.__JointDef, box2d.JointDef):
+class GearJointDef():
     """com.badlogic.gdx.physics.box2d.joints.GearJointDef"""
  
     @staticmethod
@@ -138,7 +138,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GearJointDef(physics.__JointDef, box2d.JointDef):
+class GearJointDef():
     """com.badlogic.gdx.physics.box2d.joints.GearJointDef"""
  
     @staticmethod
@@ -259,7 +259,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RopeJointDef(physics.__JointDef, box2d.JointDef):
+class RopeJointDef():
     """com.badlogic.gdx.physics.box2d.joints.RopeJointDef"""
  
     @staticmethod
@@ -397,7 +397,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DistanceJoint(physics.__Joint, box2d.Joint):
+class DistanceJoint():
     """com.badlogic.gdx.physics.box2d.joints.DistanceJoint"""
  
     @staticmethod
@@ -621,7 +621,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class WheelJointDef(physics.__JointDef, box2d.JointDef):
+class WheelJointDef():
     """com.badlogic.gdx.physics.box2d.joints.WheelJointDef"""
  
     @staticmethod
@@ -764,7 +764,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MotorJoint(physics.__Joint, box2d.Joint):
+class MotorJoint():
     """com.badlogic.gdx.physics.box2d.joints.MotorJoint"""
  
     @staticmethod
@@ -998,7 +998,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PrismaticJointDef(physics.__JointDef, box2d.JointDef):
+class PrismaticJointDef():
     """com.badlogic.gdx.physics.box2d.joints.PrismaticJointDef"""
  
     @staticmethod
@@ -1141,7 +1141,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class WeldJoint(physics.__Joint, box2d.Joint):
+class WeldJoint():
     """com.badlogic.gdx.physics.box2d.joints.WeldJoint"""
  
     @staticmethod
@@ -1371,7 +1371,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MouseJoint(physics.__Joint, box2d.Joint):
+class MouseJoint():
     """com.badlogic.gdx.physics.box2d.joints.MouseJoint"""
  
     @staticmethod
@@ -1584,7 +1584,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MouseJointDef(physics.__JointDef, box2d.JointDef):
+class MouseJointDef():
     """com.badlogic.gdx.physics.box2d.joints.MouseJointDef"""
  
     @staticmethod
@@ -1706,7 +1706,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MotorJointDef(physics.__JointDef, box2d.JointDef):
+class MotorJointDef():
     """com.badlogic.gdx.physics.box2d.joints.MotorJointDef"""
  
     @staticmethod
@@ -1839,7 +1839,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PulleyJointDef(physics.__JointDef, box2d.JointDef):
+class PulleyJointDef():
     """com.badlogic.gdx.physics.box2d.joints.PulleyJointDef"""
  
     @staticmethod
@@ -1982,7 +1982,7 @@ __GearJoint = __GearJoint
 from builtins import bool
 from builtins import int
  
-class GearJoint(physics.__Joint, box2d.Joint):
+class GearJoint():
     """com.badlogic.gdx.physics.box2d.joints.GearJoint"""
  
     @staticmethod
@@ -2186,7 +2186,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DistanceJointDef(physics.__JointDef, box2d.JointDef):
+class DistanceJointDef():
     """com.badlogic.gdx.physics.box2d.joints.DistanceJointDef"""
  
     @staticmethod
@@ -2330,7 +2330,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class WheelJoint(physics.__Joint, box2d.Joint):
+class WheelJoint():
     """com.badlogic.gdx.physics.box2d.joints.WheelJoint"""
  
     @staticmethod
@@ -2594,7 +2594,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RevoluteJointDef(physics.__JointDef, box2d.JointDef):
+class RevoluteJointDef():
     """com.badlogic.gdx.physics.box2d.joints.RevoluteJointDef"""
  
     @staticmethod
@@ -2738,7 +2738,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PrismaticJoint(physics.__Joint, box2d.Joint):
+class PrismaticJoint():
     """com.badlogic.gdx.physics.box2d.joints.PrismaticJoint"""
  
     @staticmethod
@@ -3023,7 +3023,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FrictionJoint(physics.__Joint, box2d.Joint):
+class FrictionJoint():
     """com.badlogic.gdx.physics.box2d.joints.FrictionJoint"""
  
     @staticmethod
@@ -3237,7 +3237,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FrictionJointDef(physics.__JointDef, box2d.JointDef):
+class FrictionJointDef():
     """com.badlogic.gdx.physics.box2d.joints.FrictionJointDef"""
  
     @staticmethod
@@ -3380,7 +3380,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PulleyJoint(physics.__Joint, box2d.Joint):
+class PulleyJoint():
     """com.badlogic.gdx.physics.box2d.joints.PulleyJoint"""
  
     @staticmethod
@@ -3601,7 +3601,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RevoluteJoint(physics.__Joint, box2d.Joint):
+class RevoluteJoint():
     """com.badlogic.gdx.physics.box2d.joints.RevoluteJoint"""
  
     @staticmethod
@@ -3870,7 +3870,7 @@ import com.badlogic.gdx.physics.box2d.joints.WeldJointDef as __WeldJointDef
 __WeldJointDef = __WeldJointDef
 from builtins import int
  
-class WeldJointDef(physics.__JointDef, box2d.JointDef):
+class WeldJointDef():
     """com.badlogic.gdx.physics.box2d.joints.WeldJointDef"""
  
     @staticmethod
@@ -4013,7 +4013,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RopeJoint(physics.__Joint, box2d.Joint):
+class RopeJoint():
     """com.badlogic.gdx.physics.box2d.joints.RopeJoint"""
  
     @staticmethod

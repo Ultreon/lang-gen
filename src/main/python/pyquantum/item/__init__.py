@@ -691,7 +691,7 @@ import java.lang.Integer as __int
 import java.util.List as List
 from builtins import int
  
-class BlockItem(__Item, Item):
+class BlockItem():
     """dev.ultreon.quantum.item.BlockItem"""
  
     @staticmethod

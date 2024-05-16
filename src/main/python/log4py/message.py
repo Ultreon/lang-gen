@@ -162,7 +162,7 @@ __MessageFactory2 = __MessageFactory2
 from abc import abstractmethod, ABC
 from builtins import object
  
-class MessageFactory2(ABC, __MessageFactory, MessageFactory):
+class MessageFactory2(ABC):
     """org.apache.logging.log4j.message.MessageFactory2"""
  
     @staticmethod
@@ -271,7 +271,7 @@ from abc import abstractmethod, ABC
 import org.apache.logging.log4j.message.Message as __Message
 __Message = __Message
  
-class MultiformatMessage(ABC, __Message, Message):
+class MultiformatMessage(ABC):
     """org.apache.logging.log4j.message.MultiformatMessage"""
  
     @staticmethod
@@ -378,7 +378,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 from builtins import int
  
-class StructuredDataMessage(__MapMessage, MapMessage):
+class StructuredDataMessage():
     """org.apache.logging.log4j.message.StructuredDataMessage"""
  
     @staticmethod
@@ -778,7 +778,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ReusableMessageFactory(__MessageFactory2, MessageFactory2, __Serializable, Serializable):
+class ReusableMessageFactory():
     """org.apache.logging.log4j.message.ReusableMessageFactory"""
  
     @staticmethod
@@ -1025,7 +1025,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class StringFormattedMessage(__Message, Message):
+class StringFormattedMessage():
     """org.apache.logging.log4j.message.StringFormattedMessage"""
  
     @staticmethod
@@ -1154,7 +1154,7 @@ from abc import abstractmethod, ABC
 import org.apache.logging.log4j.message.Message as __Message
 __Message = __Message
  
-class FlowMessage(ABC, __Message, Message):
+class FlowMessage(ABC):
     """org.apache.logging.log4j.message.FlowMessage"""
  
     @staticmethod
@@ -1286,7 +1286,7 @@ import org.apache.logging.log4j.message.FormattedMessage as __FormattedMessage
 __FormattedMessage = __FormattedMessage
 from builtins import int
  
-class FormattedMessage(__Message, Message):
+class FormattedMessage():
     """org.apache.logging.log4j.message.FormattedMessage"""
  
     @staticmethod
@@ -1474,7 +1474,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DefaultFlowMessageFactory(__FlowMessageFactory, FlowMessageFactory, __Serializable, Serializable):
+class DefaultFlowMessageFactory():
     """org.apache.logging.log4j.message.DefaultFlowMessageFactory"""
  
     @staticmethod
@@ -1649,7 +1649,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SimpleMessageFactory(__AbstractMessageFactory, AbstractMessageFactory):
+class SimpleMessageFactory():
     """org.apache.logging.log4j.message.SimpleMessageFactory"""
  
     @staticmethod
@@ -1843,7 +1843,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ReusableObjectMessage(__ReusableMessage, ReusableMessage, __ParameterVisitable, ParameterVisitable, __Clearable, Clearable):
+class ReusableObjectMessage():
     """org.apache.logging.log4j.message.ReusableObjectMessage"""
  
     @staticmethod
@@ -2076,7 +2076,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ParameterizedMessage(__Message, Message, log4py.__StringBuilderFormattable, util.StringBuilderFormattable):
+class ParameterizedMessage():
     """org.apache.logging.log4j.message.ParameterizedMessage"""
  
     @staticmethod
@@ -2256,7 +2256,7 @@ from abc import abstractmethod, ABC
 import org.apache.logging.log4j.message.AsynchronouslyFormattable as __AsynchronouslyFormattable
 __AsynchronouslyFormattable = __AsynchronouslyFormattable
  
-class AsynchronouslyFormattable(ABC, __Annotation, Annotation):
+class AsynchronouslyFormattable(ABC):
     """org.apache.logging.log4j.message.AsynchronouslyFormattable"""
  
     @staticmethod
@@ -2318,7 +2318,7 @@ from builtins import object
 import org.apache.logging.log4j.message.Message as __Message
 __Message = __Message
  
-class ReusableMessage(ABC, __Message, Message, log4py.__StringBuilderFormattable, util.StringBuilderFormattable):
+class ReusableMessage(ABC):
     """org.apache.logging.log4j.message.ReusableMessage"""
  
     @staticmethod
@@ -2410,7 +2410,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class StructuredDataId(__Serializable, Serializable, log4py.__StringBuilderFormattable, util.StringBuilderFormattable):
+class StructuredDataId():
     """org.apache.logging.log4j.message.StructuredDataId"""
  
     @staticmethod
@@ -2640,7 +2640,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 from builtins import int
  
-class StringMapMessage(__MapMessage, MapMessage):
+class StringMapMessage():
     """org.apache.logging.log4j.message.StringMapMessage"""
  
     @staticmethod
@@ -2953,7 +2953,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FormattedMessageFactory(__AbstractMessageFactory, AbstractMessageFactory):
+class FormattedMessageFactory():
     """org.apache.logging.log4j.message.FormattedMessageFactory"""
  
     @staticmethod
@@ -3155,7 +3155,7 @@ import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
 import java.util.List as List
  
-class StructuredDataCollectionMessage(log4py.__StringBuilderFormattable, util.StringBuilderFormattable, __MessageCollectionMessage, MessageCollectionMessage):
+class StructuredDataCollectionMessage():
     """org.apache.logging.log4j.message.StructuredDataCollectionMessage"""
  
     @staticmethod
@@ -3320,7 +3320,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class MapFormat(__Enum, Enum):
+class MapFormat():
     """org.apache.logging.log4j.message.MapMessage.MapFormat"""
  
     @staticmethod
@@ -3472,7 +3472,7 @@ from abc import abstractmethod, ABC
 import org.apache.logging.log4j.message.Message as __Message
 __Message = __Message
  
-class ExitMessage(ABC, __FlowMessage, FlowMessage):
+class ExitMessage(ABC):
     """org.apache.logging.log4j.message.ExitMessage"""
  
     @staticmethod
@@ -3558,7 +3558,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ThreadDumpMessage(__Message, Message, log4py.__StringBuilderFormattable, util.StringBuilderFormattable):
+class ThreadDumpMessage():
     """org.apache.logging.log4j.message.ThreadDumpMessage"""
  
     @staticmethod
@@ -3681,6 +3681,7 @@ class ThreadDumpMessage(__Message, Message, log4py.__StringBuilderFormattable, u
  
 # CLASS: org.apache.logging.log4j.message.MessageCollectionMessage
 import java.util.Spliterator as Spliterator
+from pyquantum_helper import override
 import org.apache.logging.log4j.message.MessageCollectionMessage as __MessageCollectionMessage
 __MessageCollectionMessage = __MessageCollectionMessage
 from abc import abstractmethod, ABC
@@ -3692,7 +3693,7 @@ import java.util.Spliterator as __Spliterator
 __Spliterator = __Spliterator
 import java.util.function.Consumer as Consumer
  
-class MessageCollectionMessage(ABC, __Message, Message, __Iterable, Iterable):
+class MessageCollectionMessage(ABC):
     """org.apache.logging.log4j.message.MessageCollectionMessage"""
  
     @staticmethod
@@ -3802,7 +3803,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 from builtins import int
  
-class MapMessage(log4py.__MultiFormatStringBuilderFormattable, util.MultiFormatStringBuilderFormattable):
+class MapMessage():
     """org.apache.logging.log4j.message.MapMessage"""
  
     @staticmethod
@@ -4106,7 +4107,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MessageFormatMessage(__Message, Message):
+class MessageFormatMessage():
     """org.apache.logging.log4j.message.MessageFormatMessage"""
  
     @staticmethod
@@ -4308,7 +4309,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LocalizedMessageFactory(__AbstractMessageFactory, AbstractMessageFactory):
+class LocalizedMessageFactory():
     """org.apache.logging.log4j.message.LocalizedMessageFactory"""
  
     @staticmethod
@@ -4512,7 +4513,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AbstractMessageFactory(ABC, __MessageFactory2, MessageFactory2, __Serializable, Serializable):
+class AbstractMessageFactory(ABC):
     """org.apache.logging.log4j.message.AbstractMessageFactory"""
  
     @staticmethod
@@ -4713,7 +4714,7 @@ import java.util.stream.IntStream as IntStream
 from builtins import bool
 from builtins import int
  
-class ReusableSimpleMessage(__ReusableMessage, ReusableMessage, __CharSequence, CharSequence, __ParameterVisitable, ParameterVisitable, __Clearable, Clearable):
+class ReusableSimpleMessage():
     """org.apache.logging.log4j.message.ReusableSimpleMessage"""
  
     @staticmethod
@@ -4937,7 +4938,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ObjectArrayMessage(__Message, Message):
+class ObjectArrayMessage():
     """org.apache.logging.log4j.message.ObjectArrayMessage"""
  
     @staticmethod
@@ -5077,7 +5078,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ParameterizedMessageFactory(__AbstractMessageFactory, AbstractMessageFactory):
+class ParameterizedMessageFactory():
     """org.apache.logging.log4j.message.ParameterizedMessageFactory"""
  
     @staticmethod
@@ -5250,7 +5251,7 @@ from abc import abstractmethod, ABC
 import org.apache.logging.log4j.message.Message as __Message
 __Message = __Message
  
-class Message(ABC, __Serializable, Serializable):
+class Message(ABC):
     """org.apache.logging.log4j.message.Message"""
  
     @staticmethod
@@ -5326,7 +5327,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ParameterizedNoReferenceMessageFactory(__AbstractMessageFactory, AbstractMessageFactory):
+class ParameterizedNoReferenceMessageFactory():
     """org.apache.logging.log4j.message.ParameterizedNoReferenceMessageFactory"""
  
     @staticmethod
@@ -5520,7 +5521,7 @@ import org.apache.logging.log4j.message.ReusableParameterizedMessage as __Reusab
 __ReusableParameterizedMessage = __ReusableParameterizedMessage
 from builtins import int
  
-class ReusableParameterizedMessage(__ReusableMessage, ReusableMessage, __ParameterVisitable, ParameterVisitable, __Clearable, Clearable):
+class ReusableParameterizedMessage():
     """org.apache.logging.log4j.message.ReusableParameterizedMessage"""
  
     @staticmethod
@@ -5703,7 +5704,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LocalizedMessage(__Message, Message, __LoggerNameAwareMessage, LoggerNameAwareMessage):
+class LocalizedMessage():
     """org.apache.logging.log4j.message.LocalizedMessage"""
  
     @staticmethod
@@ -5980,7 +5981,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ObjectMessage(__Message, Message, log4py.__StringBuilderFormattable, util.StringBuilderFormattable):
+class ObjectMessage():
     """org.apache.logging.log4j.message.ObjectMessage"""
  
     @staticmethod
@@ -6131,7 +6132,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MessageFormatMessageFactory(__AbstractMessageFactory, AbstractMessageFactory):
+class MessageFormatMessageFactory():
     """org.apache.logging.log4j.message.MessageFormatMessageFactory"""
  
     @staticmethod
@@ -6371,7 +6372,7 @@ import java.util.stream.IntStream as IntStream
 from builtins import bool
 from builtins import int
  
-class SimpleMessage(__Message, Message, log4py.__StringBuilderFormattable, util.StringBuilderFormattable, __CharSequence, CharSequence):
+class SimpleMessage():
     """org.apache.logging.log4j.message.SimpleMessage"""
  
     @staticmethod
@@ -6572,7 +6573,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class StringFormatterMessageFactory(__AbstractMessageFactory, AbstractMessageFactory):
+class StringFormatterMessageFactory():
     """org.apache.logging.log4j.message.StringFormatterMessageFactory"""
  
     @staticmethod
@@ -6807,7 +6808,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Format(__Enum, Enum):
+class Format():
     """org.apache.logging.log4j.message.StructuredDataMessage.Format"""
  
     @staticmethod
@@ -6947,7 +6948,7 @@ from abc import abstractmethod, ABC
 import org.apache.logging.log4j.message.Message as __Message
 __Message = __Message
  
-class EntryMessage(ABC, __FlowMessage, FlowMessage):
+class EntryMessage(ABC):
     """org.apache.logging.log4j.message.EntryMessage"""
  
     @staticmethod

@@ -76,7 +76,7 @@ except ImportError:
 
 from builtins import int
  
-class ClientMemoryConnection(network.__MemoryConnection, system.MemoryConnection):
+class ClientMemoryConnection():
     """dev.ultreon.quantum.client.network.system.ClientMemoryConnection"""
  
     @staticmethod
@@ -290,17 +290,17 @@ class ClientMemoryConnection(network.__MemoryConnection, system.MemoryConnection
         """public void dev.ultreon.quantum.network.system.MemoryConnection.disconnect(java.lang.String)"""
         super(__system.MemoryConnection, self).disconnect(arg0)
 
-    @override
-    @overload
-    def setPlayer(self, arg0: 'ServerPlayer'):
-        """public void dev.ultreon.quantum.network.system.MemoryConnection.setPlayer(dev.ultreon.quantum.server.player.ServerPlayer)"""
-        super(__system.MemoryConnection, self).setPlayer(arg0)
-
     @staticmethod
     @overload
     def getRx() -> int:
         """public static int dev.ultreon.quantum.network.system.MemoryConnection.getRx()"""
         return int.__wrap(__MemoryConnection.getRx())
+
+    @override
+    @overload
+    def setPlayer(self, arg0: 'ServerPlayer'):
+        """public void dev.ultreon.quantum.network.system.MemoryConnection.setPlayer(dev.ultreon.quantum.server.player.ServerPlayer)"""
+        super(__system.MemoryConnection, self).setPlayer(arg0)
 
     @overload
     def on3rdPartyDisconnect(self, arg0: str) -> 'util.Result':
@@ -384,7 +384,7 @@ except ImportError:
 
 from builtins import int
  
-class ClientMemoryConnection(network.__MemoryConnection, system.MemoryConnection):
+class ClientMemoryConnection():
     """dev.ultreon.quantum.client.network.system.ClientMemoryConnection"""
  
     @staticmethod
@@ -598,17 +598,17 @@ class ClientMemoryConnection(network.__MemoryConnection, system.MemoryConnection
         """public void dev.ultreon.quantum.network.system.MemoryConnection.disconnect(java.lang.String)"""
         super(__system.MemoryConnection, self).disconnect(arg0)
 
-    @override
-    @overload
-    def setPlayer(self, arg0: 'ServerPlayer'):
-        """public void dev.ultreon.quantum.network.system.MemoryConnection.setPlayer(dev.ultreon.quantum.server.player.ServerPlayer)"""
-        super(__system.MemoryConnection, self).setPlayer(arg0)
-
     @staticmethod
     @overload
     def getRx() -> int:
         """public static int dev.ultreon.quantum.network.system.MemoryConnection.getRx()"""
         return int.__wrap(__MemoryConnection.getRx())
+
+    @override
+    @overload
+    def setPlayer(self, arg0: 'ServerPlayer'):
+        """public void dev.ultreon.quantum.network.system.MemoryConnection.setPlayer(dev.ultreon.quantum.server.player.ServerPlayer)"""
+        super(__system.MemoryConnection, self).setPlayer(arg0)
 
     @overload
     def on3rdPartyDisconnect(self, arg0: str) -> 'util.Result':
@@ -687,7 +687,7 @@ __Object = __Object
 import java.lang.Integer as __int
 from builtins import int
  
-class ClientTcpConnection(network.__Connection, system.Connection):
+class ClientTcpConnection():
     """dev.ultreon.quantum.client.network.system.ClientTcpConnection"""
  
     @staticmethod

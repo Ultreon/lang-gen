@@ -305,8 +305,8 @@ class TooltipManager():
  
 # CLASS: com.badlogic.gdx.scenes.scene2d.ui.TextField$DefaultOnscreenKeyboard
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 import java.lang.Long as __long
@@ -322,7 +322,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DefaultOnscreenKeyboard(__OnscreenKeyboard, OnscreenKeyboard):
+class DefaultOnscreenKeyboard():
     """com.badlogic.gdx.scenes.scene2d.ui.TextField.DefaultOnscreenKeyboard"""
  
     @staticmethod
@@ -505,7 +505,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label as __Label_LabelStyle
 __LabelStyle = __Label_LabelStyle.LabelStyle
 from builtins import int
  
-class Label(__Widget, Widget):
+class Label():
     """com.badlogic.gdx.scenes.scene2d.ui.Label"""
  
     @staticmethod
@@ -1551,7 +1551,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SliderStyle(__ProgressBarStyle, ProgressBarStyle):
+class SliderStyle():
     """com.badlogic.gdx.scenes.scene2d.ui.Slider.SliderStyle"""
  
     @staticmethod
@@ -1689,7 +1689,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Debug(__Enum, Enum):
+class Debug():
     """com.badlogic.gdx.scenes.scene2d.ui.Table.Debug"""
  
     @staticmethod
@@ -2103,7 +2103,7 @@ except ImportError:
 
 from builtins import int
  
-class SplitPane(__WidgetGroup, WidgetGroup):
+class SplitPane():
     """com.badlogic.gdx.scenes.scene2d.ui.SplitPane"""
  
     @staticmethod
@@ -3103,7 +3103,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TextTooltip(__Tooltip, Tooltip):
+class TextTooltip():
     """com.badlogic.gdx.scenes.scene2d.ui.TextTooltip"""
  
     @staticmethod
@@ -3375,7 +3375,7 @@ __TextFieldClickListener = __TextField_TextFieldClickListener.TextFieldClickList
 from builtins import bool
 from builtins import int
  
-class TextAreaListener(__TextFieldClickListener, TextFieldClickListener):
+class TextAreaListener():
     """com.badlogic.gdx.scenes.scene2d.ui.TextArea.TextAreaListener"""
  
     @staticmethod
@@ -3552,15 +3552,15 @@ class TextAreaListener(__TextFieldClickListener, TextFieldClickListener):
 
     @override
     @overload
-    def setTapSquareSize(self, arg0: float):
-        """public void com.badlogic.gdx.scenes.scene2d.utils.ClickListener.setTapSquareSize(float)"""
-        super(__utils.ClickListener, self).setTapSquareSize(__float.valueOf(arg0))
-
-    @override
-    @overload
     def isPressed(self) -> bool:
         """public boolean com.badlogic.gdx.scenes.scene2d.utils.ClickListener.isPressed()"""
         return bool.__wrap(super(utils.ClickListener, self).isPressed())
+
+    @override
+    @overload
+    def setTapSquareSize(self, arg0: float):
+        """public void com.badlogic.gdx.scenes.scene2d.utils.ClickListener.setTapSquareSize(float)"""
+        super(__utils.ClickListener, self).setTapSquareSize(__float.valueOf(arg0))
 
     @override
     @overload
@@ -3681,7 +3681,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TextFieldClickListener(scene2d.__ClickListener, utils.ClickListener):
+class TextFieldClickListener():
     """com.badlogic.gdx.scenes.scene2d.ui.TextField.TextFieldClickListener"""
  
     @staticmethod
@@ -3865,15 +3865,15 @@ class TextFieldClickListener(scene2d.__ClickListener, utils.ClickListener):
 
     @override
     @overload
-    def setTapSquareSize(self, arg0: float):
-        """public void com.badlogic.gdx.scenes.scene2d.utils.ClickListener.setTapSquareSize(float)"""
-        super(__utils.ClickListener, self).setTapSquareSize(__float.valueOf(arg0))
-
-    @override
-    @overload
     def isPressed(self) -> bool:
         """public boolean com.badlogic.gdx.scenes.scene2d.utils.ClickListener.isPressed()"""
         return bool.__wrap(super(utils.ClickListener, self).isPressed())
+
+    @override
+    @overload
+    def setTapSquareSize(self, arg0: float):
+        """public void com.badlogic.gdx.scenes.scene2d.utils.ClickListener.setTapSquareSize(float)"""
+        super(__utils.ClickListener, self).setTapSquareSize(__float.valueOf(arg0))
 
     @overload
     def keyTyped(self, arg0: 'InputEvent', arg1: str) -> bool:
@@ -3995,9 +3995,9 @@ try:
 except ImportError:
     utils = __import_once__("pygdx.utils")
 
+from pyquantum_helper import override
 import com.badlogic.gdx.graphics.g2d.TextureAtlas as __TextureAtlas
 __TextureAtlas = __TextureAtlas
-from pyquantum_helper import override
 import java.lang.Object as __object
 import com.badlogic.gdx.utils.ObjectMap as __ObjectMap
 __ObjectMap = __ObjectMap
@@ -4028,7 +4028,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont as __BitmapFont
 __BitmapFont = __BitmapFont
 from builtins import int
  
-class Skin(pygdx.__Disposable, utils.Disposable):
+class Skin():
     """com.badlogic.gdx.scenes.scene2d.ui.Skin"""
  
     @staticmethod
@@ -4377,7 +4377,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.ProgressBar as __ProgressBar_ProgressB
 __ProgressBarStyle = __ProgressBar_ProgressBarStyle.ProgressBarStyle
 from builtins import int
  
-class ProgressBar(__Widget, Widget, scene2d.__Disableable, utils.Disableable):
+class ProgressBar():
     """com.badlogic.gdx.scenes.scene2d.ui.ProgressBar"""
  
     @staticmethod
@@ -5469,7 +5469,7 @@ except ImportError:
 
 from builtins import int
  
-class Slider(__ProgressBar, ProgressBar):
+class Slider():
     """com.badlogic.gdx.scenes.scene2d.ui.Slider"""
  
     @staticmethod
@@ -6496,7 +6496,7 @@ except ImportError:
 
 from builtins import int
  
-class SelectBoxScrollPane(__ScrollPane, ScrollPane):
+class SelectBoxScrollPane():
     """com.badlogic.gdx.scenes.scene2d.ui.SelectBox.SelectBoxScrollPane"""
  
     @staticmethod
@@ -7825,7 +7825,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ImageButtonStyle(__ButtonStyle, ButtonStyle):
+class ImageButtonStyle():
     """com.badlogic.gdx.scenes.scene2d.ui.ImageButton.ImageButtonStyle"""
  
     @staticmethod
@@ -8020,7 +8020,7 @@ except ImportError:
 
 from builtins import int
  
-class VerticalGroup(__WidgetGroup, WidgetGroup):
+class VerticalGroup():
     """com.badlogic.gdx.scenes.scene2d.ui.VerticalGroup"""
  
     @staticmethod
@@ -9198,7 +9198,7 @@ except ImportError:
 
 from builtins import int
  
-class ScrollPane(__WidgetGroup, WidgetGroup):
+class ScrollPane():
     """com.badlogic.gdx.scenes.scene2d.ui.ScrollPane"""
  
     @staticmethod
@@ -10516,7 +10516,7 @@ except ImportError:
 
 from builtins import int
  
-class Image(__Widget, Widget):
+class Image():
     """com.badlogic.gdx.scenes.scene2d.ui.Image"""
  
     @staticmethod
@@ -11410,7 +11410,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Tooltip(scenes.__InputListener, scene2d.InputListener):
+class Tooltip():
     """com.badlogic.gdx.scenes.scene2d.ui.Tooltip"""
  
     @staticmethod
@@ -11908,7 +11908,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ImageTextButtonStyle(__TextButtonStyle, TextButtonStyle):
+class ImageTextButtonStyle():
     """com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton.ImageTextButtonStyle"""
  
     @staticmethod
@@ -12153,7 +12153,7 @@ except ImportError:
 
 from builtins import int
  
-class List(__Widget, Widget, scene2d.__Cullable, utils.Cullable):
+class List():
     """com.badlogic.gdx.scenes.scene2d.ui.List"""
  
     @staticmethod
@@ -13070,7 +13070,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TextButtonStyle(__ButtonStyle, ButtonStyle):
+class TextButtonStyle():
     """com.badlogic.gdx.scenes.scene2d.ui.TextButton.TextButtonStyle"""
  
     @staticmethod
@@ -13562,7 +13562,7 @@ except ImportError:
 
 from builtins import int
  
-class SelectBox(__Widget, Widget, scene2d.__Disableable, utils.Disableable):
+class SelectBox():
     """com.badlogic.gdx.scenes.scene2d.ui.SelectBox"""
  
     @staticmethod
@@ -15023,7 +15023,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.Drawable as __Drawable
 __Drawable = __Drawable
 from builtins import int
  
-class TextButton(__Button, Button):
+class TextButton():
     """com.badlogic.gdx.scenes.scene2d.ui.TextButton"""
  
     @staticmethod
@@ -16474,7 +16474,7 @@ except ImportError:
 
 from builtins import int
  
-class Stack(__WidgetGroup, WidgetGroup):
+class Stack():
     """com.badlogic.gdx.scenes.scene2d.ui.Stack"""
  
     @staticmethod
@@ -17404,7 +17404,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Fixed(__Value, Value):
+class Fixed():
     """com.badlogic.gdx.scenes.scene2d.ui.Value.Fixed"""
  
     @staticmethod
@@ -17646,7 +17646,7 @@ __Label = __Label
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable as __Drawable
 __Drawable = __Drawable
  
-class CheckBox(__TextButton, TextButton):
+class CheckBox():
     """com.badlogic.gdx.scenes.scene2d.ui.CheckBox"""
  
     @staticmethod
@@ -19117,7 +19117,7 @@ except ImportError:
 
 from builtins import int
  
-class TextField(__Widget, Widget, scene2d.__Disableable, utils.Disableable):
+class TextField():
     """com.badlogic.gdx.scenes.scene2d.ui.TextField"""
  
     @staticmethod
@@ -20189,7 +20189,7 @@ __Label = __Label
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable as __Drawable
 __Drawable = __Drawable
  
-class ImageTextButton(__Button, Button):
+class ImageTextButton():
     """com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton"""
  
     @staticmethod
@@ -21729,7 +21729,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DigitsOnlyFilter(__TextFieldFilter, TextFieldFilter):
+class DigitsOnlyFilter():
     """com.badlogic.gdx.scenes.scene2d.ui.TextField.TextFieldFilter.DigitsOnlyFilter"""
  
     @staticmethod
@@ -21915,7 +21915,7 @@ except ImportError:
 
 from builtins import int
  
-class TextArea(__TextField, TextField):
+class TextArea():
     """com.badlogic.gdx.scenes.scene2d.ui.TextArea"""
  
     @staticmethod
@@ -23059,7 +23059,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.Drawable as __Drawable
 __Drawable = __Drawable
 from builtins import int
  
-class Window(__Table, Table):
+class Window():
     """com.badlogic.gdx.scenes.scene2d.ui.Window"""
  
     @staticmethod
@@ -24773,7 +24773,7 @@ except ImportError:
 
 from builtins import int
  
-class WidgetGroup(scenes.__Group, scene2d.Group, scene2d.__Layout, utils.Layout):
+class WidgetGroup():
     """com.badlogic.gdx.scenes.scene2d.ui.WidgetGroup"""
  
     @staticmethod
@@ -25758,7 +25758,7 @@ except ImportError:
 
 from builtins import int
  
-class Tree(__WidgetGroup, WidgetGroup):
+class Tree():
     """com.badlogic.gdx.scenes.scene2d.ui.Tree"""
  
     @staticmethod
@@ -27134,7 +27134,7 @@ except ImportError:
 
 from builtins import int
  
-class CheckBoxStyle(__TextButtonStyle, TextButtonStyle):
+class CheckBoxStyle():
     """com.badlogic.gdx.scenes.scene2d.ui.CheckBox.CheckBoxStyle"""
  
     @staticmethod
@@ -27346,7 +27346,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.Drawable as __Drawable
 __Drawable = __Drawable
 from builtins import int
  
-class Dialog(__Window, Window):
+class Dialog():
     """com.badlogic.gdx.scenes.scene2d.ui.Dialog"""
  
     @staticmethod
@@ -29009,7 +29009,7 @@ except ImportError:
 
 from builtins import int
  
-class Widget(scenes.__Actor, scene2d.Actor, scene2d.__Layout, utils.Layout):
+class Widget():
     """com.badlogic.gdx.scenes.scene2d.ui.Widget"""
  
     @staticmethod
@@ -29872,7 +29872,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.Drawable as __Drawable
 __Drawable = __Drawable
 from builtins import int
  
-class ImageButton(__Button, Button):
+class ImageButton():
     """com.badlogic.gdx.scenes.scene2d.ui.ImageButton"""
  
     @staticmethod
@@ -31330,7 +31330,7 @@ except ImportError:
 
 from builtins import int
  
-class ParticleEffectActor(scenes.__Actor, scene2d.Actor, pygdx.__Disposable, utils.Disposable):
+class ParticleEffectActor():
     """com.badlogic.gdx.scenes.scene2d.ui.ParticleEffectActor"""
  
     @staticmethod
@@ -32138,7 +32138,7 @@ except ImportError:
 
 from builtins import int
  
-class Touchpad(__Widget, Widget):
+class Touchpad():
     """com.badlogic.gdx.scenes.scene2d.ui.Touchpad"""
  
     @staticmethod
@@ -33224,7 +33224,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.Drawable as __Drawable
 __Drawable = __Drawable
 from builtins import int
  
-class Table(__WidgetGroup, WidgetGroup):
+class Table():
     """com.badlogic.gdx.scenes.scene2d.ui.Table"""
  
     @staticmethod
@@ -34348,14 +34348,14 @@ class Table(__WidgetGroup, WidgetGroup):
         return bool.__wrap(super(scene2d.Actor, self).isVisible())
 
     @overload
-    def pad(self, arg0: 'Value') -> 'Table':
-        """public com.badlogic.gdx.scenes.scene2d.ui.Table com.badlogic.gdx.scenes.scene2d.ui.Table.pad(com.badlogic.gdx.scenes.scene2d.ui.Value)"""
-        return 'Table'.__wrap(super(__Table, self).pad(arg0))
-
-    @overload
     def getColumns(self) -> int:
         """public int com.badlogic.gdx.scenes.scene2d.ui.Table.getColumns()"""
         return int.__wrap(super(Table, self).getColumns())
+
+    @overload
+    def pad(self, arg0: 'Value') -> 'Table':
+        """public com.badlogic.gdx.scenes.scene2d.ui.Table com.badlogic.gdx.scenes.scene2d.ui.Table.pad(com.badlogic.gdx.scenes.scene2d.ui.Value)"""
+        return 'Table'.__wrap(super(__Table, self).pad(arg0))
 
     @overload
     def getBackground(self) -> 'utils.Drawable':
@@ -34542,7 +34542,7 @@ except ImportError:
 
 from builtins import int
  
-class HorizontalGroup(__WidgetGroup, WidgetGroup):
+class HorizontalGroup():
     """com.badlogic.gdx.scenes.scene2d.ui.HorizontalGroup"""
  
     @staticmethod
@@ -35757,7 +35757,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.Drawable as __Drawable
 __Drawable = __Drawable
 from builtins import int
  
-class Button(__Table, Table, scene2d.__Disableable, utils.Disableable):
+class Button():
     """com.badlogic.gdx.scenes.scene2d.ui.Button"""
  
     @staticmethod
@@ -37238,7 +37238,7 @@ except ImportError:
 
 from builtins import int
  
-class Container(__WidgetGroup, WidgetGroup):
+class Container():
     """com.badlogic.gdx.scenes.scene2d.ui.Container"""
  
     @staticmethod
@@ -38599,7 +38599,7 @@ __Value = __Value
 from builtins import bool
 from builtins import int
  
-class Cell(pygdx.__Pool_Poolable, utils.Pool$Poolable):
+class Cell():
     """com.badlogic.gdx.scenes.scene2d.ui.Cell"""
  
     @staticmethod
@@ -38868,14 +38868,14 @@ class Cell(pygdx.__Pool_Poolable, utils.Pool$Poolable):
         return 'Cell'.__wrap(super(__Cell, self).padLeft(__float.valueOf(arg0)))
 
     @overload
-    def padBottom(self, arg0: float) -> 'Cell':
-        """public com.badlogic.gdx.scenes.scene2d.ui.Cell<T> com.badlogic.gdx.scenes.scene2d.ui.Cell.padBottom(float)"""
-        return 'Cell'.__wrap(super(__Cell, self).padBottom(__float.valueOf(arg0)))
-
-    @overload
     def align(self, arg0: int) -> 'Cell':
         """public com.badlogic.gdx.scenes.scene2d.ui.Cell<T> com.badlogic.gdx.scenes.scene2d.ui.Cell.align(int)"""
         return 'Cell'.__wrap(super(__Cell, self).align(__int.valueOf(arg0)))
+
+    @overload
+    def padBottom(self, arg0: float) -> 'Cell':
+        """public com.badlogic.gdx.scenes.scene2d.ui.Cell<T> com.badlogic.gdx.scenes.scene2d.ui.Cell.padBottom(float)"""
+        return 'Cell'.__wrap(super(__Cell, self).padBottom(__float.valueOf(arg0)))
 
     @overload
     def getPadTop(self) -> float:
@@ -39455,7 +39455,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DebugRect(pygdx.__Rectangle, math.Rectangle):
+class DebugRect():
     """com.badlogic.gdx.scenes.scene2d.ui.Table.DebugRect"""
  
     @staticmethod

@@ -40,7 +40,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class TiledMapTileSet(__Iterable, Iterable):
+class TiledMapTileSet():
     """com.badlogic.gdx.maps.tiled.TiledMapTileSet"""
  
     @staticmethod
@@ -231,7 +231,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class TiledMapTileSet(__Iterable, Iterable):
+class TiledMapTileSet():
     """com.badlogic.gdx.maps.tiled.TiledMapTileSet"""
  
     @staticmethod
@@ -442,7 +442,7 @@ import com.badlogic.gdx.maps.tiled.BaseTmxMapLoader as __BaseTmxMapLoader
 __BaseTmxMapLoader = __BaseTmxMapLoader
 from builtins import int
  
-class AtlasTmxMapLoader(__BaseTmxMapLoader, BaseTmxMapLoader):
+class AtlasTmxMapLoader():
     """com.badlogic.gdx.maps.tiled.AtlasTmxMapLoader"""
  
     @staticmethod
@@ -613,7 +613,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Parameters(pygdx.__AssetLoaderParameters, assets.AssetLoaderParameters):
+class Parameters():
     """com.badlogic.gdx.maps.tiled.BaseTmxMapLoader.Parameters"""
  
     @staticmethod
@@ -743,7 +743,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class TiledMapTileSets(__Iterable, Iterable):
+class TiledMapTileSets():
     """com.badlogic.gdx.maps.tiled.TiledMapTileSets"""
  
     @staticmethod
@@ -925,7 +925,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TiledMapTileLayer(pygdx.__MapLayer, maps.MapLayer):
+class TiledMapTileLayer():
     """com.badlogic.gdx.maps.tiled.TiledMapTileLayer"""
  
     @staticmethod
@@ -1175,9 +1175,9 @@ class TiledMapTileLayer(pygdx.__MapLayer, maps.MapLayer):
 # CLASS: com.badlogic.gdx.maps.tiled.AtlasTmxMapLoader$AtlasResolver$AssetManagerAtlasResolver
 from pyquantum_helper import import_once as __import_once__
 from builtins import str
+from pyquantum_helper import override
 import com.badlogic.gdx.graphics.g2d.TextureAtlas as __TextureAtlas
 __TextureAtlas = __TextureAtlas
-from pyquantum_helper import override
 try:
     from pygdx.graphics import g2d
 except ImportError:
@@ -1206,7 +1206,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AssetManagerAtlasResolver(__AtlasResolver, AtlasResolver):
+class AssetManagerAtlasResolver():
     """com.badlogic.gdx.maps.tiled.AtlasTmxMapLoader.AtlasResolver.AssetManagerAtlasResolver"""
  
     @staticmethod
@@ -1360,7 +1360,7 @@ __BaseTmxMapLoader = __BaseTmxMapLoader
 from builtins import bool
 from builtins import int
  
-class BaseTmxMapLoader(ABC, assets.__AsynchronousAssetLoader, loaders.AsynchronousAssetLoader):
+class BaseTmxMapLoader(ABC):
     """com.badlogic.gdx.maps.tiled.BaseTmxMapLoader"""
  
     @staticmethod
@@ -1506,7 +1506,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Parameters(__Parameters, Parameters):
+class Parameters():
     """com.badlogic.gdx.maps.tiled.TmxMapLoader.Parameters"""
  
     @staticmethod
@@ -1743,7 +1743,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TiledMap(pygdx.__Map, maps.Map):
+class TiledMap():
     """com.badlogic.gdx.maps.tiled.TiledMap"""
  
     @staticmethod
@@ -2033,9 +2033,9 @@ from pyquantum_helper import import_once as __import_once__
 from builtins import str
 import com.badlogic.gdx.maps.tiled.AtlasTmxMapLoader as __AtlasTmxMapLoader_AtlasResolver_DirectAtlasResolver
 __DirectAtlasResolver = __AtlasTmxMapLoader_AtlasResolver_DirectAtlasResolver.AtlasResolver.DirectAtlasResolver
+from pyquantum_helper import override
 import com.badlogic.gdx.graphics.g2d.TextureAtlas as __TextureAtlas
 __TextureAtlas = __TextureAtlas
-from pyquantum_helper import override
 try:
     from pygdx.graphics import g2d
 except ImportError:
@@ -2057,7 +2057,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DirectAtlasResolver(__AtlasResolver, AtlasResolver):
+class DirectAtlasResolver():
     """com.badlogic.gdx.maps.tiled.AtlasTmxMapLoader.AtlasResolver.DirectAtlasResolver"""
  
     @staticmethod
@@ -2214,7 +2214,7 @@ import com.badlogic.gdx.maps.tiled.BaseTmxMapLoader as __BaseTmxMapLoader
 __BaseTmxMapLoader = __BaseTmxMapLoader
 from builtins import int
  
-class TmxMapLoader(__BaseTmxMapLoader, BaseTmxMapLoader):
+class TmxMapLoader():
     """com.badlogic.gdx.maps.tiled.TmxMapLoader"""
  
     @staticmethod
@@ -2391,7 +2391,7 @@ except ImportError:
 
 from builtins import int
  
-class TiledMapRenderer(ABC, pygdx.__MapRenderer, maps.MapRenderer):
+class TiledMapRenderer(ABC):
     """com.badlogic.gdx.maps.tiled.TiledMapRenderer"""
  
     @staticmethod
@@ -2469,7 +2469,7 @@ from abc import abstractmethod, ABC
 import com.badlogic.gdx.maps.ImageResolver as __ImageResolver
 __ImageResolver = __ImageResolver
  
-class AtlasResolver(ABC, pygdx.__ImageResolver, maps.ImageResolver):
+class AtlasResolver(ABC):
     """com.badlogic.gdx.maps.tiled.AtlasTmxMapLoader.AtlasResolver"""
  
     @staticmethod
@@ -2528,7 +2528,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Parameters(pygdx.__AssetLoaderParameters, assets.AssetLoaderParameters):
+class Parameters():
     """com.badlogic.gdx.maps.tiled.TideMapLoader.Parameters"""
  
     @staticmethod
@@ -2667,7 +2667,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TiledMapImageLayer(pygdx.__MapLayer, maps.MapLayer):
+class TiledMapImageLayer():
     """com.badlogic.gdx.maps.tiled.TiledMapImageLayer"""
  
     @staticmethod
@@ -2962,7 +2962,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TideMapLoader(assets.__SynchronousAssetLoader, loaders.SynchronousAssetLoader):
+class TideMapLoader():
     """com.badlogic.gdx.maps.tiled.TideMapLoader"""
  
     @staticmethod
@@ -3105,7 +3105,7 @@ import com.badlogic.gdx.maps.tiled.AtlasTmxMapLoader as __AtlasTmxMapLoader_Atla
 __AtlasTiledMapLoaderParameters = __AtlasTmxMapLoader_AtlasTiledMapLoaderParameters.AtlasTiledMapLoaderParameters
 from builtins import int
  
-class AtlasTiledMapLoaderParameters(__Parameters, Parameters):
+class AtlasTiledMapLoaderParameters():
     """com.badlogic.gdx.maps.tiled.AtlasTmxMapLoader.AtlasTiledMapLoaderParameters"""
  
     @staticmethod
@@ -3229,7 +3229,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class BlendMode(__Enum, Enum):
+class BlendMode():
     """com.badlogic.gdx.maps.tiled.TiledMapTile.BlendMode"""
  
     @staticmethod

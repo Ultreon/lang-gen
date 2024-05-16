@@ -407,7 +407,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PFXPool(pygdx.__Pool, utils.Pool):
+class PFXPool():
     """dev.ultreon.quantum.client.particle.PFXPool"""
  
     @staticmethod

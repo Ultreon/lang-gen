@@ -5,13 +5,14 @@ from overload import overload
  
 import java.util.function.Consumer as __Consumer
 __Consumer = __Consumer
+from pyquantum_helper import override
 import dev.ultreon.libs.functions.v0.consumer.DoubleConsumer as __DoubleConsumer
 __DoubleConsumer = __DoubleConsumer
 from abc import abstractmethod, ABC
 import java.lang.Double as Double
 import java.util.function.Consumer as Consumer
  
-class DoubleConsumer(ABC, __Consumer, Consumer):
+class DoubleConsumer(ABC):
     """dev.ultreon.libs.functions.v0.consumer.DoubleConsumer"""
  
     @staticmethod
@@ -62,13 +63,14 @@ class DoubleConsumer(ABC, __Consumer, Consumer):
 # CLASS: dev.ultreon.libs.functions.v0.consumer.DoubleConsumer
 import java.util.function.Consumer as __Consumer
 __Consumer = __Consumer
+from pyquantum_helper import override
 import dev.ultreon.libs.functions.v0.consumer.DoubleConsumer as __DoubleConsumer
 __DoubleConsumer = __DoubleConsumer
 from abc import abstractmethod, ABC
 import java.lang.Double as Double
 import java.util.function.Consumer as Consumer
  
-class DoubleConsumer(ABC, __Consumer, Consumer):
+class DoubleConsumer(ABC):
     """dev.ultreon.libs.functions.v0.consumer.DoubleConsumer"""
  
     @staticmethod
@@ -124,11 +126,12 @@ import java.util.function.Consumer as __Consumer
 __Consumer = __Consumer
 import dev.ultreon.libs.functions.v0.consumer.ByteConsumer as __ByteConsumer
 __ByteConsumer = __ByteConsumer
+from pyquantum_helper import override
 from abc import abstractmethod, ABC
 import java.lang.Byte as Byte
 import java.util.function.Consumer as Consumer
  
-class ByteConsumer(ABC, __Consumer, Consumer):
+class ByteConsumer(ABC):
     """dev.ultreon.libs.functions.v0.consumer.ByteConsumer"""
  
     @staticmethod
@@ -218,13 +221,14 @@ class TriConsumer(ABC):
 # CLASS: dev.ultreon.libs.functions.v0.consumer.IntConsumer
 import java.util.function.Consumer as __Consumer
 __Consumer = __Consumer
+from pyquantum_helper import override
 import java.lang.Integer as Integer
 import dev.ultreon.libs.functions.v0.consumer.IntConsumer as __IntConsumer
 __IntConsumer = __IntConsumer
 from abc import abstractmethod, ABC
 import java.util.function.Consumer as Consumer
  
-class IntConsumer(ABC, __Consumer, Consumer):
+class IntConsumer(ABC):
     """dev.ultreon.libs.functions.v0.consumer.IntConsumer"""
  
     @staticmethod
@@ -273,13 +277,14 @@ class IntConsumer(ABC, __Consumer, Consumer):
 # CLASS: dev.ultreon.libs.functions.v0.consumer.CharConsumer
 import java.util.function.Consumer as __Consumer
 __Consumer = __Consumer
+from pyquantum_helper import override
 import dev.ultreon.libs.functions.v0.consumer.CharConsumer as __CharConsumer
 __CharConsumer = __CharConsumer
 import java.lang.Character as Character
 from abc import abstractmethod, ABC
 import java.util.function.Consumer as Consumer
  
-class CharConsumer(ABC, __Consumer, Consumer):
+class CharConsumer(ABC):
     """dev.ultreon.libs.functions.v0.consumer.CharConsumer"""
  
     @staticmethod
@@ -329,12 +334,13 @@ class CharConsumer(ABC, __Consumer, Consumer):
 import java.lang.Boolean as Boolean
 import java.util.function.Consumer as __Consumer
 __Consumer = __Consumer
+from pyquantum_helper import override
 import dev.ultreon.libs.functions.v0.consumer.BooleanConsumer as __BooleanConsumer
 __BooleanConsumer = __BooleanConsumer
 from abc import abstractmethod, ABC
 import java.util.function.Consumer as Consumer
  
-class BooleanConsumer(ABC, __Consumer, Consumer):
+class BooleanConsumer(ABC):
     """dev.ultreon.libs.functions.v0.consumer.BooleanConsumer"""
  
     @staticmethod
@@ -383,13 +389,14 @@ class BooleanConsumer(ABC, __Consumer, Consumer):
 # CLASS: dev.ultreon.libs.functions.v0.consumer.ShortConsumer
 import java.util.function.Consumer as __Consumer
 __Consumer = __Consumer
+from pyquantum_helper import override
 import java.lang.Short as Short
 import dev.ultreon.libs.functions.v0.consumer.ShortConsumer as __ShortConsumer
 __ShortConsumer = __ShortConsumer
 from abc import abstractmethod, ABC
 import java.util.function.Consumer as Consumer
  
-class ShortConsumer(ABC, __Consumer, Consumer):
+class ShortConsumer(ABC):
     """dev.ultreon.libs.functions.v0.consumer.ShortConsumer"""
  
     @staticmethod
@@ -438,13 +445,14 @@ class ShortConsumer(ABC, __Consumer, Consumer):
 # CLASS: dev.ultreon.libs.functions.v0.consumer.FloatConsumer
 import java.util.function.Consumer as __Consumer
 __Consumer = __Consumer
+from pyquantum_helper import override
 import dev.ultreon.libs.functions.v0.consumer.FloatConsumer as __FloatConsumer
 __FloatConsumer = __FloatConsumer
 import java.lang.Float as Float
 from abc import abstractmethod, ABC
 import java.util.function.Consumer as Consumer
  
-class FloatConsumer(ABC, __Consumer, Consumer):
+class FloatConsumer(ABC):
     """dev.ultreon.libs.functions.v0.consumer.FloatConsumer"""
  
     @staticmethod
@@ -494,12 +502,13 @@ class FloatConsumer(ABC, __Consumer, Consumer):
 import java.util.function.Consumer as __Consumer
 __Consumer = __Consumer
 import java.lang.Long as Long
+from pyquantum_helper import override
 import dev.ultreon.libs.functions.v0.consumer.LongConsumer as __LongConsumer
 __LongConsumer = __LongConsumer
 from abc import abstractmethod, ABC
 import java.util.function.Consumer as Consumer
  
-class LongConsumer(ABC, __Consumer, Consumer):
+class LongConsumer(ABC):
     """dev.ultreon.libs.functions.v0.consumer.LongConsumer"""
  
     @staticmethod

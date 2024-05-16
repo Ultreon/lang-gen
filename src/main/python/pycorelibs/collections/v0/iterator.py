@@ -6,6 +6,7 @@ from overload import overload
 from pyquantum_helper import import_once as __import_once__
 import dev.ultreon.libs.collections.v0.iterator.CharIterator as __CharIterator
 __CharIterator = __CharIterator
+from pyquantum_helper import override
 import java.util.Iterator as __Iterator
 __Iterator = __Iterator
 import java.lang.Character as __Character
@@ -19,7 +20,7 @@ except ImportError:
 
 import java.util.function.Consumer as Consumer
  
-class CharIterator(ABC, __Iterator, Iterator):
+class CharIterator(ABC):
     """dev.ultreon.libs.collections.v0.iterator.CharIterator"""
  
     @staticmethod
@@ -89,6 +90,7 @@ class CharIterator(ABC, __Iterator, Iterator):
 from pyquantum_helper import import_once as __import_once__
 import dev.ultreon.libs.collections.v0.iterator.CharIterator as __CharIterator
 __CharIterator = __CharIterator
+from pyquantum_helper import override
 import java.util.Iterator as __Iterator
 __Iterator = __Iterator
 import java.lang.Character as __Character
@@ -102,7 +104,7 @@ except ImportError:
 
 import java.util.function.Consumer as Consumer
  
-class CharIterator(ABC, __Iterator, Iterator):
+class CharIterator(ABC):
     """dev.ultreon.libs.collections.v0.iterator.CharIterator"""
  
     @staticmethod
@@ -174,6 +176,7 @@ class CharIterator(ABC, __Iterator, Iterator):
 # CLASS: dev.ultreon.libs.collections.v0.iterator.ShortIterable
 from pyquantum_helper import import_once as __import_once__
 import java.util.Spliterator as Spliterator
+from pyquantum_helper import override
 import dev.ultreon.libs.collections.v0.iterator.ShortIterable as __ShortIterable
 __ShortIterable = __ShortIterable
 from abc import abstractmethod, ABC
@@ -188,7 +191,7 @@ import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
 import java.util.function.Consumer as Consumer
  
-class ShortIterable(ABC, __Iterable, Iterable):
+class ShortIterable(ABC):
     """dev.ultreon.libs.collections.v0.iterator.ShortIterable"""
  
     @staticmethod
@@ -244,6 +247,7 @@ class ShortIterable(ABC, __Iterable, Iterable):
 # CLASS: dev.ultreon.libs.collections.v0.iterator.FloatIterable
 from pyquantum_helper import import_once as __import_once__
 import java.util.Spliterator as Spliterator
+from pyquantum_helper import override
 from abc import abstractmethod, ABC
 import dev.ultreon.libs.collections.v0.iterator.FloatIterable as __FloatIterable
 __FloatIterable = __FloatIterable
@@ -258,7 +262,7 @@ import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
 import java.util.function.Consumer as Consumer
  
-class FloatIterable(ABC, __Iterable, Iterable):
+class FloatIterable(ABC):
     """dev.ultreon.libs.collections.v0.iterator.FloatIterable"""
  
     @staticmethod
@@ -316,6 +320,7 @@ from pyquantum_helper import import_once as __import_once__
 import dev.ultreon.libs.collections.v0.iterator.FloatIterator as __FloatIterator
 __FloatIterator = __FloatIterator
 from pyquantum_helper import transform as __transform
+from pyquantum_helper import override
 import java.util.Iterator as __Iterator
 __Iterator = __Iterator
 import java.lang.Float as Float
@@ -327,7 +332,7 @@ except ImportError:
 
 import java.util.function.Consumer as Consumer
  
-class FloatIterator(ABC, __Iterator, Iterator):
+class FloatIterator(ABC):
     """dev.ultreon.libs.collections.v0.iterator.FloatIterator"""
  
     @staticmethod
@@ -394,6 +399,7 @@ class FloatIterator(ABC, __Iterator, Iterator):
 # CLASS: dev.ultreon.libs.collections.v0.iterator.DoubleIterable
 from pyquantum_helper import import_once as __import_once__
 import java.util.Spliterator as Spliterator
+from pyquantum_helper import override
 import dev.ultreon.libs.collections.v0.iterator.DoubleIterable as __DoubleIterable
 __DoubleIterable = __DoubleIterable
 from abc import abstractmethod, ABC
@@ -408,7 +414,7 @@ import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
 import java.util.function.Consumer as Consumer
  
-class DoubleIterable(ABC, __Iterable, Iterable):
+class DoubleIterable(ABC):
     """dev.ultreon.libs.collections.v0.iterator.DoubleIterable"""
  
     @staticmethod
@@ -464,6 +470,7 @@ class DoubleIterable(ABC, __Iterable, Iterable):
 # CLASS: dev.ultreon.libs.collections.v0.iterator.DoubleIterator
 from pyquantum_helper import import_once as __import_once__
 from pyquantum_helper import transform as __transform
+from pyquantum_helper import override
 import java.util.Iterator as __Iterator
 __Iterator = __Iterator
 import dev.ultreon.libs.collections.v0.iterator.DoubleIterator as __DoubleIterator
@@ -477,7 +484,7 @@ except ImportError:
 
 import java.util.function.Consumer as Consumer
  
-class DoubleIterator(ABC, __Iterator, Iterator):
+class DoubleIterator(ABC):
     """dev.ultreon.libs.collections.v0.iterator.DoubleIterator"""
  
     @staticmethod
@@ -546,6 +553,7 @@ from pyquantum_helper import import_once as __import_once__
 import dev.ultreon.libs.collections.v0.iterator.IntIterable as __IntIterable
 __IntIterable = __IntIterable
 import java.util.Spliterator as Spliterator
+from pyquantum_helper import override
 from abc import abstractmethod, ABC
 try:
     from pycorelibs.functions.v0 import consumer
@@ -558,7 +566,7 @@ import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
 import java.util.function.Consumer as Consumer
  
-class IntIterable(ABC, __Iterable, Iterable):
+class IntIterable(ABC):
     """dev.ultreon.libs.collections.v0.iterator.IntIterable"""
  
     @staticmethod
@@ -614,6 +622,7 @@ class IntIterable(ABC, __Iterable, Iterable):
 # CLASS: dev.ultreon.libs.collections.v0.iterator.CharIterable
 from pyquantum_helper import import_once as __import_once__
 import java.util.Spliterator as Spliterator
+from pyquantum_helper import override
 import dev.ultreon.libs.collections.v0.iterator.CharIterable as __CharIterable
 __CharIterable = __CharIterable
 from abc import abstractmethod, ABC
@@ -628,7 +637,7 @@ import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
 import java.util.function.Consumer as Consumer
  
-class CharIterable(ABC, __Iterable, Iterable):
+class CharIterable(ABC):
     """dev.ultreon.libs.collections.v0.iterator.CharIterable"""
  
     @staticmethod
@@ -684,6 +693,7 @@ class CharIterable(ABC, __Iterable, Iterable):
 # CLASS: dev.ultreon.libs.collections.v0.iterator.LongIterator
 from pyquantum_helper import import_once as __import_once__
 from pyquantum_helper import transform as __transform
+from pyquantum_helper import override
 import java.lang.Long as Long
 import java.util.Iterator as __Iterator
 __Iterator = __Iterator
@@ -697,7 +707,7 @@ except ImportError:
 
 import java.util.function.Consumer as Consumer
  
-class LongIterator(ABC, __Iterator, Iterator):
+class LongIterator(ABC):
     """dev.ultreon.libs.collections.v0.iterator.LongIterator"""
  
     @staticmethod
@@ -764,6 +774,7 @@ class LongIterator(ABC, __Iterator, Iterator):
 # CLASS: dev.ultreon.libs.collections.v0.iterator.LongIterable
 from pyquantum_helper import import_once as __import_once__
 import java.util.Spliterator as Spliterator
+from pyquantum_helper import override
 from abc import abstractmethod, ABC
 import dev.ultreon.libs.collections.v0.iterator.LongIterable as __LongIterable
 __LongIterable = __LongIterable
@@ -778,7 +789,7 @@ import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
 import java.util.function.Consumer as Consumer
  
-class LongIterable(ABC, __Iterable, Iterable):
+class LongIterable(ABC):
     """dev.ultreon.libs.collections.v0.iterator.LongIterable"""
  
     @staticmethod
@@ -834,6 +845,7 @@ class LongIterable(ABC, __Iterable, Iterable):
 # CLASS: dev.ultreon.libs.collections.v0.iterator.BooleanIterable
 from pyquantum_helper import import_once as __import_once__
 import java.util.Spliterator as Spliterator
+from pyquantum_helper import override
 from abc import abstractmethod, ABC
 import dev.ultreon.libs.collections.v0.iterator.BooleanIterable as __BooleanIterable
 __BooleanIterable = __BooleanIterable
@@ -848,7 +860,7 @@ import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
 import java.util.function.Consumer as Consumer
  
-class BooleanIterable(ABC, __Iterable, Iterable):
+class BooleanIterable(ABC):
     """dev.ultreon.libs.collections.v0.iterator.BooleanIterable"""
  
     @staticmethod
@@ -904,6 +916,7 @@ class BooleanIterable(ABC, __Iterable, Iterable):
 # CLASS: dev.ultreon.libs.collections.v0.iterator.ByteIterator
 from pyquantum_helper import import_once as __import_once__
 from pyquantum_helper import transform as __transform
+from pyquantum_helper import override
 import java.util.Iterator as __Iterator
 __Iterator = __Iterator
 import dev.ultreon.libs.collections.v0.iterator.ByteIterator as __ByteIterator
@@ -917,7 +930,7 @@ except ImportError:
 
 import java.util.function.Consumer as Consumer
  
-class ByteIterator(ABC, __Iterator, Iterator):
+class ByteIterator(ABC):
     """dev.ultreon.libs.collections.v0.iterator.ByteIterator"""
  
     @staticmethod
@@ -984,6 +997,7 @@ class ByteIterator(ABC, __Iterator, Iterator):
 # CLASS: dev.ultreon.libs.collections.v0.iterator.IntIterator
 from pyquantum_helper import import_once as __import_once__
 from pyquantum_helper import transform as __transform
+from pyquantum_helper import override
 import java.util.Iterator as __Iterator
 __Iterator = __Iterator
 import java.lang.Integer as Integer
@@ -997,7 +1011,7 @@ except ImportError:
 
 import java.util.function.Consumer as Consumer
  
-class IntIterator(ABC, __Iterator, Iterator):
+class IntIterator(ABC):
     """dev.ultreon.libs.collections.v0.iterator.IntIterator"""
  
     @staticmethod
@@ -1064,6 +1078,7 @@ class IntIterator(ABC, __Iterator, Iterator):
 # CLASS: dev.ultreon.libs.collections.v0.iterator.BooleanIterator
 from pyquantum_helper import import_once as __import_once__
 import java.lang.Boolean as Boolean
+from pyquantum_helper import override
 import dev.ultreon.libs.collections.v0.iterator.BooleanIterator as __BooleanIterator
 __BooleanIterator = __BooleanIterator
 import java.util.Iterator as __Iterator
@@ -1078,7 +1093,7 @@ except ImportError:
 
 import java.util.function.Consumer as Consumer
  
-class BooleanIterator(ABC, __Iterator, Iterator):
+class BooleanIterator(ABC):
     """dev.ultreon.libs.collections.v0.iterator.BooleanIterator"""
  
     @staticmethod
@@ -1147,6 +1162,7 @@ from pyquantum_helper import import_once as __import_once__
 import dev.ultreon.libs.collections.v0.iterator.ByteIterable as __ByteIterable
 __ByteIterable = __ByteIterable
 import java.util.Spliterator as Spliterator
+from pyquantum_helper import override
 from abc import abstractmethod, ABC
 try:
     from pycorelibs.functions.v0 import consumer
@@ -1159,7 +1175,7 @@ import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
 import java.util.function.Consumer as Consumer
  
-class ByteIterable(ABC, __Iterable, Iterable):
+class ByteIterable(ABC):
     """dev.ultreon.libs.collections.v0.iterator.ByteIterable"""
  
     @staticmethod
@@ -1217,6 +1233,7 @@ from pyquantum_helper import import_once as __import_once__
 import dev.ultreon.libs.collections.v0.iterator.ShortIterator as __ShortIterator
 __ShortIterator = __ShortIterator
 from pyquantum_helper import transform as __transform
+from pyquantum_helper import override
 import java.lang.Short as Short
 import java.util.Iterator as __Iterator
 __Iterator = __Iterator
@@ -1228,7 +1245,7 @@ except ImportError:
 
 import java.util.function.Consumer as Consumer
  
-class ShortIterator(ABC, __Iterator, Iterator):
+class ShortIterator(ABC):
     """dev.ultreon.libs.collections.v0.iterator.ShortIterator"""
  
     @staticmethod

@@ -36,7 +36,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PrefixFileHandleResolver(assets.__FileHandleResolver, loaders.FileHandleResolver):
+class PrefixFileHandleResolver():
     """com.badlogic.gdx.assets.loaders.resolvers.PrefixFileHandleResolver"""
  
     @staticmethod
@@ -188,7 +188,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PrefixFileHandleResolver(assets.__FileHandleResolver, loaders.FileHandleResolver):
+class PrefixFileHandleResolver():
     """com.badlogic.gdx.assets.loaders.resolvers.PrefixFileHandleResolver"""
  
     @staticmethod
@@ -336,7 +336,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ExternalFileHandleResolver(assets.__FileHandleResolver, loaders.FileHandleResolver):
+class ExternalFileHandleResolver():
     """com.badlogic.gdx.assets.loaders.resolvers.ExternalFileHandleResolver"""
  
     @staticmethod
@@ -576,7 +576,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InternalFileHandleResolver(assets.__FileHandleResolver, loaders.FileHandleResolver):
+class InternalFileHandleResolver():
     """com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver"""
  
     @staticmethod
@@ -713,7 +713,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ResolutionFileResolver(assets.__FileHandleResolver, loaders.FileHandleResolver):
+class ResolutionFileResolver():
     """com.badlogic.gdx.assets.loaders.resolvers.ResolutionFileResolver"""
  
     @staticmethod
@@ -842,7 +842,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ClasspathFileHandleResolver(assets.__FileHandleResolver, loaders.FileHandleResolver):
+class ClasspathFileHandleResolver():
     """com.badlogic.gdx.assets.loaders.resolvers.ClasspathFileHandleResolver"""
  
     @staticmethod
@@ -972,7 +972,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LocalFileHandleResolver(assets.__FileHandleResolver, loaders.FileHandleResolver):
+class LocalFileHandleResolver():
     """com.badlogic.gdx.assets.loaders.resolvers.LocalFileHandleResolver"""
  
     @staticmethod
@@ -1102,7 +1102,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AbsoluteFileHandleResolver(assets.__FileHandleResolver, loaders.FileHandleResolver):
+class AbsoluteFileHandleResolver():
     """com.badlogic.gdx.assets.loaders.resolvers.AbsoluteFileHandleResolver"""
  
     @staticmethod

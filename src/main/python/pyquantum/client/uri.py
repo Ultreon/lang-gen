@@ -24,7 +24,7 @@ import dev.ultreon.quantum.client.uri.MemoryUrlHandler as __MemoryUrlHandler
 __MemoryUrlHandler = __MemoryUrlHandler
 from builtins import int
  
-class MemoryUrlHandler(__URLStreamHandlerProvider, URLStreamHandlerProvider):
+class MemoryUrlHandler():
     """dev.ultreon.quantum.client.uri.MemoryUrlHandler"""
  
     @staticmethod
@@ -151,7 +151,7 @@ import dev.ultreon.quantum.client.uri.MemoryUrlHandler as __MemoryUrlHandler
 __MemoryUrlHandler = __MemoryUrlHandler
 from builtins import int
  
-class MemoryUrlHandler(__URLStreamHandlerProvider, URLStreamHandlerProvider):
+class MemoryUrlHandler():
     """dev.ultreon.quantum.client.uri.MemoryUrlHandler"""
  
     @staticmethod
@@ -277,7 +277,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DataURL(__URLStreamHandler, URLStreamHandler):
+class DataURL():
     """dev.ultreon.quantum.client.uri.DataURL"""
  
     @staticmethod
@@ -397,7 +397,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GdxAbsoluteUrlHandler(__URLStreamHandlerProvider, URLStreamHandlerProvider):
+class GdxAbsoluteUrlHandler():
     """dev.ultreon.quantum.client.uri.GdxAbsoluteUrlHandler"""
  
     @staticmethod
@@ -522,7 +522,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DataUrlHandler(__URLStreamHandlerProvider, URLStreamHandlerProvider):
+class DataUrlHandler():
     """dev.ultreon.quantum.client.uri.DataUrlHandler"""
  
     @staticmethod
@@ -647,7 +647,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GdxInternalUrlHandler(__URLStreamHandlerProvider, URLStreamHandlerProvider):
+class GdxInternalUrlHandler():
     """dev.ultreon.quantum.client.uri.GdxInternalUrlHandler"""
  
     @staticmethod
@@ -772,7 +772,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GdxClasspathUrlHandler(__URLStreamHandlerProvider, URLStreamHandlerProvider):
+class GdxClasspathUrlHandler():
     """dev.ultreon.quantum.client.uri.GdxClasspathUrlHandler"""
  
     @staticmethod
@@ -897,7 +897,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ResourceUrlHandler(__URLStreamHandlerProvider, URLStreamHandlerProvider):
+class ResourceUrlHandler():
     """dev.ultreon.quantum.client.uri.ResourceUrlHandler"""
  
     @staticmethod
@@ -1022,7 +1022,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GdxExternalUrlHandler(__URLStreamHandlerProvider, URLStreamHandlerProvider):
+class GdxExternalUrlHandler():
     """dev.ultreon.quantum.client.uri.GdxExternalUrlHandler"""
  
     @staticmethod
@@ -1147,7 +1147,7 @@ import dev.ultreon.quantum.client.uri.GdxLocalUrlHandler as __GdxLocalUrlHandler
 __GdxLocalUrlHandler = __GdxLocalUrlHandler
 from builtins import int
  
-class GdxLocalUrlHandler(__URLStreamHandlerProvider, URLStreamHandlerProvider):
+class GdxLocalUrlHandler():
     """dev.ultreon.quantum.client.uri.GdxLocalUrlHandler"""
  
     @staticmethod

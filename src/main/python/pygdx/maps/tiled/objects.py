@@ -57,7 +57,7 @@ except ImportError:
 
 from builtins import int
  
-class TiledMapTileMapObject(maps.__TextureMapObject, objects.TextureMapObject):
+class TiledMapTileMapObject():
     """com.badlogic.gdx.maps.tiled.objects.TiledMapTileMapObject"""
  
     @staticmethod
@@ -385,7 +385,7 @@ except ImportError:
 
 from builtins import int
  
-class TiledMapTileMapObject(maps.__TextureMapObject, objects.TextureMapObject):
+class TiledMapTileMapObject():
     """com.badlogic.gdx.maps.tiled.objects.TiledMapTileMapObject"""
  
     @staticmethod

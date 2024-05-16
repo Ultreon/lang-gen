@@ -23,7 +23,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DataSelectorType(__SelectorType, SelectorType):
+class DataSelectorType():
     """dev.ultreon.quantum.api.commands.selector.type.DataSelectorType"""
  
     @staticmethod
@@ -143,7 +143,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DataSelectorType(__SelectorType, SelectorType):
+class DataSelectorType():
     """dev.ultreon.quantum.api.commands.selector.type.DataSelectorType"""
  
     @staticmethod

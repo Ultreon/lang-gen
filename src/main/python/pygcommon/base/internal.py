@@ -22,7 +22,7 @@ import com.google.common.base.internal.Finalizer as __Finalizer
 __Finalizer = __Finalizer
 from builtins import int
  
-class Finalizer(__Runnable, Runnable):
+class Finalizer():
     """com.google.common.base.internal.Finalizer"""
  
     @staticmethod
@@ -140,7 +140,7 @@ import com.google.common.base.internal.Finalizer as __Finalizer
 __Finalizer = __Finalizer
 from builtins import int
  
-class Finalizer(__Runnable, Runnable):
+class Finalizer():
     """com.google.common.base.internal.Finalizer"""
  
     @staticmethod

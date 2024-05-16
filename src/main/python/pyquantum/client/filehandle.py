@@ -65,7 +65,7 @@ import java.nio.ByteBuffer as ByteBuffer
 import java.lang.Integer as __int
 from builtins import int
  
-class DataFileHandle(pygdx.__FileHandle, files.FileHandle):
+class DataFileHandle():
     """dev.ultreon.quantum.client.filehandle.DataFileHandle"""
  
     @staticmethod
@@ -493,7 +493,7 @@ import java.nio.ByteBuffer as ByteBuffer
 import java.lang.Integer as __int
 from builtins import int
  
-class DataFileHandle(pygdx.__FileHandle, files.FileHandle):
+class DataFileHandle():
     """dev.ultreon.quantum.client.filehandle.DataFileHandle"""
  
     @staticmethod

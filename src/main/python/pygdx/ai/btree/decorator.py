@@ -35,7 +35,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class UntilFail(ai.__LoopDecorator, btree.LoopDecorator):
+class UntilFail():
     """com.badlogic.gdx.ai.btree.decorator.UntilFail"""
  
     @staticmethod
@@ -310,7 +310,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class UntilFail(ai.__LoopDecorator, btree.LoopDecorator):
+class UntilFail():
     """com.badlogic.gdx.ai.btree.decorator.UntilFail"""
  
     @staticmethod
@@ -586,7 +586,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Invert(ai.__Decorator, btree.Decorator):
+class Invert():
     """com.badlogic.gdx.ai.btree.decorator.Invert"""
  
     @staticmethod
@@ -851,7 +851,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AlwaysFail(ai.__Decorator, btree.Decorator):
+class AlwaysFail():
     """com.badlogic.gdx.ai.btree.decorator.AlwaysFail"""
  
     @staticmethod
@@ -1118,7 +1118,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Include(ai.__Decorator, btree.Decorator):
+class Include():
     """com.badlogic.gdx.ai.btree.decorator.Include"""
  
     @staticmethod
@@ -1395,7 +1395,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Random(ai.__Decorator, btree.Decorator):
+class Random():
     """com.badlogic.gdx.ai.btree.decorator.Random"""
  
     @staticmethod
@@ -1681,7 +1681,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Repeat(ai.__LoopDecorator, btree.LoopDecorator):
+class Repeat():
     """com.badlogic.gdx.ai.btree.decorator.Repeat"""
  
     @staticmethod
@@ -1960,7 +1960,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SemaphoreGuard(ai.__Decorator, btree.Decorator):
+class SemaphoreGuard():
     """com.badlogic.gdx.ai.btree.decorator.SemaphoreGuard"""
  
     @staticmethod
@@ -2239,7 +2239,7 @@ import com.badlogic.gdx.ai.btree.decorator.AlwaysSucceed as __AlwaysSucceed
 __AlwaysSucceed = __AlwaysSucceed
 from builtins import int
  
-class AlwaysSucceed(ai.__Decorator, btree.Decorator):
+class AlwaysSucceed():
     """com.badlogic.gdx.ai.btree.decorator.AlwaysSucceed"""
  
     @staticmethod
@@ -2506,7 +2506,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class UntilSuccess(ai.__LoopDecorator, btree.LoopDecorator):
+class UntilSuccess():
     """com.badlogic.gdx.ai.btree.decorator.UntilSuccess"""
  
     @staticmethod

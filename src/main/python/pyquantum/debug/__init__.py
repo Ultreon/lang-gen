@@ -698,7 +698,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Type(__Enum, Enum):
+class Type():
     """dev.ultreon.quantum.debug.Debugger.Type"""
  
     @staticmethod

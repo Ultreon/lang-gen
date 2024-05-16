@@ -23,7 +23,7 @@ import com.badlogic.gdx.ai.utils.NonBlockingSemaphore as __NonBlockingSemaphore
 __NonBlockingSemaphore = __NonBlockingSemaphore
 from builtins import int
  
-class Factory(__Factory, Factory):
+class Factory():
     """com.badlogic.gdx.ai.utils.SimpleNonBlockingSemaphore.Factory"""
  
     @staticmethod
@@ -149,7 +149,7 @@ import com.badlogic.gdx.ai.utils.NonBlockingSemaphore as __NonBlockingSemaphore
 __NonBlockingSemaphore = __NonBlockingSemaphore
 from builtins import int
  
-class Factory(__Factory, Factory):
+class Factory():
     """com.badlogic.gdx.ai.utils.SimpleNonBlockingSemaphore.Factory"""
  
     @staticmethod
@@ -734,7 +734,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SimpleNonBlockingSemaphore(__NonBlockingSemaphore, NonBlockingSemaphore):
+class SimpleNonBlockingSemaphore():
     """com.badlogic.gdx.ai.utils.SimpleNonBlockingSemaphore"""
  
     @staticmethod

@@ -349,7 +349,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Type(__Enum, Enum):
+class Type():
     """com.badlogic.ashley.core.ComponentOperationHandler.ComponentOperation.Type"""
  
     @staticmethod
@@ -1103,7 +1103,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Type(__Enum, Enum):
+class Type():
     """com.badlogic.ashley.core.EntityManager.EntityOperation.Type"""
  
     @staticmethod
@@ -1433,7 +1433,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PooledEngine(__Engine, Engine):
+class PooledEngine():
     """com.badlogic.ashley.core.PooledEngine"""
  
     @staticmethod

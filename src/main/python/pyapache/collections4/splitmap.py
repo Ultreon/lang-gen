@@ -36,7 +36,7 @@ import org.apache.commons.collections4.splitmap.AbstractIterableGetMapDecorator 
 __AbstractIterableGetMapDecorator = __AbstractIterableGetMapDecorator
 from builtins import int
  
-class AbstractIterableGetMapDecorator(pyapache.__IterableGet, collections4.IterableGet):
+class AbstractIterableGetMapDecorator():
     """org.apache.commons.collections4.splitmap.AbstractIterableGetMapDecorator"""
  
     @staticmethod
@@ -219,7 +219,7 @@ import org.apache.commons.collections4.splitmap.AbstractIterableGetMapDecorator 
 __AbstractIterableGetMapDecorator = __AbstractIterableGetMapDecorator
 from builtins import int
  
-class AbstractIterableGetMapDecorator(pyapache.__IterableGet, collections4.IterableGet):
+class AbstractIterableGetMapDecorator():
     """org.apache.commons.collections4.splitmap.AbstractIterableGetMapDecorator"""
  
     @staticmethod
@@ -407,7 +407,7 @@ import org.apache.commons.collections4.splitmap.AbstractIterableGetMapDecorator 
 __AbstractIterableGetMapDecorator = __AbstractIterableGetMapDecorator
 from builtins import int
  
-class TransformedSplitMap(__AbstractIterableGetMapDecorator, AbstractIterableGetMapDecorator, pyapache.__Put, collections4.Put, __Serializable, Serializable):
+class TransformedSplitMap():
     """org.apache.commons.collections4.splitmap.TransformedSplitMap"""
  
     @staticmethod

@@ -78,7 +78,7 @@ except ImportError:
 
 from builtins import int
  
-class CrateBlockEntity(__ContainerBlockEntity, ContainerBlockEntity):
+class CrateBlockEntity():
     """dev.ultreon.quantum.block.entity.CrateBlockEntity"""
  
     @staticmethod
@@ -355,7 +355,7 @@ except ImportError:
 
 from builtins import int
  
-class CrateBlockEntity(__ContainerBlockEntity, ContainerBlockEntity):
+class CrateBlockEntity():
     """dev.ultreon.quantum.block.entity.CrateBlockEntity"""
  
     @staticmethod
@@ -632,7 +632,7 @@ except ImportError:
 
 from builtins import int
  
-class ContainerBlockEntity(ABC, __BlockEntity, BlockEntity):
+class ContainerBlockEntity(ABC):
     """dev.ultreon.quantum.block.entity.ContainerBlockEntity"""
  
     @staticmethod

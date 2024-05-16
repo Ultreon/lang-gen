@@ -326,7 +326,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class EndOfCommand(__CommandParseException, CommandParseException):
+class EndOfCommand():
     """dev.ultreon.quantum.api.commands.CommandParseException.EndOfCommand"""
  
     @staticmethod
@@ -664,7 +664,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class IndexedCommandSpecValues(__Iterable, Iterable):
+class IndexedCommandSpecValues():
     """dev.ultreon.quantum.api.commands.IndexedCommandSpecValues"""
  
     @staticmethod
@@ -831,7 +831,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class CommandCategory(__Enum, Enum):
+class CommandCategory():
     """dev.ultreon.quantum.api.commands.CommandCategory"""
  
     @staticmethod
@@ -1229,7 +1229,7 @@ import dev.ultreon.quantum.api.commands.CommandStatus as __CommandStatus
 __CommandStatus = __CommandStatus
 from builtins import int
  
-class CommandStatus(__Enum, Enum):
+class CommandStatus():
     """dev.ultreon.quantum.api.commands.CommandStatus"""
  
     @staticmethod
@@ -1410,7 +1410,7 @@ import dev.ultreon.quantum.api.commands.CommandParseException as __CommandParseE
 __NotAtStartOfArg = __CommandParseException_NotAtStartOfArg.NotAtStartOfArg
 from builtins import int
  
-class NotAtStartOfArg(__CommandParseException, CommandParseException):
+class NotAtStartOfArg():
     """dev.ultreon.quantum.api.commands.CommandParseException.NotAtStartOfArg"""
  
     @staticmethod
@@ -1585,7 +1585,7 @@ import dev.ultreon.quantum.api.commands.CmdParam as __CmdParam
 __CmdParam = __CmdParam
 from abc import abstractmethod, ABC
  
-class CmdParam(ABC, __Annotation, Annotation):
+class CmdParam(ABC):
     """dev.ultreon.quantum.api.commands.CmdParam"""
  
     @staticmethod
@@ -1666,7 +1666,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NotADigit(__CommandParseException, CommandParseException):
+class NotADigit():
     """dev.ultreon.quantum.api.commands.CommandParseException.NotADigit"""
  
     @staticmethod
@@ -1871,7 +1871,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NotANumber(__CommandParseException, CommandParseException):
+class NotANumber():
     """dev.ultreon.quantum.api.commands.CommandParseException.NotANumber"""
  
     @staticmethod
@@ -2077,7 +2077,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class IllegalCommandException(__RuntimeException, RuntimeException):
+class IllegalCommandException():
     """dev.ultreon.quantum.api.commands.IllegalCommandException"""
  
     @staticmethod
@@ -2318,7 +2318,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class CommandSpecValues(__HashSet, HashSet):
+class CommandSpecValues():
     """dev.ultreon.quantum.api.commands.CommandSpecValues"""
  
     @staticmethod
@@ -2571,7 +2571,7 @@ __CommandArgumentMismatch = __CommandArgumentMismatch
 from builtins import bool
 from builtins import int
  
-class CommandArgumentMismatch(__IllegalArgumentException, IllegalArgumentException):
+class CommandArgumentMismatch():
     """dev.ultreon.quantum.api.commands.CommandArgumentMismatch"""
  
     @staticmethod
@@ -2780,7 +2780,7 @@ import dev.ultreon.quantum.api.commands.CommandParameter as __CommandParameter_A
 __ArgumentType = __CommandParameter_ArgumentType.ArgumentType
 from builtins import int
  
-class ArgumentType(__CommandParameter, CommandParameter):
+class ArgumentType():
     """dev.ultreon.quantum.api.commands.CommandParameter.ArgumentType"""
  
     @staticmethod
@@ -3259,7 +3259,7 @@ import dev.ultreon.quantum.api.commands.DefineCommand as __DefineCommand
 __DefineCommand = __DefineCommand
 from abc import abstractmethod, ABC
  
-class DefineCommand(ABC, __Annotation, Annotation):
+class DefineCommand(ABC):
     """dev.ultreon.quantum.api.commands.DefineCommand"""
  
     @staticmethod
@@ -3590,7 +3590,7 @@ __CommandExecuteException = __CommandExecuteException
 from builtins import bool
 from builtins import int
  
-class CommandExecuteException(__Exception, Exception):
+class CommandExecuteException():
     """dev.ultreon.quantum.api.commands.CommandExecuteException"""
  
     @staticmethod
@@ -3781,7 +3781,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class EndOfArgument(__CommandParseException, CommandParseException):
+class EndOfArgument():
     """dev.ultreon.quantum.api.commands.CommandParseException.EndOfArgument"""
  
     @staticmethod
@@ -4118,7 +4118,7 @@ from builtins import bool
 from builtins import int
 import java.lang.reflect.Method as Method
  
-class InvalidCommandMethodError(__Error, Error):
+class InvalidCommandMethodError():
     """dev.ultreon.quantum.api.commands.InvalidCommandMethodError"""
  
     @staticmethod
@@ -4347,7 +4347,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Range(v0.__IntIterable, iterator.IntIterable):
+class Range():
     """dev.ultreon.quantum.api.commands.Range"""
  
     @staticmethod
@@ -5335,7 +5335,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CommandParseException(__Exception, Exception):
+class CommandParseException():
     """dev.ultreon.quantum.api.commands.CommandParseException"""
  
     @staticmethod
@@ -5546,7 +5546,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NotFound(__CommandParseException, CommandParseException):
+class NotFound():
     """dev.ultreon.quantum.api.commands.CommandParseException.NotFound"""
  
     @staticmethod
@@ -5748,7 +5748,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class OverloadConflictException(__RuntimeException, RuntimeException):
+class OverloadConflictException():
     """dev.ultreon.quantum.api.commands.OverloadConflictException"""
  
     @staticmethod
@@ -6070,7 +6070,7 @@ __Command = __Command
 import java.util.List as List
 from builtins import int
  
-class PositionCommand(__Command, Command):
+class PositionCommand():
     """dev.ultreon.quantum.api.commands.PositionCommand"""
  
     @staticmethod
@@ -6399,7 +6399,7 @@ from abc import abstractmethod, ABC
 import dev.ultreon.quantum.api.commands.Perm as __Perm
 __Perm = __Perm
  
-class Perm(ABC, __Annotation, Annotation):
+class Perm(ABC):
     """dev.ultreon.quantum.api.commands.Perm"""
  
     @staticmethod
@@ -6831,7 +6831,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class MessageCode(__Enum, Enum):
+class MessageCode():
     """dev.ultreon.quantum.api.commands.MessageCode"""
  
     @staticmethod
@@ -7152,7 +7152,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class CommandFlag(__Enum, Enum):
+class CommandFlag():
     """dev.ultreon.quantum.api.commands.CommandFlag"""
  
     @staticmethod
@@ -7334,7 +7334,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NotAtEndOfArg(__CommandParseException, CommandParseException):
+class NotAtEndOfArg():
     """dev.ultreon.quantum.api.commands.CommandParseException.NotAtEndOfArg"""
  
     @staticmethod
@@ -7994,7 +7994,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SpecSyntaxException(__RuntimeException, RuntimeException):
+class SpecSyntaxException():
     """dev.ultreon.quantum.api.commands.SpecSyntaxException"""
  
     @staticmethod
@@ -8462,7 +8462,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Invalid(__CommandParseException, CommandParseException):
+class Invalid():
     """dev.ultreon.quantum.api.commands.CommandParseException.Invalid"""
  
     @staticmethod
@@ -8660,7 +8660,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Text(__CommandParameter, CommandParameter):
+class Text():
     """dev.ultreon.quantum.api.commands.CommandParameter.Text"""
  
     @staticmethod

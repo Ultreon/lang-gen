@@ -9,7 +9,7 @@ import com.badlogic.gdx.ai.btree.annotation.TaskAttribute as __TaskAttribute
 __TaskAttribute = __TaskAttribute
 from abc import abstractmethod, ABC
  
-class TaskAttribute(ABC, __Annotation, Annotation):
+class TaskAttribute(ABC):
     """com.badlogic.gdx.ai.btree.annotation.TaskAttribute"""
  
     @staticmethod
@@ -79,7 +79,7 @@ import com.badlogic.gdx.ai.btree.annotation.TaskAttribute as __TaskAttribute
 __TaskAttribute = __TaskAttribute
 from abc import abstractmethod, ABC
  
-class TaskAttribute(ABC, __Annotation, Annotation):
+class TaskAttribute(ABC):
     """com.badlogic.gdx.ai.btree.annotation.TaskAttribute"""
  
     @staticmethod
@@ -152,7 +152,7 @@ import java.lang.annotation.Annotation as __Annotation
 __Annotation = __Annotation
 from abc import abstractmethod, ABC
  
-class TaskConstraint(ABC, __Annotation, Annotation):
+class TaskConstraint(ABC):
     """com.badlogic.gdx.ai.btree.annotation.TaskConstraint"""
  
     @staticmethod

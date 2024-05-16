@@ -155,7 +155,7 @@ from abc import abstractmethod, ABC
 import com.badlogic.gdx.utils.Disposable as __Disposable
 __Disposable = __Disposable
  
-class ShaderProvider(ABC, pygdx.__Disposable, utils.Disposable):
+class ShaderProvider(ABC):
     """com.badlogic.gdx.graphics.g3d.utils.ShaderProvider"""
  
     @staticmethod
@@ -237,7 +237,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class DefaultRenderableSorter(__RenderableSorter, RenderableSorter, __Comparator, Comparator):
+class DefaultRenderableSorter():
     """com.badlogic.gdx.graphics.g3d.utils.DefaultRenderableSorter"""
  
     @staticmethod
@@ -434,7 +434,7 @@ except ImportError:
 
 from builtins import int
  
-class MeshBuilder(__MeshPartBuilder, MeshPartBuilder):
+class MeshBuilder():
     """com.badlogic.gdx.graphics.g3d.utils.MeshBuilder"""
  
     @staticmethod
@@ -1148,7 +1148,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BaseShaderProvider(ABC, __ShaderProvider, ShaderProvider):
+class BaseShaderProvider(ABC):
     """com.badlogic.gdx.graphics.g3d.utils.BaseShaderProvider"""
  
     @staticmethod
@@ -1677,7 +1677,7 @@ except ImportError:
 
 from builtins import int
  
-class ShapeCache(pygdx.__Disposable, utils.Disposable, graphics.__RenderableProvider, g3d.RenderableProvider):
+class ShapeCache():
     """com.badlogic.gdx.graphics.g3d.utils.ShapeCache"""
  
     @staticmethod
@@ -1843,7 +1843,7 @@ except ImportError:
 
 from builtins import int
  
-class TextureDescriptor(__Comparable, Comparable):
+class TextureDescriptor():
     """com.badlogic.gdx.graphics.g3d.utils.TextureDescriptor"""
  
     @staticmethod
@@ -2002,7 +2002,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class AssetTextureProvider(__TextureProvider, TextureProvider):
+class AssetTextureProvider():
     """com.badlogic.gdx.graphics.g3d.utils.TextureProvider.AssetTextureProvider"""
  
     @staticmethod
@@ -2126,7 +2126,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class FileTextureProvider(__TextureProvider, TextureProvider):
+class FileTextureProvider():
     """com.badlogic.gdx.graphics.g3d.utils.TextureProvider.FileTextureProvider"""
  
     @staticmethod
@@ -2260,7 +2260,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class DefaultTextureBinder(__TextureBinder, TextureBinder):
+class DefaultTextureBinder():
     """com.badlogic.gdx.graphics.g3d.utils.DefaultTextureBinder"""
  
     @staticmethod
@@ -2509,7 +2509,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Transform(pygdx.__Pool_Poolable, utils.Pool$Poolable):
+class Transform():
     """com.badlogic.gdx.graphics.g3d.utils.BaseAnimationController.Transform"""
  
     @staticmethod
@@ -2670,7 +2670,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class CameraGestureListener(pygdx.__GestureDetector_GestureAdapter, input.GestureDetector$GestureAdapter):
+class CameraGestureListener():
     """com.badlogic.gdx.graphics.g3d.utils.CameraInputController.CameraGestureListener"""
  
     @staticmethod
@@ -2839,7 +2839,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class DepthShaderProvider(__BaseShaderProvider, BaseShaderProvider):
+class DepthShaderProvider():
     """com.badlogic.gdx.graphics.g3d.utils.DepthShaderProvider"""
  
     @staticmethod
@@ -3112,7 +3112,7 @@ __AnimationDesc = __AnimationController_AnimationDesc.AnimationDesc
 from builtins import bool
 from builtins import int
  
-class AnimationController(__BaseAnimationController, BaseAnimationController):
+class AnimationController():
     """com.badlogic.gdx.graphics.g3d.utils.AnimationController"""
  
     @staticmethod
@@ -4009,8 +4009,8 @@ class RenderContext():
 from pyquantum_helper import import_once as __import_once__
 from builtins import str
 import java.lang.Character as __char
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 import com.badlogic.gdx.graphics.g3d.utils.CameraInputController as __CameraInputController
@@ -4036,7 +4036,7 @@ import com.badlogic.gdx.input.GestureDetector as __GestureDetector
 __GestureDetector = __GestureDetector
 from builtins import int
  
-class CameraInputController(pygdx.__GestureDetector, input.GestureDetector):
+class CameraInputController():
     """com.badlogic.gdx.graphics.g3d.utils.CameraInputController"""
  
     @staticmethod
@@ -4306,7 +4306,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class DefaultShaderProvider(__BaseShaderProvider, BaseShaderProvider):
+class DefaultShaderProvider():
     """com.badlogic.gdx.graphics.g3d.utils.DefaultShaderProvider"""
  
     @staticmethod
@@ -4466,7 +4466,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class VertexInfo(pygdx.__Pool_Poolable, utils.Pool$Poolable):
+class VertexInfo():
     """com.badlogic.gdx.graphics.g3d.utils.MeshPartBuilder.VertexInfo"""
  
     @staticmethod
@@ -4653,7 +4653,7 @@ import com.badlogic.gdx.graphics.g3d.utils.FirstPersonCameraController as __Firs
 __FirstPersonCameraController = __FirstPersonCameraController
 from builtins import int
  
-class FirstPersonCameraController(pygdx.__InputAdapter, pygdx.InputAdapter):
+class FirstPersonCameraController():
     """com.badlogic.gdx.graphics.g3d.utils.FirstPersonCameraController"""
  
     @staticmethod

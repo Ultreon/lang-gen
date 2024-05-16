@@ -500,7 +500,7 @@ import java.util.function.ToDoubleFunction as ToDoubleFunction
 from builtins import bool
 from builtins import int
  
-class ObjectToStringComparator(__Comparator, Comparator, __Serializable, Serializable):
+class ObjectToStringComparator():
     """org.apache.commons.lang3.compare.ObjectToStringComparator"""
  
     @staticmethod

@@ -21,7 +21,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ObjLoaderParameters(assets.__ModelLoader_ModelParameters, loaders.ModelLoader$ModelParameters):
+class ObjLoaderParameters():
     """com.badlogic.gdx.graphics.g3d.loader.ObjLoader.ObjLoaderParameters"""
  
     @staticmethod
@@ -147,7 +147,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ObjLoaderParameters(assets.__ModelLoader_ModelParameters, loaders.ModelLoader$ModelParameters):
+class ObjLoaderParameters():
     """com.badlogic.gdx.graphics.g3d.loader.ObjLoader.ObjLoaderParameters"""
  
     @staticmethod
@@ -327,7 +327,7 @@ import com.badlogic.gdx.graphics.g3d.loader.ObjLoader as __ObjLoader
 __ObjLoader = __ObjLoader
 from builtins import int
  
-class ObjLoader(assets.__ModelLoader, loaders.ModelLoader):
+class ObjLoader():
     """com.badlogic.gdx.graphics.g3d.loader.ObjLoader"""
  
     @staticmethod
@@ -563,7 +563,7 @@ except ImportError:
 
 from builtins import int
  
-class G3dModelLoader(assets.__ModelLoader, loaders.ModelLoader):
+class G3dModelLoader():
     """com.badlogic.gdx.graphics.g3d.loader.G3dModelLoader"""
  
     @staticmethod

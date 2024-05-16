@@ -38,7 +38,7 @@ import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
 from builtins import int
  
-class FabricMod(pyquantum.__Mod, pyquantum.Mod):
+class FabricMod():
     """dev.ultreon.quantum.desktop.FabricMod"""
  
     @staticmethod
@@ -214,7 +214,7 @@ import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
 from builtins import int
  
-class FabricMod(pyquantum.__Mod, pyquantum.Mod):
+class FabricMod():
     """dev.ultreon.quantum.desktop.FabricMod"""
  
     @staticmethod
@@ -547,7 +547,7 @@ __Logger = __Logger
 import java.lang.Integer as __int
 from builtins import int
  
-class DesktopPlatform(ABC, pyquantum.__GamePlatform, pyquantum.GamePlatform):
+class DesktopPlatform(ABC):
     """dev.ultreon.quantum.desktop.DesktopPlatform"""
  
     @staticmethod
@@ -911,7 +911,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DesktopWindow(pyquantum.__GameWindow, pyquantum.GameWindow):
+class DesktopWindow():
     """dev.ultreon.quantum.desktop.DesktopWindow"""
  
     @staticmethod

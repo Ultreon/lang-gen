@@ -7,7 +7,7 @@ from abc import abstractmethod, ABC
 import com.badlogic.gdx.audio.Sound as __Sound
 __Sound = __Sound
  
-class Sound(ABC, pygdx.__Disposable, utils.Disposable):
+class Sound(ABC):
     """com.badlogic.gdx.audio.Sound"""
  
     @staticmethod
@@ -130,7 +130,7 @@ from abc import abstractmethod, ABC
 import com.badlogic.gdx.audio.Sound as __Sound
 __Sound = __Sound
  
-class Sound(ABC, pygdx.__Disposable, utils.Disposable):
+class Sound(ABC):
     """com.badlogic.gdx.audio.Sound"""
  
     @staticmethod
@@ -257,7 +257,7 @@ import com.badlogic.gdx.audio.AudioRecorder as __AudioRecorder
 __AudioRecorder = __AudioRecorder
 from builtins import int
  
-class AudioRecorder(ABC, pygdx.__Disposable, utils.Disposable):
+class AudioRecorder(ABC):
     """com.badlogic.gdx.audio.AudioRecorder"""
  
     @staticmethod
@@ -344,7 +344,7 @@ from abc import abstractmethod, ABC
 import com.badlogic.gdx.audio.Music as __Music
 __Music = __Music
  
-class Music(ABC, pygdx.__Disposable, utils.Disposable):
+class Music(ABC):
     """com.badlogic.gdx.audio.Music"""
  
     @staticmethod
@@ -447,7 +447,7 @@ from builtins import float
 from abc import abstractmethod, ABC
 from builtins import int
  
-class AudioDevice(ABC, pygdx.__Disposable, utils.Disposable):
+class AudioDevice(ABC):
     """com.badlogic.gdx.audio.AudioDevice"""
  
     @staticmethod

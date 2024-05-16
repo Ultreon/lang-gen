@@ -20,7 +20,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Inputs(g3d.__DefaultShader_Inputs, shaders.DefaultShader$Inputs):
+class Inputs():
     """dev.ultreon.quantum.client.shaders.SkyboxShader.Inputs"""
  
     @staticmethod
@@ -138,7 +138,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Inputs(g3d.__DefaultShader_Inputs, shaders.DefaultShader$Inputs):
+class Inputs():
     """dev.ultreon.quantum.client.shaders.SkyboxShader.Inputs"""
  
     @staticmethod
@@ -259,7 +259,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Inputs(g3d.__DefaultShader_Inputs, shaders.DefaultShader$Inputs):
+class Inputs():
     """dev.ultreon.quantum.client.shaders.ModelViewShader.Inputs"""
  
     @staticmethod
@@ -416,7 +416,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Setters(g3d.__DefaultShader_Setters, shaders.DefaultShader$Setters):
+class Setters():
     """dev.ultreon.quantum.client.shaders.ModelViewShader.Setters"""
  
     @staticmethod
@@ -532,7 +532,7 @@ import dev.ultreon.quantum.client.shaders.WorldShader as __WorldShader_Setters
 __Setters = __WorldShader_Setters.Setters
 from builtins import int
  
-class Setters(g3d.__DefaultShader_Setters, shaders.DefaultShader$Setters):
+class Setters():
     """dev.ultreon.quantum.client.shaders.WorldShader.Setters"""
  
     @staticmethod
@@ -685,7 +685,7 @@ except ImportError:
 
 from builtins import int
  
-class ModelViewShader(g3d.__DefaultShader, shaders.DefaultShader):
+class ModelViewShader():
     """dev.ultreon.quantum.client.shaders.ModelViewShader"""
  
     @staticmethod
@@ -1089,7 +1089,7 @@ except ImportError:
 
 from builtins import int
  
-class SkyboxShader(g3d.__DefaultShader, shaders.DefaultShader):
+class SkyboxShader():
     """dev.ultreon.quantum.client.shaders.SkyboxShader"""
  
     @staticmethod
@@ -1456,7 +1456,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Inputs(g3d.__DefaultShader_Inputs, shaders.DefaultShader$Inputs):
+class Inputs():
     """dev.ultreon.quantum.client.shaders.WorldShader.Inputs"""
  
     @staticmethod
@@ -1581,7 +1581,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Setters(g3d.__DefaultShader_Setters, shaders.DefaultShader$Setters):
+class Setters():
     """dev.ultreon.quantum.client.shaders.SkyboxShader.Setters"""
  
     @staticmethod
@@ -1740,7 +1740,7 @@ except ImportError:
 
 from builtins import int
  
-class WorldShader(g3d.__DefaultShader, shaders.DefaultShader):
+class WorldShader():
     """dev.ultreon.quantum.client.shaders.WorldShader"""
  
     @staticmethod

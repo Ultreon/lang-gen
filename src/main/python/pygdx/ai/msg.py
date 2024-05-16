@@ -22,7 +22,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Telegram(__Comparable, Comparable, pygdx.__Pool_Poolable, utils.Pool$Poolable):
+class Telegram():
     """com.badlogic.gdx.ai.msg.Telegram"""
  
     @staticmethod
@@ -163,7 +163,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Telegram(__Comparable, Comparable, pygdx.__Pool_Poolable, utils.Pool$Poolable):
+class Telegram():
     """com.badlogic.gdx.ai.msg.Telegram"""
  
     @staticmethod
@@ -432,7 +432,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MessageManager(__MessageDispatcher, MessageDispatcher):
+class MessageManager():
     """com.badlogic.gdx.ai.msg.MessageManager"""
  
     @staticmethod
@@ -757,8 +757,8 @@ class MessageManager(__MessageDispatcher, MessageDispatcher):
  
 # CLASS: com.badlogic.gdx.ai.msg.MessageDispatcher
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 import com.badlogic.gdx.ai.msg.MessageDispatcher as __MessageDispatcher
@@ -775,7 +775,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MessageDispatcher(__Telegraph, Telegraph):
+class MessageDispatcher():
     """com.badlogic.gdx.ai.msg.MessageDispatcher"""
  
     @staticmethod
@@ -884,14 +884,14 @@ class MessageDispatcher(__Telegraph, Telegraph):
         super(__MessageDispatcher, self).dispatchMessage(__float.valueOf(arg0), arg1, arg2, __int.valueOf(arg3))
 
     @overload
-    def clearListeners(self, *arg0: int):
-        """public void com.badlogic.gdx.ai.msg.MessageDispatcher.clearListeners(int...)"""
-        super(__MessageDispatcher, self).clearListeners(arg0)
-
-    @overload
     def handleMessage(self, arg0: 'Telegram') -> bool:
         """public boolean com.badlogic.gdx.ai.msg.MessageDispatcher.handleMessage(com.badlogic.gdx.ai.msg.Telegram)"""
         return bool.__wrap(super(__MessageDispatcher, self).handleMessage(arg0))
+
+    @overload
+    def clearListeners(self, *arg0: int):
+        """public void com.badlogic.gdx.ai.msg.MessageDispatcher.clearListeners(int...)"""
+        super(__MessageDispatcher, self).clearListeners(arg0)
 
     @overload
     def scanQueue(self, arg0: 'PendingMessageCallback'):

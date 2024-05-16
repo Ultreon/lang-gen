@@ -16,9 +16,9 @@ import java.lang.Enum as Enum
 import java.lang.Long as __long
 import java.lang.Class as __Class
 __Class = __Class
-import java.lang.String as __string
 import java.lang.String as __String
 __String = __String
+import java.lang.String as __string
 import java.util.Optional as Optional
 import java.lang.Object as __Object
 __Object = __Object
@@ -28,7 +28,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Type(__Enum, Enum):
+class Type():
     """org.apache.commons.lang3.arch.Processor.Type"""
  
     @staticmethod
@@ -180,9 +180,9 @@ import java.lang.Enum as Enum
 import java.lang.Long as __long
 import java.lang.Class as __Class
 __Class = __Class
-import java.lang.String as __string
 import java.lang.String as __String
 __String = __String
+import java.lang.String as __string
 import java.util.Optional as Optional
 import java.lang.Object as __Object
 __Object = __Object
@@ -192,7 +192,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Type(__Enum, Enum):
+class Type():
     """org.apache.commons.lang3.arch.Processor.Type"""
  
     @staticmethod
@@ -500,9 +500,9 @@ import java.lang.Enum as Enum
 import java.lang.Long as __long
 import java.lang.Class as __Class
 __Class = __Class
-import java.lang.String as __string
 import java.lang.String as __String
 __String = __String
+import java.lang.String as __string
 import java.util.Optional as Optional
 import java.lang.Object as __Object
 __Object = __Object
@@ -512,7 +512,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Arch(__Enum, Enum):
+class Arch():
     """org.apache.commons.lang3.arch.Processor.Arch"""
  
     @staticmethod

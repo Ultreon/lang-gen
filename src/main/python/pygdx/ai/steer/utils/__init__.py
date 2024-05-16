@@ -59,13 +59,13 @@ class Path(ABC):
         pass
 
     @abstractmethod
-    def getEndPoint(self, ):
-        """public abstract T com.badlogic.gdx.ai.steer.utils.Path.getEndPoint()"""
+    def createParam(self, ):
+        """public abstract P com.badlogic.gdx.ai.steer.utils.Path.createParam()"""
         pass
 
     @abstractmethod
-    def createParam(self, ):
-        """public abstract P com.badlogic.gdx.ai.steer.utils.Path.createParam()"""
+    def getEndPoint(self, ):
+        """public abstract T com.badlogic.gdx.ai.steer.utils.Path.getEndPoint()"""
         pass
 
     @abstractmethod
@@ -138,13 +138,13 @@ class Path(ABC):
         pass
 
     @abstractmethod
-    def getEndPoint(self, ):
-        """public abstract T com.badlogic.gdx.ai.steer.utils.Path.getEndPoint()"""
+    def createParam(self, ):
+        """public abstract P com.badlogic.gdx.ai.steer.utils.Path.createParam()"""
         pass
 
     @abstractmethod
-    def createParam(self, ):
-        """public abstract P com.badlogic.gdx.ai.steer.utils.Path.createParam()"""
+    def getEndPoint(self, ):
+        """public abstract T com.badlogic.gdx.ai.steer.utils.Path.getEndPoint()"""
         pass
 
     @abstractmethod

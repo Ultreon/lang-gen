@@ -1207,7 +1207,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.stb.STBTTAlignedQuad.Buffer"""
  
     @staticmethod
@@ -1582,7 +1582,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class STBTTFontinfo(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class STBTTFontinfo():
     """org.lwjgl.stb.STBTTFontinfo"""
  
     @staticmethod
@@ -2025,7 +2025,7 @@ import org.lwjgl.stb.STBTTPackContext as __STBTTPackContext
 __STBTTPackContext = __STBTTPackContext
 from builtins import int
  
-class STBTTPackContext(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class STBTTPackContext():
     """org.lwjgl.stb.STBTTPackContext"""
  
     @staticmethod
@@ -2415,6 +2415,7 @@ from pyquantum_helper import import_once as __import_once__
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.system.CallbackI as __CallbackI
 __CallbackI = __CallbackI
 from abc import abstractmethod, ABC
@@ -2427,7 +2428,7 @@ except ImportError:
 
 from builtins import int
  
-class STBISkipCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class STBISkipCallbackI(ABC):
     """org.lwjgl.stb.STBISkipCallbackI"""
  
     @staticmethod
@@ -2515,7 +2516,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class STBTTBakedChar(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class STBTTBakedChar():
     """org.lwjgl.stb.STBTTBakedChar"""
  
     @staticmethod
@@ -2904,7 +2905,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.stb.STBTTPackedchar.Buffer"""
  
     @staticmethod
@@ -3342,7 +3343,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.stb.STBRPRect.Buffer"""
  
     @staticmethod
@@ -4767,7 +4768,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class STBRPContext(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class STBRPContext():
     """org.lwjgl.stb.STBRPContext"""
  
     @staticmethod
@@ -5480,7 +5481,7 @@ import org.lwjgl.stb.STBISkipCallbackI as __STBISkipCallbackI
 __STBISkipCallbackI = __STBISkipCallbackI
 from builtins import int
  
-class STBISkipCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __STBISkipCallbackI, STBISkipCallbackI):
+class STBISkipCallback(ABC):
     """org.lwjgl.stb.STBISkipCallback"""
  
     @staticmethod
@@ -5686,7 +5687,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.stb.STBIIOCallbacks.Buffer"""
  
     @staticmethod
@@ -6063,7 +6064,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.stb.STBTTVertex.Buffer"""
  
     @staticmethod
@@ -6443,7 +6444,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class STBIWriteCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __STBIWriteCallbackI, STBIWriteCallbackI):
+class STBIWriteCallback(ABC):
     """org.lwjgl.stb.STBIWriteCallback"""
  
     @staticmethod
@@ -6646,7 +6647,7 @@ __PointerBuffer = __PointerBuffer
 from builtins import bool
 from builtins import int
  
-class STBVorbisComment(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class STBVorbisComment():
     """org.lwjgl.stb.STBVorbisComment"""
  
     @staticmethod
@@ -6947,7 +6948,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class STBTTPackRange(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class STBTTPackRange():
     """org.lwjgl.stb.STBTTPackRange"""
  
     @staticmethod
@@ -7434,7 +7435,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.stb.STBTTPackRange.Buffer"""
  
     @staticmethod
@@ -7839,7 +7840,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class STBTTKerningentry(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class STBTTKerningentry():
     """org.lwjgl.stb.STBTTKerningentry"""
  
     @staticmethod
@@ -8139,7 +8140,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.stb.STBTTPackContext.Buffer"""
  
     @staticmethod
@@ -8535,7 +8536,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class STBIIOCallbacks(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class STBIIOCallbacks():
     """org.lwjgl.stb.STBIIOCallbacks"""
  
     @staticmethod
@@ -10064,7 +10065,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class STBIReadCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __STBIReadCallbackI, STBIReadCallbackI):
+class STBIReadCallback(ABC):
     """org.lwjgl.stb.STBIReadCallback"""
  
     @staticmethod
@@ -10259,7 +10260,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class STBTTAlignedQuad(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class STBTTAlignedQuad():
     """org.lwjgl.stb.STBTTAlignedQuad"""
  
     @staticmethod
@@ -10658,7 +10659,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.stb.STBTTBitmap.Buffer"""
  
     @staticmethod
@@ -11045,7 +11046,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.stb.STBTTKerningentry.Buffer"""
  
     @staticmethod
@@ -11411,7 +11412,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.stb.STBRPContext.Buffer"""
  
     @staticmethod
@@ -11768,6 +11769,7 @@ from pyquantum_helper import import_once as __import_once__
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.system.CallbackI as __CallbackI
 __CallbackI = __CallbackI
 import org.lwjgl.stb.STBIReadCallbackI as __STBIReadCallbackI
@@ -11780,7 +11782,7 @@ except ImportError:
 
 from builtins import int
  
-class STBIReadCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class STBIReadCallbackI(ABC):
     """org.lwjgl.stb.STBIReadCallbackI"""
  
     @staticmethod
@@ -12009,7 +12011,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class STBRPRect(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class STBRPRect():
     """org.lwjgl.stb.STBRPRect"""
  
     @staticmethod
@@ -12738,6 +12740,7 @@ __FFICIF = __FFICIF
 import org.lwjgl.stb.STBIEOFCallbackI as __STBIEOFCallbackI
 __STBIEOFCallbackI = __STBIEOFCallbackI
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.system.CallbackI as __CallbackI
 __CallbackI = __CallbackI
 from abc import abstractmethod, ABC
@@ -12748,7 +12751,7 @@ except ImportError:
 
 from builtins import int
  
-class STBIEOFCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class STBIEOFCallbackI(ABC):
     """org.lwjgl.stb.STBIEOFCallbackI"""
  
     @staticmethod
@@ -12837,7 +12840,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class STBTTBitmap(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class STBTTBitmap():
     """org.lwjgl.stb.STBTTBitmap"""
  
     @staticmethod
@@ -13250,7 +13253,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.stb.STBVorbisInfo.Buffer"""
  
     @staticmethod
@@ -13587,6 +13590,7 @@ from pyquantum_helper import import_once as __import_once__
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.system.CallbackI as __CallbackI
 __CallbackI = __CallbackI
 import org.lwjgl.stb.STBIZlibCompressI as __STBIZlibCompressI
@@ -13599,7 +13603,7 @@ except ImportError:
 
 from builtins import int
  
-class STBIZlibCompressI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class STBIZlibCompressI(ABC):
     """org.lwjgl.stb.STBIZlibCompressI"""
  
     @staticmethod
@@ -13693,7 +13697,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class STBIEOFCallback(ABC, pyglsystem.__Callback, pyglsystem.Callback, __STBIEOFCallbackI, STBIEOFCallbackI):
+class STBIEOFCallback(ABC):
     """org.lwjgl.stb.STBIEOFCallback"""
  
     @staticmethod
@@ -13895,7 +13899,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.stb.STBRPNode.Buffer"""
  
     @staticmethod
@@ -14247,7 +14251,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class STBVorbisAlloc(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class STBVorbisAlloc():
     """org.lwjgl.stb.STBVorbisAlloc"""
  
     @staticmethod
@@ -14615,7 +14619,7 @@ import java.nio.ByteBuffer as ByteBuffer
 import java.lang.Integer as __int
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.stb.STBVorbisComment.Buffer"""
  
     @staticmethod
@@ -14970,7 +14974,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class STBVorbisInfo(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class STBVorbisInfo():
     """org.lwjgl.stb.STBVorbisInfo"""
  
     @staticmethod
@@ -15336,7 +15340,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class STBTTPackedchar(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class STBTTPackedchar():
     """org.lwjgl.stb.STBTTPackedchar"""
  
     @staticmethod
@@ -15418,14 +15422,14 @@ class STBTTPackedchar(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__Nativ
         return STBTTPackedchar.__wrap(__STBTTPackedchar.mallocStack(arg0))
 
     @overload
-    def yoff(self, arg0: float) -> 'STBTTPackedchar':
-        """public org.lwjgl.stb.STBTTPackedchar org.lwjgl.stb.STBTTPackedchar.yoff(float)"""
-        return 'STBTTPackedchar'.__wrap(super(__STBTTPackedchar, self).yoff(__float.valueOf(arg0)))
-
-    @overload
     def y1(self) -> int:
         """public short org.lwjgl.stb.STBTTPackedchar.y1()"""
         return int.__wrap(super(STBTTPackedchar, self).y1())
+
+    @overload
+    def yoff(self, arg0: float) -> 'STBTTPackedchar':
+        """public org.lwjgl.stb.STBTTPackedchar org.lwjgl.stb.STBTTPackedchar.yoff(float)"""
+        return 'STBTTPackedchar'.__wrap(super(__STBTTPackedchar, self).yoff(__float.valueOf(arg0)))
 
     @staticmethod
     @overload
@@ -15841,7 +15845,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class STBRPNode(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class STBRPNode():
     """org.lwjgl.stb.STBRPNode"""
  
     @staticmethod
@@ -16171,7 +16175,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class STBTTVertex(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class STBTTVertex():
     """org.lwjgl.stb.STBTTVertex"""
  
     @staticmethod
@@ -16558,7 +16562,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.stb.STBTTBakedChar.Buffer"""
  
     @staticmethod
@@ -16935,7 +16939,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class STBIZlibCompress(ABC, pyglsystem.__Callback, pyglsystem.Callback, __STBIZlibCompressI, STBIZlibCompressI):
+class STBIZlibCompress(ABC):
     """org.lwjgl.stb.STBIZlibCompress"""
  
     @staticmethod
@@ -17135,7 +17139,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.stb.STBTTFontinfo.Buffer"""
  
     @staticmethod
@@ -17442,6 +17446,7 @@ from pyquantum_helper import import_once as __import_once__
 import org.lwjgl.system.libffi.FFICIF as __FFICIF
 __FFICIF = __FFICIF
 import java.lang.Long as __long
+from pyquantum_helper import override
 import org.lwjgl.stb.STBIWriteCallbackI as __STBIWriteCallbackI
 __STBIWriteCallbackI = __STBIWriteCallbackI
 import org.lwjgl.system.CallbackI as __CallbackI
@@ -17454,7 +17459,7 @@ except ImportError:
 
 from builtins import int
  
-class STBIWriteCallbackI(ABC, pyglsystem.__CallbackI, pyglsystem.CallbackI):
+class STBIWriteCallbackI(ABC):
     """org.lwjgl.stb.STBIWriteCallbackI"""
  
     @staticmethod
@@ -17555,7 +17560,7 @@ import java.nio.ByteBuffer as ByteBuffer
 import java.lang.Integer as __int
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.stb.STBVorbisAlloc.Buffer"""
  
     @staticmethod

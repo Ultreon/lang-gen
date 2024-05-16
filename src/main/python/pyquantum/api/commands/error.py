@@ -32,7 +32,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PermissionsBrokenError(__CommandError, CommandError):
+class PermissionsBrokenError():
     """dev.ultreon.quantum.api.commands.error.PermissionsBrokenError"""
  
     @staticmethod
@@ -219,7 +219,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PermissionsBrokenError(__CommandError, CommandError):
+class PermissionsBrokenError():
     """dev.ultreon.quantum.api.commands.error.PermissionsBrokenError"""
  
     @staticmethod
@@ -408,7 +408,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NoPermissionError(__CommandError, CommandError):
+class NoPermissionError():
     """dev.ultreon.quantum.api.commands.error.NoPermissionError"""
  
     @staticmethod
@@ -588,7 +588,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidCoordinateXError(__InvalidCoordinateError, InvalidCoordinateError):
+class InvalidCoordinateXError():
     """dev.ultreon.quantum.api.commands.error.InvalidCoordinateXError"""
  
     @staticmethod
@@ -789,7 +789,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidShortError(__InvalidValueError, InvalidValueError):
+class InvalidShortError():
     """dev.ultreon.quantum.api.commands.error.InvalidShortError"""
  
     @staticmethod
@@ -990,7 +990,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NoSelectedError(__CommandError, CommandError):
+class NoSelectedError():
     """dev.ultreon.quantum.api.commands.error.NoSelectedError"""
  
     @staticmethod
@@ -1169,7 +1169,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class OverloadError(__CommandError, CommandError):
+class OverloadError():
     """dev.ultreon.quantum.api.commands.error.OverloadError"""
  
     @staticmethod
@@ -1356,7 +1356,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidTargetError(__InvalidValueError, InvalidValueError):
+class InvalidTargetError():
     """dev.ultreon.quantum.api.commands.error.InvalidTargetError"""
  
     @staticmethod
@@ -1557,7 +1557,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidByteError(__InvalidValueError, InvalidValueError):
+class InvalidByteError():
     """dev.ultreon.quantum.api.commands.error.InvalidByteError"""
  
     @staticmethod
@@ -1758,7 +1758,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidFloatError(__InvalidValueError, InvalidValueError):
+class InvalidFloatError():
     """dev.ultreon.quantum.api.commands.error.InvalidFloatError"""
  
     @staticmethod
@@ -1959,7 +1959,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidError(__CommandError, CommandError):
+class InvalidError():
     """dev.ultreon.quantum.api.commands.error.InvalidError"""
  
     @staticmethod
@@ -2139,7 +2139,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidBooleanError(__InvalidValueError, InvalidValueError):
+class InvalidBooleanError():
     """dev.ultreon.quantum.api.commands.error.InvalidBooleanError"""
  
     @staticmethod
@@ -2340,7 +2340,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidCoordinateZError(__InvalidCoordinateError, InvalidCoordinateError):
+class InvalidCoordinateZError():
     """dev.ultreon.quantum.api.commands.error.InvalidCoordinateZError"""
  
     @staticmethod
@@ -2541,7 +2541,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidLongError(__InvalidValueError, InvalidValueError):
+class InvalidLongError():
     """dev.ultreon.quantum.api.commands.error.InvalidLongError"""
  
     @staticmethod
@@ -2742,7 +2742,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidCharError(__InvalidValueError, InvalidValueError):
+class InvalidCharError():
     """dev.ultreon.quantum.api.commands.error.InvalidCharError"""
  
     @staticmethod
@@ -2942,7 +2942,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NeedLivingEntityError(__CommandError, CommandError):
+class NeedLivingEntityError():
     """dev.ultreon.quantum.api.commands.error.NeedLivingEntityError"""
  
     @staticmethod
@@ -3129,7 +3129,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NotFoundError(__CommandError, CommandError):
+class NotFoundError():
     """dev.ultreon.quantum.api.commands.error.NotFoundError"""
  
     @staticmethod
@@ -3309,7 +3309,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidKeyError(__InvalidValueError, InvalidValueError):
+class InvalidKeyError():
     """dev.ultreon.quantum.api.commands.error.InvalidKeyError"""
  
     @staticmethod
@@ -3510,7 +3510,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidDoubleError(__InvalidValueError, InvalidValueError):
+class InvalidDoubleError():
     """dev.ultreon.quantum.api.commands.error.InvalidDoubleError"""
  
     @staticmethod
@@ -3711,7 +3711,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TargetNotFoundError(__NotFoundError, NotFoundError):
+class TargetNotFoundError():
     """dev.ultreon.quantum.api.commands.error.TargetNotFoundError"""
  
     @staticmethod
@@ -3890,7 +3890,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NeedEntityError(__CommandError, CommandError):
+class NeedEntityError():
     """dev.ultreon.quantum.api.commands.error.NeedEntityError"""
  
     @staticmethod
@@ -4076,7 +4076,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NeedPlayerError(__CommandError, CommandError):
+class NeedPlayerError():
     """dev.ultreon.quantum.api.commands.error.NeedPlayerError"""
  
     @staticmethod
@@ -4263,7 +4263,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidCoordinateError(__InvalidValueError, InvalidValueError):
+class InvalidCoordinateError():
     """dev.ultreon.quantum.api.commands.error.InvalidCoordinateError"""
  
     @staticmethod
@@ -4457,7 +4457,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidValueError(__CommandError, CommandError):
+class InvalidValueError():
     """dev.ultreon.quantum.api.commands.error.InvalidValueError"""
  
     @staticmethod
@@ -4653,7 +4653,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidVariableError(__InvalidError, InvalidError):
+class InvalidVariableError():
     """dev.ultreon.quantum.api.commands.error.InvalidVariableError"""
  
     @staticmethod
@@ -4815,8 +4815,8 @@ from pyquantum_helper import import_once as __import_once__
 import dev.ultreon.quantum.api.commands.error.CommandError as __CommandError
 __CommandError = __CommandError
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 try:
@@ -4839,7 +4839,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CommandError(ABC, commands.__CommandResult, output.CommandResult):
+class CommandError(ABC):
     """dev.ultreon.quantum.api.commands.error.CommandError"""
  
     @staticmethod
@@ -5032,7 +5032,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NotFoundInWorldError(__CommandError, CommandError):
+class NotFoundInWorldError():
     """dev.ultreon.quantum.api.commands.error.NotFoundInWorldError"""
  
     @staticmethod
@@ -5226,7 +5226,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidSelectorError(__InvalidValueError, InvalidValueError):
+class InvalidSelectorError():
     """dev.ultreon.quantum.api.commands.error.InvalidSelectorError"""
  
     @staticmethod
@@ -5406,7 +5406,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidLocationError(__InvalidValueError, InvalidValueError):
+class InvalidLocationError():
     """dev.ultreon.quantum.api.commands.error.InvalidLocationError"""
  
     @staticmethod
@@ -5607,7 +5607,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidCoordinateYError(__InvalidCoordinateError, InvalidCoordinateError):
+class InvalidCoordinateYError():
     """dev.ultreon.quantum.api.commands.error.InvalidCoordinateYError"""
  
     @staticmethod
@@ -5808,7 +5808,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InternalError(__CommandError, CommandError):
+class InternalError():
     """dev.ultreon.quantum.api.commands.error.InternalError"""
  
     @staticmethod
@@ -5981,7 +5981,7 @@ import dev.ultreon.quantum.api.commands.error.TargetEntityNotFoundError as __Tar
 __TargetEntityNotFoundError = __TargetEntityNotFoundError
 from builtins import int
  
-class TargetEntityNotFoundError(__TargetNotFoundError, TargetNotFoundError):
+class TargetEntityNotFoundError():
     """dev.ultreon.quantum.api.commands.error.TargetEntityNotFoundError"""
  
     @staticmethod
@@ -6160,7 +6160,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TargetPlayerNotFoundError(__TargetNotFoundError, TargetNotFoundError):
+class TargetPlayerNotFoundError():
     """dev.ultreon.quantum.api.commands.error.TargetPlayerNotFoundError"""
  
     @staticmethod
@@ -6347,7 +6347,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidUUIDError(__InvalidValueError, InvalidValueError):
+class InvalidUUIDError():
     """dev.ultreon.quantum.api.commands.error.InvalidUUIDError"""
  
     @staticmethod
@@ -6548,7 +6548,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidIntegerError(__InvalidValueError, InvalidValueError):
+class InvalidIntegerError():
     """dev.ultreon.quantum.api.commands.error.InvalidIntegerError"""
  
     @staticmethod
@@ -6749,7 +6749,7 @@ __PlayerIsOnlineError = __PlayerIsOnlineError
 from builtins import bool
 from builtins import int
  
-class PlayerIsOnlineError(__CommandError, CommandError):
+class PlayerIsOnlineError():
     """dev.ultreon.quantum.api.commands.error.PlayerIsOnlineError"""
  
     @staticmethod
@@ -6922,7 +6922,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SelectorTooSmallError(__CommandError, CommandError):
+class SelectorTooSmallError():
     """dev.ultreon.quantum.api.commands.error.SelectorTooSmallError"""
  
     @staticmethod
@@ -7102,7 +7102,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ImpossibleError(__CommandError, CommandError):
+class ImpossibleError():
     """dev.ultreon.quantum.api.commands.error.ImpossibleError"""
  
     @staticmethod

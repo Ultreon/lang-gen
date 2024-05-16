@@ -9,7 +9,7 @@ from abc import abstractmethod, ABC
 import com.google.common.annotations.GwtIncompatible as __GwtIncompatible
 __GwtIncompatible = __GwtIncompatible
  
-class GwtIncompatible(ABC, __Annotation, Annotation):
+class GwtIncompatible(ABC):
     """com.google.common.annotations.GwtIncompatible"""
  
     @staticmethod
@@ -74,7 +74,7 @@ from abc import abstractmethod, ABC
 import com.google.common.annotations.GwtIncompatible as __GwtIncompatible
 __GwtIncompatible = __GwtIncompatible
  
-class GwtIncompatible(ABC, __Annotation, Annotation):
+class GwtIncompatible(ABC):
     """com.google.common.annotations.GwtIncompatible"""
  
     @staticmethod
@@ -142,7 +142,7 @@ from abc import abstractmethod, ABC
 import com.google.common.annotations.J2ktIncompatible as __J2ktIncompatible
 __J2ktIncompatible = __J2ktIncompatible
  
-class J2ktIncompatible(ABC, __Annotation, Annotation):
+class J2ktIncompatible(ABC):
     """com.google.common.annotations.J2ktIncompatible"""
  
     @staticmethod
@@ -200,7 +200,7 @@ import com.google.common.annotations.GwtCompatible as __GwtCompatible
 __GwtCompatible = __GwtCompatible
 from abc import abstractmethod, ABC
  
-class GwtCompatible(ABC, __Annotation, Annotation):
+class GwtCompatible(ABC):
     """com.google.common.annotations.GwtCompatible"""
  
     @staticmethod
@@ -268,7 +268,7 @@ import com.google.common.annotations.Beta as __Beta
 __Beta = __Beta
 from abc import abstractmethod, ABC
  
-class Beta(ABC, __Annotation, Annotation):
+class Beta(ABC):
     """com.google.common.annotations.Beta"""
  
     @staticmethod
@@ -326,7 +326,7 @@ import com.google.common.annotations.VisibleForTesting as __VisibleForTesting
 __VisibleForTesting = __VisibleForTesting
 from abc import abstractmethod, ABC
  
-class VisibleForTesting(ABC, __Annotation, Annotation):
+class VisibleForTesting(ABC):
     """com.google.common.annotations.VisibleForTesting"""
  
     @staticmethod

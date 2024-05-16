@@ -37,7 +37,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PatchFeature(world.__WorldGenFeature, gen.WorldGenFeature):
+class PatchFeature():
     """dev.ultreon.quantum.world.gen.feature.PatchFeature"""
  
     @staticmethod
@@ -189,7 +189,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PatchFeature(world.__WorldGenFeature, gen.WorldGenFeature):
+class PatchFeature():
     """dev.ultreon.quantum.world.gen.feature.PatchFeature"""
  
     @staticmethod
@@ -346,7 +346,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CactiFeature(world.__WorldGenFeature, gen.WorldGenFeature):
+class CactiFeature():
     """dev.ultreon.quantum.world.gen.feature.CactiFeature"""
  
     @staticmethod
@@ -491,7 +491,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TreeFeature(world.__WorldGenFeature, gen.WorldGenFeature):
+class TreeFeature():
     """dev.ultreon.quantum.world.gen.feature.TreeFeature"""
  
     @staticmethod
@@ -631,7 +631,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class OreFeature(world.__WorldGenFeature, gen.WorldGenFeature):
+class OreFeature():
     """dev.ultreon.quantum.world.gen.feature.OreFeature"""
  
     @staticmethod
@@ -785,7 +785,7 @@ import java.util.List as List
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class DefaultedArray(__List, List):
+class DefaultedArray():
     """dev.ultreon.quantum.world.gen.feature.DefaultedArray"""
  
     @staticmethod
@@ -1130,7 +1130,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RockFeature(world.__WorldGenFeature, gen.WorldGenFeature):
+class RockFeature():
     """dev.ultreon.quantum.world.gen.feature.RockFeature"""
  
     @staticmethod
@@ -1275,7 +1275,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FoliageFeature(world.__WorldGenFeature, gen.WorldGenFeature):
+class FoliageFeature():
     """dev.ultreon.quantum.world.gen.feature.FoliageFeature"""
  
     @staticmethod

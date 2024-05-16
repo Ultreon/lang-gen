@@ -476,14 +476,14 @@ class ResourceManager():
         return str.__wrap(super(ResourceManager, self).getRoot())
 
     @overload
-    def openResourceStream(self, arg0: 'Identifier') -> 'InputStream':
-        """public java.io.InputStream dev.ultreon.libs.resources.v0.ResourceManager.openResourceStream(dev.ultreon.libs.commons.v0.Identifier)"""
-        return 'InputStream'.__wrap(super(__ResourceManager, self).openResourceStream(arg0))
-
-    @overload
     def importPackage(self, arg0: 'URL'):
         """public void dev.ultreon.libs.resources.v0.ResourceManager.importPackage(java.net.URL) throws java.io.IOException"""
         super(__ResourceManager, self).importPackage(arg0)
+
+    @overload
+    def openResourceStream(self, arg0: 'Identifier') -> 'InputStream':
+        """public java.io.InputStream dev.ultreon.libs.resources.v0.ResourceManager.openResourceStream(dev.ultreon.libs.commons.v0.Identifier)"""
+        return 'InputStream'.__wrap(super(__ResourceManager, self).openResourceStream(arg0))
 
     @override
     @overload
@@ -497,14 +497,14 @@ class ResourceManager():
         return 'Resource'.__wrap(super(__ResourceManager, self).getResource(arg0))
 
     @overload
-    def importDeferredPackage(self, arg0: 'Class'):
-        """public void dev.ultreon.libs.resources.v0.ResourceManager.importDeferredPackage(java.lang.Class<?>)"""
-        super(__ResourceManager, self).importDeferredPackage(arg0)
-
-    @overload
     def importPackage(self, arg0: 'File'):
         """public void dev.ultreon.libs.resources.v0.ResourceManager.importPackage(java.io.File) throws java.io.IOException"""
         super(__ResourceManager, self).importPackage(arg0)
+
+    @overload
+    def importDeferredPackage(self, arg0: 'Class'):
+        """public void dev.ultreon.libs.resources.v0.ResourceManager.importDeferredPackage(java.lang.Class<?>)"""
+        super(__ResourceManager, self).importDeferredPackage(arg0)
 
     @overload
     def equals(self, arg0: object) -> bool:

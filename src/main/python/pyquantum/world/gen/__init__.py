@@ -27,7 +27,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class WorldGenFeature(ABC, pygdx.__Disposable, utils.Disposable):
+class WorldGenFeature(ABC):
     """dev.ultreon.quantum.world.gen.WorldGenFeature"""
  
     @staticmethod
@@ -168,7 +168,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class WorldGenFeature(ABC, pygdx.__Disposable, utils.Disposable):
+class WorldGenFeature(ABC):
     """dev.ultreon.quantum.world.gen.WorldGenFeature"""
  
     @staticmethod
@@ -423,7 +423,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CaveNoiseGenerator(__NoiseGenerator, NoiseGenerator):
+class CaveNoiseGenerator():
     """dev.ultreon.quantum.world.gen.CaveNoiseGenerator"""
  
     @staticmethod
@@ -572,7 +572,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RecordingChunk(pyquantum.__ChunkAccess, world.ChunkAccess):
+class RecordingChunk():
     """dev.ultreon.quantum.world.gen.RecordingChunk"""
  
     @staticmethod
@@ -702,8 +702,8 @@ except ImportError:
     world = __import_once__("pyquantum.world")
 
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 try:
     from pyquantum.world.gen import biome
 except ImportError:
@@ -739,7 +739,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TerrainGenerator(__Disposable, Disposable):
+class TerrainGenerator():
     """dev.ultreon.quantum.world.gen.TerrainGenerator"""
  
     @staticmethod
@@ -1043,7 +1043,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Neighbour8Direction(__Enum, Enum):
+class Neighbour8Direction():
     """dev.ultreon.quantum.world.gen.Neighbour8Direction"""
  
     @staticmethod

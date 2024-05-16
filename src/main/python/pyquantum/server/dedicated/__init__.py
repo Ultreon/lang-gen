@@ -142,7 +142,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 from builtins import int
  
-class ServerConfig(config.__CraftyConfig, crafty.CraftyConfig):
+class ServerConfig():
     """dev.ultreon.quantum.server.dedicated.ServerConfig"""
  
     @staticmethod
@@ -518,7 +518,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 import java.util.List as List
  
-class DedicatedServer(pyquantum.__QuantumServer, server.QuantumServer):
+class DedicatedServer():
     """dev.ultreon.quantum.server.dedicated.DedicatedServer"""
  
     @staticmethod

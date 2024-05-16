@@ -82,7 +82,7 @@ import dev.ultreon.quantum.platform.MouseDevice as __MouseDevice
 __MouseDevice = __MouseDevice
 from abc import abstractmethod, ABC
  
-class MouseDevice(ABC, __Device, Device):
+class MouseDevice(ABC):
     """dev.ultreon.quantum.platform.MouseDevice"""
  
     @staticmethod

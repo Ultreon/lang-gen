@@ -1422,7 +1422,7 @@ import java.lang.reflect.WildcardType as __WildcardType
 __WildcardType = __WildcardType
 from builtins import int
  
-class WildcardTypeBuilder(lang3.__Builder, builder.Builder):
+class WildcardTypeBuilder():
     """org.apache.commons.lang3.reflect.TypeUtils.WildcardTypeBuilder"""
  
     @staticmethod
@@ -1543,7 +1543,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TypeLiteral(ABC, __Typed, Typed):
+class TypeLiteral(ABC):
     """org.apache.commons.lang3.reflect.TypeLiteral"""
  
     @staticmethod

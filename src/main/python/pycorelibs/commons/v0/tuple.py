@@ -21,7 +21,7 @@ __Quadruple = __Quadruple
 from builtins import bool
 from builtins import int
  
-class Quadruple(__Cloneable, Cloneable):
+class Quadruple():
     """dev.ultreon.libs.commons.v0.tuple.Quadruple"""
  
     @staticmethod
@@ -178,7 +178,7 @@ __Quadruple = __Quadruple
 from builtins import bool
 from builtins import int
  
-class Quadruple(__Cloneable, Cloneable):
+class Quadruple():
     """dev.ultreon.libs.commons.v0.tuple.Quadruple"""
  
     @staticmethod
@@ -338,7 +338,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Triple(__Cloneable, Cloneable):
+class Triple():
     """dev.ultreon.libs.commons.v0.tuple.Triple"""
  
     @staticmethod
@@ -483,7 +483,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Quintuple(__Cloneable, Cloneable):
+class Quintuple():
     """dev.ultreon.libs.commons.v0.tuple.Quintuple"""
  
     @staticmethod
@@ -648,7 +648,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Pair(__Cloneable, Cloneable):
+class Pair():
     """dev.ultreon.libs.commons.v0.tuple.Pair"""
  
     @staticmethod

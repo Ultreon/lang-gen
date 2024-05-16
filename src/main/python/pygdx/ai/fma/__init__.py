@@ -147,7 +147,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FreeSlotAssignmentStrategy(__SlotAssignmentStrategy, SlotAssignmentStrategy):
+class FreeSlotAssignmentStrategy():
     """com.badlogic.gdx.ai.fma.FreeSlotAssignmentStrategy"""
  
     @staticmethod
@@ -287,7 +287,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BoundedSlotAssignmentStrategy(ABC, __SlotAssignmentStrategy, SlotAssignmentStrategy):
+class BoundedSlotAssignmentStrategy(ABC):
     """com.badlogic.gdx.ai.fma.BoundedSlotAssignmentStrategy"""
  
     @staticmethod
@@ -664,13 +664,13 @@ import java.lang.Object as __Object
 __Object = __Object
 import java.lang.Integer as __int
 from builtins import bool
-import com.badlogic.gdx.ai.fma.FormationPattern as __FormationPattern
-__FormationPattern = __FormationPattern
 try:
     from pygdx.ai import utils
 except ImportError:
     utils = __import_once__("pygdx.ai.utils")
 
+import com.badlogic.gdx.ai.fma.FormationPattern as __FormationPattern
+__FormationPattern = __FormationPattern
 from builtins import int
  
 class Formation():
@@ -921,7 +921,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SoftRoleSlotAssignmentStrategy(__BoundedSlotAssignmentStrategy, BoundedSlotAssignmentStrategy):
+class SoftRoleSlotAssignmentStrategy():
     """com.badlogic.gdx.ai.fma.SoftRoleSlotAssignmentStrategy"""
  
     @staticmethod

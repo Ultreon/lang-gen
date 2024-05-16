@@ -28,7 +28,7 @@ __ForClosure = __ForClosure
 from builtins import bool
 from builtins import int
  
-class ForClosure(pyapache.__Closure, collections4.Closure):
+class ForClosure():
     """org.apache.commons.collections4.functors.ForClosure"""
  
     @staticmethod
@@ -169,7 +169,7 @@ __ForClosure = __ForClosure
 from builtins import bool
 from builtins import int
  
-class ForClosure(pyapache.__Closure, collections4.Closure):
+class ForClosure():
     """org.apache.commons.collections4.functors.ForClosure"""
  
     @staticmethod
@@ -314,7 +314,7 @@ __Transformer = __Transformer
 from builtins import bool
 from builtins import int
  
-class InstantiateTransformer(pyapache.__Transformer, collections4.Transformer):
+class InstantiateTransformer():
     """org.apache.commons.collections4.functors.InstantiateTransformer"""
  
     @staticmethod
@@ -427,8 +427,8 @@ from pyquantum_helper import import_once as __import_once__
 import org.apache.commons.collections4.Closure as __Closure
 __Closure = __Closure
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 import org.apache.commons.collections4.Predicate as __Predicate
@@ -451,7 +451,7 @@ import org.apache.commons.collections4.functors.WhileClosure as __WhileClosure
 __WhileClosure = __WhileClosure
 from builtins import int
  
-class WhileClosure(pyapache.__Closure, collections4.Closure):
+class WhileClosure():
     """org.apache.commons.collections4.functors.WhileClosure"""
  
     @staticmethod
@@ -597,7 +597,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ChainedClosure(pyapache.__Closure, collections4.Closure, __Serializable, Serializable):
+class ChainedClosure():
     """org.apache.commons.collections4.functors.ChainedClosure"""
  
     @staticmethod
@@ -739,7 +739,7 @@ __Transformer = __Transformer
 from builtins import bool
 from builtins import int
  
-class InvokerTransformer(pyapache.__Transformer, collections4.Transformer):
+class InvokerTransformer():
     """org.apache.commons.collections4.functors.InvokerTransformer"""
  
     @staticmethod
@@ -873,7 +873,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Criterion(__Enum, Enum):
+class Criterion():
     """org.apache.commons.collections4.functors.ComparatorPredicate.Criterion"""
  
     @staticmethod
@@ -1034,7 +1034,7 @@ import java.util.Map as Map
 from builtins import bool
 from builtins import int
  
-class SwitchClosure(pyapache.__Closure, collections4.Closure, __Serializable, Serializable):
+class SwitchClosure():
     """org.apache.commons.collections4.functors.SwitchClosure"""
  
     @staticmethod
@@ -1188,7 +1188,7 @@ import org.apache.commons.collections4.functors.AbstractQuantifierPredicate as _
 __AbstractQuantifierPredicate = __AbstractQuantifierPredicate
 from builtins import int
  
-class NonePredicate(__AbstractQuantifierPredicate, AbstractQuantifierPredicate):
+class NonePredicate():
     """org.apache.commons.collections4.functors.NonePredicate"""
  
     @staticmethod
@@ -1329,7 +1329,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ConstantFactory(pyapache.__Factory, collections4.Factory, __Serializable, Serializable):
+class ConstantFactory():
     """org.apache.commons.collections4.functors.ConstantFactory"""
  
     @staticmethod
@@ -1464,7 +1464,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class EqualPredicate(pyapache.__Predicate, collections4.Predicate, __Serializable, Serializable):
+class EqualPredicate():
     """org.apache.commons.collections4.functors.EqualPredicate"""
  
     @staticmethod
@@ -1602,7 +1602,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CatchAndRethrowClosure(ABC, pyapache.__Closure, collections4.Closure):
+class CatchAndRethrowClosure(ABC):
     """org.apache.commons.collections4.functors.CatchAndRethrowClosure"""
  
     @staticmethod
@@ -1735,7 +1735,7 @@ import org.apache.commons.collections4.Transformer as __Transformer
 __Transformer = __Transformer
 from builtins import int
  
-class TransformedPredicate(__PredicateDecorator, PredicateDecorator, __Serializable, Serializable):
+class TransformedPredicate():
     """org.apache.commons.collections4.functors.TransformedPredicate"""
  
     @staticmethod
@@ -1874,7 +1874,7 @@ __Transformer = __Transformer
 from builtins import bool
 from builtins import int
  
-class StringValueTransformer(pyapache.__Transformer, collections4.Transformer, __Serializable, Serializable):
+class StringValueTransformer():
     """org.apache.commons.collections4.functors.StringValueTransformer"""
  
     @staticmethod
@@ -1995,7 +1995,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NullPredicate(pyapache.__Predicate, collections4.Predicate, __Serializable, Serializable):
+class NullPredicate():
     """org.apache.commons.collections4.functors.NullPredicate"""
  
     @staticmethod
@@ -2117,7 +2117,7 @@ __Transformer = __Transformer
 from builtins import bool
 from builtins import int
  
-class ExceptionTransformer(pyapache.__Transformer, collections4.Transformer, __Serializable, Serializable):
+class ExceptionTransformer():
     """org.apache.commons.collections4.functors.ExceptionTransformer"""
  
     @staticmethod
@@ -2238,7 +2238,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FalsePredicate(pyapache.__Predicate, collections4.Predicate, __Serializable, Serializable):
+class FalsePredicate():
     """org.apache.commons.collections4.functors.FalsePredicate"""
  
     @staticmethod
@@ -2363,7 +2363,7 @@ import org.apache.commons.collections4.functors.AbstractQuantifierPredicate as _
 __AbstractQuantifierPredicate = __AbstractQuantifierPredicate
 from builtins import int
  
-class OnePredicate(__AbstractQuantifierPredicate, AbstractQuantifierPredicate):
+class OnePredicate():
     """org.apache.commons.collections4.functors.OnePredicate"""
  
     @staticmethod
@@ -2504,7 +2504,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ComparatorPredicate(pyapache.__Predicate, collections4.Predicate, __Serializable, Serializable):
+class ComparatorPredicate():
     """org.apache.commons.collections4.functors.ComparatorPredicate"""
  
     @staticmethod
@@ -2638,7 +2638,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NOPClosure(pyapache.__Closure, collections4.Closure, __Serializable, Serializable):
+class NOPClosure():
     """org.apache.commons.collections4.functors.NOPClosure"""
  
     @staticmethod
@@ -2761,7 +2761,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NullIsFalsePredicate(__PredicateDecorator, PredicateDecorator, __Serializable, Serializable):
+class NullIsFalsePredicate():
     """org.apache.commons.collections4.functors.NullIsFalsePredicate"""
  
     @staticmethod
@@ -2896,7 +2896,7 @@ __Transformer = __Transformer
 from builtins import bool
 from builtins import int
  
-class NOPTransformer(pyapache.__Transformer, collections4.Transformer, __Serializable, Serializable):
+class NOPTransformer():
     """org.apache.commons.collections4.functors.NOPTransformer"""
  
     @staticmethod
@@ -3018,7 +3018,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NullIsExceptionPredicate(__PredicateDecorator, PredicateDecorator, __Serializable, Serializable):
+class NullIsExceptionPredicate():
     """org.apache.commons.collections4.functors.NullIsExceptionPredicate"""
  
     @staticmethod
@@ -3155,7 +3155,7 @@ __Transformer = __Transformer
 from builtins import bool
 from builtins import int
  
-class ChainedTransformer(pyapache.__Transformer, collections4.Transformer, __Serializable, Serializable):
+class ChainedTransformer():
     """org.apache.commons.collections4.functors.ChainedTransformer"""
  
     @staticmethod
@@ -3296,7 +3296,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class IfClosure(pyapache.__Closure, collections4.Closure, __Serializable, Serializable):
+class IfClosure():
     """org.apache.commons.collections4.functors.IfClosure"""
  
     @staticmethod
@@ -3456,7 +3456,7 @@ __Transformer = __Transformer
 from builtins import bool
 from builtins import int
  
-class ClosureTransformer(pyapache.__Transformer, collections4.Transformer, __Serializable, Serializable):
+class ClosureTransformer():
     """org.apache.commons.collections4.functors.ClosureTransformer"""
  
     @staticmethod
@@ -3581,7 +3581,7 @@ import org.apache.commons.collections4.functors.DefaultEquator as __DefaultEquat
 __DefaultEquator = __DefaultEquator
 from builtins import int
  
-class DefaultEquator(pyapache.__Equator, collections4.Equator, __Serializable, Serializable):
+class DefaultEquator():
     """org.apache.commons.collections4.functors.DefaultEquator"""
  
     @staticmethod
@@ -3707,7 +3707,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ExceptionPredicate(pyapache.__Predicate, collections4.Predicate, __Serializable, Serializable):
+class ExceptionPredicate():
     """org.apache.commons.collections4.functors.ExceptionPredicate"""
  
     @staticmethod
@@ -3831,7 +3831,7 @@ __Transformer = __Transformer
 from builtins import bool
 from builtins import int
  
-class IfTransformer(pyapache.__Transformer, collections4.Transformer, __Serializable, Serializable):
+class IfTransformer():
     """org.apache.commons.collections4.functors.IfTransformer"""
  
     @staticmethod
@@ -3981,7 +3981,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NullIsTruePredicate(__PredicateDecorator, PredicateDecorator, __Serializable, Serializable):
+class NullIsTruePredicate():
     """org.apache.commons.collections4.functors.NullIsTruePredicate"""
  
     @staticmethod
@@ -4117,7 +4117,7 @@ import org.apache.commons.collections4.functors.AbstractQuantifierPredicate as _
 __AbstractQuantifierPredicate = __AbstractQuantifierPredicate
 from builtins import int
  
-class AbstractQuantifierPredicate(ABC, __PredicateDecorator, PredicateDecorator, __Serializable, Serializable):
+class AbstractQuantifierPredicate(ABC):
     """org.apache.commons.collections4.functors.AbstractQuantifierPredicate"""
  
     @staticmethod
@@ -4245,7 +4245,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TruePredicate(pyapache.__Predicate, collections4.Predicate, __Serializable, Serializable):
+class TruePredicate():
     """org.apache.commons.collections4.functors.TruePredicate"""
  
     @staticmethod
@@ -4366,7 +4366,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class UniquePredicate(pyapache.__Predicate, collections4.Predicate, __Serializable, Serializable):
+class UniquePredicate():
     """org.apache.commons.collections4.functors.UniquePredicate"""
  
     @staticmethod
@@ -4482,7 +4482,7 @@ from abc import abstractmethod, ABC
 import org.apache.commons.collections4.Predicate as __Predicate
 __Predicate = __Predicate
  
-class PredicateDecorator(ABC, pyapache.__Predicate, collections4.Predicate):
+class PredicateDecorator(ABC):
     """org.apache.commons.collections4.functors.PredicateDecorator"""
  
     @staticmethod
@@ -4550,7 +4550,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ExceptionFactory(pyapache.__Factory, collections4.Factory, __Serializable, Serializable):
+class ExceptionFactory():
     """org.apache.commons.collections4.functors.ExceptionFactory"""
  
     @staticmethod
@@ -4677,7 +4677,7 @@ import java.util.Map as Map
 from builtins import bool
 from builtins import int
  
-class SwitchTransformer(pyapache.__Transformer, collections4.Transformer, __Serializable, Serializable):
+class SwitchTransformer():
     """org.apache.commons.collections4.functors.SwitchTransformer"""
  
     @staticmethod
@@ -4827,7 +4827,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AndPredicate(__PredicateDecorator, PredicateDecorator, __Serializable, Serializable):
+class AndPredicate():
     """org.apache.commons.collections4.functors.AndPredicate"""
  
     @staticmethod
@@ -5079,7 +5079,7 @@ import org.apache.commons.collections4.Transformer as __Transformer
 __Transformer = __Transformer
 from builtins import int
  
-class TransformerPredicate(pyapache.__Predicate, collections4.Predicate, __Serializable, Serializable):
+class TransformerPredicate():
     """org.apache.commons.collections4.functors.TransformerPredicate"""
  
     @staticmethod
@@ -5216,7 +5216,7 @@ import org.apache.commons.collections4.functors.MapTransformer as __MapTransform
 __MapTransformer = __MapTransformer
 from builtins import int
  
-class MapTransformer(pyapache.__Transformer, collections4.Transformer, __Serializable, Serializable):
+class MapTransformer():
     """org.apache.commons.collections4.functors.MapTransformer"""
  
     @staticmethod
@@ -5347,7 +5347,7 @@ __Transformer = __Transformer
 from builtins import bool
 from builtins import int
  
-class PredicateTransformer(pyapache.__Transformer, collections4.Transformer, __Serializable, Serializable):
+class PredicateTransformer():
     """org.apache.commons.collections4.functors.PredicateTransformer"""
  
     @staticmethod
@@ -5481,7 +5481,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InstantiateFactory(pyapache.__Factory, collections4.Factory):
+class InstantiateFactory():
     """org.apache.commons.collections4.functors.InstantiateFactory"""
  
     @staticmethod
@@ -5618,7 +5618,7 @@ import org.apache.commons.collections4.Transformer as __Transformer
 __Transformer = __Transformer
 from builtins import int
  
-class ConstantTransformer(pyapache.__Transformer, collections4.Transformer, __Serializable, Serializable):
+class ConstantTransformer():
     """org.apache.commons.collections4.functors.ConstantTransformer"""
  
     @staticmethod
@@ -5757,7 +5757,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ExceptionClosure(pyapache.__Closure, collections4.Closure, __Serializable, Serializable):
+class ExceptionClosure():
     """org.apache.commons.collections4.functors.ExceptionClosure"""
  
     @staticmethod
@@ -5879,7 +5879,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NotNullPredicate(pyapache.__Predicate, collections4.Predicate, __Serializable, Serializable):
+class NotNullPredicate():
     """org.apache.commons.collections4.functors.NotNullPredicate"""
  
     @staticmethod
@@ -6001,7 +6001,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class IdentityPredicate(pyapache.__Predicate, collections4.Predicate, __Serializable, Serializable):
+class IdentityPredicate():
     """org.apache.commons.collections4.functors.IdentityPredicate"""
  
     @staticmethod
@@ -6135,7 +6135,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class OrPredicate(__PredicateDecorator, PredicateDecorator, __Serializable, Serializable):
+class OrPredicate():
     """org.apache.commons.collections4.functors.OrPredicate"""
  
     @staticmethod
@@ -6269,7 +6269,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InstanceofPredicate(pyapache.__Predicate, collections4.Predicate, __Serializable, Serializable):
+class InstanceofPredicate():
     """org.apache.commons.collections4.functors.InstanceofPredicate"""
  
     @staticmethod
@@ -6403,7 +6403,7 @@ __NotPredicate = __NotPredicate
 from builtins import bool
 from builtins import int
  
-class NotPredicate(__PredicateDecorator, PredicateDecorator, __Serializable, Serializable):
+class NotPredicate():
     """org.apache.commons.collections4.functors.NotPredicate"""
  
     @staticmethod
@@ -6541,7 +6541,7 @@ import org.apache.commons.collections4.functors.AbstractQuantifierPredicate as _
 __AbstractQuantifierPredicate = __AbstractQuantifierPredicate
 from builtins import int
  
-class AllPredicate(__AbstractQuantifierPredicate, AbstractQuantifierPredicate):
+class AllPredicate():
     """org.apache.commons.collections4.functors.AllPredicate"""
  
     @staticmethod
@@ -6684,7 +6684,7 @@ __Transformer = __Transformer
 from builtins import bool
 from builtins import int
  
-class FactoryTransformer(pyapache.__Transformer, collections4.Transformer, __Serializable, Serializable):
+class FactoryTransformer():
     """org.apache.commons.collections4.functors.FactoryTransformer"""
  
     @staticmethod
@@ -6818,7 +6818,7 @@ __Transformer = __Transformer
 from builtins import bool
 from builtins import int
  
-class CloneTransformer(pyapache.__Transformer, collections4.Transformer):
+class CloneTransformer():
     """org.apache.commons.collections4.functors.CloneTransformer"""
  
     @staticmethod
@@ -6943,7 +6943,7 @@ import org.apache.commons.collections4.functors.AbstractQuantifierPredicate as _
 __AbstractQuantifierPredicate = __AbstractQuantifierPredicate
 from builtins import int
  
-class AnyPredicate(__AbstractQuantifierPredicate, AbstractQuantifierPredicate):
+class AnyPredicate():
     """org.apache.commons.collections4.functors.AnyPredicate"""
  
     @staticmethod
@@ -7085,7 +7085,7 @@ __Transformer = __Transformer
 from builtins import bool
 from builtins import int
  
-class TransformerClosure(pyapache.__Closure, collections4.Closure, __Serializable, Serializable):
+class TransformerClosure():
     """org.apache.commons.collections4.functors.TransformerClosure"""
  
     @staticmethod

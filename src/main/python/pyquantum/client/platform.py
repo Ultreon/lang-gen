@@ -28,7 +28,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class GdxPlatform(__Enum, Enum):
+class GdxPlatform():
     """dev.ultreon.quantum.client.platform.GdxPlatform"""
  
     @staticmethod
@@ -205,7 +205,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class GdxPlatform(__Enum, Enum):
+class GdxPlatform():
     """dev.ultreon.quantum.client.platform.GdxPlatform"""
  
     @staticmethod
@@ -385,7 +385,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class PlatformType(__Enum, Enum):
+class PlatformType():
     """dev.ultreon.quantum.client.platform.PlatformType"""
  
     @staticmethod
@@ -556,7 +556,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class OperatingSystem(__Enum, Enum):
+class OperatingSystem():
     """dev.ultreon.quantum.client.platform.OperatingSystem"""
  
     @staticmethod

@@ -30,7 +30,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TaskCloneException(__RuntimeException, RuntimeException):
+class TaskCloneException():
     """com.badlogic.gdx.ai.btree.TaskCloneException"""
  
     @staticmethod
@@ -250,7 +250,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TaskCloneException(__RuntimeException, RuntimeException):
+class TaskCloneException():
     """com.badlogic.gdx.ai.btree.TaskCloneException"""
  
     @staticmethod
@@ -513,7 +513,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Task(ABC, pygdx.__Pool_Poolable, utils.Pool$Poolable):
+class Task(ABC):
     """com.badlogic.gdx.ai.btree.Task"""
  
     @staticmethod
@@ -745,7 +745,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BehaviorTree(__Task, Task):
+class BehaviorTree():
     """com.badlogic.gdx.ai.btree.BehaviorTree"""
  
     @staticmethod
@@ -1044,7 +1044,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Decorator(ABC, __Task, Task):
+class Decorator(ABC):
     """com.badlogic.gdx.ai.btree.Decorator"""
  
     @staticmethod
@@ -1348,7 +1348,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LeafTask(ABC, __Task, Task):
+class LeafTask(ABC):
     """com.badlogic.gdx.ai.btree.LeafTask"""
  
     @staticmethod
@@ -1610,7 +1610,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BranchTask(ABC, __Task, Task):
+class BranchTask(ABC):
     """com.badlogic.gdx.ai.btree.BranchTask"""
  
     @staticmethod
@@ -1866,7 +1866,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Status(__Enum, Enum):
+class Status():
     """com.badlogic.gdx.ai.btree.Task.Status"""
  
     @staticmethod
@@ -2028,7 +2028,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SingleRunningChildBranch(ABC, __BranchTask, BranchTask):
+class SingleRunningChildBranch(ABC):
     """com.badlogic.gdx.ai.btree.SingleRunningChildBranch"""
  
     @staticmethod
@@ -2287,7 +2287,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LoopDecorator(ABC, __Decorator, Decorator):
+class LoopDecorator(ABC):
     """com.badlogic.gdx.ai.btree.LoopDecorator"""
  
     @staticmethod

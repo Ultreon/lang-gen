@@ -653,7 +653,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class SourceBlending(__Enum, Enum):
+class SourceBlending():
     """dev.ultreon.quantum.client.render.SourceBlending"""
  
     @staticmethod
@@ -1150,7 +1150,7 @@ except ImportError:
 
 from builtins import int
  
-class FlatFoliageRenderer(__NormalBlockRenderer, NormalBlockRenderer):
+class FlatFoliageRenderer():
     """dev.ultreon.quantum.client.render.FlatFoliageRenderer"""
  
     @staticmethod
@@ -1457,7 +1457,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class DestinationBlending(__Enum, Enum):
+class DestinationBlending():
     """dev.ultreon.quantum.client.render.DestinationBlending"""
  
     @staticmethod
@@ -1674,7 +1674,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ModelObject(pygdx.__Disposable, utils.Disposable):
+class ModelObject():
     """dev.ultreon.quantum.client.render.ModelObject"""
  
     @staticmethod
@@ -2032,7 +2032,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class ShaderMode(__Enum, Enum):
+class ShaderMode():
     """dev.ultreon.quantum.client.render.ShaderContext.ShaderMode"""
  
     @staticmethod
@@ -2206,7 +2206,7 @@ except ImportError:
 
 from builtins import int
  
-class NormalBlockRenderer(__BlockRenderer, BlockRenderer):
+class NormalBlockRenderer():
     """dev.ultreon.quantum.client.render.NormalBlockRenderer"""
  
     @staticmethod

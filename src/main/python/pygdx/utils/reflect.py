@@ -1266,7 +1266,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ReflectionException(__Exception, Exception):
+class ReflectionException():
     """com.badlogic.gdx.utils.reflect.ReflectionException"""
  
     @staticmethod

@@ -7,8 +7,8 @@ from pyquantum_helper import import_once as __import_once__
 import com.badlogic.gdx.backends.headless.mock.audio.MockAudio as __MockAudio
 __MockAudio = __MockAudio
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 import com.badlogic.gdx.audio.Sound as __Sound
@@ -42,7 +42,7 @@ __Music = __Music
 from builtins import bool
 from builtins import int
  
-class MockAudio(pygdx.__Audio, pygdx.Audio):
+class MockAudio():
     """com.badlogic.gdx.backends.headless.mock.audio.MockAudio"""
  
     @staticmethod
@@ -178,8 +178,8 @@ from pyquantum_helper import import_once as __import_once__
 import com.badlogic.gdx.backends.headless.mock.audio.MockAudio as __MockAudio
 __MockAudio = __MockAudio
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 import com.badlogic.gdx.audio.Sound as __Sound
@@ -213,7 +213,7 @@ __Music = __Music
 from builtins import bool
 from builtins import int
  
-class MockAudio(pygdx.__Audio, pygdx.Audio):
+class MockAudio():
     """com.badlogic.gdx.backends.headless.mock.audio.MockAudio"""
  
     @staticmethod
@@ -367,7 +367,7 @@ import com.badlogic.gdx.backends.headless.mock.audio.MockAudioDevice as __MockAu
 __MockAudioDevice = __MockAudioDevice
 from builtins import int
  
-class MockAudioDevice(pygdx.__AudioDevice, audio.AudioDevice):
+class MockAudioDevice():
     """com.badlogic.gdx.backends.headless.mock.audio.MockAudioDevice"""
  
     @staticmethod
@@ -531,7 +531,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MockAudioRecorder(pygdx.__AudioRecorder, audio.AudioRecorder):
+class MockAudioRecorder():
     """com.badlogic.gdx.backends.headless.mock.audio.MockAudioRecorder"""
  
     @staticmethod
@@ -644,8 +644,8 @@ class MockAudioRecorder(pygdx.__AudioRecorder, audio.AudioRecorder):
 # CLASS: com.badlogic.gdx.backends.headless.mock.audio.MockMusic
 from pyquantum_helper import import_once as __import_once__
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 from builtins import float
@@ -668,7 +668,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MockMusic(pygdx.__Music, audio.Music):
+class MockMusic():
     """com.badlogic.gdx.backends.headless.mock.audio.MockMusic"""
  
     @staticmethod
@@ -846,8 +846,8 @@ class MockMusic(pygdx.__Music, audio.Music):
  
 # CLASS: com.badlogic.gdx.backends.headless.mock.audio.MockSound
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 import com.badlogic.gdx.backends.headless.mock.audio.MockSound as __MockSound
@@ -864,7 +864,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MockSound(pygdx.__Sound, audio.Sound):
+class MockSound():
     """com.badlogic.gdx.backends.headless.mock.audio.MockSound"""
  
     @staticmethod

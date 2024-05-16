@@ -28,7 +28,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class DomainWarpType(__Enum, Enum):
+class DomainWarpType():
     """dev.ultreon.quantum.world.gen.noise.FastNoiseLite.DomainWarpType"""
  
     @staticmethod
@@ -197,7 +197,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class DomainWarpType(__Enum, Enum):
+class DomainWarpType():
     """dev.ultreon.quantum.world.gen.noise.FastNoiseLite.DomainWarpType"""
  
     @staticmethod
@@ -369,7 +369,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class NoiseType(__Enum, Enum):
+class NoiseType():
     """dev.ultreon.quantum.world.gen.noise.FastNoiseLite.NoiseType"""
  
     @staticmethod
@@ -542,7 +542,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class JNoiseType(__NoiseType, NoiseType):
+class JNoiseType():
     """dev.ultreon.quantum.world.gen.noise.JNoiseType"""
  
     @staticmethod
@@ -861,7 +861,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DomainWarping(__Disposable, Disposable):
+class DomainWarping():
     """dev.ultreon.quantum.world.gen.noise.DomainWarping"""
  
     @staticmethod
@@ -1014,7 +1014,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PerlinNoise(__NoiseType, NoiseType):
+class PerlinNoise():
     """dev.ultreon.quantum.world.gen.noise.PerlinNoise"""
  
     @staticmethod
@@ -1186,7 +1186,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class RotationType3D(__Enum, Enum):
+class RotationType3D():
     """dev.ultreon.quantum.world.gen.noise.FastNoiseLite.RotationType3D"""
  
     @staticmethod
@@ -1817,7 +1817,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class FractalType(__Enum, Enum):
+class FractalType():
     """dev.ultreon.quantum.world.gen.noise.FastNoiseLite.FractalType"""
  
     @staticmethod
@@ -1993,7 +1993,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class CellularDistanceFunction(__Enum, Enum):
+class CellularDistanceFunction():
     """dev.ultreon.quantum.world.gen.noise.FastNoiseLite.CellularDistanceFunction"""
  
     @staticmethod
@@ -2288,7 +2288,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SimplexNoise(__NoiseType, NoiseType):
+class SimplexNoise():
     """dev.ultreon.quantum.world.gen.noise.SimplexNoise"""
  
     @staticmethod
@@ -2563,7 +2563,7 @@ import dev.ultreon.quantum.world.gen.noise.NoiseType as __NoiseType
 __NoiseType = __NoiseType
 from abc import abstractmethod, ABC
  
-class NoiseType(ABC, pyquantum.__ServerDisposable, server.ServerDisposable):
+class NoiseType(ABC):
     """dev.ultreon.quantum.world.gen.noise.NoiseType"""
  
     @staticmethod
@@ -2637,7 +2637,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NoiseInstance(pyquantum.__ServerDisposable, server.ServerDisposable):
+class NoiseInstance():
     """dev.ultreon.quantum.world.gen.noise.NoiseInstance"""
  
     @staticmethod
@@ -2822,7 +2822,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class CellularReturnType(__Enum, Enum):
+class CellularReturnType():
     """dev.ultreon.quantum.world.gen.noise.FastNoiseLite.CellularReturnType"""
  
     @staticmethod

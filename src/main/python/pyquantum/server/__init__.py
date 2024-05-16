@@ -54,7 +54,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ConsoleCommandSender(api.__CommandSender, commands.CommandSender):
+class ConsoleCommandSender():
     """dev.ultreon.quantum.server.ConsoleCommandSender"""
  
     @staticmethod
@@ -284,7 +284,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ConsoleCommandSender(api.__CommandSender, commands.CommandSender):
+class ConsoleCommandSender():
     """dev.ultreon.quantum.server.ConsoleCommandSender"""
  
     @staticmethod
@@ -1107,7 +1107,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 import java.util.List as List
  
-class QuantumServer(ABC, pyquantum.__PollingExecutorService, util.PollingExecutorService, __Runnable, Runnable, pyquantum.__Shutdownable, util.Shutdownable):
+class QuantumServer(ABC):
     """dev.ultreon.quantum.server.QuantumServer"""
  
     @staticmethod

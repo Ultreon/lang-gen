@@ -44,7 +44,7 @@ import java.util.concurrent.ConcurrentMap as __ConcurrentMap
 __ConcurrentMap = __ConcurrentMap
 from builtins import int
  
-class ForwardingLoadingCache(ABC, __ForwardingCache, ForwardingCache, __LoadingCache, LoadingCache):
+class ForwardingLoadingCache(ABC):
     """com.google.common.cache.ForwardingLoadingCache"""
  
     @staticmethod
@@ -277,7 +277,7 @@ import java.util.concurrent.ConcurrentMap as __ConcurrentMap
 __ConcurrentMap = __ConcurrentMap
 from builtins import int
  
-class ForwardingLoadingCache(ABC, __ForwardingCache, ForwardingCache, __LoadingCache, LoadingCache):
+class ForwardingLoadingCache(ABC):
     """com.google.common.cache.ForwardingLoadingCache"""
  
     @staticmethod
@@ -628,7 +628,7 @@ import java.util.concurrent.ConcurrentMap as __ConcurrentMap
 __ConcurrentMap = __ConcurrentMap
 from builtins import int
  
-class ForwardingCache(ABC, pygcollect.__ForwardingObject, pygcollect.ForwardingObject, __Cache, Cache):
+class ForwardingCache(ABC):
     """com.google.common.cache.ForwardingCache"""
  
     @staticmethod
@@ -979,7 +979,7 @@ import java.util.concurrent.ConcurrentMap as __ConcurrentMap
 __ConcurrentMap = __ConcurrentMap
 from builtins import int
  
-class SimpleForwardingLoadingCache(ABC, __ForwardingLoadingCache, ForwardingLoadingCache):
+class SimpleForwardingLoadingCache(ABC):
     """com.google.common.cache.ForwardingLoadingCache.SimpleForwardingLoadingCache"""
  
     @staticmethod
@@ -1196,7 +1196,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InvalidCacheLoadException(__RuntimeException, RuntimeException):
+class InvalidCacheLoadException():
     """com.google.common.cache.CacheLoader.InvalidCacheLoadException"""
  
     @staticmethod
@@ -1802,7 +1802,7 @@ import java.util.concurrent.ConcurrentMap as __ConcurrentMap
 __ConcurrentMap = __ConcurrentMap
 from builtins import int
  
-class SimpleForwardingCache(ABC, __ForwardingCache, ForwardingCache):
+class SimpleForwardingCache(ABC):
     """com.google.common.cache.ForwardingCache.SimpleForwardingCache"""
  
     @staticmethod
@@ -1993,7 +1993,7 @@ import java.util.concurrent.ConcurrentMap as __ConcurrentMap
 __ConcurrentMap = __ConcurrentMap
 from builtins import int
  
-class AbstractCache(ABC, __Cache, Cache):
+class AbstractCache(ABC):
     """com.google.common.cache.AbstractCache"""
  
     @staticmethod
@@ -2166,7 +2166,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SimpleStatsCounter(__StatsCounter, StatsCounter):
+class SimpleStatsCounter():
     """com.google.common.cache.AbstractCache.SimpleStatsCounter"""
  
     @staticmethod
@@ -2512,7 +2512,7 @@ __UnsupportedLoadingOperationException = __CacheLoader_UnsupportedLoadingOperati
 from builtins import bool
 from builtins import int
  
-class UnsupportedLoadingOperationException(__UnsupportedOperationException, UnsupportedOperationException):
+class UnsupportedLoadingOperationException():
     """com.google.common.cache.CacheLoader.UnsupportedLoadingOperationException"""
  
     @staticmethod
@@ -2690,7 +2690,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RemovalNotification(AbstractMap.__AbstractMap_SimpleImmutableEntry, SimpleImmutableEntry.AbstractMap$SimpleImmutableEntry):
+class RemovalNotification():
     """com.google.common.cache.RemovalNotification"""
  
     @staticmethod
@@ -2874,7 +2874,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class RemovalCause(ABC, __Enum, Enum):
+class RemovalCause(ABC):
     """com.google.common.cache.RemovalCause"""
  
     @staticmethod
@@ -3149,7 +3149,7 @@ import java.util.concurrent.ConcurrentMap as __ConcurrentMap
 __ConcurrentMap = __ConcurrentMap
 from builtins import int
  
-class AbstractLoadingCache(ABC, __AbstractCache, AbstractCache, __LoadingCache, LoadingCache):
+class AbstractLoadingCache(ABC):
     """com.google.common.cache.AbstractLoadingCache"""
  
     @staticmethod
@@ -3382,6 +3382,7 @@ class Weigher(ABC):
 # CLASS: com.google.common.cache.LoadingCache
 import com.google.common.cache.LoadingCache as __LoadingCache
 __LoadingCache = __LoadingCache
+from pyquantum_helper import override
 import java.lang.Iterable as Iterable
 import java.util.function.Function as __Function
 __Function = __Function
@@ -3394,7 +3395,7 @@ __Cache = __Cache
 import java.util.function.Function as Function
 import java.util.Map as Map
  
-class LoadingCache(ABC, __Cache, Cache, pygcommon.__Function, base.Function):
+class LoadingCache(ABC):
     """com.google.common.cache.LoadingCache"""
  
     @staticmethod

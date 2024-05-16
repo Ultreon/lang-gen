@@ -40,7 +40,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Selector(ai.__SingleRunningChildBranch, btree.SingleRunningChildBranch):
+class Selector():
     """com.badlogic.gdx.ai.btree.branch.Selector"""
  
     @staticmethod
@@ -321,7 +321,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Selector(ai.__SingleRunningChildBranch, btree.SingleRunningChildBranch):
+class Selector():
     """com.badlogic.gdx.ai.btree.branch.Selector"""
  
     @staticmethod
@@ -607,7 +607,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RandomSequence(__Sequence, Sequence):
+class RandomSequence():
     """com.badlogic.gdx.ai.btree.branch.RandomSequence"""
  
     @staticmethod
@@ -884,7 +884,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DynamicGuardSelector(ai.__BranchTask, btree.BranchTask):
+class DynamicGuardSelector():
     """com.badlogic.gdx.ai.btree.branch.DynamicGuardSelector"""
  
     @staticmethod
@@ -1163,7 +1163,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Sequence(ai.__SingleRunningChildBranch, btree.SingleRunningChildBranch):
+class Sequence():
     """com.badlogic.gdx.ai.btree.branch.Sequence"""
  
     @staticmethod
@@ -1431,7 +1431,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Orchestrator(ABC, __Enum, Enum):
+class Orchestrator(ABC):
     """com.badlogic.gdx.ai.btree.branch.Parallel.Orchestrator"""
  
     @staticmethod
@@ -1607,7 +1607,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RandomSelector(__Selector, Selector):
+class RandomSelector():
     """com.badlogic.gdx.ai.btree.branch.RandomSelector"""
  
     @staticmethod
@@ -1875,7 +1875,7 @@ import com.badlogic.gdx.ai.btree.branch.Parallel as __Parallel_Policy
 __Policy = __Parallel_Policy.Policy
 from builtins import int
  
-class Policy(ABC, __Enum, Enum):
+class Policy(ABC):
     """com.badlogic.gdx.ai.btree.branch.Parallel.Policy"""
  
     @staticmethod
@@ -2052,7 +2052,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Parallel(ai.__BranchTask, btree.BranchTask):
+class Parallel():
     """com.badlogic.gdx.ai.btree.branch.Parallel"""
  
     @staticmethod

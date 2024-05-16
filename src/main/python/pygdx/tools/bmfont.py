@@ -22,7 +22,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BitmapFontWriterTest(pygdx.__ApplicationAdapter, pygdx.ApplicationAdapter):
+class BitmapFontWriterTest():
     """com.badlogic.gdx.tools.bmfont.BitmapFontWriterTest"""
  
     @staticmethod
@@ -184,7 +184,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BitmapFontWriterTest(pygdx.__ApplicationAdapter, pygdx.ApplicationAdapter):
+class BitmapFontWriterTest():
     """com.badlogic.gdx.tools.bmfont.BitmapFontWriterTest"""
  
     @staticmethod
@@ -783,7 +783,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class OutputFormat(__Enum, Enum):
+class OutputFormat():
     """com.badlogic.gdx.tools.bmfont.BitmapFontWriter.OutputFormat"""
  
     @staticmethod

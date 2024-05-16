@@ -30,7 +30,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RegistrySupplier(__Supplier, Supplier):
+class RegistrySupplier():
     """dev.ultreon.libs.registries.v0.RegistrySupplier"""
  
     @staticmethod
@@ -167,7 +167,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RegistrySupplier(__Supplier, Supplier):
+class RegistrySupplier():
     """dev.ultreon.libs.registries.v0.RegistrySupplier"""
  
     @staticmethod

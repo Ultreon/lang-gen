@@ -29,7 +29,7 @@ except ImportError:
 
 from builtins import int
  
-class DefensiveCircleFormationPattern(ai.__FormationPattern, fma.FormationPattern):
+class DefensiveCircleFormationPattern():
     """com.badlogic.gdx.ai.fma.patterns.DefensiveCircleFormationPattern"""
  
     @staticmethod
@@ -165,7 +165,7 @@ except ImportError:
 
 from builtins import int
  
-class DefensiveCircleFormationPattern(ai.__FormationPattern, fma.FormationPattern):
+class DefensiveCircleFormationPattern():
     """com.badlogic.gdx.ai.fma.patterns.DefensiveCircleFormationPattern"""
  
     @staticmethod
@@ -306,7 +306,7 @@ except ImportError:
 
 from builtins import int
  
-class OffensiveCircleFormationPattern(__DefensiveCircleFormationPattern, DefensiveCircleFormationPattern):
+class OffensiveCircleFormationPattern():
     """com.badlogic.gdx.ai.fma.patterns.OffensiveCircleFormationPattern"""
  
     @staticmethod

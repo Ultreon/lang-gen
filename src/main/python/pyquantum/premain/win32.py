@@ -8,7 +8,7 @@ import dev.ultreon.quantum.premain.win32.Kernel32 as __Kernel32
 __Kernel32 = __Kernel32
 from abc import abstractmethod, ABC
  
-class Kernel32(ABC, __Library, Library):
+class Kernel32(ABC):
     """dev.ultreon.quantum.premain.win32.Kernel32"""
  
     @staticmethod
@@ -56,7 +56,7 @@ import dev.ultreon.quantum.premain.win32.Kernel32 as __Kernel32
 __Kernel32 = __Kernel32
 from abc import abstractmethod, ABC
  
-class Kernel32(ABC, __Library, Library):
+class Kernel32(ABC):
     """dev.ultreon.quantum.premain.win32.Kernel32"""
  
     @staticmethod

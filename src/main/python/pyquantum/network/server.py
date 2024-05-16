@@ -9,6 +9,7 @@ __ServerPacketHandler = __ServerPacketHandler
 import dev.ultreon.quantum.network.api.PacketDestination as __PacketDestination
 __PacketDestination = __PacketDestination
 import java.lang.Long as __long
+from pyquantum_helper import override
 import dev.ultreon.quantum.network.PacketHandler as __PacketHandler
 __PacketHandler = __PacketHandler
 import dev.ultreon.quantum.network.packets.Packet as __Packet
@@ -26,7 +27,7 @@ except ImportError:
 
 from builtins import bool
  
-class ServerPacketHandler(ABC, pyquantum.__PacketHandler, network.PacketHandler):
+class ServerPacketHandler(ABC):
     """dev.ultreon.quantum.network.server.ServerPacketHandler"""
  
     @staticmethod
@@ -113,6 +114,7 @@ __ServerPacketHandler = __ServerPacketHandler
 import dev.ultreon.quantum.network.api.PacketDestination as __PacketDestination
 __PacketDestination = __PacketDestination
 import java.lang.Long as __long
+from pyquantum_helper import override
 import dev.ultreon.quantum.network.PacketHandler as __PacketHandler
 __PacketHandler = __PacketHandler
 import dev.ultreon.quantum.network.packets.Packet as __Packet
@@ -130,7 +132,7 @@ except ImportError:
 
 from builtins import bool
  
-class ServerPacketHandler(ABC, pyquantum.__PacketHandler, network.PacketHandler):
+class ServerPacketHandler(ABC):
     """dev.ultreon.quantum.network.server.ServerPacketHandler"""
  
     @staticmethod
@@ -304,7 +306,7 @@ except ImportError:
 
 from builtins import int
  
-class InGameServerPacketHandler(__ServerPacketHandler, ServerPacketHandler):
+class InGameServerPacketHandler():
     """dev.ultreon.quantum.network.server.InGameServerPacketHandler"""
  
     @staticmethod
@@ -628,7 +630,7 @@ except ImportError:
 
 from builtins import int
  
-class LoginServerPacketHandler(__ServerPacketHandler, ServerPacketHandler):
+class LoginServerPacketHandler():
     """dev.ultreon.quantum.network.server.LoginServerPacketHandler"""
  
     @staticmethod
@@ -722,16 +724,16 @@ class LoginServerPacketHandler(__ServerPacketHandler, ServerPacketHandler):
         """public boolean dev.ultreon.quantum.network.server.LoginServerPacketHandler.isAsync()"""
         return bool.__wrap(super(LoginServerPacketHandler, self).isAsync())
 
-    @overload
-    def shouldHandlePacket(self, arg0: 'Packet') -> bool:
-        """public boolean dev.ultreon.quantum.network.server.LoginServerPacketHandler.shouldHandlePacket(dev.ultreon.quantum.network.packets.Packet<?>)"""
-        return bool.__wrap(super(__LoginServerPacketHandler, self).shouldHandlePacket(arg0))
-
     @override
     @overload
     def isAcceptingPackets(self) -> bool:
         """public boolean dev.ultreon.quantum.network.server.LoginServerPacketHandler.isAcceptingPackets()"""
         return bool.__wrap(super(LoginServerPacketHandler, self).isAcceptingPackets())
+
+    @overload
+    def shouldHandlePacket(self, arg0: 'Packet') -> bool:
+        """public boolean dev.ultreon.quantum.network.server.LoginServerPacketHandler.shouldHandlePacket(dev.ultreon.quantum.network.packets.Packet<?>)"""
+        return bool.__wrap(super(__LoginServerPacketHandler, self).shouldHandlePacket(arg0))
 
     @override
     @overload

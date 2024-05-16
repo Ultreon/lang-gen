@@ -30,7 +30,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DataTypeException(__IOException, IOException):
+class DataTypeException():
     """dev.ultreon.ubo.DataTypeException"""
  
     @staticmethod
@@ -222,7 +222,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DataTypeException(__IOException, IOException):
+class DataTypeException():
     """dev.ultreon.ubo.DataTypeException"""
  
     @staticmethod
@@ -417,7 +417,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FutureVersionException(__IOException, IOException):
+class FutureVersionException():
     """dev.ultreon.ubo.FutureVersionException"""
  
     @staticmethod

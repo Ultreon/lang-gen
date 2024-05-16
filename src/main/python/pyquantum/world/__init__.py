@@ -587,7 +587,7 @@ __Object = __Object
 import java.lang.Integer as __int
 from builtins import int
  
-class CubicDirection(__Enum, Enum):
+class CubicDirection():
     """dev.ultreon.quantum.world.CubicDirection"""
  
     @staticmethod
@@ -825,7 +825,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Status(__Enum, Enum):
+class Status():
     """dev.ultreon.quantum.world.Chunk.Status"""
  
     @staticmethod
@@ -1075,8 +1075,8 @@ import java.lang.Object as __Object
 __Object = __Object
 import java.lang.Integer as __int
 import java.util.Map as Map
-from builtins import int
 import java.util.List as List
+from builtins import int
 import dev.ultreon.quantum.world.rng.RNG as __RNG
 __RNG = __RNG
 try:
@@ -1085,7 +1085,7 @@ except ImportError:
     types = __import_once__("pyubo.types")
 
  
-class BuilderChunk(__Chunk, Chunk):
+class BuilderChunk():
     """dev.ultreon.quantum.world.BuilderChunk"""
  
     @staticmethod
@@ -1181,14 +1181,14 @@ class BuilderChunk(__Chunk, Chunk):
         super(object, self).notify()
 
     @overload
-    def getHighest(self, arg0: int, arg1: int, arg2: 'BlockMetaPredicate') -> int:
-        """public int dev.ultreon.quantum.world.Chunk.getHighest(int,int,dev.ultreon.quantum.util.BlockMetaPredicate)"""
-        return int.__wrap(super(__Chunk, self).getHighest(__int.valueOf(arg0), __int.valueOf(arg1), arg2))
-
-    @overload
     def getBlockEntity(self, arg0: int, arg1: int, arg2: int) -> 'entity.BlockEntity':
         """public dev.ultreon.quantum.block.entity.BlockEntity dev.ultreon.quantum.world.Chunk.getBlockEntity(int,int,int)"""
         return 'entity.BlockEntity'.__wrap(super(__Chunk, self).getBlockEntity(__int.valueOf(arg0), __int.valueOf(arg1), __int.valueOf(arg2)))
+
+    @overload
+    def getHighest(self, arg0: int, arg1: int, arg2: 'BlockMetaPredicate') -> int:
+        """public int dev.ultreon.quantum.world.Chunk.getHighest(int,int,dev.ultreon.quantum.util.BlockMetaPredicate)"""
+        return int.__wrap(super(__Chunk, self).getHighest(__int.valueOf(arg0), __int.valueOf(arg1), arg2))
 
     @staticmethod
     @overload
@@ -1551,7 +1551,7 @@ except ImportError:
 
 from builtins import int
  
-class ServerChunk(__Chunk, Chunk):
+class ServerChunk():
     """dev.ultreon.quantum.world.ServerChunk"""
  
     @staticmethod
@@ -1637,6 +1637,11 @@ class ServerChunk(__Chunk, Chunk):
         super(object, self).notify()
 
     @overload
+    def getBlockEntity(self, arg0: int, arg1: int, arg2: int) -> 'entity.BlockEntity':
+        """public dev.ultreon.quantum.block.entity.BlockEntity dev.ultreon.quantum.world.Chunk.getBlockEntity(int,int,int)"""
+        return 'entity.BlockEntity'.__wrap(super(__Chunk, self).getBlockEntity(__int.valueOf(arg0), __int.valueOf(arg1), __int.valueOf(arg2)))
+
+    @overload
     def getHighest(self, arg0: int, arg1: int, arg2: 'BlockMetaPredicate') -> int:
         """public int dev.ultreon.quantum.world.Chunk.getHighest(int,int,dev.ultreon.quantum.util.BlockMetaPredicate)"""
         return int.__wrap(super(__Chunk, self).getHighest(__int.valueOf(arg0), __int.valueOf(arg1), arg2))
@@ -1646,11 +1651,6 @@ class ServerChunk(__Chunk, Chunk):
     def setFast(self, arg0: 'Vec3i', arg1: 'BlockProperties'):
         """public void dev.ultreon.quantum.world.Chunk.setFast(dev.ultreon.libs.commons.v0.vector.Vec3i,dev.ultreon.quantum.block.state.BlockProperties)"""
         super(__Chunk, self).setFast(arg0, arg1)
-
-    @overload
-    def getBlockEntity(self, arg0: int, arg1: int, arg2: int) -> 'entity.BlockEntity':
-        """public dev.ultreon.quantum.block.entity.BlockEntity dev.ultreon.quantum.world.Chunk.getBlockEntity(int,int,int)"""
-        return 'entity.BlockEntity'.__wrap(super(__Chunk, self).getBlockEntity(__int.valueOf(arg0), __int.valueOf(arg1), __int.valueOf(arg2)))
 
     @staticmethod
     @overload
@@ -1922,7 +1922,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TerrainNoise(__NoiseSource, NoiseSource):
+class TerrainNoise():
     """dev.ultreon.quantum.world.TerrainNoise"""
  
     @staticmethod
@@ -2255,20 +2255,20 @@ try:
 except ImportError:
     math = __import_once__("pygdx.math")
 
-import dev.ultreon.quantum.world.Biome as __Biome
-__Biome = __Biome
 try:
     from pyquantum import menu
 except ImportError:
     menu = __import_once__("pyquantum.menu")
 
+import dev.ultreon.quantum.world.Biome as __Biome
+__Biome = __Biome
 from builtins import str
+from pyquantum_helper import override
 try:
     from pyquantum.entity import player
 except ImportError:
     player = __import_once__("pyquantum.entity.player")
 
-from pyquantum_helper import override
 import dev.ultreon.quantum.util.BlockHitResult as __BlockHitResult
 __BlockHitResult = __BlockHitResult
 import java.lang.Object as __object
@@ -2302,7 +2302,7 @@ except ImportError:
     types = __import_once__("pyubo.types")
 
  
-class World(ABC, pyquantum.__ServerDisposable, server.ServerDisposable):
+class World(ABC):
     """dev.ultreon.quantum.world.World"""
  
     @staticmethod
@@ -2409,14 +2409,14 @@ class World(ABC, pyquantum.__ServerDisposable, server.ServerDisposable):
         super(object, self).notify()
 
     @overload
-    def setColumn(self, arg0: int, arg1: int, arg2: 'BlockProperties'):
-        """public void dev.ultreon.quantum.world.World.setColumn(int,int,dev.ultreon.quantum.block.state.BlockProperties)"""
-        super(__World, self).setColumn(__int.valueOf(arg0), __int.valueOf(arg1), arg2)
-
-    @overload
     def getChunk(self, arg0: int, arg1: int) -> 'Chunk':
         """public dev.ultreon.quantum.world.Chunk dev.ultreon.quantum.world.World.getChunk(int,int)"""
         return 'Chunk'.__wrap(super(__World, self).getChunk(__int.valueOf(arg0), __int.valueOf(arg1)))
+
+    @overload
+    def setColumn(self, arg0: int, arg1: int, arg2: 'BlockProperties'):
+        """public void dev.ultreon.quantum.world.World.setColumn(int,int,dev.ultreon.quantum.block.state.BlockProperties)"""
+        super(__World, self).setColumn(__int.valueOf(arg0), __int.valueOf(arg1), arg2)
 
     @overload
     def updateNeighbours(self, arg0: 'Chunk'):
@@ -2435,14 +2435,14 @@ class World(ABC, pyquantum.__ServerDisposable, server.ServerDisposable):
         return bool.__wrap(super(__World, self).intersectEntities(arg0))
 
     @overload
-    def entitiesWithinDst(self, arg0: 'Entity', arg1: int) -> 'List':
-        """public java.util.List<dev.ultreon.quantum.entity.Entity> dev.ultreon.quantum.world.World.entitiesWithinDst(dev.ultreon.quantum.entity.Entity,int)"""
-        return 'List'.__wrap(super(__World, self).entitiesWithinDst(arg0, __int.valueOf(arg1)))
-
-    @overload
     def stopBreaking(self, arg0: 'BlockPos', arg1: 'Player'):
         """public void dev.ultreon.quantum.world.World.stopBreaking(dev.ultreon.quantum.world.BlockPos,dev.ultreon.quantum.entity.player.Player)"""
         super(__World, self).stopBreaking(arg0, arg1)
+
+    @overload
+    def entitiesWithinDst(self, arg0: 'Entity', arg1: int) -> 'List':
+        """public java.util.List<dev.ultreon.quantum.entity.Entity> dev.ultreon.quantum.world.World.entitiesWithinDst(dev.ultreon.quantum.entity.Entity,int)"""
+        return 'List'.__wrap(super(__World, self).entitiesWithinDst(arg0, __int.valueOf(arg1)))
 
     @overload
     def collideEntities(self, arg0: 'Entity', arg1: 'BoundingBox') -> 'List':
@@ -2682,14 +2682,14 @@ class World(ABC, pyquantum.__ServerDisposable, server.ServerDisposable):
         return 'state.BlockProperties'.__wrap(super(__World, self).get(__int.valueOf(arg0), __int.valueOf(arg1), __int.valueOf(arg2)))
 
     @overload
-    def despawn(self, arg0: int):
-        """public void dev.ultreon.quantum.world.World.despawn(int)"""
-        super(__World, self).despawn(__int.valueOf(arg0))
-
-    @overload
     def getEntities(self) -> 'Collection':
         """public java.util.Collection<dev.ultreon.quantum.entity.Entity> dev.ultreon.quantum.world.World.getEntities()"""
         return 'Collection'.__wrap(super(World, self).getEntities())
+
+    @overload
+    def despawn(self, arg0: int):
+        """public void dev.ultreon.quantum.world.World.despawn(int)"""
+        super(__World, self).despawn(__int.valueOf(arg0))
 
     @overload
     def set(self, arg0: 'BlockPos', arg1: 'BlockProperties', arg2: int) -> bool:
@@ -2713,14 +2713,14 @@ class World(ABC, pyquantum.__ServerDisposable, server.ServerDisposable):
         return 'entity.Entity'.__wrap(super(__World, self).spawn(arg0, arg1))
 
     @overload
-    def getBiome(self, arg0: 'BlockPos') -> 'Biome':
-        """public dev.ultreon.quantum.world.Biome dev.ultreon.quantum.world.World.getBiome(dev.ultreon.quantum.world.BlockPos)"""
-        return 'Biome'.__wrap(super(__World, self).getBiome(arg0))
-
-    @overload
     def unloadChunk(self, arg0: 'ChunkPos') -> bool:
         """public boolean dev.ultreon.quantum.world.World.unloadChunk(dev.ultreon.quantum.world.ChunkPos)"""
         return bool.__wrap(super(__World, self).unloadChunk(arg0))
+
+    @overload
+    def getBiome(self, arg0: 'BlockPos') -> 'Biome':
+        """public dev.ultreon.quantum.world.Biome dev.ultreon.quantum.world.World.getBiome(dev.ultreon.quantum.world.BlockPos)"""
+        return 'Biome'.__wrap(super(__World, self).getBiome(arg0))
 
     @overload
     def closeMenu(self, arg0: 'ContainerMenu'):
@@ -2803,16 +2803,16 @@ class World(ABC, pyquantum.__ServerDisposable, server.ServerDisposable):
         """public dev.ultreon.quantum.block.state.BlockProperties dev.ultreon.quantum.world.World.get(dev.ultreon.quantum.world.BlockPos)"""
         return 'state.BlockProperties'.__wrap(super(__World, self).get(arg0))
 
-    @overload
-    def isDisposed(self) -> bool:
-        """public boolean dev.ultreon.quantum.world.World.isDisposed()"""
-        return bool.__wrap(super(World, self).isDisposed())
-
     @staticmethod
     @overload
     def toChunkVec(arg0: 'BlockPos') -> 'vector.Vec2i':
         """public static dev.ultreon.libs.commons.v0.vector.Vec2i dev.ultreon.quantum.world.World.toChunkVec(dev.ultreon.quantum.world.BlockPos)"""
         return vector.Vec2i.__wrap(__World.toChunkVec(arg0))
+
+    @overload
+    def isDisposed(self) -> bool:
+        """public boolean dev.ultreon.quantum.world.World.isDisposed()"""
+        return bool.__wrap(super(World, self).isDisposed())
 
     @overload
     def getDimension(self) -> 'DimensionInfo':
@@ -3100,13 +3100,13 @@ try:
 except ImportError:
     math = __import_once__("pygdx.math")
 
-import dev.ultreon.quantum.world.Biome as __Biome
-__Biome = __Biome
 try:
     from pyquantum import menu
 except ImportError:
     menu = __import_once__("pyquantum.menu")
 
+import dev.ultreon.quantum.world.Biome as __Biome
+__Biome = __Biome
 from builtins import str
 import dev.ultreon.quantum.world.WorldStorage as __WorldStorage
 __WorldStorage = __WorldStorage
@@ -3151,7 +3151,7 @@ except ImportError:
 
 import java.util.List as List
  
-class ServerWorld(__World, World):
+class ServerWorld():
     """dev.ultreon.quantum.world.ServerWorld"""
  
     @staticmethod
@@ -3682,16 +3682,16 @@ class ServerWorld(__World, World):
         """public java.lang.String java.lang.Object.toString()"""
         return str.__wrap(super(object, self).toString())
 
+    @overload
+    def recordOutOfBounds(self, arg0: int, arg1: int, arg2: int, arg3: 'BlockProperties'):
+        """public void dev.ultreon.quantum.world.ServerWorld.recordOutOfBounds(int,int,int,dev.ultreon.quantum.block.state.BlockProperties)"""
+        super(__ServerWorld, self).recordOutOfBounds(__int.valueOf(arg0), __int.valueOf(arg1), __int.valueOf(arg2), arg3)
+
     @override
     @overload
     def setBlockEntity(self, arg0: 'BlockPos', arg1: 'BlockEntity'):
         """public void dev.ultreon.quantum.world.ServerWorld.setBlockEntity(dev.ultreon.quantum.world.BlockPos,dev.ultreon.quantum.block.entity.BlockEntity)"""
         super(__ServerWorld, self).setBlockEntity(arg0, arg1)
-
-    @overload
-    def recordOutOfBounds(self, arg0: int, arg1: int, arg2: int, arg3: 'BlockProperties'):
-        """public void dev.ultreon.quantum.world.ServerWorld.recordOutOfBounds(int,int,int,dev.ultreon.quantum.block.state.BlockProperties)"""
-        super(__ServerWorld, self).recordOutOfBounds(__int.valueOf(arg0), __int.valueOf(arg1), __int.valueOf(arg2), arg3)
 
     @overload
     def destroyBlock(self, arg0: 'BlockPos', arg1: 'Player') -> bool:
@@ -3809,14 +3809,14 @@ class ServerWorld(__World, World):
         super(__World, self).setColumn(__int.valueOf(arg0), __int.valueOf(arg1), __int.valueOf(arg2), arg3)
 
     @overload
-    def getBiome(self, arg0: 'BlockPos') -> 'Biome':
-        """public dev.ultreon.quantum.world.Biome dev.ultreon.quantum.world.World.getBiome(dev.ultreon.quantum.world.BlockPos)"""
-        return 'Biome'.__wrap(super(__World, self).getBiome(arg0))
-
-    @overload
     def unloadChunk(self, arg0: 'ChunkPos') -> bool:
         """public boolean dev.ultreon.quantum.world.World.unloadChunk(dev.ultreon.quantum.world.ChunkPos)"""
         return bool.__wrap(super(__World, self).unloadChunk(arg0))
+
+    @overload
+    def getBiome(self, arg0: 'BlockPos') -> 'Biome':
+        """public dev.ultreon.quantum.world.Biome dev.ultreon.quantum.world.World.getBiome(dev.ultreon.quantum.world.BlockPos)"""
+        return 'Biome'.__wrap(super(__World, self).getBiome(arg0))
 
     @staticmethod
     @overload
@@ -3920,7 +3920,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class IllegalChunkStateException(__RuntimeException, RuntimeException):
+class IllegalChunkStateException():
     """dev.ultreon.quantum.world.IllegalChunkStateException"""
  
     @staticmethod
@@ -4108,7 +4108,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class UseResult(__Enum, Enum):
+class UseResult():
     """dev.ultreon.quantum.world.UseResult"""
  
     @staticmethod
@@ -4568,7 +4568,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class BreakResult(__Enum, Enum):
+class BreakResult():
     """dev.ultreon.quantum.world.BreakResult"""
  
     @staticmethod
@@ -5717,7 +5717,7 @@ except ImportError:
     types = __import_once__("pyubo.types")
 
  
-class Chunk(ABC, pyquantum.__ServerDisposable, server.ServerDisposable, __ChunkAccess, ChunkAccess):
+class Chunk(ABC):
     """dev.ultreon.quantum.world.Chunk"""
  
     @staticmethod
@@ -5796,14 +5796,14 @@ class Chunk(ABC, pyquantum.__ServerDisposable, server.ServerDisposable, __ChunkA
         super(object, self).notify()
 
     @overload
-    def getHighest(self, arg0: int, arg1: int, arg2: 'BlockMetaPredicate') -> int:
-        """public int dev.ultreon.quantum.world.Chunk.getHighest(int,int,dev.ultreon.quantum.util.BlockMetaPredicate)"""
-        return int.__wrap(super(__Chunk, self).getHighest(__int.valueOf(arg0), __int.valueOf(arg1), arg2))
-
-    @overload
     def getBlockEntity(self, arg0: int, arg1: int, arg2: int) -> 'entity.BlockEntity':
         """public dev.ultreon.quantum.block.entity.BlockEntity dev.ultreon.quantum.world.Chunk.getBlockEntity(int,int,int)"""
         return 'entity.BlockEntity'.__wrap(super(__Chunk, self).getBlockEntity(__int.valueOf(arg0), __int.valueOf(arg1), __int.valueOf(arg2)))
+
+    @overload
+    def getHighest(self, arg0: int, arg1: int, arg2: 'BlockMetaPredicate') -> int:
+        """public int dev.ultreon.quantum.world.Chunk.getHighest(int,int,dev.ultreon.quantum.util.BlockMetaPredicate)"""
+        return int.__wrap(super(__Chunk, self).getHighest(__int.valueOf(arg0), __int.valueOf(arg1), arg2))
 
     @staticmethod
     @overload
@@ -6289,7 +6289,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class Region(pyquantum.__ServerDisposable, server.ServerDisposable):
+class Region():
     """dev.ultreon.quantum.world.ServerWorld.Region"""
  
     @staticmethod
@@ -6798,7 +6798,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ChunkPos(__Comparable, Comparable, __Serializable, Serializable):
+class ChunkPos():
     """dev.ultreon.quantum.world.ChunkPos"""
  
     @staticmethod

@@ -39,7 +39,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Angular(ABC, __Strength, Strength):
+class Angular(ABC):
     """com.badlogic.gdx.graphics.g3d.particles.influencers.DynamicsModifier.Angular"""
  
     @staticmethod
@@ -266,7 +266,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Angular(ABC, __Strength, Strength):
+class Angular(ABC):
     """com.badlogic.gdx.graphics.g3d.particles.influencers.DynamicsModifier.Angular"""
  
     @staticmethod
@@ -647,7 +647,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DynamicsModifier(ABC, __Influencer, Influencer):
+class DynamicsModifier(ABC):
     """com.badlogic.gdx.graphics.g3d.particles.influencers.DynamicsModifier"""
  
     @staticmethod
@@ -872,7 +872,7 @@ import com.badlogic.gdx.graphics.g3d.particles.influencers.SimpleInfluencer as _
 __SimpleInfluencer = __SimpleInfluencer
 from builtins import int
  
-class SimpleInfluencer(ABC, __Influencer, Influencer):
+class SimpleInfluencer(ABC):
     """com.badlogic.gdx.graphics.g3d.particles.influencers.SimpleInfluencer"""
  
     @staticmethod
@@ -1108,7 +1108,7 @@ except ImportError:
 
 from builtins import int
  
-class RegionInfluencer(ABC, __Influencer, Influencer):
+class RegionInfluencer(ABC):
     """com.badlogic.gdx.graphics.g3d.particles.influencers.RegionInfluencer"""
  
     @staticmethod
@@ -1368,7 +1368,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Single(__ColorInfluencer, ColorInfluencer):
+class Single():
     """com.badlogic.gdx.graphics.g3d.particles.influencers.ColorInfluencer.Single"""
  
     @staticmethod
@@ -1600,7 +1600,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PolarAcceleration(__Angular, Angular):
+class PolarAcceleration():
     """com.badlogic.gdx.graphics.g3d.particles.influencers.DynamicsModifier.PolarAcceleration"""
  
     @staticmethod
@@ -1832,7 +1832,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Single(__ModelInfluencer, ModelInfluencer):
+class Single():
     """com.badlogic.gdx.graphics.g3d.particles.influencers.ModelInfluencer.Single"""
  
     @staticmethod
@@ -2070,7 +2070,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ModelInfluencer(ABC, __Influencer, Influencer):
+class ModelInfluencer(ABC):
     """com.badlogic.gdx.graphics.g3d.particles.influencers.ModelInfluencer"""
  
     @staticmethod
@@ -2302,7 +2302,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ColorInfluencer(ABC, __Influencer, Influencer):
+class ColorInfluencer(ABC):
     """com.badlogic.gdx.graphics.g3d.particles.influencers.ColorInfluencer"""
  
     @staticmethod
@@ -2532,7 +2532,7 @@ except ImportError:
 
 from builtins import int
  
-class Random(__RegionInfluencer, RegionInfluencer):
+class Random():
     """com.badlogic.gdx.graphics.g3d.particles.influencers.RegionInfluencer.Random"""
  
     @staticmethod
@@ -2790,7 +2790,7 @@ import com.badlogic.gdx.graphics.g3d.particles.influencers.DynamicsModifier as _
 __Strength = __DynamicsModifier_Strength.Strength
 from builtins import int
  
-class Strength(ABC, __DynamicsModifier, DynamicsModifier):
+class Strength(ABC):
     """com.badlogic.gdx.graphics.g3d.particles.influencers.DynamicsModifier.Strength"""
  
     @staticmethod
@@ -3016,7 +3016,7 @@ import com.badlogic.gdx.graphics.g3d.particles.influencers.DynamicsModifier as _
 __Strength = __DynamicsModifier_Strength.Strength
 from builtins import int
  
-class CentripetalAcceleration(__Strength, Strength):
+class CentripetalAcceleration():
     """com.badlogic.gdx.graphics.g3d.particles.influencers.DynamicsModifier.CentripetalAcceleration"""
  
     @staticmethod
@@ -3243,7 +3243,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Random(__ParticleControllerInfluencer, ParticleControllerInfluencer):
+class Random():
     """com.badlogic.gdx.graphics.g3d.particles.influencers.ParticleControllerInfluencer.Random"""
  
     @staticmethod
@@ -3476,7 +3476,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ParticleControllerInfluencer(ABC, __Influencer, Influencer):
+class ParticleControllerInfluencer(ABC):
     """com.badlogic.gdx.graphics.g3d.particles.influencers.ParticleControllerInfluencer"""
  
     @staticmethod
@@ -3709,7 +3709,7 @@ import com.badlogic.gdx.graphics.g3d.particles.influencers.DynamicsModifier as _
 __Strength = __DynamicsModifier_Strength.Strength
 from builtins import int
  
-class Rotational2D(__Strength, Strength):
+class Rotational2D():
     """com.badlogic.gdx.graphics.g3d.particles.influencers.DynamicsModifier.Rotational2D"""
  
     @staticmethod
@@ -3936,7 +3936,7 @@ import com.badlogic.gdx.graphics.g3d.particles.influencers.DynamicsModifier as _
 __Strength = __DynamicsModifier_Strength.Strength
 from builtins import int
  
-class BrownianAcceleration(__Strength, Strength):
+class BrownianAcceleration():
     """com.badlogic.gdx.graphics.g3d.particles.influencers.DynamicsModifier.BrownianAcceleration"""
  
     @staticmethod
@@ -4161,7 +4161,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DynamicsInfluencer(__Influencer, Influencer):
+class DynamicsInfluencer():
     """com.badlogic.gdx.graphics.g3d.particles.influencers.DynamicsInfluencer"""
  
     @staticmethod
@@ -4393,7 +4393,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Random(__ColorInfluencer, ColorInfluencer):
+class Random():
     """com.badlogic.gdx.graphics.g3d.particles.influencers.ColorInfluencer.Random"""
  
     @staticmethod
@@ -4613,7 +4613,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Rotational3D(__Angular, Angular):
+class Rotational3D():
     """com.badlogic.gdx.graphics.g3d.particles.influencers.DynamicsModifier.Rotational3D"""
  
     @staticmethod
@@ -4851,7 +4851,7 @@ except ImportError:
 
 from builtins import int
  
-class Single(__RegionInfluencer, RegionInfluencer):
+class Single():
     """com.badlogic.gdx.graphics.g3d.particles.influencers.RegionInfluencer.Single"""
  
     @staticmethod
@@ -5110,7 +5110,7 @@ __FaceDirection = __DynamicsModifier_FaceDirection.FaceDirection
 from builtins import bool
 from builtins import int
  
-class FaceDirection(__DynamicsModifier, DynamicsModifier):
+class FaceDirection():
     """com.badlogic.gdx.graphics.g3d.particles.influencers.DynamicsModifier.FaceDirection"""
  
     @staticmethod
@@ -5340,7 +5340,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SpawnInfluencer(__Influencer, Influencer):
+class SpawnInfluencer():
     """com.badlogic.gdx.graphics.g3d.particles.influencers.SpawnInfluencer"""
  
     @staticmethod
@@ -5573,7 +5573,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Influencer(ABC, g3d.__ParticleControllerComponent, particles.ParticleControllerComponent):
+class Influencer(ABC):
     """com.badlogic.gdx.graphics.g3d.particles.influencers.Influencer"""
  
     @staticmethod
@@ -5790,7 +5790,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ParticleControllerFinalizerInfluencer(__Influencer, Influencer):
+class ParticleControllerFinalizerInfluencer():
     """com.badlogic.gdx.graphics.g3d.particles.influencers.ParticleControllerFinalizerInfluencer"""
  
     @staticmethod
@@ -6021,7 +6021,7 @@ except ImportError:
 
 from builtins import int
  
-class Animated(__RegionInfluencer, RegionInfluencer):
+class Animated():
     """com.badlogic.gdx.graphics.g3d.particles.influencers.RegionInfluencer.Animated"""
  
     @staticmethod
@@ -6280,7 +6280,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TangentialAcceleration(__Angular, Angular):
+class TangentialAcceleration():
     """com.badlogic.gdx.graphics.g3d.particles.influencers.DynamicsModifier.TangentialAcceleration"""
  
     @staticmethod
@@ -6507,7 +6507,7 @@ import com.badlogic.gdx.graphics.g3d.particles.influencers.SimpleInfluencer as _
 __SimpleInfluencer = __SimpleInfluencer
 from builtins import int
  
-class ScaleInfluencer(__SimpleInfluencer, SimpleInfluencer):
+class ScaleInfluencer():
     """com.badlogic.gdx.graphics.g3d.particles.influencers.ScaleInfluencer"""
  
     @staticmethod
@@ -6734,7 +6734,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Single(__ParticleControllerInfluencer, ParticleControllerInfluencer):
+class Single():
     """com.badlogic.gdx.graphics.g3d.particles.influencers.ParticleControllerInfluencer.Single"""
  
     @staticmethod
@@ -6973,7 +6973,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Random(__ModelInfluencer, ModelInfluencer):
+class Random():
     """com.badlogic.gdx.graphics.g3d.particles.influencers.ModelInfluencer.Random"""
  
     @staticmethod

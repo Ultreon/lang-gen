@@ -108,7 +108,7 @@ from abc import abstractmethod, ABC
 import dev.ultreon.quantum.client.render.RenderContext as __RenderContext
 __RenderContext = __RenderContext
  
-class WorldRenderContext(ABC, client.__RenderContext, render.RenderContext):
+class WorldRenderContext(ABC):
     """dev.ultreon.quantum.client.model.WorldRenderContext"""
  
     @staticmethod
@@ -189,7 +189,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class WorldRenderContextImpl(__WorldRenderContext, WorldRenderContext):
+class WorldRenderContextImpl():
     """dev.ultreon.quantum.client.model.WorldRenderContextImpl"""
  
     @staticmethod
@@ -709,9 +709,9 @@ from pyquantum_helper import import_once as __import_once__
 import dev.ultreon.quantum.client.model.EntityDrawBuffer as __EntityDrawBuffer
 __EntityDrawBuffer = __EntityDrawBuffer
 from builtins import str
+from pyquantum_helper import override
 import dev.ultreon.quantum.entity.Entity as __Entity
 __Entity = __Entity
-from pyquantum_helper import override
 try:
     from pyquantum import entity
 except ImportError:
@@ -730,7 +730,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class EntityDrawBuffer(client.__RenderContext, render.RenderContext):
+class EntityDrawBuffer():
     """dev.ultreon.quantum.client.model.EntityDrawBuffer"""
  
     @staticmethod

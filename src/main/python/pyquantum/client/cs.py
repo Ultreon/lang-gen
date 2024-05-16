@@ -32,7 +32,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RenderComp(ABC, pyquantum.__Component, cs.Component):
+class RenderComp(ABC):
     """dev.ultreon.quantum.client.cs.RenderComp"""
  
     @staticmethod
@@ -185,7 +185,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class RenderComp(ABC, pyquantum.__Component, cs.Component):
+class RenderComp(ABC):
     """dev.ultreon.quantum.client.cs.RenderComp"""
  
     @staticmethod

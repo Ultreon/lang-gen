@@ -22,7 +22,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FullLimiter(ai.__Limiter, steer.Limiter):
+class FullLimiter():
     """com.badlogic.gdx.ai.steer.limiters.FullLimiter"""
  
     @staticmethod
@@ -195,7 +195,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FullLimiter(ai.__Limiter, steer.Limiter):
+class FullLimiter():
     """com.badlogic.gdx.ai.steer.limiters.FullLimiter"""
  
     @staticmethod
@@ -373,7 +373,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LinearAccelerationLimiter(__NullLimiter, NullLimiter):
+class LinearAccelerationLimiter():
     """com.badlogic.gdx.ai.steer.limiters.LinearAccelerationLimiter"""
  
     @staticmethod
@@ -544,7 +544,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class NullLimiter(ai.__Limiter, steer.Limiter):
+class NullLimiter():
     """com.badlogic.gdx.ai.steer.limiters.NullLimiter"""
  
     @staticmethod
@@ -724,7 +724,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AngularLimiter(__NullLimiter, NullLimiter):
+class AngularLimiter():
     """com.badlogic.gdx.ai.steer.limiters.AngularLimiter"""
  
     @staticmethod
@@ -897,7 +897,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AngularSpeedLimiter(__NullLimiter, NullLimiter):
+class AngularSpeedLimiter():
     """com.badlogic.gdx.ai.steer.limiters.AngularSpeedLimiter"""
  
     @staticmethod
@@ -1070,7 +1070,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LinearLimiter(__NullLimiter, NullLimiter):
+class LinearLimiter():
     """com.badlogic.gdx.ai.steer.limiters.LinearLimiter"""
  
     @staticmethod
@@ -1243,7 +1243,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AngularAccelerationLimiter(__NullLimiter, NullLimiter):
+class AngularAccelerationLimiter():
     """com.badlogic.gdx.ai.steer.limiters.AngularAccelerationLimiter"""
  
     @staticmethod
@@ -1416,7 +1416,7 @@ import com.badlogic.gdx.ai.steer.limiters.LinearSpeedLimiter as __LinearSpeedLim
 __LinearSpeedLimiter = __LinearSpeedLimiter
 from builtins import int
  
-class LinearSpeedLimiter(__NullLimiter, NullLimiter):
+class LinearSpeedLimiter():
     """com.badlogic.gdx.ai.steer.limiters.LinearSpeedLimiter"""
  
     @staticmethod

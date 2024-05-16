@@ -25,7 +25,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class UnmodifiableIterator(__Iterator, Iterator, pyapache.__Unmodifiable, collections4.Unmodifiable):
+class UnmodifiableIterator():
     """org.apache.commons.collections4.iterators.UnmodifiableIterator"""
  
     @staticmethod
@@ -164,7 +164,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class UnmodifiableIterator(__Iterator, Iterator, pyapache.__Unmodifiable, collections4.Unmodifiable):
+class UnmodifiableIterator():
     """org.apache.commons.collections4.iterators.UnmodifiableIterator"""
  
     @staticmethod
@@ -313,7 +313,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class EmptyIterator(__AbstractEmptyIterator, AbstractEmptyIterator, pyapache.__ResettableIterator, collections4.ResettableIterator):
+class EmptyIterator():
     """org.apache.commons.collections4.iterators.EmptyIterator"""
  
     @staticmethod
@@ -443,7 +443,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AbstractMapIteratorDecorator(pyapache.__MapIterator, collections4.MapIterator):
+class AbstractMapIteratorDecorator():
     """org.apache.commons.collections4.iterators.AbstractMapIteratorDecorator"""
  
     @staticmethod
@@ -607,7 +607,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class EmptyListIterator(__AbstractEmptyIterator, AbstractEmptyIterator, pyapache.__ResettableListIterator, collections4.ResettableListIterator):
+class EmptyListIterator():
     """org.apache.commons.collections4.iterators.EmptyListIterator"""
  
     @staticmethod
@@ -738,7 +738,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ObjectGraphIterator(__Iterator, Iterator):
+class ObjectGraphIterator():
     """org.apache.commons.collections4.iterators.ObjectGraphIterator"""
  
     @staticmethod
@@ -893,7 +893,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class UniqueFilterIterator(__FilterIterator, FilterIterator):
+class UniqueFilterIterator():
     """org.apache.commons.collections4.iterators.UniqueFilterIterator"""
  
     @staticmethod
@@ -1055,7 +1055,7 @@ from builtins import bool
 from builtins import int
 import java.util.List as List
  
-class LoopingListIterator(pyapache.__ResettableListIterator, collections4.ResettableListIterator):
+class LoopingListIterator():
     """org.apache.commons.collections4.iterators.LoopingListIterator"""
  
     @staticmethod
@@ -1239,7 +1239,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SingletonListIterator(pyapache.__ResettableListIterator, collections4.ResettableListIterator):
+class SingletonListIterator():
     """org.apache.commons.collections4.iterators.SingletonListIterator"""
  
     @staticmethod
@@ -1420,7 +1420,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AbstractIteratorDecorator(ABC, __AbstractUntypedIteratorDecorator, AbstractUntypedIteratorDecorator):
+class AbstractIteratorDecorator(ABC):
     """org.apache.commons.collections4.iterators.AbstractIteratorDecorator"""
  
     @staticmethod
@@ -1553,7 +1553,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class UnmodifiableListIterator(__ListIterator, ListIterator, pyapache.__Unmodifiable, collections4.Unmodifiable):
+class UnmodifiableListIterator():
     """org.apache.commons.collections4.iterators.UnmodifiableListIterator"""
  
     @staticmethod
@@ -1736,7 +1736,7 @@ import org.apache.commons.collections4.iterators.FilterListIterator as __FilterL
 __FilterListIterator = __FilterListIterator
 from builtins import int
  
-class FilterListIterator(__ListIterator, ListIterator):
+class FilterListIterator():
     """org.apache.commons.collections4.iterators.FilterListIterator"""
  
     @staticmethod
@@ -1958,7 +1958,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PushbackIterator(__Iterator, Iterator):
+class PushbackIterator():
     """org.apache.commons.collections4.iterators.PushbackIterator"""
  
     @staticmethod
@@ -2106,7 +2106,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ArrayIterator(pyapache.__ResettableIterator, collections4.ResettableIterator):
+class ArrayIterator():
     """org.apache.commons.collections4.iterators.ArrayIterator"""
  
     @staticmethod
@@ -2288,7 +2288,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class EmptyOrderedMapIterator(__AbstractEmptyMapIterator, AbstractEmptyMapIterator, pyapache.__OrderedMapIterator, collections4.OrderedMapIterator, pyapache.__ResettableIterator, collections4.ResettableIterator):
+class EmptyOrderedMapIterator():
     """org.apache.commons.collections4.iterators.EmptyOrderedMapIterator"""
  
     @staticmethod
@@ -2424,7 +2424,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PeekingIterator(__Iterator, Iterator):
+class PeekingIterator():
     """org.apache.commons.collections4.iterators.PeekingIterator"""
  
     @staticmethod
@@ -2580,7 +2580,7 @@ from builtins import bool
 import org.w3c.dom.Node as Node
 from builtins import int
  
-class NodeListIterator(__Iterator, Iterator):
+class NodeListIterator():
     """org.apache.commons.collections4.iterators.NodeListIterator"""
  
     @staticmethod
@@ -2725,7 +2725,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ListIteratorWrapper(pyapache.__ResettableListIterator, collections4.ResettableListIterator):
+class ListIteratorWrapper():
     """org.apache.commons.collections4.iterators.ListIteratorWrapper"""
  
     @staticmethod
@@ -2905,7 +2905,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ZippingIterator(__Iterator, Iterator):
+class ZippingIterator():
     """org.apache.commons.collections4.iterators.ZippingIterator"""
  
     @staticmethod
@@ -3066,7 +3066,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class EmptyMapIterator(__AbstractEmptyMapIterator, AbstractEmptyMapIterator, pyapache.__MapIterator, collections4.MapIterator, pyapache.__ResettableIterator, collections4.ResettableIterator):
+class EmptyMapIterator():
     """org.apache.commons.collections4.iterators.EmptyMapIterator"""
  
     @staticmethod
@@ -3202,7 +3202,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LoopingIterator(pyapache.__ResettableIterator, collections4.ResettableIterator):
+class LoopingIterator():
     """org.apache.commons.collections4.iterators.LoopingIterator"""
  
     @staticmethod
@@ -3347,7 +3347,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AbstractEmptyMapIterator(ABC, __AbstractEmptyIterator, AbstractEmptyIterator):
+class AbstractEmptyMapIterator(ABC):
     """org.apache.commons.collections4.iterators.AbstractEmptyMapIterator"""
  
     @staticmethod
@@ -3483,7 +3483,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BoundedIterator(__Iterator, Iterator):
+class BoundedIterator():
     """org.apache.commons.collections4.iterators.BoundedIterator"""
  
     @staticmethod
@@ -3621,7 +3621,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AbstractListIteratorDecorator(__ListIterator, ListIterator):
+class AbstractListIteratorDecorator():
     """org.apache.commons.collections4.iterators.AbstractListIteratorDecorator"""
  
     @staticmethod
@@ -3802,7 +3802,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class CollatingIterator(__Iterator, Iterator):
+class CollatingIterator():
     """org.apache.commons.collections4.iterators.CollatingIterator"""
  
     @staticmethod
@@ -4014,7 +4014,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ObjectArrayListIterator(__ObjectArrayIterator, ObjectArrayIterator, pyapache.__ResettableListIterator, collections4.ResettableListIterator):
+class ObjectArrayListIterator():
     """org.apache.commons.collections4.iterators.ObjectArrayListIterator"""
  
     @staticmethod
@@ -4226,7 +4226,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SingletonIterator(pyapache.__ResettableIterator, collections4.ResettableIterator):
+class SingletonIterator():
     """org.apache.commons.collections4.iterators.SingletonIterator"""
  
     @staticmethod
@@ -4385,7 +4385,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FilterIterator(__Iterator, Iterator):
+class FilterIterator():
     """org.apache.commons.collections4.iterators.FilterIterator"""
  
     @staticmethod
@@ -4564,7 +4564,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class EntrySetMapIterator(pyapache.__MapIterator, collections4.MapIterator, pyapache.__ResettableIterator, collections4.ResettableIterator):
+class EntrySetMapIterator():
     """org.apache.commons.collections4.iterators.EntrySetMapIterator"""
  
     @staticmethod
@@ -4733,7 +4733,7 @@ import org.apache.commons.collections4.Transformer as __Transformer
 __Transformer = __Transformer
 from builtins import int
  
-class TransformIterator(__Iterator, Iterator):
+class TransformIterator():
     """org.apache.commons.collections4.iterators.TransformIterator"""
  
     @staticmethod
@@ -4917,7 +4917,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AbstractOrderedMapIteratorDecorator(pyapache.__OrderedMapIterator, collections4.OrderedMapIterator):
+class AbstractOrderedMapIteratorDecorator():
     """org.apache.commons.collections4.iterators.AbstractOrderedMapIteratorDecorator"""
  
     @staticmethod
@@ -5087,7 +5087,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class EnumerationIterator(__Iterator, Iterator):
+class EnumerationIterator():
     """org.apache.commons.collections4.iterators.EnumerationIterator"""
  
     @staticmethod
@@ -5263,7 +5263,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class UnmodifiableMapIterator(pyapache.__MapIterator, collections4.MapIterator, pyapache.__Unmodifiable, collections4.Unmodifiable):
+class UnmodifiableMapIterator():
     """org.apache.commons.collections4.iterators.UnmodifiableMapIterator"""
  
     @staticmethod
@@ -5416,7 +5416,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AbstractUntypedIteratorDecorator(ABC, __Iterator, Iterator):
+class AbstractUntypedIteratorDecorator(ABC):
     """org.apache.commons.collections4.iterators.AbstractUntypedIteratorDecorator"""
  
     @staticmethod
@@ -5547,7 +5547,7 @@ import org.apache.commons.collections4.iterators.ArrayListIterator as __ArrayLis
 __ArrayListIterator = __ArrayListIterator
 from builtins import int
  
-class ArrayListIterator(__ArrayIterator, ArrayIterator, pyapache.__ResettableListIterator, collections4.ResettableListIterator):
+class ArrayListIterator():
     """org.apache.commons.collections4.iterators.ArrayListIterator"""
  
     @staticmethod
@@ -5758,7 +5758,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LazyIteratorChain(ABC, __Iterator, Iterator):
+class LazyIteratorChain(ABC):
     """org.apache.commons.collections4.iterators.LazyIteratorChain"""
  
     @staticmethod
@@ -5908,7 +5908,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class IteratorIterable(__Iterable, Iterable):
+class IteratorIterable():
     """org.apache.commons.collections4.iterators.IteratorIterable"""
  
     @staticmethod
@@ -6049,7 +6049,7 @@ __SkippingIterator = __SkippingIterator
 from builtins import bool
 from builtins import int
  
-class SkippingIterator(__AbstractIteratorDecorator, AbstractIteratorDecorator):
+class SkippingIterator():
     """org.apache.commons.collections4.iterators.SkippingIterator"""
  
     @staticmethod
@@ -6187,7 +6187,7 @@ from builtins import bool
 from builtins import int
 import java.util.List as List
  
-class ReverseListIterator(pyapache.__ResettableListIterator, collections4.ResettableListIterator):
+class ReverseListIterator():
     """org.apache.commons.collections4.iterators.ReverseListIterator"""
  
     @staticmethod
@@ -6369,7 +6369,7 @@ from builtins import bool
 import java.util.List as List
 from builtins import int
  
-class PermutationIterator(__Iterator, Iterator):
+class PermutationIterator():
     """org.apache.commons.collections4.iterators.PermutationIterator"""
  
     @staticmethod
@@ -6513,7 +6513,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class EmptyOrderedIterator(__AbstractEmptyIterator, AbstractEmptyIterator, pyapache.__OrderedIterator, collections4.OrderedIterator, pyapache.__ResettableIterator, collections4.ResettableIterator):
+class EmptyOrderedIterator():
     """org.apache.commons.collections4.iterators.EmptyOrderedIterator"""
  
     @staticmethod
@@ -6633,7 +6633,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class IteratorEnumeration(__Enumeration, Enumeration):
+class IteratorEnumeration():
     """org.apache.commons.collections4.iterators.IteratorEnumeration"""
  
     @staticmethod
@@ -6796,7 +6796,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class UnmodifiableOrderedMapIterator(pyapache.__OrderedMapIterator, collections4.OrderedMapIterator, pyapache.__Unmodifiable, collections4.Unmodifiable):
+class UnmodifiableOrderedMapIterator():
     """org.apache.commons.collections4.iterators.UnmodifiableOrderedMapIterator"""
  
     @staticmethod
@@ -6963,7 +6963,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class IteratorChain(__Iterator, Iterator):
+class IteratorChain():
     """org.apache.commons.collections4.iterators.IteratorChain"""
  
     @staticmethod
@@ -7151,7 +7151,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ObjectArrayIterator(pyapache.__ResettableIterator, collections4.ResettableIterator):
+class ObjectArrayIterator():
     """org.apache.commons.collections4.iterators.ObjectArrayIterator"""
  
     @staticmethod

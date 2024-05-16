@@ -30,7 +30,7 @@ __Vector = __Vector
 from builtins import bool
 from builtins import int
  
-class Bezier(__Path, Path):
+class Bezier():
     """com.badlogic.gdx.math.Bezier"""
  
     @staticmethod
@@ -255,7 +255,7 @@ __Vector = __Vector
 from builtins import bool
 from builtins import int
  
-class Bezier(__Path, Path):
+class Bezier():
     """com.badlogic.gdx.math.Bezier"""
  
     @staticmethod
@@ -476,7 +476,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Vector3(__Serializable, Serializable, __Vector, Vector):
+class Vector3():
     """com.badlogic.gdx.math.Vector3"""
  
     @staticmethod
@@ -1242,7 +1242,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ExpIn(__Exp, Exp):
+class ExpIn():
     """com.badlogic.gdx.math.Interpolation.ExpIn"""
  
     @staticmethod
@@ -1475,7 +1475,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Matrix3(__Serializable, Serializable):
+class Matrix3():
     """com.badlogic.gdx.math.Matrix3"""
  
     @staticmethod
@@ -1783,7 +1783,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Vector2(__Serializable, Serializable, __Vector, Vector):
+class Vector2():
     """com.badlogic.gdx.math.Vector2"""
  
     @staticmethod
@@ -1826,14 +1826,14 @@ class Vector2(__Serializable, Serializable, __Vector, Vector):
         self.__wrapper = val
 
     @overload
-    def epsilonEquals(self, arg0: float, arg1: float) -> bool:
-        """public boolean com.badlogic.gdx.math.Vector2.epsilonEquals(float,float)"""
-        return bool.__wrap(super(__Vector2, self).epsilonEquals(__float.valueOf(arg0), __float.valueOf(arg1)))
-
-    @overload
     def epsilonEquals(self, arg0: 'Vector2', arg1: float) -> bool:
         """public boolean com.badlogic.gdx.math.Vector2.epsilonEquals(com.badlogic.gdx.math.Vector2,float)"""
         return bool.__wrap(super(__Vector2, self).epsilonEquals(arg0, __float.valueOf(arg1)))
+
+    @overload
+    def epsilonEquals(self, arg0: float, arg1: float) -> bool:
+        """public boolean com.badlogic.gdx.math.Vector2.epsilonEquals(float,float)"""
+        return bool.__wrap(super(__Vector2, self).epsilonEquals(__float.valueOf(arg0), __float.valueOf(arg1)))
 
     @staticmethod
     @overload
@@ -2526,7 +2526,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Pow(__Interpolation, Interpolation):
+class Pow():
     """com.badlogic.gdx.math.Interpolation.Pow"""
  
     @staticmethod
@@ -2649,7 +2649,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ExpOut(__Exp, Exp):
+class ExpOut():
     """com.badlogic.gdx.math.Interpolation.ExpOut"""
  
     @staticmethod
@@ -2772,7 +2772,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Bounce(__BounceOut, BounceOut):
+class Bounce():
     """com.badlogic.gdx.math.Interpolation.Bounce"""
  
     @staticmethod
@@ -2903,7 +2903,7 @@ __Vector = __Vector
 from builtins import bool
 from builtins import int
  
-class CatmullRomSpline(__Path, Path):
+class CatmullRomSpline():
     """com.badlogic.gdx.math.CatmullRomSpline"""
  
     @staticmethod
@@ -3114,7 +3114,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Exp(__Interpolation, Interpolation):
+class Exp():
     """com.badlogic.gdx.math.Interpolation.Exp"""
  
     @staticmethod
@@ -3241,7 +3241,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class PlaneSide(__Enum, Enum):
+class PlaneSide():
     """com.badlogic.gdx.math.Plane.PlaneSide"""
  
     @staticmethod
@@ -3394,7 +3394,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SwingIn(__Interpolation, Interpolation):
+class SwingIn():
     """com.badlogic.gdx.math.Interpolation.SwingIn"""
  
     @staticmethod
@@ -3515,7 +3515,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Circle(__Serializable, Serializable, __Shape2D, Shape2D):
+class Circle():
     """com.badlogic.gdx.math.Circle"""
  
     @staticmethod
@@ -3739,7 +3739,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Rectangle(__Serializable, Serializable, __Shape2D, Shape2D):
+class Rectangle():
     """com.badlogic.gdx.math.Rectangle"""
  
     @staticmethod
@@ -4043,7 +4043,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Elastic(__Interpolation, Interpolation):
+class Elastic():
     """com.badlogic.gdx.math.Interpolation.Elastic"""
  
     @staticmethod
@@ -4227,7 +4227,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ElasticOut(__Elastic, Elastic):
+class ElasticOut():
     """com.badlogic.gdx.math.Interpolation.ElasticOut"""
  
     @staticmethod
@@ -4352,7 +4352,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Plane(__Serializable, Serializable):
+class Plane():
     """com.badlogic.gdx.math.Plane"""
  
     @staticmethod
@@ -4703,7 +4703,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FloatCounter(pygdx.__Pool_Poolable, utils.Pool$Poolable):
+class FloatCounter():
     """com.badlogic.gdx.math.FloatCounter"""
  
     @staticmethod
@@ -5217,7 +5217,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Affine2(__Serializable, Serializable):
+class Affine2():
     """com.badlogic.gdx.math.Affine2"""
  
     @staticmethod
@@ -6309,7 +6309,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GridPoint3(__Serializable, Serializable):
+class GridPoint3():
     """com.badlogic.gdx.math.GridPoint3"""
  
     @staticmethod
@@ -6501,7 +6501,7 @@ __Polygon = __Polygon
 from builtins import bool
 from builtins import int
  
-class Polygon(__Shape2D, Shape2D):
+class Polygon():
     """com.badlogic.gdx.math.Polygon"""
  
     @staticmethod
@@ -6758,7 +6758,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PowOut(__Pow, Pow):
+class PowOut():
     """com.badlogic.gdx.math.Interpolation.PowOut"""
  
     @staticmethod
@@ -7386,7 +7386,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Matrix4(__Serializable, Serializable):
+class Matrix4():
     """com.badlogic.gdx.math.Matrix4"""
  
     @staticmethod
@@ -8127,7 +8127,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Ellipse(__Serializable, Serializable, __Shape2D, Shape2D):
+class Ellipse():
     """com.badlogic.gdx.math.Ellipse"""
  
     @staticmethod
@@ -8334,7 +8334,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class GridPoint2(__Serializable, Serializable):
+class GridPoint2():
     """com.badlogic.gdx.math.GridPoint2"""
  
     @staticmethod
@@ -8537,7 +8537,7 @@ import java.lang.Integer as __int
 from builtins import int
 import java.util.Random as Random
  
-class RandomXS128(__Random, Random):
+class RandomXS128():
     """com.badlogic.gdx.math.RandomXS128"""
  
     @staticmethod
@@ -8855,7 +8855,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SwingOut(__Interpolation, Interpolation):
+class SwingOut():
     """com.badlogic.gdx.math.Interpolation.SwingOut"""
  
     @staticmethod
@@ -8977,7 +8977,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Vector4(__Serializable, Serializable, __Vector, Vector):
+class Vector4():
     """com.badlogic.gdx.math.Vector4"""
  
     @staticmethod
@@ -9446,7 +9446,7 @@ import com.badlogic.gdx.math.BSpline as __BSpline
 __BSpline = __BSpline
 from builtins import int
  
-class BSpline(__Path, Path):
+class BSpline():
     """com.badlogic.gdx.math.BSpline"""
  
     @staticmethod
@@ -9682,7 +9682,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Quaternion(__Serializable, Serializable):
+class Quaternion():
     """com.badlogic.gdx.math.Quaternion"""
  
     @staticmethod
@@ -9921,14 +9921,14 @@ class Quaternion(__Serializable, Serializable):
         return float.__wrap(super(Quaternion, self).getAngle())
 
     @overload
-    def getSwingTwist(self, arg0: 'Vector3', arg1: 'Quaternion', arg2: 'Quaternion'):
-        """public void com.badlogic.gdx.math.Quaternion.getSwingTwist(com.badlogic.gdx.math.Vector3,com.badlogic.gdx.math.Quaternion,com.badlogic.gdx.math.Quaternion)"""
-        super(__Quaternion, self).getSwingTwist(arg0, arg1, arg2)
-
-    @overload
     def getSwingTwist(self, arg0: float, arg1: float, arg2: float, arg3: 'Quaternion', arg4: 'Quaternion'):
         """public void com.badlogic.gdx.math.Quaternion.getSwingTwist(float,float,float,com.badlogic.gdx.math.Quaternion,com.badlogic.gdx.math.Quaternion)"""
         super(__Quaternion, self).getSwingTwist(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), arg3, arg4)
+
+    @overload
+    def getSwingTwist(self, arg0: 'Vector3', arg1: 'Quaternion', arg2: 'Quaternion'):
+        """public void com.badlogic.gdx.math.Quaternion.getSwingTwist(com.badlogic.gdx.math.Vector3,com.badlogic.gdx.math.Quaternion,com.badlogic.gdx.math.Quaternion)"""
+        super(__Quaternion, self).getSwingTwist(arg0, arg1, arg2)
 
     @override
     @overload
@@ -10243,7 +10243,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Polyline(__Shape2D, Shape2D):
+class Polyline():
     """com.badlogic.gdx.math.Polyline"""
  
     @staticmethod
@@ -10812,7 +10812,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BounceIn(__BounceOut, BounceOut):
+class BounceIn():
     """com.badlogic.gdx.math.Interpolation.BounceIn"""
  
     @staticmethod
@@ -11378,7 +11378,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BounceOut(__Interpolation, Interpolation):
+class BounceOut():
     """com.badlogic.gdx.math.Interpolation.BounceOut"""
  
     @staticmethod
@@ -11508,7 +11508,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ElasticIn(__Elastic, Elastic):
+class ElasticIn():
     """com.badlogic.gdx.math.Interpolation.ElasticIn"""
  
     @staticmethod
@@ -11677,7 +11677,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PowIn(__Pow, Pow):
+class PowIn():
     """com.badlogic.gdx.math.Interpolation.PowIn"""
  
     @staticmethod
@@ -11800,7 +11800,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Swing(__Interpolation, Interpolation):
+class Swing():
     """com.badlogic.gdx.math.Interpolation.Swing"""
  
     @staticmethod

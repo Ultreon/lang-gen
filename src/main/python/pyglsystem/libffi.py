@@ -453,7 +453,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.libffi.FFICIF.Buffer"""
  
     @staticmethod
@@ -826,7 +826,7 @@ __Buffer = __FFIType_Buffer.Buffer
 from builtins import bool
 from builtins import int
  
-class FFIType(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class FFIType():
     """org.lwjgl.system.libffi.FFIType"""
  
     @staticmethod
@@ -1175,7 +1175,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class FFIClosure(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class FFIClosure():
     """org.lwjgl.system.libffi.FFIClosure"""
  
     @staticmethod
@@ -1471,7 +1471,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.libffi.FFIClosure.Buffer"""
  
     @staticmethod
@@ -1841,7 +1841,7 @@ import org.lwjgl.system.libffi.FFIType as __FFIType_Buffer
 __Buffer = __FFIType_Buffer.Buffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.libffi.FFIType.Buffer"""
  
     @staticmethod
@@ -2225,7 +2225,7 @@ __PointerBuffer = __PointerBuffer
 from builtins import bool
 from builtins import int
  
-class FFICIF(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class FFICIF():
     """org.lwjgl.system.libffi.FFICIF"""
  
     @staticmethod

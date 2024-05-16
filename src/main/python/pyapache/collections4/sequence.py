@@ -319,7 +319,7 @@ import org.apache.commons.collections4.sequence.ReplacementsFinder as __Replacem
 __ReplacementsFinder = __ReplacementsFinder
 from builtins import int
  
-class ReplacementsFinder(__CommandVisitor, CommandVisitor):
+class ReplacementsFinder():
     """org.apache.commons.collections4.sequence.ReplacementsFinder"""
  
     @staticmethod
@@ -576,7 +576,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DeleteCommand(__EditCommand, EditCommand):
+class DeleteCommand():
     """org.apache.commons.collections4.sequence.DeleteCommand"""
  
     @staticmethod
@@ -799,7 +799,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class KeepCommand(__EditCommand, EditCommand):
+class KeepCommand():
     """org.apache.commons.collections4.sequence.KeepCommand"""
  
     @staticmethod
@@ -914,7 +914,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class InsertCommand(__EditCommand, EditCommand):
+class InsertCommand():
     """org.apache.commons.collections4.sequence.InsertCommand"""
  
     @staticmethod

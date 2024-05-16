@@ -39,7 +39,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ImmutableArray(__Iterable, Iterable):
+class ImmutableArray():
     """com.badlogic.ashley.utils.ImmutableArray"""
  
     @staticmethod
@@ -242,7 +242,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ImmutableArray(__Iterable, Iterable):
+class ImmutableArray():
     """com.badlogic.ashley.utils.ImmutableArray"""
  
     @staticmethod

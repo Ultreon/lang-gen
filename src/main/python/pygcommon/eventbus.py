@@ -9,7 +9,7 @@ from abc import abstractmethod, ABC
 import com.google.common.eventbus.Subscribe as __Subscribe
 __Subscribe = __Subscribe
  
-class Subscribe(ABC, __Annotation, Annotation):
+class Subscribe(ABC):
     """com.google.common.eventbus.Subscribe"""
  
     @staticmethod
@@ -69,7 +69,7 @@ from abc import abstractmethod, ABC
 import com.google.common.eventbus.Subscribe as __Subscribe
 __Subscribe = __Subscribe
  
-class Subscribe(ABC, __Annotation, Annotation):
+class Subscribe(ABC):
     """com.google.common.eventbus.Subscribe"""
  
     @staticmethod
@@ -411,7 +411,7 @@ import com.google.common.eventbus.AllowConcurrentEvents as __AllowConcurrentEven
 __AllowConcurrentEvents = __AllowConcurrentEvents
 from abc import abstractmethod, ABC
  
-class AllowConcurrentEvents(ABC, __Annotation, Annotation):
+class AllowConcurrentEvents(ABC):
     """com.google.common.eventbus.AllowConcurrentEvents"""
  
     @staticmethod
@@ -484,7 +484,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AsyncEventBus(__EventBus, EventBus):
+class AsyncEventBus():
     """com.google.common.eventbus.AsyncEventBus"""
  
     @staticmethod

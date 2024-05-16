@@ -300,7 +300,7 @@ import com.google.common.escape.Escaper as __Escaper
 __Escaper = __Escaper
 from builtins import int
  
-class ArrayBasedCharEscaper(ABC, __CharEscaper, CharEscaper):
+class ArrayBasedCharEscaper(ABC):
     """com.google.common.escape.ArrayBasedCharEscaper"""
  
     @staticmethod
@@ -674,7 +674,7 @@ import com.google.common.escape.Escaper as __Escaper
 __Escaper = __Escaper
 from builtins import int
  
-class UnicodeEscaper(ABC, __Escaper, Escaper):
+class UnicodeEscaper(ABC):
     """com.google.common.escape.UnicodeEscaper"""
  
     @staticmethod
@@ -798,7 +798,7 @@ import com.google.common.escape.Escaper as __Escaper
 __Escaper = __Escaper
 from builtins import int
  
-class ArrayBasedUnicodeEscaper(ABC, __UnicodeEscaper, UnicodeEscaper):
+class ArrayBasedUnicodeEscaper(ABC):
     """com.google.common.escape.ArrayBasedUnicodeEscaper"""
  
     @staticmethod
@@ -922,7 +922,7 @@ import com.google.common.escape.Escaper as __Escaper
 __Escaper = __Escaper
 from builtins import int
  
-class CharEscaper(ABC, __Escaper, Escaper):
+class CharEscaper(ABC):
     """com.google.common.escape.CharEscaper"""
  
     @staticmethod

@@ -53,7 +53,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 from builtins import int
  
-class QuantumServerConfig(config.__CraftyConfig, crafty.CraftyConfig):
+class QuantumServerConfig():
     """dev.ultreon.quantum.config.QuantumServerConfig"""
  
     @staticmethod
@@ -324,7 +324,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 from builtins import int
  
-class QuantumServerConfig(config.__CraftyConfig, crafty.CraftyConfig):
+class QuantumServerConfig():
     """dev.ultreon.quantum.config.QuantumServerConfig"""
  
     @staticmethod

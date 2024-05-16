@@ -53,7 +53,7 @@ import com.badlogic.gdx.math.Vector as __Vector
 __Vector = __Vector
 from builtins import int
  
-class Wander(__Face, Face):
+class Wander():
     """com.badlogic.gdx.ai.steer.behaviors.Wander"""
  
     @staticmethod
@@ -269,14 +269,14 @@ class Wander(__Face, Face):
         super(object, self).wait()
 
     @overload
-    def getInternalTargetPosition(self) -> 'math.Vector':
-        """public T com.badlogic.gdx.ai.steer.behaviors.Wander.getInternalTargetPosition()"""
-        return 'math.Vector'.__wrap(super(Wander, self).getInternalTargetPosition())
-
-    @overload
     def setWanderRate(self, arg0: float) -> 'Wander':
         """public com.badlogic.gdx.ai.steer.behaviors.Wander<T> com.badlogic.gdx.ai.steer.behaviors.Wander.setWanderRate(float)"""
         return 'Wander'.__wrap(super(__Wander, self).setWanderRate(__float.valueOf(arg0)))
+
+    @overload
+    def getInternalTargetPosition(self) -> 'math.Vector':
+        """public T com.badlogic.gdx.ai.steer.behaviors.Wander.getInternalTargetPosition()"""
+        return 'math.Vector'.__wrap(super(Wander, self).getInternalTargetPosition())
 
     @overload
     def __init__(self, arg0: 'Steerable'):
@@ -339,7 +339,7 @@ import com.badlogic.gdx.math.Vector as __Vector
 __Vector = __Vector
 from builtins import int
  
-class Wander(__Face, Face):
+class Wander():
     """com.badlogic.gdx.ai.steer.behaviors.Wander"""
  
     @staticmethod
@@ -555,14 +555,14 @@ class Wander(__Face, Face):
         super(object, self).wait()
 
     @overload
-    def getInternalTargetPosition(self) -> 'math.Vector':
-        """public T com.badlogic.gdx.ai.steer.behaviors.Wander.getInternalTargetPosition()"""
-        return 'math.Vector'.__wrap(super(Wander, self).getInternalTargetPosition())
-
-    @overload
     def setWanderRate(self, arg0: float) -> 'Wander':
         """public com.badlogic.gdx.ai.steer.behaviors.Wander<T> com.badlogic.gdx.ai.steer.behaviors.Wander.setWanderRate(float)"""
         return 'Wander'.__wrap(super(__Wander, self).setWanderRate(__float.valueOf(arg0)))
+
+    @overload
+    def getInternalTargetPosition(self) -> 'math.Vector':
+        """public T com.badlogic.gdx.ai.steer.behaviors.Wander.getInternalTargetPosition()"""
+        return 'math.Vector'.__wrap(super(Wander, self).getInternalTargetPosition())
 
     @overload
     def __init__(self, arg0: 'Steerable'):
@@ -626,7 +626,7 @@ except ImportError:
 
 from builtins import int
  
-class RaycastObstacleAvoidance(ai.__SteeringBehavior, steer.SteeringBehavior):
+class RaycastObstacleAvoidance():
     """com.badlogic.gdx.ai.steer.behaviors.RaycastObstacleAvoidance"""
  
     @staticmethod
@@ -964,9 +964,9 @@ __SteeringAcceleration = __SteeringAcceleration
 import com.badlogic.gdx.ai.steer.Limiter as __Limiter
 __Limiter = __Limiter
 import java.lang.Long as __long
-import java.lang.Float as __float
 import com.badlogic.gdx.ai.steer.behaviors.Jump as __Jump_JumpDescriptor
 __JumpDescriptor = __Jump_JumpDescriptor.JumpDescriptor
+import java.lang.Float as __float
 import java.lang.Class as __Class
 __Class = __Class
 import java.lang.String as __String
@@ -991,7 +991,7 @@ __Vector = __Vector
 from builtins import bool
 from builtins import int
  
-class Jump(__MatchVelocity, MatchVelocity):
+class Jump():
     """com.badlogic.gdx.ai.steer.behaviors.Jump"""
  
     @staticmethod
@@ -1137,14 +1137,14 @@ class Jump(__MatchVelocity, MatchVelocity):
         return 'Jump'.__wrap(super(__Jump, self).setGravity(arg0))
 
     @overload
-    def getTakeoffPositionTolerance(self) -> float:
-        """public float com.badlogic.gdx.ai.steer.behaviors.Jump.getTakeoffPositionTolerance()"""
-        return float.__wrap(super(Jump, self).getTakeoffPositionTolerance())
-
-    @overload
     def getJumpDescriptor(self) -> 'JumpDescriptor':
         """public com.badlogic.gdx.ai.steer.behaviors.Jump$JumpDescriptor<T> com.badlogic.gdx.ai.steer.behaviors.Jump.getJumpDescriptor()"""
         return 'JumpDescriptor'.__wrap(super(Jump, self).getJumpDescriptor())
+
+    @overload
+    def getTakeoffPositionTolerance(self) -> float:
+        """public float com.badlogic.gdx.ai.steer.behaviors.Jump.getTakeoffPositionTolerance()"""
+        return float.__wrap(super(Jump, self).getTakeoffPositionTolerance())
 
     @overload
     def setTimeToTarget(self, arg0: float) -> 'Jump':
@@ -1249,7 +1249,7 @@ except ImportError:
 
 from builtins import int
  
-class Flee(__Seek, Seek):
+class Flee():
     """com.badlogic.gdx.ai.steer.behaviors.Flee"""
  
     @staticmethod
@@ -1433,7 +1433,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Cohesion(ai.__GroupBehavior, steer.GroupBehavior, ai.__Proximity_ProximityCallback, steer.Proximity$ProximityCallback):
+class Cohesion():
     """com.badlogic.gdx.ai.steer.behaviors.Cohesion"""
  
     @staticmethod
@@ -1614,7 +1614,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PrioritySteering(ai.__SteeringBehavior, steer.SteeringBehavior):
+class PrioritySteering():
     """com.badlogic.gdx.ai.steer.behaviors.PrioritySteering"""
  
     @staticmethod
@@ -1807,7 +1807,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CollisionAvoidance(ai.__GroupBehavior, steer.GroupBehavior, ai.__Proximity_ProximityCallback, steer.Proximity$ProximityCallback):
+class CollisionAvoidance():
     """com.badlogic.gdx.ai.steer.behaviors.CollisionAvoidance"""
  
     @staticmethod
@@ -1997,7 +1997,7 @@ except ImportError:
 
 from builtins import int
  
-class Face(__ReachOrientation, ReachOrientation):
+class Face():
     """com.badlogic.gdx.ai.steer.behaviors.Face"""
  
     @staticmethod
@@ -2221,7 +2221,7 @@ except ImportError:
 
 from builtins import int
  
-class LookWhereYouAreGoing(__ReachOrientation, ReachOrientation):
+class LookWhereYouAreGoing():
     """com.badlogic.gdx.ai.steer.behaviors.LookWhereYouAreGoing"""
  
     @staticmethod
@@ -2431,7 +2431,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Evade(__Pursue, Pursue):
+class Evade():
     """com.badlogic.gdx.ai.steer.behaviors.Evade"""
  
     @staticmethod
@@ -2624,7 +2624,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Pursue(ai.__SteeringBehavior, steer.SteeringBehavior):
+class Pursue():
     """com.badlogic.gdx.ai.steer.behaviors.Pursue"""
  
     @staticmethod
@@ -2817,7 +2817,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Alignment(ai.__GroupBehavior, steer.GroupBehavior, ai.__Proximity_ProximityCallback, steer.Proximity$ProximityCallback):
+class Alignment():
     """com.badlogic.gdx.ai.steer.behaviors.Alignment"""
  
     @staticmethod
@@ -2999,7 +2999,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BlendedSteering(ai.__SteeringBehavior, steer.SteeringBehavior):
+class BlendedSteering():
     """com.badlogic.gdx.ai.steer.behaviors.BlendedSteering"""
  
     @staticmethod
@@ -3319,7 +3319,7 @@ except ImportError:
 
 from builtins import int
  
-class Hide(__Arrive, Arrive, ai.__Proximity_ProximityCallback, steer.Proximity$ProximityCallback):
+class Hide():
     """com.badlogic.gdx.ai.steer.behaviors.Hide"""
  
     @staticmethod
@@ -3388,14 +3388,14 @@ class Hide(__Arrive, Arrive, ai.__Proximity_ProximityCallback, steer.Proximity$P
         return bool.__wrap(super(steer.SteeringBehavior, self).isEnabled())
 
     @overload
-    def setProximity(self, arg0: 'Proximity') -> 'Hide':
-        """public com.badlogic.gdx.ai.steer.behaviors.Hide<T> com.badlogic.gdx.ai.steer.behaviors.Hide.setProximity(com.badlogic.gdx.ai.steer.Proximity<T>)"""
-        return 'Hide'.__wrap(super(__Hide, self).setProximity(arg0))
-
-    @overload
     def setDistanceFromBoundary(self, arg0: float) -> 'Hide':
         """public com.badlogic.gdx.ai.steer.behaviors.Hide<T> com.badlogic.gdx.ai.steer.behaviors.Hide.setDistanceFromBoundary(float)"""
         return 'Hide'.__wrap(super(__Hide, self).setDistanceFromBoundary(__float.valueOf(arg0)))
+
+    @overload
+    def setProximity(self, arg0: 'Proximity') -> 'Hide':
+        """public com.badlogic.gdx.ai.steer.behaviors.Hide<T> com.badlogic.gdx.ai.steer.behaviors.Hide.setProximity(com.badlogic.gdx.ai.steer.Proximity<T>)"""
+        return 'Hide'.__wrap(super(__Hide, self).setProximity(arg0))
 
     @override
     @overload
@@ -3661,7 +3661,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FollowFlowField(ai.__SteeringBehavior, steer.SteeringBehavior):
+class FollowFlowField():
     """com.badlogic.gdx.ai.steer.behaviors.FollowFlowField"""
  
     @staticmethod
@@ -3859,7 +3859,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MatchVelocity(ai.__SteeringBehavior, steer.SteeringBehavior):
+class MatchVelocity():
     """com.badlogic.gdx.ai.steer.behaviors.MatchVelocity"""
  
     @staticmethod
@@ -4082,7 +4082,7 @@ import com.badlogic.gdx.math.Vector as __Vector
 __Vector = __Vector
 from builtins import int
  
-class FollowPath(__Arrive, Arrive):
+class FollowPath():
     """com.badlogic.gdx.ai.steer.behaviors.FollowPath"""
  
     @staticmethod
@@ -4359,7 +4359,7 @@ except ImportError:
 
 from builtins import int
  
-class Seek(ai.__SteeringBehavior, steer.SteeringBehavior):
+class Seek():
     """com.badlogic.gdx.ai.steer.behaviors.Seek"""
  
     @staticmethod
@@ -4547,7 +4547,7 @@ except ImportError:
 
 from builtins import int
  
-class Arrive(ai.__SteeringBehavior, steer.SteeringBehavior):
+class Arrive():
     """com.badlogic.gdx.ai.steer.behaviors.Arrive"""
  
     @staticmethod
@@ -4765,7 +4765,7 @@ except ImportError:
 
 from builtins import int
  
-class ReachOrientation(ai.__SteeringBehavior, steer.SteeringBehavior):
+class ReachOrientation():
     """com.badlogic.gdx.ai.steer.behaviors.ReachOrientation"""
  
     @staticmethod
@@ -4980,7 +4980,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Separation(ai.__GroupBehavior, steer.GroupBehavior, ai.__Proximity_ProximityCallback, steer.Proximity$ProximityCallback):
+class Separation():
     """com.badlogic.gdx.ai.steer.behaviors.Separation"""
  
     @staticmethod
@@ -5087,14 +5087,14 @@ class Separation(ai.__GroupBehavior, steer.GroupBehavior, ai.__Proximity_Proximi
         return 'Separation'.__wrap(super(__Separation, self).setLimiter(arg0))
 
     @overload
-    def reportNeighbor(self, arg0: 'Steerable') -> bool:
-        """public boolean com.badlogic.gdx.ai.steer.behaviors.Separation.reportNeighbor(com.badlogic.gdx.ai.steer.Steerable<T>)"""
-        return bool.__wrap(super(__Separation, self).reportNeighbor(arg0))
-
-    @overload
     def setDecayCoefficient(self, arg0: float) -> 'Separation':
         """public com.badlogic.gdx.ai.steer.behaviors.Separation<T> com.badlogic.gdx.ai.steer.behaviors.Separation.setDecayCoefficient(float)"""
         return 'Separation'.__wrap(super(__Separation, self).setDecayCoefficient(__float.valueOf(arg0)))
+
+    @overload
+    def reportNeighbor(self, arg0: 'Steerable') -> bool:
+        """public boolean com.badlogic.gdx.ai.steer.behaviors.Separation.reportNeighbor(com.badlogic.gdx.ai.steer.Steerable<T>)"""
+        return bool.__wrap(super(__Separation, self).reportNeighbor(arg0))
 
     @override
     @overload
@@ -5187,7 +5187,7 @@ import com.badlogic.gdx.math.Vector as __Vector
 __Vector = __Vector
 from builtins import int
  
-class Interpose(__Arrive, Arrive):
+class Interpose():
     """com.badlogic.gdx.ai.steer.behaviors.Interpose"""
  
     @staticmethod

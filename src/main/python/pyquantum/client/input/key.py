@@ -110,14 +110,14 @@ class KeyBind():
         super(object, self).notify()
 
     @overload
-    def getModifiers(self) -> int:
-        """public int dev.ultreon.quantum.client.input.key.KeyBind.getModifiers()"""
-        return int.__wrap(super(KeyBind, self).getModifiers())
-
-    @overload
     def isPressed(self) -> bool:
         """public boolean dev.ultreon.quantum.client.input.key.KeyBind.isPressed()"""
         return bool.__wrap(super(KeyBind, self).isPressed())
+
+    @overload
+    def getModifiers(self) -> int:
+        """public int dev.ultreon.quantum.client.input.key.KeyBind.getModifiers()"""
+        return int.__wrap(super(KeyBind, self).getModifiers())
 
     @overload
     def setModifiers(self, arg0: int):
@@ -269,14 +269,14 @@ class KeyBind():
         super(object, self).notify()
 
     @overload
-    def getModifiers(self) -> int:
-        """public int dev.ultreon.quantum.client.input.key.KeyBind.getModifiers()"""
-        return int.__wrap(super(KeyBind, self).getModifiers())
-
-    @overload
     def isPressed(self) -> bool:
         """public boolean dev.ultreon.quantum.client.input.key.KeyBind.isPressed()"""
         return bool.__wrap(super(KeyBind, self).isPressed())
+
+    @overload
+    def getModifiers(self) -> int:
+        """public int dev.ultreon.quantum.client.input.key.KeyBind.getModifiers()"""
+        return int.__wrap(super(KeyBind, self).getModifiers())
 
     @overload
     def setModifiers(self, arg0: int):
@@ -459,7 +459,7 @@ import java.lang.Enum as __Enum
 __Enum = __Enum
 from builtins import int
  
-class Type(__Enum, Enum):
+class Type():
     """dev.ultreon.quantum.client.input.key.KeyBind.Type"""
  
     @staticmethod
@@ -526,16 +526,16 @@ class Type(__Enum, Enum):
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @overload
+    def isPressed(self, arg0: 'KeyBind') -> bool:
+        """public boolean dev.ultreon.quantum.client.input.key.KeyBind$Type.isPressed(dev.ultreon.quantum.client.input.key.KeyBind)"""
+        return bool.__wrap(super(__Type, self).isPressed(arg0))
+
     @staticmethod
     @overload
     def valueOf(arg0: str) -> 'Type':
         """public static dev.ultreon.quantum.client.input.key.KeyBind$Type dev.ultreon.quantum.client.input.key.KeyBind$Type.valueOf(java.lang.String)"""
         return Type.__wrap(__Type.valueOf(arg0))
-
-    @overload
-    def isPressed(self, arg0: 'KeyBind') -> bool:
-        """public boolean dev.ultreon.quantum.client.input.key.KeyBind$Type.isPressed(dev.ultreon.quantum.client.input.key.KeyBind)"""
-        return bool.__wrap(super(__Type, self).isPressed(arg0))
 
     @override
     @overload

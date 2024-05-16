@@ -359,7 +359,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class ControllerPowerLevel(__Enum, Enum):
+class ControllerPowerLevel():
     """com.badlogic.gdx.controllers.ControllerPowerLevel"""
  
     @staticmethod
@@ -640,7 +640,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ManageCurrentControllerListener(__ControllerAdapter, ControllerAdapter):
+class ManageCurrentControllerListener():
     """com.badlogic.gdx.controllers.AbstractControllerManager.ManageCurrentControllerListener"""
  
     @staticmethod
@@ -788,7 +788,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ControllerManagerStub(__AbstractControllerManager, AbstractControllerManager):
+class ControllerManagerStub():
     """com.badlogic.gdx.controllers.ControllerManagerStub"""
  
     @staticmethod
@@ -1019,7 +1019,7 @@ __ControllerManager = __ControllerManager
 from builtins import bool
 from builtins import int
  
-class AbstractControllerManager(ABC, __ControllerManager, ControllerManager):
+class AbstractControllerManager(ABC):
     """com.badlogic.gdx.controllers.AbstractControllerManager"""
  
     @staticmethod
@@ -1270,7 +1270,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ControllerAdapter(__ControllerListener, ControllerListener):
+class ControllerAdapter():
     """com.badlogic.gdx.controllers.ControllerAdapter"""
  
     @staticmethod

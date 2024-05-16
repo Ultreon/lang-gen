@@ -406,7 +406,7 @@ import java.nio.ByteBuffer as ByteBuffer
 import java.lang.Integer as __int
 from builtins import int
  
-class ByteArrayFileHandle(pygdx.__FileHandle, files.FileHandle):
+class ByteArrayFileHandle():
     """dev.ultreon.quantum.client.resources.ByteArrayFileHandle"""
  
     @staticmethod
@@ -854,7 +854,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ResourceNotFoundException(__RuntimeException, RuntimeException):
+class ResourceNotFoundException():
     """dev.ultreon.quantum.client.resources.ResourceNotFoundException"""
  
     @staticmethod
@@ -1140,7 +1140,7 @@ import java.nio.ByteBuffer as ByteBuffer
 import java.lang.Integer as __int
 from builtins import int
  
-class ResourceFileHandle(pygdx.__FileHandle, files.FileHandle):
+class ResourceFileHandle():
     """dev.ultreon.quantum.client.resources.ResourceFileHandle"""
  
     @staticmethod

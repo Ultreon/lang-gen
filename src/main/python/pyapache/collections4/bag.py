@@ -54,7 +54,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class UnmodifiableBag(__AbstractBagDecorator, AbstractBagDecorator, pyapache.__Unmodifiable, collections4.Unmodifiable):
+class UnmodifiableBag():
     """org.apache.commons.collections4.bag.UnmodifiableBag"""
  
     @staticmethod
@@ -323,7 +323,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class UnmodifiableBag(__AbstractBagDecorator, AbstractBagDecorator, pyapache.__Unmodifiable, collections4.Unmodifiable):
+class UnmodifiableBag():
     """org.apache.commons.collections4.bag.UnmodifiableBag"""
  
     @staticmethod
@@ -605,7 +605,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class TransformedSortedBag(__TransformedBag, TransformedBag, pyapache.__SortedBag, collections4.SortedBag):
+class TransformedSortedBag():
     """org.apache.commons.collections4.bag.TransformedSortedBag"""
  
     @staticmethod
@@ -925,7 +925,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class PredicatedBag(collections4.__PredicatedCollection, collection.PredicatedCollection, pyapache.__Bag, collections4.Bag):
+class PredicatedBag():
     """org.apache.commons.collections4.bag.PredicatedBag"""
  
     @staticmethod
@@ -1200,7 +1200,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class AbstractBagDecorator(ABC, collections4.__AbstractCollectionDecorator, collection.AbstractCollectionDecorator, pyapache.__Bag, collections4.Bag):
+class AbstractBagDecorator(ABC):
     """org.apache.commons.collections4.bag.AbstractBagDecorator"""
  
     @staticmethod
@@ -1451,7 +1451,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class HashBag(__AbstractMapBag, AbstractMapBag, __Serializable, Serializable):
+class HashBag():
     """org.apache.commons.collections4.bag.HashBag"""
  
     @staticmethod
@@ -1738,7 +1738,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class CollectionSortedBag(__AbstractSortedBagDecorator, AbstractSortedBagDecorator):
+class CollectionSortedBag():
     """org.apache.commons.collections4.bag.CollectionSortedBag"""
  
     @staticmethod
@@ -2036,7 +2036,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class SynchronizedSortedBag(__SynchronizedBag, SynchronizedBag, pyapache.__SortedBag, collections4.SortedBag):
+class SynchronizedSortedBag():
     """org.apache.commons.collections4.bag.SynchronizedSortedBag"""
  
     @staticmethod
@@ -2321,7 +2321,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class AbstractMapBag(ABC, pyapache.__Bag, collections4.Bag):
+class AbstractMapBag(ABC):
     """org.apache.commons.collections4.bag.AbstractMapBag"""
  
     @staticmethod
@@ -2582,7 +2582,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class CollectionBag(__AbstractBagDecorator, AbstractBagDecorator):
+class CollectionBag():
     """org.apache.commons.collections4.bag.CollectionBag"""
  
     @staticmethod
@@ -2851,7 +2851,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class AbstractSortedBagDecorator(ABC, __AbstractBagDecorator, AbstractBagDecorator, pyapache.__SortedBag, collections4.SortedBag):
+class AbstractSortedBagDecorator(ABC):
     """org.apache.commons.collections4.bag.AbstractSortedBagDecorator"""
  
     @staticmethod
@@ -3225,7 +3225,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class TreeBag(__AbstractMapBag, AbstractMapBag, pyapache.__SortedBag, collections4.SortedBag, __Serializable, Serializable):
+class TreeBag():
     """org.apache.commons.collections4.bag.TreeBag"""
  
     @staticmethod
@@ -3537,7 +3537,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class UnmodifiableSortedBag(__AbstractSortedBagDecorator, AbstractSortedBagDecorator, pyapache.__Unmodifiable, collections4.Unmodifiable):
+class UnmodifiableSortedBag():
     """org.apache.commons.collections4.bag.UnmodifiableSortedBag"""
  
     @staticmethod
@@ -3823,7 +3823,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class SynchronizedBag(collections4.__SynchronizedCollection, collection.SynchronizedCollection, pyapache.__Bag, collections4.Bag):
+class SynchronizedBag():
     """org.apache.commons.collections4.bag.SynchronizedBag"""
  
     @staticmethod
@@ -4101,7 +4101,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class TransformedBag(collections4.__TransformedCollection, collection.TransformedCollection, pyapache.__Bag, collections4.Bag):
+class TransformedBag():
     """org.apache.commons.collections4.bag.TransformedBag"""
  
     @staticmethod
@@ -4396,7 +4396,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class PredicatedSortedBag(__PredicatedBag, PredicatedBag, pyapache.__SortedBag, collections4.SortedBag):
+class PredicatedSortedBag():
     """org.apache.commons.collections4.bag.PredicatedSortedBag"""
  
     @staticmethod

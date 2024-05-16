@@ -43,7 +43,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 from builtins import int
  
-class LiteralText(__MutableText, MutableText):
+class LiteralText():
     """dev.ultreon.libs.text.v0.LiteralText"""
  
     @staticmethod
@@ -153,14 +153,14 @@ class LiteralText(__MutableText, MutableText):
         return 'Color'.__wrap(super(MutableText, self).getColor())
 
     @overload
-    def setWeight(self, arg0: float) -> 'MutableText':
-        """public dev.ultreon.libs.text.v0.MutableText dev.ultreon.libs.text.v0.MutableText.setWeight(float)"""
-        return 'MutableText'.__wrap(super(__MutableText, self).setWeight(__float.valueOf(arg0)))
-
-    @overload
     def setColor(self, arg0: 'Color') -> 'MutableText':
         """public dev.ultreon.libs.text.v0.MutableText dev.ultreon.libs.text.v0.MutableText.setColor(java.awt.Color)"""
         return 'MutableText'.__wrap(super(__MutableText, self).setColor(arg0))
+
+    @overload
+    def setWeight(self, arg0: float) -> 'MutableText':
+        """public dev.ultreon.libs.text.v0.MutableText dev.ultreon.libs.text.v0.MutableText.setWeight(float)"""
+        return 'MutableText'.__wrap(super(__MutableText, self).setWeight(__float.valueOf(arg0)))
 
     @overload
     def append(self, arg0: str) -> 'MutableText':
@@ -249,15 +249,15 @@ class LiteralText(__MutableText, MutableText):
 
     @override
     @overload
-    def getSuperscript(self) -> int:
-        """public int dev.ultreon.libs.text.v0.MutableText.getSuperscript()"""
-        return int.__wrap(super(MutableText, self).getSuperscript())
-
-    @override
-    @overload
     def isUnderlined(self) -> bool:
         """public boolean dev.ultreon.libs.text.v0.MutableText.isUnderlined()"""
         return bool.__wrap(super(MutableText, self).isUnderlined())
+
+    @override
+    @overload
+    def getSuperscript(self) -> int:
+        """public int dev.ultreon.libs.text.v0.MutableText.getSuperscript()"""
+        return int.__wrap(super(MutableText, self).getSuperscript())
 
     @override
     @overload
@@ -331,7 +331,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 from builtins import int
  
-class LiteralText(__MutableText, MutableText):
+class LiteralText():
     """dev.ultreon.libs.text.v0.LiteralText"""
  
     @staticmethod
@@ -441,14 +441,14 @@ class LiteralText(__MutableText, MutableText):
         return 'Color'.__wrap(super(MutableText, self).getColor())
 
     @overload
-    def setWeight(self, arg0: float) -> 'MutableText':
-        """public dev.ultreon.libs.text.v0.MutableText dev.ultreon.libs.text.v0.MutableText.setWeight(float)"""
-        return 'MutableText'.__wrap(super(__MutableText, self).setWeight(__float.valueOf(arg0)))
-
-    @overload
     def setColor(self, arg0: 'Color') -> 'MutableText':
         """public dev.ultreon.libs.text.v0.MutableText dev.ultreon.libs.text.v0.MutableText.setColor(java.awt.Color)"""
         return 'MutableText'.__wrap(super(__MutableText, self).setColor(arg0))
+
+    @overload
+    def setWeight(self, arg0: float) -> 'MutableText':
+        """public dev.ultreon.libs.text.v0.MutableText dev.ultreon.libs.text.v0.MutableText.setWeight(float)"""
+        return 'MutableText'.__wrap(super(__MutableText, self).setWeight(__float.valueOf(arg0)))
 
     @overload
     def append(self, arg0: str) -> 'MutableText':
@@ -537,15 +537,15 @@ class LiteralText(__MutableText, MutableText):
 
     @override
     @overload
-    def getSuperscript(self) -> int:
-        """public int dev.ultreon.libs.text.v0.MutableText.getSuperscript()"""
-        return int.__wrap(super(MutableText, self).getSuperscript())
-
-    @override
-    @overload
     def isUnderlined(self) -> bool:
         """public boolean dev.ultreon.libs.text.v0.MutableText.isUnderlined()"""
         return bool.__wrap(super(MutableText, self).isUnderlined())
+
+    @override
+    @overload
+    def getSuperscript(self) -> int:
+        """public int dev.ultreon.libs.text.v0.MutableText.getSuperscript()"""
+        return int.__wrap(super(MutableText, self).getSuperscript())
 
     @override
     @overload
@@ -666,7 +666,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class FontWeight(__Enum, Enum):
+class FontWeight():
     """dev.ultreon.libs.text.v0.FontWeight"""
  
     @staticmethod
@@ -855,7 +855,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 from builtins import int
  
-class TranslationText(__MutableText, MutableText):
+class TranslationText():
     """dev.ultreon.libs.text.v0.TranslationText"""
  
     @staticmethod
@@ -965,14 +965,14 @@ class TranslationText(__MutableText, MutableText):
         return 'Color'.__wrap(super(MutableText, self).getColor())
 
     @overload
-    def setWeight(self, arg0: float) -> 'MutableText':
-        """public dev.ultreon.libs.text.v0.MutableText dev.ultreon.libs.text.v0.MutableText.setWeight(float)"""
-        return 'MutableText'.__wrap(super(__MutableText, self).setWeight(__float.valueOf(arg0)))
-
-    @overload
     def setColor(self, arg0: 'Color') -> 'MutableText':
         """public dev.ultreon.libs.text.v0.MutableText dev.ultreon.libs.text.v0.MutableText.setColor(java.awt.Color)"""
         return 'MutableText'.__wrap(super(__MutableText, self).setColor(arg0))
+
+    @overload
+    def setWeight(self, arg0: float) -> 'MutableText':
+        """public dev.ultreon.libs.text.v0.MutableText dev.ultreon.libs.text.v0.MutableText.setWeight(float)"""
+        return 'MutableText'.__wrap(super(__MutableText, self).setWeight(__float.valueOf(arg0)))
 
     @overload
     def append(self, arg0: str) -> 'MutableText':
@@ -1061,15 +1061,15 @@ class TranslationText(__MutableText, MutableText):
 
     @override
     @overload
-    def getSuperscript(self) -> int:
-        """public int dev.ultreon.libs.text.v0.MutableText.getSuperscript()"""
-        return int.__wrap(super(MutableText, self).getSuperscript())
-
-    @override
-    @overload
     def isUnderlined(self) -> bool:
         """public boolean dev.ultreon.libs.text.v0.MutableText.isUnderlined()"""
         return bool.__wrap(super(MutableText, self).isUnderlined())
+
+    @override
+    @overload
+    def getSuperscript(self) -> int:
+        """public int dev.ultreon.libs.text.v0.MutableText.getSuperscript()"""
+        return int.__wrap(super(MutableText, self).getSuperscript())
 
     @override
     @overload
@@ -1139,7 +1139,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 from builtins import int
  
-class MutableText(ABC, __TextObject, TextObject):
+class MutableText(ABC):
     """dev.ultreon.libs.text.v0.MutableText"""
  
     @staticmethod
@@ -1241,14 +1241,14 @@ class MutableText(ABC, __TextObject, TextObject):
         return 'MutableText'.__wrap(super(__MutableText, self).setUnderlined(__boolean.valueOf(arg0)))
 
     @overload
-    def setWeight(self, arg0: float) -> 'MutableText':
-        """public dev.ultreon.libs.text.v0.MutableText dev.ultreon.libs.text.v0.MutableText.setWeight(float)"""
-        return 'MutableText'.__wrap(super(__MutableText, self).setWeight(__float.valueOf(arg0)))
-
-    @overload
     def setColor(self, arg0: 'Color') -> 'MutableText':
         """public dev.ultreon.libs.text.v0.MutableText dev.ultreon.libs.text.v0.MutableText.setColor(java.awt.Color)"""
         return 'MutableText'.__wrap(super(__MutableText, self).setColor(arg0))
+
+    @overload
+    def setWeight(self, arg0: float) -> 'MutableText':
+        """public dev.ultreon.libs.text.v0.MutableText dev.ultreon.libs.text.v0.MutableText.setWeight(float)"""
+        return 'MutableText'.__wrap(super(__MutableText, self).setWeight(__float.valueOf(arg0)))
 
     @overload
     def append(self, arg0: str) -> 'MutableText':
@@ -1565,7 +1565,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class FontWidth(__Enum, Enum):
+class FontWidth():
     """dev.ultreon.libs.text.v0.FontWidth"""
  
     @staticmethod

@@ -1200,7 +1200,7 @@ import com.badlogic.gdx.graphics.g3d.model.data.ModelMaterial as __ModelMaterial
 __MaterialType = __ModelMaterial_MaterialType.MaterialType
 from builtins import int
  
-class MaterialType(__Enum, Enum):
+class MaterialType():
     """com.badlogic.gdx.graphics.g3d.model.data.ModelMaterial.MaterialType"""
  
     @staticmethod

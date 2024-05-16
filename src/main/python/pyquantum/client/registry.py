@@ -907,7 +907,7 @@ import java.lang.Integer as __int
 import java.util.Map as Map
 from builtins import int
  
-class EntityModelRegistry(client.__ContextAwareReloadable, resources.ContextAwareReloadable, pygdx.__Disposable, utils.Disposable):
+class EntityModelRegistry():
     """dev.ultreon.quantum.client.registry.EntityModelRegistry"""
  
     @staticmethod
@@ -1092,7 +1092,7 @@ import dev.ultreon.quantum.client.registry.EntityRendererRegistry as __EntityRen
 __EntityRendererRegistry = __EntityRendererRegistry
 from builtins import int
  
-class EntityRendererRegistry(client.__ContextAwareReloadable, resources.ContextAwareReloadable, pygdx.__Disposable, utils.Disposable):
+class EntityRendererRegistry():
     """dev.ultreon.quantum.client.registry.EntityRendererRegistry"""
  
     @staticmethod

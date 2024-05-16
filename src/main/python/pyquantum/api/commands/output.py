@@ -27,7 +27,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BasicCommandResult(__CommandResult, CommandResult):
+class BasicCommandResult():
     """dev.ultreon.quantum.api.commands.output.BasicCommandResult"""
  
     @staticmethod
@@ -151,7 +151,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BasicCommandResult(__CommandResult, CommandResult):
+class BasicCommandResult():
     """dev.ultreon.quantum.api.commands.output.BasicCommandResult"""
  
     @staticmethod
@@ -279,7 +279,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Type(__Enum, Enum):
+class Type():
     """dev.ultreon.quantum.api.commands.output.ObjectCommandResult.Type"""
  
     @staticmethod
@@ -444,7 +444,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ObjectCommandResult(__CommandResult, CommandResult):
+class ObjectCommandResult():
     """dev.ultreon.quantum.api.commands.output.ObjectCommandResult"""
  
     @staticmethod
@@ -576,7 +576,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class StringMessage(__CommandResult, CommandResult):
+class StringMessage():
     """dev.ultreon.quantum.api.commands.output.StringMessage"""
  
     @staticmethod
@@ -754,7 +754,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ComponentMessage(__CommandResult, CommandResult):
+class ComponentMessage():
     """dev.ultreon.quantum.api.commands.output.ComponentMessage"""
  
     @staticmethod
@@ -877,7 +877,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class MessageType(__Enum, Enum):
+class MessageType():
     """dev.ultreon.quantum.api.commands.output.BasicCommandResult.MessageType"""
  
     @staticmethod

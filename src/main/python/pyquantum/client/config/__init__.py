@@ -60,7 +60,7 @@ __ClientConfig = __ClientConfig
 import java.util.Map as Map
 from builtins import int
  
-class ClientConfig(config.__CraftyConfig, crafty.CraftyConfig):
+class ClientConfig():
     """dev.ultreon.quantum.client.config.ClientConfig"""
  
     @staticmethod
@@ -360,7 +360,7 @@ __ClientConfig = __ClientConfig
 import java.util.Map as Map
 from builtins import int
  
-class ClientConfig(config.__CraftyConfig, crafty.CraftyConfig):
+class ClientConfig():
     """dev.ultreon.quantum.client.config.ClientConfig"""
  
     @staticmethod
@@ -642,7 +642,7 @@ import dev.ultreon.quantum.client.config.gui.ConfigEntry as __ConfigEntry
 __ConfigEntry = __ConfigEntry
 from builtins import int
  
-class GameSettings(__Configuration, Configuration):
+class GameSettings():
     """dev.ultreon.quantum.client.config.GameSettings"""
  
     @staticmethod

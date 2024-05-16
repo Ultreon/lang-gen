@@ -4,8 +4,8 @@ from overload import overload
 
  
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.nio.ShortBuffer as __ShortBuffer
 __ShortBuffer = __ShortBuffer
 import java.lang.Object as __object
@@ -24,7 +24,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class IndexBufferObjectSubData(__IndexData, IndexData):
+class IndexBufferObjectSubData():
     """com.badlogic.gdx.graphics.glutils.IndexBufferObjectSubData"""
  
     @staticmethod
@@ -152,15 +152,15 @@ class IndexBufferObjectSubData(__IndexData, IndexData):
 
     @override
     @overload
-    def updateIndices(self, arg0: int, arg1: 'short', arg2: int, arg3: int):
-        """public void com.badlogic.gdx.graphics.glutils.IndexBufferObjectSubData.updateIndices(int,short[],int,int)"""
-        super(__IndexBufferObjectSubData, self).updateIndices(__int.valueOf(arg0), arg1, __int.valueOf(arg2), __int.valueOf(arg3))
-
-    @override
-    @overload
     def getNumIndices(self) -> int:
         """public int com.badlogic.gdx.graphics.glutils.IndexBufferObjectSubData.getNumIndices()"""
         return int.__wrap(super(IndexBufferObjectSubData, self).getNumIndices())
+
+    @override
+    @overload
+    def updateIndices(self, arg0: int, arg1: 'short', arg2: int, arg3: int):
+        """public void com.badlogic.gdx.graphics.glutils.IndexBufferObjectSubData.updateIndices(int,short[],int,int)"""
+        super(__IndexBufferObjectSubData, self).updateIndices(__int.valueOf(arg0), arg1, __int.valueOf(arg2), __int.valueOf(arg3))
 
     @override
     @overload
@@ -191,8 +191,8 @@ class IndexBufferObjectSubData(__IndexData, IndexData):
  
 # CLASS: com.badlogic.gdx.graphics.glutils.IndexBufferObjectSubData
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.nio.ShortBuffer as __ShortBuffer
 __ShortBuffer = __ShortBuffer
 import java.lang.Object as __object
@@ -211,7 +211,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class IndexBufferObjectSubData(__IndexData, IndexData):
+class IndexBufferObjectSubData():
     """com.badlogic.gdx.graphics.glutils.IndexBufferObjectSubData"""
  
     @staticmethod
@@ -339,15 +339,15 @@ class IndexBufferObjectSubData(__IndexData, IndexData):
 
     @override
     @overload
-    def updateIndices(self, arg0: int, arg1: 'short', arg2: int, arg3: int):
-        """public void com.badlogic.gdx.graphics.glutils.IndexBufferObjectSubData.updateIndices(int,short[],int,int)"""
-        super(__IndexBufferObjectSubData, self).updateIndices(__int.valueOf(arg0), arg1, __int.valueOf(arg2), __int.valueOf(arg3))
-
-    @override
-    @overload
     def getNumIndices(self) -> int:
         """public int com.badlogic.gdx.graphics.glutils.IndexBufferObjectSubData.getNumIndices()"""
         return int.__wrap(super(IndexBufferObjectSubData, self).getNumIndices())
+
+    @override
+    @overload
+    def updateIndices(self, arg0: int, arg1: 'short', arg2: int, arg3: int):
+        """public void com.badlogic.gdx.graphics.glutils.IndexBufferObjectSubData.updateIndices(int,short[],int,int)"""
+        super(__IndexBufferObjectSubData, self).updateIndices(__int.valueOf(arg0), arg1, __int.valueOf(arg2), __int.valueOf(arg3))
 
     @override
     @overload
@@ -389,8 +389,8 @@ except ImportError:
 
 import com.badlogic.gdx.graphics.glutils.ShaderProgram as __ShaderProgram
 __ShaderProgram = __ShaderProgram
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 from builtins import float
@@ -425,7 +425,7 @@ except ImportError:
 
 from builtins import int
  
-class ShaderProgram(pygdx.__Disposable, utils.Disposable):
+class ShaderProgram():
     """com.badlogic.gdx.graphics.glutils.ShaderProgram"""
  
     @staticmethod
@@ -942,7 +942,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class FrameBufferCubemapBuilder(__GLFrameBufferBuilder, GLFrameBufferBuilder):
+class FrameBufferCubemapBuilder():
     """com.badlogic.gdx.graphics.glutils.GLFrameBuffer.FrameBufferCubemapBuilder"""
  
     @staticmethod
@@ -1099,8 +1099,8 @@ class FrameBufferCubemapBuilder(__GLFrameBufferBuilder, GLFrameBufferBuilder):
  
 # CLASS: com.badlogic.gdx.graphics.glutils.IndexArray
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.nio.ShortBuffer as __ShortBuffer
 __ShortBuffer = __ShortBuffer
 import java.lang.Object as __object
@@ -1119,7 +1119,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class IndexArray(__IndexData, IndexData):
+class IndexArray():
     """com.badlogic.gdx.graphics.glutils.IndexArray"""
  
     @staticmethod
@@ -1407,10 +1407,10 @@ from pyquantum_helper import import_once as __import_once__
 import com.badlogic.gdx.graphics.glutils.ImmediateModeRenderer20 as __ImmediateModeRenderer20
 __ImmediateModeRenderer20 = __ImmediateModeRenderer20
 from builtins import str
+from pyquantum_helper import override
 import com.badlogic.gdx.graphics.glutils.ShaderProgram as __ShaderProgram
 __ShaderProgram = __ShaderProgram
 import java.lang.Boolean as __boolean
-from pyquantum_helper import override
 import java.lang.Object as __object
 from builtins import type
 import java.lang.Long as __long
@@ -1435,7 +1435,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class ImmediateModeRenderer20(__ImmediateModeRenderer, ImmediateModeRenderer):
+class ImmediateModeRenderer20():
     """com.badlogic.gdx.graphics.glutils.ImmediateModeRenderer20"""
  
     @staticmethod
@@ -1658,7 +1658,7 @@ except ImportError:
 
 from builtins import int
  
-class FileTextureArrayData(pygdx.__TextureArrayData, graphics.TextureArrayData):
+class FileTextureArrayData():
     """com.badlogic.gdx.graphics.glutils.FileTextureArrayData"""
  
     @staticmethod
@@ -1842,7 +1842,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class KTXTextureData(pygdx.__TextureData, graphics.TextureData, pygdx.__CubemapData, graphics.CubemapData):
+class KTXTextureData():
     """com.badlogic.gdx.graphics.glutils.KTXTextureData"""
  
     @staticmethod
@@ -2055,7 +2055,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class ETC1Data(pygdx.__Disposable, utils.Disposable):
+class ETC1Data():
     """com.badlogic.gdx.graphics.glutils.ETC1.ETC1Data"""
  
     @staticmethod
@@ -2283,7 +2283,7 @@ from builtins import float
 from abc import abstractmethod, ABC
 from builtins import int
  
-class VertexData(ABC, pygdx.__Disposable, utils.Disposable):
+class VertexData(ABC):
     """com.badlogic.gdx.graphics.glutils.VertexData"""
  
     @staticmethod
@@ -2382,8 +2382,8 @@ class VertexData(ABC, pygdx.__Disposable, utils.Disposable):
 # CLASS: com.badlogic.gdx.graphics.glutils.VertexArray
 from pyquantum_helper import import_once as __import_once__
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 import com.badlogic.gdx.graphics.glutils.VertexArray as __VertexArray
@@ -2410,7 +2410,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class VertexArray(__VertexData, VertexData):
+class VertexArray():
     """com.badlogic.gdx.graphics.glutils.VertexArray"""
  
     @staticmethod
@@ -2623,7 +2623,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class FileTextureData(pygdx.__TextureData, graphics.TextureData):
+class FileTextureData():
     """com.badlogic.gdx.graphics.glutils.FileTextureData"""
  
     @staticmethod
@@ -2793,7 +2793,7 @@ from abc import abstractmethod, ABC
 import java.nio.FloatBuffer as FloatBuffer
 from builtins import int
  
-class InstanceData(ABC, pygdx.__Disposable, utils.Disposable):
+class InstanceData(ABC):
     """com.badlogic.gdx.graphics.glutils.InstanceData"""
  
     @staticmethod
@@ -3093,7 +3093,7 @@ import com.badlogic.gdx.graphics.glutils.ETC1TextureData as __ETC1TextureData
 __ETC1TextureData = __ETC1TextureData
 from builtins import int
  
-class ETC1TextureData(pygdx.__TextureData, graphics.TextureData):
+class ETC1TextureData():
     """com.badlogic.gdx.graphics.glutils.ETC1TextureData"""
  
     @staticmethod
@@ -3294,7 +3294,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class GLOnlyTextureData(pygdx.__TextureData, graphics.TextureData):
+class GLOnlyTextureData():
     """com.badlogic.gdx.graphics.glutils.GLOnlyTextureData"""
  
     @staticmethod
@@ -3482,7 +3482,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class PixmapTextureData(pygdx.__TextureData, graphics.TextureData):
+class PixmapTextureData():
     """com.badlogic.gdx.graphics.glutils.PixmapTextureData"""
  
     @staticmethod
@@ -3678,7 +3678,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class FacedCubemapData(pygdx.__CubemapData, graphics.CubemapData):
+class FacedCubemapData():
     """com.badlogic.gdx.graphics.glutils.FacedCubemapData"""
  
     @staticmethod
@@ -3877,8 +3877,8 @@ class FacedCubemapData(pygdx.__CubemapData, graphics.CubemapData):
 # CLASS: com.badlogic.gdx.graphics.glutils.InstanceBufferObject
 from pyquantum_helper import import_once as __import_once__
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 from builtins import float
@@ -3905,7 +3905,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class InstanceBufferObject(__InstanceData, InstanceData):
+class InstanceBufferObject():
     """com.badlogic.gdx.graphics.glutils.InstanceBufferObject"""
  
     @staticmethod
@@ -3998,15 +3998,15 @@ class InstanceBufferObject(__InstanceData, InstanceData):
 
     @override
     @overload
-    def setInstanceData(self, arg0: 'float', arg1: int, arg2: int):
-        """public void com.badlogic.gdx.graphics.glutils.InstanceBufferObject.setInstanceData(float[],int,int)"""
-        super(__InstanceBufferObject, self).setInstanceData(arg0, __int.valueOf(arg1), __int.valueOf(arg2))
-
-    @override
-    @overload
     def setInstanceData(self, arg0: 'FloatBuffer', arg1: int):
         """public void com.badlogic.gdx.graphics.glutils.InstanceBufferObject.setInstanceData(java.nio.FloatBuffer,int)"""
         super(__InstanceBufferObject, self).setInstanceData(arg0, __int.valueOf(arg1))
+
+    @override
+    @overload
+    def setInstanceData(self, arg0: 'float', arg1: int, arg2: int):
+        """public void com.badlogic.gdx.graphics.glutils.InstanceBufferObject.setInstanceData(float[],int,int)"""
+        super(__InstanceBufferObject, self).setInstanceData(arg0, __int.valueOf(arg1), __int.valueOf(arg2))
 
     @overload
     def equals(self, arg0: object) -> bool:
@@ -4121,7 +4121,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class FrameBufferBuilder(__GLFrameBufferBuilder, GLFrameBufferBuilder):
+class FrameBufferBuilder():
     """com.badlogic.gdx.graphics.glutils.GLFrameBuffer.FrameBufferBuilder"""
  
     @staticmethod
@@ -4479,7 +4479,7 @@ import com.badlogic.gdx.graphics.Cubemap as __Cubemap_CubemapSide
 __CubemapSide = __Cubemap_CubemapSide.CubemapSide
 from builtins import int
  
-class FrameBufferCubemap(__GLFrameBuffer, GLFrameBuffer):
+class FrameBufferCubemap():
     """com.badlogic.gdx.graphics.glutils.FrameBufferCubemap"""
  
     @staticmethod
@@ -4715,7 +4715,7 @@ import com.badlogic.gdx.graphics.glutils.GLVersion as __GLVersion_Type
 __Type = __GLVersion_Type.Type
 from builtins import int
  
-class Type(__Enum, Enum):
+class Type():
     """com.badlogic.gdx.graphics.glutils.GLVersion.Type"""
  
     @staticmethod
@@ -4880,7 +4880,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class FloatTextureData(pygdx.__TextureData, graphics.TextureData):
+class FloatTextureData():
     """com.badlogic.gdx.graphics.glutils.FloatTextureData"""
  
     @staticmethod
@@ -5045,8 +5045,8 @@ class FloatTextureData(pygdx.__TextureData, graphics.TextureData):
 # CLASS: com.badlogic.gdx.graphics.glutils.VertexBufferObject
 from pyquantum_helper import import_once as __import_once__
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 from builtins import float
@@ -5073,7 +5073,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class VertexBufferObject(__VertexData, VertexData):
+class VertexBufferObject():
     """com.badlogic.gdx.graphics.glutils.VertexBufferObject"""
  
     @staticmethod
@@ -5274,7 +5274,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class ShapeType(__Enum, Enum):
+class ShapeType():
     """com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType"""
  
     @staticmethod
@@ -5515,14 +5515,14 @@ class GLFrameBufferBuilder(ABC):
         super(object, self).notifyAll()
 
     @overload
-    def addStencilTextureAttachment(self, arg0: int, arg1: int) -> 'GLFrameBufferBuilder':
-        """public com.badlogic.gdx.graphics.glutils.GLFrameBuffer$GLFrameBufferBuilder<U> com.badlogic.gdx.graphics.glutils.GLFrameBuffer$GLFrameBufferBuilder.addStencilTextureAttachment(int,int)"""
-        return 'GLFrameBufferBuilder'.__wrap(super(__GLFrameBufferBuilder, self).addStencilTextureAttachment(__int.valueOf(arg0), __int.valueOf(arg1)))
-
-    @overload
     def addBasicDepthRenderBuffer(self) -> 'GLFrameBufferBuilder':
         """public com.badlogic.gdx.graphics.glutils.GLFrameBuffer$GLFrameBufferBuilder<U> com.badlogic.gdx.graphics.glutils.GLFrameBuffer$GLFrameBufferBuilder.addBasicDepthRenderBuffer()"""
         return 'GLFrameBufferBuilder'.__wrap(super(GLFrameBufferBuilder, self).addBasicDepthRenderBuffer())
+
+    @overload
+    def addStencilTextureAttachment(self, arg0: int, arg1: int) -> 'GLFrameBufferBuilder':
+        """public com.badlogic.gdx.graphics.glutils.GLFrameBuffer$GLFrameBufferBuilder<U> com.badlogic.gdx.graphics.glutils.GLFrameBuffer$GLFrameBufferBuilder.addStencilTextureAttachment(int,int)"""
+        return 'GLFrameBufferBuilder'.__wrap(super(__GLFrameBufferBuilder, self).addStencilTextureAttachment(__int.valueOf(arg0), __int.valueOf(arg1)))
 
     @overload
     def __init__(self, arg0: int, arg1: int):
@@ -5617,7 +5617,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class MipMapTextureData(pygdx.__TextureData, graphics.TextureData):
+class MipMapTextureData():
     """com.badlogic.gdx.graphics.glutils.MipMapTextureData"""
  
     @staticmethod
@@ -6043,8 +6043,8 @@ class FrameBufferRenderBufferAttachmentSpec():
  
 # CLASS: com.badlogic.gdx.graphics.glutils.IndexBufferObject
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.nio.ShortBuffer as __ShortBuffer
 __ShortBuffer = __ShortBuffer
 import java.lang.Object as __object
@@ -6064,7 +6064,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class IndexBufferObject(__IndexData, IndexData):
+class IndexBufferObject():
     """com.badlogic.gdx.graphics.glutils.IndexBufferObject"""
  
     @staticmethod
@@ -6278,7 +6278,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class FrameBuffer(__GLFrameBuffer, GLFrameBuffer):
+class FrameBuffer():
     """com.badlogic.gdx.graphics.glutils.FrameBuffer"""
  
     @staticmethod
@@ -6483,8 +6483,8 @@ from pyquantum_helper import import_once as __import_once__
 import com.badlogic.gdx.graphics.Color as __Color
 __Color = __Color
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 import com.badlogic.gdx.graphics.glutils.ImmediateModeRenderer as __ImmediateModeRenderer
@@ -6518,7 +6518,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class ShapeRenderer(pygdx.__Disposable, utils.Disposable):
+class ShapeRenderer():
     """com.badlogic.gdx.graphics.glutils.ShapeRenderer"""
  
     @staticmethod
@@ -6808,14 +6808,14 @@ class ShapeRenderer(pygdx.__Disposable, utils.Disposable):
         super(__ShapeRenderer, self).triangle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5), arg6, arg7, arg8)
 
     @overload
-    def polyline(self, arg0: 'float'):
-        """public void com.badlogic.gdx.graphics.glutils.ShapeRenderer.polyline(float[])"""
-        super(__ShapeRenderer, self).polyline(arg0)
-
-    @overload
     def getTransformMatrix(self) -> 'math.Matrix4':
         """public com.badlogic.gdx.math.Matrix4 com.badlogic.gdx.graphics.glutils.ShapeRenderer.getTransformMatrix()"""
         return 'math.Matrix4'.__wrap(super(ShapeRenderer, self).getTransformMatrix())
+
+    @overload
+    def polyline(self, arg0: 'float'):
+        """public void com.badlogic.gdx.graphics.glutils.ShapeRenderer.polyline(float[])"""
+        super(__ShapeRenderer, self).polyline(arg0)
 
     @overload
     def rect(self, arg0: float, arg1: float, arg2: float, arg3: float):
@@ -6886,14 +6886,14 @@ class ShapeRenderer(pygdx.__Disposable, utils.Disposable):
         return 'type.Class'.__wrap(super(object, self).getClass())
 
     @overload
-    def getRenderer(self) -> 'ImmediateModeRenderer':
-        """public com.badlogic.gdx.graphics.glutils.ImmediateModeRenderer com.badlogic.gdx.graphics.glutils.ShapeRenderer.getRenderer()"""
-        return 'ImmediateModeRenderer'.__wrap(super(ShapeRenderer, self).getRenderer())
-
-    @overload
     def setProjectionMatrix(self, arg0: 'Matrix4'):
         """public void com.badlogic.gdx.graphics.glutils.ShapeRenderer.setProjectionMatrix(com.badlogic.gdx.math.Matrix4)"""
         super(__ShapeRenderer, self).setProjectionMatrix(arg0)
+
+    @overload
+    def getRenderer(self) -> 'ImmediateModeRenderer':
+        """public com.badlogic.gdx.graphics.glutils.ImmediateModeRenderer com.badlogic.gdx.graphics.glutils.ShapeRenderer.getRenderer()"""
+        return 'ImmediateModeRenderer'.__wrap(super(ShapeRenderer, self).getRenderer())
 
     @overload
     def x(self, arg0: 'Vector2', arg1: float):
@@ -6914,8 +6914,8 @@ class ShapeRenderer(pygdx.__Disposable, utils.Disposable):
 # CLASS: com.badlogic.gdx.graphics.glutils.VertexBufferObjectWithVAO
 from pyquantum_helper import import_once as __import_once__
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import com.badlogic.gdx.graphics.glutils.VertexBufferObjectWithVAO as __VertexBufferObjectWithVAO
 __VertexBufferObjectWithVAO = __VertexBufferObjectWithVAO
 import java.lang.Object as __object
@@ -6943,7 +6943,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class VertexBufferObjectWithVAO(__VertexData, VertexData):
+class VertexBufferObjectWithVAO():
     """com.badlogic.gdx.graphics.glutils.VertexBufferObjectWithVAO"""
  
     @staticmethod
@@ -7130,8 +7130,8 @@ from pyquantum_helper import import_once as __import_once__
 import com.badlogic.gdx.graphics.glutils.VertexBufferObjectSubData as __VertexBufferObjectSubData
 __VertexBufferObjectSubData = __VertexBufferObjectSubData
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 from builtins import float
@@ -7156,7 +7156,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class VertexBufferObjectSubData(__VertexData, VertexData):
+class VertexBufferObjectSubData():
     """com.badlogic.gdx.graphics.glutils.VertexBufferObjectSubData"""
  
     @staticmethod
@@ -7382,7 +7382,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class FloatFrameBuffer(__FrameBuffer, FrameBuffer):
+class FloatFrameBuffer():
     """com.badlogic.gdx.graphics.glutils.FloatFrameBuffer"""
  
     @staticmethod
@@ -7578,8 +7578,8 @@ class FloatFrameBuffer(__FrameBuffer, FrameBuffer):
 # CLASS: com.badlogic.gdx.graphics.glutils.InstanceBufferObjectSubData
 from pyquantum_helper import import_once as __import_once__
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 from builtins import float
@@ -7606,7 +7606,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class InstanceBufferObjectSubData(__InstanceData, InstanceData):
+class InstanceBufferObjectSubData():
     """com.badlogic.gdx.graphics.glutils.InstanceBufferObjectSubData"""
  
     @staticmethod
@@ -7655,11 +7655,6 @@ class InstanceBufferObjectSubData(__InstanceData, InstanceData):
         """public java.nio.FloatBuffer com.badlogic.gdx.graphics.glutils.InstanceBufferObjectSubData.getBuffer()"""
         return 'FloatBuffer'.__wrap(super(InstanceBufferObjectSubData, self).getBuffer())
 
-    @overload
-    def getBufferHandle(self) -> int:
-        """public int com.badlogic.gdx.graphics.glutils.InstanceBufferObjectSubData.getBufferHandle()"""
-        return int.__wrap(super(InstanceBufferObjectSubData, self).getBufferHandle())
-
     @override
     @overload
     def setInstanceData(self, arg0: 'FloatBuffer', arg1: int):
@@ -7671,6 +7666,11 @@ class InstanceBufferObjectSubData(__InstanceData, InstanceData):
     def setInstanceData(self, arg0: 'float', arg1: int, arg2: int):
         """public void com.badlogic.gdx.graphics.glutils.InstanceBufferObjectSubData.setInstanceData(float[],int,int)"""
         super(__InstanceBufferObjectSubData, self).setInstanceData(arg0, __int.valueOf(arg1), __int.valueOf(arg2))
+
+    @overload
+    def getBufferHandle(self) -> int:
+        """public int com.badlogic.gdx.graphics.glutils.InstanceBufferObjectSubData.getBufferHandle()"""
+        return int.__wrap(super(InstanceBufferObjectSubData, self).getBufferHandle())
 
     @override
     @overload
@@ -7824,7 +7824,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class HdpiMode(__Enum, Enum):
+class HdpiMode():
     """com.badlogic.gdx.graphics.glutils.HdpiMode"""
  
     @staticmethod
@@ -8110,7 +8110,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class GLFrameBuffer(ABC, pygdx.__Disposable, utils.Disposable):
+class GLFrameBuffer(ABC):
     """com.badlogic.gdx.graphics.glutils.GLFrameBuffer"""
  
     @staticmethod
@@ -8306,7 +8306,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CustomTexture3DData(pygdx.__Texture3DData, graphics.Texture3DData):
+class CustomTexture3DData():
     """com.badlogic.gdx.graphics.glutils.CustomTexture3DData"""
  
     @staticmethod
@@ -8501,7 +8501,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class FloatFrameBufferBuilder(__GLFrameBufferBuilder, GLFrameBufferBuilder):
+class FloatFrameBufferBuilder():
     """com.badlogic.gdx.graphics.glutils.GLFrameBuffer.FloatFrameBufferBuilder"""
  
     @staticmethod
@@ -8663,7 +8663,7 @@ import com.badlogic.gdx.graphics.glutils.IndexData as __IndexData
 __IndexData = __IndexData
 from builtins import int
  
-class IndexData(ABC, pygdx.__Disposable, utils.Disposable):
+class IndexData(ABC):
     """com.badlogic.gdx.graphics.glutils.IndexData"""
  
     @staticmethod
@@ -8724,13 +8724,13 @@ class IndexData(ABC, pygdx.__Disposable, utils.Disposable):
         pass
 
     @abstractmethod
-    def updateIndices(self, arg0: int, arg1: 'short', arg2: int, arg3: int):
-        """public abstract void com.badlogic.gdx.graphics.glutils.IndexData.updateIndices(int,short[],int,int)"""
+    def setIndices(self, arg0: 'ShortBuffer'):
+        """public abstract void com.badlogic.gdx.graphics.glutils.IndexData.setIndices(java.nio.ShortBuffer)"""
         pass
 
     @abstractmethod
-    def setIndices(self, arg0: 'ShortBuffer'):
-        """public abstract void com.badlogic.gdx.graphics.glutils.IndexData.setIndices(java.nio.ShortBuffer)"""
+    def updateIndices(self, arg0: int, arg1: 'short', arg2: int, arg3: int):
+        """public abstract void com.badlogic.gdx.graphics.glutils.IndexData.updateIndices(int,short[],int,int)"""
         pass
 
     @abstractmethod

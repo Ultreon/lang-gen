@@ -312,7 +312,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ChangeListener(ABC, scenes.__EventListener, scene2d.EventListener):
+class ChangeListener(ABC):
     """com.badlogic.gdx.scenes.scene2d.utils.ChangeListener"""
  
     @staticmethod
@@ -428,8 +428,8 @@ except ImportError:
     scene2d = __import_once__("pygdx.scenes.scene2d")
 
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
+import java.lang.Boolean as __boolean
 import java.lang.Object as __object
 from builtins import type
 import com.badlogic.gdx.scenes.scene2d.utils.FocusListener as __FocusListener
@@ -445,7 +445,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FocusListener(ABC, scenes.__EventListener, scene2d.EventListener):
+class FocusListener(ABC):
     """com.badlogic.gdx.scenes.scene2d.utils.FocusListener"""
  
     @staticmethod
@@ -589,7 +589,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ChangeEvent(scenes.__Event, scene2d.Event):
+class ChangeEvent():
     """com.badlogic.gdx.scenes.scene2d.utils.ChangeListener.ChangeEvent"""
  
     @staticmethod
@@ -989,7 +989,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class Type(__Enum, Enum):
+class Type():
     """com.badlogic.gdx.scenes.scene2d.utils.FocusListener.FocusEvent.Type"""
  
     @staticmethod
@@ -1306,7 +1306,7 @@ __Drawable = __Drawable
 from builtins import bool
 from builtins import int
  
-class TextureRegionDrawable(__BaseDrawable, BaseDrawable, __TransformDrawable, TransformDrawable):
+class TextureRegionDrawable():
     """com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable"""
  
     @staticmethod
@@ -1643,6 +1643,11 @@ class DragAndDrop():
         super(object, self).notifyAll()
 
     @overload
+    def setKeepWithinStage(self, arg0: bool):
+        """public void com.badlogic.gdx.scenes.scene2d.utils.DragAndDrop.setKeepWithinStage(boolean)"""
+        super(__DragAndDrop, self).setKeepWithinStage(__boolean.valueOf(arg0))
+
+    @overload
     def setTapSquareSize(self, arg0: float):
         """public void com.badlogic.gdx.scenes.scene2d.utils.DragAndDrop.setTapSquareSize(float)"""
         super(__DragAndDrop, self).setTapSquareSize(__float.valueOf(arg0))
@@ -1651,11 +1656,6 @@ class DragAndDrop():
     def setCancelTouchFocus(self, arg0: bool):
         """public void com.badlogic.gdx.scenes.scene2d.utils.DragAndDrop.setCancelTouchFocus(boolean)"""
         super(__DragAndDrop, self).setCancelTouchFocus(__boolean.valueOf(arg0))
-
-    @overload
-    def setKeepWithinStage(self, arg0: bool):
-        """public void com.badlogic.gdx.scenes.scene2d.utils.DragAndDrop.setKeepWithinStage(boolean)"""
-        super(__DragAndDrop, self).setKeepWithinStage(__boolean.valueOf(arg0))
 
     @overload
     def __init__(self, ):
@@ -1817,7 +1817,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Selection(__Disableable, Disableable, __Iterable, Iterable):
+class Selection():
     """com.badlogic.gdx.scenes.scene2d.utils.Selection"""
  
     @staticmethod
@@ -2120,7 +2120,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.TiledDrawable as __TiledDrawable
 __TiledDrawable = __TiledDrawable
 from builtins import int
  
-class TiledDrawable(__TextureRegionDrawable, TextureRegionDrawable):
+class TiledDrawable():
     """com.badlogic.gdx.scenes.scene2d.utils.TiledDrawable"""
  
     @staticmethod
@@ -2424,7 +2424,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class NinePatchDrawable(__BaseDrawable, BaseDrawable, __TransformDrawable, TransformDrawable):
+class NinePatchDrawable():
     """com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable"""
  
     @staticmethod
@@ -2689,7 +2689,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ClickListener(scenes.__InputListener, scene2d.InputListener):
+class ClickListener():
     """com.badlogic.gdx.scenes.scene2d.utils.ClickListener"""
  
     @staticmethod
@@ -3266,7 +3266,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class SpriteDrawable(__BaseDrawable, BaseDrawable, __TransformDrawable, TransformDrawable):
+class SpriteDrawable():
     """com.badlogic.gdx.scenes.scene2d.utils.SpriteDrawable"""
  
     @staticmethod
@@ -3514,7 +3514,7 @@ from abc import abstractmethod, ABC
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable as __Drawable
 __Drawable = __Drawable
  
-class TransformDrawable(ABC, __Drawable, Drawable):
+class TransformDrawable(ABC):
     """com.badlogic.gdx.scenes.scene2d.utils.TransformDrawable"""
  
     @staticmethod
@@ -3642,7 +3642,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BaseDrawable(__Drawable, Drawable):
+class BaseDrawable():
     """com.badlogic.gdx.scenes.scene2d.utils.BaseDrawable"""
  
     @staticmethod
@@ -4022,7 +4022,7 @@ import com.badlogic.gdx.input.GestureDetector as __GestureDetector
 __GestureDetector = __GestureDetector
 from builtins import int
  
-class ActorGestureListener(scenes.__EventListener, scene2d.EventListener):
+class ActorGestureListener():
     """com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener"""
  
     @staticmethod
@@ -4098,6 +4098,11 @@ class ActorGestureListener(scenes.__EventListener, scene2d.EventListener):
         super(__ActorGestureListener, self).pan(arg0, __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4))
 
     @overload
+    def touchUp(self, arg0: 'InputEvent', arg1: float, arg2: float, arg3: int, arg4: int):
+        """public void com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener.touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int)"""
+        super(__ActorGestureListener, self).touchUp(arg0, __float.valueOf(arg1), __float.valueOf(arg2), __int.valueOf(arg3), __int.valueOf(arg4))
+
+    @overload
     def longPress(self, arg0: 'Actor', arg1: float, arg2: float) -> bool:
         """public boolean com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener.longPress(com.badlogic.gdx.scenes.scene2d.Actor,float,float)"""
         return bool.__wrap(super(__ActorGestureListener, self).longPress(arg0, __float.valueOf(arg1), __float.valueOf(arg2)))
@@ -4106,11 +4111,6 @@ class ActorGestureListener(scenes.__EventListener, scene2d.EventListener):
     def panStop(self, arg0: 'InputEvent', arg1: float, arg2: float, arg3: int, arg4: int):
         """public void com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener.panStop(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int)"""
         super(__ActorGestureListener, self).panStop(arg0, __float.valueOf(arg1), __float.valueOf(arg2), __int.valueOf(arg3), __int.valueOf(arg4))
-
-    @overload
-    def touchUp(self, arg0: 'InputEvent', arg1: float, arg2: float, arg3: int, arg4: int):
-        """public void com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener.touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int)"""
-        super(__ActorGestureListener, self).touchUp(arg0, __float.valueOf(arg1), __float.valueOf(arg2), __int.valueOf(arg3), __int.valueOf(arg4))
 
     @override
     @overload
@@ -4223,7 +4223,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DragScrollListener(__DragListener, DragListener):
+class DragScrollListener():
     """com.badlogic.gdx.scenes.scene2d.utils.DragScrollListener"""
  
     @staticmethod
@@ -4548,7 +4548,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class FocusEvent(scenes.__Event, scene2d.Event):
+class FocusEvent():
     """com.badlogic.gdx.scenes.scene2d.utils.FocusListener.FocusEvent"""
  
     @staticmethod
@@ -4807,7 +4807,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DragListener(scenes.__InputListener, scene2d.InputListener):
+class DragListener():
     """com.badlogic.gdx.scenes.scene2d.utils.DragListener"""
  
     @staticmethod
@@ -5286,7 +5286,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class ArraySelection(__Selection, Selection):
+class ArraySelection():
     """com.badlogic.gdx.scenes.scene2d.utils.ArraySelection"""
  
     @staticmethod

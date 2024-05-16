@@ -50,7 +50,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DefaultLogBuilder(log4py.__BridgeAware, log4py.BridgeAware, log4py.__LogBuilder, log4py.LogBuilder):
+class DefaultLogBuilder():
     """org.apache.logging.log4j.internal.DefaultLogBuilder"""
  
     @staticmethod
@@ -355,7 +355,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class DefaultLogBuilder(log4py.__BridgeAware, log4py.BridgeAware, log4py.__LogBuilder, log4py.LogBuilder):
+class DefaultLogBuilder():
     """org.apache.logging.log4j.internal.DefaultLogBuilder"""
  
     @staticmethod

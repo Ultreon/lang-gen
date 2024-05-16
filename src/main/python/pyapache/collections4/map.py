@@ -47,7 +47,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class UnmodifiableEntrySet(collections4.__AbstractSetDecorator, set.AbstractSetDecorator, pyapache.__Unmodifiable, collections4.Unmodifiable):
+class UnmodifiableEntrySet():
     """org.apache.commons.collections4.map.UnmodifiableEntrySet"""
  
     @staticmethod
@@ -288,7 +288,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class UnmodifiableEntrySet(collections4.__AbstractSetDecorator, set.AbstractSetDecorator, pyapache.__Unmodifiable, collections4.Unmodifiable):
+class UnmodifiableEntrySet():
     """org.apache.commons.collections4.map.UnmodifiableEntrySet"""
  
     @staticmethod
@@ -525,7 +525,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class AbstractIterableMap(ABC, pyapache.__IterableMap, collections4.IterableMap):
+class AbstractIterableMap(ABC):
     """org.apache.commons.collections4.map.AbstractIterableMap"""
  
     @staticmethod
@@ -830,7 +830,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ValuesIterator(__LinkIterator, LinkIterator, pyapache.__OrderedIterator, collections4.OrderedIterator, pyapache.__ResettableIterator, collections4.ResettableIterator):
+class ValuesIterator():
     """org.apache.commons.collections4.map.AbstractLinkedMap.ValuesIterator"""
  
     @staticmethod
@@ -982,7 +982,7 @@ __Enum = __Enum
 from builtins import bool
 from builtins import int
  
-class ReferenceStrength(__Enum, Enum):
+class ReferenceStrength():
     """org.apache.commons.collections4.map.AbstractReferenceMap.ReferenceStrength"""
  
     @staticmethod
@@ -1162,7 +1162,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class DefaultedMap(__AbstractMapDecorator, AbstractMapDecorator, __Serializable, Serializable):
+class DefaultedMap():
     """org.apache.commons.collections4.map.DefaultedMap"""
  
     @staticmethod
@@ -1432,7 +1432,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class HashMapIterator(__HashIterator, HashIterator, pyapache.__MapIterator, collections4.MapIterator):
+class HashMapIterator():
     """org.apache.commons.collections4.map.AbstractHashedMap.HashMapIterator"""
  
     @staticmethod
@@ -1598,7 +1598,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class CompositeMap(__AbstractIterableMap, AbstractIterableMap, __Serializable, Serializable):
+class CompositeMap():
     """org.apache.commons.collections4.map.CompositeMap"""
  
     @staticmethod
@@ -1890,7 +1890,7 @@ import org.apache.commons.collections4.map.AbstractLinkedMap as __AbstractLinked
 __LinkEntry = __AbstractLinkedMap_LinkEntry.LinkEntry
 from builtins import int
  
-class LinkEntry(__HashEntry, HashEntry):
+class LinkEntry():
     """org.apache.commons.collections4.map.AbstractLinkedMap.LinkEntry"""
  
     @staticmethod
@@ -2053,7 +2053,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class PredicatedSortedMap(__PredicatedMap, PredicatedMap, __SortedMap, SortedMap):
+class PredicatedSortedMap():
     """org.apache.commons.collections4.map.PredicatedSortedMap"""
  
     @staticmethod
@@ -2407,7 +2407,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class FixedSizeMap(__AbstractMapDecorator, AbstractMapDecorator, pyapache.__BoundedMap, collections4.BoundedMap, __Serializable, Serializable):
+class FixedSizeMap():
     """org.apache.commons.collections4.map.FixedSizeMap"""
  
     @staticmethod
@@ -2678,7 +2678,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class Flat3Map(pyapache.__IterableMap, collections4.IterableMap, __Serializable, Serializable, __Cloneable, Cloneable):
+class Flat3Map():
     """org.apache.commons.collections4.map.Flat3Map"""
  
     @staticmethod
@@ -2937,7 +2937,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ConstantTimeToLiveExpirationPolicy(__ExpirationPolicy, ExpirationPolicy):
+class ConstantTimeToLiveExpirationPolicy():
     """org.apache.commons.collections4.map.PassiveExpiringMap.ConstantTimeToLiveExpirationPolicy"""
  
     @staticmethod
@@ -3094,7 +3094,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class SingletonMap(pyapache.__OrderedMap, collections4.OrderedMap, pyapache.__BoundedMap, collections4.BoundedMap, pyapache.__KeyValue, collections4.KeyValue, __Serializable, Serializable, __Cloneable, Cloneable):
+class SingletonMap():
     """org.apache.commons.collections4.map.SingletonMap"""
  
     @staticmethod
@@ -3468,7 +3468,7 @@ __LazySortedMap = __LazySortedMap
 import java.util.Map as Map
 from builtins import int
  
-class LazySortedMap(__LazyMap, LazyMap, __SortedMap, SortedMap):
+class LazySortedMap():
     """org.apache.commons.collections4.map.LazySortedMap"""
  
     @staticmethod
@@ -3838,7 +3838,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class AbstractOrderedMapDecorator(ABC, __AbstractMapDecorator, AbstractMapDecorator, pyapache.__OrderedMap, collections4.OrderedMap):
+class AbstractOrderedMapDecorator(ABC):
     """org.apache.commons.collections4.map.AbstractOrderedMapDecorator"""
  
     @staticmethod
@@ -4104,7 +4104,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class EntrySetToMapIteratorAdapter(pyapache.__MapIterator, collections4.MapIterator, pyapache.__ResettableIterator, collections4.ResettableIterator):
+class EntrySetToMapIteratorAdapter():
     """org.apache.commons.collections4.map.EntrySetToMapIteratorAdapter"""
  
     @staticmethod
@@ -4266,7 +4266,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ValuesIterator(__HashIterator, HashIterator, __Iterator, Iterator):
+class ValuesIterator():
     """org.apache.commons.collections4.map.AbstractHashedMap.ValuesIterator"""
  
     @staticmethod
@@ -4419,7 +4419,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class ReferenceIdentityMap(__AbstractReferenceMap, AbstractReferenceMap, __Serializable, Serializable):
+class ReferenceIdentityMap():
     """org.apache.commons.collections4.map.ReferenceIdentityMap"""
  
     @staticmethod
@@ -4735,7 +4735,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class FixedSizeSortedMap(__AbstractSortedMapDecorator, AbstractSortedMapDecorator, pyapache.__BoundedMap, collections4.BoundedMap, __Serializable, Serializable):
+class FixedSizeSortedMap():
     """org.apache.commons.collections4.map.FixedSizeSortedMap"""
  
     @staticmethod
@@ -5111,7 +5111,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class PredicatedMap(__AbstractInputCheckedMapDecorator, AbstractInputCheckedMapDecorator, __Serializable, Serializable):
+class PredicatedMap():
     """org.apache.commons.collections4.map.PredicatedMap"""
  
     @staticmethod
@@ -5346,7 +5346,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ReferenceEntry(__HashEntry, HashEntry):
+class ReferenceEntry():
     """org.apache.commons.collections4.map.AbstractReferenceMap.ReferenceEntry"""
  
     @staticmethod
@@ -5609,7 +5609,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class LazyMap(__AbstractMapDecorator, AbstractMapDecorator, __Serializable, Serializable):
+class LazyMap():
     """org.apache.commons.collections4.map.LazyMap"""
  
     @staticmethod
@@ -5861,7 +5861,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class EntrySetIterator(__LinkIterator, LinkIterator, pyapache.__OrderedIterator, collections4.OrderedIterator, pyapache.__ResettableIterator, collections4.ResettableIterator):
+class EntrySetIterator():
     """org.apache.commons.collections4.map.AbstractLinkedMap.EntrySetIterator"""
  
     @staticmethod
@@ -6049,7 +6049,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class TransformedSortedMap(__TransformedMap, TransformedMap, __SortedMap, SortedMap):
+class TransformedSortedMap():
     """org.apache.commons.collections4.map.TransformedSortedMap"""
  
     @staticmethod
@@ -6411,7 +6411,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class Values(__AbstractCollection, AbstractCollection):
+class Values():
     """org.apache.commons.collections4.map.AbstractHashedMap.Values"""
  
     @staticmethod
@@ -6643,7 +6643,7 @@ import java.util.Map as Map
 from builtins import int
 import java.util.List as List
  
-class ListOrderedMap(__AbstractMapDecorator, AbstractMapDecorator, pyapache.__OrderedMap, collections4.OrderedMap, __Serializable, Serializable):
+class ListOrderedMap():
     """org.apache.commons.collections4.map.ListOrderedMap"""
  
     @staticmethod
@@ -7095,7 +7095,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class KeySetIterator(__HashIterator, HashIterator, __Iterator, Iterator):
+class KeySetIterator():
     """org.apache.commons.collections4.map.AbstractHashedMap.KeySetIterator"""
  
     @staticmethod
@@ -7222,7 +7222,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class HashEntry(Map.__Map_Entry, Entry.Map$Entry, pyapache.__KeyValue, collections4.KeyValue):
+class HashEntry():
     """org.apache.commons.collections4.map.AbstractHashedMap.HashEntry"""
  
     @staticmethod
@@ -7365,7 +7365,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class HashedMap(__AbstractHashedMap, AbstractHashedMap, __Serializable, Serializable, __Cloneable, Cloneable):
+class HashedMap():
     """org.apache.commons.collections4.map.HashedMap"""
  
     @staticmethod
@@ -7661,7 +7661,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class StaticBucketMap(__AbstractIterableMap, AbstractIterableMap):
+class StaticBucketMap():
     """org.apache.commons.collections4.map.StaticBucketMap"""
  
     @staticmethod
@@ -7942,7 +7942,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class UnmodifiableMap(__AbstractMapDecorator, AbstractMapDecorator, pyapache.__Unmodifiable, collections4.Unmodifiable, __Serializable, Serializable):
+class UnmodifiableMap():
     """org.apache.commons.collections4.map.UnmodifiableMap"""
  
     @staticmethod
@@ -8201,7 +8201,7 @@ from builtins import bool
 import java.util.Map as Map
 from builtins import int
  
-class AbstractHashedMap(__AbstractMap, AbstractMap, pyapache.__IterableMap, collections4.IterableMap):
+class AbstractHashedMap():
     """org.apache.commons.collections4.map.AbstractHashedMap"""
  
     @staticmethod
@@ -8462,7 +8462,7 @@ import java.util.Map as Map
 from builtins import int
 import java.util.List as List
  
-class LinkedMap(__AbstractLinkedMap, AbstractLinkedMap, __Serializable, Serializable, __Cloneable, Cloneable):
+class LinkedMap():
     """org.apache.commons.collections4.map.LinkedMap"""
  
     @staticmethod
@@ -8770,7 +8770,7 @@ import java.util.Collection as Collection
 from abc import abstractmethod, ABC
 import java.util.Map as Map
  
-class MapMutator(ABC, __Serializable, Serializable):
+class MapMutator(ABC):
     """org.apache.commons.collections4.map.CompositeMap.MapMutator"""
  
     @staticmethod
@@ -8862,7 +8862,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class MultiKeyMap(__AbstractMapDecorator, AbstractMapDecorator, __Serializable, Serializable, __Cloneable, Cloneable):
+class MultiKeyMap():
     """org.apache.commons.collections4.map.MultiKeyMap"""
  
     @staticmethod
@@ -9245,7 +9245,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class PassiveExpiringMap(__AbstractMapDecorator, AbstractMapDecorator, __Serializable, Serializable):
+class PassiveExpiringMap():
     """org.apache.commons.collections4.map.PassiveExpiringMap"""
  
     @staticmethod
@@ -9567,7 +9567,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class UnmodifiableOrderedMap(__AbstractOrderedMapDecorator, AbstractOrderedMapDecorator, pyapache.__Unmodifiable, collections4.Unmodifiable, __Serializable, Serializable):
+class UnmodifiableOrderedMap():
     """org.apache.commons.collections4.map.UnmodifiableOrderedMap"""
  
     @staticmethod
@@ -9833,7 +9833,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SortedMapIterator(__EntrySetToMapIteratorAdapter, EntrySetToMapIteratorAdapter, pyapache.__OrderedMapIterator, collections4.OrderedMapIterator):
+class SortedMapIterator():
     """org.apache.commons.collections4.map.AbstractSortedMapDecorator.SortedMapIterator"""
  
     @staticmethod
@@ -10021,7 +10021,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class LRUMap(__AbstractLinkedMap, AbstractLinkedMap, pyapache.__BoundedMap, collections4.BoundedMap, __Serializable, Serializable, __Cloneable, Cloneable):
+class LRUMap():
     """org.apache.commons.collections4.map.LRUMap"""
  
     @staticmethod
@@ -10402,7 +10402,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class AbstractMapDecorator(ABC, __AbstractIterableMap, AbstractIterableMap):
+class AbstractMapDecorator(ABC):
     """org.apache.commons.collections4.map.AbstractMapDecorator"""
  
     @staticmethod
@@ -10642,7 +10642,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class EntrySetIterator(__HashIterator, HashIterator, __Iterator, Iterator):
+class EntrySetIterator():
     """org.apache.commons.collections4.map.AbstractHashedMap.EntrySetIterator"""
  
     @staticmethod
@@ -10808,7 +10808,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class AbstractSortedMapDecorator(ABC, __AbstractMapDecorator, AbstractMapDecorator, pyapache.__IterableSortedMap, collections4.IterableSortedMap):
+class AbstractSortedMapDecorator(ABC):
     """org.apache.commons.collections4.map.AbstractSortedMapDecorator"""
  
     @staticmethod
@@ -11135,7 +11135,7 @@ import org.apache.commons.collections4.map.PassiveExpiringMap as __PassiveExpiri
 __ExpirationPolicy = __PassiveExpiringMap_ExpirationPolicy.ExpirationPolicy
 from abc import abstractmethod, ABC
  
-class ExpirationPolicy(ABC, __Serializable, Serializable):
+class ExpirationPolicy(ABC):
     """org.apache.commons.collections4.map.PassiveExpiringMap.ExpirationPolicy"""
  
     @staticmethod
@@ -11212,7 +11212,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class AbstractReferenceMap(ABC, __AbstractHashedMap, AbstractHashedMap):
+class AbstractReferenceMap(ABC):
     """org.apache.commons.collections4.map.AbstractReferenceMap"""
  
     @staticmethod
@@ -11450,7 +11450,7 @@ import org.apache.commons.collections4.map.AbstractLinkedMap as __AbstractLinked
 __KeySetIterator = __AbstractLinkedMap_KeySetIterator.KeySetIterator
 from builtins import int
  
-class KeySetIterator(__LinkIterator, LinkIterator, pyapache.__OrderedIterator, collections4.OrderedIterator, pyapache.__ResettableIterator, collections4.ResettableIterator):
+class KeySetIterator():
     """org.apache.commons.collections4.map.AbstractLinkedMap.KeySetIterator"""
  
     @staticmethod
@@ -11619,7 +11619,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class EntrySet(__AbstractSet, AbstractSet):
+class EntrySet():
     """org.apache.commons.collections4.map.AbstractHashedMap.EntrySet"""
  
     @staticmethod
@@ -11850,7 +11850,7 @@ from builtins import int
 import java.lang.Iterable as __Iterable
 __Iterable = __Iterable
  
-class KeySet(__AbstractSet, AbstractSet):
+class KeySet():
     """org.apache.commons.collections4.map.AbstractHashedMap.KeySet"""
  
     @staticmethod
@@ -12083,7 +12083,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class ReferenceMap(__AbstractReferenceMap, AbstractReferenceMap, __Serializable, Serializable):
+class ReferenceMap():
     """org.apache.commons.collections4.map.ReferenceMap"""
  
     @staticmethod
@@ -12385,7 +12385,7 @@ import org.apache.commons.collections4.map.MultiValueMap as __MultiValueMap
 __MultiValueMap = __MultiValueMap
 from builtins import int
  
-class MultiValueMap(__AbstractMapDecorator, AbstractMapDecorator, pyapache.__MultiMap, collections4.MultiMap, __Serializable, Serializable):
+class MultiValueMap():
     """org.apache.commons.collections4.map.MultiValueMap"""
  
     @staticmethod
@@ -12731,7 +12731,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class UnmodifiableSortedMap(__AbstractSortedMapDecorator, AbstractSortedMapDecorator, pyapache.__Unmodifiable, collections4.Unmodifiable, __Serializable, Serializable):
+class UnmodifiableSortedMap():
     """org.apache.commons.collections4.map.UnmodifiableSortedMap"""
  
     @staticmethod
@@ -13093,7 +13093,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class AbstractLinkedMap(ABC, __AbstractHashedMap, AbstractHashedMap, pyapache.__OrderedMap, collections4.OrderedMap):
+class AbstractLinkedMap(ABC):
     """org.apache.commons.collections4.map.AbstractLinkedMap"""
  
     @staticmethod
@@ -13371,7 +13371,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class CaseInsensitiveMap(__AbstractHashedMap, AbstractHashedMap, __Serializable, Serializable, __Cloneable, Cloneable):
+class CaseInsensitiveMap():
     """org.apache.commons.collections4.map.CaseInsensitiveMap"""
  
     @staticmethod
@@ -13668,7 +13668,7 @@ import java.util.function.Function as Function
 import java.util.Map as Map
 from builtins import int
  
-class TransformedMap(__AbstractInputCheckedMapDecorator, AbstractInputCheckedMapDecorator, __Serializable, Serializable):
+class TransformedMap():
     """org.apache.commons.collections4.map.TransformedMap"""
  
     @staticmethod
@@ -13912,7 +13912,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class LinkMapIterator(__LinkIterator, LinkIterator, pyapache.__OrderedMapIterator, collections4.OrderedMapIterator, pyapache.__ResettableIterator, collections4.ResettableIterator):
+class LinkMapIterator():
     """org.apache.commons.collections4.map.AbstractLinkedMap.LinkMapIterator"""
  
     @staticmethod

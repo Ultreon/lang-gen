@@ -47,7 +47,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.liburing.IOURingRecvmsgOut.Buffer"""
  
     @staticmethod
@@ -436,7 +436,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.liburing.IOURingRecvmsgOut.Buffer"""
  
     @staticmethod
@@ -832,7 +832,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.liburing.IOURingBufReg.Buffer"""
  
     @staticmethod
@@ -1238,7 +1238,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class IOURingSyncCancelReg(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class IOURingSyncCancelReg():
     """org.lwjgl.system.linux.liburing.IOURingSyncCancelReg"""
  
     @staticmethod
@@ -1626,7 +1626,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.liburing.IOSQRingOffsets.Buffer"""
  
     @staticmethod
@@ -2050,7 +2050,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.liburing.IOURingParams.Buffer"""
  
     @staticmethod
@@ -2513,7 +2513,7 @@ __IOURingCQ = __IOURingCQ
 from builtins import bool
 from builtins import int
  
-class IOURing(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class IOURing():
     """org.lwjgl.system.linux.liburing.IOURing"""
  
     @staticmethod
@@ -2990,7 +2990,7 @@ import org.lwjgl.system.linux.liburing.IOURingRSRCUpdate as __IOURingRSRCUpdate_
 __Buffer = __IOURingRSRCUpdate_Buffer.Buffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.liburing.IOURingRSRCUpdate.Buffer"""
  
     @staticmethod
@@ -3365,7 +3365,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class IOURingProbe(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class IOURingProbe():
     """org.lwjgl.system.linux.liburing.IOURingProbe"""
  
     @staticmethod
@@ -3783,7 +3783,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.liburing.IOURingCQE.Buffer"""
  
     @staticmethod
@@ -4174,7 +4174,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class IOURingBufRing(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class IOURingBufRing():
     """org.lwjgl.system.linux.liburing.IOURingBufRing"""
  
     @staticmethod
@@ -4582,7 +4582,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.liburing.IOURingRSRCUpdate2.Buffer"""
  
     @staticmethod
@@ -4994,7 +4994,7 @@ __IOURingBuf = __IOURingBuf
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.liburing.IOURingBufRing.Buffer"""
  
     @staticmethod
@@ -5404,7 +5404,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class IOURingRestriction(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class IOURingRestriction():
     """org.lwjgl.system.linux.liburing.IOURingRestriction"""
  
     @staticmethod
@@ -5782,7 +5782,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class IOURingRSRCRegister(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class IOURingRSRCRegister():
     """org.lwjgl.system.linux.liburing.IOURingRSRCRegister"""
  
     @staticmethod
@@ -6158,7 +6158,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class IOURingSQ(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class IOURingSQ():
     """org.lwjgl.system.linux.liburing.IOURingSQ"""
  
     @staticmethod
@@ -6762,7 +6762,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.liburing.IOURingRSRCRegister.Buffer"""
  
     @staticmethod
@@ -7147,7 +7147,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class IOURingRSRCUpdate2(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class IOURingRSRCUpdate2():
     """org.lwjgl.system.linux.liburing.IOURingRSRCUpdate2"""
  
     @staticmethod
@@ -7539,7 +7539,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class IOURingBuf(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class IOURingBuf():
     """org.lwjgl.system.linux.liburing.IOURingBuf"""
  
     @staticmethod
@@ -8054,7 +8054,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.liburing.IOURingProbe.Buffer"""
  
     @staticmethod
@@ -8449,7 +8449,7 @@ from builtins import int
 import org.lwjgl.system.linux.liburing.IOURingRSRCUpdate as __IOURingRSRCUpdate_Buffer
 __Buffer = __IOURingRSRCUpdate_Buffer.Buffer
  
-class IOURingRSRCUpdate(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class IOURingRSRCUpdate():
     """org.lwjgl.system.linux.liburing.IOURingRSRCUpdate"""
  
     @staticmethod
@@ -8781,7 +8781,7 @@ __IOURingCQ = __IOURingCQ
 from builtins import bool
 from builtins import int
  
-class IOURingCQ(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class IOURingCQ():
     """org.lwjgl.system.linux.liburing.IOURingCQ"""
  
     @staticmethod
@@ -9307,7 +9307,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class IOURingRecvmsgOut(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class IOURingRecvmsgOut():
     """org.lwjgl.system.linux.liburing.IOURingRecvmsgOut"""
  
     @staticmethod
@@ -9667,7 +9667,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.liburing.IOURingBuf.Buffer"""
  
     @staticmethod
@@ -10042,7 +10042,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class IOSQRingOffsets(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class IOSQRingOffsets():
     """org.lwjgl.system.linux.liburing.IOSQRingOffsets"""
  
     @staticmethod
@@ -10479,7 +10479,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class IOCQRingOffsets(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class IOCQRingOffsets():
     """org.lwjgl.system.linux.liburing.IOCQRingOffsets"""
  
     @staticmethod
@@ -10938,7 +10938,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.liburing.IOURingSQE.Buffer"""
  
     @staticmethod
@@ -11727,7 +11727,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.liburing.IOURingRestriction.Buffer"""
  
     @staticmethod
@@ -14249,7 +14249,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class IOURingParams(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class IOURingParams():
     """org.lwjgl.system.linux.liburing.IOURingParams"""
  
     @staticmethod
@@ -14779,7 +14779,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.liburing.IOURingCQ.Buffer"""
  
     @staticmethod
@@ -15231,7 +15231,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.liburing.IOCQRingOffsets.Buffer"""
  
     @staticmethod
@@ -15640,7 +15640,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class IOURingBufReg(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class IOURingBufReg():
     """org.lwjgl.system.linux.liburing.IOURingBufReg"""
  
     @staticmethod
@@ -16043,7 +16043,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.liburing.IOURingFileIndexRange.Buffer"""
  
     @staticmethod
@@ -16410,7 +16410,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class IOURingProbeOp(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class IOURingProbeOp():
     """org.lwjgl.system.linux.liburing.IOURingProbeOp"""
  
     @staticmethod
@@ -16757,7 +16757,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class IOURingGeteventsArg(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class IOURingGeteventsArg():
     """org.lwjgl.system.linux.liburing.IOURingGeteventsArg"""
  
     @staticmethod
@@ -17121,7 +17121,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.liburing.IOURing.Buffer"""
  
     @staticmethod
@@ -17539,7 +17539,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class IOURingCQE(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class IOURingCQE():
     """org.lwjgl.system.linux.liburing.IOURingCQE"""
  
     @staticmethod
@@ -17927,7 +17927,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.liburing.IOURingSyncCancelReg.Buffer"""
  
     @staticmethod
@@ -18319,7 +18319,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.liburing.IOURingGeteventsArg.Buffer"""
  
     @staticmethod
@@ -18694,7 +18694,7 @@ import java.nio.ByteBuffer as ByteBuffer
 from builtins import bool
 from builtins import int
  
-class IOURingFileIndexRange(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class IOURingFileIndexRange():
     """org.lwjgl.system.linux.liburing.IOURingFileIndexRange"""
  
     @staticmethod
@@ -19033,7 +19033,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.liburing.IOURingProbeOp.Buffer"""
  
     @staticmethod
@@ -19418,7 +19418,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class IOURingSQE(pyglsystem.__Struct, pyglsystem.Struct, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class IOURingSQE():
     """org.lwjgl.system.linux.liburing.IOURingSQE"""
  
     @staticmethod
@@ -20659,7 +20659,7 @@ import java.lang.Integer as __int
 import java.nio.ByteBuffer as ByteBuffer
 from builtins import int
  
-class Buffer(pyglsystem.__StructBuffer, pyglsystem.StructBuffer, pyglsystem.__NativeResource, pyglsystem.NativeResource):
+class Buffer():
     """org.lwjgl.system.linux.liburing.IOURingSQ.Buffer"""
  
     @staticmethod

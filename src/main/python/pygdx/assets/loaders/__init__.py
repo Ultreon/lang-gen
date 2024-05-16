@@ -50,7 +50,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TextureAtlasLoader(__SynchronousAssetLoader, SynchronousAssetLoader):
+class TextureAtlasLoader():
     """com.badlogic.gdx.assets.loaders.TextureAtlasLoader"""
  
     @staticmethod
@@ -206,7 +206,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TextureAtlasLoader(__SynchronousAssetLoader, SynchronousAssetLoader):
+class TextureAtlasLoader():
     """com.badlogic.gdx.assets.loaders.TextureAtlasLoader"""
  
     @staticmethod
@@ -365,7 +365,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ParticleEffectLoader(__SynchronousAssetLoader, SynchronousAssetLoader):
+class ParticleEffectLoader():
     """com.badlogic.gdx.assets.loaders.ParticleEffectLoader"""
  
     @staticmethod
@@ -521,7 +521,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SkinLoader(__AsynchronousAssetLoader, AsynchronousAssetLoader):
+class SkinLoader():
     """com.badlogic.gdx.assets.loaders.SkinLoader"""
  
     @staticmethod
@@ -688,7 +688,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont as __BitmapFont
 __BitmapFont = __BitmapFont
 from builtins import int
  
-class BitmapFontLoader(__AsynchronousAssetLoader, AsynchronousAssetLoader):
+class BitmapFontLoader():
     """com.badlogic.gdx.assets.loaders.BitmapFontLoader"""
  
     @staticmethod
@@ -840,7 +840,7 @@ __SynchronousAssetLoader = __SynchronousAssetLoader
 from builtins import bool
 from builtins import int
  
-class SynchronousAssetLoader(ABC, __AssetLoader, AssetLoader):
+class SynchronousAssetLoader(ABC):
     """com.badlogic.gdx.assets.loaders.SynchronousAssetLoader"""
  
     @staticmethod
@@ -964,7 +964,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ParticleEffectParameter(pygdx.__AssetLoaderParameters, assets.AssetLoaderParameters):
+class ParticleEffectParameter():
     """com.badlogic.gdx.assets.loaders.ParticleEffectLoader.ParticleEffectParameter"""
  
     @staticmethod
@@ -1081,7 +1081,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TextureAtlasParameter(pygdx.__AssetLoaderParameters, assets.AssetLoaderParameters):
+class TextureAtlasParameter():
     """com.badlogic.gdx.assets.loaders.TextureAtlasLoader.TextureAtlasParameter"""
  
     @staticmethod
@@ -1204,7 +1204,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class TextureParameter(pygdx.__AssetLoaderParameters, assets.AssetLoaderParameters):
+class TextureParameter():
     """com.badlogic.gdx.assets.loaders.TextureLoader.TextureParameter"""
  
     @staticmethod
@@ -1468,7 +1468,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class TextureLoader(__AsynchronousAssetLoader, AsynchronousAssetLoader):
+class TextureLoader():
     """com.badlogic.gdx.assets.loaders.TextureLoader"""
  
     @staticmethod
@@ -1635,7 +1635,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ShaderProgramLoader(__AsynchronousAssetLoader, AsynchronousAssetLoader):
+class ShaderProgramLoader():
     """com.badlogic.gdx.assets.loaders.ShaderProgramLoader"""
  
     @staticmethod
@@ -1777,7 +1777,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class PixmapParameter(pygdx.__AssetLoaderParameters, assets.AssetLoaderParameters):
+class PixmapParameter():
     """com.badlogic.gdx.assets.loaders.PixmapLoader.PixmapParameter"""
  
     @staticmethod
@@ -1925,7 +1925,7 @@ __Music = __Music
 from builtins import bool
 from builtins import int
  
-class MusicLoader(__AsynchronousAssetLoader, AsynchronousAssetLoader):
+class MusicLoader():
     """com.badlogic.gdx.assets.loaders.MusicLoader"""
  
     @staticmethod
@@ -2105,7 +2105,7 @@ except ImportError:
 
 from builtins import int
  
-class ModelLoader(ABC, __AsynchronousAssetLoader, AsynchronousAssetLoader):
+class ModelLoader(ABC):
     """com.badlogic.gdx.assets.loaders.ModelLoader"""
  
     @staticmethod
@@ -2404,7 +2404,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ModelParameters(pygdx.__AssetLoaderParameters, assets.AssetLoaderParameters):
+class ModelParameters():
     """com.badlogic.gdx.assets.loaders.ModelLoader.ModelParameters"""
  
     @staticmethod
@@ -2653,7 +2653,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class AsynchronousAssetLoader(ABC, __AssetLoader, AssetLoader):
+class AsynchronousAssetLoader(ABC):
     """com.badlogic.gdx.assets.loaders.AsynchronousAssetLoader"""
  
     @staticmethod
@@ -2814,7 +2814,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class I18NBundleLoader(__AsynchronousAssetLoader, AsynchronousAssetLoader):
+class I18NBundleLoader():
     """com.badlogic.gdx.assets.loaders.I18NBundleLoader"""
  
     @staticmethod
@@ -2949,7 +2949,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MusicParameter(pygdx.__AssetLoaderParameters, assets.AssetLoaderParameters):
+class MusicParameter():
     """com.badlogic.gdx.assets.loaders.MusicLoader.MusicParameter"""
  
     @staticmethod
@@ -3065,7 +3065,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SoundParameter(pygdx.__AssetLoaderParameters, assets.AssetLoaderParameters):
+class SoundParameter():
     """com.badlogic.gdx.assets.loaders.SoundLoader.SoundParameter"""
  
     @staticmethod
@@ -3181,7 +3181,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ShaderProgramParameter(pygdx.__AssetLoaderParameters, assets.AssetLoaderParameters):
+class ShaderProgramParameter():
     """com.badlogic.gdx.assets.loaders.ShaderProgramLoader.ShaderProgramParameter"""
  
     @staticmethod
@@ -3338,7 +3338,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class BitmapFontParameter(pygdx.__AssetLoaderParameters, assets.AssetLoaderParameters):
+class BitmapFontParameter():
     """com.badlogic.gdx.assets.loaders.BitmapFontLoader.BitmapFontParameter"""
  
     @staticmethod
@@ -3456,7 +3456,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class I18NBundleParameter(pygdx.__AssetLoaderParameters, assets.AssetLoaderParameters):
+class I18NBundleParameter():
     """com.badlogic.gdx.assets.loaders.I18NBundleLoader.I18NBundleParameter"""
  
     @staticmethod
@@ -3593,7 +3593,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class SkinParameter(pygdx.__AssetLoaderParameters, assets.AssetLoaderParameters):
+class SkinParameter():
     """com.badlogic.gdx.assets.loaders.SkinLoader.SkinParameter"""
  
     @staticmethod
@@ -3762,7 +3762,7 @@ __SoundLoader = __SoundLoader
 from builtins import bool
 from builtins import int
  
-class SoundLoader(__AsynchronousAssetLoader, AsynchronousAssetLoader):
+class SoundLoader():
     """com.badlogic.gdx.assets.loaders.SoundLoader"""
  
     @staticmethod
@@ -3929,7 +3929,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class CubemapLoader(__AsynchronousAssetLoader, AsynchronousAssetLoader):
+class CubemapLoader():
     """com.badlogic.gdx.assets.loaders.CubemapLoader"""
  
     @staticmethod
@@ -4064,7 +4064,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class CubemapParameter(pygdx.__AssetLoaderParameters, assets.AssetLoaderParameters):
+class CubemapParameter():
     """com.badlogic.gdx.assets.loaders.CubemapLoader.CubemapParameter"""
  
     @staticmethod
@@ -4212,7 +4212,7 @@ except ImportError:
 from builtins import bool
 from builtins import int
  
-class PixmapLoader(__AsynchronousAssetLoader, AsynchronousAssetLoader):
+class PixmapLoader():
     """com.badlogic.gdx.assets.loaders.PixmapLoader"""
  
     @staticmethod

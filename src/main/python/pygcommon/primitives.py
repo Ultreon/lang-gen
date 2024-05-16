@@ -39,7 +39,7 @@ from builtins import bool
 from builtins import int
 import java.util.List as List
  
-class Ints(__IntsMethodsForWeb, IntsMethodsForWeb):
+class Ints():
     """com.google.common.primitives.Ints"""
  
     @staticmethod
@@ -336,7 +336,7 @@ from builtins import bool
 from builtins import int
 import java.util.List as List
  
-class Ints(__IntsMethodsForWeb, IntsMethodsForWeb):
+class Ints():
     """com.google.common.primitives.Ints"""
  
     @staticmethod
@@ -631,7 +631,7 @@ from builtins import bool
 from builtins import int
 import java.util.List as List
  
-class ImmutableDoubleArray(__Serializable, Serializable):
+class ImmutableDoubleArray():
     """com.google.common.primitives.ImmutableDoubleArray"""
  
     @staticmethod
@@ -883,7 +883,7 @@ import java.lang.Number as __Number
 __Number = __Number
 from builtins import int
  
-class UnsignedInteger(__Number, Number, __Comparable, Comparable):
+class UnsignedInteger():
     """com.google.common.primitives.UnsignedInteger"""
  
     @staticmethod
@@ -1103,7 +1103,7 @@ from builtins import bool
 from builtins import int
 import java.util.List as List
  
-class ImmutableIntArray(__Serializable, Serializable):
+class ImmutableIntArray():
     """com.google.common.primitives.ImmutableIntArray"""
  
     @staticmethod
@@ -1849,7 +1849,7 @@ from builtins import bool
 from builtins import int
 import java.util.List as List
  
-class Floats(__FloatsMethodsForWeb, FloatsMethodsForWeb):
+class Floats():
     """com.google.common.primitives.Floats"""
  
     @staticmethod
@@ -2471,7 +2471,7 @@ import java.lang.Number as __Number
 __Number = __Number
 from builtins import int
  
-class UnsignedLong(__Number, Number, __Comparable, Comparable, __Serializable, Serializable):
+class UnsignedLong():
     """com.google.common.primitives.UnsignedLong"""
  
     @staticmethod
@@ -3196,7 +3196,7 @@ from builtins import bool
 from builtins import int
 import java.util.List as List
  
-class ImmutableLongArray(__Serializable, Serializable):
+class ImmutableLongArray():
     """com.google.common.primitives.ImmutableLongArray"""
  
     @staticmethod
@@ -3647,7 +3647,7 @@ from builtins import bool
 from builtins import int
 import java.util.List as List
  
-class Shorts(__ShortsMethodsForWeb, ShortsMethodsForWeb):
+class Shorts():
     """com.google.common.primitives.Shorts"""
  
     @staticmethod
@@ -3931,7 +3931,7 @@ import java.lang.Double as Double
 from builtins import int
 import java.util.List as List
  
-class Doubles(__DoublesMethodsForWeb, DoublesMethodsForWeb):
+class Doubles():
     """com.google.common.primitives.Doubles"""
  
     @staticmethod

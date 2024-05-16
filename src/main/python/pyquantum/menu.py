@@ -182,7 +182,7 @@ import dev.ultreon.quantum.menu.MenuType as __MenuType
 __MenuType = __MenuType
 from builtins import int
  
-class ItemContainerMenu(ABC, __EntityContainerMenu, EntityContainerMenu):
+class ItemContainerMenu(ABC):
     """dev.ultreon.quantum.menu.ItemContainerMenu"""
  
     @staticmethod
@@ -571,7 +571,7 @@ import dev.ultreon.quantum.menu.MenuType as __MenuType
 __MenuType = __MenuType
 from builtins import int
  
-class BlockContainerMenu(ABC, __ContainerMenu, ContainerMenu):
+class BlockContainerMenu(ABC):
     """dev.ultreon.quantum.menu.BlockContainerMenu"""
  
     @staticmethod
@@ -831,7 +831,7 @@ __MenuType = __MenuType
 import java.util.List as List
 from builtins import int
  
-class CrateMenu(__BlockContainerMenu, BlockContainerMenu):
+class CrateMenu():
     """dev.ultreon.quantum.menu.CrateMenu"""
  
     @staticmethod
@@ -1637,7 +1637,7 @@ __ContainerMenu = __ContainerMenu
 from builtins import bool
 from builtins import int
  
-class RedirectItemSlot(__ItemSlot, ItemSlot):
+class RedirectItemSlot():
     """dev.ultreon.quantum.menu.RedirectItemSlot"""
  
     @staticmethod
@@ -1887,7 +1887,7 @@ __MenuType = __MenuType
 import java.util.List as List
 from builtins import int
  
-class Inventory(__ContainerMenu, ContainerMenu):
+class Inventory():
     """dev.ultreon.quantum.menu.Inventory"""
  
     @staticmethod
@@ -2168,7 +2168,7 @@ import dev.ultreon.quantum.menu.MenuType as __MenuType
 __MenuType = __MenuType
 from builtins import int
  
-class EntityContainerMenu(ABC, __ContainerMenu, ContainerMenu):
+class EntityContainerMenu(ABC):
     """dev.ultreon.quantum.menu.EntityContainerMenu"""
  
     @staticmethod

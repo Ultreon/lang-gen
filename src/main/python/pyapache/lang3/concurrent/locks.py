@@ -29,7 +29,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class StampedLockVisitor(__LockVisitor, LockVisitor):
+class StampedLockVisitor():
     """org.apache.commons.lang3.concurrent.locks.LockingVisitors.StampedLockVisitor"""
  
     @staticmethod
@@ -176,7 +176,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class StampedLockVisitor(__LockVisitor, LockVisitor):
+class StampedLockVisitor():
     """org.apache.commons.lang3.concurrent.locks.LockingVisitors.StampedLockVisitor"""
  
     @staticmethod
@@ -326,7 +326,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ReadWriteLockVisitor(__LockVisitor, LockVisitor):
+class ReadWriteLockVisitor():
     """org.apache.commons.lang3.concurrent.locks.LockingVisitors.ReadWriteLockVisitor"""
  
     @staticmethod

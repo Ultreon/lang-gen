@@ -32,7 +32,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MutablePair(__Pair, Pair):
+class MutablePair():
     """org.apache.commons.lang3.tuple.MutablePair"""
  
     @staticmethod
@@ -277,7 +277,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MutablePair(__Pair, Pair):
+class MutablePair():
     """org.apache.commons.lang3.tuple.MutablePair"""
  
     @staticmethod
@@ -518,7 +518,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class MutableTriple(__Triple, Triple):
+class MutableTriple():
     """org.apache.commons.lang3.tuple.MutableTriple"""
  
     @staticmethod
@@ -732,7 +732,7 @@ import org.apache.commons.lang3.tuple.ImmutablePair as __ImmutablePair
 __ImmutablePair = __ImmutablePair
 from builtins import int
  
-class ImmutablePair(__Pair, Pair):
+class ImmutablePair():
     """org.apache.commons.lang3.tuple.ImmutablePair"""
  
     @staticmethod
@@ -962,7 +962,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class ImmutableTriple(__Triple, Triple):
+class ImmutableTriple():
     """org.apache.commons.lang3.tuple.ImmutableTriple"""
  
     @staticmethod
@@ -1154,7 +1154,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Pair(ABC, Map.__Map_Entry, Entry.Map$Entry, __Comparable, Comparable, __Serializable, Serializable):
+class Pair(ABC):
     """org.apache.commons.lang3.tuple.Pair"""
  
     @staticmethod
@@ -1344,7 +1344,7 @@ import java.lang.Integer as __int
 from builtins import bool
 from builtins import int
  
-class Triple(ABC, __Comparable, Comparable, __Serializable, Serializable):
+class Triple(ABC):
     """org.apache.commons.lang3.tuple.Triple"""
  
     @staticmethod
