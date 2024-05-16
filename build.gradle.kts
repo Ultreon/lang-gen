@@ -53,11 +53,7 @@ repositories {
 
     maven {
         name = "QuantumGitHub"
-        url = uri("https://maven.pkg.github.com/Ultreon/quantum-voxel")
-        credentials {
-            username = (project.findProperty("gpr.user") ?: System.getenv("USERNAME")) as String
-            password = (project.findProperty("gpr.key") ?: System.getenv("TOKEN")) as String
-        }
+        url = uri("https://jitpack.io")
     }
 
     maven {
@@ -84,7 +80,9 @@ dependencies {
     implementation("org.graalvm.polyglot:polyglot:23.1.2")
     implementation("org.graalvm.polyglot:python:23.1.2")
 
-    implementation("io.github.ultreon.quantum:quantum-desktop:+")
+    implementation("dev.ultreon.quantum-voxel:quantum-desktop:wip~more-entities-SNAPSHOT")
+    implementation("com.badlogicgames.gdx:gdx-platform:1.12.1:natives-desktop")
+    implementation("com.badlogicgames.gdx:gdx-freetype-platform:1.12.1:natives-desktop")
 }
 
 val pyz = tasks.register<Zip>("pyz") {

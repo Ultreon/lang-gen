@@ -5,5 +5,5 @@ pluginManagement {
         mavenCentral()
     }
 }
-rootProject.name = "pyquantum-example"
+rootProject.name = "pyquantum-api"
 

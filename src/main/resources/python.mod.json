@@ -1,6 +1,6 @@
 {
-  "id": "pyexample",
-  "name": "Python Example",
-  "description": "An example Python module",
+  "id": "pyquantum_api",
+  "name": "Quantum API wrapper for Python",
+  "description": "Reimplements entire Quantum Voxel and a few dependencies into Python",
   "version": "0.1.0"
 }
