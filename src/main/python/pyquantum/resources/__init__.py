@@ -4,76 +4,93 @@ from overload import overload
 
  
 from builtins import str
+import java.io.Reader as _Reader
+_Reader = _Reader
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.io.InputStream as __InputStream
-__InputStream = __InputStream
+import java.lang.String as _String
+_String = _String
 from builtins import object
 from typing import List
-import java.io.Reader as __Reader
-__Reader = __Reader
-import dev.ultreon.quantum.resources.DynamicResource as __DynamicResource
-__DynamicResource = __DynamicResource
-import java.lang.Long as __long
-import dev.ultreon.quantum.resources.Resource as __Resource
-__Resource = __Resource
-import java.lang.Class as __Class
-__Class = __Class
+import dev.ultreon.quantum.resources.DynamicResource as _DynamicResource
+_DynamicResource = _DynamicResource
+import java.io.InputStream as _InputStream
+_InputStream = _InputStream
 import de.marhali.json5.Json5Element as Json5Element
-import java.lang.String as __String
-__String = __String
+import java.lang.Integer as _int
 import java.io.Reader as Reader
-import java.lang.Object as __Object
-__Object = __Object
 import java.io.InputStream as InputStream
-import java.lang.Integer as __int
+import de.marhali.json5.Json5Element as _Json5Element
+_Json5Element = _Json5Element
 from builtins import bool
-import de.marhali.json5.Json5Element as __Json5Element
-__Json5Element = __Json5Element
+import java.lang.Long as _long
+import dev.ultreon.quantum.resources.Resource as _Resource
+_Resource = _Resource
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
-class DynamicResource(ABC):
+class DynamicResource():
     """dev.ultreon.quantum.resources.DynamicResource"""
  
     @staticmethod
-    def __wrap(java_value: __DynamicResource) -> 'DynamicResource':
+    def _wrap(java_value: _DynamicResource) -> 'DynamicResource':
         return DynamicResource(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __DynamicResource):
+    def __init__(self, __dynamic__: _DynamicResource):
         """
         Dynamic initializer for DynamicResource.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_DynamicResource__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_DynamicResource__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def getData(self) -> List[int]:
+        """public byte[] dev.ultreon.quantum.resources.DynamicResource.getData()"""
+        return List[int]._wrap(super(DynamicResource, self).getData())
+
+    @staticmethod
+    @overload
+    def of(arg0: 'Loader') -> 'DynamicResource':
+        """public static dev.ultreon.quantum.resources.DynamicResource dev.ultreon.quantum.resources.DynamicResource.of(dev.ultreon.quantum.resources.DynamicResource$Loader)"""
+        return DynamicResource._wrap(_DynamicResource.of(arg0))
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def openStream(self) -> 'InputStream':
+        """public default java.io.InputStream dev.ultreon.quantum.resources.Resource.openStream() throws java.io.IOException"""
+        return 'InputStream'._wrap(super(Resource, self).openStream())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -89,50 +106,27 @@ class DynamicResource(ABC):
 
     @override
     @overload
-    def openStream(self) -> 'InputStream':
-        """public default java.io.InputStream dev.ultreon.quantum.resources.Resource.openStream() throws java.io.IOException"""
-        return 'InputStream'.__wrap(super(Resource, self).openStream())
-
-    @overload
-    def loadJson(self, arg0: 'Class') -> object:
-        """public default <T> T dev.ultreon.quantum.resources.Resource.loadJson(java.lang.Class<T>)"""
-        return object.__wrap(super(__Resource, self).loadJson(arg0))
-
-    @staticmethod
-    @overload
-    def of(arg0: 'Loader') -> 'DynamicResource':
-        """public static dev.ultreon.quantum.resources.DynamicResource dev.ultreon.quantum.resources.DynamicResource.of(dev.ultreon.quantum.resources.DynamicResource$Loader)"""
-        return DynamicResource.__wrap(__DynamicResource.of(arg0))
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
     def isNotLoaded(self) -> bool:
         """public default boolean dev.ultreon.quantum.resources.Resource.isNotLoaded()"""
-        return bool.__wrap(super(Resource, self).isNotLoaded())
+        return bool._wrap(super(Resource, self).isNotLoaded())
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
-    def loadJson5(self) -> 'Json5Element':
-        """public default de.marhali.json5.Json5Element dev.ultreon.quantum.resources.Resource.loadJson5()"""
-        return 'Json5Element'.__wrap(super(Resource, self).loadJson5())
-
-    @override
-    @overload
-    def getData(self) -> List[int]:
-        """public byte[] dev.ultreon.quantum.resources.DynamicResource.getData()"""
-        return List[int].__wrap(super(DynamicResource, self).getData())
+    def loadOrGet(self) -> List[int]:
+        """public default byte[] dev.ultreon.quantum.resources.Resource.loadOrGet()"""
+        return List[int]._wrap(super(Resource, self).loadOrGet())
 
     @override
     @overload
@@ -140,17 +134,28 @@ class DynamicResource(ABC):
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def loadJson(self, arg0: 'Class') -> object:
+        """public default <T> T dev.ultreon.quantum.resources.Resource.loadJson(java.lang.Class<T>)"""
+        return object._wrap(super(_Resource, self).loadJson(arg0))
 
     @override
     @overload
-    def loadOrGet(self) -> List[int]:
-        """public default byte[] dev.ultreon.quantum.resources.Resource.loadOrGet()"""
-        return List[int].__wrap(super(Resource, self).loadOrGet())
+    def isLoaded(self) -> bool:
+        """public boolean dev.ultreon.quantum.resources.DynamicResource.isLoaded()"""
+        return bool._wrap(super(DynamicResource, self).isLoaded())
+
+    @override
+    @overload
+    def loadJson5(self) -> 'Json5Element':
+        """public default de.marhali.json5.Json5Element dev.ultreon.quantum.resources.Resource.loadJson5()"""
+        return 'Json5Element'._wrap(super(Resource, self).loadJson5())
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -160,96 +165,113 @@ class DynamicResource(ABC):
 
     @override
     @overload
-    def isLoaded(self) -> bool:
-        """public boolean dev.ultreon.quantum.resources.DynamicResource.isLoaded()"""
-        return bool.__wrap(super(DynamicResource, self).isLoaded())
+    def openReader(self) -> 'Reader':
+        """public default java.io.Reader dev.ultreon.quantum.resources.Resource.openReader() throws java.io.IOException"""
+        return 'Reader'._wrap(super(Resource, self).openReader())
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def openReader(self) -> 'Reader':
-        """public default java.io.Reader dev.ultreon.quantum.resources.Resource.openReader() throws java.io.IOException"""
-        return 'Reader'.__wrap(super(Resource, self).openReader())
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
  
 # CLASS: dev.ultreon.quantum.resources.DynamicResource
 from builtins import str
+import java.io.Reader as _Reader
+_Reader = _Reader
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.io.InputStream as __InputStream
-__InputStream = __InputStream
+import java.lang.String as _String
+_String = _String
 from builtins import object
 from typing import List
-import java.io.Reader as __Reader
-__Reader = __Reader
-import dev.ultreon.quantum.resources.DynamicResource as __DynamicResource
-__DynamicResource = __DynamicResource
-import java.lang.Long as __long
-import dev.ultreon.quantum.resources.Resource as __Resource
-__Resource = __Resource
-import java.lang.Class as __Class
-__Class = __Class
+import dev.ultreon.quantum.resources.DynamicResource as _DynamicResource
+_DynamicResource = _DynamicResource
+import java.io.InputStream as _InputStream
+_InputStream = _InputStream
 import de.marhali.json5.Json5Element as Json5Element
-import java.lang.String as __String
-__String = __String
+import java.lang.Integer as _int
 import java.io.Reader as Reader
-import java.lang.Object as __Object
-__Object = __Object
 import java.io.InputStream as InputStream
-import java.lang.Integer as __int
+import de.marhali.json5.Json5Element as _Json5Element
+_Json5Element = _Json5Element
 from builtins import bool
-import de.marhali.json5.Json5Element as __Json5Element
-__Json5Element = __Json5Element
+import java.lang.Long as _long
+import dev.ultreon.quantum.resources.Resource as _Resource
+_Resource = _Resource
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
-class DynamicResource(ABC):
+class DynamicResource():
     """dev.ultreon.quantum.resources.DynamicResource"""
  
     @staticmethod
-    def __wrap(java_value: __DynamicResource) -> 'DynamicResource':
+    def _wrap(java_value: _DynamicResource) -> 'DynamicResource':
         return DynamicResource(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __DynamicResource):
+    def __init__(self, __dynamic__: _DynamicResource):
         """
         Dynamic initializer for DynamicResource.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_DynamicResource__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_DynamicResource__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def getData(self) -> List[int]:
+        """public byte[] dev.ultreon.quantum.resources.DynamicResource.getData()"""
+        return List[int]._wrap(super(DynamicResource, self).getData())
+
+    @staticmethod
+    @overload
+    def of(arg0: 'Loader') -> 'DynamicResource':
+        """public static dev.ultreon.quantum.resources.DynamicResource dev.ultreon.quantum.resources.DynamicResource.of(dev.ultreon.quantum.resources.DynamicResource$Loader)"""
+        return DynamicResource._wrap(_DynamicResource.of(arg0))
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def openStream(self) -> 'InputStream':
+        """public default java.io.InputStream dev.ultreon.quantum.resources.Resource.openStream() throws java.io.IOException"""
+        return 'InputStream'._wrap(super(Resource, self).openStream())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -265,50 +287,27 @@ class DynamicResource(ABC):
 
     @override
     @overload
-    def openStream(self) -> 'InputStream':
-        """public default java.io.InputStream dev.ultreon.quantum.resources.Resource.openStream() throws java.io.IOException"""
-        return 'InputStream'.__wrap(super(Resource, self).openStream())
-
-    @overload
-    def loadJson(self, arg0: 'Class') -> object:
-        """public default <T> T dev.ultreon.quantum.resources.Resource.loadJson(java.lang.Class<T>)"""
-        return object.__wrap(super(__Resource, self).loadJson(arg0))
-
-    @staticmethod
-    @overload
-    def of(arg0: 'Loader') -> 'DynamicResource':
-        """public static dev.ultreon.quantum.resources.DynamicResource dev.ultreon.quantum.resources.DynamicResource.of(dev.ultreon.quantum.resources.DynamicResource$Loader)"""
-        return DynamicResource.__wrap(__DynamicResource.of(arg0))
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
     def isNotLoaded(self) -> bool:
         """public default boolean dev.ultreon.quantum.resources.Resource.isNotLoaded()"""
-        return bool.__wrap(super(Resource, self).isNotLoaded())
+        return bool._wrap(super(Resource, self).isNotLoaded())
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
-    def loadJson5(self) -> 'Json5Element':
-        """public default de.marhali.json5.Json5Element dev.ultreon.quantum.resources.Resource.loadJson5()"""
-        return 'Json5Element'.__wrap(super(Resource, self).loadJson5())
-
-    @override
-    @overload
-    def getData(self) -> List[int]:
-        """public byte[] dev.ultreon.quantum.resources.DynamicResource.getData()"""
-        return List[int].__wrap(super(DynamicResource, self).getData())
+    def loadOrGet(self) -> List[int]:
+        """public default byte[] dev.ultreon.quantum.resources.Resource.loadOrGet()"""
+        return List[int]._wrap(super(Resource, self).loadOrGet())
 
     @override
     @overload
@@ -316,17 +315,28 @@ class DynamicResource(ABC):
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def loadJson(self, arg0: 'Class') -> object:
+        """public default <T> T dev.ultreon.quantum.resources.Resource.loadJson(java.lang.Class<T>)"""
+        return object._wrap(super(_Resource, self).loadJson(arg0))
 
     @override
     @overload
-    def loadOrGet(self) -> List[int]:
-        """public default byte[] dev.ultreon.quantum.resources.Resource.loadOrGet()"""
-        return List[int].__wrap(super(Resource, self).loadOrGet())
+    def isLoaded(self) -> bool:
+        """public boolean dev.ultreon.quantum.resources.DynamicResource.isLoaded()"""
+        return bool._wrap(super(DynamicResource, self).isLoaded())
+
+    @override
+    @overload
+    def loadJson5(self) -> 'Json5Element':
+        """public default de.marhali.json5.Json5Element dev.ultreon.quantum.resources.Resource.loadJson5()"""
+        return 'Json5Element'._wrap(super(Resource, self).loadJson5())
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -336,20 +346,20 @@ class DynamicResource(ABC):
 
     @override
     @overload
-    def isLoaded(self) -> bool:
-        """public boolean dev.ultreon.quantum.resources.DynamicResource.isLoaded()"""
-        return bool.__wrap(super(DynamicResource, self).isLoaded())
+    def openReader(self) -> 'Reader':
+        """public default java.io.Reader dev.ultreon.quantum.resources.Resource.openReader() throws java.io.IOException"""
+        return 'Reader'._wrap(super(Resource, self).openReader())
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def openReader(self) -> 'Reader':
-        """public default java.io.Reader dev.ultreon.quantum.resources.Resource.openReader() throws java.io.IOException"""
-        return 'Reader'.__wrap(super(Resource, self).openReader())
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
@@ -358,61 +368,61 @@ class DynamicResource(ABC):
  
  
 # CLASS: dev.ultreon.quantum.resources.Resource
+import java.io.Reader as _Reader
+_Reader = _Reader
+import java.lang.Object as _Object
+_Object = _Object
 from builtins import type
-import java.io.InputStream as __InputStream
-__InputStream = __InputStream
 from abc import abstractmethod, ABC
 from builtins import object
 from typing import List
-import java.io.Reader as __Reader
-__Reader = __Reader
-import dev.ultreon.quantum.resources.Resource as __Resource
-__Resource = __Resource
+import java.io.InputStream as _InputStream
+_InputStream = _InputStream
 import de.marhali.json5.Json5Element as Json5Element
 import java.io.Reader as Reader
 import java.io.InputStream as InputStream
-import java.lang.Object as __Object
-__Object = __Object
+import de.marhali.json5.Json5Element as _Json5Element
+_Json5Element = _Json5Element
 from builtins import bool
-import de.marhali.json5.Json5Element as __Json5Element
-__Json5Element = __Json5Element
+import dev.ultreon.quantum.resources.Resource as _Resource
+_Resource = _Resource
 from builtins import int
  
-class Resource(ABC):
+class Resource():
     """dev.ultreon.quantum.resources.Resource"""
  
     @staticmethod
-    def __wrap(java_value: __Resource) -> 'Resource':
+    def _wrap(java_value: _Resource) -> 'Resource':
         return Resource(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Resource):
+    def __init__(self, __dynamic__: _Resource):
         """
         Dynamic initializer for Resource.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Resource__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Resource__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @overload
-    def openReader(self) -> 'Reader':
-        """public default java.io.Reader dev.ultreon.quantum.resources.Resource.openReader() throws java.io.IOException"""
-        return 'Reader'.__wrap(super(Resource, self).openReader())
-
     @abstractmethod
     def load(self, ):
         """public abstract void dev.ultreon.quantum.resources.Resource.load()"""
@@ -424,19 +434,24 @@ class Resource(ABC):
         pass
 
     @overload
-    def loadJson5(self) -> 'Json5Element':
-        """public default de.marhali.json5.Json5Element dev.ultreon.quantum.resources.Resource.loadJson5()"""
-        return 'Json5Element'.__wrap(super(Resource, self).loadJson5())
+    def isNotLoaded(self) -> bool:
+        """public default boolean dev.ultreon.quantum.resources.Resource.isNotLoaded()"""
+        return bool._wrap(super(Resource, self).isNotLoaded())
 
     @overload
-    def loadOrGet(self) -> List[int]:
-        """public default byte[] dev.ultreon.quantum.resources.Resource.loadOrGet()"""
-        return List[int].__wrap(super(Resource, self).loadOrGet())
+    def openStream(self) -> 'InputStream':
+        """public default java.io.InputStream dev.ultreon.quantum.resources.Resource.openStream() throws java.io.IOException"""
+        return 'InputStream'._wrap(super(Resource, self).openStream())
 
     @overload
     def loadJson(self, arg0: 'Class') -> object:
         """public default <T> T dev.ultreon.quantum.resources.Resource.loadJson(java.lang.Class<T>)"""
-        return object.__wrap(super(__Resource, self).loadJson(arg0))
+        return object._wrap(super(_Resource, self).loadJson(arg0))
+
+    @overload
+    def openReader(self) -> 'Reader':
+        """public default java.io.Reader dev.ultreon.quantum.resources.Resource.openReader() throws java.io.IOException"""
+        return 'Reader'._wrap(super(Resource, self).openReader())
 
     @abstractmethod
     def isLoaded(self, ):
@@ -444,104 +459,109 @@ class Resource(ABC):
         pass
 
     @overload
-    def isNotLoaded(self) -> bool:
-        """public default boolean dev.ultreon.quantum.resources.Resource.isNotLoaded()"""
-        return bool.__wrap(super(Resource, self).isNotLoaded())
+    def loadOrGet(self) -> List[int]:
+        """public default byte[] dev.ultreon.quantum.resources.Resource.loadOrGet()"""
+        return List[int]._wrap(super(Resource, self).loadOrGet())
 
     @overload
-    def openStream(self) -> 'InputStream':
-        """public default java.io.InputStream dev.ultreon.quantum.resources.Resource.openStream() throws java.io.IOException"""
-        return 'InputStream'.__wrap(super(Resource, self).openStream()) 
+    def loadJson5(self) -> 'Json5Element':
+        """public default de.marhali.json5.Json5Element dev.ultreon.quantum.resources.Resource.loadJson5()"""
+        return 'Json5Element'._wrap(super(Resource, self).loadJson5()) 
  
  
 # CLASS: dev.ultreon.quantum.resources.ReloadContext
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
-import dev.ultreon.quantum.resources.ResourceManager as __ResourceManager
-__ResourceManager = __ResourceManager
 from pyquantum_helper import override
-import dev.ultreon.quantum.resources.ReloadContext as __ReloadContext
-__ReloadContext = __ReloadContext
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.util.concurrent.CompletableFuture as __CompletableFuture
-__CompletableFuture = __CompletableFuture
 import java.lang.Runnable as Runnable
+import dev.ultreon.quantum.resources.ResourceManager as _ResourceManager
+_ResourceManager = _ResourceManager
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.resources.ReloadContext as _ReloadContext
+_ReloadContext = _ReloadContext
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
+import java.lang.Integer as _int
+import java.util.concurrent.CompletableFuture as _CompletableFuture
+_CompletableFuture = _CompletableFuture
 import java.util.concurrent.Callable as Callable
-import java.lang.Integer as __int
 from builtins import bool
 import java.util.concurrent.CompletableFuture as CompletableFuture
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ReloadContext():
     """dev.ultreon.quantum.resources.ReloadContext"""
  
     @staticmethod
-    def __wrap(java_value: __ReloadContext) -> 'ReloadContext':
+    def _wrap(java_value: _ReloadContext) -> 'ReloadContext':
         return ReloadContext(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ReloadContext):
+    def __init__(self, __dynamic__: _ReloadContext):
         """
         Dynamic initializer for ReloadContext.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ReloadContext__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ReloadContext__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @overload
+    def __init__(self, arg0: 'PollingExecutorService', arg1: 'ResourceManager'):
+        """public dev.ultreon.quantum.resources.ReloadContext(dev.ultreon.quantum.util.PollingExecutorService,dev.ultreon.quantum.resources.ResourceManager)"""
+        val = _ReloadContext(arg0, arg1)
+        self.__wrapper = val
+
+    @overload
+    def submit(self, arg0: 'Callable') -> 'CompletableFuture':
+        """public <T> java.util.concurrent.CompletableFuture<T> dev.ultreon.quantum.resources.ReloadContext.submit(java.util.concurrent.Callable<T>)"""
+        return 'CompletableFuture'._wrap(super(_ReloadContext, self).submit(arg0))
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @overload
-    def submit(self, arg0: 'Runnable'):
-        """public void dev.ultreon.quantum.resources.ReloadContext.submit(java.lang.Runnable)"""
-        super(__ReloadContext, self).submit(arg0)
-
-    @overload
-    def isDone(self) -> bool:
-        """public boolean dev.ultreon.quantum.resources.ReloadContext.isDone()"""
-        return bool.__wrap(super(ReloadContext, self).isDone())
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def getResourceManager(self) -> 'ResourceManager':
+        """public dev.ultreon.quantum.resources.ResourceManager dev.ultreon.quantum.resources.ReloadContext.getResourceManager()"""
+        return 'ResourceManager'._wrap(super(ReloadContext, self).getResourceManager())
 
     @staticmethod
     @overload
     def create(arg0: 'PollingExecutorService', arg1: 'ResourceManager') -> 'ReloadContext':
         """public static dev.ultreon.quantum.resources.ReloadContext dev.ultreon.quantum.resources.ReloadContext.create(dev.ultreon.quantum.util.PollingExecutorService,dev.ultreon.quantum.resources.ResourceManager)"""
-        return ReloadContext.__wrap(__ReloadContext.create(arg0, arg1))
+        return ReloadContext._wrap(_ReloadContext.create(arg0, arg1))
 
     @override
     @overload
@@ -550,28 +570,26 @@ class ReloadContext():
         super(object, self).notifyAll()
 
     @overload
-    def submit(self, arg0: 'Callable') -> 'CompletableFuture':
-        """public <T> java.util.concurrent.CompletableFuture<T> dev.ultreon.quantum.resources.ReloadContext.submit(java.util.concurrent.Callable<T>)"""
-        return 'CompletableFuture'.__wrap(super(__ReloadContext, self).submit(arg0))
+    def isDone(self) -> bool:
+        """public boolean dev.ultreon.quantum.resources.ReloadContext.isDone()"""
+        return bool._wrap(super(ReloadContext, self).isDone())
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @overload
+    def submit(self, arg0: 'Runnable'):
+        """public void dev.ultreon.quantum.resources.ReloadContext.submit(java.lang.Runnable)"""
+        super(_ReloadContext, self).submit(arg0)
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def __init__(self, arg0: 'PollingExecutorService', arg1: 'ResourceManager'):
-        """public dev.ultreon.quantum.resources.ReloadContext(dev.ultreon.quantum.util.PollingExecutorService,dev.ultreon.quantum.resources.ResourceManager)"""
-        val = __ReloadContext(arg0, arg1)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @overload
     def finish(self):
@@ -586,9 +604,9 @@ class ReloadContext():
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -599,102 +617,102 @@ class ReloadContext():
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
+    @override
     @overload
-    def getResourceManager(self) -> 'ResourceManager':
-        """public dev.ultreon.quantum.resources.ResourceManager dev.ultreon.quantum.resources.ReloadContext.getResourceManager()"""
-        return 'ResourceManager'.__wrap(super(ReloadContext, self).getResourceManager()) 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.resources.ResourceCategory
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.util.Set as __Set
-__Set = __Set
-import java.util.Map as __Map
-__Map = __Map
-import dev.ultreon.quantum.resources.ResourceCategory as __ResourceCategory
-__ResourceCategory = __ResourceCategory
+import java.util.Map as _Map
+_Map = _Map
+import java.lang.String as _String
+_String = _String
+import java.util.List as _List
+_List = _List
+import java.util.Set as _Set
+_Set = _Set
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import dev.ultreon.quantum.resources.StaticResource as __StaticResource
-__StaticResource = __StaticResource
-import java.util.List as __List
-__List = __List
+import dev.ultreon.quantum.resources.StaticResource as _StaticResource
+_StaticResource = _StaticResource
+import java.lang.String as _string
 import java.util.Set as Set
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
+import dev.ultreon.quantum.resources.ResourceCategory as _ResourceCategory
+_ResourceCategory = _ResourceCategory
 import java.util.function.BiConsumer as BiConsumer
-import java.lang.String as __String
-__String = __String
-import java.lang.String as __string
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.Integer as _int
 from builtins import bool
 import java.util.Map as Map
+import java.lang.Long as _long
 import java.util.List as List
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ResourceCategory():
     """dev.ultreon.quantum.resources.ResourceCategory"""
  
     @staticmethod
-    def __wrap(java_value: __ResourceCategory) -> 'ResourceCategory':
+    def _wrap(java_value: _ResourceCategory) -> 'ResourceCategory':
         return ResourceCategory(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ResourceCategory):
+    def __init__(self, __dynamic__: _ResourceCategory):
         """
         Dynamic initializer for ResourceCategory.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ResourceCategory__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ResourceCategory__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @overload
-    def getName(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.resources.ResourceCategory.getName()"""
-        return str.__wrap(super(ResourceCategory, self).getName())
+    def mapEntries(self) -> 'Map':
+        """public java.util.Map<dev.ultreon.quantum.util.Identifier, dev.ultreon.quantum.resources.StaticResource> dev.ultreon.quantum.resources.ResourceCategory.mapEntries()"""
+        return 'Map'._wrap(super(ResourceCategory, self).mapEntries())
+
+    @overload
+    def get(self, arg0: 'Identifier') -> 'StaticResource':
+        """public dev.ultreon.quantum.resources.StaticResource dev.ultreon.quantum.resources.ResourceCategory.get(dev.ultreon.quantum.util.Identifier)"""
+        return 'StaticResource'._wrap(super(_ResourceCategory, self).get(arg0))
 
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def mapEntries(self) -> 'Map':
-        """public java.util.Map<dev.ultreon.quantum.util.Identifier, dev.ultreon.quantum.resources.StaticResource> dev.ultreon.quantum.resources.ResourceCategory.mapEntries()"""
-        return 'Map'.__wrap(super(ResourceCategory, self).mapEntries())
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -703,26 +721,31 @@ class ResourceCategory():
         super(object, self).notifyAll()
 
     @overload
-    def resources(self) -> 'List':
-        """public java.util.List<dev.ultreon.quantum.resources.StaticResource> dev.ultreon.quantum.resources.ResourceCategory.resources()"""
-        return 'List'.__wrap(super(ResourceCategory, self).resources())
+    def has(self, arg0: 'Identifier') -> bool:
+        """public boolean dev.ultreon.quantum.resources.ResourceCategory.has(dev.ultreon.quantum.util.Identifier)"""
+        return bool._wrap(super(_ResourceCategory, self).has(arg0))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @overload
+    def getName(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.resources.ResourceCategory.getName()"""
+        return str._wrap(super(ResourceCategory, self).getName())
 
     @overload
     def resourceCount(self) -> int:
         """public int dev.ultreon.quantum.resources.ResourceCategory.resourceCount()"""
-        return int.__wrap(super(ResourceCategory, self).resourceCount())
+        return int._wrap(super(ResourceCategory, self).resourceCount())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -731,20 +754,15 @@ class ResourceCategory():
         super(object, self).notify()
 
     @overload
-    def get(self, arg0: 'Identifier') -> 'StaticResource':
-        """public dev.ultreon.quantum.resources.StaticResource dev.ultreon.quantum.resources.ResourceCategory.get(dev.ultreon.quantum.util.Identifier)"""
-        return 'StaticResource'.__wrap(super(__ResourceCategory, self).get(arg0))
-
-    @overload
-    def has(self, arg0: 'Identifier') -> bool:
-        """public boolean dev.ultreon.quantum.resources.ResourceCategory.has(dev.ultreon.quantum.util.Identifier)"""
-        return bool.__wrap(super(__ResourceCategory, self).has(arg0))
+    def resources(self) -> 'List':
+        """public java.util.List<dev.ultreon.quantum.resources.StaticResource> dev.ultreon.quantum.resources.ResourceCategory.resources()"""
+        return 'List'._wrap(super(ResourceCategory, self).resources())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -755,57 +773,67 @@ class ResourceCategory():
     @overload
     def forEach(self, arg0: 'BiConsumer'):
         """public void dev.ultreon.quantum.resources.ResourceCategory.forEach(java.util.function.BiConsumer<dev.ultreon.quantum.util.Identifier, dev.ultreon.quantum.resources.StaticResource>)"""
-        super(__ResourceCategory, self).forEach(arg0)
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
-
-    @overload
-    def __init__(self, arg0: str):
-        """public dev.ultreon.quantum.resources.ResourceCategory(java.lang.String)"""
-        val = __ResourceCategory(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+        super(_ResourceCategory, self).forEach(arg0)
 
     @overload
     def entries(self) -> 'Set':
         """public java.util.Set<dev.ultreon.quantum.util.Identifier> dev.ultreon.quantum.resources.ResourceCategory.entries()"""
-        return 'Set'.__wrap(super(ResourceCategory, self).entries()) 
+        return 'Set'._wrap(super(ResourceCategory, self).entries())
+
+    @overload
+    def __init__(self, arg0: str):
+        """public dev.ultreon.quantum.resources.ResourceCategory(java.lang.String)"""
+        val = _ResourceCategory(arg0)
+        self.__wrapper = val
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.resources.DynamicResource$Loader
+import dev.ultreon.quantum.resources.DynamicResource as _DynamicResource_Loader
+_Loader = _DynamicResource_Loader.Loader
 from abc import abstractmethod, ABC
-import dev.ultreon.quantum.resources.DynamicResource as __DynamicResource_Loader
-__Loader = __DynamicResource_Loader.Loader
  
-class Loader(ABC):
+class Loader():
     """dev.ultreon.quantum.resources.DynamicResource.Loader"""
  
     @staticmethod
-    def __wrap(java_value: __Loader) -> 'Loader':
+    def _wrap(java_value: _Loader) -> 'Loader':
         return Loader(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Loader):
+    def __init__(self, __dynamic__: _Loader):
         """
         Dynamic initializer for Loader.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Loader__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Loader__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -817,77 +845,76 @@ class Loader(ABC):
  
  
 # CLASS: dev.ultreon.quantum.resources.ResourceManager
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
-import dev.ultreon.quantum.resources.ResourceManager as __ResourceManager
-__ResourceManager = __ResourceManager
 from pyquantum_helper import override
 import java.net.URI as URI
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
 from builtins import type
+import java.lang.Object as _object
 import java.io.File as File
+import dev.ultreon.quantum.resources.ResourceManager as _ResourceManager
+_ResourceManager = _ResourceManager
 import java.nio.file.Path as Path
-import java.io.InputStream as __InputStream
-__InputStream = __InputStream
+import java.lang.String as _String
+_String = _String
+import java.util.List as _List
+_List = _List
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import dev.ultreon.quantum.resources.Resource as __Resource
-__Resource = __Resource
-import java.util.List as __List
-__List = __List
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.String as __string
+import java.io.InputStream as _InputStream
+_InputStream = _InputStream
+import java.lang.String as _string
+import java.lang.Integer as _int
 import java.io.InputStream as InputStream
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
 from builtins import bool
+import dev.ultreon.quantum.resources.Resource as _Resource
+_Resource = _Resource
+import java.lang.Long as _long
 import java.util.List as List
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ResourceManager():
     """dev.ultreon.quantum.resources.ResourceManager"""
  
     @staticmethod
-    def __wrap(java_value: __ResourceManager) -> 'ResourceManager':
+    def _wrap(java_value: _ResourceManager) -> 'ResourceManager':
         return ResourceManager(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ResourceManager):
+    def __init__(self, __dynamic__: _ResourceManager):
         """
         Dynamic initializer for ResourceManager.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ResourceManager__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ResourceManager__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
     @overload
     def reload(self):
         """public void dev.ultreon.quantum.resources.ResourceManager.reload()"""
@@ -896,8 +923,7 @@ class ResourceManager():
     @overload
     def __init__(self, arg0: str):
         """public dev.ultreon.quantum.resources.ResourceManager(java.lang.String)"""
-        val = __ResourceManager(arg0)
-        self.__dict__ = val.__dict__
+        val = _ResourceManager(arg0)
         self.__wrapper = val
 
     @override
@@ -907,24 +933,25 @@ class ResourceManager():
         super(object, self).notifyAll()
 
     @overload
+    def importPackage(self, arg0: 'URI'):
+        """public void dev.ultreon.quantum.resources.ResourceManager.importPackage(java.net.URI) throws java.io.IOException"""
+        super(_ResourceManager, self).importPackage(arg0)
+
+    @overload
     def getAllDataByPath(self, arg0: str) -> 'List':
         """public java.util.List<byte[]> dev.ultreon.quantum.resources.ResourceManager.getAllDataByPath(java.lang.String)"""
-        return 'List'.__wrap(super(__ResourceManager, self).getAllDataByPath(arg0))
+        return 'List'._wrap(super(_ResourceManager, self).getAllDataByPath(arg0))
 
     @overload
-    def getResourceCategories(self) -> 'List':
-        """public java.util.List<dev.ultreon.quantum.resources.ResourceCategory> dev.ultreon.quantum.resources.ResourceManager.getResourceCategories()"""
-        return 'List'.__wrap(super(ResourceManager, self).getResourceCategories())
+    def openResourceStream(self, arg0: 'Identifier') -> 'InputStream':
+        """public java.io.InputStream dev.ultreon.quantum.resources.ResourceManager.openResourceStream(dev.ultreon.quantum.util.Identifier) throws java.io.IOException"""
+        return 'InputStream'._wrap(super(_ResourceManager, self).openResourceStream(arg0))
 
+    @override
     @overload
-    def importDeferredPackage(self, arg0: 'Class'):
-        """public void dev.ultreon.quantum.resources.ResourceManager.importDeferredPackage(java.lang.Class<?>)"""
-        super(__ResourceManager, self).importDeferredPackage(arg0)
-
-    @overload
-    def importPackage(self, arg0: 'File'):
-        """public void dev.ultreon.quantum.resources.ResourceManager.importPackage(java.io.File) throws java.io.IOException"""
-        super(__ResourceManager, self).importPackage(arg0)
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -933,68 +960,61 @@ class ResourceManager():
         super(object, self).notify()
 
     @overload
-    def importPackage(self, arg0: 'Path'):
-        """public void dev.ultreon.quantum.resources.ResourceManager.importPackage(java.nio.file.Path) throws java.io.IOException"""
-        super(__ResourceManager, self).importPackage(arg0)
+    def getResourcePackages(self) -> 'List':
+        """public java.util.List<dev.ultreon.quantum.resources.ResourcePackage> dev.ultreon.quantum.resources.ResourceManager.getResourcePackages()"""
+        return 'List'._wrap(super(ResourceManager, self).getResourcePackages())
 
     @overload
-    def getAllDataById(self, arg0: 'Identifier') -> 'List':
-        """public java.util.List<byte[]> dev.ultreon.quantum.resources.ResourceManager.getAllDataById(dev.ultreon.quantum.util.Identifier)"""
-        return 'List'.__wrap(super(__ResourceManager, self).getAllDataById(arg0))
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @overload
-    def getResourceCategory(self, arg0: str) -> 'List':
-        """public java.util.List<dev.ultreon.quantum.resources.ResourceCategory> dev.ultreon.quantum.resources.ResourceManager.getResourceCategory(java.lang.String)"""
-        return 'List'.__wrap(super(__ResourceManager, self).getResourceCategory(arg0))
+    def getResourceCategories(self) -> 'List':
+        """public java.util.List<dev.ultreon.quantum.resources.ResourceCategory> dev.ultreon.quantum.resources.ResourceManager.getResourceCategories()"""
+        return 'List'._wrap(super(ResourceManager, self).getResourceCategories())
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @overload
+    def getResource(self, arg0: 'Identifier') -> 'Resource':
+        """public dev.ultreon.quantum.resources.Resource dev.ultreon.quantum.resources.ResourceManager.getResource(dev.ultreon.quantum.util.Identifier)"""
+        return 'Resource'._wrap(super(_ResourceManager, self).getResource(arg0))
+
+    @overload
+    def canScanFiles(self) -> bool:
+        """public boolean dev.ultreon.quantum.resources.ResourceManager.canScanFiles()"""
+        return bool._wrap(super(ResourceManager, self).canScanFiles())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @overload
+    def getAllDataById(self, arg0: 'Identifier') -> 'List':
+        """public java.util.List<byte[]> dev.ultreon.quantum.resources.ResourceManager.getAllDataById(dev.ultreon.quantum.util.Identifier)"""
+        return 'List'._wrap(super(_ResourceManager, self).getAllDataById(arg0))
+
+    @overload
+    def importDeferredPackage(self, arg0: 'Class'):
+        """public void dev.ultreon.quantum.resources.ResourceManager.importDeferredPackage(java.lang.Class<?>)"""
+        super(_ResourceManager, self).importDeferredPackage(arg0)
+
+    @overload
+    def getResourceCategory(self, arg0: str) -> 'List':
+        """public java.util.List<dev.ultreon.quantum.resources.ResourceCategory> dev.ultreon.quantum.resources.ResourceManager.getResourceCategory(java.lang.String)"""
+        return 'List'._wrap(super(_ResourceManager, self).getResourceCategory(arg0))
 
     @override
     @overload
     def toString(self) -> str:
         """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+        return str._wrap(super(object, self).toString())
 
     @overload
     def getRoot(self) -> str:
         """public java.lang.String dev.ultreon.quantum.resources.ResourceManager.getRoot()"""
-        return str.__wrap(super(ResourceManager, self).getRoot())
-
-    @overload
-    def openResourceStream(self, arg0: 'Identifier') -> 'InputStream':
-        """public java.io.InputStream dev.ultreon.quantum.resources.ResourceManager.openResourceStream(dev.ultreon.quantum.util.Identifier) throws java.io.IOException"""
-        return 'InputStream'.__wrap(super(__ResourceManager, self).openResourceStream(arg0))
-
-    @overload
-    def importPackage(self, arg0: 'URI'):
-        """public void dev.ultreon.quantum.resources.ResourceManager.importPackage(java.net.URI) throws java.io.IOException"""
-        super(__ResourceManager, self).importPackage(arg0)
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @overload
-    def getResourcePackages(self) -> 'List':
-        """public java.util.List<dev.ultreon.quantum.resources.ResourcePackage> dev.ultreon.quantum.resources.ResourceManager.getResourcePackages()"""
-        return 'List'.__wrap(super(ResourceManager, self).getResourcePackages())
+        return str._wrap(super(ResourceManager, self).getRoot())
 
     @override
     @overload
@@ -1002,10 +1022,21 @@ class ResourceManager():
         """public void dev.ultreon.quantum.resources.ResourceManager.close()"""
         super(ResourceManager, self).close()
 
+    @override
     @overload
-    def getResource(self, arg0: 'Identifier') -> 'Resource':
-        """public dev.ultreon.quantum.resources.Resource dev.ultreon.quantum.resources.ResourceManager.getResource(dev.ultreon.quantum.util.Identifier)"""
-        return 'Resource'.__wrap(super(__ResourceManager, self).getResource(arg0))
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @overload
+    def importPackage(self, arg0: 'Path'):
+        """public void dev.ultreon.quantum.resources.ResourceManager.importPackage(java.nio.file.Path) throws java.io.IOException"""
+        super(_ResourceManager, self).importPackage(arg0)
+
+    @overload
+    def importPackage(self, arg0: 'File'):
+        """public void dev.ultreon.quantum.resources.ResourceManager.importPackage(java.io.File) throws java.io.IOException"""
+        super(_ResourceManager, self).importPackage(arg0)
 
     @override
     @overload
@@ -1018,106 +1049,106 @@ class ResourceManager():
         """public void dev.ultreon.quantum.resources.ResourceManager.importModResources()"""
         super(ResourceManager, self).importModResources()
 
+    @override
     @overload
-    def canScanFiles(self) -> bool:
-        """public boolean dev.ultreon.quantum.resources.ResourceManager.canScanFiles()"""
-        return bool.__wrap(super(ResourceManager, self).canScanFiles()) 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.resources.ResourcePackage
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.util.Set as __Set
-__Set = __Set
-import java.util.Map as __Map
-__Map = __Map
-import dev.ultreon.quantum.resources.ResourceCategory as __ResourceCategory
-__ResourceCategory = __ResourceCategory
+import java.util.Map as _Map
+_Map = _Map
+import java.lang.String as _String
+_String = _String
+import java.util.List as _List
+_List = _List
+import java.util.Set as _Set
+_Set = _Set
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import dev.ultreon.quantum.resources.StaticResource as __StaticResource
-__StaticResource = __StaticResource
+import dev.ultreon.quantum.resources.StaticResource as _StaticResource
+_StaticResource = _StaticResource
+import java.lang.String as _string
 import java.util.Set as Set
-import java.util.List as __List
-__List = __List
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import dev.ultreon.quantum.resources.ResourcePackage as __ResourcePackage
-__ResourcePackage = __ResourcePackage
-import java.lang.String as __string
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import dev.ultreon.quantum.resources.ResourceCategory as _ResourceCategory
+_ResourceCategory = _ResourceCategory
+import java.lang.Integer as _int
+import dev.ultreon.quantum.resources.ResourcePackage as _ResourcePackage
+_ResourcePackage = _ResourcePackage
 from builtins import bool
 import java.util.Map as Map
+import java.lang.Long as _long
 import java.util.List as List
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ResourcePackage():
     """dev.ultreon.quantum.resources.ResourcePackage"""
  
     @staticmethod
-    def __wrap(java_value: __ResourcePackage) -> 'ResourcePackage':
+    def _wrap(java_value: _ResourcePackage) -> 'ResourcePackage':
         return ResourcePackage(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ResourcePackage):
+    def __init__(self, __dynamic__: _ResourcePackage):
         """
         Dynamic initializer for ResourcePackage.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ResourcePackage__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ResourcePackage__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
     @overload
     def entries(self) -> 'Set':
         """public java.util.Set<dev.ultreon.quantum.util.Identifier> dev.ultreon.quantum.resources.ResourcePackage.entries()"""
-        return 'Set'.__wrap(super(ResourcePackage, self).entries())
-
-    @overload
-    def get(self, arg0: 'Identifier') -> 'StaticResource':
-        """public dev.ultreon.quantum.resources.StaticResource dev.ultreon.quantum.resources.ResourcePackage.get(dev.ultreon.quantum.util.Identifier)"""
-        return 'StaticResource'.__wrap(super(__ResourcePackage, self).get(arg0))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+        return 'Set'._wrap(super(ResourcePackage, self).entries())
 
     @overload
     def has(self, arg0: 'Identifier') -> bool:
         """public boolean dev.ultreon.quantum.resources.ResourcePackage.has(dev.ultreon.quantum.util.Identifier)"""
-        return bool.__wrap(super(__ResourcePackage, self).has(arg0))
+        return bool._wrap(super(_ResourcePackage, self).has(arg0))
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @overload
+    def getCategory(self, arg0: str) -> 'ResourceCategory':
+        """public dev.ultreon.quantum.resources.ResourceCategory dev.ultreon.quantum.resources.ResourcePackage.getCategory(java.lang.String)"""
+        return 'ResourceCategory'._wrap(super(_ResourcePackage, self).getCategory(arg0))
 
     @override
     @overload
@@ -1128,33 +1159,30 @@ class ResourcePackage():
     @overload
     def __init__(self, arg0: 'Map', arg1: 'Map'):
         """public dev.ultreon.quantum.resources.ResourcePackage(java.util.Map<dev.ultreon.quantum.util.Identifier, dev.ultreon.quantum.resources.StaticResource>,java.util.Map<java.lang.String, dev.ultreon.quantum.resources.ResourceCategory>)"""
-        val = __ResourcePackage(arg0, arg1)
-        self.__dict__ = val.__dict__
+        val = _ResourcePackage(arg0, arg1)
         self.__wrapper = val
 
+    @override
     @overload
-    def hasCategory(self, arg0: str) -> bool:
-        """public boolean dev.ultreon.quantum.resources.ResourcePackage.hasCategory(java.lang.String)"""
-        return bool.__wrap(super(__ResourcePackage, self).hasCategory(arg0))
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @overload
+    def mapEntries(self) -> 'Map':
+        """public java.util.Map<dev.ultreon.quantum.util.Identifier, dev.ultreon.quantum.resources.StaticResource> dev.ultreon.quantum.resources.ResourcePackage.mapEntries()"""
+        return 'Map'._wrap(super(ResourcePackage, self).mapEntries())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.resources.ResourcePackage()"""
-        val = __ResourcePackage()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def get(self, arg0: 'Identifier') -> 'StaticResource':
+        """public dev.ultreon.quantum.resources.StaticResource dev.ultreon.quantum.resources.ResourcePackage.get(dev.ultreon.quantum.util.Identifier)"""
+        return 'StaticResource'._wrap(super(_ResourcePackage, self).get(arg0))
 
     @override
     @overload
@@ -1162,34 +1190,34 @@ class ResourcePackage():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.resources.ResourcePackage()"""
-        val = __ResourcePackage()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @overload
-    def getCategory(self, arg0: str) -> 'ResourceCategory':
-        """public dev.ultreon.quantum.resources.ResourceCategory dev.ultreon.quantum.resources.ResourcePackage.getCategory(java.lang.String)"""
-        return 'ResourceCategory'.__wrap(super(__ResourcePackage, self).getCategory(arg0))
-
-    @overload
-    def mapEntries(self) -> 'Map':
-        """public java.util.Map<dev.ultreon.quantum.util.Identifier, dev.ultreon.quantum.resources.StaticResource> dev.ultreon.quantum.resources.ResourcePackage.mapEntries()"""
-        return 'Map'.__wrap(super(ResourcePackage, self).mapEntries())
+    def hasCategory(self, arg0: str) -> bool:
+        """public boolean dev.ultreon.quantum.resources.ResourcePackage.hasCategory(java.lang.String)"""
+        return bool._wrap(super(_ResourcePackage, self).hasCategory(arg0))
 
     @override
     @overload
     def wait(self):
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
+
+    @overload
+    def __init__(self, ):
+        """public dev.ultreon.quantum.resources.ResourcePackage()"""
+        val = _ResourcePackage()
+        self.__wrapper = val
+
+    @overload
+    def __init__(self):
+        """public dev.ultreon.quantum.resources.ResourcePackage()"""
+        val = _ResourcePackage()
+        self.__wrapper = val
 
     @override
     @overload
@@ -1198,99 +1226,104 @@ class ResourcePackage():
         super(ResourcePackage, self).close()
 
     @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
-
-    @overload
     def getCategories(self) -> 'List':
         """public java.util.List<dev.ultreon.quantum.resources.ResourceCategory> dev.ultreon.quantum.resources.ResourcePackage.getCategories()"""
-        return 'List'.__wrap(super(ResourcePackage, self).getCategories()) 
+        return 'List'._wrap(super(ResourcePackage, self).getCategories())
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.resources.StaticResource
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
+import java.lang.Object as _Object
+_Object = _Object
 from builtins import type
 try:
     from pycorelibs.functions.v0 import misc
 except ImportError:
-    misc = __import_once__("pycorelibs.functions.v0.misc")
+    misc = _import_once("pycorelibs.functions.v0.misc")
 
-import dev.ultreon.quantum.resources.StaticResource as __StaticResource
-__StaticResource = __StaticResource
-import java.io.ByteArrayInputStream as __ByteArrayInputStream
-__ByteArrayInputStream = __ByteArrayInputStream
-import dev.ultreon.quantum.resources.Resource as __Resource
-__Resource = __Resource
-import java.lang.Class as __Class
-__Class = __Class
+import dev.ultreon.quantum.resources.StaticResource as _StaticResource
+_StaticResource = _StaticResource
 import java.io.ByteArrayInputStream as ByteArrayInputStream
 from builtins import bool
 from builtins import str
+import java.io.Reader as _Reader
+_Reader = _Reader
 from pyquantum_helper import override
-import java.lang.Object as __object
-import java.io.InputStream as __InputStream
-__InputStream = __InputStream
+import java.io.ByteArrayInputStream as _ByteArrayInputStream
+_ByteArrayInputStream = _ByteArrayInputStream
+import java.lang.Object as _object
+import java.lang.String as _String
+_String = _String
 from builtins import object
 from typing import List
-import java.io.Reader as __Reader
-__Reader = __Reader
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import java.lang.Long as __long
+import java.io.InputStream as _InputStream
+_InputStream = _InputStream
 import de.marhali.json5.Json5Element as Json5Element
-import java.lang.String as __String
-__String = __String
+import java.lang.Integer as _int
 import java.io.Reader as Reader
-import dev.ultreon.quantum.util.Identifier as __Identifier
-__Identifier = __Identifier
 import java.io.InputStream as InputStream
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
-import de.marhali.json5.Json5Element as __Json5Element
-__Json5Element = __Json5Element
+import de.marhali.json5.Json5Element as _Json5Element
+_Json5Element = _Json5Element
+import dev.ultreon.quantum.util.Identifier as _Identifier
+_Identifier = _Identifier
+import java.lang.Long as _long
+import dev.ultreon.quantum.resources.Resource as _Resource
+_Resource = _Resource
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class StaticResource():
     """dev.ultreon.quantum.resources.StaticResource"""
  
     @staticmethod
-    def __wrap(java_value: __StaticResource) -> 'StaticResource':
+    def _wrap(java_value: _StaticResource) -> 'StaticResource':
         return StaticResource(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __StaticResource):
+    def __init__(self, __dynamic__: _StaticResource):
         """
         Dynamic initializer for StaticResource.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_StaticResource__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_StaticResource__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
     @override
     @overload
     def close(self):
@@ -1299,26 +1332,9 @@ class StaticResource():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def id(self) -> 'util.Identifier':
-        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.resources.StaticResource.id()"""
-        return 'util.Identifier'.__wrap(super(StaticResource, self).id())
-
-    @override
-    @overload
-    def isLoaded(self) -> bool:
-        """public boolean dev.ultreon.quantum.resources.StaticResource.isLoaded()"""
-        return bool.__wrap(super(StaticResource, self).isLoaded())
-
-    @override
-    @overload
-    def getData(self) -> List[int]:
-        """public byte[] dev.ultreon.quantum.resources.StaticResource.getData()"""
-        return List[int].__wrap(super(StaticResource, self).getData())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -1326,52 +1342,41 @@ class StaticResource():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @override
     @overload
-    def loadJson(self, arg0: 'Class') -> object:
-        """public default <T> T dev.ultreon.quantum.resources.Resource.loadJson(java.lang.Class<T>)"""
-        return object.__wrap(super(__Resource, self).loadJson(arg0))
-
-    @overload
-    def __init__(self, arg0: 'Identifier', arg1: 'ThrowingSupplier'):
-        """public dev.ultreon.quantum.resources.StaticResource(dev.ultreon.quantum.util.Identifier,dev.ultreon.libs.functions.v0.misc.ThrowingSupplier<java.io.InputStream, java.io.IOException>)"""
-        val = __StaticResource(arg0, arg1)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @overload
-    def loadOrOpenStream(self) -> 'InputStream':
-        """public java.io.InputStream dev.ultreon.quantum.resources.StaticResource.loadOrOpenStream()"""
-        return 'InputStream'.__wrap(super(StaticResource, self).loadOrOpenStream())
+    def getData(self) -> List[int]:
+        """public byte[] dev.ultreon.quantum.resources.StaticResource.getData()"""
+        return List[int]._wrap(super(StaticResource, self).getData())
 
     @override
     @overload
-    def openStream(self) -> 'ByteArrayInputStream':
-        """public java.io.ByteArrayInputStream dev.ultreon.quantum.resources.StaticResource.openStream()"""
-        return 'ByteArrayInputStream'.__wrap(super(StaticResource, self).openStream())
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
     def isNotLoaded(self) -> bool:
         """public default boolean dev.ultreon.quantum.resources.Resource.isNotLoaded()"""
-        return bool.__wrap(super(Resource, self).isNotLoaded())
+        return bool._wrap(super(Resource, self).isNotLoaded())
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def isLoaded(self) -> bool:
+        """public boolean dev.ultreon.quantum.resources.StaticResource.isLoaded()"""
+        return bool._wrap(super(StaticResource, self).isLoaded())
 
     @override
     @overload
-    def loadJson5(self) -> 'Json5Element':
-        """public default de.marhali.json5.Json5Element dev.ultreon.quantum.resources.Resource.loadJson5()"""
-        return 'Json5Element'.__wrap(super(Resource, self).loadJson5())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @override
+    @overload
+    def loadOrGet(self) -> List[int]:
+        """public default byte[] dev.ultreon.quantum.resources.Resource.loadOrGet()"""
+        return List[int]._wrap(super(Resource, self).loadOrGet())
 
     @override
     @overload
@@ -1385,17 +1390,38 @@ class StaticResource():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def id(self) -> 'util.Identifier':
+        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.resources.StaticResource.id()"""
+        return 'util.Identifier'._wrap(super(StaticResource, self).id())
+
+    @overload
+    def loadJson(self, arg0: 'Class') -> object:
+        """public default <T> T dev.ultreon.quantum.resources.Resource.loadJson(java.lang.Class<T>)"""
+        return object._wrap(super(_Resource, self).loadJson(arg0))
+
+    @overload
+    def loadOrOpenStream(self) -> 'InputStream':
+        """public java.io.InputStream dev.ultreon.quantum.resources.StaticResource.loadOrOpenStream()"""
+        return 'InputStream'._wrap(super(StaticResource, self).loadOrOpenStream())
 
     @override
     @overload
-    def loadOrGet(self) -> List[int]:
-        """public default byte[] dev.ultreon.quantum.resources.Resource.loadOrGet()"""
-        return List[int].__wrap(super(Resource, self).loadOrGet())
+    def loadJson5(self) -> 'Json5Element':
+        """public default de.marhali.json5.Json5Element dev.ultreon.quantum.resources.Resource.loadJson5()"""
+        return 'Json5Element'._wrap(super(Resource, self).loadJson5())
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @overload
+    def __init__(self, arg0: 'Identifier', arg1: 'ThrowingSupplier'):
+        """public dev.ultreon.quantum.resources.StaticResource(dev.ultreon.quantum.util.Identifier,dev.ultreon.libs.functions.v0.misc.ThrowingSupplier<java.io.InputStream, java.io.IOException>)"""
+        val = _StaticResource(arg0, arg1)
+        self.__wrapper = val
 
     @override
     @overload
@@ -1403,18 +1429,30 @@ class StaticResource():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
-    @overload
-    def readJson5(self) -> 'Json5Element':
-        """public de.marhali.json5.Json5Element dev.ultreon.quantum.resources.StaticResource.readJson5()"""
-        return 'Json5Element'.__wrap(super(StaticResource, self).readJson5())
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
-
     @override
     @overload
     def openReader(self) -> 'Reader':
         """public default java.io.Reader dev.ultreon.quantum.resources.Resource.openReader() throws java.io.IOException"""
-        return 'Reader'.__wrap(super(Resource, self).openReader())
+        return 'Reader'._wrap(super(Resource, self).openReader())
+
+    @override
+    @overload
+    def openStream(self) -> 'ByteArrayInputStream':
+        """public java.io.ByteArrayInputStream dev.ultreon.quantum.resources.StaticResource.openStream()"""
+        return 'ByteArrayInputStream'._wrap(super(StaticResource, self).openStream())
+
+    @overload
+    def readJson5(self) -> 'Json5Element':
+        """public de.marhali.json5.Json5Element dev.ultreon.quantum.resources.StaticResource.readJson5()"""
+        return 'Json5Element'._wrap(super(StaticResource, self).readJson5())
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())

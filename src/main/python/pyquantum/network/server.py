@@ -3,56 +3,61 @@ from overload import overload
 
 
  
-from pyquantum_helper import import_once as __import_once__
-import dev.ultreon.quantum.network.server.ServerPacketHandler as __ServerPacketHandler
-__ServerPacketHandler = __ServerPacketHandler
-import dev.ultreon.quantum.network.api.PacketDestination as __PacketDestination
-__PacketDestination = __PacketDestination
-import java.lang.Long as __long
+from pyquantum_helper import import_once as _import_once
+import dev.ultreon.quantum.network.server.ServerPacketHandler as _ServerPacketHandler
+_ServerPacketHandler = _ServerPacketHandler
 from pyquantum_helper import override
-import dev.ultreon.quantum.network.PacketHandler as __PacketHandler
-__PacketHandler = __PacketHandler
-import dev.ultreon.quantum.network.packets.Packet as __Packet
-__Packet = __Packet
+import dev.ultreon.quantum.network.api.PacketDestination as _PacketDestination
+_PacketDestination = _PacketDestination
 try:
     from pyquantum.network import packets
 except ImportError:
-    packets = __import_once__("pyquantum.network.packets")
+    packets = _import_once("pyquantum.network.packets")
 
+import dev.ultreon.quantum.network.packets.Packet as _Packet
+_Packet = _Packet
 from abc import abstractmethod, ABC
 try:
     from pyquantum.network import api
 except ImportError:
-    api = __import_once__("pyquantum.network.api")
+    api = _import_once("pyquantum.network.api")
 
+import dev.ultreon.quantum.network.PacketHandler as _PacketHandler
+_PacketHandler = _PacketHandler
 from builtins import bool
+import java.lang.Long as _long
  
-class ServerPacketHandler(ABC):
+class ServerPacketHandler():
     """dev.ultreon.quantum.network.server.ServerPacketHandler"""
  
     @staticmethod
-    def __wrap(java_value: __ServerPacketHandler) -> 'ServerPacketHandler':
+    def _wrap(java_value: _ServerPacketHandler) -> 'ServerPacketHandler':
         return ServerPacketHandler(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ServerPacketHandler):
+    def __init__(self, __dynamic__: _ServerPacketHandler):
         """
         Dynamic initializer for ServerPacketHandler.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ServerPacketHandler__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ServerPacketHandler__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -60,7 +65,13 @@ class ServerPacketHandler(ABC):
     @overload
     def handleC2SReply(self, arg0: int):
         """public default void dev.ultreon.quantum.network.server.ServerPacketHandler.handleC2SReply(long)"""
-        super(__ServerPacketHandler, self).handleC2SReply(__long.valueOf(arg0))
+        super(_ServerPacketHandler, self).handleC2SReply(_long.valueOf(arg0))
+
+    @override
+    @overload
+    def destination(self) -> 'api.PacketDestination':
+        """public default dev.ultreon.quantum.network.api.PacketDestination dev.ultreon.quantum.network.server.ServerPacketHandler.destination()"""
+        return 'api.PacketDestination'._wrap(super(ServerPacketHandler, self).destination())
 
     @abstractmethod
     def context(self, ):
@@ -70,17 +81,23 @@ class ServerPacketHandler(ABC):
     @overload
     def shouldHandlePacket(self, arg0: 'Packet') -> bool:
         """public default boolean dev.ultreon.quantum.network.PacketHandler.shouldHandlePacket(dev.ultreon.quantum.network.packets.Packet<?>)"""
-        return bool.__wrap(super(__network.PacketHandler, self).shouldHandlePacket(arg0))
+        return bool._wrap(super(_network.PacketHandler, self).shouldHandlePacket(arg0))
+
+    @override
+    @overload
+    def isAsync(self) -> bool:
+        """public default boolean dev.ultreon.quantum.network.PacketHandler.isAsync()"""
+        return bool._wrap(super(network.PacketHandler, self).isAsync())
+
+    @overload
+    def reply(self, arg0: int) -> 'packets.Packet':
+        """public default dev.ultreon.quantum.network.packets.Packet<?> dev.ultreon.quantum.network.server.ServerPacketHandler.reply(long)"""
+        return 'packets.Packet'._wrap(super(_ServerPacketHandler, self).reply(_long.valueOf(arg0)))
 
     @abstractmethod
     def onDisconnect(self, arg0: str):
         """public abstract void dev.ultreon.quantum.network.PacketHandler.onDisconnect(java.lang.String)"""
         pass
-
-    @overload
-    def reply(self, arg0: int) -> 'packets.Packet':
-        """public default dev.ultreon.quantum.network.packets.Packet<?> dev.ultreon.quantum.network.server.ServerPacketHandler.reply(long)"""
-        return 'packets.Packet'.__wrap(super(__ServerPacketHandler, self).reply(__long.valueOf(arg0)))
 
     @abstractmethod
     def isAcceptingPackets(self, ):
@@ -91,73 +108,66 @@ class ServerPacketHandler(ABC):
     def isDisconnected(self, ):
         """public abstract boolean dev.ultreon.quantum.network.PacketHandler.isDisconnected()"""
         pass
-
-    @override
-    @overload
-    def destination(self) -> 'api.PacketDestination':
-        """public default dev.ultreon.quantum.network.api.PacketDestination dev.ultreon.quantum.network.server.ServerPacketHandler.destination()"""
-        return 'api.PacketDestination'.__wrap(super(ServerPacketHandler, self).destination())
-
-    @override
-    @overload
-    def isAsync(self) -> bool:
-        """public default boolean dev.ultreon.quantum.network.PacketHandler.isAsync()"""
-        return bool.__wrap(super(network.PacketHandler, self).isAsync())
 
  
  
  
 # CLASS: dev.ultreon.quantum.network.server.ServerPacketHandler
-from pyquantum_helper import import_once as __import_once__
-import dev.ultreon.quantum.network.server.ServerPacketHandler as __ServerPacketHandler
-__ServerPacketHandler = __ServerPacketHandler
-import dev.ultreon.quantum.network.api.PacketDestination as __PacketDestination
-__PacketDestination = __PacketDestination
-import java.lang.Long as __long
+from pyquantum_helper import import_once as _import_once
+import dev.ultreon.quantum.network.server.ServerPacketHandler as _ServerPacketHandler
+_ServerPacketHandler = _ServerPacketHandler
 from pyquantum_helper import override
-import dev.ultreon.quantum.network.PacketHandler as __PacketHandler
-__PacketHandler = __PacketHandler
-import dev.ultreon.quantum.network.packets.Packet as __Packet
-__Packet = __Packet
+import dev.ultreon.quantum.network.api.PacketDestination as _PacketDestination
+_PacketDestination = _PacketDestination
 try:
     from pyquantum.network import packets
 except ImportError:
-    packets = __import_once__("pyquantum.network.packets")
+    packets = _import_once("pyquantum.network.packets")
 
+import dev.ultreon.quantum.network.packets.Packet as _Packet
+_Packet = _Packet
 from abc import abstractmethod, ABC
 try:
     from pyquantum.network import api
 except ImportError:
-    api = __import_once__("pyquantum.network.api")
+    api = _import_once("pyquantum.network.api")
 
+import dev.ultreon.quantum.network.PacketHandler as _PacketHandler
+_PacketHandler = _PacketHandler
 from builtins import bool
+import java.lang.Long as _long
  
-class ServerPacketHandler(ABC):
+class ServerPacketHandler():
     """dev.ultreon.quantum.network.server.ServerPacketHandler"""
  
     @staticmethod
-    def __wrap(java_value: __ServerPacketHandler) -> 'ServerPacketHandler':
+    def _wrap(java_value: _ServerPacketHandler) -> 'ServerPacketHandler':
         return ServerPacketHandler(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ServerPacketHandler):
+    def __init__(self, __dynamic__: _ServerPacketHandler):
         """
         Dynamic initializer for ServerPacketHandler.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ServerPacketHandler__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ServerPacketHandler__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -165,7 +175,13 @@ class ServerPacketHandler(ABC):
     @overload
     def handleC2SReply(self, arg0: int):
         """public default void dev.ultreon.quantum.network.server.ServerPacketHandler.handleC2SReply(long)"""
-        super(__ServerPacketHandler, self).handleC2SReply(__long.valueOf(arg0))
+        super(_ServerPacketHandler, self).handleC2SReply(_long.valueOf(arg0))
+
+    @override
+    @overload
+    def destination(self) -> 'api.PacketDestination':
+        """public default dev.ultreon.quantum.network.api.PacketDestination dev.ultreon.quantum.network.server.ServerPacketHandler.destination()"""
+        return 'api.PacketDestination'._wrap(super(ServerPacketHandler, self).destination())
 
     @abstractmethod
     def context(self, ):
@@ -175,17 +191,23 @@ class ServerPacketHandler(ABC):
     @overload
     def shouldHandlePacket(self, arg0: 'Packet') -> bool:
         """public default boolean dev.ultreon.quantum.network.PacketHandler.shouldHandlePacket(dev.ultreon.quantum.network.packets.Packet<?>)"""
-        return bool.__wrap(super(__network.PacketHandler, self).shouldHandlePacket(arg0))
+        return bool._wrap(super(_network.PacketHandler, self).shouldHandlePacket(arg0))
+
+    @override
+    @overload
+    def isAsync(self) -> bool:
+        """public default boolean dev.ultreon.quantum.network.PacketHandler.isAsync()"""
+        return bool._wrap(super(network.PacketHandler, self).isAsync())
+
+    @overload
+    def reply(self, arg0: int) -> 'packets.Packet':
+        """public default dev.ultreon.quantum.network.packets.Packet<?> dev.ultreon.quantum.network.server.ServerPacketHandler.reply(long)"""
+        return 'packets.Packet'._wrap(super(_ServerPacketHandler, self).reply(_long.valueOf(arg0)))
 
     @abstractmethod
     def onDisconnect(self, arg0: str):
         """public abstract void dev.ultreon.quantum.network.PacketHandler.onDisconnect(java.lang.String)"""
         pass
-
-    @overload
-    def reply(self, arg0: int) -> 'packets.Packet':
-        """public default dev.ultreon.quantum.network.packets.Packet<?> dev.ultreon.quantum.network.server.ServerPacketHandler.reply(long)"""
-        return 'packets.Packet'.__wrap(super(__ServerPacketHandler, self).reply(__long.valueOf(arg0)))
 
     @abstractmethod
     def isAcceptingPackets(self, ):
@@ -196,18 +218,6 @@ class ServerPacketHandler(ABC):
     def isDisconnected(self, ):
         """public abstract boolean dev.ultreon.quantum.network.PacketHandler.isDisconnected()"""
         pass
-
-    @override
-    @overload
-    def destination(self) -> 'api.PacketDestination':
-        """public default dev.ultreon.quantum.network.api.PacketDestination dev.ultreon.quantum.network.server.ServerPacketHandler.destination()"""
-        return 'api.PacketDestination'.__wrap(super(ServerPacketHandler, self).destination())
-
-    @override
-    @overload
-    def isAsync(self) -> bool:
-        """public default boolean dev.ultreon.quantum.network.PacketHandler.isAsync()"""
-        return bool.__wrap(super(network.PacketHandler, self).isAsync())
 
  
  
@@ -216,152 +226,151 @@ class ServerPacketHandler(ABC):
  
  
 # CLASS: dev.ultreon.quantum.network.server.InGameServerPacketHandler
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import server
 except ImportError:
-    server = __import_once__("pyquantum.server")
+    server = _import_once("pyquantum.server")
 
-import java.lang.Boolean as __boolean
+import java.lang.Double as _double
+import java.lang.Object as _Object
+_Object = _Object
 from builtins import type
 try:
     from pyquantum.network.api import packet
 except ImportError:
-    packet = __import_once__("pyquantum.network.api.packet")
+    packet = _import_once("pyquantum.network.api.packet")
 
-import dev.ultreon.quantum.network.packets.Packet as __Packet
-__Packet = __Packet
-import dev.ultreon.quantum.server.QuantumServer as __QuantumServer
-__QuantumServer = __QuantumServer
 try:
     from pyquantum.network import packets
 except ImportError:
-    packets = __import_once__("pyquantum.network.packets")
+    packets = _import_once("pyquantum.network.packets")
 
-import dev.ultreon.quantum.network.NetworkChannel as __NetworkChannel
-__NetworkChannel = __NetworkChannel
-import dev.ultreon.quantum.network.server.ServerPacketHandler as __ServerPacketHandler
-__ServerPacketHandler = __ServerPacketHandler
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __string
-import dev.ultreon.quantum.network.PacketHandler as __PacketHandler
-__PacketHandler = __PacketHandler
-import java.lang.Double as __double
+import dev.ultreon.quantum.network.packets.Packet as _Packet
+_Packet = _Packet
+import dev.ultreon.quantum.network.server.InGameServerPacketHandler as _InGameServerPacketHandler
+_InGameServerPacketHandler = _InGameServerPacketHandler
+import java.lang.String as _string
+import dev.ultreon.quantum.network.server.ServerPacketHandler as _ServerPacketHandler
+_ServerPacketHandler = _ServerPacketHandler
+import java.lang.Boolean as _boolean
+import dev.ultreon.quantum.network.PacketContext as _PacketContext
+_PacketContext = _PacketContext
 from builtins import bool
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
 from builtins import str
+import dev.ultreon.quantum.network.NetworkChannel as _NetworkChannel
+_NetworkChannel = _NetworkChannel
 from pyquantum_helper import override
-import java.lang.Object as __object
-import dev.ultreon.quantum.network.server.InGameServerPacketHandler as __InGameServerPacketHandler
-__InGameServerPacketHandler = __InGameServerPacketHandler
+import java.lang.Object as _object
+import java.lang.String as _String
+_String = _String
 try:
     from pyquantum.network import api
 except ImportError:
-    api = __import_once__("pyquantum.network.api")
+    api = _import_once("pyquantum.network.api")
 
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import dev.ultreon.quantum.network.api.PacketDestination as __PacketDestination
-__PacketDestination = __PacketDestination
-import java.lang.Long as __long
 try:
     from pyquantum import network
 except ImportError:
-    network = __import_once__("pyquantum.network")
+    network = _import_once("pyquantum.network")
 
+import java.lang.Integer as _int
 try:
     from pyquantum.block import state
 except ImportError:
-    state = __import_once__("pyquantum.block.state")
+    state = _import_once("pyquantum.block.state")
 
-import java.lang.String as __String
-__String = __String
 try:
     from pyquantum.server import player
 except ImportError:
-    player = __import_once__("pyquantum.server.player")
+    player = _import_once("pyquantum.server.player")
 
-import java.lang.Object as __Object
-__Object = __Object
-import dev.ultreon.quantum.network.PacketContext as __PacketContext
-__PacketContext = __PacketContext
+import dev.ultreon.quantum.network.api.PacketDestination as _PacketDestination
+_PacketDestination = _PacketDestination
 try:
     from pyquantum.network.packets import c2s
 except ImportError:
-    c2s = __import_once__("pyquantum.network.packets.c2s")
+    c2s = _import_once("pyquantum.network.packets.c2s")
 
-import java.lang.Integer as __int
+import dev.ultreon.quantum.server.QuantumServer as _QuantumServer
+_QuantumServer = _QuantumServer
+import dev.ultreon.quantum.network.PacketHandler as _PacketHandler
+_PacketHandler = _PacketHandler
+import java.lang.Long as _long
 try:
     from pyquantum.network import system
 except ImportError:
-    system = __import_once__("pyquantum.network.system")
+    system = _import_once("pyquantum.network.system")
 
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class InGameServerPacketHandler():
     """dev.ultreon.quantum.network.server.InGameServerPacketHandler"""
  
     @staticmethod
-    def __wrap(java_value: __InGameServerPacketHandler) -> 'InGameServerPacketHandler':
+    def _wrap(java_value: _InGameServerPacketHandler) -> 'InGameServerPacketHandler':
         return InGameServerPacketHandler(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __InGameServerPacketHandler):
+    def __init__(self, __dynamic__: _InGameServerPacketHandler):
         """
         Dynamic initializer for InGameServerPacketHandler.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_InGameServerPacketHandler__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_InGameServerPacketHandler__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def onBlockBreaking(self, arg0: 'BlockPos', arg1: 'BlockStatus'):
+        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onBlockBreaking(dev.ultreon.quantum.world.BlockPos,dev.ultreon.quantum.network.packets.c2s.C2SBlockBreakingPacket$BlockStatus)"""
+        super(_InGameServerPacketHandler, self).onBlockBreaking(arg0, arg1)
+
+    @overload
+    def onPlaceBlock(self, arg0: int, arg1: int, arg2: int, arg3: 'BlockProperties'):
+        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onPlaceBlock(int,int,int,dev.ultreon.quantum.block.state.BlockProperties)"""
+        super(_InGameServerPacketHandler, self).onPlaceBlock(_int.valueOf(arg0), _int.valueOf(arg1), _int.valueOf(arg2), arg3)
 
     @override
     @overload
-    def handleC2SReply(self, arg0: int):
-        """public default void dev.ultreon.quantum.network.server.ServerPacketHandler.handleC2SReply(long)"""
-        super(__ServerPacketHandler, self).handleC2SReply(__long.valueOf(arg0))
-
-    @overload
-    def onAbilities(self, arg0: 'AbilitiesPacket'):
-        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onAbilities(dev.ultreon.quantum.network.packets.AbilitiesPacket)"""
-        super(__InGameServerPacketHandler, self).onAbilities(arg0)
+    def onDisconnect(self, arg0: str):
+        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onDisconnect(java.lang.String)"""
+        super(_InGameServerPacketHandler, self).onDisconnect(arg0)
 
     @overload
     def onKeepAlive(self):
         """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onKeepAlive()"""
         super(InGameServerPacketHandler, self).onKeepAlive()
-
-    @overload
-    def onPlaceBlock(self, arg0: int, arg1: int, arg2: int, arg3: 'BlockProperties'):
-        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onPlaceBlock(int,int,int,dev.ultreon.quantum.block.state.BlockProperties)"""
-        super(__InGameServerPacketHandler, self).onPlaceBlock(__int.valueOf(arg0), __int.valueOf(arg1), __int.valueOf(arg2), arg3)
 
     @override
     @overload
@@ -369,36 +378,42 @@ class InGameServerPacketHandler():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @overload
+    def getServer(self) -> 'server.QuantumServer':
+        """public dev.ultreon.quantum.server.QuantumServer dev.ultreon.quantum.network.server.InGameServerPacketHandler.getServer()"""
+        return 'server.QuantumServer'._wrap(super(InGameServerPacketHandler, self).getServer())
+
+    @overload
+    def onAttack(self, arg0: int):
+        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onAttack(int)"""
+        super(_InGameServerPacketHandler, self).onAttack(_int.valueOf(arg0))
+
+    @overload
+    def handleOpenMenu(self, arg0: 'Identifier', arg1: 'BlockPos'):
+        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.handleOpenMenu(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.world.BlockPos)"""
+        super(_InGameServerPacketHandler, self).handleOpenMenu(arg0, arg1)
+
     @override
     @overload
-    def isDisconnected(self) -> bool:
-        """public boolean dev.ultreon.quantum.network.server.InGameServerPacketHandler.isDisconnected()"""
-        return bool.__wrap(super(InGameServerPacketHandler, self).isDisconnected())
-
-    @overload
-    def reply(self, arg0: int) -> 'packets.Packet':
-        """public default dev.ultreon.quantum.network.packets.Packet<?> dev.ultreon.quantum.network.server.ServerPacketHandler.reply(long)"""
-        return 'packets.Packet'.__wrap(super(__ServerPacketHandler, self).reply(__long.valueOf(arg0)))
-
-    @overload
-    def onTakeItem(self, arg0: int, arg1: bool):
-        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onTakeItem(int,boolean)"""
-        super(__InGameServerPacketHandler, self).onTakeItem(__int.valueOf(arg0), __boolean.valueOf(arg1))
-
-    @overload
-    def onModPacket(self, arg0: 'NetworkChannel', arg1: 'ModPacket'):
-        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onModPacket(dev.ultreon.quantum.network.NetworkChannel,dev.ultreon.quantum.network.api.packet.ModPacket<?>)"""
-        super(__InGameServerPacketHandler, self).onModPacket(arg0, arg1)
+    def handleC2SReply(self, arg0: int):
+        """public default void dev.ultreon.quantum.network.server.ServerPacketHandler.handleC2SReply(long)"""
+        super(_ServerPacketHandler, self).handleC2SReply(_long.valueOf(arg0))
 
     @overload
     def onRespawn(self):
         """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onRespawn()"""
         super(InGameServerPacketHandler, self).onRespawn()
 
+    @override
     @overload
-    def shouldHandlePacket(self, arg0: 'Packet') -> bool:
-        """public boolean dev.ultreon.quantum.network.server.InGameServerPacketHandler.shouldHandlePacket(dev.ultreon.quantum.network.packets.Packet<?>)"""
-        return bool.__wrap(super(__InGameServerPacketHandler, self).shouldHandlePacket(arg0))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @overload
+    def getChannel(self, arg0: 'Identifier') -> 'network.NetworkChannel':
+        """public dev.ultreon.quantum.network.NetworkChannel dev.ultreon.quantum.network.server.InGameServerPacketHandler.getChannel(dev.ultreon.quantum.util.Identifier)"""
+        return 'network.NetworkChannel'._wrap(super(_InGameServerPacketHandler, self).getChannel(arg0))
 
     @override
     @overload
@@ -406,23 +421,30 @@ class InGameServerPacketHandler():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @staticmethod
     @overload
-    def registerChannel(arg0: 'Identifier') -> 'network.NetworkChannel':
-        """public static dev.ultreon.quantum.network.NetworkChannel dev.ultreon.quantum.network.server.InGameServerPacketHandler.registerChannel(dev.ultreon.quantum.util.Identifier)"""
-        return network.NetworkChannel.__wrap(__InGameServerPacketHandler.registerChannel(arg0))
+    def onItemUse(self, arg0: 'BlockHitResult'):
+        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onItemUse(dev.ultreon.quantum.util.BlockHitResult)"""
+        super(_InGameServerPacketHandler, self).onItemUse(arg0)
 
-    @override
     @overload
-    def context(self) -> 'network.PacketContext':
-        """public dev.ultreon.quantum.network.PacketContext dev.ultreon.quantum.network.server.InGameServerPacketHandler.context()"""
-        return 'network.PacketContext'.__wrap(super(InGameServerPacketHandler, self).context())
+    def onPing(self, arg0: int):
+        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onPing(long)"""
+        super(_InGameServerPacketHandler, self).onPing(_long.valueOf(arg0))
 
-    @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def reply(self, arg0: int) -> 'packets.Packet':
+        """public default dev.ultreon.quantum.network.packets.Packet<?> dev.ultreon.quantum.network.server.ServerPacketHandler.reply(long)"""
+        return 'packets.Packet'._wrap(super(_ServerPacketHandler, self).reply(_long.valueOf(arg0)))
+
+    @overload
+    def onHotbarIndex(self, arg0: int):
+        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onHotbarIndex(int)"""
+        super(_InGameServerPacketHandler, self).onHotbarIndex(_int.valueOf(arg0))
+
+    @overload
+    def onDisconnected(self, arg0: str):
+        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onDisconnected(java.lang.String)"""
+        super(_InGameServerPacketHandler, self).onDisconnected(arg0)
 
     @overload
     def onCloseContainerMenu(self):
@@ -430,122 +452,114 @@ class InGameServerPacketHandler():
         super(InGameServerPacketHandler, self).onCloseContainerMenu()
 
     @overload
-    def getServer(self) -> 'server.QuantumServer':
-        """public dev.ultreon.quantum.server.QuantumServer dev.ultreon.quantum.network.server.InGameServerPacketHandler.getServer()"""
-        return 'server.QuantumServer'.__wrap(super(InGameServerPacketHandler, self).getServer())
+    def __init__(self, arg0: 'QuantumServer', arg1: 'ServerPlayer', arg2: 'IConnection'):
+        """public dev.ultreon.quantum.network.server.InGameServerPacketHandler(dev.ultreon.quantum.server.QuantumServer,dev.ultreon.quantum.server.player.ServerPlayer,dev.ultreon.quantum.network.system.IConnection)"""
+        val = _InGameServerPacketHandler(arg0, arg1, arg2)
+        self.__wrapper = val
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @overload
-    def onAttack(self, arg0: int):
-        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onAttack(int)"""
-        super(__InGameServerPacketHandler, self).onAttack(__int.valueOf(arg0))
-
-    @overload
-    def onItemUse(self, arg0: 'BlockHitResult'):
-        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onItemUse(dev.ultreon.quantum.util.BlockHitResult)"""
-        super(__InGameServerPacketHandler, self).onItemUse(arg0)
-
-    @overload
-    def __init__(self, arg0: 'QuantumServer', arg1: 'ServerPlayer', arg2: 'IConnection'):
-        """public dev.ultreon.quantum.network.server.InGameServerPacketHandler(dev.ultreon.quantum.server.QuantumServer,dev.ultreon.quantum.server.player.ServerPlayer,dev.ultreon.quantum.network.system.IConnection)"""
-        val = __InGameServerPacketHandler(arg0, arg1, arg2)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def onAbilities(self, arg0: 'AbilitiesPacket'):
+        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onAbilities(dev.ultreon.quantum.network.packets.AbilitiesPacket)"""
+        super(_InGameServerPacketHandler, self).onAbilities(arg0)
 
     @override
     @overload
-    def onDisconnect(self, arg0: str):
-        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onDisconnect(java.lang.String)"""
-        super(__InGameServerPacketHandler, self).onDisconnect(arg0)
+    def isAcceptingPackets(self) -> bool:
+        """public boolean dev.ultreon.quantum.network.server.InGameServerPacketHandler.isAcceptingPackets()"""
+        return bool._wrap(super(InGameServerPacketHandler, self).isAcceptingPackets())
+
+    @overload
+    def onPlayerMove(self, arg0: 'ServerPlayer', arg1: float, arg2: float, arg3: float):
+        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onPlayerMove(dev.ultreon.quantum.server.player.ServerPlayer,double,double,double)"""
+        super(_InGameServerPacketHandler, self).onPlayerMove(arg0, _double.valueOf(arg1), _double.valueOf(arg2), _double.valueOf(arg3))
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def isAsync(self) -> bool:
+        """public default boolean dev.ultreon.quantum.network.PacketHandler.isAsync()"""
+        return bool._wrap(super(network.PacketHandler, self).isAsync())
 
     @overload
     def onOpenInventory(self):
         """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onOpenInventory()"""
         super(InGameServerPacketHandler, self).onOpenInventory()
 
+    @override
     @overload
-    def onChunkStatus(self, arg0: 'ServerPlayer', arg1: 'ChunkPos', arg2: 'Status'):
-        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onChunkStatus(dev.ultreon.quantum.server.player.ServerPlayer,dev.ultreon.quantum.world.ChunkPos,dev.ultreon.quantum.world.Chunk$Status)"""
-        super(__InGameServerPacketHandler, self).onChunkStatus(arg0, arg1, arg2)
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
+    @override
     @overload
-    def onHotbarIndex(self, arg0: int):
-        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onHotbarIndex(int)"""
-        super(__InGameServerPacketHandler, self).onHotbarIndex(__int.valueOf(arg0))
+    def isDisconnected(self) -> bool:
+        """public boolean dev.ultreon.quantum.network.server.InGameServerPacketHandler.isDisconnected()"""
+        return bool._wrap(super(InGameServerPacketHandler, self).isDisconnected())
 
+    @staticmethod
     @overload
-    def onCraftRecipe(self, arg0: int, arg1: 'Identifier'):
-        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onCraftRecipe(int,dev.ultreon.quantum.util.Identifier)"""
-        super(__InGameServerPacketHandler, self).onCraftRecipe(__int.valueOf(arg0), arg1)
-
-    @overload
-    def onBlockBreaking(self, arg0: 'BlockPos', arg1: 'BlockStatus'):
-        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onBlockBreaking(dev.ultreon.quantum.world.BlockPos,dev.ultreon.quantum.network.packets.c2s.C2SBlockBreakingPacket$BlockStatus)"""
-        super(__InGameServerPacketHandler, self).onBlockBreaking(arg0, arg1)
+    def registerChannel(arg0: 'Identifier') -> 'network.NetworkChannel':
+        """public static dev.ultreon.quantum.network.NetworkChannel dev.ultreon.quantum.network.server.InGameServerPacketHandler.registerChannel(dev.ultreon.quantum.util.Identifier)"""
+        return network.NetworkChannel._wrap(_InGameServerPacketHandler.registerChannel(arg0))
 
     @override
     @overload
     def destination(self) -> 'api.PacketDestination':
         """public dev.ultreon.quantum.network.api.PacketDestination dev.ultreon.quantum.network.server.InGameServerPacketHandler.destination()"""
-        return 'api.PacketDestination'.__wrap(super(InGameServerPacketHandler, self).destination())
+        return 'api.PacketDestination'._wrap(super(InGameServerPacketHandler, self).destination())
+
+    @overload
+    def onTakeItem(self, arg0: int, arg1: bool):
+        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onTakeItem(int,boolean)"""
+        super(_InGameServerPacketHandler, self).onTakeItem(_int.valueOf(arg0), _boolean.valueOf(arg1))
+
+    @overload
+    def onCraftRecipe(self, arg0: int, arg1: 'Identifier'):
+        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onCraftRecipe(int,dev.ultreon.quantum.util.Identifier)"""
+        super(_InGameServerPacketHandler, self).onCraftRecipe(_int.valueOf(arg0), arg1)
+
+    @overload
+    def onModPacket(self, arg0: 'NetworkChannel', arg1: 'ModPacket'):
+        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onModPacket(dev.ultreon.quantum.network.NetworkChannel,dev.ultreon.quantum.network.api.packet.ModPacket<?>)"""
+        super(_InGameServerPacketHandler, self).onModPacket(arg0, arg1)
 
     @override
     @overload
-    def isAsync(self) -> bool:
-        """public default boolean dev.ultreon.quantum.network.PacketHandler.isAsync()"""
-        return bool.__wrap(super(network.PacketHandler, self).isAsync())
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @overload
-    def onPing(self, arg0: int):
-        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onPing(long)"""
-        super(__InGameServerPacketHandler, self).onPing(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def getChannel(self, arg0: 'Identifier') -> 'network.NetworkChannel':
-        """public dev.ultreon.quantum.network.NetworkChannel dev.ultreon.quantum.network.server.InGameServerPacketHandler.getChannel(dev.ultreon.quantum.util.Identifier)"""
-        return 'network.NetworkChannel'.__wrap(super(__InGameServerPacketHandler, self).getChannel(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @overload
-    def handleOpenMenu(self, arg0: 'Identifier', arg1: 'BlockPos'):
-        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.handleOpenMenu(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.world.BlockPos)"""
-        super(__InGameServerPacketHandler, self).handleOpenMenu(arg0, arg1)
+    def shouldHandlePacket(self, arg0: 'Packet') -> bool:
+        """public boolean dev.ultreon.quantum.network.server.InGameServerPacketHandler.shouldHandlePacket(dev.ultreon.quantum.network.packets.Packet<?>)"""
+        return bool._wrap(super(_InGameServerPacketHandler, self).shouldHandlePacket(arg0))
 
     @overload
     def onDropItem(self):
         """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onDropItem()"""
         super(InGameServerPacketHandler, self).onDropItem()
 
+    @override
     @overload
-    def onDisconnected(self, arg0: str):
-        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onDisconnected(java.lang.String)"""
-        super(__InGameServerPacketHandler, self).onDisconnected(arg0)
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @overload
-    def onPlayerMove(self, arg0: 'ServerPlayer', arg1: float, arg2: float, arg3: float):
-        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onPlayerMove(dev.ultreon.quantum.server.player.ServerPlayer,double,double,double)"""
-        super(__InGameServerPacketHandler, self).onPlayerMove(arg0, __double.valueOf(arg1), __double.valueOf(arg2), __double.valueOf(arg3))
+    def onChunkStatus(self, arg0: 'ServerPlayer', arg1: 'ChunkPos', arg2: 'Status'):
+        """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onChunkStatus(dev.ultreon.quantum.server.player.ServerPlayer,dev.ultreon.quantum.world.ChunkPos,dev.ultreon.quantum.world.Chunk$Status)"""
+        super(_InGameServerPacketHandler, self).onChunkStatus(arg0, arg1, arg2)
+
+    @override
+    @overload
+    def context(self) -> 'network.PacketContext':
+        """public dev.ultreon.quantum.network.PacketContext dev.ultreon.quantum.network.server.InGameServerPacketHandler.context()"""
+        return 'network.PacketContext'._wrap(super(InGameServerPacketHandler, self).context())
 
     @override
     @overload
@@ -556,121 +570,126 @@ class InGameServerPacketHandler():
     @overload
     def onBlockBroken(self, arg0: 'BlockPos'):
         """public void dev.ultreon.quantum.network.server.InGameServerPacketHandler.onBlockBroken(dev.ultreon.quantum.world.BlockPos)"""
-        super(__InGameServerPacketHandler, self).onBlockBroken(arg0)
+        super(_InGameServerPacketHandler, self).onBlockBroken(arg0)
 
     @override
     @overload
-    def isAcceptingPackets(self) -> bool:
-        """public boolean dev.ultreon.quantum.network.server.InGameServerPacketHandler.isAcceptingPackets()"""
-        return bool.__wrap(super(InGameServerPacketHandler, self).isAcceptingPackets()) 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.network.server.LoginServerPacketHandler
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import server
 except ImportError:
-    server = __import_once__("pyquantum.server")
+    server = _import_once("pyquantum.server")
 
+import java.lang.Object as _Object
+_Object = _Object
 from builtins import type
 try:
     from pyquantum.network.api import packet
 except ImportError:
-    packet = __import_once__("pyquantum.network.api.packet")
+    packet = _import_once("pyquantum.network.api.packet")
 
-import dev.ultreon.quantum.network.packets.Packet as __Packet
-__Packet = __Packet
 try:
     from pyquantum.network import packets
 except ImportError:
-    packets = __import_once__("pyquantum.network.packets")
+    packets = _import_once("pyquantum.network.packets")
 
-import dev.ultreon.quantum.network.NetworkChannel as __NetworkChannel
-__NetworkChannel = __NetworkChannel
-import dev.ultreon.quantum.network.server.ServerPacketHandler as __ServerPacketHandler
-__ServerPacketHandler = __ServerPacketHandler
-import java.lang.Class as __Class
-__Class = __Class
-import dev.ultreon.quantum.network.server.LoginServerPacketHandler as __LoginServerPacketHandler
-__LoginServerPacketHandler = __LoginServerPacketHandler
-import java.lang.String as __string
+import dev.ultreon.quantum.network.packets.Packet as _Packet
+_Packet = _Packet
+import dev.ultreon.quantum.network.server.LoginServerPacketHandler as _LoginServerPacketHandler
+_LoginServerPacketHandler = _LoginServerPacketHandler
+import java.lang.String as _string
+import dev.ultreon.quantum.network.server.ServerPacketHandler as _ServerPacketHandler
+_ServerPacketHandler = _ServerPacketHandler
+import dev.ultreon.quantum.network.PacketContext as _PacketContext
+_PacketContext = _PacketContext
 from builtins import bool
 from builtins import str
+import dev.ultreon.quantum.network.NetworkChannel as _NetworkChannel
+_NetworkChannel = _NetworkChannel
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _object
+import java.lang.String as _String
+_String = _String
 try:
     from pyquantum.network import api
 except ImportError:
-    api = __import_once__("pyquantum.network.api")
+    api = _import_once("pyquantum.network.api")
 
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import java.lang.Long as __long
-import dev.ultreon.quantum.network.api.PacketDestination as __PacketDestination
-__PacketDestination = __PacketDestination
 try:
     from pyquantum import network
 except ImportError:
-    network = __import_once__("pyquantum.network")
+    network = _import_once("pyquantum.network")
 
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import dev.ultreon.quantum.network.PacketContext as __PacketContext
-__PacketContext = __PacketContext
-import java.lang.Integer as __int
+import java.lang.Integer as _int
+import dev.ultreon.quantum.network.api.PacketDestination as _PacketDestination
+_PacketDestination = _PacketDestination
+import java.lang.Long as _long
 try:
     from pyquantum.network import system
 except ImportError:
-    system = __import_once__("pyquantum.network.system")
+    system = _import_once("pyquantum.network.system")
 
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class LoginServerPacketHandler():
     """dev.ultreon.quantum.network.server.LoginServerPacketHandler"""
  
     @staticmethod
-    def __wrap(java_value: __LoginServerPacketHandler) -> 'LoginServerPacketHandler':
+    def _wrap(java_value: _LoginServerPacketHandler) -> 'LoginServerPacketHandler':
         return LoginServerPacketHandler(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __LoginServerPacketHandler):
+    def __init__(self, __dynamic__: _LoginServerPacketHandler):
         """
         Dynamic initializer for LoginServerPacketHandler.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_LoginServerPacketHandler__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_LoginServerPacketHandler__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
+    @staticmethod
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def registerChannel(arg0: 'Identifier') -> 'network.NetworkChannel':
+        """public static dev.ultreon.quantum.network.NetworkChannel dev.ultreon.quantum.network.server.LoginServerPacketHandler.registerChannel(dev.ultreon.quantum.util.Identifier)"""
+        return network.NetworkChannel._wrap(_LoginServerPacketHandler.registerChannel(arg0))
 
     @override
     @overload
-    def handleC2SReply(self, arg0: int):
-        """public default void dev.ultreon.quantum.network.server.ServerPacketHandler.handleC2SReply(long)"""
-        super(__ServerPacketHandler, self).handleC2SReply(__long.valueOf(arg0))
+    def isAcceptingPackets(self) -> bool:
+        """public boolean dev.ultreon.quantum.network.server.LoginServerPacketHandler.isAcceptingPackets()"""
+        return bool._wrap(super(LoginServerPacketHandler, self).isAcceptingPackets())
 
     @overload
     def onRespawn(self):
@@ -679,27 +698,27 @@ class LoginServerPacketHandler():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def onPlayerLogin(self, arg0: str):
-        """public void dev.ultreon.quantum.network.server.LoginServerPacketHandler.onPlayerLogin(java.lang.String)"""
-        super(__LoginServerPacketHandler, self).onPlayerLogin(arg0)
-
-    @override
-    @overload
     def onDisconnect(self, arg0: str):
         """public void dev.ultreon.quantum.network.server.LoginServerPacketHandler.onDisconnect(java.lang.String)"""
-        super(__LoginServerPacketHandler, self).onDisconnect(arg0)
+        super(_LoginServerPacketHandler, self).onDisconnect(arg0)
 
     @overload
     def __init__(self, arg0: 'QuantumServer', arg1: 'IConnection'):
         """public dev.ultreon.quantum.network.server.LoginServerPacketHandler(dev.ultreon.quantum.server.QuantumServer,dev.ultreon.quantum.network.system.IConnection<dev.ultreon.quantum.network.server.ServerPacketHandler, dev.ultreon.quantum.network.client.ClientPacketHandler>)"""
-        val = __LoginServerPacketHandler(arg0, arg1)
-        self.__dict__ = val.__dict__
+        val = _LoginServerPacketHandler(arg0, arg1)
         self.__wrapper = val
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @override
+    @overload
+    def context(self) -> 'network.PacketContext':
+        """public dev.ultreon.quantum.network.PacketContext dev.ultreon.quantum.network.server.LoginServerPacketHandler.context()"""
+        return 'network.PacketContext'._wrap(super(LoginServerPacketHandler, self).context())
 
     @override
     @overload
@@ -708,60 +727,44 @@ class LoginServerPacketHandler():
         super(object, self).notifyAll()
 
     @overload
-    def reply(self, arg0: int) -> 'packets.Packet':
-        """public default dev.ultreon.quantum.network.packets.Packet<?> dev.ultreon.quantum.network.server.ServerPacketHandler.reply(long)"""
-        return 'packets.Packet'.__wrap(super(__ServerPacketHandler, self).reply(__long.valueOf(arg0)))
-
-    @override
-    @overload
-    def context(self) -> 'network.PacketContext':
-        """public dev.ultreon.quantum.network.PacketContext dev.ultreon.quantum.network.server.LoginServerPacketHandler.context()"""
-        return 'network.PacketContext'.__wrap(super(LoginServerPacketHandler, self).context())
-
-    @override
-    @overload
-    def isAsync(self) -> bool:
-        """public boolean dev.ultreon.quantum.network.server.LoginServerPacketHandler.isAsync()"""
-        return bool.__wrap(super(LoginServerPacketHandler, self).isAsync())
-
-    @override
-    @overload
-    def isAcceptingPackets(self) -> bool:
-        """public boolean dev.ultreon.quantum.network.server.LoginServerPacketHandler.isAcceptingPackets()"""
-        return bool.__wrap(super(LoginServerPacketHandler, self).isAcceptingPackets())
-
-    @overload
     def shouldHandlePacket(self, arg0: 'Packet') -> bool:
         """public boolean dev.ultreon.quantum.network.server.LoginServerPacketHandler.shouldHandlePacket(dev.ultreon.quantum.network.packets.Packet<?>)"""
-        return bool.__wrap(super(__LoginServerPacketHandler, self).shouldHandlePacket(arg0))
+        return bool._wrap(super(_LoginServerPacketHandler, self).shouldHandlePacket(arg0))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @override
+    @overload
+    def handleC2SReply(self, arg0: int):
+        """public default void dev.ultreon.quantum.network.server.ServerPacketHandler.handleC2SReply(long)"""
+        super(_ServerPacketHandler, self).handleC2SReply(_long.valueOf(arg0))
+
+    @overload
+    def getChannel(self, arg0: 'Identifier') -> 'network.NetworkChannel':
+        """public dev.ultreon.quantum.network.NetworkChannel dev.ultreon.quantum.network.server.LoginServerPacketHandler.getChannel(dev.ultreon.quantum.util.Identifier)"""
+        return 'network.NetworkChannel'._wrap(super(_LoginServerPacketHandler, self).getChannel(arg0))
+
+    @override
+    @overload
+    def isDisconnected(self) -> bool:
+        """public boolean dev.ultreon.quantum.network.server.LoginServerPacketHandler.isDisconnected()"""
+        return bool._wrap(super(LoginServerPacketHandler, self).isDisconnected())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @staticmethod
-    @overload
-    def registerChannel(arg0: 'Identifier') -> 'network.NetworkChannel':
-        """public static dev.ultreon.quantum.network.NetworkChannel dev.ultreon.quantum.network.server.LoginServerPacketHandler.registerChannel(dev.ultreon.quantum.util.Identifier)"""
-        return network.NetworkChannel.__wrap(__LoginServerPacketHandler.registerChannel(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @overload
-    def getChannel(self, arg0: 'Identifier') -> 'network.NetworkChannel':
-        """public dev.ultreon.quantum.network.NetworkChannel dev.ultreon.quantum.network.server.LoginServerPacketHandler.getChannel(dev.ultreon.quantum.util.Identifier)"""
-        return 'network.NetworkChannel'.__wrap(super(__LoginServerPacketHandler, self).getChannel(arg0))
-
-    @overload
-    def onModPacket(self, arg0: 'NetworkChannel', arg1: 'ModPacket'):
-        """public void dev.ultreon.quantum.network.server.LoginServerPacketHandler.onModPacket(dev.ultreon.quantum.network.NetworkChannel,dev.ultreon.quantum.network.api.packet.ModPacket<?>)"""
-        super(__LoginServerPacketHandler, self).onModPacket(arg0, arg1)
+    def destination(self) -> 'api.PacketDestination':
+        """public default dev.ultreon.quantum.network.api.PacketDestination dev.ultreon.quantum.network.server.ServerPacketHandler.destination()"""
+        return 'api.PacketDestination'._wrap(super(ServerPacketHandler, self).destination())
 
     @override
     @overload
@@ -771,9 +774,19 @@ class LoginServerPacketHandler():
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @overload
+    def reply(self, arg0: int) -> 'packets.Packet':
+        """public default dev.ultreon.quantum.network.packets.Packet<?> dev.ultreon.quantum.network.server.ServerPacketHandler.reply(long)"""
+        return 'packets.Packet'._wrap(super(_ServerPacketHandler, self).reply(_long.valueOf(arg0)))
+
+    @overload
+    def onModPacket(self, arg0: 'NetworkChannel', arg1: 'ModPacket'):
+        """public void dev.ultreon.quantum.network.server.LoginServerPacketHandler.onModPacket(dev.ultreon.quantum.network.NetworkChannel,dev.ultreon.quantum.network.api.packet.ModPacket<?>)"""
+        super(_LoginServerPacketHandler, self).onModPacket(arg0, arg1)
 
     @override
     @overload
@@ -783,17 +796,22 @@ class LoginServerPacketHandler():
 
     @override
     @overload
-    def destination(self) -> 'api.PacketDestination':
-        """public default dev.ultreon.quantum.network.api.PacketDestination dev.ultreon.quantum.network.server.ServerPacketHandler.destination()"""
-        return 'api.PacketDestination'.__wrap(super(ServerPacketHandler, self).destination())
+    def isAsync(self) -> bool:
+        """public boolean dev.ultreon.quantum.network.server.LoginServerPacketHandler.isAsync()"""
+        return bool._wrap(super(LoginServerPacketHandler, self).isAsync())
 
-    @override
     @overload
-    def isDisconnected(self) -> bool:
-        """public boolean dev.ultreon.quantum.network.server.LoginServerPacketHandler.isDisconnected()"""
-        return bool.__wrap(super(LoginServerPacketHandler, self).isDisconnected())
+    def onPlayerLogin(self, arg0: str):
+        """public void dev.ultreon.quantum.network.server.LoginServerPacketHandler.onPlayerLogin(java.lang.String)"""
+        super(_LoginServerPacketHandler, self).onPlayerLogin(arg0)
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())

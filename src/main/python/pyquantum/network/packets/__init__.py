@@ -3,78 +3,93 @@ from overload import overload
 
 
  
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
 try:
     from pyquantum.network import client
 except ImportError:
-    client = __import_once__("pyquantum.network.client")
+    client = _import_once("pyquantum.network.client")
 
-import java.util.List as __List
-__List = __List
-import java.lang.Long as __long
+import dev.ultreon.quantum.network.packets.InitialPermissionsPacket as _InitialPermissionsPacket
+_InitialPermissionsPacket = _InitialPermissionsPacket
+import java.lang.String as _String
+_String = _String
+import java.util.List as _List
+_List = _List
 try:
     from pyquantum import network
 except ImportError:
-    network = __import_once__("pyquantum.network")
+    network = _import_once("pyquantum.network")
 
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import dev.ultreon.quantum.network.packets.InitialPermissionsPacket as __InitialPermissionsPacket
-__InitialPermissionsPacket = __InitialPermissionsPacket
-import java.lang.Integer as __int
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 import java.util.List as List
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class InitialPermissionsPacket():
     """dev.ultreon.quantum.network.packets.InitialPermissionsPacket"""
  
     @staticmethod
-    def __wrap(java_value: __InitialPermissionsPacket) -> 'InitialPermissionsPacket':
+    def _wrap(java_value: _InitialPermissionsPacket) -> 'InitialPermissionsPacket':
         return InitialPermissionsPacket(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __InitialPermissionsPacket):
+    def __init__(self, __dynamic__: _InitialPermissionsPacket):
         """
         Dynamic initializer for InitialPermissionsPacket.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_InitialPermissionsPacket__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_InitialPermissionsPacket__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @overload
+    def getPermissions(self) -> 'List':
+        """public java.util.List<dev.ultreon.quantum.api.commands.perms.Permission> dev.ultreon.quantum.network.packets.InitialPermissionsPacket.getPermissions()"""
+        return 'List'._wrap(super(InitialPermissionsPacket, self).getPermissions())
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
-    @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def __init__(self, arg0: 'PacketIO'):
+        """public dev.ultreon.quantum.network.packets.InitialPermissionsPacket(dev.ultreon.quantum.network.PacketIO)"""
+        val = _InitialPermissionsPacket(arg0)
+        self.__wrapper = val
+
+    @overload
+    def handle(self, arg0: 'PacketContext', arg1: 'InGameClientPacketHandler'):
+        """public void dev.ultreon.quantum.network.packets.InitialPermissionsPacket.handle(dev.ultreon.quantum.network.PacketContext,dev.ultreon.quantum.network.client.InGameClientPacketHandler)"""
+        super(_InitialPermissionsPacket, self).handle(arg0, arg1)
 
     @override
     @overload
@@ -83,27 +98,28 @@ class InitialPermissionsPacket():
         super(object, self).notifyAll()
 
     @overload
-    def getPermissions(self) -> 'List':
-        """public java.util.List<dev.ultreon.quantum.api.commands.perms.Permission> dev.ultreon.quantum.network.packets.InitialPermissionsPacket.getPermissions()"""
-        return 'List'.__wrap(super(InitialPermissionsPacket, self).getPermissions())
+    def __init__(self, arg0: 'List'):
+        """public dev.ultreon.quantum.network.packets.InitialPermissionsPacket(java.util.List<dev.ultreon.quantum.api.commands.perms.Permission>)"""
+        val = _InitialPermissionsPacket(arg0)
+        self.__wrapper = val
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
     def toBytes(self, arg0: 'PacketIO'):
         """public void dev.ultreon.quantum.network.packets.InitialPermissionsPacket.toBytes(dev.ultreon.quantum.network.PacketIO)"""
-        super(__InitialPermissionsPacket, self).toBytes(arg0)
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_InitialPermissionsPacket, self).toBytes(arg0)
 
     @override
     @overload
@@ -111,25 +127,11 @@ class InitialPermissionsPacket():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @overload
-    def __init__(self, arg0: 'PacketIO'):
-        """public dev.ultreon.quantum.network.packets.InitialPermissionsPacket(dev.ultreon.quantum.network.PacketIO)"""
-        val = __InitialPermissionsPacket(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @overload
-    def __init__(self, arg0: 'List'):
-        """public dev.ultreon.quantum.network.packets.InitialPermissionsPacket(java.util.List<dev.ultreon.quantum.api.commands.perms.Permission>)"""
-        val = __InitialPermissionsPacket(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -138,91 +140,107 @@ class InitialPermissionsPacket():
         super(object, self).wait()
 
     @overload
-    def handle(self, arg0: 'PacketContext', arg1: 'InGameClientPacketHandler'):
-        """public void dev.ultreon.quantum.network.packets.InitialPermissionsPacket.handle(dev.ultreon.quantum.network.PacketContext,dev.ultreon.quantum.network.client.InGameClientPacketHandler)"""
-        super(__InitialPermissionsPacket, self).handle(arg0, arg1)
-
-    @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
  
 # CLASS: dev.ultreon.quantum.network.packets.InitialPermissionsPacket
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
 try:
     from pyquantum.network import client
 except ImportError:
-    client = __import_once__("pyquantum.network.client")
+    client = _import_once("pyquantum.network.client")
 
-import java.util.List as __List
-__List = __List
-import java.lang.Long as __long
+import dev.ultreon.quantum.network.packets.InitialPermissionsPacket as _InitialPermissionsPacket
+_InitialPermissionsPacket = _InitialPermissionsPacket
+import java.lang.String as _String
+_String = _String
+import java.util.List as _List
+_List = _List
 try:
     from pyquantum import network
 except ImportError:
-    network = __import_once__("pyquantum.network")
+    network = _import_once("pyquantum.network")
 
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import dev.ultreon.quantum.network.packets.InitialPermissionsPacket as __InitialPermissionsPacket
-__InitialPermissionsPacket = __InitialPermissionsPacket
-import java.lang.Integer as __int
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 import java.util.List as List
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class InitialPermissionsPacket():
     """dev.ultreon.quantum.network.packets.InitialPermissionsPacket"""
  
     @staticmethod
-    def __wrap(java_value: __InitialPermissionsPacket) -> 'InitialPermissionsPacket':
+    def _wrap(java_value: _InitialPermissionsPacket) -> 'InitialPermissionsPacket':
         return InitialPermissionsPacket(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __InitialPermissionsPacket):
+    def __init__(self, __dynamic__: _InitialPermissionsPacket):
         """
         Dynamic initializer for InitialPermissionsPacket.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_InitialPermissionsPacket__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_InitialPermissionsPacket__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @overload
+    def getPermissions(self) -> 'List':
+        """public java.util.List<dev.ultreon.quantum.api.commands.perms.Permission> dev.ultreon.quantum.network.packets.InitialPermissionsPacket.getPermissions()"""
+        return 'List'._wrap(super(InitialPermissionsPacket, self).getPermissions())
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
-    @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def __init__(self, arg0: 'PacketIO'):
+        """public dev.ultreon.quantum.network.packets.InitialPermissionsPacket(dev.ultreon.quantum.network.PacketIO)"""
+        val = _InitialPermissionsPacket(arg0)
+        self.__wrapper = val
+
+    @overload
+    def handle(self, arg0: 'PacketContext', arg1: 'InGameClientPacketHandler'):
+        """public void dev.ultreon.quantum.network.packets.InitialPermissionsPacket.handle(dev.ultreon.quantum.network.PacketContext,dev.ultreon.quantum.network.client.InGameClientPacketHandler)"""
+        super(_InitialPermissionsPacket, self).handle(arg0, arg1)
 
     @override
     @overload
@@ -231,27 +249,28 @@ class InitialPermissionsPacket():
         super(object, self).notifyAll()
 
     @overload
-    def getPermissions(self) -> 'List':
-        """public java.util.List<dev.ultreon.quantum.api.commands.perms.Permission> dev.ultreon.quantum.network.packets.InitialPermissionsPacket.getPermissions()"""
-        return 'List'.__wrap(super(InitialPermissionsPacket, self).getPermissions())
+    def __init__(self, arg0: 'List'):
+        """public dev.ultreon.quantum.network.packets.InitialPermissionsPacket(java.util.List<dev.ultreon.quantum.api.commands.perms.Permission>)"""
+        val = _InitialPermissionsPacket(arg0)
+        self.__wrapper = val
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
     def toBytes(self, arg0: 'PacketIO'):
         """public void dev.ultreon.quantum.network.packets.InitialPermissionsPacket.toBytes(dev.ultreon.quantum.network.PacketIO)"""
-        super(__InitialPermissionsPacket, self).toBytes(arg0)
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_InitialPermissionsPacket, self).toBytes(arg0)
 
     @override
     @overload
@@ -259,25 +278,11 @@ class InitialPermissionsPacket():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @overload
-    def __init__(self, arg0: 'PacketIO'):
-        """public dev.ultreon.quantum.network.packets.InitialPermissionsPacket(dev.ultreon.quantum.network.PacketIO)"""
-        val = __InitialPermissionsPacket(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @overload
-    def __init__(self, arg0: 'List'):
-        """public dev.ultreon.quantum.network.packets.InitialPermissionsPacket(java.util.List<dev.ultreon.quantum.api.commands.perms.Permission>)"""
-        val = __InitialPermissionsPacket(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -286,14 +291,15 @@ class InitialPermissionsPacket():
         super(object, self).wait()
 
     @overload
-    def handle(self, arg0: 'PacketContext', arg1: 'InGameClientPacketHandler'):
-        """public void dev.ultreon.quantum.network.packets.InitialPermissionsPacket.handle(dev.ultreon.quantum.network.PacketContext,dev.ultreon.quantum.network.client.InGameClientPacketHandler)"""
-        super(__InitialPermissionsPacket, self).handle(arg0, arg1)
-
-    @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
@@ -302,93 +308,97 @@ class InitialPermissionsPacket():
  
  
 # CLASS: dev.ultreon.quantum.network.packets.RemovePermissionPacket
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
 try:
     from pyquantum.network import client
 except ImportError:
-    client = __import_once__("pyquantum.network.client")
+    client = _import_once("pyquantum.network.client")
 
-import dev.ultreon.quantum.api.commands.perms.Permission as __Permission
-__Permission = __Permission
-import java.lang.Long as __long
+import java.lang.String as _String
+_String = _String
 try:
     from pyquantum import network
 except ImportError:
-    network = __import_once__("pyquantum.network")
+    network = _import_once("pyquantum.network")
 
 try:
     from pyquantum.api.commands import perms
 except ImportError:
-    perms = __import_once__("pyquantum.api.commands.perms")
+    perms = _import_once("pyquantum.api.commands.perms")
 
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.Integer as _int
+import dev.ultreon.quantum.network.packets.RemovePermissionPacket as _RemovePermissionPacket
+_RemovePermissionPacket = _RemovePermissionPacket
+import dev.ultreon.quantum.api.commands.perms.Permission as _Permission
+_Permission = _Permission
 from builtins import bool
-import dev.ultreon.quantum.network.packets.RemovePermissionPacket as __RemovePermissionPacket
-__RemovePermissionPacket = __RemovePermissionPacket
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class RemovePermissionPacket():
     """dev.ultreon.quantum.network.packets.RemovePermissionPacket"""
  
     @staticmethod
-    def __wrap(java_value: __RemovePermissionPacket) -> 'RemovePermissionPacket':
+    def _wrap(java_value: _RemovePermissionPacket) -> 'RemovePermissionPacket':
         return RemovePermissionPacket(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __RemovePermissionPacket):
+    def __init__(self, __dynamic__: _RemovePermissionPacket):
         """
         Dynamic initializer for RemovePermissionPacket.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_RemovePermissionPacket__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_RemovePermissionPacket__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @overload
+    def handle(self, arg0: 'PacketContext', arg1: 'InGameClientPacketHandler'):
+        """public void dev.ultreon.quantum.network.packets.RemovePermissionPacket.handle(dev.ultreon.quantum.network.PacketContext,dev.ultreon.quantum.network.client.InGameClientPacketHandler)"""
+        super(_RemovePermissionPacket, self).handle(arg0, arg1)
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def toBytes(self, arg0: 'PacketIO'):
-        """public void dev.ultreon.quantum.network.packets.RemovePermissionPacket.toBytes(dev.ultreon.quantum.network.PacketIO)"""
-        super(__RemovePermissionPacket, self).toBytes(arg0)
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @overload
-    def handle(self, arg0: 'PacketContext', arg1: 'InGameClientPacketHandler'):
-        """public void dev.ultreon.quantum.network.packets.RemovePermissionPacket.handle(dev.ultreon.quantum.network.PacketContext,dev.ultreon.quantum.network.client.InGameClientPacketHandler)"""
-        super(__RemovePermissionPacket, self).handle(arg0, arg1)
+    def getPermission(self) -> 'perms.Permission':
+        """public dev.ultreon.quantum.api.commands.perms.Permission dev.ultreon.quantum.network.packets.RemovePermissionPacket.getPermission()"""
+        return 'perms.Permission'._wrap(super(RemovePermissionPacket, self).getPermission())
+
+    @overload
+    def __init__(self, arg0: 'Permission'):
+        """public dev.ultreon.quantum.network.packets.RemovePermissionPacket(dev.ultreon.quantum.api.commands.perms.Permission)"""
+        val = _RemovePermissionPacket(arg0)
+        self.__wrapper = val
 
     @override
     @overload
@@ -396,17 +406,29 @@ class RemovePermissionPacket():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @overload
+    def __init__(self, arg0: 'PacketIO'):
+        """public dev.ultreon.quantum.network.packets.RemovePermissionPacket(dev.ultreon.quantum.network.PacketIO)"""
+        val = _RemovePermissionPacket(arg0)
+        self.__wrapper = val
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @override
+    @overload
+    def toBytes(self, arg0: 'PacketIO'):
+        """public void dev.ultreon.quantum.network.packets.RemovePermissionPacket.toBytes(dev.ultreon.quantum.network.PacketIO)"""
+        super(_RemovePermissionPacket, self).toBytes(arg0)
+
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -414,23 +436,11 @@ class RemovePermissionPacket():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @overload
-    def __init__(self, arg0: 'PacketIO'):
-        """public dev.ultreon.quantum.network.packets.RemovePermissionPacket(dev.ultreon.quantum.network.PacketIO)"""
-        val = __RemovePermissionPacket(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @overload
-    def getPermission(self) -> 'perms.Permission':
-        """public dev.ultreon.quantum.api.commands.perms.Permission dev.ultreon.quantum.network.packets.RemovePermissionPacket.getPermission()"""
-        return 'perms.Permission'.__wrap(super(RemovePermissionPacket, self).getPermission())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -441,76 +451,80 @@ class RemovePermissionPacket():
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
+    @override
     @overload
-    def __init__(self, arg0: 'Permission'):
-        """public dev.ultreon.quantum.network.packets.RemovePermissionPacket(dev.ultreon.quantum.api.commands.perms.Permission)"""
-        val = __RemovePermissionPacket(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.network.packets.C2SAttackPacket
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum.network import server
 except ImportError:
-    server = __import_once__("pyquantum.network.server")
+    server = _import_once("pyquantum.network.server")
 
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
 try:
     from pyquantum import entity
 except ImportError:
-    entity = __import_once__("pyquantum.entity")
+    entity = _import_once("pyquantum.entity")
 
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.network.packets.C2SAttackPacket as __C2SAttackPacket
-__C2SAttackPacket = __C2SAttackPacket
-import java.lang.Long as __long
+import java.lang.String as _String
+_String = _String
 try:
     from pyquantum import network
 except ImportError:
-    network = __import_once__("pyquantum.network")
+    network = _import_once("pyquantum.network")
 
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import dev.ultreon.quantum.network.packets.C2SAttackPacket as _C2SAttackPacket
+_C2SAttackPacket = _C2SAttackPacket
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class C2SAttackPacket():
     """dev.ultreon.quantum.network.packets.C2SAttackPacket"""
  
     @staticmethod
-    def __wrap(java_value: __C2SAttackPacket) -> 'C2SAttackPacket':
+    def _wrap(java_value: _C2SAttackPacket) -> 'C2SAttackPacket':
         return C2SAttackPacket(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __C2SAttackPacket):
+    def __init__(self, __dynamic__: _C2SAttackPacket):
         """
         Dynamic initializer for C2SAttackPacket.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_C2SAttackPacket__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_C2SAttackPacket__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -519,20 +533,7 @@ class C2SAttackPacket():
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def __init__(self, arg0: 'PacketIO'):
-        """public dev.ultreon.quantum.network.packets.C2SAttackPacket(dev.ultreon.quantum.network.PacketIO)"""
-        val = __C2SAttackPacket(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -540,28 +541,23 @@ class C2SAttackPacket():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
-    @overload
-    def handle(self, arg0: 'PacketContext', arg1: 'InGameServerPacketHandler'):
-        """public void dev.ultreon.quantum.network.packets.C2SAttackPacket.handle(dev.ultreon.quantum.network.PacketContext,dev.ultreon.quantum.network.server.InGameServerPacketHandler)"""
-        super(__C2SAttackPacket, self).handle(arg0, arg1)
-
     @override
     @overload
-    def toBytes(self, arg0: 'PacketIO'):
-        """public void dev.ultreon.quantum.network.packets.C2SAttackPacket.toBytes(dev.ultreon.quantum.network.PacketIO)"""
-        super(__C2SAttackPacket, self).toBytes(arg0)
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def toBytes(self, arg0: 'PacketIO'):
+        """public void dev.ultreon.quantum.network.packets.C2SAttackPacket.toBytes(dev.ultreon.quantum.network.PacketIO)"""
+        super(_C2SAttackPacket, self).toBytes(arg0)
 
     @override
     @overload
@@ -570,17 +566,15 @@ class C2SAttackPacket():
         super(object, self).notify()
 
     @overload
-    def __init__(self, arg0: 'Entity'):
-        """public dev.ultreon.quantum.network.packets.C2SAttackPacket(dev.ultreon.quantum.entity.Entity)"""
-        val = __C2SAttackPacket(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def handle(self, arg0: 'PacketContext', arg1: 'InGameServerPacketHandler'):
+        """public void dev.ultreon.quantum.network.packets.C2SAttackPacket.handle(dev.ultreon.quantum.network.PacketContext,dev.ultreon.quantum.network.server.InGameServerPacketHandler)"""
+        super(_C2SAttackPacket, self).handle(arg0, arg1)
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -589,88 +583,115 @@ class C2SAttackPacket():
         super(object, self).wait()
 
     @overload
+    def __init__(self, arg0: 'PacketIO'):
+        """public dev.ultreon.quantum.network.packets.C2SAttackPacket(dev.ultreon.quantum.network.PacketIO)"""
+        val = _C2SAttackPacket(arg0)
+        self.__wrapper = val
+
+    @overload
+    def __init__(self, arg0: 'Entity'):
+        """public dev.ultreon.quantum.network.packets.C2SAttackPacket(dev.ultreon.quantum.entity.Entity)"""
+        val = _C2SAttackPacket(arg0)
+        self.__wrapper = val
+
+    @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0)) 
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.network.packets.AddPermissionPacket
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
 try:
     from pyquantum.network import client
 except ImportError:
-    client = __import_once__("pyquantum.network.client")
+    client = _import_once("pyquantum.network.client")
 
-import dev.ultreon.quantum.api.commands.perms.Permission as __Permission
-__Permission = __Permission
-import java.lang.Long as __long
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.network.packets.AddPermissionPacket as _AddPermissionPacket
+_AddPermissionPacket = _AddPermissionPacket
 try:
     from pyquantum import network
 except ImportError:
-    network = __import_once__("pyquantum.network")
+    network = _import_once("pyquantum.network")
 
 try:
     from pyquantum.api.commands import perms
 except ImportError:
-    perms = __import_once__("pyquantum.api.commands.perms")
+    perms = _import_once("pyquantum.api.commands.perms")
 
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.Integer as _int
+import dev.ultreon.quantum.api.commands.perms.Permission as _Permission
+_Permission = _Permission
 from builtins import bool
-import dev.ultreon.quantum.network.packets.AddPermissionPacket as __AddPermissionPacket
-__AddPermissionPacket = __AddPermissionPacket
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class AddPermissionPacket():
     """dev.ultreon.quantum.network.packets.AddPermissionPacket"""
  
     @staticmethod
-    def __wrap(java_value: __AddPermissionPacket) -> 'AddPermissionPacket':
+    def _wrap(java_value: _AddPermissionPacket) -> 'AddPermissionPacket':
         return AddPermissionPacket(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __AddPermissionPacket):
+    def __init__(self, __dynamic__: _AddPermissionPacket):
         """
         Dynamic initializer for AddPermissionPacket.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_AddPermissionPacket__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_AddPermissionPacket__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @overload
+    def handle(self, arg0: 'PacketContext', arg1: 'InGameClientPacketHandler'):
+        """public void dev.ultreon.quantum.network.packets.AddPermissionPacket.handle(dev.ultreon.quantum.network.PacketContext,dev.ultreon.quantum.network.client.InGameClientPacketHandler)"""
+        super(_AddPermissionPacket, self).handle(arg0, arg1)
+
+    @overload
+    def getPermission(self) -> 'perms.Permission':
+        """public dev.ultreon.quantum.api.commands.perms.Permission dev.ultreon.quantum.network.packets.AddPermissionPacket.getPermission()"""
+        return 'perms.Permission'._wrap(super(AddPermissionPacket, self).getPermission())
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -678,29 +699,23 @@ class AddPermissionPacket():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @override
     @overload
-    def __init__(self, arg0: 'Permission'):
-        """public dev.ultreon.quantum.network.packets.AddPermissionPacket(dev.ultreon.quantum.api.commands.perms.Permission)"""
-        val = __AddPermissionPacket(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @overload
-    def getPermission(self) -> 'perms.Permission':
-        """public dev.ultreon.quantum.api.commands.perms.Permission dev.ultreon.quantum.network.packets.AddPermissionPacket.getPermission()"""
-        return 'perms.Permission'.__wrap(super(AddPermissionPacket, self).getPermission())
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def __init__(self, arg0: 'Permission'):
+        """public dev.ultreon.quantum.network.packets.AddPermissionPacket(dev.ultreon.quantum.api.commands.perms.Permission)"""
+        val = _AddPermissionPacket(arg0)
+        self.__wrapper = val
 
     @override
     @overload
@@ -708,24 +723,23 @@ class AddPermissionPacket():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @overload
-    def __init__(self, arg0: 'PacketIO'):
-        """public dev.ultreon.quantum.network.packets.AddPermissionPacket(dev.ultreon.quantum.network.PacketIO)"""
-        val = __AddPermissionPacket(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
     def toBytes(self, arg0: 'PacketIO'):
         """public void dev.ultreon.quantum.network.packets.AddPermissionPacket.toBytes(dev.ultreon.quantum.network.PacketIO)"""
-        super(__AddPermissionPacket, self).toBytes(arg0)
+        super(_AddPermissionPacket, self).toBytes(arg0)
+
+    @overload
+    def __init__(self, arg0: 'PacketIO'):
+        """public dev.ultreon.quantum.network.packets.AddPermissionPacket(dev.ultreon.quantum.network.PacketIO)"""
+        val = _AddPermissionPacket(arg0)
+        self.__wrapper = val
 
     @override
     @overload
@@ -734,87 +748,93 @@ class AddPermissionPacket():
         super(object, self).wait()
 
     @overload
-    def handle(self, arg0: 'PacketContext', arg1: 'InGameClientPacketHandler'):
-        """public void dev.ultreon.quantum.network.packets.AddPermissionPacket.handle(dev.ultreon.quantum.network.PacketContext,dev.ultreon.quantum.network.client.InGameClientPacketHandler)"""
-        super(__AddPermissionPacket, self).handle(arg0, arg1)
-
-    @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0)) 
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.network.packets.Packet
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.network.packets.Packet as __Packet
-__Packet = __Packet
+import dev.ultreon.quantum.network.packets.Packet as _Packet
+_Packet = _Packet
 from abc import abstractmethod, ABC
-import java.lang.Long as __long
+import java.lang.String as _String
+_String = _String
 try:
     from pyquantum import network
 except ImportError:
-    network = __import_once__("pyquantum.network")
+    network = _import_once("pyquantum.network")
 
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
-class Packet(ABC):
+class Packet():
     """dev.ultreon.quantum.network.packets.Packet"""
  
     @staticmethod
-    def __wrap(java_value: __Packet) -> 'Packet':
+    def _wrap(java_value: _Packet) -> 'Packet':
         return Packet(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Packet):
+    def __init__(self, __dynamic__: _Packet):
         """
         Dynamic initializer for Packet.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Packet__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Packet__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
     @abstractmethod
     def handle(self, arg0: 'PacketContext', arg1: 'PacketHandler'):
         """public abstract void dev.ultreon.quantum.network.packets.Packet.handle(dev.ultreon.quantum.network.PacketContext,T)"""
         pass
 
+    @overload
+    def __init__(self):
+        """public dev.ultreon.quantum.network.packets.Packet()"""
+        val = _Packet()
+        self.__wrapper = val
+
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -822,17 +842,23 @@ class Packet(ABC):
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @overload
+    def __init__(self, ):
+        """public dev.ultreon.quantum.network.packets.Packet()"""
+        val = _Packet()
+        self.__wrapper = val
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -842,27 +868,15 @@ class Packet(ABC):
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.network.packets.Packet()"""
-        val = __Packet()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
     def wait(self):
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
 
     @abstractmethod
     def toBytes(self, arg0: 'PacketIO'):
@@ -870,44 +884,53 @@ class Packet(ABC):
         pass
 
     @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.network.packets.Packet()"""
-        val = __Packet()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val 
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.network.packets.AbilitiesPacket
-import dev.ultreon.quantum.network.packets.AbilitiesPacket as __AbilitiesPacket
-__AbilitiesPacket = __AbilitiesPacket
+import dev.ultreon.quantum.network.packets.AbilitiesPacket as _AbilitiesPacket
+_AbilitiesPacket = _AbilitiesPacket
 from abc import abstractmethod, ABC
  
-class AbilitiesPacket(ABC):
+class AbilitiesPacket():
     """dev.ultreon.quantum.network.packets.AbilitiesPacket"""
  
     @staticmethod
-    def __wrap(java_value: __AbilitiesPacket) -> 'AbilitiesPacket':
+    def _wrap(java_value: _AbilitiesPacket) -> 'AbilitiesPacket':
         return AbilitiesPacket(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __AbilitiesPacket):
+    def __init__(self, __dynamic__: _AbilitiesPacket):
         """
         Dynamic initializer for AbilitiesPacket.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_AbilitiesPacket__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_AbilitiesPacket__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))

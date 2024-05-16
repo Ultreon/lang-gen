@@ -3,90 +3,91 @@ from overload import overload
 
 
  
-import java.util.function.Predicate as Predicate
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.util.function.Predicate as __Predicate
-__Predicate = __Predicate
-import java.lang.Comparable as Comparable
-import org.apache.commons.lang3.compare.ComparableUtils as __ComparableUtils_ComparableCheckBuilder
-__ComparableCheckBuilder = __ComparableUtils_ComparableCheckBuilder.ComparableCheckBuilder
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import org.apache.commons.lang3.compare.ComparableUtils as __ComparableUtils
-__ComparableUtils = __ComparableUtils
-import java.lang.Integer as __int
+import org.apache.commons.lang3.compare.ObjectToStringComparator as _ObjectToStringComparator
+_ObjectToStringComparator = _ObjectToStringComparator
+import java.lang.String as _String
+_String = _String
+import java.util.Comparator as Comparator
+import java.lang.Integer as _int
+import java.util.Comparator as _Comparator
+_Comparator = _Comparator
+import java.util.function.ToIntFunction as ToIntFunction
+import java.util.function.ToLongFunction as ToLongFunction
+import java.util.function.Function as Function
+import java.util.function.ToDoubleFunction as ToDoubleFunction
 from builtins import bool
-import java.lang.Comparable as __Comparable
-__Comparable = __Comparable
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
-class ComparableUtils():
-    """org.apache.commons.lang3.compare.ComparableUtils"""
+class ObjectToStringComparator():
+    """org.apache.commons.lang3.compare.ObjectToStringComparator"""
  
     @staticmethod
-    def __wrap(java_value: __ComparableUtils) -> 'ComparableUtils':
-        return ComparableUtils(__dynamic__=java_value)
+    def _wrap(java_value: _ObjectToStringComparator) -> 'ObjectToStringComparator':
+        return ObjectToStringComparator(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ComparableUtils):
+    def __init__(self, __dynamic__: _ObjectToStringComparator):
         """
-        Dynamic initializer for ComparableUtils.
+        Dynamic initializer for ObjectToStringComparator.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ObjectToStringComparator__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ObjectToStringComparator__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @overload
+    def thenComparingDouble(self, arg0: 'ToDoubleFunction') -> 'Comparator':
+        """public default java.util.Comparator<T> java.util.Comparator.thenComparingDouble(java.util.function.ToDoubleFunction<? super T>)"""
+        return 'Comparator'._wrap(super(_Comparator, self).thenComparingDouble(arg0))
+
+    @overload
+    def thenComparing(self, arg0: 'Comparator') -> 'Comparator':
+        """public default java.util.Comparator<T> java.util.Comparator.thenComparing(java.util.Comparator<? super T>)"""
+        return 'Comparator'._wrap(super(_Comparator, self).thenComparing(arg0))
+
+    @overload
+    def thenComparingInt(self, arg0: 'ToIntFunction') -> 'Comparator':
+        """public default java.util.Comparator<T> java.util.Comparator.thenComparingInt(java.util.function.ToIntFunction<? super T>)"""
+        return 'Comparator'._wrap(super(_Comparator, self).thenComparingInt(arg0))
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
-    @staticmethod
     @overload
-    def is(arg0: 'Comparable') -> 'ComparableCheckBuilder':
-        """public static <A extends java.lang.Comparable<A>> org.apache.commons.lang3.compare.ComparableUtils$ComparableCheckBuilder<A> org.apache.commons.lang3.compare.ComparableUtils.is(A)"""
-        return ComparableCheckBuilder.__wrap(__ComparableUtils.is(arg0))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @staticmethod
-    @overload
-    def between(arg0: 'Comparable', arg1: 'Comparable') -> 'Predicate':
-        """public static <A extends java.lang.Comparable<A>> java.util.function.Predicate<A> org.apache.commons.lang3.compare.ComparableUtils.between(A,A)"""
-        return Predicate.__wrap(__ComparableUtils.between(arg0, arg1))
-
-    @staticmethod
-    @overload
-    def gt(arg0: 'Comparable') -> 'Predicate':
-        """public static <A extends java.lang.Comparable<A>> java.util.function.Predicate<A> org.apache.commons.lang3.compare.ComparableUtils.gt(A)"""
-        return Predicate.__wrap(__ComparableUtils.gt(arg0))
+    def __init__(self):
+        """public org.apache.commons.lang3.compare.ObjectToStringComparator()"""
+        val = _ObjectToStringComparator()
+        self.__wrapper = val
 
     @override
     @overload
@@ -94,29 +95,27 @@ class ComparableUtils():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
-    @staticmethod
     @overload
-    def lt(arg0: 'Comparable') -> 'Predicate':
-        """public static <A extends java.lang.Comparable<A>> java.util.function.Predicate<A> org.apache.commons.lang3.compare.ComparableUtils.lt(A)"""
-        return Predicate.__wrap(__ComparableUtils.lt(arg0))
+    def compare(self, arg0: object, arg1: object) -> int:
+        """public int org.apache.commons.lang3.compare.ObjectToStringComparator.compare(java.lang.Object,java.lang.Object)"""
+        return int._wrap(super(_ObjectToStringComparator, self).compare(arg0, arg1))
+
+    @overload
+    def thenComparing(self, arg0: 'Function') -> 'Comparator':
+        """public default <U extends java.lang.Comparable<? super U>> java.util.Comparator<T> java.util.Comparator.thenComparing(java.util.function.Function<? super T, ? extends U>)"""
+        return 'Comparator'._wrap(super(_Comparator, self).thenComparing(arg0))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @staticmethod
-    @overload
-    def ge(arg0: 'Comparable') -> 'Predicate':
-        """public static <A extends java.lang.Comparable<A>> java.util.function.Predicate<A> org.apache.commons.lang3.compare.ComparableUtils.ge(A)"""
-        return Predicate.__wrap(__ComparableUtils.ge(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -124,17 +123,22 @@ class ComparableUtils():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @staticmethod
     @overload
-    def betweenExclusive(arg0: 'Comparable', arg1: 'Comparable') -> 'Predicate':
-        """public static <A extends java.lang.Comparable<A>> java.util.function.Predicate<A> org.apache.commons.lang3.compare.ComparableUtils.betweenExclusive(A,A)"""
-        return Predicate.__wrap(__ComparableUtils.betweenExclusive(arg0, arg1))
+    def thenComparing(self, arg0: 'Function', arg1: 'Comparator') -> 'Comparator':
+        """public default <U> java.util.Comparator<T> java.util.Comparator.thenComparing(java.util.function.Function<? super T, ? extends U>,java.util.Comparator<? super U>)"""
+        return 'Comparator'._wrap(super(_Comparator, self).thenComparing(arg0, arg1))
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @overload
+    def __init__(self, ):
+        """public org.apache.commons.lang3.compare.ObjectToStringComparator()"""
+        val = _ObjectToStringComparator()
+        self.__wrapper = val
 
     @override
     @overload
@@ -142,117 +146,281 @@ class ComparableUtils():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
-    @staticmethod
+    @override
     @overload
-    def le(arg0: 'Comparable') -> 'Predicate':
-        """public static <A extends java.lang.Comparable<A>> java.util.function.Predicate<A> org.apache.commons.lang3.compare.ComparableUtils.le(A)"""
-        return Predicate.__wrap(__ComparableUtils.le(arg0))
+    def reversed(self) -> 'Comparator':
+        """public default java.util.Comparator<T> java.util.Comparator.reversed()"""
+        return 'Comparator'._wrap(super(Comparator, self).reversed())
 
-    @staticmethod
     @overload
-    def max(arg0: 'Comparable', arg1: 'Comparable') -> 'Comparable':
-        """public static <A extends java.lang.Comparable<A>> A org.apache.commons.lang3.compare.ComparableUtils.max(A,A)"""
-        return Comparable.__wrap(__ComparableUtils.max(arg0, arg1))
+    def thenComparingLong(self, arg0: 'ToLongFunction') -> 'Comparator':
+        """public default java.util.Comparator<T> java.util.Comparator.thenComparingLong(java.util.function.ToLongFunction<? super T>)"""
+        return 'Comparator'._wrap(super(_Comparator, self).thenComparingLong(arg0))
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
-    @staticmethod
+    @override
     @overload
-    def min(arg0: 'Comparable', arg1: 'Comparable') -> 'Comparable':
-        """public static <A extends java.lang.Comparable<A>> A org.apache.commons.lang3.compare.ComparableUtils.min(A,A)"""
-        return Comparable.__wrap(__ComparableUtils.min(arg0, arg1))
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
+ 
+ 
+# CLASS: org.apache.commons.lang3.compare.ObjectToStringComparator
+from builtins import str
+from pyquantum_helper import override
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
+from builtins import type
+import org.apache.commons.lang3.compare.ObjectToStringComparator as _ObjectToStringComparator
+_ObjectToStringComparator = _ObjectToStringComparator
+import java.lang.String as _String
+_String = _String
+import java.util.Comparator as Comparator
+import java.lang.Integer as _int
+import java.util.Comparator as _Comparator
+_Comparator = _Comparator
+import java.util.function.ToIntFunction as ToIntFunction
+import java.util.function.ToLongFunction as ToLongFunction
+import java.util.function.Function as Function
+import java.util.function.ToDoubleFunction as ToDoubleFunction
+from builtins import bool
+import java.lang.Long as _long
+from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
+ 
+class ObjectToStringComparator():
+    """org.apache.commons.lang3.compare.ObjectToStringComparator"""
+ 
+    @staticmethod
+    def _wrap(java_value: _ObjectToStringComparator) -> 'ObjectToStringComparator':
+        return ObjectToStringComparator(__dynamic__=java_value)
+ 
+    #
+    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+    #
+    @overload
+    def __init__(self, __dynamic__: _ObjectToStringComparator):
+        """
+        Dynamic initializer for ObjectToStringComparator.
+        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+ 
+        :param __dynamic__: The java object to wrap
+        """
+        self.__wrapper = __dynamic__
+ 
+    def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ObjectToStringComparator__wrapper":
+            return object.__getattr__(self, name)
+        return getattr(self.__wrapper, name)
+ 
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ObjectToStringComparator__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
+ 
+    def __delattr__(self, name: str):
+        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
+ 
+    @overload
+    def thenComparingDouble(self, arg0: 'ToDoubleFunction') -> 'Comparator':
+        """public default java.util.Comparator<T> java.util.Comparator.thenComparingDouble(java.util.function.ToDoubleFunction<? super T>)"""
+        return 'Comparator'._wrap(super(_Comparator, self).thenComparingDouble(arg0))
+
+    @overload
+    def thenComparing(self, arg0: 'Comparator') -> 'Comparator':
+        """public default java.util.Comparator<T> java.util.Comparator.thenComparing(java.util.Comparator<? super T>)"""
+        return 'Comparator'._wrap(super(_Comparator, self).thenComparing(arg0))
+
+    @overload
+    def thenComparingInt(self, arg0: 'ToIntFunction') -> 'Comparator':
+        """public default java.util.Comparator<T> java.util.Comparator.thenComparingInt(java.util.function.ToIntFunction<? super T>)"""
+        return 'Comparator'._wrap(super(_Comparator, self).thenComparingInt(arg0))
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @overload
+    def __init__(self):
+        """public org.apache.commons.lang3.compare.ObjectToStringComparator()"""
+        val = _ObjectToStringComparator()
+        self.__wrapper = val
+
+    @override
+    @overload
+    def notifyAll(self):
+        """public final native void java.lang.Object.notifyAll()"""
+        super(object, self).notifyAll()
+
+    @overload
+    def compare(self, arg0: object, arg1: object) -> int:
+        """public int org.apache.commons.lang3.compare.ObjectToStringComparator.compare(java.lang.Object,java.lang.Object)"""
+        return int._wrap(super(_ObjectToStringComparator, self).compare(arg0, arg1))
+
+    @overload
+    def thenComparing(self, arg0: 'Function') -> 'Comparator':
+        """public default <U extends java.lang.Comparable<? super U>> java.util.Comparator<T> java.util.Comparator.thenComparing(java.util.function.Function<? super T, ? extends U>)"""
+        return 'Comparator'._wrap(super(_Comparator, self).thenComparing(arg0))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @override
+    @overload
+    def notify(self):
+        """public final native void java.lang.Object.notify()"""
+        super(object, self).notify()
+
+    @overload
+    def thenComparing(self, arg0: 'Function', arg1: 'Comparator') -> 'Comparator':
+        """public default <U> java.util.Comparator<T> java.util.Comparator.thenComparing(java.util.function.Function<? super T, ? extends U>,java.util.Comparator<? super U>)"""
+        return 'Comparator'._wrap(super(_Comparator, self).thenComparing(arg0, arg1))
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @overload
+    def __init__(self, ):
+        """public org.apache.commons.lang3.compare.ObjectToStringComparator()"""
+        val = _ObjectToStringComparator()
+        self.__wrapper = val
+
+    @override
+    @overload
+    def wait(self):
+        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
+        super(object, self).wait()
+
+    @override
+    @overload
+    def reversed(self) -> 'Comparator':
+        """public default java.util.Comparator<T> java.util.Comparator.reversed()"""
+        return 'Comparator'._wrap(super(Comparator, self).reversed())
+
+    @overload
+    def thenComparingLong(self, arg0: 'ToLongFunction') -> 'Comparator':
+        """public default java.util.Comparator<T> java.util.Comparator.thenComparingLong(java.util.function.ToLongFunction<? super T>)"""
+        return 'Comparator'._wrap(super(_Comparator, self).thenComparingLong(arg0))
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
+
+ 
+ 
+ 
+# CLASS: org.apache.commons.lang3.compare.ObjectToStringComparator 
  
  
 # CLASS: org.apache.commons.lang3.compare.ComparableUtils
 import java.util.function.Predicate as Predicate
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.util.function.Predicate as __Predicate
-__Predicate = __Predicate
 import java.lang.Comparable as Comparable
-import org.apache.commons.lang3.compare.ComparableUtils as __ComparableUtils_ComparableCheckBuilder
-__ComparableCheckBuilder = __ComparableUtils_ComparableCheckBuilder.ComparableCheckBuilder
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import org.apache.commons.lang3.compare.ComparableUtils as __ComparableUtils
-__ComparableUtils = __ComparableUtils
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import java.util.function.Predicate as _Predicate
+_Predicate = _Predicate
+import org.apache.commons.lang3.compare.ComparableUtils as _ComparableUtils_ComparableCheckBuilder
+_ComparableCheckBuilder = _ComparableUtils_ComparableCheckBuilder.ComparableCheckBuilder
+import java.lang.Integer as _int
+import org.apache.commons.lang3.compare.ComparableUtils as _ComparableUtils
+_ComparableUtils = _ComparableUtils
+import java.lang.Comparable as _Comparable
+_Comparable = _Comparable
 from builtins import bool
-import java.lang.Comparable as __Comparable
-__Comparable = __Comparable
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ComparableUtils():
     """org.apache.commons.lang3.compare.ComparableUtils"""
  
     @staticmethod
-    def __wrap(java_value: __ComparableUtils) -> 'ComparableUtils':
+    def _wrap(java_value: _ComparableUtils) -> 'ComparableUtils':
         return ComparableUtils(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ComparableUtils):
+    def __init__(self, __dynamic__: _ComparableUtils):
         """
         Dynamic initializer for ComparableUtils.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ComparableUtils__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ComparableUtils__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
     @staticmethod
     @overload
-    def is(arg0: 'Comparable') -> 'ComparableCheckBuilder':
-        """public static <A extends java.lang.Comparable<A>> org.apache.commons.lang3.compare.ComparableUtils$ComparableCheckBuilder<A> org.apache.commons.lang3.compare.ComparableUtils.is(A)"""
-        return ComparableCheckBuilder.__wrap(__ComparableUtils.is(arg0))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @staticmethod
-    @overload
-    def between(arg0: 'Comparable', arg1: 'Comparable') -> 'Predicate':
-        """public static <A extends java.lang.Comparable<A>> java.util.function.Predicate<A> org.apache.commons.lang3.compare.ComparableUtils.between(A,A)"""
-        return Predicate.__wrap(__ComparableUtils.between(arg0, arg1))
+    def ge(arg0: 'Comparable') -> 'Predicate':
+        """public static <A extends java.lang.Comparable<A>> java.util.function.Predicate<A> org.apache.commons.lang3.compare.ComparableUtils.ge(A)"""
+        return Predicate._wrap(_ComparableUtils.ge(arg0))
 
     @staticmethod
     @overload
     def gt(arg0: 'Comparable') -> 'Predicate':
         """public static <A extends java.lang.Comparable<A>> java.util.function.Predicate<A> org.apache.commons.lang3.compare.ComparableUtils.gt(A)"""
-        return Predicate.__wrap(__ComparableUtils.gt(arg0))
+        return Predicate._wrap(_ComparableUtils.gt(arg0))
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -262,27 +430,51 @@ class ComparableUtils():
 
     @staticmethod
     @overload
+    def is(arg0: 'Comparable') -> 'ComparableCheckBuilder':
+        """public static <A extends java.lang.Comparable<A>> org.apache.commons.lang3.compare.ComparableUtils$ComparableCheckBuilder<A> org.apache.commons.lang3.compare.ComparableUtils.is(A)"""
+        return ComparableCheckBuilder._wrap(_ComparableUtils.is(arg0))
+
+    @staticmethod
+    @overload
     def lt(arg0: 'Comparable') -> 'Predicate':
         """public static <A extends java.lang.Comparable<A>> java.util.function.Predicate<A> org.apache.commons.lang3.compare.ComparableUtils.lt(A)"""
-        return Predicate.__wrap(__ComparableUtils.lt(arg0))
+        return Predicate._wrap(_ComparableUtils.lt(arg0))
+
+    @staticmethod
+    @overload
+    def between(arg0: 'Comparable', arg1: 'Comparable') -> 'Predicate':
+        """public static <A extends java.lang.Comparable<A>> java.util.function.Predicate<A> org.apache.commons.lang3.compare.ComparableUtils.between(A,A)"""
+        return Predicate._wrap(_ComparableUtils.between(arg0, arg1))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @staticmethod
+    @overload
+    def min(arg0: 'Comparable', arg1: 'Comparable') -> 'Comparable':
+        """public static <A extends java.lang.Comparable<A>> A org.apache.commons.lang3.compare.ComparableUtils.min(A,A)"""
+        return Comparable._wrap(_ComparableUtils.min(arg0, arg1))
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @staticmethod
     @overload
-    def ge(arg0: 'Comparable') -> 'Predicate':
-        """public static <A extends java.lang.Comparable<A>> java.util.function.Predicate<A> org.apache.commons.lang3.compare.ComparableUtils.ge(A)"""
-        return Predicate.__wrap(__ComparableUtils.ge(arg0))
+    def le(arg0: 'Comparable') -> 'Predicate':
+        """public static <A extends java.lang.Comparable<A>> java.util.function.Predicate<A> org.apache.commons.lang3.compare.ComparableUtils.le(A)"""
+        return Predicate._wrap(_ComparableUtils.le(arg0))
 
-    @override
+    @staticmethod
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def betweenExclusive(arg0: 'Comparable', arg1: 'Comparable') -> 'Predicate':
+        """public static <A extends java.lang.Comparable<A>> java.util.function.Predicate<A> org.apache.commons.lang3.compare.ComparableUtils.betweenExclusive(A,A)"""
+        return Predicate._wrap(_ComparableUtils.betweenExclusive(arg0, arg1))
 
     @override
     @overload
@@ -290,17 +482,11 @@ class ComparableUtils():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @staticmethod
-    @overload
-    def betweenExclusive(arg0: 'Comparable', arg1: 'Comparable') -> 'Predicate':
-        """public static <A extends java.lang.Comparable<A>> java.util.function.Predicate<A> org.apache.commons.lang3.compare.ComparableUtils.betweenExclusive(A,A)"""
-        return Predicate.__wrap(__ComparableUtils.betweenExclusive(arg0, arg1))
-
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -310,98 +496,96 @@ class ComparableUtils():
 
     @staticmethod
     @overload
-    def le(arg0: 'Comparable') -> 'Predicate':
-        """public static <A extends java.lang.Comparable<A>> java.util.function.Predicate<A> org.apache.commons.lang3.compare.ComparableUtils.le(A)"""
-        return Predicate.__wrap(__ComparableUtils.le(arg0))
-
-    @staticmethod
-    @overload
     def max(arg0: 'Comparable', arg1: 'Comparable') -> 'Comparable':
         """public static <A extends java.lang.Comparable<A>> A org.apache.commons.lang3.compare.ComparableUtils.max(A,A)"""
-        return Comparable.__wrap(__ComparableUtils.max(arg0, arg1))
+        return Comparable._wrap(_ComparableUtils.max(arg0, arg1))
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
-    @staticmethod
+    @override
     @overload
-    def min(arg0: 'Comparable', arg1: 'Comparable') -> 'Comparable':
-        """public static <A extends java.lang.Comparable<A>> A org.apache.commons.lang3.compare.ComparableUtils.min(A,A)"""
-        return Comparable.__wrap(__ComparableUtils.min(arg0, arg1))
-
- 
- 
- 
-# CLASS: org.apache.commons.lang3.compare.ComparableUtils 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: org.apache.commons.lang3.compare.ComparableUtils$ComparableCheckBuilder
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
 import java.lang.Comparable as Comparable
-import org.apache.commons.lang3.compare.ComparableUtils as __ComparableUtils_ComparableCheckBuilder
-__ComparableCheckBuilder = __ComparableUtils_ComparableCheckBuilder.ComparableCheckBuilder
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import org.apache.commons.lang3.compare.ComparableUtils as _ComparableUtils_ComparableCheckBuilder
+_ComparableCheckBuilder = _ComparableUtils_ComparableCheckBuilder.ComparableCheckBuilder
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ComparableCheckBuilder():
     """org.apache.commons.lang3.compare.ComparableUtils.ComparableCheckBuilder"""
  
     @staticmethod
-    def __wrap(java_value: __ComparableCheckBuilder) -> 'ComparableCheckBuilder':
+    def _wrap(java_value: _ComparableCheckBuilder) -> 'ComparableCheckBuilder':
         return ComparableCheckBuilder(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ComparableCheckBuilder):
+    def __init__(self, __dynamic__: _ComparableCheckBuilder):
         """
         Dynamic initializer for ComparableCheckBuilder.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ComparableCheckBuilder__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ComparableCheckBuilder__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def greaterThan(self, arg0: 'Comparable') -> bool:
+        """public boolean org.apache.commons.lang3.compare.ComparableUtils$ComparableCheckBuilder.greaterThan(A)"""
+        return bool._wrap(super(_ComparableCheckBuilder, self).greaterThan(arg0))
 
     @overload
     def lessThanOrEqualTo(self, arg0: 'Comparable') -> bool:
         """public boolean org.apache.commons.lang3.compare.ComparableUtils$ComparableCheckBuilder.lessThanOrEqualTo(A)"""
-        return bool.__wrap(super(__ComparableCheckBuilder, self).lessThanOrEqualTo(arg0))
+        return bool._wrap(super(_ComparableCheckBuilder, self).lessThanOrEqualTo(arg0))
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @overload
+    def greaterThanOrEqualTo(self, arg0: 'Comparable') -> bool:
+        """public boolean org.apache.commons.lang3.compare.ComparableUtils$ComparableCheckBuilder.greaterThanOrEqualTo(A)"""
+        return bool._wrap(super(_ComparableCheckBuilder, self).greaterThanOrEqualTo(arg0))
 
     @override
     @overload
@@ -412,19 +596,19 @@ class ComparableCheckBuilder():
     @overload
     def between(self, arg0: 'Comparable', arg1: 'Comparable') -> bool:
         """public boolean org.apache.commons.lang3.compare.ComparableUtils$ComparableCheckBuilder.between(A,A)"""
-        return bool.__wrap(super(__ComparableCheckBuilder, self).between(arg0, arg1))
+        return bool._wrap(super(_ComparableCheckBuilder, self).between(arg0, arg1))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -432,26 +616,21 @@ class ComparableCheckBuilder():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
     @overload
     def equalTo(self, arg0: 'Comparable') -> bool:
         """public boolean org.apache.commons.lang3.compare.ComparableUtils$ComparableCheckBuilder.equalTo(A)"""
-        return bool.__wrap(super(__ComparableCheckBuilder, self).equalTo(arg0))
+        return bool._wrap(super(_ComparableCheckBuilder, self).equalTo(arg0))
 
     @overload
     def betweenExclusive(self, arg0: 'Comparable', arg1: 'Comparable') -> bool:
         """public boolean org.apache.commons.lang3.compare.ComparableUtils$ComparableCheckBuilder.betweenExclusive(A,A)"""
-        return bool.__wrap(super(__ComparableCheckBuilder, self).betweenExclusive(arg0, arg1))
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @overload
-    def greaterThan(self, arg0: 'Comparable') -> bool:
-        """public boolean org.apache.commons.lang3.compare.ComparableUtils$ComparableCheckBuilder.greaterThan(A)"""
-        return bool.__wrap(super(__ComparableCheckBuilder, self).greaterThan(arg0))
+        return bool._wrap(super(_ComparableCheckBuilder, self).betweenExclusive(arg0, arg1))
 
     @override
     @overload
@@ -462,178 +641,15 @@ class ComparableCheckBuilder():
     @overload
     def lessThan(self, arg0: 'Comparable') -> bool:
         """public boolean org.apache.commons.lang3.compare.ComparableUtils$ComparableCheckBuilder.lessThan(A)"""
-        return bool.__wrap(super(__ComparableCheckBuilder, self).lessThan(arg0))
+        return bool._wrap(super(_ComparableCheckBuilder, self).lessThan(arg0))
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
-
-    @overload
-    def greaterThanOrEqualTo(self, arg0: 'Comparable') -> bool:
-        """public boolean org.apache.commons.lang3.compare.ComparableUtils$ComparableCheckBuilder.greaterThanOrEqualTo(A)"""
-        return bool.__wrap(super(__ComparableCheckBuilder, self).greaterThanOrEqualTo(arg0)) 
- 
- 
-# CLASS: org.apache.commons.lang3.compare.ObjectToStringComparator
-from builtins import str
-from pyquantum_helper import override
-import java.lang.Object as __object
-from builtins import type
-import org.apache.commons.lang3.compare.ObjectToStringComparator as __ObjectToStringComparator
-__ObjectToStringComparator = __ObjectToStringComparator
-import java.util.Comparator as __Comparator
-__Comparator = __Comparator
-import java.util.Comparator as Comparator
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.util.function.ToIntFunction as ToIntFunction
-import java.lang.Object as __Object
-__Object = __Object
-import java.util.function.ToLongFunction as ToLongFunction
-import java.lang.Integer as __int
-import java.util.function.Function as Function
-import java.util.function.ToDoubleFunction as ToDoubleFunction
-from builtins import bool
-from builtins import int
- 
-class ObjectToStringComparator():
-    """org.apache.commons.lang3.compare.ObjectToStringComparator"""
- 
-    @staticmethod
-    def __wrap(java_value: __ObjectToStringComparator) -> 'ObjectToStringComparator':
-        return ObjectToStringComparator(__dynamic__=java_value)
- 
-    #
-    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
-    #
-    @overload
-    def __init__(self, __dynamic__: __ObjectToStringComparator):
-        """
-        Dynamic initializer for ObjectToStringComparator.
-        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
- 
-        :param __dynamic__: The java object to wrap
-        """
-        self.__dict__ = __dynamic__.__dict__
-        self.__wrapper = __dynamic__
- 
-    def __getattr__(self, name: str):
-        return getattr(self.__wrapper, name)
- 
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
- 
-    def __delattr__(self, name: str):
-        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
- 
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def __init__(self):
-        """public org.apache.commons.lang3.compare.ObjectToStringComparator()"""
-        val = __ObjectToStringComparator()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def thenComparing(self, arg0: 'Comparator') -> 'Comparator':
-        """public default java.util.Comparator<T> java.util.Comparator.thenComparing(java.util.Comparator<? super T>)"""
-        return 'Comparator'.__wrap(super(__Comparator, self).thenComparing(arg0))
-
-    @override
-    @overload
-    def notifyAll(self):
-        """public final native void java.lang.Object.notifyAll()"""
-        super(object, self).notifyAll()
-
-    @overload
-    def thenComparing(self, arg0: 'Function') -> 'Comparator':
-        """public default <U extends java.lang.Comparable<? super U>> java.util.Comparator<T> java.util.Comparator.thenComparing(java.util.function.Function<? super T, ? extends U>)"""
-        return 'Comparator'.__wrap(super(__Comparator, self).thenComparing(arg0))
-
-    @overload
-    def compare(self, arg0: object, arg1: object) -> int:
-        """public int org.apache.commons.lang3.compare.ObjectToStringComparator.compare(java.lang.Object,java.lang.Object)"""
-        return int.__wrap(super(__ObjectToStringComparator, self).compare(arg0, arg1))
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def reversed(self) -> 'Comparator':
-        """public default java.util.Comparator<T> java.util.Comparator.reversed()"""
-        return 'Comparator'.__wrap(super(Comparator, self).reversed())
-
-    @override
-    @overload
-    def notify(self):
-        """public final native void java.lang.Object.notify()"""
-        super(object, self).notify()
-
-    @overload
-    def __init__(self, ):
-        """public org.apache.commons.lang3.compare.ObjectToStringComparator()"""
-        val = __ObjectToStringComparator()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
     def hashCode(self) -> int:
         """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @override
-    @overload
-    def wait(self):
-        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
-        super(object, self).wait()
-
-    @overload
-    def thenComparingInt(self, arg0: 'ToIntFunction') -> 'Comparator':
-        """public default java.util.Comparator<T> java.util.Comparator.thenComparingInt(java.util.function.ToIntFunction<? super T>)"""
-        return 'Comparator'.__wrap(super(__Comparator, self).thenComparingInt(arg0))
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
-
-    @overload
-    def thenComparingLong(self, arg0: 'ToLongFunction') -> 'Comparator':
-        """public default java.util.Comparator<T> java.util.Comparator.thenComparingLong(java.util.function.ToLongFunction<? super T>)"""
-        return 'Comparator'.__wrap(super(__Comparator, self).thenComparingLong(arg0))
-
-    @overload
-    def thenComparing(self, arg0: 'Function', arg1: 'Comparator') -> 'Comparator':
-        """public default <U> java.util.Comparator<T> java.util.Comparator.thenComparing(java.util.function.Function<? super T, ? extends U>,java.util.Comparator<? super U>)"""
-        return 'Comparator'.__wrap(super(__Comparator, self).thenComparing(arg0, arg1))
-
-    @overload
-    def thenComparingDouble(self, arg0: 'ToDoubleFunction') -> 'Comparator':
-        """public default java.util.Comparator<T> java.util.Comparator.thenComparingDouble(java.util.function.ToDoubleFunction<? super T>)"""
-        return 'Comparator'.__wrap(super(__Comparator, self).thenComparingDouble(arg0))
+        return int._wrap(super(object, self).hashCode())

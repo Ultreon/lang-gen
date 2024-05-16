@@ -5,106 +5,99 @@ from overload import overload
  
 from builtins import str
 from pyquantum_helper import override
-import dev.ultreon.quantum.client.platform.GdxPlatform as __GdxPlatform
-__GdxPlatform = __GdxPlatform
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.util.Optional as __Optional
-__Optional = __Optional
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.client.platform.GdxPlatform as _GdxPlatform
+_GdxPlatform = _GdxPlatform
 from typing import List
 import java.lang.Enum as Enum
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __string
-import java.lang.String as __String
-__String = __String
+import java.lang.String as _string
+import java.lang.Enum as _Enum
+_Enum = _Enum
+import java.lang.Integer as _int
+import java.util.Optional as _Optional
+_Optional = _Optional
 import java.util.Optional as Optional
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
-import java.lang.Enum as __Enum
-__Enum = __Enum
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class GdxPlatform():
     """dev.ultreon.quantum.client.platform.GdxPlatform"""
  
     @staticmethod
-    def __wrap(java_value: __GdxPlatform) -> 'GdxPlatform':
+    def _wrap(java_value: _GdxPlatform) -> 'GdxPlatform':
         return GdxPlatform(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __GdxPlatform):
+    def __init__(self, __dynamic__: _GdxPlatform):
         """
         Dynamic initializer for GdxPlatform.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_GdxPlatform__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_GdxPlatform__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    # public static final dev.ultreon.quantum.client.platform.GdxPlatform dev.ultreon.quantum.client.platform.GdxPlatform.ANDROID
-    ANDROID: 'GdxPlatform' = __wrap(__GdxPlatform.ANDROID)
-
-    # public static final dev.ultreon.quantum.client.platform.GdxPlatform dev.ultreon.quantum.client.platform.GdxPlatform.DESKTOP
-    DESKTOP: 'GdxPlatform' = __wrap(__GdxPlatform.DESKTOP)
-
-    # public static final dev.ultreon.quantum.client.platform.GdxPlatform dev.ultreon.quantum.client.platform.GdxPlatform.WEB
-    WEB: 'GdxPlatform' = __wrap(__GdxPlatform.WEB)
-
-    # public static final dev.ultreon.quantum.client.platform.GdxPlatform dev.ultreon.quantum.client.platform.GdxPlatform.IOS
-    IOS: 'GdxPlatform' = __wrap(__GdxPlatform.IOS)
-
-
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def hashCode(self) -> int:
+        """public final int java.lang.Enum.hashCode()"""
+        return int._wrap(super(Enum, self).hashCode())
 
     @staticmethod
     @overload
     def valueOf(arg0: 'Class', arg1: str) -> 'Enum':
         """public static <T extends java.lang.Enum<T>> T java.lang.Enum.valueOf(java.lang.Class<T>,java.lang.String)"""
-        return Enum.__wrap(__Enum.valueOf(arg0, arg1))
-
-    @staticmethod
-    @overload
-    def valueOf(arg0: str) -> 'GdxPlatform':
-        """public static dev.ultreon.quantum.client.platform.GdxPlatform dev.ultreon.quantum.client.platform.GdxPlatform.valueOf(java.lang.String)"""
-        return GdxPlatform.__wrap(__GdxPlatform.valueOf(arg0))
+        return Enum._wrap(_Enum.valueOf(arg0, arg1))
 
     @override
     @overload
     def name(self) -> str:
         """public final java.lang.String java.lang.Enum.name()"""
-        return str.__wrap(super(Enum, self).name())
+        return str._wrap(super(Enum, self).name())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public final int java.lang.Enum.hashCode()"""
-        return int.__wrap(super(Enum, self).hashCode())
+    def describeConstable(self) -> 'Optional':
+        """public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable()"""
+        return 'Optional'._wrap(super(Enum, self).describeConstable())
 
+    @override
     @overload
-    def getDisplayName(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.platform.GdxPlatform.getDisplayName()"""
-        return str.__wrap(super(GdxPlatform, self).getDisplayName())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Enum.toString()"""
+        return str._wrap(super(Enum, self).toString())
 
     @override
     @overload
@@ -114,26 +107,27 @@ class GdxPlatform():
 
     @override
     @overload
-    def describeConstable(self) -> 'Optional':
-        """public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable()"""
-        return 'Optional'.__wrap(super(Enum, self).describeConstable())
+    def ordinal(self) -> int:
+        """public final int java.lang.Enum.ordinal()"""
+        return int._wrap(super(Enum, self).ordinal())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
+    @staticmethod
     @overload
-    def compareTo(self, arg0: 'Enum') -> int:
-        """public final int java.lang.Enum.compareTo(E)"""
-        return int.__wrap(super(__Enum, self).compareTo(arg0))
+    def values() -> List['GdxPlatform']:
+        """public static dev.ultreon.quantum.client.platform.GdxPlatform[] dev.ultreon.quantum.client.platform.GdxPlatform.values()"""
+        return List[GdxPlatform]._wrap(_GdxPlatform.values())
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def getDeclaringClass(self) -> 'type.Class':
+        """public final java.lang.Class<E> java.lang.Enum.getDeclaringClass()"""
+        return 'type.Class'._wrap(super(Enum, self).getDeclaringClass())
 
     @override
     @overload
@@ -144,19 +138,29 @@ class GdxPlatform():
     @overload
     def equals(self, arg0: object) -> bool:
         """public final boolean java.lang.Enum.equals(java.lang.Object)"""
-        return bool.__wrap(super(__Enum, self).equals(arg0))
+        return bool._wrap(super(_Enum, self).equals(arg0))
 
     @override
     @overload
-    def getDeclaringClass(self) -> 'type.Class':
-        """public final java.lang.Class<E> java.lang.Enum.getDeclaringClass()"""
-        return 'type.Class'.__wrap(super(Enum, self).getDeclaringClass())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
-    @override
     @overload
-    def ordinal(self) -> int:
-        """public final int java.lang.Enum.ordinal()"""
-        return int.__wrap(super(Enum, self).ordinal())
+    def getDisplayName(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.platform.GdxPlatform.getDisplayName()"""
+        return str._wrap(super(GdxPlatform, self).getDisplayName())
+
+    @overload
+    def compareTo(self, arg0: 'Enum') -> int:
+        """public final int java.lang.Enum.compareTo(E)"""
+        return int._wrap(super(_Enum, self).compareTo(arg0))
+
+    @staticmethod
+    @overload
+    def valueOf(arg0: str) -> 'GdxPlatform':
+        """public static dev.ultreon.quantum.client.platform.GdxPlatform dev.ultreon.quantum.client.platform.GdxPlatform.valueOf(java.lang.String)"""
+        return GdxPlatform._wrap(_GdxPlatform.valueOf(arg0))
 
     @override
     @overload
@@ -164,17 +168,14 @@ class GdxPlatform():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Enum.toString()"""
-        return str.__wrap(super(Enum, self).toString())
 
-    @staticmethod
-    @overload
-    def values() -> List['GdxPlatform']:
-        """public static dev.ultreon.quantum.client.platform.GdxPlatform[] dev.ultreon.quantum.client.platform.GdxPlatform.values()"""
-        return List[GdxPlatform].__wrap(__GdxPlatform.values())
+GdxPlatform.ANDROID = GdxPlatform._wrap(_ANDROID.ANDROID)
+
+GdxPlatform.DESKTOP = GdxPlatform._wrap(_DESKTOP.DESKTOP)
+
+GdxPlatform.WEB = GdxPlatform._wrap(_WEB.WEB)
+
+GdxPlatform.IOS = GdxPlatform._wrap(_IOS.IOS)
 
  
  
@@ -182,106 +183,99 @@ class GdxPlatform():
 # CLASS: dev.ultreon.quantum.client.platform.GdxPlatform
 from builtins import str
 from pyquantum_helper import override
-import dev.ultreon.quantum.client.platform.GdxPlatform as __GdxPlatform
-__GdxPlatform = __GdxPlatform
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.util.Optional as __Optional
-__Optional = __Optional
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.client.platform.GdxPlatform as _GdxPlatform
+_GdxPlatform = _GdxPlatform
 from typing import List
 import java.lang.Enum as Enum
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __string
-import java.lang.String as __String
-__String = __String
+import java.lang.String as _string
+import java.lang.Enum as _Enum
+_Enum = _Enum
+import java.lang.Integer as _int
+import java.util.Optional as _Optional
+_Optional = _Optional
 import java.util.Optional as Optional
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
-import java.lang.Enum as __Enum
-__Enum = __Enum
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class GdxPlatform():
     """dev.ultreon.quantum.client.platform.GdxPlatform"""
  
     @staticmethod
-    def __wrap(java_value: __GdxPlatform) -> 'GdxPlatform':
+    def _wrap(java_value: _GdxPlatform) -> 'GdxPlatform':
         return GdxPlatform(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __GdxPlatform):
+    def __init__(self, __dynamic__: _GdxPlatform):
         """
         Dynamic initializer for GdxPlatform.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_GdxPlatform__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_GdxPlatform__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    # public static final dev.ultreon.quantum.client.platform.GdxPlatform dev.ultreon.quantum.client.platform.GdxPlatform.ANDROID
-    ANDROID: 'GdxPlatform' = __wrap(__GdxPlatform.ANDROID)
-
-    # public static final dev.ultreon.quantum.client.platform.GdxPlatform dev.ultreon.quantum.client.platform.GdxPlatform.DESKTOP
-    DESKTOP: 'GdxPlatform' = __wrap(__GdxPlatform.DESKTOP)
-
-    # public static final dev.ultreon.quantum.client.platform.GdxPlatform dev.ultreon.quantum.client.platform.GdxPlatform.WEB
-    WEB: 'GdxPlatform' = __wrap(__GdxPlatform.WEB)
-
-    # public static final dev.ultreon.quantum.client.platform.GdxPlatform dev.ultreon.quantum.client.platform.GdxPlatform.IOS
-    IOS: 'GdxPlatform' = __wrap(__GdxPlatform.IOS)
-
-
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def hashCode(self) -> int:
+        """public final int java.lang.Enum.hashCode()"""
+        return int._wrap(super(Enum, self).hashCode())
 
     @staticmethod
     @overload
     def valueOf(arg0: 'Class', arg1: str) -> 'Enum':
         """public static <T extends java.lang.Enum<T>> T java.lang.Enum.valueOf(java.lang.Class<T>,java.lang.String)"""
-        return Enum.__wrap(__Enum.valueOf(arg0, arg1))
-
-    @staticmethod
-    @overload
-    def valueOf(arg0: str) -> 'GdxPlatform':
-        """public static dev.ultreon.quantum.client.platform.GdxPlatform dev.ultreon.quantum.client.platform.GdxPlatform.valueOf(java.lang.String)"""
-        return GdxPlatform.__wrap(__GdxPlatform.valueOf(arg0))
+        return Enum._wrap(_Enum.valueOf(arg0, arg1))
 
     @override
     @overload
     def name(self) -> str:
         """public final java.lang.String java.lang.Enum.name()"""
-        return str.__wrap(super(Enum, self).name())
+        return str._wrap(super(Enum, self).name())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public final int java.lang.Enum.hashCode()"""
-        return int.__wrap(super(Enum, self).hashCode())
+    def describeConstable(self) -> 'Optional':
+        """public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable()"""
+        return 'Optional'._wrap(super(Enum, self).describeConstable())
 
+    @override
     @overload
-    def getDisplayName(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.platform.GdxPlatform.getDisplayName()"""
-        return str.__wrap(super(GdxPlatform, self).getDisplayName())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Enum.toString()"""
+        return str._wrap(super(Enum, self).toString())
 
     @override
     @overload
@@ -291,26 +285,27 @@ class GdxPlatform():
 
     @override
     @overload
-    def describeConstable(self) -> 'Optional':
-        """public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable()"""
-        return 'Optional'.__wrap(super(Enum, self).describeConstable())
+    def ordinal(self) -> int:
+        """public final int java.lang.Enum.ordinal()"""
+        return int._wrap(super(Enum, self).ordinal())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
+    @staticmethod
     @overload
-    def compareTo(self, arg0: 'Enum') -> int:
-        """public final int java.lang.Enum.compareTo(E)"""
-        return int.__wrap(super(__Enum, self).compareTo(arg0))
+    def values() -> List['GdxPlatform']:
+        """public static dev.ultreon.quantum.client.platform.GdxPlatform[] dev.ultreon.quantum.client.platform.GdxPlatform.values()"""
+        return List[GdxPlatform]._wrap(_GdxPlatform.values())
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def getDeclaringClass(self) -> 'type.Class':
+        """public final java.lang.Class<E> java.lang.Enum.getDeclaringClass()"""
+        return 'type.Class'._wrap(super(Enum, self).getDeclaringClass())
 
     @override
     @overload
@@ -321,19 +316,29 @@ class GdxPlatform():
     @overload
     def equals(self, arg0: object) -> bool:
         """public final boolean java.lang.Enum.equals(java.lang.Object)"""
-        return bool.__wrap(super(__Enum, self).equals(arg0))
+        return bool._wrap(super(_Enum, self).equals(arg0))
 
     @override
     @overload
-    def getDeclaringClass(self) -> 'type.Class':
-        """public final java.lang.Class<E> java.lang.Enum.getDeclaringClass()"""
-        return 'type.Class'.__wrap(super(Enum, self).getDeclaringClass())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
-    @override
     @overload
-    def ordinal(self) -> int:
-        """public final int java.lang.Enum.ordinal()"""
-        return int.__wrap(super(Enum, self).ordinal())
+    def getDisplayName(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.platform.GdxPlatform.getDisplayName()"""
+        return str._wrap(super(GdxPlatform, self).getDisplayName())
+
+    @overload
+    def compareTo(self, arg0: 'Enum') -> int:
+        """public final int java.lang.Enum.compareTo(E)"""
+        return int._wrap(super(_Enum, self).compareTo(arg0))
+
+    @staticmethod
+    @overload
+    def valueOf(arg0: str) -> 'GdxPlatform':
+        """public static dev.ultreon.quantum.client.platform.GdxPlatform dev.ultreon.quantum.client.platform.GdxPlatform.valueOf(java.lang.String)"""
+        return GdxPlatform._wrap(_GdxPlatform.valueOf(arg0))
 
     @override
     @overload
@@ -341,17 +346,14 @@ class GdxPlatform():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Enum.toString()"""
-        return str.__wrap(super(Enum, self).toString())
 
-    @staticmethod
-    @overload
-    def values() -> List['GdxPlatform']:
-        """public static dev.ultreon.quantum.client.platform.GdxPlatform[] dev.ultreon.quantum.client.platform.GdxPlatform.values()"""
-        return List[GdxPlatform].__wrap(__GdxPlatform.values())
+GdxPlatform.ANDROID = GdxPlatform._wrap(_ANDROID.ANDROID)
+
+GdxPlatform.DESKTOP = GdxPlatform._wrap(_DESKTOP.DESKTOP)
+
+GdxPlatform.WEB = GdxPlatform._wrap(_WEB.WEB)
+
+GdxPlatform.IOS = GdxPlatform._wrap(_IOS.IOS)
 
  
  
@@ -362,92 +364,99 @@ class GdxPlatform():
 # CLASS: dev.ultreon.quantum.client.platform.PlatformType
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.util.Optional as __Optional
-__Optional = __Optional
-import dev.ultreon.quantum.client.platform.PlatformType as __PlatformType
-__PlatformType = __PlatformType
+import dev.ultreon.quantum.client.platform.PlatformType as _PlatformType
+_PlatformType = _PlatformType
+import java.lang.String as _String
+_String = _String
 from typing import List
 import java.lang.Enum as Enum
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __string
-import java.lang.String as __String
-__String = __String
+import java.lang.String as _string
+import java.lang.Enum as _Enum
+_Enum = _Enum
+import java.lang.Integer as _int
+import java.util.Optional as _Optional
+_Optional = _Optional
 import java.util.Optional as Optional
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
-import java.lang.Enum as __Enum
-__Enum = __Enum
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class PlatformType():
     """dev.ultreon.quantum.client.platform.PlatformType"""
  
     @staticmethod
-    def __wrap(java_value: __PlatformType) -> 'PlatformType':
+    def _wrap(java_value: _PlatformType) -> 'PlatformType':
         return PlatformType(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __PlatformType):
+    def __init__(self, __dynamic__: _PlatformType):
         """
         Dynamic initializer for PlatformType.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_PlatformType__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_PlatformType__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    # public static final dev.ultreon.quantum.client.platform.PlatformType dev.ultreon.quantum.client.platform.PlatformType.DESKTOP
-    DESKTOP: 'PlatformType' = __wrap(__PlatformType.DESKTOP)
-
-    # public static final dev.ultreon.quantum.client.platform.PlatformType dev.ultreon.quantum.client.platform.PlatformType.MOBILE
-    MOBILE: 'PlatformType' = __wrap(__PlatformType.MOBILE)
-
-    # public static final dev.ultreon.quantum.client.platform.PlatformType dev.ultreon.quantum.client.platform.PlatformType.WEB
-    WEB: 'PlatformType' = __wrap(__PlatformType.WEB)
-
-
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def hashCode(self) -> int:
+        """public final int java.lang.Enum.hashCode()"""
+        return int._wrap(super(Enum, self).hashCode())
 
     @staticmethod
     @overload
     def valueOf(arg0: 'Class', arg1: str) -> 'Enum':
         """public static <T extends java.lang.Enum<T>> T java.lang.Enum.valueOf(java.lang.Class<T>,java.lang.String)"""
-        return Enum.__wrap(__Enum.valueOf(arg0, arg1))
+        return Enum._wrap(_Enum.valueOf(arg0, arg1))
 
     @override
     @overload
     def name(self) -> str:
         """public final java.lang.String java.lang.Enum.name()"""
-        return str.__wrap(super(Enum, self).name())
+        return str._wrap(super(Enum, self).name())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public final int java.lang.Enum.hashCode()"""
-        return int.__wrap(super(Enum, self).hashCode())
+    def describeConstable(self) -> 'Optional':
+        """public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable()"""
+        return 'Optional'._wrap(super(Enum, self).describeConstable())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Enum.toString()"""
+        return str._wrap(super(Enum, self).toString())
 
     @override
     @overload
@@ -455,40 +464,29 @@ class PlatformType():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @staticmethod
+    @overload
+    def valueOf(arg0: str) -> 'PlatformType':
+        """public static dev.ultreon.quantum.client.platform.PlatformType dev.ultreon.quantum.client.platform.PlatformType.valueOf(java.lang.String)"""
+        return PlatformType._wrap(_PlatformType.valueOf(arg0))
+
     @override
     @overload
-    def describeConstable(self) -> 'Optional':
-        """public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable()"""
-        return 'Optional'.__wrap(super(Enum, self).describeConstable())
+    def ordinal(self) -> int:
+        """public final int java.lang.Enum.ordinal()"""
+        return int._wrap(super(Enum, self).ordinal())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def compareTo(self, arg0: 'Enum') -> int:
-        """public final int java.lang.Enum.compareTo(E)"""
-        return int.__wrap(super(__Enum, self).compareTo(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @staticmethod
-    @overload
-    def values() -> List['PlatformType']:
-        """public static dev.ultreon.quantum.client.platform.PlatformType[] dev.ultreon.quantum.client.platform.PlatformType.values()"""
-        return List[PlatformType].__wrap(__PlatformType.values())
-
-    @staticmethod
-    @overload
-    def valueOf(arg0: str) -> 'PlatformType':
-        """public static dev.ultreon.quantum.client.platform.PlatformType dev.ultreon.quantum.client.platform.PlatformType.valueOf(java.lang.String)"""
-        return PlatformType.__wrap(__PlatformType.valueOf(arg0))
+    def getDeclaringClass(self) -> 'type.Class':
+        """public final java.lang.Class<E> java.lang.Enum.getDeclaringClass()"""
+        return 'type.Class'._wrap(super(Enum, self).getDeclaringClass())
 
     @override
     @overload
@@ -499,19 +497,24 @@ class PlatformType():
     @overload
     def equals(self, arg0: object) -> bool:
         """public final boolean java.lang.Enum.equals(java.lang.Object)"""
-        return bool.__wrap(super(__Enum, self).equals(arg0))
+        return bool._wrap(super(_Enum, self).equals(arg0))
 
     @override
     @overload
-    def getDeclaringClass(self) -> 'type.Class':
-        """public final java.lang.Class<E> java.lang.Enum.getDeclaringClass()"""
-        return 'type.Class'.__wrap(super(Enum, self).getDeclaringClass())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
-    @override
     @overload
-    def ordinal(self) -> int:
-        """public final int java.lang.Enum.ordinal()"""
-        return int.__wrap(super(Enum, self).ordinal())
+    def compareTo(self, arg0: 'Enum') -> int:
+        """public final int java.lang.Enum.compareTo(E)"""
+        return int._wrap(super(_Enum, self).compareTo(arg0))
+
+    @staticmethod
+    @overload
+    def values() -> List['PlatformType']:
+        """public static dev.ultreon.quantum.client.platform.PlatformType[] dev.ultreon.quantum.client.platform.PlatformType.values()"""
+        return List[PlatformType]._wrap(_PlatformType.values())
 
     @override
     @overload
@@ -519,124 +522,125 @@ class PlatformType():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Enum.toString()"""
-        return str.__wrap(super(Enum, self).toString()) 
+
+PlatformType.WEB = PlatformType._wrap(_WEB.WEB)
+
+PlatformType.DESKTOP = PlatformType._wrap(_DESKTOP.DESKTOP)
+
+PlatformType.MOBILE = PlatformType._wrap(_MOBILE.MOBILE) 
  
  
 # CLASS: dev.ultreon.quantum.client.platform.OperatingSystem
 from builtins import str
 from pyquantum_helper import override
-import dev.ultreon.quantum.client.platform.GdxPlatform as __GdxPlatform
-__GdxPlatform = __GdxPlatform
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.util.Optional as __Optional
-__Optional = __Optional
-import dev.ultreon.quantum.client.platform.OperatingSystem as __OperatingSystem
-__OperatingSystem = __OperatingSystem
-import dev.ultreon.quantum.client.platform.PlatformType as __PlatformType
-__PlatformType = __PlatformType
+import dev.ultreon.quantum.client.platform.PlatformType as _PlatformType
+_PlatformType = _PlatformType
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.client.platform.GdxPlatform as _GdxPlatform
+_GdxPlatform = _GdxPlatform
 from typing import List
 import java.lang.Enum as Enum
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __string
-import java.lang.String as __String
-__String = __String
+import java.lang.String as _string
+import java.lang.Enum as _Enum
+_Enum = _Enum
+import java.lang.Integer as _int
+import java.util.Optional as _Optional
+_Optional = _Optional
+import dev.ultreon.quantum.client.platform.OperatingSystem as _OperatingSystem
+_OperatingSystem = _OperatingSystem
 import java.util.Optional as Optional
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
-import java.lang.Enum as __Enum
-__Enum = __Enum
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class OperatingSystem():
     """dev.ultreon.quantum.client.platform.OperatingSystem"""
  
     @staticmethod
-    def __wrap(java_value: __OperatingSystem) -> 'OperatingSystem':
+    def _wrap(java_value: _OperatingSystem) -> 'OperatingSystem':
         return OperatingSystem(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __OperatingSystem):
+    def __init__(self, __dynamic__: _OperatingSystem):
         """
         Dynamic initializer for OperatingSystem.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_OperatingSystem__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_OperatingSystem__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    # public static final dev.ultreon.quantum.client.platform.OperatingSystem dev.ultreon.quantum.client.platform.OperatingSystem.LINUX
-    LINUX: 'OperatingSystem' = __wrap(__OperatingSystem.LINUX)
-
-    # public static final dev.ultreon.quantum.client.platform.OperatingSystem dev.ultreon.quantum.client.platform.OperatingSystem.ANDROID
-    ANDROID: 'OperatingSystem' = __wrap(__OperatingSystem.ANDROID)
-
-    # public static final dev.ultreon.quantum.client.platform.OperatingSystem dev.ultreon.quantum.client.platform.OperatingSystem.MAC_OS
-    MAC_OS: 'OperatingSystem' = __wrap(__OperatingSystem.MAC_OS)
-
-    # public static final dev.ultreon.quantum.client.platform.OperatingSystem dev.ultreon.quantum.client.platform.OperatingSystem.IOS
-    IOS: 'OperatingSystem' = __wrap(__OperatingSystem.IOS)
-
-    # public static final dev.ultreon.quantum.client.platform.OperatingSystem dev.ultreon.quantum.client.platform.OperatingSystem.WEB
-    WEB: 'OperatingSystem' = __wrap(__OperatingSystem.WEB)
-
-    # public static final dev.ultreon.quantum.client.platform.OperatingSystem dev.ultreon.quantum.client.platform.OperatingSystem.WINDOWS
-    WINDOWS: 'OperatingSystem' = __wrap(__OperatingSystem.WINDOWS)
-
-    # public static final dev.ultreon.quantum.client.platform.OperatingSystem dev.ultreon.quantum.client.platform.OperatingSystem.OS2
-    OS2: 'OperatingSystem' = __wrap(__OperatingSystem.OS2)
-
-    # public static final dev.ultreon.quantum.client.platform.OperatingSystem dev.ultreon.quantum.client.platform.OperatingSystem.SOLARIS
-    SOLARIS: 'OperatingSystem' = __wrap(__OperatingSystem.SOLARIS)
-
-    # public static final dev.ultreon.quantum.client.platform.OperatingSystem dev.ultreon.quantum.client.platform.OperatingSystem.UNIX
-    UNIX: 'OperatingSystem' = __wrap(__OperatingSystem.UNIX)
-
-
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def hashCode(self) -> int:
+        """public final int java.lang.Enum.hashCode()"""
+        return int._wrap(super(Enum, self).hashCode())
 
     @staticmethod
     @overload
     def valueOf(arg0: 'Class', arg1: str) -> 'Enum':
         """public static <T extends java.lang.Enum<T>> T java.lang.Enum.valueOf(java.lang.Class<T>,java.lang.String)"""
-        return Enum.__wrap(__Enum.valueOf(arg0, arg1))
+        return Enum._wrap(_Enum.valueOf(arg0, arg1))
+
+    @overload
+    def getType(self) -> 'PlatformType':
+        """public dev.ultreon.quantum.client.platform.PlatformType dev.ultreon.quantum.client.platform.OperatingSystem.getType()"""
+        return 'PlatformType'._wrap(super(OperatingSystem, self).getType())
 
     @override
     @overload
     def name(self) -> str:
         """public final java.lang.String java.lang.Enum.name()"""
-        return str.__wrap(super(Enum, self).name())
+        return str._wrap(super(Enum, self).name())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public final int java.lang.Enum.hashCode()"""
-        return int.__wrap(super(Enum, self).hashCode())
+    def describeConstable(self) -> 'Optional':
+        """public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable()"""
+        return 'Optional'._wrap(super(Enum, self).describeConstable())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @staticmethod
+    @overload
+    def valueOf(arg0: str) -> 'OperatingSystem':
+        """public static dev.ultreon.quantum.client.platform.OperatingSystem dev.ultreon.quantum.client.platform.OperatingSystem.valueOf(java.lang.String)"""
+        return OperatingSystem._wrap(_OperatingSystem.valueOf(arg0))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Enum.toString()"""
+        return str._wrap(super(Enum, self).toString())
 
     @override
     @overload
@@ -648,30 +652,25 @@ class OperatingSystem():
     @overload
     def values() -> List['OperatingSystem']:
         """public static dev.ultreon.quantum.client.platform.OperatingSystem[] dev.ultreon.quantum.client.platform.OperatingSystem.values()"""
-        return List[OperatingSystem].__wrap(__OperatingSystem.values())
+        return List[OperatingSystem]._wrap(_OperatingSystem.values())
 
     @override
     @overload
-    def describeConstable(self) -> 'Optional':
-        """public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable()"""
-        return 'Optional'.__wrap(super(Enum, self).describeConstable())
+    def ordinal(self) -> int:
+        """public final int java.lang.Enum.ordinal()"""
+        return int._wrap(super(Enum, self).ordinal())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def compareTo(self, arg0: 'Enum') -> int:
-        """public final int java.lang.Enum.compareTo(E)"""
-        return int.__wrap(super(__Enum, self).compareTo(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def getDeclaringClass(self) -> 'type.Class':
+        """public final java.lang.Class<E> java.lang.Enum.getDeclaringClass()"""
+        return 'type.Class'._wrap(super(Enum, self).getDeclaringClass())
 
     @override
     @overload
@@ -682,29 +681,23 @@ class OperatingSystem():
     @overload
     def equals(self, arg0: object) -> bool:
         """public final boolean java.lang.Enum.equals(java.lang.Object)"""
-        return bool.__wrap(super(__Enum, self).equals(arg0))
-
-    @override
-    @overload
-    def getDeclaringClass(self) -> 'type.Class':
-        """public final java.lang.Class<E> java.lang.Enum.getDeclaringClass()"""
-        return 'type.Class'.__wrap(super(Enum, self).getDeclaringClass())
-
-    @override
-    @overload
-    def ordinal(self) -> int:
-        """public final int java.lang.Enum.ordinal()"""
-        return int.__wrap(super(Enum, self).ordinal())
+        return bool._wrap(super(_Enum, self).equals(arg0))
 
     @overload
     def getGdxPlatform(self) -> 'GdxPlatform':
         """public dev.ultreon.quantum.client.platform.GdxPlatform dev.ultreon.quantum.client.platform.OperatingSystem.getGdxPlatform()"""
-        return 'GdxPlatform'.__wrap(super(OperatingSystem, self).getGdxPlatform())
+        return 'GdxPlatform'._wrap(super(OperatingSystem, self).getGdxPlatform())
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @overload
-    def getType(self) -> 'PlatformType':
-        """public dev.ultreon.quantum.client.platform.PlatformType dev.ultreon.quantum.client.platform.OperatingSystem.getType()"""
-        return 'PlatformType'.__wrap(super(OperatingSystem, self).getType())
+    def compareTo(self, arg0: 'Enum') -> int:
+        """public final int java.lang.Enum.compareTo(E)"""
+        return int._wrap(super(_Enum, self).compareTo(arg0))
 
     @override
     @overload
@@ -712,14 +705,21 @@ class OperatingSystem():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Enum.toString()"""
-        return str.__wrap(super(Enum, self).toString())
 
-    @staticmethod
-    @overload
-    def valueOf(arg0: str) -> 'OperatingSystem':
-        """public static dev.ultreon.quantum.client.platform.OperatingSystem dev.ultreon.quantum.client.platform.OperatingSystem.valueOf(java.lang.String)"""
-        return OperatingSystem.__wrap(__OperatingSystem.valueOf(arg0))
+OperatingSystem.WINDOWS = OperatingSystem._wrap(_WINDOWS.WINDOWS)
+
+OperatingSystem.MAC_OS = OperatingSystem._wrap(_MAC_OS.MAC_OS)
+
+OperatingSystem.WEB = OperatingSystem._wrap(_WEB.WEB)
+
+OperatingSystem.LINUX = OperatingSystem._wrap(_LINUX.LINUX)
+
+OperatingSystem.IOS = OperatingSystem._wrap(_IOS.IOS)
+
+OperatingSystem.ANDROID = OperatingSystem._wrap(_ANDROID.ANDROID)
+
+OperatingSystem.SOLARIS = OperatingSystem._wrap(_SOLARIS.SOLARIS)
+
+OperatingSystem.UNIX = OperatingSystem._wrap(_UNIX.UNIX)
+
+OperatingSystem.OS2 = OperatingSystem._wrap(_OS2.OS2)

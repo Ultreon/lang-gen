@@ -3,119 +3,94 @@ from overload import overload
 
 
  
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
-import dev.ultreon.quantum.util.Result as __Result
-__Result = __Result
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
 import java.io.File as File
-import java.lang.Throwable as __Throwable
-__Throwable = __Throwable
-import dev.ultreon.quantum.crash.CrashLog as __CrashLog
-__CrashLog = __CrashLog
+import dev.ultreon.quantum.crash.CrashLog as _CrashLog
+_CrashLog = _CrashLog
+import java.lang.String as _String
+_String = _String
+import java.util.List as _List
+_List = _List
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import java.util.List as __List
-__List = __List
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
+import java.lang.String as _string
+import dev.ultreon.quantum.util.Result as _Result
+_Result = _Result
 import java.io.OutputStream as OutputStream
-import java.lang.String as __String
-__String = __String
-import java.lang.String as __string
-import dev.ultreon.quantum.crash.CrashCategory as __CrashCategory
-__CrashCategory = __CrashCategory
-import java.lang.Object as __Object
-__Object = __Object
-import dev.ultreon.quantum.crash.ApplicationCrash as __ApplicationCrash
-__ApplicationCrash = __ApplicationCrash
+import dev.ultreon.quantum.crash.ApplicationCrash as _ApplicationCrash
+_ApplicationCrash = _ApplicationCrash
+import java.lang.Integer as _int
+import dev.ultreon.quantum.crash.CrashCategory as _CrashCategory
+_CrashCategory = _CrashCategory
+import java.lang.Throwable as _Throwable
+_Throwable = _Throwable
 import java.lang.Throwable as Throwable
-import java.lang.Integer as __int
 from builtins import bool
+import java.lang.Long as _long
 import java.util.List as List
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class CrashLog():
     """dev.ultreon.quantum.crash.CrashLog"""
  
     @staticmethod
-    def __wrap(java_value: __CrashLog) -> 'CrashLog':
+    def _wrap(java_value: _CrashLog) -> 'CrashLog':
         return CrashLog(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __CrashLog):
+    def __init__(self, __dynamic__: _CrashLog):
         """
         Dynamic initializer for CrashLog.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_CrashLog__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_CrashLog__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @staticmethod
     @overload
-    def getFileName() -> str:
-        """public static java.lang.String dev.ultreon.quantum.crash.CrashLog.getFileName()"""
-        return str.__wrap(__CrashLog.getFileName())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def __init__(self, arg0: str, arg1: 'CrashLog'):
-        """public dev.ultreon.quantum.crash.CrashLog(java.lang.String,dev.ultreon.quantum.crash.CrashLog)"""
-        val = __CrashLog(arg0, arg1)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def getFileNameWithoutExt() -> str:
+        """public static java.lang.String dev.ultreon.quantum.crash.CrashLog.getFileNameWithoutExt()"""
+        return str._wrap(_CrashLog.getFileNameWithoutExt())
 
     @overload
     def addLog(self, arg0: 'CrashLog'):
         """public void dev.ultreon.quantum.crash.CrashLog.addLog(dev.ultreon.quantum.crash.CrashLog)"""
-        super(__CrashLog, self).addLog(arg0)
+        super(_CrashLog, self).addLog(arg0)
 
     @overload
     def writeToStream(self, arg0: 'OutputStream'):
         """public void dev.ultreon.quantum.crash.CrashLog.writeToStream(java.io.OutputStream) throws java.io.IOException"""
-        super(__CrashLog, self).writeToStream(arg0)
-
-    @override
-    @overload
-    def add(self, arg0: str, arg1: object):
-        """public void dev.ultreon.quantum.crash.CrashCategory.add(java.lang.String,java.lang.Object)"""
-        super(__CrashCategory, self).add(arg0, arg1)
-
-    @override
-    @overload
-    def getDetails(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.crash.CrashCategory.getDetails()"""
-        return str.__wrap(super(CrashCategory, self).getDetails())
-
-    @overload
-    def addCategory(self, arg0: 'CrashCategory'):
-        """public void dev.ultreon.quantum.crash.CrashLog.addCategory(dev.ultreon.quantum.crash.CrashCategory)"""
-        super(__CrashLog, self).addCategory(arg0)
+        super(_CrashLog, self).writeToStream(arg0)
 
     @override
     @overload
@@ -123,11 +98,16 @@ class CrashLog():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @overload
+    def writeToFile(self, arg0: 'File') -> 'util.Result':
+        """public dev.ultreon.quantum.util.Result<java.lang.Void> dev.ultreon.quantum.crash.CrashLog.writeToFile(java.io.File)"""
+        return 'util.Result'._wrap(super(_CrashLog, self).writeToFile(arg0))
+
     @override
     @overload
-    def getThrowable(self) -> 'Throwable':
-        """public java.lang.Throwable dev.ultreon.quantum.crash.CrashLog.getThrowable()"""
-        return 'Throwable'.__wrap(super(CrashLog, self).getThrowable())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -137,55 +117,71 @@ class CrashLog():
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getDetails(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.crash.CrashCategory.getDetails()"""
+        return str._wrap(super(CrashCategory, self).getDetails())
+
+    @overload
+    def getCategories(self) -> 'List':
+        """public java.util.List<dev.ultreon.quantum.crash.CrashCategory> dev.ultreon.quantum.crash.CrashLog.getCategories()"""
+        return 'List'._wrap(super(CrashLog, self).getCategories())
+
+    @overload
+    def defaultSave(self) -> 'util.Result':
+        """public dev.ultreon.quantum.util.Result<java.lang.Void> dev.ultreon.quantum.crash.CrashLog.defaultSave()"""
+        return 'util.Result'._wrap(super(CrashLog, self).defaultSave())
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @overload
+    def createCrash(self) -> 'ApplicationCrash':
+        """public dev.ultreon.quantum.crash.ApplicationCrash dev.ultreon.quantum.crash.CrashLog.createCrash()"""
+        return 'ApplicationCrash'._wrap(super(CrashLog, self).createCrash())
+
+    @overload
+    def __init__(self, arg0: str, arg1: 'Throwable'):
+        """public dev.ultreon.quantum.crash.CrashLog(java.lang.String,java.lang.Throwable)"""
+        val = _CrashLog(arg0, arg1)
+        self.__wrapper = val
 
     @override
     @overload
     def toString(self) -> str:
         """public java.lang.String dev.ultreon.quantum.crash.CrashLog.toString()"""
-        return str.__wrap(super(CrashLog, self).toString())
+        return str._wrap(super(CrashLog, self).toString())
 
+    @override
     @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+    def add(self, arg0: str, arg1: object):
+        """public void dev.ultreon.quantum.crash.CrashCategory.add(java.lang.String,java.lang.Object)"""
+        super(_CrashCategory, self).add(arg0, arg1)
 
+    @override
     @overload
-    def getCategories(self) -> 'List':
-        """public java.util.List<dev.ultreon.quantum.crash.CrashCategory> dev.ultreon.quantum.crash.CrashLog.getCategories()"""
-        return 'List'.__wrap(super(CrashLog, self).getCategories())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
+    @override
     @overload
-    def createCrash(self) -> 'ApplicationCrash':
-        """public dev.ultreon.quantum.crash.ApplicationCrash dev.ultreon.quantum.crash.CrashLog.createCrash()"""
-        return 'ApplicationCrash'.__wrap(super(CrashLog, self).createCrash())
+    def getThrowable(self) -> 'Throwable':
+        """public java.lang.Throwable dev.ultreon.quantum.crash.CrashLog.getThrowable()"""
+        return 'Throwable'._wrap(super(CrashLog, self).getThrowable())
 
     @overload
     def __init__(self, arg0: str, arg1: 'CrashLog', arg2: 'Throwable'):
         """public dev.ultreon.quantum.crash.CrashLog(java.lang.String,dev.ultreon.quantum.crash.CrashLog,java.lang.Throwable)"""
-        val = __CrashLog(arg0, arg1, arg2)
-        self.__dict__ = val.__dict__
+        val = _CrashLog(arg0, arg1, arg2)
         self.__wrapper = val
 
     @staticmethod
     @overload
-    def getFileNameWithoutExt() -> str:
-        """public static java.lang.String dev.ultreon.quantum.crash.CrashLog.getFileNameWithoutExt()"""
-        return str.__wrap(__CrashLog.getFileNameWithoutExt())
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def getFileName() -> str:
+        """public static java.lang.String dev.ultreon.quantum.crash.CrashLog.getFileName()"""
+        return str._wrap(_CrashLog.getFileName())
 
     @overload
     def writeToLog(self):
@@ -193,11 +189,15 @@ class CrashLog():
         super(CrashLog, self).writeToLog()
 
     @overload
-    def __init__(self, arg0: str, arg1: 'Throwable'):
-        """public dev.ultreon.quantum.crash.CrashLog(java.lang.String,java.lang.Throwable)"""
-        val = __CrashLog(arg0, arg1)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def addCategory(self, arg0: 'CrashCategory'):
+        """public void dev.ultreon.quantum.crash.CrashLog.addCategory(dev.ultreon.quantum.crash.CrashCategory)"""
+        super(_CrashLog, self).addCategory(arg0)
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -206,132 +206,109 @@ class CrashLog():
         super(object, self).wait()
 
     @overload
-    def writeToFile(self, arg0: 'File') -> 'util.Result':
-        """public dev.ultreon.quantum.util.Result<java.lang.Void> dev.ultreon.quantum.crash.CrashLog.writeToFile(java.io.File)"""
-        return 'util.Result'.__wrap(super(__CrashLog, self).writeToFile(arg0))
+    def __init__(self, arg0: str, arg1: 'CrashLog'):
+        """public dev.ultreon.quantum.crash.CrashLog(java.lang.String,dev.ultreon.quantum.crash.CrashLog)"""
+        val = _CrashLog(arg0, arg1)
+        self.__wrapper = val
 
+    @override
     @overload
-    def defaultSave(self) -> 'util.Result':
-        """public dev.ultreon.quantum.util.Result<java.lang.Void> dev.ultreon.quantum.crash.CrashLog.defaultSave()"""
-        return 'util.Result'.__wrap(super(CrashLog, self).defaultSave())
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
  
 # CLASS: dev.ultreon.quantum.crash.CrashLog
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
-import dev.ultreon.quantum.util.Result as __Result
-__Result = __Result
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
 import java.io.File as File
-import java.lang.Throwable as __Throwable
-__Throwable = __Throwable
-import dev.ultreon.quantum.crash.CrashLog as __CrashLog
-__CrashLog = __CrashLog
+import dev.ultreon.quantum.crash.CrashLog as _CrashLog
+_CrashLog = _CrashLog
+import java.lang.String as _String
+_String = _String
+import java.util.List as _List
+_List = _List
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import java.util.List as __List
-__List = __List
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
+import java.lang.String as _string
+import dev.ultreon.quantum.util.Result as _Result
+_Result = _Result
 import java.io.OutputStream as OutputStream
-import java.lang.String as __String
-__String = __String
-import java.lang.String as __string
-import dev.ultreon.quantum.crash.CrashCategory as __CrashCategory
-__CrashCategory = __CrashCategory
-import java.lang.Object as __Object
-__Object = __Object
-import dev.ultreon.quantum.crash.ApplicationCrash as __ApplicationCrash
-__ApplicationCrash = __ApplicationCrash
+import dev.ultreon.quantum.crash.ApplicationCrash as _ApplicationCrash
+_ApplicationCrash = _ApplicationCrash
+import java.lang.Integer as _int
+import dev.ultreon.quantum.crash.CrashCategory as _CrashCategory
+_CrashCategory = _CrashCategory
+import java.lang.Throwable as _Throwable
+_Throwable = _Throwable
 import java.lang.Throwable as Throwable
-import java.lang.Integer as __int
 from builtins import bool
+import java.lang.Long as _long
 import java.util.List as List
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class CrashLog():
     """dev.ultreon.quantum.crash.CrashLog"""
  
     @staticmethod
-    def __wrap(java_value: __CrashLog) -> 'CrashLog':
+    def _wrap(java_value: _CrashLog) -> 'CrashLog':
         return CrashLog(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __CrashLog):
+    def __init__(self, __dynamic__: _CrashLog):
         """
         Dynamic initializer for CrashLog.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_CrashLog__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_CrashLog__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @staticmethod
     @overload
-    def getFileName() -> str:
-        """public static java.lang.String dev.ultreon.quantum.crash.CrashLog.getFileName()"""
-        return str.__wrap(__CrashLog.getFileName())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def __init__(self, arg0: str, arg1: 'CrashLog'):
-        """public dev.ultreon.quantum.crash.CrashLog(java.lang.String,dev.ultreon.quantum.crash.CrashLog)"""
-        val = __CrashLog(arg0, arg1)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def getFileNameWithoutExt() -> str:
+        """public static java.lang.String dev.ultreon.quantum.crash.CrashLog.getFileNameWithoutExt()"""
+        return str._wrap(_CrashLog.getFileNameWithoutExt())
 
     @overload
     def addLog(self, arg0: 'CrashLog'):
         """public void dev.ultreon.quantum.crash.CrashLog.addLog(dev.ultreon.quantum.crash.CrashLog)"""
-        super(__CrashLog, self).addLog(arg0)
+        super(_CrashLog, self).addLog(arg0)
 
     @overload
     def writeToStream(self, arg0: 'OutputStream'):
         """public void dev.ultreon.quantum.crash.CrashLog.writeToStream(java.io.OutputStream) throws java.io.IOException"""
-        super(__CrashLog, self).writeToStream(arg0)
-
-    @override
-    @overload
-    def add(self, arg0: str, arg1: object):
-        """public void dev.ultreon.quantum.crash.CrashCategory.add(java.lang.String,java.lang.Object)"""
-        super(__CrashCategory, self).add(arg0, arg1)
-
-    @override
-    @overload
-    def getDetails(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.crash.CrashCategory.getDetails()"""
-        return str.__wrap(super(CrashCategory, self).getDetails())
-
-    @overload
-    def addCategory(self, arg0: 'CrashCategory'):
-        """public void dev.ultreon.quantum.crash.CrashLog.addCategory(dev.ultreon.quantum.crash.CrashCategory)"""
-        super(__CrashLog, self).addCategory(arg0)
+        super(_CrashLog, self).writeToStream(arg0)
 
     @override
     @overload
@@ -339,11 +316,16 @@ class CrashLog():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @overload
+    def writeToFile(self, arg0: 'File') -> 'util.Result':
+        """public dev.ultreon.quantum.util.Result<java.lang.Void> dev.ultreon.quantum.crash.CrashLog.writeToFile(java.io.File)"""
+        return 'util.Result'._wrap(super(_CrashLog, self).writeToFile(arg0))
+
     @override
     @overload
-    def getThrowable(self) -> 'Throwable':
-        """public java.lang.Throwable dev.ultreon.quantum.crash.CrashLog.getThrowable()"""
-        return 'Throwable'.__wrap(super(CrashLog, self).getThrowable())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -353,55 +335,71 @@ class CrashLog():
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getDetails(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.crash.CrashCategory.getDetails()"""
+        return str._wrap(super(CrashCategory, self).getDetails())
+
+    @overload
+    def getCategories(self) -> 'List':
+        """public java.util.List<dev.ultreon.quantum.crash.CrashCategory> dev.ultreon.quantum.crash.CrashLog.getCategories()"""
+        return 'List'._wrap(super(CrashLog, self).getCategories())
+
+    @overload
+    def defaultSave(self) -> 'util.Result':
+        """public dev.ultreon.quantum.util.Result<java.lang.Void> dev.ultreon.quantum.crash.CrashLog.defaultSave()"""
+        return 'util.Result'._wrap(super(CrashLog, self).defaultSave())
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @overload
+    def createCrash(self) -> 'ApplicationCrash':
+        """public dev.ultreon.quantum.crash.ApplicationCrash dev.ultreon.quantum.crash.CrashLog.createCrash()"""
+        return 'ApplicationCrash'._wrap(super(CrashLog, self).createCrash())
+
+    @overload
+    def __init__(self, arg0: str, arg1: 'Throwable'):
+        """public dev.ultreon.quantum.crash.CrashLog(java.lang.String,java.lang.Throwable)"""
+        val = _CrashLog(arg0, arg1)
+        self.__wrapper = val
 
     @override
     @overload
     def toString(self) -> str:
         """public java.lang.String dev.ultreon.quantum.crash.CrashLog.toString()"""
-        return str.__wrap(super(CrashLog, self).toString())
+        return str._wrap(super(CrashLog, self).toString())
 
+    @override
     @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+    def add(self, arg0: str, arg1: object):
+        """public void dev.ultreon.quantum.crash.CrashCategory.add(java.lang.String,java.lang.Object)"""
+        super(_CrashCategory, self).add(arg0, arg1)
 
+    @override
     @overload
-    def getCategories(self) -> 'List':
-        """public java.util.List<dev.ultreon.quantum.crash.CrashCategory> dev.ultreon.quantum.crash.CrashLog.getCategories()"""
-        return 'List'.__wrap(super(CrashLog, self).getCategories())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
+    @override
     @overload
-    def createCrash(self) -> 'ApplicationCrash':
-        """public dev.ultreon.quantum.crash.ApplicationCrash dev.ultreon.quantum.crash.CrashLog.createCrash()"""
-        return 'ApplicationCrash'.__wrap(super(CrashLog, self).createCrash())
+    def getThrowable(self) -> 'Throwable':
+        """public java.lang.Throwable dev.ultreon.quantum.crash.CrashLog.getThrowable()"""
+        return 'Throwable'._wrap(super(CrashLog, self).getThrowable())
 
     @overload
     def __init__(self, arg0: str, arg1: 'CrashLog', arg2: 'Throwable'):
         """public dev.ultreon.quantum.crash.CrashLog(java.lang.String,dev.ultreon.quantum.crash.CrashLog,java.lang.Throwable)"""
-        val = __CrashLog(arg0, arg1, arg2)
-        self.__dict__ = val.__dict__
+        val = _CrashLog(arg0, arg1, arg2)
         self.__wrapper = val
 
     @staticmethod
     @overload
-    def getFileNameWithoutExt() -> str:
-        """public static java.lang.String dev.ultreon.quantum.crash.CrashLog.getFileNameWithoutExt()"""
-        return str.__wrap(__CrashLog.getFileNameWithoutExt())
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def getFileName() -> str:
+        """public static java.lang.String dev.ultreon.quantum.crash.CrashLog.getFileName()"""
+        return str._wrap(_CrashLog.getFileName())
 
     @overload
     def writeToLog(self):
@@ -409,11 +407,15 @@ class CrashLog():
         super(CrashLog, self).writeToLog()
 
     @overload
-    def __init__(self, arg0: str, arg1: 'Throwable'):
-        """public dev.ultreon.quantum.crash.CrashLog(java.lang.String,java.lang.Throwable)"""
-        val = __CrashLog(arg0, arg1)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def addCategory(self, arg0: 'CrashCategory'):
+        """public void dev.ultreon.quantum.crash.CrashLog.addCategory(dev.ultreon.quantum.crash.CrashCategory)"""
+        super(_CrashLog, self).addCategory(arg0)
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -422,14 +424,16 @@ class CrashLog():
         super(object, self).wait()
 
     @overload
-    def writeToFile(self, arg0: 'File') -> 'util.Result':
-        """public dev.ultreon.quantum.util.Result<java.lang.Void> dev.ultreon.quantum.crash.CrashLog.writeToFile(java.io.File)"""
-        return 'util.Result'.__wrap(super(__CrashLog, self).writeToFile(arg0))
+    def __init__(self, arg0: str, arg1: 'CrashLog'):
+        """public dev.ultreon.quantum.crash.CrashLog(java.lang.String,dev.ultreon.quantum.crash.CrashLog)"""
+        val = _CrashLog(arg0, arg1)
+        self.__wrapper = val
 
+    @override
     @overload
-    def defaultSave(self) -> 'util.Result':
-        """public dev.ultreon.quantum.util.Result<java.lang.Void> dev.ultreon.quantum.crash.CrashLog.defaultSave()"""
-        return 'util.Result'.__wrap(super(CrashLog, self).defaultSave())
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
@@ -439,81 +443,86 @@ class CrashLog():
  
 # CLASS: dev.ultreon.quantum.crash.ApplicationCrash
 from builtins import str
+import java.lang.StackTraceElement as _StackTraceElement
+_StackTraceElement = _StackTraceElement
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
 import java.lang.Runnable as Runnable
-import java.lang.Throwable as __Throwable
-__Throwable = __Throwable
 import java.io.PrintWriter as PrintWriter
+import dev.ultreon.quantum.crash.CrashLog as _CrashLog
+_CrashLog = _CrashLog
+import java.lang.String as _String
+_String = _String
 import java.lang.StackTraceElement as StackTraceElement
-import java.lang.StackTraceElement as __StackTraceElement
-__StackTraceElement = __StackTraceElement
-import dev.ultreon.quantum.crash.CrashLog as __CrashLog
-__CrashLog = __CrashLog
 from typing import List
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
+import dev.ultreon.quantum.crash.ApplicationCrash as _ApplicationCrash
+_ApplicationCrash = _ApplicationCrash
 import java.io.PrintStream as PrintStream
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import dev.ultreon.quantum.crash.ApplicationCrash as __ApplicationCrash
-__ApplicationCrash = __ApplicationCrash
+import java.lang.Integer as _int
+import java.lang.Throwable as _Throwable
+_Throwable = _Throwable
 import java.lang.Throwable as Throwable
-import java.lang.Integer as __int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ApplicationCrash():
     """dev.ultreon.quantum.crash.ApplicationCrash"""
  
     @staticmethod
-    def __wrap(java_value: __ApplicationCrash) -> 'ApplicationCrash':
+    def _wrap(java_value: _ApplicationCrash) -> 'ApplicationCrash':
         return ApplicationCrash(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ApplicationCrash):
+    def __init__(self, __dynamic__: _ApplicationCrash):
         """
         Dynamic initializer for ApplicationCrash.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ApplicationCrash__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ApplicationCrash__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def getLocalizedMessage(self) -> str:
+        """public java.lang.String java.lang.Throwable.getLocalizedMessage()"""
+        return str._wrap(super(Throwable, self).getLocalizedMessage())
+
+    @overload
+    def __init__(self, arg0: 'CrashLog'):
+        """public dev.ultreon.quantum.crash.ApplicationCrash(dev.ultreon.quantum.crash.CrashLog)"""
+        val = _ApplicationCrash(arg0)
+        self.__wrapper = val
 
     @override
     @overload
-    def getStackTrace(self) -> List['StackTraceElement']:
-        """public java.lang.StackTraceElement[] java.lang.Throwable.getStackTrace()"""
-        return List['StackTraceElement'].__wrap(super(Throwable, self).getStackTrace())
-
-    @override
-    @overload
-    def printStackTrace(self, arg0: 'PrintWriter'):
-        """public void java.lang.Throwable.printStackTrace(java.io.PrintWriter)"""
-        super(__Throwable, self).printStackTrace(arg0)
+    def getCause(self) -> 'Throwable':
+        """public synchronized java.lang.Throwable java.lang.Throwable.getCause()"""
+        return 'Throwable'._wrap(super(Throwable, self).getCause())
 
     @override
     @overload
@@ -523,15 +532,15 @@ class ApplicationCrash():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.crash.ApplicationCrash.toString()"""
-        return str.__wrap(super(ApplicationCrash, self).toString())
+    def printStackTrace(self, arg0: 'PrintWriter'):
+        """public void java.lang.Throwable.printStackTrace(java.io.PrintWriter)"""
+        super(_Throwable, self).printStackTrace(arg0)
 
     @override
     @overload
-    def getMessage(self) -> str:
-        """public java.lang.String java.lang.Throwable.getMessage()"""
-        return str.__wrap(super(Throwable, self).getMessage())
+    def fillInStackTrace(self) -> 'Throwable':
+        """public synchronized java.lang.Throwable java.lang.Throwable.fillInStackTrace()"""
+        return 'Throwable'._wrap(super(Throwable, self).fillInStackTrace())
 
     @override
     @overload
@@ -541,9 +550,32 @@ class ApplicationCrash():
 
     @override
     @overload
-    def getCause(self) -> 'Throwable':
-        """public synchronized java.lang.Throwable java.lang.Throwable.getCause()"""
-        return 'Throwable'.__wrap(super(Throwable, self).getCause())
+    def getSuppressed(self) -> List['Throwable']:
+        """public final synchronized java.lang.Throwable[] java.lang.Throwable.getSuppressed()"""
+        return List['Throwable']._wrap(super(Throwable, self).getSuppressed())
+
+    @override
+    @overload
+    def getMessage(self) -> str:
+        """public java.lang.String java.lang.Throwable.getMessage()"""
+        return str._wrap(super(Throwable, self).getMessage())
+
+    @override
+    @overload
+    def printStackTrace(self, arg0: 'PrintStream'):
+        """public void java.lang.Throwable.printStackTrace(java.io.PrintStream)"""
+        super(_Throwable, self).printStackTrace(arg0)
+
+    @overload
+    def initCause(self, arg0: 'Throwable') -> 'Throwable':
+        """public synchronized java.lang.Throwable java.lang.Throwable.initCause(java.lang.Throwable)"""
+        return 'Throwable'._wrap(super(_Throwable, self).initCause(arg0))
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @overload
     def printCrash(self):
@@ -557,17 +589,6 @@ class ApplicationCrash():
         super(object, self).notify()
 
     @overload
-    def getCrashLog(self) -> 'CrashLog':
-        """public dev.ultreon.quantum.crash.CrashLog dev.ultreon.quantum.crash.ApplicationCrash.getCrashLog()"""
-        return 'CrashLog'.__wrap(super(ApplicationCrash, self).getCrashLog())
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @overload
     def handleCrash(self):
         """public void dev.ultreon.quantum.crash.ApplicationCrash.handleCrash()"""
         super(ApplicationCrash, self).handleCrash()
@@ -575,55 +596,54 @@ class ApplicationCrash():
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def printStackTrace(self, arg0: 'PrintStream'):
-        """public void java.lang.Throwable.printStackTrace(java.io.PrintStream)"""
-        super(__Throwable, self).printStackTrace(arg0)
-
-    @overload
-    def __init__(self, arg0: 'CrashLog'):
-        """public dev.ultreon.quantum.crash.ApplicationCrash(dev.ultreon.quantum.crash.CrashLog)"""
-        val = __ApplicationCrash(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @staticmethod
-    @overload
-    def onCrash(arg0: 'Runnable'):
-        """public static void dev.ultreon.quantum.crash.ApplicationCrash.onCrash(java.lang.Runnable)"""
-        __ApplicationCrash.onCrash(arg0)
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def toString(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.crash.ApplicationCrash.toString()"""
+        return str._wrap(super(ApplicationCrash, self).toString())
 
     @overload
-    def initCause(self, arg0: 'Throwable') -> 'Throwable':
-        """public synchronized java.lang.Throwable java.lang.Throwable.initCause(java.lang.Throwable)"""
-        return 'Throwable'.__wrap(super(__Throwable, self).initCause(arg0))
+    def getCrashLog(self) -> 'CrashLog':
+        """public dev.ultreon.quantum.crash.CrashLog dev.ultreon.quantum.crash.ApplicationCrash.getCrashLog()"""
+        return 'CrashLog'._wrap(super(ApplicationCrash, self).getCrashLog())
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def getStackTrace(self) -> List['StackTraceElement']:
+        """public java.lang.StackTraceElement[] java.lang.Throwable.getStackTrace()"""
+        return List['StackTraceElement']._wrap(super(Throwable, self).getStackTrace())
 
     @override
     @overload
     def addSuppressed(self, arg0: 'Throwable'):
         """public final synchronized void java.lang.Throwable.addSuppressed(java.lang.Throwable)"""
-        super(__Throwable, self).addSuppressed(arg0)
+        super(_Throwable, self).addSuppressed(arg0)
+
+    @staticmethod
+    @overload
+    def onCrash(arg0: 'Runnable'):
+        """public static void dev.ultreon.quantum.crash.ApplicationCrash.onCrash(java.lang.Runnable)"""
+        _ApplicationCrash.onCrash(arg0)
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
     def setStackTrace(self, arg0: 'StackTraceElement'):
         """public void java.lang.Throwable.setStackTrace(java.lang.StackTraceElement[])"""
-        super(__Throwable, self).setStackTrace(arg0)
+        super(_Throwable, self).setStackTrace(arg0)
 
     @override
     @overload
@@ -633,124 +653,99 @@ class ApplicationCrash():
 
     @override
     @overload
-    def getLocalizedMessage(self) -> str:
-        """public java.lang.String java.lang.Throwable.getLocalizedMessage()"""
-        return str.__wrap(super(Throwable, self).getLocalizedMessage())
-
-    @override
-    @overload
-    def getSuppressed(self) -> List['Throwable']:
-        """public final synchronized java.lang.Throwable[] java.lang.Throwable.getSuppressed()"""
-        return List['Throwable'].__wrap(super(Throwable, self).getSuppressed())
-
-    @override
-    @overload
-    def fillInStackTrace(self) -> 'Throwable':
-        """public synchronized java.lang.Throwable java.lang.Throwable.fillInStackTrace()"""
-        return 'Throwable'.__wrap(super(Throwable, self).fillInStackTrace()) 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.crash.CrashException
 from builtins import str
+import java.lang.StackTraceElement as _StackTraceElement
+_StackTraceElement = _StackTraceElement
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Throwable as __Throwable
-__Throwable = __Throwable
+import dev.ultreon.quantum.crash.CrashException as _CrashException
+_CrashException = _CrashException
 import java.io.PrintWriter as PrintWriter
+import dev.ultreon.quantum.crash.CrashLog as _CrashLog
+_CrashLog = _CrashLog
+import java.lang.String as _String
+_String = _String
 import java.lang.StackTraceElement as StackTraceElement
-import java.lang.StackTraceElement as __StackTraceElement
-__StackTraceElement = __StackTraceElement
-import dev.ultreon.quantum.crash.CrashLog as __CrashLog
-__CrashLog = __CrashLog
 from typing import List
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
+import java.lang.String as _string
 import java.io.PrintStream as PrintStream
-import dev.ultreon.quantum.crash.CrashException as __CrashException
-__CrashException = __CrashException
-import java.lang.String as __String
-__String = __String
-import java.lang.String as __string
-import java.lang.Object as __Object
-__Object = __Object
+import java.lang.Integer as _int
+import java.lang.Throwable as _Throwable
+_Throwable = _Throwable
 import java.lang.Throwable as Throwable
-import java.lang.Integer as __int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class CrashException():
     """dev.ultreon.quantum.crash.CrashException"""
  
     @staticmethod
-    def __wrap(java_value: __CrashException) -> 'CrashException':
+    def _wrap(java_value: _CrashException) -> 'CrashException':
         return CrashException(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __CrashException):
+    def __init__(self, __dynamic__: _CrashException):
         """
         Dynamic initializer for CrashException.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_CrashException__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_CrashException__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
+    def getLocalizedMessage(self) -> str:
+        """public java.lang.String java.lang.Throwable.getLocalizedMessage()"""
+        return str._wrap(super(Throwable, self).getLocalizedMessage())
+
+    @override
+    @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def getCrashLog(self) -> 'CrashLog':
-        """public dev.ultreon.quantum.crash.CrashLog dev.ultreon.quantum.crash.CrashException.getCrashLog()"""
-        return 'CrashLog'.__wrap(super(CrashException, self).getCrashLog())
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
-    def printStackTrace(self, arg0: 'PrintStream'):
-        """public void java.lang.Throwable.printStackTrace(java.io.PrintStream)"""
-        super(__Throwable, self).printStackTrace(arg0)
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Throwable.toString()"""
-        return str.__wrap(super(Throwable, self).toString())
-
-    @override
-    @overload
-    def getStackTrace(self) -> List['StackTraceElement']:
-        """public java.lang.StackTraceElement[] java.lang.Throwable.getStackTrace()"""
-        return List['StackTraceElement'].__wrap(super(Throwable, self).getStackTrace())
+    def getCause(self) -> 'Throwable':
+        """public synchronized java.lang.Throwable java.lang.Throwable.getCause()"""
+        return 'Throwable'._wrap(super(Throwable, self).getCause())
 
     @overload
     def __init__(self, arg0: 'CrashLog'):
         """public dev.ultreon.quantum.crash.CrashException(dev.ultreon.quantum.crash.CrashLog)"""
-        val = __CrashException(arg0)
-        self.__dict__ = val.__dict__
+        val = _CrashException(arg0)
         self.__wrapper = val
-
-    @override
-    @overload
-    def printStackTrace(self, arg0: 'PrintWriter'):
-        """public void java.lang.Throwable.printStackTrace(java.io.PrintWriter)"""
-        super(__Throwable, self).printStackTrace(arg0)
 
     @override
     @overload
@@ -760,9 +755,15 @@ class CrashException():
 
     @override
     @overload
-    def getMessage(self) -> str:
-        """public java.lang.String java.lang.Throwable.getMessage()"""
-        return str.__wrap(super(Throwable, self).getMessage())
+    def printStackTrace(self, arg0: 'PrintWriter'):
+        """public void java.lang.Throwable.printStackTrace(java.io.PrintWriter)"""
+        super(_Throwable, self).printStackTrace(arg0)
+
+    @override
+    @overload
+    def fillInStackTrace(self) -> 'Throwable':
+        """public synchronized java.lang.Throwable java.lang.Throwable.fillInStackTrace()"""
+        return 'Throwable'._wrap(super(Throwable, self).fillInStackTrace())
 
     @override
     @overload
@@ -772,32 +773,50 @@ class CrashException():
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def getSuppressed(self) -> List['Throwable']:
+        """public final synchronized java.lang.Throwable[] java.lang.Throwable.getSuppressed()"""
+        return List['Throwable']._wrap(super(Throwable, self).getSuppressed())
 
     @override
     @overload
-    def getCause(self) -> 'Throwable':
-        """public synchronized java.lang.Throwable java.lang.Throwable.getCause()"""
-        return 'Throwable'.__wrap(super(Throwable, self).getCause())
+    def getMessage(self) -> str:
+        """public java.lang.String java.lang.Throwable.getMessage()"""
+        return str._wrap(super(Throwable, self).getMessage())
+
+    @override
+    @overload
+    def printStackTrace(self, arg0: 'PrintStream'):
+        """public void java.lang.Throwable.printStackTrace(java.io.PrintStream)"""
+        super(_Throwable, self).printStackTrace(arg0)
 
     @overload
     def initCause(self, arg0: 'Throwable') -> 'Throwable':
         """public synchronized java.lang.Throwable java.lang.Throwable.initCause(java.lang.Throwable)"""
-        return 'Throwable'.__wrap(super(__Throwable, self).initCause(arg0))
+        return 'Throwable'._wrap(super(_Throwable, self).initCause(arg0))
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @overload
+    def __init__(self, arg0: 'CrashLog', arg1: str):
+        """public dev.ultreon.quantum.crash.CrashException(dev.ultreon.quantum.crash.CrashLog,java.lang.String)"""
+        val = _CrashException(arg0, arg1)
+        self.__wrapper = val
+
+    @override
+    @overload
+    def getStackTrace(self) -> List['StackTraceElement']:
+        """public java.lang.StackTraceElement[] java.lang.Throwable.getStackTrace()"""
+        return List['StackTraceElement']._wrap(super(Throwable, self).getStackTrace())
 
     @override
     @overload
     def addSuppressed(self, arg0: 'Throwable'):
         """public final synchronized void java.lang.Throwable.addSuppressed(java.lang.Throwable)"""
-        super(__Throwable, self).addSuppressed(arg0)
+        super(_Throwable, self).addSuppressed(arg0)
 
     @override
     @overload
@@ -807,15 +826,20 @@ class CrashException():
 
     @override
     @overload
-    def setStackTrace(self, arg0: 'StackTraceElement'):
-        """public void java.lang.Throwable.setStackTrace(java.lang.StackTraceElement[])"""
-        super(__Throwable, self).setStackTrace(arg0)
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @overload
+    def getCrashLog(self) -> 'CrashLog':
+        """public dev.ultreon.quantum.crash.CrashLog dev.ultreon.quantum.crash.CrashException.getCrashLog()"""
+        return 'CrashLog'._wrap(super(CrashException, self).getCrashLog())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def setStackTrace(self, arg0: 'StackTraceElement'):
+        """public void java.lang.Throwable.setStackTrace(java.lang.StackTraceElement[])"""
+        super(_Throwable, self).setStackTrace(arg0)
 
     @override
     @overload
@@ -823,85 +847,77 @@ class CrashException():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
-    @overload
-    def __init__(self, arg0: 'CrashLog', arg1: str):
-        """public dev.ultreon.quantum.crash.CrashException(dev.ultreon.quantum.crash.CrashLog,java.lang.String)"""
-        val = __CrashException(arg0, arg1)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
     @override
     @overload
-    def getLocalizedMessage(self) -> str:
-        """public java.lang.String java.lang.Throwable.getLocalizedMessage()"""
-        return str.__wrap(super(Throwable, self).getLocalizedMessage())
-
-    @override
-    @overload
-    def getSuppressed(self) -> List['Throwable']:
-        """public final synchronized java.lang.Throwable[] java.lang.Throwable.getSuppressed()"""
-        return List['Throwable'].__wrap(super(Throwable, self).getSuppressed())
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Throwable.toString()"""
+        return str._wrap(super(Throwable, self).toString())
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def fillInStackTrace(self) -> 'Throwable':
-        """public synchronized java.lang.Throwable java.lang.Throwable.fillInStackTrace()"""
-        return 'Throwable'.__wrap(super(Throwable, self).fillInStackTrace()) 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.crash.CrashCategory
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Throwable as __Throwable
-__Throwable = __Throwable
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.String as __string
-import dev.ultreon.quantum.crash.CrashCategory as __CrashCategory
-__CrashCategory = __CrashCategory
-import java.lang.Object as __Object
-__Object = __Object
+import java.lang.String as _String
+_String = _String
+import java.lang.String as _string
+import java.lang.Integer as _int
+import dev.ultreon.quantum.crash.CrashCategory as _CrashCategory
+_CrashCategory = _CrashCategory
+import java.lang.Throwable as _Throwable
+_Throwable = _Throwable
 import java.lang.Throwable as Throwable
-import java.lang.Integer as __int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class CrashCategory():
     """dev.ultreon.quantum.crash.CrashCategory"""
  
     @staticmethod
-    def __wrap(java_value: __CrashCategory) -> 'CrashCategory':
+    def _wrap(java_value: _CrashCategory) -> 'CrashCategory':
         return CrashCategory(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __CrashCategory):
+    def __init__(self, __dynamic__: _CrashCategory):
         """
         Dynamic initializer for CrashCategory.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_CrashCategory__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_CrashCategory__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -910,25 +926,13 @@ class CrashCategory():
     @overload
     def toString(self) -> str:
         """public java.lang.String dev.ultreon.quantum.crash.CrashCategory.toString()"""
-        return str.__wrap(super(CrashCategory, self).toString())
+        return str._wrap(super(CrashCategory, self).toString())
 
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def getThrowable(self) -> 'Throwable':
-        """public java.lang.Throwable dev.ultreon.quantum.crash.CrashCategory.getThrowable()"""
-        return 'Throwable'.__wrap(super(CrashCategory, self).getThrowable())
-
-    @overload
-    def __init__(self, arg0: str, arg1: 'Throwable'):
-        """public dev.ultreon.quantum.crash.CrashCategory(java.lang.String,java.lang.Throwable)"""
-        val = __CrashCategory(arg0, arg1)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -936,24 +940,11 @@ class CrashCategory():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
-    @overload
-    def __init__(self, arg0: str):
-        """public dev.ultreon.quantum.crash.CrashCategory(java.lang.String)"""
-        val = __CrashCategory(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -962,20 +953,26 @@ class CrashCategory():
         super(object, self).notify()
 
     @overload
-    def add(self, arg0: str, arg1: object):
-        """public void dev.ultreon.quantum.crash.CrashCategory.add(java.lang.String,java.lang.Object)"""
-        super(__CrashCategory, self).add(arg0, arg1)
+    def __init__(self, arg0: str):
+        """public dev.ultreon.quantum.crash.CrashCategory(java.lang.String)"""
+        val = _CrashCategory(arg0)
+        self.__wrapper = val
+
+    @overload
+    def getThrowable(self) -> 'Throwable':
+        """public java.lang.Throwable dev.ultreon.quantum.crash.CrashCategory.getThrowable()"""
+        return 'Throwable'._wrap(super(CrashCategory, self).getThrowable())
 
     @overload
     def getDetails(self) -> str:
         """public java.lang.String dev.ultreon.quantum.crash.CrashCategory.getDetails()"""
-        return str.__wrap(super(CrashCategory, self).getDetails())
+        return str._wrap(super(CrashCategory, self).getDetails())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -984,6 +981,23 @@ class CrashCategory():
         super(object, self).wait()
 
     @overload
+    def __init__(self, arg0: str, arg1: 'Throwable'):
+        """public dev.ultreon.quantum.crash.CrashCategory(java.lang.String,java.lang.Throwable)"""
+        val = _CrashCategory(arg0, arg1)
+        self.__wrapper = val
+
+    @overload
+    def add(self, arg0: str, arg1: object):
+        """public void dev.ultreon.quantum.crash.CrashCategory.add(java.lang.String,java.lang.Object)"""
+        super(_CrashCategory, self).add(arg0, arg1)
+
+    @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())

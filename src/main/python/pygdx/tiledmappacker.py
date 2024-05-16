@@ -3,77 +3,436 @@ from overload import overload
 
 
  
-from pyquantum_helper import import_once as __import_once__
+import com.badlogic.gdx.tiledmappacker.TiledMapPackerTest as _TiledMapPackerTest_TestType
+_TestType = _TiledMapPackerTest_TestType.TestType
 from builtins import str
-import com.badlogic.gdx.tiledmappacker.TileSetLayout as __TileSetLayout
-__TileSetLayout = __TileSetLayout
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import com.badlogic.gdx.math.Vector2 as __Vector2
-__Vector2 = __Vector2
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
-try:
-    from pygdx import math
-except ImportError:
-    math = __import_once__("pygdx.math")
-
+import java.lang.String as _String
+_String = _String
+from typing import List
+import java.lang.Enum as Enum
+import java.lang.String as _string
+import java.lang.Enum as _Enum
+_Enum = _Enum
+import java.lang.Integer as _int
+import java.util.Optional as _Optional
+_Optional = _Optional
+import java.util.Optional as Optional
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
-class TileSetLayout():
-    """com.badlogic.gdx.tiledmappacker.TileSetLayout"""
+class TestType():
+    """com.badlogic.gdx.tiledmappacker.TiledMapPackerTest.TestType"""
  
     @staticmethod
-    def __wrap(java_value: __TileSetLayout) -> 'TileSetLayout':
-        return TileSetLayout(__dynamic__=java_value)
+    def _wrap(java_value: _TestType) -> 'TestType':
+        return TestType(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __TileSetLayout):
+    def __init__(self, __dynamic__: _TestType):
         """
-        Dynamic initializer for TileSetLayout.
+        Dynamic initializer for TestType.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_TestType__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_TestType__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @override
     @overload
-    def getNumCols(self) -> int:
-        """public int com.badlogic.gdx.tiledmappacker.TileSetLayout.getNumCols()"""
-        return int.__wrap(super(TileSetLayout, self).getNumCols())
+    def hashCode(self) -> int:
+        """public final int java.lang.Enum.hashCode()"""
+        return int._wrap(super(Enum, self).hashCode())
+
+    @staticmethod
+    @overload
+    def valueOf(arg0: 'Class', arg1: str) -> 'Enum':
+        """public static <T extends java.lang.Enum<T>> T java.lang.Enum.valueOf(java.lang.Class<T>,java.lang.String)"""
+        return Enum._wrap(_Enum.valueOf(arg0, arg1))
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def name(self) -> str:
+        """public final java.lang.String java.lang.Enum.name()"""
+        return str._wrap(super(Enum, self).name())
+
+    @override
+    @overload
+    def describeConstable(self) -> 'Optional':
+        """public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable()"""
+        return 'Optional'._wrap(super(Enum, self).describeConstable())
 
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Enum.toString()"""
+        return str._wrap(super(Enum, self).toString())
+
+    @override
+    @overload
+    def notifyAll(self):
+        """public final native void java.lang.Object.notifyAll()"""
+        super(object, self).notifyAll()
+
+    @staticmethod
+    @overload
+    def values() -> List['TestType']:
+        """public static com.badlogic.gdx.tiledmappacker.TiledMapPackerTest$TestType[] com.badlogic.gdx.tiledmappacker.TiledMapPackerTest$TestType.values()"""
+        return List[TestType]._wrap(_TestType.values())
+
+    @override
+    @overload
+    def ordinal(self) -> int:
+        """public final int java.lang.Enum.ordinal()"""
+        return int._wrap(super(Enum, self).ordinal())
+
+    @staticmethod
+    @overload
+    def valueOf(arg0: str) -> 'TestType':
+        """public static com.badlogic.gdx.tiledmappacker.TiledMapPackerTest$TestType com.badlogic.gdx.tiledmappacker.TiledMapPackerTest$TestType.valueOf(java.lang.String)"""
+        return TestType._wrap(_TestType.valueOf(arg0))
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @override
+    @overload
+    def getDeclaringClass(self) -> 'type.Class':
+        """public final java.lang.Class<E> java.lang.Enum.getDeclaringClass()"""
+        return 'type.Class'._wrap(super(Enum, self).getDeclaringClass())
+
+    @override
+    @overload
+    def notify(self):
+        """public final native void java.lang.Object.notify()"""
+        super(object, self).notify()
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public final boolean java.lang.Enum.equals(java.lang.Object)"""
+        return bool._wrap(super(_Enum, self).equals(arg0))
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @overload
+    def compareTo(self, arg0: 'Enum') -> int:
+        """public final int java.lang.Enum.compareTo(E)"""
+        return int._wrap(super(_Enum, self).compareTo(arg0))
+
+    @override
+    @overload
+    def wait(self):
+        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
+        super(object, self).wait()
+
+ 
+ 
+ 
+# CLASS: com.badlogic.gdx.tiledmappacker.TiledMapPackerTest$TestType
+import com.badlogic.gdx.tiledmappacker.TiledMapPackerTest as _TiledMapPackerTest_TestType
+_TestType = _TiledMapPackerTest_TestType.TestType
+from builtins import str
+from pyquantum_helper import override
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
+from builtins import type
+import java.lang.String as _String
+_String = _String
+from typing import List
+import java.lang.Enum as Enum
+import java.lang.String as _string
+import java.lang.Enum as _Enum
+_Enum = _Enum
+import java.lang.Integer as _int
+import java.util.Optional as _Optional
+_Optional = _Optional
+import java.util.Optional as Optional
+from builtins import bool
+import java.lang.Long as _long
+from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
+ 
+class TestType():
+    """com.badlogic.gdx.tiledmappacker.TiledMapPackerTest.TestType"""
+ 
+    @staticmethod
+    def _wrap(java_value: _TestType) -> 'TestType':
+        return TestType(__dynamic__=java_value)
+ 
+    #
+    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+    #
+    @overload
+    def __init__(self, __dynamic__: _TestType):
+        """
+        Dynamic initializer for TestType.
+        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+ 
+        :param __dynamic__: The java object to wrap
+        """
+        self.__wrapper = __dynamic__
+ 
+    def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_TestType__wrapper":
+            return object.__getattr__(self, name)
+        return getattr(self.__wrapper, name)
+ 
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_TestType__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
+ 
+    def __delattr__(self, name: str):
+        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
+ 
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public final int java.lang.Enum.hashCode()"""
+        return int._wrap(super(Enum, self).hashCode())
+
+    @staticmethod
+    @overload
+    def valueOf(arg0: 'Class', arg1: str) -> 'Enum':
+        """public static <T extends java.lang.Enum<T>> T java.lang.Enum.valueOf(java.lang.Class<T>,java.lang.String)"""
+        return Enum._wrap(_Enum.valueOf(arg0, arg1))
+
+    @override
+    @overload
+    def name(self) -> str:
+        """public final java.lang.String java.lang.Enum.name()"""
+        return str._wrap(super(Enum, self).name())
+
+    @override
+    @overload
+    def describeConstable(self) -> 'Optional':
+        """public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable()"""
+        return 'Optional'._wrap(super(Enum, self).describeConstable())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Enum.toString()"""
+        return str._wrap(super(Enum, self).toString())
+
+    @override
+    @overload
+    def notifyAll(self):
+        """public final native void java.lang.Object.notifyAll()"""
+        super(object, self).notifyAll()
+
+    @staticmethod
+    @overload
+    def values() -> List['TestType']:
+        """public static com.badlogic.gdx.tiledmappacker.TiledMapPackerTest$TestType[] com.badlogic.gdx.tiledmappacker.TiledMapPackerTest$TestType.values()"""
+        return List[TestType]._wrap(_TestType.values())
+
+    @override
+    @overload
+    def ordinal(self) -> int:
+        """public final int java.lang.Enum.ordinal()"""
+        return int._wrap(super(Enum, self).ordinal())
+
+    @staticmethod
+    @overload
+    def valueOf(arg0: str) -> 'TestType':
+        """public static com.badlogic.gdx.tiledmappacker.TiledMapPackerTest$TestType com.badlogic.gdx.tiledmappacker.TiledMapPackerTest$TestType.valueOf(java.lang.String)"""
+        return TestType._wrap(_TestType.valueOf(arg0))
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @override
+    @overload
+    def getDeclaringClass(self) -> 'type.Class':
+        """public final java.lang.Class<E> java.lang.Enum.getDeclaringClass()"""
+        return 'type.Class'._wrap(super(Enum, self).getDeclaringClass())
+
+    @override
+    @overload
+    def notify(self):
+        """public final native void java.lang.Object.notify()"""
+        super(object, self).notify()
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public final boolean java.lang.Enum.equals(java.lang.Object)"""
+        return bool._wrap(super(_Enum, self).equals(arg0))
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @overload
+    def compareTo(self, arg0: 'Enum') -> int:
+        """public final int java.lang.Enum.compareTo(E)"""
+        return int._wrap(super(_Enum, self).compareTo(arg0))
+
+    @override
+    @overload
+    def wait(self):
+        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
+        super(object, self).wait()
+
+ 
+ 
+ 
+# CLASS: com.badlogic.gdx.tiledmappacker.TiledMapPackerTest$TestType 
+ 
+ 
+# CLASS: com.badlogic.gdx.tiledmappacker.TiledMapPacker
+from pyquantum_helper import import_once as _import_once
+from builtins import str
+from pyquantum_helper import override
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
+from builtins import type
+import com.badlogic.gdx.tiledmappacker.TiledMapPacker as _TiledMapPacker
+_TiledMapPacker = _TiledMapPacker
+import java.lang.String as _String
+_String = _String
+try:
+    from pygdx.tools import texturepacker
+except ImportError:
+    texturepacker = _import_once("pygdx.tools.texturepacker")
+
+import java.lang.Integer as _int
+from builtins import bool
+import java.lang.Long as _long
+from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
+ 
+class TiledMapPacker():
+    """com.badlogic.gdx.tiledmappacker.TiledMapPacker"""
+ 
+    @staticmethod
+    def _wrap(java_value: _TiledMapPacker) -> 'TiledMapPacker':
+        return TiledMapPacker(__dynamic__=java_value)
+ 
+    #
+    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+    #
+    @overload
+    def __init__(self, __dynamic__: _TiledMapPacker):
+        """
+        Dynamic initializer for TiledMapPacker.
+        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+ 
+        :param __dynamic__: The java object to wrap
+        """
+        self.__wrapper = __dynamic__
+ 
+    def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_TiledMapPacker__wrapper":
+            return object.__getattr__(self, name)
+        return getattr(self.__wrapper, name)
+ 
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_TiledMapPacker__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
+ 
+    def __delattr__(self, name: str):
+        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
+ 
+    @overload
+    def __init__(self, arg0: 'TiledMapPackerSettings'):
+        """public com.badlogic.gdx.tiledmappacker.TiledMapPacker(com.badlogic.gdx.tiledmappacker.TiledMapPacker$TiledMapPackerSettings)"""
+        val = _TiledMapPacker(arg0)
+        self.__wrapper = val
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @override
+    @overload
+    def notifyAll(self):
+        """public final native void java.lang.Object.notifyAll()"""
+        super(object, self).notifyAll()
+
+    @staticmethod
+    @overload
+    def main(arg0: 'String'):
+        """public static void com.badlogic.gdx.tiledmappacker.TiledMapPacker.main(java.lang.String[])"""
+        _TiledMapPacker.main(arg0)
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @overload
+    def __init__(self):
+        """public com.badlogic.gdx.tiledmappacker.TiledMapPacker()"""
+        val = _TiledMapPacker()
+        self.__wrapper = val
 
     @override
     @overload
@@ -83,26 +442,14 @@ class TileSetLayout():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @override
-    @overload
-    def notifyAll(self):
-        """public final native void java.lang.Object.notifyAll()"""
-        super(object, self).notifyAll()
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @overload
-    def getLocation(self, arg0: int) -> 'math.Vector2':
-        """public com.badlogic.gdx.math.Vector2 com.badlogic.gdx.tiledmappacker.TileSetLayout.getLocation(int)"""
-        return 'math.Vector2'.__wrap(super(__TileSetLayout, self).getLocation(__int.valueOf(arg0)))
+    def processInputDir(self, arg0: 'Settings'):
+        """public void com.badlogic.gdx.tiledmappacker.TiledMapPacker.processInputDir(com.badlogic.gdx.tools.texturepacker.TexturePacker$Settings) throws java.io.IOException"""
+        super(_TiledMapPacker, self).processInputDir(arg0)
 
     @override
     @overload
@@ -113,94 +460,79 @@ class TileSetLayout():
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
     @overload
-    def getNumRows(self) -> int:
-        """public int com.badlogic.gdx.tiledmappacker.TileSetLayout.getNumRows()"""
-        return int.__wrap(super(TileSetLayout, self).getNumRows())
-
+    def __init__(self, ):
+        """public com.badlogic.gdx.tiledmappacker.TiledMapPacker()"""
+        val = _TiledMapPacker()
+        self.__wrapper = val 
  
  
- 
-# CLASS: com.badlogic.gdx.tiledmappacker.TileSetLayout
-from pyquantum_helper import import_once as __import_once__
+# CLASS: com.badlogic.gdx.tiledmappacker.TiledMapPacker$TiledMapPackerSettings
+import com.badlogic.gdx.tiledmappacker.TiledMapPacker as _TiledMapPacker_TiledMapPackerSettings
+_TiledMapPackerSettings = _TiledMapPacker_TiledMapPackerSettings.TiledMapPackerSettings
 from builtins import str
-import com.badlogic.gdx.tiledmappacker.TileSetLayout as __TileSetLayout
-__TileSetLayout = __TileSetLayout
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Integer as _int
+import java.lang.Object as _object
 from builtins import type
-import com.badlogic.gdx.math.Vector2 as __Vector2
-__Vector2 = __Vector2
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
-try:
-    from pygdx import math
-except ImportError:
-    math = __import_once__("pygdx.math")
-
+import java.lang.String as _String
+_String = _String
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
-class TileSetLayout():
-    """com.badlogic.gdx.tiledmappacker.TileSetLayout"""
+class TiledMapPackerSettings():
+    """com.badlogic.gdx.tiledmappacker.TiledMapPacker.TiledMapPackerSettings"""
  
     @staticmethod
-    def __wrap(java_value: __TileSetLayout) -> 'TileSetLayout':
-        return TileSetLayout(__dynamic__=java_value)
+    def _wrap(java_value: _TiledMapPackerSettings) -> 'TiledMapPackerSettings':
+        return TiledMapPackerSettings(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __TileSetLayout):
+    def __init__(self, __dynamic__: _TiledMapPackerSettings):
         """
-        Dynamic initializer for TileSetLayout.
+        Dynamic initializer for TiledMapPackerSettings.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_TiledMapPackerSettings__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_TiledMapPackerSettings__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @overload
-    def getNumCols(self) -> int:
-        """public int com.badlogic.gdx.tiledmappacker.TileSetLayout.getNumCols()"""
-        return int.__wrap(super(TileSetLayout, self).getNumCols())
-
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -210,15 +542,27 @@ class TileSetLayout():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @overload
+    def __init__(self, ):
+        """public com.badlogic.gdx.tiledmappacker.TiledMapPacker$TiledMapPackerSettings()"""
+        val = _TiledMapPackerSettings()
+        self.__wrapper = val
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @overload
+    def __init__(self):
+        """public com.badlogic.gdx.tiledmappacker.TiledMapPacker$TiledMapPackerSettings()"""
+        val = _TiledMapPackerSettings()
+        self.__wrapper = val
 
     @override
     @overload
@@ -226,85 +570,81 @@ class TileSetLayout():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
-    @overload
-    def getLocation(self, arg0: int) -> 'math.Vector2':
-        """public com.badlogic.gdx.math.Vector2 com.badlogic.gdx.tiledmappacker.TileSetLayout.getLocation(int)"""
-        return 'math.Vector2'.__wrap(super(__TileSetLayout, self).getLocation(__int.valueOf(arg0)))
-
     @override
     @overload
     def wait(self):
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def getNumRows(self) -> int:
-        """public int com.badlogic.gdx.tiledmappacker.TileSetLayout.getNumRows()"""
-        return int.__wrap(super(TileSetLayout, self).getNumRows())
-
- 
- 
- 
-# CLASS: com.badlogic.gdx.tiledmappacker.TileSetLayout 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: com.badlogic.gdx.tiledmappacker.TiledMapPackerTestRender
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import com.badlogic.gdx.ApplicationAdapter as __ApplicationAdapter
-__ApplicationAdapter = __ApplicationAdapter
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import com.badlogic.gdx.tiledmappacker.TiledMapPackerTestRender as __TiledMapPackerTestRender
-__TiledMapPackerTestRender = __TiledMapPackerTestRender
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import com.badlogic.gdx.ApplicationAdapter as _ApplicationAdapter
+_ApplicationAdapter = _ApplicationAdapter
+import com.badlogic.gdx.tiledmappacker.TiledMapPackerTestRender as _TiledMapPackerTestRender
+_TiledMapPackerTestRender = _TiledMapPackerTestRender
+import java.lang.String as _String
+_String = _String
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class TiledMapPackerTestRender():
     """com.badlogic.gdx.tiledmappacker.TiledMapPackerTestRender"""
  
     @staticmethod
-    def __wrap(java_value: __TiledMapPackerTestRender) -> 'TiledMapPackerTestRender':
+    def _wrap(java_value: _TiledMapPackerTestRender) -> 'TiledMapPackerTestRender':
         return TiledMapPackerTestRender(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __TiledMapPackerTestRender):
+    def __init__(self, __dynamic__: _TiledMapPackerTestRender):
         """
         Dynamic initializer for TiledMapPackerTestRender.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_TiledMapPackerTestRender__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_TiledMapPackerTestRender__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -313,13 +653,7 @@ class TiledMapPackerTestRender():
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -329,9 +663,15 @@ class TiledMapPackerTestRender():
 
     @override
     @overload
-    def resize(self, arg0: int, arg1: int):
-        """public void com.badlogic.gdx.tiledmappacker.TiledMapPackerTestRender.resize(int,int)"""
-        super(__TiledMapPackerTestRender, self).resize(__int.valueOf(arg0), __int.valueOf(arg1))
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @overload
+    def __init__(self):
+        """public com.badlogic.gdx.tiledmappacker.TiledMapPackerTestRender()"""
+        val = _TiledMapPackerTestRender()
+        self.__wrapper = val
 
     @override
     @overload
@@ -341,15 +681,9 @@ class TiledMapPackerTestRender():
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @staticmethod
-    @overload
-    def main(arg0: 'String'):
-        """public static void com.badlogic.gdx.tiledmappacker.TiledMapPackerTestRender.main(java.lang.String[]) throws java.lang.Exception"""
-        __TiledMapPackerTestRender.main(arg0)
+    def resize(self, arg0: int, arg1: int):
+        """public void com.badlogic.gdx.tiledmappacker.TiledMapPackerTestRender.resize(int,int)"""
+        super(_TiledMapPackerTestRender, self).resize(_int.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -357,11 +691,17 @@ class TiledMapPackerTestRender():
         """public void com.badlogic.gdx.tiledmappacker.TiledMapPackerTestRender.dispose()"""
         super(TiledMapPackerTestRender, self).dispose()
 
+    @overload
+    def __init__(self, ):
+        """public com.badlogic.gdx.tiledmappacker.TiledMapPackerTestRender()"""
+        val = _TiledMapPackerTestRender()
+        self.__wrapper = val
+
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -375,31 +715,23 @@ class TiledMapPackerTestRender():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
+    @staticmethod
     @overload
-    def __init__(self, ):
-        """public com.badlogic.gdx.tiledmappacker.TiledMapPackerTestRender()"""
-        val = __TiledMapPackerTestRender()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def main(arg0: 'String'):
+        """public static void com.badlogic.gdx.tiledmappacker.TiledMapPackerTestRender.main(java.lang.String[]) throws java.lang.Exception"""
+        _TiledMapPackerTestRender.main(arg0)
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
     def wait(self):
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
-
-    @overload
-    def __init__(self):
-        """public com.badlogic.gdx.tiledmappacker.TiledMapPackerTestRender()"""
-        val = __TiledMapPackerTestRender()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
 
     @override
     @overload
@@ -407,83 +739,87 @@ class TiledMapPackerTestRender():
         """public void com.badlogic.gdx.ApplicationAdapter.pause()"""
         super(pygdx.ApplicationAdapter, self).pause()
 
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
-
     @override
     @overload
     def render(self):
         """public void com.badlogic.gdx.tiledmappacker.TiledMapPackerTestRender.render()"""
-        super(TiledMapPackerTestRender, self).render() 
+        super(TiledMapPackerTestRender, self).render()
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: com.badlogic.gdx.tiledmappacker.TiledMapPackerTest
 from builtins import str
-import java.lang.Long as __long
 from pyquantum_helper import override
-import java.lang.Class as __Class
-__Class = __Class
-import com.badlogic.gdx.tiledmappacker.TiledMapPackerTest as __TiledMapPackerTest
-__TiledMapPackerTest = __TiledMapPackerTest
-import java.lang.Object as __object
-import java.lang.String as __String
-__String = __String
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Integer as _int
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import com.badlogic.gdx.tiledmappacker.TiledMapPackerTest as _TiledMapPackerTest
+_TiledMapPackerTest = _TiledMapPackerTest
+import java.lang.String as _String
+_String = _String
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class TiledMapPackerTest():
     """com.badlogic.gdx.tiledmappacker.TiledMapPackerTest"""
  
     @staticmethod
-    def __wrap(java_value: __TiledMapPackerTest) -> 'TiledMapPackerTest':
+    def _wrap(java_value: _TiledMapPackerTest) -> 'TiledMapPackerTest':
         return TiledMapPackerTest(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __TiledMapPackerTest):
+    def __init__(self, __dynamic__: _TiledMapPackerTest):
         """
         Dynamic initializer for TiledMapPackerTest.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_TiledMapPackerTest__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_TiledMapPackerTest__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @overload
     def __init__(self):
         """public com.badlogic.gdx.tiledmappacker.TiledMapPackerTest()"""
-        val = __TiledMapPackerTest()
-        self.__dict__ = val.__dict__
+        val = _TiledMapPackerTest()
         self.__wrapper = val
 
     @override
@@ -494,196 +830,33 @@ class TiledMapPackerTest():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @staticmethod
     @overload
     def main(arg0: 'String'):
         """public static void com.badlogic.gdx.tiledmappacker.TiledMapPackerTest.main(java.lang.String[]) throws java.lang.Exception"""
-        __TiledMapPackerTest.main(arg0)
+        _TiledMapPackerTest.main(arg0)
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @override
-    @overload
-    def notifyAll(self):
-        """public final native void java.lang.Object.notifyAll()"""
-        super(object, self).notifyAll()
-
-    @override
-    @overload
-    def wait(self):
-        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
-        super(object, self).wait()
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @overload
     def __init__(self, ):
         """public com.badlogic.gdx.tiledmappacker.TiledMapPackerTest()"""
-        val = __TiledMapPackerTest()
-        self.__dict__ = val.__dict__
+        val = _TiledMapPackerTest()
         self.__wrapper = val
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0)) 
- 
- 
-# CLASS: com.badlogic.gdx.tiledmappacker.TiledMapPackerTest$TestType
-from builtins import str
-from pyquantum_helper import override
-import java.lang.Object as __object
-from builtins import type
-import java.util.Optional as __Optional
-__Optional = __Optional
-import com.badlogic.gdx.tiledmappacker.TiledMapPackerTest as __TiledMapPackerTest_TestType
-__TestType = __TiledMapPackerTest_TestType.TestType
-from typing import List
-import java.lang.Enum as Enum
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __string
-import java.lang.String as __String
-__String = __String
-import java.util.Optional as Optional
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
-import java.lang.Enum as __Enum
-__Enum = __Enum
-from builtins import bool
-from builtins import int
- 
-class TestType():
-    """com.badlogic.gdx.tiledmappacker.TiledMapPackerTest.TestType"""
- 
-    @staticmethod
-    def __wrap(java_value: __TestType) -> 'TestType':
-        return TestType(__dynamic__=java_value)
- 
-    #
-    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
-    #
-    @overload
-    def __init__(self, __dynamic__: __TestType):
-        """
-        Dynamic initializer for TestType.
-        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
- 
-        :param __dynamic__: The java object to wrap
-        """
-        self.__dict__ = __dynamic__.__dict__
-        self.__wrapper = __dynamic__
- 
-    def __getattr__(self, name: str):
-        return getattr(self.__wrapper, name)
- 
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
- 
-    def __delattr__(self, name: str):
-        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
- 
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @staticmethod
-    @overload
-    def valueOf(arg0: 'Class', arg1: str) -> 'Enum':
-        """public static <T extends java.lang.Enum<T>> T java.lang.Enum.valueOf(java.lang.Class<T>,java.lang.String)"""
-        return Enum.__wrap(__Enum.valueOf(arg0, arg1))
-
-    @override
-    @overload
-    def name(self) -> str:
-        """public final java.lang.String java.lang.Enum.name()"""
-        return str.__wrap(super(Enum, self).name())
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public final int java.lang.Enum.hashCode()"""
-        return int.__wrap(super(Enum, self).hashCode())
-
-    @staticmethod
-    @overload
-    def values() -> List['TestType']:
-        """public static com.badlogic.gdx.tiledmappacker.TiledMapPackerTest$TestType[] com.badlogic.gdx.tiledmappacker.TiledMapPackerTest$TestType.values()"""
-        return List[TestType].__wrap(__TestType.values())
 
     @override
     @overload
     def notifyAll(self):
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
-
-    @override
-    @overload
-    def describeConstable(self) -> 'Optional':
-        """public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable()"""
-        return 'Optional'.__wrap(super(Enum, self).describeConstable())
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def compareTo(self, arg0: 'Enum') -> int:
-        """public final int java.lang.Enum.compareTo(E)"""
-        return int.__wrap(super(__Enum, self).compareTo(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def notify(self):
-        """public final native void java.lang.Object.notify()"""
-        super(object, self).notify()
-
-    @staticmethod
-    @overload
-    def valueOf(arg0: str) -> 'TestType':
-        """public static com.badlogic.gdx.tiledmappacker.TiledMapPackerTest$TestType com.badlogic.gdx.tiledmappacker.TiledMapPackerTest$TestType.valueOf(java.lang.String)"""
-        return TestType.__wrap(__TestType.valueOf(arg0))
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public final boolean java.lang.Enum.equals(java.lang.Object)"""
-        return bool.__wrap(super(__Enum, self).equals(arg0))
-
-    @override
-    @overload
-    def getDeclaringClass(self) -> 'type.Class':
-        """public final java.lang.Class<E> java.lang.Enum.getDeclaringClass()"""
-        return 'type.Class'.__wrap(super(Enum, self).getDeclaringClass())
-
-    @override
-    @overload
-    def ordinal(self) -> int:
-        """public final int java.lang.Enum.ordinal()"""
-        return int.__wrap(super(Enum, self).ordinal())
 
     @override
     @overload
@@ -694,125 +867,92 @@ class TestType():
     @override
     @overload
     def toString(self) -> str:
-        """public java.lang.String java.lang.Enum.toString()"""
-        return str.__wrap(super(Enum, self).toString()) 
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
-# CLASS: com.badlogic.gdx.tiledmappacker.TiledMapPacker
-from pyquantum_helper import import_once as __import_once__
+# CLASS: com.badlogic.gdx.tiledmappacker.TileSetLayout
+from pyquantum_helper import import_once as _import_once
+import com.badlogic.gdx.math.Vector2 as _Vector2
+_Vector2 = _Vector2
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import com.badlogic.gdx.tiledmappacker.TiledMapPacker as __TiledMapPacker
-__TiledMapPacker = __TiledMapPacker
+import java.lang.String as _String
+_String = _String
+import java.lang.Integer as _int
+import com.badlogic.gdx.tiledmappacker.TileSetLayout as _TileSetLayout
+_TileSetLayout = _TileSetLayout
 try:
-    from pygdx.tools import texturepacker
+    from pygdx import math
 except ImportError:
-    texturepacker = __import_once__("pygdx.tools.texturepacker")
+    math = _import_once("pygdx.math")
 
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
-class TiledMapPacker():
-    """com.badlogic.gdx.tiledmappacker.TiledMapPacker"""
+class TileSetLayout():
+    """com.badlogic.gdx.tiledmappacker.TileSetLayout"""
  
     @staticmethod
-    def __wrap(java_value: __TiledMapPacker) -> 'TiledMapPacker':
-        return TiledMapPacker(__dynamic__=java_value)
+    def _wrap(java_value: _TileSetLayout) -> 'TileSetLayout':
+        return TileSetLayout(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __TiledMapPacker):
+    def __init__(self, __dynamic__: _TileSetLayout):
         """
-        Dynamic initializer for TiledMapPacker.
+        Dynamic initializer for TileSetLayout.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_TileSetLayout__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_TileSetLayout__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def __init__(self, arg0: 'TiledMapPackerSettings'):
-        """public com.badlogic.gdx.tiledmappacker.TiledMapPacker(com.badlogic.gdx.tiledmappacker.TiledMapPacker$TiledMapPackerSettings)"""
-        val = __TiledMapPacker(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @overload
-    def __init__(self, ):
-        """public com.badlogic.gdx.tiledmappacker.TiledMapPacker()"""
-        val = __TiledMapPacker()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def __init__(self):
-        """public com.badlogic.gdx.tiledmappacker.TiledMapPacker()"""
-        val = __TiledMapPacker()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @overload
-    def processInputDir(self, arg0: 'Settings'):
-        """public void com.badlogic.gdx.tiledmappacker.TiledMapPacker.processInputDir(com.badlogic.gdx.tools.texturepacker.TexturePacker$Settings) throws java.io.IOException"""
-        super(__TiledMapPacker, self).processInputDir(arg0)
-
-    @override
-    @overload
-    def notifyAll(self):
-        """public final native void java.lang.Object.notifyAll()"""
-        super(object, self).notifyAll()
-
-    @staticmethod
-    @overload
-    def main(arg0: 'String'):
-        """public static void com.badlogic.gdx.tiledmappacker.TiledMapPacker.main(java.lang.String[])"""
-        __TiledMapPacker.main(arg0)
-
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
-    @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def getLocation(self, arg0: int) -> 'math.Vector2':
+        """public com.badlogic.gdx.math.Vector2 com.badlogic.gdx.tiledmappacker.TileSetLayout.getLocation(int)"""
+        return 'math.Vector2'._wrap(super(_TileSetLayout, self).getLocation(_int.valueOf(arg0)))
 
     @override
     @overload
@@ -820,108 +960,27 @@ class TiledMapPacker():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getNumRows(self) -> int:
+        """public int com.badlogic.gdx.tiledmappacker.TileSetLayout.getNumRows()"""
+        return int._wrap(super(TileSetLayout, self).getNumRows())
 
-    @override
-    @overload
-    def wait(self):
-        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
-        super(object, self).wait()
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0)) 
- 
- 
-# CLASS: com.badlogic.gdx.tiledmappacker.TiledMapPacker$TiledMapPackerSettings
-from builtins import str
-import java.lang.Long as __long
-from pyquantum_helper import override
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.Object as __object
-import java.lang.String as __String
-__String = __String
-from builtins import type
-import java.lang.Object as __Object
-__Object = __Object
-import com.badlogic.gdx.tiledmappacker.TiledMapPacker as __TiledMapPacker_TiledMapPackerSettings
-__TiledMapPackerSettings = __TiledMapPacker_TiledMapPackerSettings.TiledMapPackerSettings
-import java.lang.Integer as __int
-from builtins import bool
-from builtins import int
- 
-class TiledMapPackerSettings():
-    """com.badlogic.gdx.tiledmappacker.TiledMapPacker.TiledMapPackerSettings"""
- 
-    @staticmethod
-    def __wrap(java_value: __TiledMapPackerSettings) -> 'TiledMapPackerSettings':
-        return TiledMapPackerSettings(__dynamic__=java_value)
- 
-    #
-    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
-    #
-    @overload
-    def __init__(self, __dynamic__: __TiledMapPackerSettings):
-        """
-        Dynamic initializer for TiledMapPackerSettings.
-        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
- 
-        :param __dynamic__: The java object to wrap
-        """
-        self.__dict__ = __dynamic__.__dict__
-        self.__wrapper = __dynamic__
- 
-    def __getattr__(self, name: str):
-        return getattr(self.__wrapper, name)
- 
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
- 
-    def __delattr__(self, name: str):
-        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
- 
     @override
     @overload
     def getClass(self) -> 'type.Class':
         """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @overload
+    def getNumCols(self) -> int:
+        """public int com.badlogic.gdx.tiledmappacker.TileSetLayout.getNumCols()"""
+        return int._wrap(super(TileSetLayout, self).getNumCols())
 
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def notify(self):
-        """public final native void java.lang.Object.notify()"""
-        super(object, self).notify()
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def __init__(self, ):
-        """public com.badlogic.gdx.tiledmappacker.TiledMapPacker$TiledMapPackerSettings()"""
-        val = __TiledMapPackerSettings()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -935,20 +994,19 @@ class TiledMapPackerSettings():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def __init__(self):
-        """public com.badlogic.gdx.tiledmappacker.TiledMapPacker$TiledMapPackerSettings()"""
-        val = __TiledMapPackerSettings()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())

@@ -3,90 +3,132 @@ from overload import overload
 
 
  
+from pyquantum_helper import import_once as _import_once
+import com.badlogic.gdx.graphics.g2d.TextureRegion as _TextureRegion
+_TextureRegion = _TextureRegion
 from builtins import str
+try:
+    from pygdx import utils
+except ImportError:
+    utils = _import_once("pygdx.utils")
+
+import com.badlogic.gdx.graphics.g2d.Batch as _Batch
+_Batch = _Batch
 from pyquantum_helper import override
-import java.lang.Object as __object
+import space.earlygrey.shapedrawer.AbstractShapeDrawer as _AbstractShapeDrawer
+_AbstractShapeDrawer = _AbstractShapeDrawer
+try:
+    from pygdx.graphics import g2d
+except ImportError:
+    g2d = _import_once("pygdx.graphics.g2d")
+
+import space.earlygrey.shapedrawer.Drawing as _Drawing
+_Drawing = _Drawing
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.util.Optional as __Optional
-__Optional = __Optional
-from typing import List
-import java.lang.Enum as Enum
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __string
-import java.lang.String as __String
-__String = __String
-import java.util.Optional as Optional
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
-import space.earlygrey.shapedrawer.JoinType as __JoinType
-__JoinType = __JoinType
-import java.lang.Enum as __Enum
-__Enum = __Enum
+from builtins import float
+import space.earlygrey.shapedrawer.ShapeDrawer as _ShapeDrawer
+_ShapeDrawer = _ShapeDrawer
+import java.lang.String as _String
+_String = _String
+import java.lang.Float as _float
+import java.lang.Boolean as _boolean
+import java.lang.Integer as _int
+import space.earlygrey.shapedrawer.SideEstimator as _SideEstimator
+_SideEstimator = _SideEstimator
+try:
+    from pygdx import math
+except ImportError:
+    math = _import_once("pygdx.math")
+
+try:
+    from pygdx import graphics
+except ImportError:
+    graphics = _import_once("pygdx.graphics")
+
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
-class JoinType():
-    """space.earlygrey.shapedrawer.JoinType"""
+class ShapeDrawer():
+    """space.earlygrey.shapedrawer.ShapeDrawer"""
  
     @staticmethod
-    def __wrap(java_value: __JoinType) -> 'JoinType':
-        return JoinType(__dynamic__=java_value)
+    def _wrap(java_value: _ShapeDrawer) -> 'ShapeDrawer':
+        return ShapeDrawer(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __JoinType):
+    def __init__(self, __dynamic__: _ShapeDrawer):
         """
-        Dynamic initializer for JoinType.
+        Dynamic initializer for ShapeDrawer.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ShapeDrawer__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ShapeDrawer__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def rectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(float,float,float,float,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).rectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), arg4)
 
-    @staticmethod
     @overload
-    def valueOf(arg0: 'Class', arg1: str) -> 'Enum':
-        """public static <T extends java.lang.Enum<T>> T java.lang.Enum.valueOf(java.lang.Class<T>,java.lang.String)"""
-        return Enum.__wrap(__Enum.valueOf(arg0, arg1))
+    def triangle(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Vector2', arg3: float, arg4: 'JoinType', arg5: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,float,space.earlygrey.shapedrawer.JoinType,float)"""
+        super(_ShapeDrawer, self).triangle(arg0, arg1, arg2, _float.valueOf(arg3), arg4, _float.valueOf(arg5))
 
-    @staticmethod
     @overload
-    def values() -> List['JoinType']:
-        """public static space.earlygrey.shapedrawer.JoinType[] space.earlygrey.shapedrawer.JoinType.values()"""
-        return List[JoinType].__wrap(__JoinType.values())
+    def filledRectangle(self, arg0: 'Rectangle', arg1: 'Color', arg2: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(com.badlogic.gdx.math.Rectangle,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledRectangle(arg0, arg1, arg2)
 
-    @override
     @overload
-    def name(self) -> str:
-        """public final java.lang.String java.lang.Enum.name()"""
-        return str.__wrap(super(Enum, self).name())
+    def triangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: 'JoinType', arg8: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(float,float,float,float,float,float,float,space.earlygrey.shapedrawer.JoinType,float)"""
+        super(_ShapeDrawer, self).triangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), _float.valueOf(arg6), arg7, _float.valueOf(arg8))
 
-    @override
     @overload
-    def hashCode(self) -> int:
-        """public final int java.lang.Enum.hashCode()"""
-        return int.__wrap(super(Enum, self).hashCode())
+    def __init__(self, arg0: 'Batch', arg1: 'TextureRegion'):
+        """public space.earlygrey.shapedrawer.ShapeDrawer(com.badlogic.gdx.graphics.g2d.Batch,com.badlogic.gdx.graphics.g2d.TextureRegion)"""
+        val = _ShapeDrawer(arg0, arg1)
+        self.__wrapper = val
+
+    @overload
+    def line(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).line(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), arg4)
+
+    @overload
+    def path(self, arg0: 'FloatArray', arg1: float, arg2: 'JoinType', arg3: bool):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(com.badlogic.gdx.utils.FloatArray,float,space.earlygrey.shapedrawer.JoinType,boolean)"""
+        super(_ShapeDrawer, self).path(arg0, _float.valueOf(arg1), arg2, _boolean.valueOf(arg3))
+
+    @overload
+    def circle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.circle(float,float,float,float,space.earlygrey.shapedrawer.JoinType)"""
+        super(_ShapeDrawer, self).circle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), arg4)
 
     @override
     @overload
@@ -94,28 +136,407 @@ class JoinType():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
-    @override
     @overload
-    def describeConstable(self) -> 'Optional':
-        """public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable()"""
-        return 'Optional'.__wrap(super(Enum, self).describeConstable())
+    def polygon(self, arg0: 'float'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float[])"""
+        super(_ShapeDrawer, self).polygon(arg0)
+
+    @overload
+    def setTextureRegion(self, arg0: 'TextureRegion') -> 'g2d.TextureRegion':
+        """public com.badlogic.gdx.graphics.g2d.TextureRegion space.earlygrey.shapedrawer.AbstractShapeDrawer.setTextureRegion(com.badlogic.gdx.graphics.g2d.TextureRegion)"""
+        return 'g2d.TextureRegion'._wrap(super(_AbstractShapeDrawer, self).setTextureRegion(arg0))
+
+    @overload
+    def path(self, arg0: 'Array', arg1: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(com.badlogic.gdx.utils.Array<com.badlogic.gdx.math.Vector2>,float)"""
+        super(_ShapeDrawer, self).path(arg0, _float.valueOf(arg1))
+
+    @overload
+    def filledRectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: 'Color', arg6: 'Color', arg7: 'Color', arg8: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(float,float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledRectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), arg5, arg6, arg7, arg8)
+
+    @overload
+    def polygon(self, arg0: 'float', arg1: int, arg2: int, arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float[],int,int,float)"""
+        super(_ShapeDrawer, self).polygon(arg0, _int.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3))
+
+    @overload
+    def setDefaultLineWidth(self, arg0: float) -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.setDefaultLineWidth(float)"""
+        return float._wrap(super(_AbstractShapeDrawer, self).setDefaultLineWidth(_float.valueOf(arg0)))
+
+    @overload
+    def line(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'Color', arg5: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float,com.badlogic.gdx.graphics.Color,float)"""
+        super(_ShapeDrawer, self).line(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), arg4, _float.valueOf(arg5))
+
+    @overload
+    def sector(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.sector(float,float,float,float,float)"""
+        super(_ShapeDrawer, self).sector(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def getBatch(self) -> 'g2d.Batch':
+        """public com.badlogic.gdx.graphics.g2d.Batch space.earlygrey.shapedrawer.AbstractShapeDrawer.getBatch()"""
+        return 'g2d.Batch'._wrap(super(AbstractShapeDrawer, self).getBatch())
 
     @overload
-    def compareTo(self, arg0: 'Enum') -> int:
-        """public final int java.lang.Enum.compareTo(E)"""
-        return int.__wrap(super(__Enum, self).compareTo(arg0))
+    def rectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(float,float,float,float,float,float,space.earlygrey.shapedrawer.JoinType)"""
+        super(_ShapeDrawer, self).rectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), arg6)
+
+    @overload
+    def filledRectangle(self, arg0: float, arg1: float, arg2: float, arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(float,float,float,float)"""
+        super(_ShapeDrawer, self).filledRectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3))
+
+    @overload
+    def __init__(self, arg0: 'Batch', arg1: 'TextureRegion', arg2: 'SideEstimator'):
+        """public space.earlygrey.shapedrawer.ShapeDrawer(com.badlogic.gdx.graphics.g2d.Batch,com.badlogic.gdx.graphics.g2d.TextureRegion,space.earlygrey.shapedrawer.SideEstimator)"""
+        val = _ShapeDrawer(arg0, arg1, arg2)
+        self.__wrapper = val
+
+    @overload
+    def circle(self, arg0: float, arg1: float, arg2: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.circle(float,float,float)"""
+        super(_ShapeDrawer, self).circle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2))
+
+    @overload
+    def filledCircle(self, arg0: 'Vector2', arg1: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledCircle(com.badlogic.gdx.math.Vector2,float)"""
+        super(_ShapeDrawer, self).filledCircle(arg0, _float.valueOf(arg1))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @overload
+    def filledRectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: 'Color', arg6: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(float,float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledRectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), arg5, arg6)
+
+    @overload
+    def polygon(self, arg0: 'Polygon', arg1: float, arg2: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(com.badlogic.gdx.math.Polygon,float,space.earlygrey.shapedrawer.JoinType)"""
+        super(_ShapeDrawer, self).polygon(arg0, _float.valueOf(arg1), arg2)
+
+    @overload
+    def setColor(self, arg0: float, arg1: float, arg2: float, arg3: float) -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.setColor(float,float,float,float)"""
+        return float._wrap(super(_AbstractShapeDrawer, self).setColor(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3)))
+
+    @overload
+    def filledRectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'Color', arg5: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledRectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), arg4, arg5)
+
+    @overload
+    def triangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(float,float,float,float,float,float,float,float)"""
+        super(_ShapeDrawer, self).triangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), _float.valueOf(arg6), _float.valueOf(arg7))
+
+    @overload
+    def arc(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: bool, arg7: int):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.arc(float,float,float,float,float,float,boolean,int)"""
+        super(_ShapeDrawer, self).arc(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), _boolean.valueOf(arg6), _int.valueOf(arg7))
+
+    @overload
+    def triangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(float,float,float,float,float,float,float)"""
+        super(_ShapeDrawer, self).triangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), _float.valueOf(arg6))
+
+    @overload
+    def line(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).line(arg0, arg1, arg2)
+
+    @overload
+    def rectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(float,float,float,float,float,float)"""
+        super(_ShapeDrawer, self).rectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5))
+
+    @overload
+    def rectangle(self, arg0: float, arg1: float, arg2: float, arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(float,float,float,float)"""
+        super(_ShapeDrawer, self).rectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3))
+
+    @overload
+    def filledEllipse(self, arg0: float, arg1: float, arg2: float, arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledEllipse(float,float,float,float)"""
+        super(_ShapeDrawer, self).filledEllipse(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3))
+
+    @overload
+    def filledRectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(float,float,float,float,float)"""
+        super(_ShapeDrawer, self).filledRectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4))
+
+    @override
+    @overload
+    def updatePixelSize(self) -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.updatePixelSize()"""
+        return float._wrap(super(AbstractShapeDrawer, self).updatePixelSize())
+
+    @override
+    @overload
+    def wait(self):
+        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
+        super(object, self).wait()
+
+    @overload
+    def sector(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: int):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.sector(float,float,float,float,float,int)"""
+        super(_ShapeDrawer, self).sector(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _int.valueOf(arg5))
+
+    @overload
+    def line(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Color', arg3: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).line(arg0, arg1, arg2, arg3)
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
+
+    @overload
+    def filledRectangle(self, arg0: 'Rectangle', arg1: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(com.badlogic.gdx.math.Rectangle,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledRectangle(arg0, arg1)
+
+    @override
+    @overload
+    def getSideEstimator(self) -> 'SideEstimator':
+        """public final space.earlygrey.shapedrawer.SideEstimator space.earlygrey.shapedrawer.AbstractShapeDrawer.getSideEstimator()"""
+        return 'SideEstimator'._wrap(super(AbstractShapeDrawer, self).getSideEstimator())
+
+    @overload
+    def filledPolygon(self, arg0: 'Polygon', arg1: 'ShortArray'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(com.badlogic.gdx.math.Polygon,com.badlogic.gdx.utils.ShortArray)"""
+        super(_ShapeDrawer, self).filledPolygon(arg0, arg1)
+
+    @overload
+    def circle(self, arg0: float, arg1: float, arg2: float, arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.circle(float,float,float,float)"""
+        super(_ShapeDrawer, self).circle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3))
+
+    @overload
+    def filledEllipse(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledEllipse(float,float,float,float,float)"""
+        super(_ShapeDrawer, self).filledEllipse(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4))
+
+    @overload
+    def filledPolygon(self, arg0: 'float', arg1: 'ShortArray'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float[],com.badlogic.gdx.utils.ShortArray)"""
+        super(_ShapeDrawer, self).filledPolygon(arg0, arg1)
+
+    @overload
+    def triangles(self, arg0: 'float', arg1: 'short', arg2: float, arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangles(float[],short[],float,float)"""
+        super(_ShapeDrawer, self).triangles(arg0, arg1, _float.valueOf(arg2), _float.valueOf(arg3))
+
+    @overload
+    def rectangle(self, arg0: 'Rectangle', arg1: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(com.badlogic.gdx.math.Rectangle,float)"""
+        super(_ShapeDrawer, self).rectangle(arg0, _float.valueOf(arg1))
+
+    @overload
+    def filledPolygon(self, arg0: 'Polygon', arg1: 'short'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(com.badlogic.gdx.math.Polygon,short[])"""
+        super(_ShapeDrawer, self).filledPolygon(arg0, arg1)
+
+    @overload
+    def polygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float, arg5: float, arg6: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float,float,int,float,float,float,float)"""
+        super(_ShapeDrawer, self).polygon(_float.valueOf(arg0), _float.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), _float.valueOf(arg6))
+
+    @overload
+    def path(self, arg0: 'float', arg1: int, arg2: int, arg3: float, arg4: 'JoinType', arg5: bool):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(float[],int,int,float,space.earlygrey.shapedrawer.JoinType,boolean)"""
+        super(_ShapeDrawer, self).path(arg0, _int.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3), arg4, _boolean.valueOf(arg5))
+
+    @overload
+    def filledRectangle(self, arg0: 'Rectangle', arg1: float, arg2: 'Color', arg3: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(com.badlogic.gdx.math.Rectangle,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledRectangle(arg0, _float.valueOf(arg1), arg2, arg3)
+
+    @overload
+    def filledCircle(self, arg0: float, arg1: float, arg2: float, arg3: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledCircle(float,float,float,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledCircle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), arg3)
+
+    @overload
+    def filledRectangle(self, arg0: 'Rectangle'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(com.badlogic.gdx.math.Rectangle)"""
+        super(_ShapeDrawer, self).filledRectangle(arg0)
+
+    @overload
+    def filledCircle(self, arg0: 'Vector2', arg1: float, arg2: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledCircle(com.badlogic.gdx.math.Vector2,float,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledCircle(arg0, _float.valueOf(arg1), arg2)
+
+    @overload
+    def filledPolygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float,float,int,float,float)"""
+        super(_ShapeDrawer, self).filledPolygon(_float.valueOf(arg0), _float.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4))
+
+    @overload
+    def polygon(self, arg0: 'Polygon', arg1: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(com.badlogic.gdx.math.Polygon,float)"""
+        super(_ShapeDrawer, self).polygon(arg0, _float.valueOf(arg1))
+
+    @overload
+    def setColor(self, arg0: float) -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.setColor(float)"""
+        return float._wrap(super(_AbstractShapeDrawer, self).setColor(_float.valueOf(arg0)))
+
+    @overload
+    def polygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float, arg5: float, arg6: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float,float,int,float,float,float,space.earlygrey.shapedrawer.JoinType)"""
+        super(_ShapeDrawer, self).polygon(_float.valueOf(arg0), _float.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), arg6)
+
+    @overload
+    def rectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(float,float,float,float,float,space.earlygrey.shapedrawer.JoinType)"""
+        super(_ShapeDrawer, self).rectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), arg5)
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @overload
+    def arc(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.arc(float,float,float,float,float,float)"""
+        super(_ShapeDrawer, self).arc(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5))
+
+    @override
+    @overload
+    def getPixelSize(self) -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.getPixelSize()"""
+        return float._wrap(super(AbstractShapeDrawer, self).getPixelSize())
+
+    @overload
+    def setDefaultSnap(self, arg0: bool) -> bool:
+        """public boolean space.earlygrey.shapedrawer.AbstractShapeDrawer.setDefaultSnap(boolean)"""
+        return bool._wrap(super(_AbstractShapeDrawer, self).setDefaultSnap(_boolean.valueOf(arg0)))
+
+    @overload
+    def line(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: bool, arg6: 'Color', arg7: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float,float,boolean,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).line(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _boolean.valueOf(arg5), arg6, arg7)
+
+    @overload
+    def triangle(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Vector2', arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,float)"""
+        super(_ShapeDrawer, self).triangle(arg0, arg1, arg2, _float.valueOf(arg3))
+
+    @overload
+    def rectangle(self, arg0: 'Rectangle', arg1: 'Color', arg2: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(com.badlogic.gdx.math.Rectangle,com.badlogic.gdx.graphics.Color,float)"""
+        super(_ShapeDrawer, self).rectangle(arg0, arg1, _float.valueOf(arg2))
+
+    @overload
+    def rectangle(self, arg0: 'Rectangle', arg1: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(com.badlogic.gdx.math.Rectangle,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).rectangle(arg0, arg1)
+
+    @overload
+    def filledRectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'Color', arg5: 'Color', arg6: 'Color', arg7: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledRectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), arg4, arg5, arg6, arg7)
 
     @override
     @overload
     def getClass(self) -> 'type.Class':
         """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
+    def update(self):
+        """public void space.earlygrey.shapedrawer.AbstractShapeDrawer.update()"""
+        super(AbstractShapeDrawer, self).update()
+
+    @overload
+    def line(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'Color', arg5: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).line(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), arg4, arg5)
+
+    @overload
+    def path(self, arg0: 'float', arg1: float, arg2: 'JoinType', arg3: bool):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(float[],float,space.earlygrey.shapedrawer.JoinType,boolean)"""
+        super(_ShapeDrawer, self).path(arg0, _float.valueOf(arg1), arg2, _boolean.valueOf(arg3))
+
+    @overload
+    def circle(self, arg0: float, arg1: float, arg2: float, arg3: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.circle(float,float,float,space.earlygrey.shapedrawer.JoinType)"""
+        super(_ShapeDrawer, self).circle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), arg3)
+
+    @overload
+    def filledPolygon(self, arg0: 'Polygon'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(com.badlogic.gdx.math.Polygon)"""
+        super(_ShapeDrawer, self).filledPolygon(arg0)
+
+    @overload
+    def filledPolygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float, arg5: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float,float,int,float,float,float)"""
+        super(_ShapeDrawer, self).filledPolygon(_float.valueOf(arg0), _float.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5))
+
+    @overload
+    def line(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float,float)"""
+        super(_ShapeDrawer, self).line(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4))
+
+    @overload
+    def arc(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.arc(float,float,float,float,float)"""
+        super(_ShapeDrawer, self).arc(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4))
+
+    @overload
+    def filledTriangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: 'Color', arg7: 'Color', arg8: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledTriangle(float,float,float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledTriangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), arg6, arg7, arg8)
+
+    @overload
+    def path(self, arg0: 'Array', arg1: float, arg2: bool):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(com.badlogic.gdx.utils.Array<com.badlogic.gdx.math.Vector2>,float,boolean)"""
+        super(_ShapeDrawer, self).path(arg0, _float.valueOf(arg1), _boolean.valueOf(arg2))
+
+    @overload
+    def filledTriangle(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Vector2', arg3: 'Color', arg4: 'Color', arg5: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledTriangle(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledTriangle(arg0, arg1, arg2, arg3, arg4, arg5)
+
+    @overload
+    def sector(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: int, arg6: float, arg7: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.sector(float,float,float,float,float,int,float,float)"""
+        super(_ShapeDrawer, self).sector(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _int.valueOf(arg5), _float.valueOf(arg6), _float.valueOf(arg7))
+
+    @overload
+    def filledTriangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledTriangle(float,float,float,float,float,float)"""
+        super(_ShapeDrawer, self).filledTriangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5))
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @overload
+    def filledPolygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float,float,int,float,float,float,float,float)"""
+        super(_ShapeDrawer, self).filledPolygon(_float.valueOf(arg0), _float.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), _float.valueOf(arg6), _float.valueOf(arg7))
+
+    @overload
+    def filledRectangle(self, arg0: 'Rectangle', arg1: float, arg2: 'Color', arg3: 'Color', arg4: 'Color', arg5: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(com.badlogic.gdx.math.Rectangle,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledRectangle(arg0, _float.valueOf(arg1), arg2, arg3, arg4, arg5)
 
     @override
     @overload
@@ -124,27 +545,608 @@ class JoinType():
         super(object, self).notify()
 
     @overload
+    def filledEllipse(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: 'Color', arg6: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledEllipse(float,float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledEllipse(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), arg5, arg6)
+
+    @overload
+    def line(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: bool, arg6: float, arg7: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float,float,boolean,float,float)"""
+        super(_ShapeDrawer, self).line(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _boolean.valueOf(arg5), _float.valueOf(arg6), _float.valueOf(arg7))
+
+    @overload
+    def filledPolygon(self, arg0: float, arg1: float, arg2: int, arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float,float,int,float)"""
+        super(_ShapeDrawer, self).filledPolygon(_float.valueOf(arg0), _float.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3))
+
+    @overload
+    def setColor(self, arg0: 'Color') -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.setColor(com.badlogic.gdx.graphics.Color)"""
+        return float._wrap(super(_AbstractShapeDrawer, self).setColor(arg0))
+
+    @overload
+    def filledRectangle(self, arg0: 'Rectangle', arg1: 'Color', arg2: 'Color', arg3: 'Color', arg4: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(com.badlogic.gdx.math.Rectangle,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledRectangle(arg0, arg1, arg2, arg3, arg4)
+
+    @overload
+    def filledPolygon(self, arg0: 'float', arg1: int, arg2: int):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float[],int,int)"""
+        super(_ShapeDrawer, self).filledPolygon(arg0, _int.valueOf(arg1), _int.valueOf(arg2))
+
+    @overload
     def equals(self, arg0: object) -> bool:
-        """public final boolean java.lang.Enum.equals(java.lang.Object)"""
-        return bool.__wrap(super(__Enum, self).equals(arg0))
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @overload
+    def polygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float, arg5: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float,float,int,float,float,float)"""
+        super(_ShapeDrawer, self).polygon(_float.valueOf(arg0), _float.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5))
+
+    @overload
+    def rectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(float,float,float,float,float)"""
+        super(_ShapeDrawer, self).rectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4))
+
+    @overload
+    def polygon(self, arg0: 'Polygon'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(com.badlogic.gdx.math.Polygon)"""
+        super(_ShapeDrawer, self).polygon(arg0)
+
+    @overload
+    def path(self, arg0: 'Array', arg1: float, arg2: 'JoinType', arg3: bool):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(com.badlogic.gdx.utils.Array<com.badlogic.gdx.math.Vector2>,float,space.earlygrey.shapedrawer.JoinType,boolean)"""
+        super(_ShapeDrawer, self).path(arg0, _float.valueOf(arg1), arg2, _boolean.valueOf(arg3))
+
+    @overload
+    def arc(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: bool):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.arc(float,float,float,float,float,float,boolean)"""
+        super(_ShapeDrawer, self).arc(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), _boolean.valueOf(arg6))
+
+    @overload
+    def filledRectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(float,float,float,float,float,float,float,float,float)"""
+        super(_ShapeDrawer, self).filledRectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), _float.valueOf(arg6), _float.valueOf(arg7), _float.valueOf(arg8))
+
+    @overload
+    def filledPolygon(self, arg0: 'float'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float[])"""
+        super(_ShapeDrawer, self).filledPolygon(arg0)
 
     @override
     @overload
-    def getDeclaringClass(self) -> 'type.Class':
-        """public final java.lang.Class<E> java.lang.Enum.getDeclaringClass()"""
-        return 'type.Class'.__wrap(super(Enum, self).getDeclaringClass())
+    def getPackedColor(self) -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.getPackedColor()"""
+        return float._wrap(super(AbstractShapeDrawer, self).getPackedColor())
 
+    @overload
+    def line(self, arg0: float, arg1: float, arg2: float, arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float)"""
+        super(_ShapeDrawer, self).line(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3))
+
+    @overload
+    def triangle(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Vector2'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2)"""
+        super(_ShapeDrawer, self).triangle(arg0, arg1, arg2)
+
+    @overload
+    def filledCircle(self, arg0: float, arg1: float, arg2: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledCircle(float,float,float)"""
+        super(_ShapeDrawer, self).filledCircle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2))
+
+    @overload
+    def filledPolygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float, arg5: float, arg6: 'Color', arg7: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float,float,int,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledPolygon(_float.valueOf(arg0), _float.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), arg6, arg7)
+
+    @override
+    @overload
+    def startRecording(self):
+        """public void space.earlygrey.shapedrawer.AbstractShapeDrawer.startRecording()"""
+        super(AbstractShapeDrawer, self).startRecording()
+
+    @overload
+    def path(self, arg0: 'Array', arg1: 'JoinType', arg2: bool):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(com.badlogic.gdx.utils.Array<com.badlogic.gdx.math.Vector2>,space.earlygrey.shapedrawer.JoinType,boolean)"""
+        super(_ShapeDrawer, self).path(arg0, arg1, _boolean.valueOf(arg2))
+
+    @override
+    @overload
+    def update(self, arg0: bool):
+        """public void space.earlygrey.shapedrawer.AbstractShapeDrawer.update(boolean)"""
+        super(_AbstractShapeDrawer, self).update(_boolean.valueOf(arg0))
+
+    @overload
+    def filledEllipse(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledEllipse(float,float,float,float,float,float,float)"""
+        super(_ShapeDrawer, self).filledEllipse(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), _float.valueOf(arg6))
+
+    @overload
+    def rectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'Color', arg5: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(float,float,float,float,com.badlogic.gdx.graphics.Color,float)"""
+        super(_ShapeDrawer, self).rectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), arg4, _float.valueOf(arg5))
+
+    @override
+    @overload
+    def getDefaultLineWidth(self) -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.getDefaultLineWidth()"""
+        return float._wrap(super(AbstractShapeDrawer, self).getDefaultLineWidth())
+
+    @overload
+    def path(self, arg0: 'Array', arg1: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(com.badlogic.gdx.utils.Array<com.badlogic.gdx.math.Vector2>,space.earlygrey.shapedrawer.JoinType)"""
+        super(_ShapeDrawer, self).path(arg0, arg1)
+
+    @overload
+    def polygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float,float,int,float,float)"""
+        super(_ShapeDrawer, self).polygon(_float.valueOf(arg0), _float.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4))
+
+    @override
+    @overload
+    def isDefaultSnap(self) -> bool:
+        """public boolean space.earlygrey.shapedrawer.AbstractShapeDrawer.isDefaultSnap()"""
+        return bool._wrap(super(AbstractShapeDrawer, self).isDefaultSnap())
+
+    @overload
+    def line(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: bool):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float,float,boolean)"""
+        super(_ShapeDrawer, self).line(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _boolean.valueOf(arg5))
+
+    @overload
+    def line(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: 'Color', arg6: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).line(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), arg5, arg6)
+
+    @overload
+    def polygon(self, arg0: 'float', arg1: int, arg2: int, arg3: float, arg4: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float[],int,int,float,space.earlygrey.shapedrawer.JoinType)"""
+        super(_ShapeDrawer, self).polygon(arg0, _int.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3), arg4)
+
+    @overload
+    def polygon(self, arg0: 'float', arg1: float, arg2: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float[],float,space.earlygrey.shapedrawer.JoinType)"""
+        super(_ShapeDrawer, self).polygon(arg0, _float.valueOf(arg1), arg2)
+
+    @overload
+    def filledTriangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledTriangle(float,float,float,float,float,float,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledTriangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), arg6)
+
+    @overload
+    def ellipse(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.ellipse(float,float,float,float,float,float,space.earlygrey.shapedrawer.JoinType)"""
+        super(_ShapeDrawer, self).ellipse(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), arg6)
+
+    @overload
+    def triangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(float,float,float,float,float,float)"""
+        super(_ShapeDrawer, self).triangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5))
+
+    @overload
+    def __init__(self, arg0: 'Batch'):
+        """public space.earlygrey.shapedrawer.ShapeDrawer(com.badlogic.gdx.graphics.g2d.Batch)"""
+        val = _ShapeDrawer(arg0)
+        self.__wrapper = val
+
+    @overload
+    def filledPolygon(self, arg0: 'float', arg1: 'short', arg2: float, arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float[],short[],float,float)"""
+        super(_ShapeDrawer, self).filledPolygon(arg0, arg1, _float.valueOf(arg2), _float.valueOf(arg3))
+
+    @overload
+    def line(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Color', arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.graphics.Color,float)"""
+        super(_ShapeDrawer, self).line(arg0, arg1, arg2, _float.valueOf(arg3))
+
+    @overload
+    def ellipse(self, arg0: float, arg1: float, arg2: float, arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.ellipse(float,float,float,float)"""
+        super(_ShapeDrawer, self).ellipse(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3))
+
+    @overload
+    def triangle(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Vector2', arg3: float, arg4: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,float,float)"""
+        super(_ShapeDrawer, self).triangle(arg0, arg1, arg2, _float.valueOf(arg3), _float.valueOf(arg4))
+
+    @overload
+    def path(self, arg0: 'float', arg1: int, arg2: int, arg3: float, arg4: bool):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(float[],int,int,float,boolean)"""
+        super(_ShapeDrawer, self).path(arg0, _int.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3), _boolean.valueOf(arg4))
+
+    @overload
+    def filledRectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(float,float,float,float,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledRectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), arg4)
+
+    @overload
+    def line(self, arg0: 'Vector2', arg1: 'Vector2', arg2: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,float)"""
+        super(_ShapeDrawer, self).line(arg0, arg1, _float.valueOf(arg2))
+
+    @overload
+    def sector(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: 'Color', arg6: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.sector(float,float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).sector(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), arg5, arg6)
+
+    @overload
+    def setSideEstimator(self, arg0: 'SideEstimator') -> 'SideEstimator':
+        """public space.earlygrey.shapedrawer.SideEstimator space.earlygrey.shapedrawer.AbstractShapeDrawer.setSideEstimator(space.earlygrey.shapedrawer.SideEstimator)"""
+        return 'SideEstimator'._wrap(super(_AbstractShapeDrawer, self).setSideEstimator(arg0))
+
+    @overload
+    def rectangle(self, arg0: 'Rectangle'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(com.badlogic.gdx.math.Rectangle)"""
+        super(_ShapeDrawer, self).rectangle(arg0)
+
+    @overload
+    def polygon(self, arg0: 'Polygon', arg1: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(com.badlogic.gdx.math.Polygon,space.earlygrey.shapedrawer.JoinType)"""
+        super(_ShapeDrawer, self).polygon(arg0, arg1)
+
+    @overload
+    def line(self, arg0: 'Vector2', arg1: 'Vector2'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2)"""
+        super(_ShapeDrawer, self).line(arg0, arg1)
+
+    @overload
+    def triangle(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Vector2', arg3: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).triangle(arg0, arg1, arg2, arg3)
+
+    @overload
+    def filledPolygon(self, arg0: 'float', arg1: 'short'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float[],short[])"""
+        super(_ShapeDrawer, self).filledPolygon(arg0, arg1)
+
+    @override
+    @overload
+    def getRegion(self) -> 'g2d.TextureRegion':
+        """public com.badlogic.gdx.graphics.g2d.TextureRegion space.earlygrey.shapedrawer.AbstractShapeDrawer.getRegion()"""
+        return 'g2d.TextureRegion'._wrap(super(AbstractShapeDrawer, self).getRegion())
+
+    @overload
+    def polygon(self, arg0: float, arg1: float, arg2: int, arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float,float,int,float)"""
+        super(_ShapeDrawer, self).polygon(_float.valueOf(arg0), _float.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3))
+
+    @overload
+    def path(self, arg0: 'Array', arg1: bool):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(com.badlogic.gdx.utils.Array<com.badlogic.gdx.math.Vector2>,boolean)"""
+        super(_ShapeDrawer, self).path(arg0, _boolean.valueOf(arg1))
+
+    @overload
+    def filledTriangle(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Vector2'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledTriangle(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2)"""
+        super(_ShapeDrawer, self).filledTriangle(arg0, arg1, arg2)
+
+    @overload
+    def setPixelSize(self, arg0: float) -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.setPixelSize(float)"""
+        return float._wrap(super(_AbstractShapeDrawer, self).setPixelSize(_float.valueOf(arg0)))
+
+    @overload
+    def ellipse(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.ellipse(float,float,float,float,float,float)"""
+        super(_ShapeDrawer, self).ellipse(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5))
+
+    @overload
+    def path(self, arg0: 'Array'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(com.badlogic.gdx.utils.Array<com.badlogic.gdx.math.Vector2>)"""
+        super(_ShapeDrawer, self).path(arg0)
+
+    @overload
+    def polygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float, arg5: float, arg6: float, arg7: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float,float,int,float,float,float,float,space.earlygrey.shapedrawer.JoinType)"""
+        super(_ShapeDrawer, self).polygon(_float.valueOf(arg0), _float.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), _float.valueOf(arg6), arg7)
+
+    @overload
+    def filledTriangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledTriangle(float,float,float,float,float,float,float,float,float)"""
+        super(_ShapeDrawer, self).filledTriangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), _float.valueOf(arg6), _float.valueOf(arg7), _float.valueOf(arg8))
+
+    @overload
+    def triangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(float,float,float,float,float,float,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).triangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), arg6)
+
+    @overload
+    def filledTriangle(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Vector2', arg3: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledTriangle(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledTriangle(arg0, arg1, arg2, arg3)
+
+    @override
+    @overload
+    def stopRecording(self) -> 'Drawing':
+        """public space.earlygrey.shapedrawer.Drawing space.earlygrey.shapedrawer.AbstractShapeDrawer.stopRecording()"""
+        return 'Drawing'._wrap(super(AbstractShapeDrawer, self).stopRecording())
+
+    @overload
+    def ellipse(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.ellipse(float,float,float,float,float)"""
+        super(_ShapeDrawer, self).ellipse(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4))
+
+ 
+ 
+ 
+# CLASS: space.earlygrey.shapedrawer.ShapeDrawer
+from pyquantum_helper import import_once as _import_once
+import com.badlogic.gdx.graphics.g2d.TextureRegion as _TextureRegion
+_TextureRegion = _TextureRegion
+from builtins import str
+try:
+    from pygdx import utils
+except ImportError:
+    utils = _import_once("pygdx.utils")
+
+import com.badlogic.gdx.graphics.g2d.Batch as _Batch
+_Batch = _Batch
+from pyquantum_helper import override
+import space.earlygrey.shapedrawer.AbstractShapeDrawer as _AbstractShapeDrawer
+_AbstractShapeDrawer = _AbstractShapeDrawer
+try:
+    from pygdx.graphics import g2d
+except ImportError:
+    g2d = _import_once("pygdx.graphics.g2d")
+
+import space.earlygrey.shapedrawer.Drawing as _Drawing
+_Drawing = _Drawing
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
+from builtins import type
+from builtins import float
+import space.earlygrey.shapedrawer.ShapeDrawer as _ShapeDrawer
+_ShapeDrawer = _ShapeDrawer
+import java.lang.String as _String
+_String = _String
+import java.lang.Float as _float
+import java.lang.Boolean as _boolean
+import java.lang.Integer as _int
+import space.earlygrey.shapedrawer.SideEstimator as _SideEstimator
+_SideEstimator = _SideEstimator
+try:
+    from pygdx import math
+except ImportError:
+    math = _import_once("pygdx.math")
+
+try:
+    from pygdx import graphics
+except ImportError:
+    graphics = _import_once("pygdx.graphics")
+
+from builtins import bool
+import java.lang.Long as _long
+from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
+ 
+class ShapeDrawer():
+    """space.earlygrey.shapedrawer.ShapeDrawer"""
+ 
     @staticmethod
+    def _wrap(java_value: _ShapeDrawer) -> 'ShapeDrawer':
+        return ShapeDrawer(__dynamic__=java_value)
+ 
+    #
+    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+    #
     @overload
-    def valueOf(arg0: str) -> 'JoinType':
-        """public static space.earlygrey.shapedrawer.JoinType space.earlygrey.shapedrawer.JoinType.valueOf(java.lang.String)"""
-        return JoinType.__wrap(__JoinType.valueOf(arg0))
+    def __init__(self, __dynamic__: _ShapeDrawer):
+        """
+        Dynamic initializer for ShapeDrawer.
+        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+ 
+        :param __dynamic__: The java object to wrap
+        """
+        self.__wrapper = __dynamic__
+ 
+    def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ShapeDrawer__wrapper":
+            return object.__getattr__(self, name)
+        return getattr(self.__wrapper, name)
+ 
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ShapeDrawer__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
+ 
+    def __delattr__(self, name: str):
+        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
+ 
+    @overload
+    def rectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(float,float,float,float,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).rectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), arg4)
+
+    @overload
+    def triangle(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Vector2', arg3: float, arg4: 'JoinType', arg5: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,float,space.earlygrey.shapedrawer.JoinType,float)"""
+        super(_ShapeDrawer, self).triangle(arg0, arg1, arg2, _float.valueOf(arg3), arg4, _float.valueOf(arg5))
+
+    @overload
+    def filledRectangle(self, arg0: 'Rectangle', arg1: 'Color', arg2: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(com.badlogic.gdx.math.Rectangle,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledRectangle(arg0, arg1, arg2)
+
+    @overload
+    def triangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: 'JoinType', arg8: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(float,float,float,float,float,float,float,space.earlygrey.shapedrawer.JoinType,float)"""
+        super(_ShapeDrawer, self).triangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), _float.valueOf(arg6), arg7, _float.valueOf(arg8))
+
+    @overload
+    def __init__(self, arg0: 'Batch', arg1: 'TextureRegion'):
+        """public space.earlygrey.shapedrawer.ShapeDrawer(com.badlogic.gdx.graphics.g2d.Batch,com.badlogic.gdx.graphics.g2d.TextureRegion)"""
+        val = _ShapeDrawer(arg0, arg1)
+        self.__wrapper = val
+
+    @overload
+    def line(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).line(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), arg4)
+
+    @overload
+    def path(self, arg0: 'FloatArray', arg1: float, arg2: 'JoinType', arg3: bool):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(com.badlogic.gdx.utils.FloatArray,float,space.earlygrey.shapedrawer.JoinType,boolean)"""
+        super(_ShapeDrawer, self).path(arg0, _float.valueOf(arg1), arg2, _boolean.valueOf(arg3))
+
+    @overload
+    def circle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.circle(float,float,float,float,space.earlygrey.shapedrawer.JoinType)"""
+        super(_ShapeDrawer, self).circle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), arg4)
 
     @override
     @overload
-    def ordinal(self) -> int:
-        """public final int java.lang.Enum.ordinal()"""
-        return int.__wrap(super(Enum, self).ordinal())
+    def notifyAll(self):
+        """public final native void java.lang.Object.notifyAll()"""
+        super(object, self).notifyAll()
+
+    @overload
+    def polygon(self, arg0: 'float'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float[])"""
+        super(_ShapeDrawer, self).polygon(arg0)
+
+    @overload
+    def setTextureRegion(self, arg0: 'TextureRegion') -> 'g2d.TextureRegion':
+        """public com.badlogic.gdx.graphics.g2d.TextureRegion space.earlygrey.shapedrawer.AbstractShapeDrawer.setTextureRegion(com.badlogic.gdx.graphics.g2d.TextureRegion)"""
+        return 'g2d.TextureRegion'._wrap(super(_AbstractShapeDrawer, self).setTextureRegion(arg0))
+
+    @overload
+    def path(self, arg0: 'Array', arg1: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(com.badlogic.gdx.utils.Array<com.badlogic.gdx.math.Vector2>,float)"""
+        super(_ShapeDrawer, self).path(arg0, _float.valueOf(arg1))
+
+    @overload
+    def filledRectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: 'Color', arg6: 'Color', arg7: 'Color', arg8: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(float,float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledRectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), arg5, arg6, arg7, arg8)
+
+    @overload
+    def polygon(self, arg0: 'float', arg1: int, arg2: int, arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float[],int,int,float)"""
+        super(_ShapeDrawer, self).polygon(arg0, _int.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3))
+
+    @overload
+    def setDefaultLineWidth(self, arg0: float) -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.setDefaultLineWidth(float)"""
+        return float._wrap(super(_AbstractShapeDrawer, self).setDefaultLineWidth(_float.valueOf(arg0)))
+
+    @overload
+    def line(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'Color', arg5: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float,com.badlogic.gdx.graphics.Color,float)"""
+        super(_ShapeDrawer, self).line(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), arg4, _float.valueOf(arg5))
+
+    @overload
+    def sector(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.sector(float,float,float,float,float)"""
+        super(_ShapeDrawer, self).sector(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4))
+
+    @override
+    @overload
+    def getBatch(self) -> 'g2d.Batch':
+        """public com.badlogic.gdx.graphics.g2d.Batch space.earlygrey.shapedrawer.AbstractShapeDrawer.getBatch()"""
+        return 'g2d.Batch'._wrap(super(AbstractShapeDrawer, self).getBatch())
+
+    @overload
+    def rectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(float,float,float,float,float,float,space.earlygrey.shapedrawer.JoinType)"""
+        super(_ShapeDrawer, self).rectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), arg6)
+
+    @overload
+    def filledRectangle(self, arg0: float, arg1: float, arg2: float, arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(float,float,float,float)"""
+        super(_ShapeDrawer, self).filledRectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3))
+
+    @overload
+    def __init__(self, arg0: 'Batch', arg1: 'TextureRegion', arg2: 'SideEstimator'):
+        """public space.earlygrey.shapedrawer.ShapeDrawer(com.badlogic.gdx.graphics.g2d.Batch,com.badlogic.gdx.graphics.g2d.TextureRegion,space.earlygrey.shapedrawer.SideEstimator)"""
+        val = _ShapeDrawer(arg0, arg1, arg2)
+        self.__wrapper = val
+
+    @overload
+    def circle(self, arg0: float, arg1: float, arg2: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.circle(float,float,float)"""
+        super(_ShapeDrawer, self).circle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2))
+
+    @overload
+    def filledCircle(self, arg0: 'Vector2', arg1: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledCircle(com.badlogic.gdx.math.Vector2,float)"""
+        super(_ShapeDrawer, self).filledCircle(arg0, _float.valueOf(arg1))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @overload
+    def filledRectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: 'Color', arg6: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(float,float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledRectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), arg5, arg6)
+
+    @overload
+    def polygon(self, arg0: 'Polygon', arg1: float, arg2: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(com.badlogic.gdx.math.Polygon,float,space.earlygrey.shapedrawer.JoinType)"""
+        super(_ShapeDrawer, self).polygon(arg0, _float.valueOf(arg1), arg2)
+
+    @overload
+    def setColor(self, arg0: float, arg1: float, arg2: float, arg3: float) -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.setColor(float,float,float,float)"""
+        return float._wrap(super(_AbstractShapeDrawer, self).setColor(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3)))
+
+    @overload
+    def filledRectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'Color', arg5: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledRectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), arg4, arg5)
+
+    @overload
+    def triangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(float,float,float,float,float,float,float,float)"""
+        super(_ShapeDrawer, self).triangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), _float.valueOf(arg6), _float.valueOf(arg7))
+
+    @overload
+    def arc(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: bool, arg7: int):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.arc(float,float,float,float,float,float,boolean,int)"""
+        super(_ShapeDrawer, self).arc(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), _boolean.valueOf(arg6), _int.valueOf(arg7))
+
+    @overload
+    def triangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(float,float,float,float,float,float,float)"""
+        super(_ShapeDrawer, self).triangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), _float.valueOf(arg6))
+
+    @overload
+    def line(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).line(arg0, arg1, arg2)
+
+    @overload
+    def rectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(float,float,float,float,float,float)"""
+        super(_ShapeDrawer, self).rectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5))
+
+    @overload
+    def rectangle(self, arg0: float, arg1: float, arg2: float, arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(float,float,float,float)"""
+        super(_ShapeDrawer, self).rectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3))
+
+    @overload
+    def filledEllipse(self, arg0: float, arg1: float, arg2: float, arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledEllipse(float,float,float,float)"""
+        super(_ShapeDrawer, self).filledEllipse(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3))
+
+    @overload
+    def filledRectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(float,float,float,float,float)"""
+        super(_ShapeDrawer, self).filledRectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4))
+
+    @override
+    @overload
+    def updatePixelSize(self) -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.updatePixelSize()"""
+        return float._wrap(super(AbstractShapeDrawer, self).updatePixelSize())
 
     @override
     @overload
@@ -152,100 +1154,689 @@ class JoinType():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @overload
+    def sector(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: int):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.sector(float,float,float,float,float,int)"""
+        super(_ShapeDrawer, self).sector(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _int.valueOf(arg5))
+
+    @overload
+    def line(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Color', arg3: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).line(arg0, arg1, arg2, arg3)
+
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Enum.toString()"""
-        return str.__wrap(super(Enum, self).toString())
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
+
+    @overload
+    def filledRectangle(self, arg0: 'Rectangle', arg1: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(com.badlogic.gdx.math.Rectangle,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledRectangle(arg0, arg1)
+
+    @override
+    @overload
+    def getSideEstimator(self) -> 'SideEstimator':
+        """public final space.earlygrey.shapedrawer.SideEstimator space.earlygrey.shapedrawer.AbstractShapeDrawer.getSideEstimator()"""
+        return 'SideEstimator'._wrap(super(AbstractShapeDrawer, self).getSideEstimator())
+
+    @overload
+    def filledPolygon(self, arg0: 'Polygon', arg1: 'ShortArray'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(com.badlogic.gdx.math.Polygon,com.badlogic.gdx.utils.ShortArray)"""
+        super(_ShapeDrawer, self).filledPolygon(arg0, arg1)
+
+    @overload
+    def circle(self, arg0: float, arg1: float, arg2: float, arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.circle(float,float,float,float)"""
+        super(_ShapeDrawer, self).circle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3))
+
+    @overload
+    def filledEllipse(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledEllipse(float,float,float,float,float)"""
+        super(_ShapeDrawer, self).filledEllipse(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4))
+
+    @overload
+    def filledPolygon(self, arg0: 'float', arg1: 'ShortArray'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float[],com.badlogic.gdx.utils.ShortArray)"""
+        super(_ShapeDrawer, self).filledPolygon(arg0, arg1)
+
+    @overload
+    def triangles(self, arg0: 'float', arg1: 'short', arg2: float, arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangles(float[],short[],float,float)"""
+        super(_ShapeDrawer, self).triangles(arg0, arg1, _float.valueOf(arg2), _float.valueOf(arg3))
+
+    @overload
+    def rectangle(self, arg0: 'Rectangle', arg1: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(com.badlogic.gdx.math.Rectangle,float)"""
+        super(_ShapeDrawer, self).rectangle(arg0, _float.valueOf(arg1))
+
+    @overload
+    def filledPolygon(self, arg0: 'Polygon', arg1: 'short'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(com.badlogic.gdx.math.Polygon,short[])"""
+        super(_ShapeDrawer, self).filledPolygon(arg0, arg1)
+
+    @overload
+    def polygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float, arg5: float, arg6: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float,float,int,float,float,float,float)"""
+        super(_ShapeDrawer, self).polygon(_float.valueOf(arg0), _float.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), _float.valueOf(arg6))
+
+    @overload
+    def path(self, arg0: 'float', arg1: int, arg2: int, arg3: float, arg4: 'JoinType', arg5: bool):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(float[],int,int,float,space.earlygrey.shapedrawer.JoinType,boolean)"""
+        super(_ShapeDrawer, self).path(arg0, _int.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3), arg4, _boolean.valueOf(arg5))
+
+    @overload
+    def filledRectangle(self, arg0: 'Rectangle', arg1: float, arg2: 'Color', arg3: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(com.badlogic.gdx.math.Rectangle,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledRectangle(arg0, _float.valueOf(arg1), arg2, arg3)
+
+    @overload
+    def filledCircle(self, arg0: float, arg1: float, arg2: float, arg3: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledCircle(float,float,float,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledCircle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), arg3)
+
+    @overload
+    def filledRectangle(self, arg0: 'Rectangle'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(com.badlogic.gdx.math.Rectangle)"""
+        super(_ShapeDrawer, self).filledRectangle(arg0)
+
+    @overload
+    def filledCircle(self, arg0: 'Vector2', arg1: float, arg2: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledCircle(com.badlogic.gdx.math.Vector2,float,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledCircle(arg0, _float.valueOf(arg1), arg2)
+
+    @overload
+    def filledPolygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float,float,int,float,float)"""
+        super(_ShapeDrawer, self).filledPolygon(_float.valueOf(arg0), _float.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4))
+
+    @overload
+    def polygon(self, arg0: 'Polygon', arg1: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(com.badlogic.gdx.math.Polygon,float)"""
+        super(_ShapeDrawer, self).polygon(arg0, _float.valueOf(arg1))
+
+    @overload
+    def setColor(self, arg0: float) -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.setColor(float)"""
+        return float._wrap(super(_AbstractShapeDrawer, self).setColor(_float.valueOf(arg0)))
+
+    @overload
+    def polygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float, arg5: float, arg6: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float,float,int,float,float,float,space.earlygrey.shapedrawer.JoinType)"""
+        super(_ShapeDrawer, self).polygon(_float.valueOf(arg0), _float.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), arg6)
+
+    @overload
+    def rectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(float,float,float,float,float,space.earlygrey.shapedrawer.JoinType)"""
+        super(_ShapeDrawer, self).rectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), arg5)
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @overload
+    def arc(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.arc(float,float,float,float,float,float)"""
+        super(_ShapeDrawer, self).arc(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5))
+
+    @override
+    @overload
+    def getPixelSize(self) -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.getPixelSize()"""
+        return float._wrap(super(AbstractShapeDrawer, self).getPixelSize())
+
+    @overload
+    def setDefaultSnap(self, arg0: bool) -> bool:
+        """public boolean space.earlygrey.shapedrawer.AbstractShapeDrawer.setDefaultSnap(boolean)"""
+        return bool._wrap(super(_AbstractShapeDrawer, self).setDefaultSnap(_boolean.valueOf(arg0)))
+
+    @overload
+    def line(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: bool, arg6: 'Color', arg7: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float,float,boolean,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).line(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _boolean.valueOf(arg5), arg6, arg7)
+
+    @overload
+    def triangle(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Vector2', arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,float)"""
+        super(_ShapeDrawer, self).triangle(arg0, arg1, arg2, _float.valueOf(arg3))
+
+    @overload
+    def rectangle(self, arg0: 'Rectangle', arg1: 'Color', arg2: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(com.badlogic.gdx.math.Rectangle,com.badlogic.gdx.graphics.Color,float)"""
+        super(_ShapeDrawer, self).rectangle(arg0, arg1, _float.valueOf(arg2))
+
+    @overload
+    def rectangle(self, arg0: 'Rectangle', arg1: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(com.badlogic.gdx.math.Rectangle,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).rectangle(arg0, arg1)
+
+    @overload
+    def filledRectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'Color', arg5: 'Color', arg6: 'Color', arg7: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledRectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), arg4, arg5, arg6, arg7)
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
+    def update(self):
+        """public void space.earlygrey.shapedrawer.AbstractShapeDrawer.update()"""
+        super(AbstractShapeDrawer, self).update()
+
+    @overload
+    def line(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'Color', arg5: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).line(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), arg4, arg5)
+
+    @overload
+    def path(self, arg0: 'float', arg1: float, arg2: 'JoinType', arg3: bool):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(float[],float,space.earlygrey.shapedrawer.JoinType,boolean)"""
+        super(_ShapeDrawer, self).path(arg0, _float.valueOf(arg1), arg2, _boolean.valueOf(arg3))
+
+    @overload
+    def circle(self, arg0: float, arg1: float, arg2: float, arg3: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.circle(float,float,float,space.earlygrey.shapedrawer.JoinType)"""
+        super(_ShapeDrawer, self).circle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), arg3)
+
+    @overload
+    def filledPolygon(self, arg0: 'Polygon'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(com.badlogic.gdx.math.Polygon)"""
+        super(_ShapeDrawer, self).filledPolygon(arg0)
+
+    @overload
+    def filledPolygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float, arg5: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float,float,int,float,float,float)"""
+        super(_ShapeDrawer, self).filledPolygon(_float.valueOf(arg0), _float.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5))
+
+    @overload
+    def line(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float,float)"""
+        super(_ShapeDrawer, self).line(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4))
+
+    @overload
+    def arc(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.arc(float,float,float,float,float)"""
+        super(_ShapeDrawer, self).arc(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4))
+
+    @overload
+    def filledTriangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: 'Color', arg7: 'Color', arg8: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledTriangle(float,float,float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledTriangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), arg6, arg7, arg8)
+
+    @overload
+    def path(self, arg0: 'Array', arg1: float, arg2: bool):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(com.badlogic.gdx.utils.Array<com.badlogic.gdx.math.Vector2>,float,boolean)"""
+        super(_ShapeDrawer, self).path(arg0, _float.valueOf(arg1), _boolean.valueOf(arg2))
+
+    @overload
+    def filledTriangle(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Vector2', arg3: 'Color', arg4: 'Color', arg5: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledTriangle(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledTriangle(arg0, arg1, arg2, arg3, arg4, arg5)
+
+    @overload
+    def sector(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: int, arg6: float, arg7: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.sector(float,float,float,float,float,int,float,float)"""
+        super(_ShapeDrawer, self).sector(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _int.valueOf(arg5), _float.valueOf(arg6), _float.valueOf(arg7))
+
+    @overload
+    def filledTriangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledTriangle(float,float,float,float,float,float)"""
+        super(_ShapeDrawer, self).filledTriangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5))
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @overload
+    def filledPolygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float,float,int,float,float,float,float,float)"""
+        super(_ShapeDrawer, self).filledPolygon(_float.valueOf(arg0), _float.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), _float.valueOf(arg6), _float.valueOf(arg7))
+
+    @overload
+    def filledRectangle(self, arg0: 'Rectangle', arg1: float, arg2: 'Color', arg3: 'Color', arg4: 'Color', arg5: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(com.badlogic.gdx.math.Rectangle,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledRectangle(arg0, _float.valueOf(arg1), arg2, arg3, arg4, arg5)
+
+    @override
+    @overload
+    def notify(self):
+        """public final native void java.lang.Object.notify()"""
+        super(object, self).notify()
+
+    @overload
+    def filledEllipse(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: 'Color', arg6: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledEllipse(float,float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledEllipse(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), arg5, arg6)
+
+    @overload
+    def line(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: bool, arg6: float, arg7: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float,float,boolean,float,float)"""
+        super(_ShapeDrawer, self).line(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _boolean.valueOf(arg5), _float.valueOf(arg6), _float.valueOf(arg7))
+
+    @overload
+    def filledPolygon(self, arg0: float, arg1: float, arg2: int, arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float,float,int,float)"""
+        super(_ShapeDrawer, self).filledPolygon(_float.valueOf(arg0), _float.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3))
+
+    @overload
+    def setColor(self, arg0: 'Color') -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.setColor(com.badlogic.gdx.graphics.Color)"""
+        return float._wrap(super(_AbstractShapeDrawer, self).setColor(arg0))
+
+    @overload
+    def filledRectangle(self, arg0: 'Rectangle', arg1: 'Color', arg2: 'Color', arg3: 'Color', arg4: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(com.badlogic.gdx.math.Rectangle,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledRectangle(arg0, arg1, arg2, arg3, arg4)
+
+    @overload
+    def filledPolygon(self, arg0: 'float', arg1: int, arg2: int):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float[],int,int)"""
+        super(_ShapeDrawer, self).filledPolygon(arg0, _int.valueOf(arg1), _int.valueOf(arg2))
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @overload
+    def polygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float, arg5: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float,float,int,float,float,float)"""
+        super(_ShapeDrawer, self).polygon(_float.valueOf(arg0), _float.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5))
+
+    @overload
+    def rectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(float,float,float,float,float)"""
+        super(_ShapeDrawer, self).rectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4))
+
+    @overload
+    def polygon(self, arg0: 'Polygon'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(com.badlogic.gdx.math.Polygon)"""
+        super(_ShapeDrawer, self).polygon(arg0)
+
+    @overload
+    def path(self, arg0: 'Array', arg1: float, arg2: 'JoinType', arg3: bool):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(com.badlogic.gdx.utils.Array<com.badlogic.gdx.math.Vector2>,float,space.earlygrey.shapedrawer.JoinType,boolean)"""
+        super(_ShapeDrawer, self).path(arg0, _float.valueOf(arg1), arg2, _boolean.valueOf(arg3))
+
+    @overload
+    def arc(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: bool):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.arc(float,float,float,float,float,float,boolean)"""
+        super(_ShapeDrawer, self).arc(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), _boolean.valueOf(arg6))
+
+    @overload
+    def filledRectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(float,float,float,float,float,float,float,float,float)"""
+        super(_ShapeDrawer, self).filledRectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), _float.valueOf(arg6), _float.valueOf(arg7), _float.valueOf(arg8))
+
+    @overload
+    def filledPolygon(self, arg0: 'float'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float[])"""
+        super(_ShapeDrawer, self).filledPolygon(arg0)
+
+    @override
+    @overload
+    def getPackedColor(self) -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.getPackedColor()"""
+        return float._wrap(super(AbstractShapeDrawer, self).getPackedColor())
+
+    @overload
+    def line(self, arg0: float, arg1: float, arg2: float, arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float)"""
+        super(_ShapeDrawer, self).line(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3))
+
+    @overload
+    def triangle(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Vector2'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2)"""
+        super(_ShapeDrawer, self).triangle(arg0, arg1, arg2)
+
+    @overload
+    def filledCircle(self, arg0: float, arg1: float, arg2: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledCircle(float,float,float)"""
+        super(_ShapeDrawer, self).filledCircle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2))
+
+    @overload
+    def filledPolygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float, arg5: float, arg6: 'Color', arg7: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float,float,int,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledPolygon(_float.valueOf(arg0), _float.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), arg6, arg7)
+
+    @override
+    @overload
+    def startRecording(self):
+        """public void space.earlygrey.shapedrawer.AbstractShapeDrawer.startRecording()"""
+        super(AbstractShapeDrawer, self).startRecording()
+
+    @overload
+    def path(self, arg0: 'Array', arg1: 'JoinType', arg2: bool):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(com.badlogic.gdx.utils.Array<com.badlogic.gdx.math.Vector2>,space.earlygrey.shapedrawer.JoinType,boolean)"""
+        super(_ShapeDrawer, self).path(arg0, arg1, _boolean.valueOf(arg2))
+
+    @override
+    @overload
+    def update(self, arg0: bool):
+        """public void space.earlygrey.shapedrawer.AbstractShapeDrawer.update(boolean)"""
+        super(_AbstractShapeDrawer, self).update(_boolean.valueOf(arg0))
+
+    @overload
+    def filledEllipse(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledEllipse(float,float,float,float,float,float,float)"""
+        super(_ShapeDrawer, self).filledEllipse(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), _float.valueOf(arg6))
+
+    @overload
+    def rectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'Color', arg5: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(float,float,float,float,com.badlogic.gdx.graphics.Color,float)"""
+        super(_ShapeDrawer, self).rectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), arg4, _float.valueOf(arg5))
+
+    @override
+    @overload
+    def getDefaultLineWidth(self) -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.getDefaultLineWidth()"""
+        return float._wrap(super(AbstractShapeDrawer, self).getDefaultLineWidth())
+
+    @overload
+    def path(self, arg0: 'Array', arg1: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(com.badlogic.gdx.utils.Array<com.badlogic.gdx.math.Vector2>,space.earlygrey.shapedrawer.JoinType)"""
+        super(_ShapeDrawer, self).path(arg0, arg1)
+
+    @overload
+    def polygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float,float,int,float,float)"""
+        super(_ShapeDrawer, self).polygon(_float.valueOf(arg0), _float.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4))
+
+    @override
+    @overload
+    def isDefaultSnap(self) -> bool:
+        """public boolean space.earlygrey.shapedrawer.AbstractShapeDrawer.isDefaultSnap()"""
+        return bool._wrap(super(AbstractShapeDrawer, self).isDefaultSnap())
+
+    @overload
+    def line(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: bool):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float,float,boolean)"""
+        super(_ShapeDrawer, self).line(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _boolean.valueOf(arg5))
+
+    @overload
+    def line(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: 'Color', arg6: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).line(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), arg5, arg6)
+
+    @overload
+    def polygon(self, arg0: 'float', arg1: int, arg2: int, arg3: float, arg4: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float[],int,int,float,space.earlygrey.shapedrawer.JoinType)"""
+        super(_ShapeDrawer, self).polygon(arg0, _int.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3), arg4)
+
+    @overload
+    def polygon(self, arg0: 'float', arg1: float, arg2: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float[],float,space.earlygrey.shapedrawer.JoinType)"""
+        super(_ShapeDrawer, self).polygon(arg0, _float.valueOf(arg1), arg2)
+
+    @overload
+    def filledTriangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledTriangle(float,float,float,float,float,float,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledTriangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), arg6)
+
+    @overload
+    def ellipse(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.ellipse(float,float,float,float,float,float,space.earlygrey.shapedrawer.JoinType)"""
+        super(_ShapeDrawer, self).ellipse(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), arg6)
+
+    @overload
+    def triangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(float,float,float,float,float,float)"""
+        super(_ShapeDrawer, self).triangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5))
+
+    @overload
+    def __init__(self, arg0: 'Batch'):
+        """public space.earlygrey.shapedrawer.ShapeDrawer(com.badlogic.gdx.graphics.g2d.Batch)"""
+        val = _ShapeDrawer(arg0)
+        self.__wrapper = val
+
+    @overload
+    def filledPolygon(self, arg0: 'float', arg1: 'short', arg2: float, arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float[],short[],float,float)"""
+        super(_ShapeDrawer, self).filledPolygon(arg0, arg1, _float.valueOf(arg2), _float.valueOf(arg3))
+
+    @overload
+    def line(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Color', arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.graphics.Color,float)"""
+        super(_ShapeDrawer, self).line(arg0, arg1, arg2, _float.valueOf(arg3))
+
+    @overload
+    def ellipse(self, arg0: float, arg1: float, arg2: float, arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.ellipse(float,float,float,float)"""
+        super(_ShapeDrawer, self).ellipse(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3))
+
+    @overload
+    def triangle(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Vector2', arg3: float, arg4: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,float,float)"""
+        super(_ShapeDrawer, self).triangle(arg0, arg1, arg2, _float.valueOf(arg3), _float.valueOf(arg4))
+
+    @overload
+    def path(self, arg0: 'float', arg1: int, arg2: int, arg3: float, arg4: bool):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(float[],int,int,float,boolean)"""
+        super(_ShapeDrawer, self).path(arg0, _int.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3), _boolean.valueOf(arg4))
+
+    @overload
+    def filledRectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(float,float,float,float,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledRectangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), arg4)
+
+    @overload
+    def line(self, arg0: 'Vector2', arg1: 'Vector2', arg2: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,float)"""
+        super(_ShapeDrawer, self).line(arg0, arg1, _float.valueOf(arg2))
+
+    @overload
+    def sector(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: 'Color', arg6: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.sector(float,float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).sector(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), arg5, arg6)
+
+    @overload
+    def setSideEstimator(self, arg0: 'SideEstimator') -> 'SideEstimator':
+        """public space.earlygrey.shapedrawer.SideEstimator space.earlygrey.shapedrawer.AbstractShapeDrawer.setSideEstimator(space.earlygrey.shapedrawer.SideEstimator)"""
+        return 'SideEstimator'._wrap(super(_AbstractShapeDrawer, self).setSideEstimator(arg0))
+
+    @overload
+    def rectangle(self, arg0: 'Rectangle'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(com.badlogic.gdx.math.Rectangle)"""
+        super(_ShapeDrawer, self).rectangle(arg0)
+
+    @overload
+    def polygon(self, arg0: 'Polygon', arg1: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(com.badlogic.gdx.math.Polygon,space.earlygrey.shapedrawer.JoinType)"""
+        super(_ShapeDrawer, self).polygon(arg0, arg1)
+
+    @overload
+    def line(self, arg0: 'Vector2', arg1: 'Vector2'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2)"""
+        super(_ShapeDrawer, self).line(arg0, arg1)
+
+    @overload
+    def triangle(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Vector2', arg3: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).triangle(arg0, arg1, arg2, arg3)
+
+    @overload
+    def filledPolygon(self, arg0: 'float', arg1: 'short'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float[],short[])"""
+        super(_ShapeDrawer, self).filledPolygon(arg0, arg1)
+
+    @override
+    @overload
+    def getRegion(self) -> 'g2d.TextureRegion':
+        """public com.badlogic.gdx.graphics.g2d.TextureRegion space.earlygrey.shapedrawer.AbstractShapeDrawer.getRegion()"""
+        return 'g2d.TextureRegion'._wrap(super(AbstractShapeDrawer, self).getRegion())
+
+    @overload
+    def polygon(self, arg0: float, arg1: float, arg2: int, arg3: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float,float,int,float)"""
+        super(_ShapeDrawer, self).polygon(_float.valueOf(arg0), _float.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3))
+
+    @overload
+    def path(self, arg0: 'Array', arg1: bool):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(com.badlogic.gdx.utils.Array<com.badlogic.gdx.math.Vector2>,boolean)"""
+        super(_ShapeDrawer, self).path(arg0, _boolean.valueOf(arg1))
+
+    @overload
+    def filledTriangle(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Vector2'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledTriangle(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2)"""
+        super(_ShapeDrawer, self).filledTriangle(arg0, arg1, arg2)
+
+    @overload
+    def setPixelSize(self, arg0: float) -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.setPixelSize(float)"""
+        return float._wrap(super(_AbstractShapeDrawer, self).setPixelSize(_float.valueOf(arg0)))
+
+    @overload
+    def ellipse(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.ellipse(float,float,float,float,float,float)"""
+        super(_ShapeDrawer, self).ellipse(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5))
+
+    @overload
+    def path(self, arg0: 'Array'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(com.badlogic.gdx.utils.Array<com.badlogic.gdx.math.Vector2>)"""
+        super(_ShapeDrawer, self).path(arg0)
+
+    @overload
+    def polygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float, arg5: float, arg6: float, arg7: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float,float,int,float,float,float,float,space.earlygrey.shapedrawer.JoinType)"""
+        super(_ShapeDrawer, self).polygon(_float.valueOf(arg0), _float.valueOf(arg1), _int.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), _float.valueOf(arg6), arg7)
+
+    @overload
+    def filledTriangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledTriangle(float,float,float,float,float,float,float,float,float)"""
+        super(_ShapeDrawer, self).filledTriangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), _float.valueOf(arg6), _float.valueOf(arg7), _float.valueOf(arg8))
+
+    @overload
+    def triangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(float,float,float,float,float,float,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).triangle(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), _float.valueOf(arg5), arg6)
+
+    @overload
+    def filledTriangle(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Vector2', arg3: 'Color'):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledTriangle(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.graphics.Color)"""
+        super(_ShapeDrawer, self).filledTriangle(arg0, arg1, arg2, arg3)
+
+    @override
+    @overload
+    def stopRecording(self) -> 'Drawing':
+        """public space.earlygrey.shapedrawer.Drawing space.earlygrey.shapedrawer.AbstractShapeDrawer.stopRecording()"""
+        return 'Drawing'._wrap(super(AbstractShapeDrawer, self).stopRecording())
+
+    @overload
+    def ellipse(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float):
+        """public void space.earlygrey.shapedrawer.ShapeDrawer.ellipse(float,float,float,float,float)"""
+        super(_ShapeDrawer, self).ellipse(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4))
 
  
+ 
+ 
+# CLASS: space.earlygrey.shapedrawer.ShapeDrawer 
  
  
 # CLASS: space.earlygrey.shapedrawer.JoinType
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.util.Optional as __Optional
-__Optional = __Optional
+import space.earlygrey.shapedrawer.JoinType as _JoinType
+_JoinType = _JoinType
+import java.lang.String as _String
+_String = _String
 from typing import List
 import java.lang.Enum as Enum
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __string
-import java.lang.String as __String
-__String = __String
+import java.lang.String as _string
+import java.lang.Enum as _Enum
+_Enum = _Enum
+import java.lang.Integer as _int
+import java.util.Optional as _Optional
+_Optional = _Optional
 import java.util.Optional as Optional
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
-import space.earlygrey.shapedrawer.JoinType as __JoinType
-__JoinType = __JoinType
-import java.lang.Enum as __Enum
-__Enum = __Enum
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class JoinType():
     """space.earlygrey.shapedrawer.JoinType"""
  
     @staticmethod
-    def __wrap(java_value: __JoinType) -> 'JoinType':
+    def _wrap(java_value: _JoinType) -> 'JoinType':
         return JoinType(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __JoinType):
+    def __init__(self, __dynamic__: _JoinType):
         """
         Dynamic initializer for JoinType.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_JoinType__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_JoinType__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def hashCode(self) -> int:
+        """public final int java.lang.Enum.hashCode()"""
+        return int._wrap(super(Enum, self).hashCode())
 
     @staticmethod
     @overload
     def valueOf(arg0: 'Class', arg1: str) -> 'Enum':
         """public static <T extends java.lang.Enum<T>> T java.lang.Enum.valueOf(java.lang.Class<T>,java.lang.String)"""
-        return Enum.__wrap(__Enum.valueOf(arg0, arg1))
-
-    @staticmethod
-    @overload
-    def values() -> List['JoinType']:
-        """public static space.earlygrey.shapedrawer.JoinType[] space.earlygrey.shapedrawer.JoinType.values()"""
-        return List[JoinType].__wrap(__JoinType.values())
+        return Enum._wrap(_Enum.valueOf(arg0, arg1))
 
     @override
     @overload
     def name(self) -> str:
         """public final java.lang.String java.lang.Enum.name()"""
-        return str.__wrap(super(Enum, self).name())
+        return str._wrap(super(Enum, self).name())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public final int java.lang.Enum.hashCode()"""
-        return int.__wrap(super(Enum, self).hashCode())
+    def describeConstable(self) -> 'Optional':
+        """public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable()"""
+        return 'Optional'._wrap(super(Enum, self).describeConstable())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Enum.toString()"""
+        return str._wrap(super(Enum, self).toString())
 
     @override
     @overload
@@ -255,26 +1846,27 @@ class JoinType():
 
     @override
     @overload
-    def describeConstable(self) -> 'Optional':
-        """public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable()"""
-        return 'Optional'.__wrap(super(Enum, self).describeConstable())
+    def ordinal(self) -> int:
+        """public final int java.lang.Enum.ordinal()"""
+        return int._wrap(super(Enum, self).ordinal())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
+    @staticmethod
     @overload
-    def compareTo(self, arg0: 'Enum') -> int:
-        """public final int java.lang.Enum.compareTo(E)"""
-        return int.__wrap(super(__Enum, self).compareTo(arg0))
+    def valueOf(arg0: str) -> 'JoinType':
+        """public static space.earlygrey.shapedrawer.JoinType space.earlygrey.shapedrawer.JoinType.valueOf(java.lang.String)"""
+        return JoinType._wrap(_JoinType.valueOf(arg0))
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def getDeclaringClass(self) -> 'type.Class':
+        """public final java.lang.Class<E> java.lang.Enum.getDeclaringClass()"""
+        return 'type.Class'._wrap(super(Enum, self).getDeclaringClass())
 
     @override
     @overload
@@ -285,103 +1877,90 @@ class JoinType():
     @overload
     def equals(self, arg0: object) -> bool:
         """public final boolean java.lang.Enum.equals(java.lang.Object)"""
-        return bool.__wrap(super(__Enum, self).equals(arg0))
+        return bool._wrap(super(_Enum, self).equals(arg0))
 
     @override
     @overload
-    def getDeclaringClass(self) -> 'type.Class':
-        """public final java.lang.Class<E> java.lang.Enum.getDeclaringClass()"""
-        return 'type.Class'.__wrap(super(Enum, self).getDeclaringClass())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @staticmethod
     @overload
-    def valueOf(arg0: str) -> 'JoinType':
-        """public static space.earlygrey.shapedrawer.JoinType space.earlygrey.shapedrawer.JoinType.valueOf(java.lang.String)"""
-        return JoinType.__wrap(__JoinType.valueOf(arg0))
+    def values() -> List['JoinType']:
+        """public static space.earlygrey.shapedrawer.JoinType[] space.earlygrey.shapedrawer.JoinType.values()"""
+        return List[JoinType]._wrap(_JoinType.values())
 
-    @override
     @overload
-    def ordinal(self) -> int:
-        """public final int java.lang.Enum.ordinal()"""
-        return int.__wrap(super(Enum, self).ordinal())
+    def compareTo(self, arg0: 'Enum') -> int:
+        """public final int java.lang.Enum.compareTo(E)"""
+        return int._wrap(super(_Enum, self).compareTo(arg0))
 
     @override
     @overload
     def wait(self):
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
-        super(object, self).wait()
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Enum.toString()"""
-        return str.__wrap(super(Enum, self).toString())
-
- 
- 
- 
-# CLASS: space.earlygrey.shapedrawer.JoinType 
+        super(object, self).wait() 
  
  
 # CLASS: space.earlygrey.shapedrawer.Drawing
 from builtins import str
-import java.lang.Long as __long
 from pyquantum_helper import override
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.Object as __object
-import java.lang.String as __String
-__String = __String
+import space.earlygrey.shapedrawer.Drawing as _Drawing
+_Drawing = _Drawing
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Integer as _int
+import java.lang.Object as _object
 from builtins import type
-import space.earlygrey.shapedrawer.Drawing as __Drawing
-__Drawing = __Drawing
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class Drawing():
     """space.earlygrey.shapedrawer.Drawing"""
  
     @staticmethod
-    def __wrap(java_value: __Drawing) -> 'Drawing':
+    def _wrap(java_value: _Drawing) -> 'Drawing':
         return Drawing(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Drawing):
+    def __init__(self, __dynamic__: _Drawing):
         """
         Dynamic initializer for Drawing.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Drawing__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Drawing__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -391,15 +1970,15 @@ class Drawing():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -418,1393 +1997,272 @@ class Drawing():
         """public void space.earlygrey.shapedrawer.Drawing.draw()"""
         super(Drawing, self).draw()
 
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0)) 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: space.earlygrey.shapedrawer.ShapeUtils
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
 from builtins import float
-import space.earlygrey.shapedrawer.ShapeUtils as __ShapeUtils
-__ShapeUtils = __ShapeUtils
-import java.lang.Long as __long
-import java.lang.Float as __float
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
+import space.earlygrey.shapedrawer.ShapeUtils as _ShapeUtils
+_ShapeUtils = _ShapeUtils
+import java.lang.String as _String
+_String = _String
+import java.lang.Float as _float
+import java.lang.Integer as _int
 try:
     from pygdx import math
 except ImportError:
-    math = __import_once__("pygdx.math")
+    math = _import_once("pygdx.math")
 
-import java.lang.Integer as __int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ShapeUtils():
     """space.earlygrey.shapedrawer.ShapeUtils"""
  
     @staticmethod
-    def __wrap(java_value: __ShapeUtils) -> 'ShapeUtils':
+    def _wrap(java_value: _ShapeUtils) -> 'ShapeUtils':
         return ShapeUtils(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ShapeUtils):
+    def __init__(self, __dynamic__: _ShapeUtils):
         """
         Dynamic initializer for ShapeUtils.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ShapeUtils__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ShapeUtils__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @staticmethod
-    @overload
-    def epsilonEquals(arg0: float, arg1: float) -> bool:
-        """public static boolean space.earlygrey.shapedrawer.ShapeUtils.epsilonEquals(float,float)"""
-        return bool.__wrap(__ShapeUtils.epsilonEquals(__float.valueOf(arg0), __float.valueOf(arg1)))
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
     @overload
     def __init__(self):
         """public space.earlygrey.shapedrawer.ShapeUtils()"""
-        val = __ShapeUtils()
-        self.__dict__ = val.__dict__
+        val = _ShapeUtils()
         self.__wrapper = val
-
-    @staticmethod
-    @overload
-    def floor(arg0: float, arg1: float) -> float:
-        """public static float space.earlygrey.shapedrawer.ShapeUtils.floor(float,float)"""
-        return float.__wrap(__ShapeUtils.floor(__float.valueOf(arg0), __float.valueOf(arg1)))
-
-    @override
-    @overload
-    def notifyAll(self):
-        """public final native void java.lang.Object.notifyAll()"""
-        super(object, self).notifyAll()
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
 
     @staticmethod
     @overload
     def angleRad(arg0: 'Vector2', arg1: 'Vector2') -> float:
         """public static float space.earlygrey.shapedrawer.ShapeUtils.angleRad(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2)"""
-        return float.__wrap(__ShapeUtils.angleRad(arg0, arg1))
+        return float._wrap(_ShapeUtils.angleRad(arg0, arg1))
 
-    @override
+    @staticmethod
     @overload
-    def notify(self):
-        """public final native void java.lang.Object.notify()"""
-        super(object, self).notify()
-
-    @overload
-    def __init__(self, ):
-        """public space.earlygrey.shapedrawer.ShapeUtils()"""
-        val = __ShapeUtils()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @override
-    @overload
-    def wait(self):
-        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
-        super(object, self).wait()
+    def floor(arg0: float, arg1: float) -> float:
+        """public static float space.earlygrey.shapedrawer.ShapeUtils.floor(float,float)"""
+        return float._wrap(_ShapeUtils.floor(_float.valueOf(arg0), _float.valueOf(arg1)))
 
     @staticmethod
     @overload
     def snap(arg0: float, arg1: float, arg2: float) -> float:
         """public static float space.earlygrey.shapedrawer.ShapeUtils.snap(float,float,float)"""
-        return float.__wrap(__ShapeUtils.snap(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2)))
+        return float._wrap(_ShapeUtils.snap(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2)))
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @staticmethod
+    @overload
+    def epsilonEquals(arg0: float, arg1: float) -> bool:
+        """public static boolean space.earlygrey.shapedrawer.ShapeUtils.epsilonEquals(float,float)"""
+        return bool._wrap(_ShapeUtils.epsilonEquals(_float.valueOf(arg0), _float.valueOf(arg1)))
+
+    @override
+    @overload
+    def notifyAll(self):
+        """public final native void java.lang.Object.notifyAll()"""
+        super(object, self).notifyAll()
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @overload
+    def __init__(self, ):
+        """public space.earlygrey.shapedrawer.ShapeUtils()"""
+        val = _ShapeUtils()
+        self.__wrapper = val
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @override
+    @overload
+    def notify(self):
+        """public final native void java.lang.Object.notify()"""
+        super(object, self).notify()
 
     @staticmethod
     @overload
     def ceil(arg0: float, arg1: float) -> float:
         """public static float space.earlygrey.shapedrawer.ShapeUtils.ceil(float,float)"""
-        return float.__wrap(__ShapeUtils.ceil(__float.valueOf(arg0), __float.valueOf(arg1)))
+        return float._wrap(_ShapeUtils.ceil(_float.valueOf(arg0), _float.valueOf(arg1)))
 
+    @override
     @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
+    def wait(self):
+        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
+        super(object, self).wait()
 
     @staticmethod
     @overload
     def normaliseAngleToPositive(arg0: float) -> float:
         """public static float space.earlygrey.shapedrawer.ShapeUtils.normaliseAngleToPositive(float)"""
-        return float.__wrap(__ShapeUtils.normaliseAngleToPositive(__float.valueOf(arg0))) 
- 
- 
-# CLASS: space.earlygrey.shapedrawer.AbstractShapeDrawer
-from pyquantum_helper import import_once as __import_once__
-from builtins import str
-import java.lang.Boolean as __boolean
-from pyquantum_helper import override
-try:
-    from pygdx.graphics import g2d
-except ImportError:
-    g2d = __import_once__("pygdx.graphics.g2d")
-
-import java.lang.Object as __object
-from builtins import type
-import space.earlygrey.shapedrawer.Drawing as __Drawing
-__Drawing = __Drawing
-from builtins import float
-import space.earlygrey.shapedrawer.AbstractShapeDrawer as __AbstractShapeDrawer
-__AbstractShapeDrawer = __AbstractShapeDrawer
-import com.badlogic.gdx.graphics.g2d.TextureRegion as __TextureRegion
-__TextureRegion = __TextureRegion
-import java.lang.Long as __long
-import java.lang.Float as __float
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import com.badlogic.gdx.graphics.g2d.Batch as __Batch
-__Batch = __Batch
-import space.earlygrey.shapedrawer.SideEstimator as __SideEstimator
-__SideEstimator = __SideEstimator
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
-try:
-    from pygdx import graphics
-except ImportError:
-    graphics = __import_once__("pygdx.graphics")
-
-from builtins import bool
-from builtins import int
- 
-class AbstractShapeDrawer(ABC):
-    """space.earlygrey.shapedrawer.AbstractShapeDrawer"""
- 
-    @staticmethod
-    def __wrap(java_value: __AbstractShapeDrawer) -> 'AbstractShapeDrawer':
-        return AbstractShapeDrawer(__dynamic__=java_value)
- 
-    #
-    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
-    #
-    @overload
-    def __init__(self, __dynamic__: __AbstractShapeDrawer):
-        """
-        Dynamic initializer for AbstractShapeDrawer.
-        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
- 
-        :param __dynamic__: The java object to wrap
-        """
-        self.__dict__ = __dynamic__.__dict__
-        self.__wrapper = __dynamic__
- 
-    def __getattr__(self, name: str):
-        return getattr(self.__wrapper, name)
- 
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
- 
-    def __delattr__(self, name: str):
-        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
- 
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+        return float._wrap(_ShapeUtils.normaliseAngleToPositive(_float.valueOf(arg0)))
 
     @overload
-    def getSideEstimator(self) -> 'SideEstimator':
-        """public final space.earlygrey.shapedrawer.SideEstimator space.earlygrey.shapedrawer.AbstractShapeDrawer.getSideEstimator()"""
-        return 'SideEstimator'.__wrap(super(AbstractShapeDrawer, self).getSideEstimator())
-
-    @overload
-    def update(self):
-        """public void space.earlygrey.shapedrawer.AbstractShapeDrawer.update()"""
-        super(AbstractShapeDrawer, self).update()
-
-    @overload
-    def setDefaultSnap(self, arg0: bool) -> bool:
-        """public boolean space.earlygrey.shapedrawer.AbstractShapeDrawer.setDefaultSnap(boolean)"""
-        return bool.__wrap(super(__AbstractShapeDrawer, self).setDefaultSnap(__boolean.valueOf(arg0)))
-
-    @override
-    @overload
-    def notifyAll(self):
-        """public final native void java.lang.Object.notifyAll()"""
-        super(object, self).notifyAll()
-
-    @overload
-    def setTextureRegion(self, arg0: 'TextureRegion') -> 'g2d.TextureRegion':
-        """public com.badlogic.gdx.graphics.g2d.TextureRegion space.earlygrey.shapedrawer.AbstractShapeDrawer.setTextureRegion(com.badlogic.gdx.graphics.g2d.TextureRegion)"""
-        return 'g2d.TextureRegion'.__wrap(super(__AbstractShapeDrawer, self).setTextureRegion(arg0))
-
-    @overload
-    def getDefaultLineWidth(self) -> float:
-        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.getDefaultLineWidth()"""
-        return float.__wrap(super(AbstractShapeDrawer, self).getDefaultLineWidth())
-
-    @override
-    @overload
-    def notify(self):
-        """public final native void java.lang.Object.notify()"""
-        super(object, self).notify()
-
-    @overload
-    def setColor(self, arg0: float, arg1: float, arg2: float, arg3: float) -> float:
-        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.setColor(float,float,float,float)"""
-        return float.__wrap(super(__AbstractShapeDrawer, self).setColor(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3)))
-
-    @overload
-    def getBatch(self) -> 'g2d.Batch':
-        """public com.badlogic.gdx.graphics.g2d.Batch space.earlygrey.shapedrawer.AbstractShapeDrawer.getBatch()"""
-        return 'g2d.Batch'.__wrap(super(AbstractShapeDrawer, self).getBatch())
-
-    @overload
-    def stopRecording(self) -> 'Drawing':
-        """public space.earlygrey.shapedrawer.Drawing space.earlygrey.shapedrawer.AbstractShapeDrawer.stopRecording()"""
-        return 'Drawing'.__wrap(super(AbstractShapeDrawer, self).stopRecording())
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
     def hashCode(self) -> int:
         """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @overload
-    def isDefaultSnap(self) -> bool:
-        """public boolean space.earlygrey.shapedrawer.AbstractShapeDrawer.isDefaultSnap()"""
-        return bool.__wrap(super(AbstractShapeDrawer, self).isDefaultSnap())
-
-    @overload
-    def getPackedColor(self) -> float:
-        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.getPackedColor()"""
-        return float.__wrap(super(AbstractShapeDrawer, self).getPackedColor())
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def updatePixelSize(self) -> float:
-        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.updatePixelSize()"""
-        return float.__wrap(super(AbstractShapeDrawer, self).updatePixelSize())
-
-    @overload
-    def getPixelSize(self) -> float:
-        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.getPixelSize()"""
-        return float.__wrap(super(AbstractShapeDrawer, self).getPixelSize())
-
-    @overload
-    def update(self, arg0: bool):
-        """public void space.earlygrey.shapedrawer.AbstractShapeDrawer.update(boolean)"""
-        super(__AbstractShapeDrawer, self).update(__boolean.valueOf(arg0))
-
-    @overload
-    def getRegion(self) -> 'g2d.TextureRegion':
-        """public com.badlogic.gdx.graphics.g2d.TextureRegion space.earlygrey.shapedrawer.AbstractShapeDrawer.getRegion()"""
-        return 'g2d.TextureRegion'.__wrap(super(AbstractShapeDrawer, self).getRegion())
-
-    @overload
-    def startRecording(self):
-        """public void space.earlygrey.shapedrawer.AbstractShapeDrawer.startRecording()"""
-        super(AbstractShapeDrawer, self).startRecording()
-
-    @overload
-    def setDefaultLineWidth(self, arg0: float) -> float:
-        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.setDefaultLineWidth(float)"""
-        return float.__wrap(super(__AbstractShapeDrawer, self).setDefaultLineWidth(__float.valueOf(arg0)))
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @overload
-    def setColor(self, arg0: 'Color') -> float:
-        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.setColor(com.badlogic.gdx.graphics.Color)"""
-        return float.__wrap(super(__AbstractShapeDrawer, self).setColor(arg0))
-
-    @override
-    @overload
-    def wait(self):
-        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
-        super(object, self).wait()
-
-    @overload
-    def setSideEstimator(self, arg0: 'SideEstimator') -> 'SideEstimator':
-        """public space.earlygrey.shapedrawer.SideEstimator space.earlygrey.shapedrawer.AbstractShapeDrawer.setSideEstimator(space.earlygrey.shapedrawer.SideEstimator)"""
-        return 'SideEstimator'.__wrap(super(__AbstractShapeDrawer, self).setSideEstimator(arg0))
-
-    @overload
-    def setPixelSize(self, arg0: float) -> float:
-        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.setPixelSize(float)"""
-        return float.__wrap(super(__AbstractShapeDrawer, self).setPixelSize(__float.valueOf(arg0)))
-
-    @overload
-    def setColor(self, arg0: float) -> float:
-        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.setColor(float)"""
-        return float.__wrap(super(__AbstractShapeDrawer, self).setColor(__float.valueOf(arg0))) 
- 
- 
-# CLASS: space.earlygrey.shapedrawer.SideEstimator
-import space.earlygrey.shapedrawer.SideEstimator as __SideEstimator
-__SideEstimator = __SideEstimator
-from abc import abstractmethod, ABC
- 
-class SideEstimator(ABC):
-    """space.earlygrey.shapedrawer.SideEstimator"""
- 
-    @staticmethod
-    def __wrap(java_value: __SideEstimator) -> 'SideEstimator':
-        return SideEstimator(__dynamic__=java_value)
- 
-    #
-    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
-    #
-    @overload
-    def __init__(self, __dynamic__: __SideEstimator):
-        """
-        Dynamic initializer for SideEstimator.
-        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
- 
-        :param __dynamic__: The java object to wrap
-        """
-        self.__dict__ = __dynamic__.__dict__
-        self.__wrapper = __dynamic__
- 
-    def __getattr__(self, name: str):
-        return getattr(self.__wrapper, name)
- 
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
- 
-    def __delattr__(self, name: str):
-        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
- 
-    @abstractmethod
-    def estimateSidesRequired(self, arg0: float, arg1: float, arg2: float):
-        """public abstract int space.earlygrey.shapedrawer.SideEstimator.estimateSidesRequired(float,float,float)"""
-        pass 
- 
- 
-# CLASS: space.earlygrey.shapedrawer.ShapeDrawer
-from pyquantum_helper import import_once as __import_once__
-from builtins import str
-try:
-    from pygdx import utils
-except ImportError:
-    utils = __import_once__("pygdx.utils")
-
-import java.lang.Boolean as __boolean
-from pyquantum_helper import override
-try:
-    from pygdx.graphics import g2d
-except ImportError:
-    g2d = __import_once__("pygdx.graphics.g2d")
-
-import java.lang.Object as __object
-from builtins import type
-import space.earlygrey.shapedrawer.Drawing as __Drawing
-__Drawing = __Drawing
-from builtins import float
-import space.earlygrey.shapedrawer.AbstractShapeDrawer as __AbstractShapeDrawer
-__AbstractShapeDrawer = __AbstractShapeDrawer
-import com.badlogic.gdx.graphics.g2d.TextureRegion as __TextureRegion
-__TextureRegion = __TextureRegion
-import java.lang.Long as __long
-import java.lang.Float as __float
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import com.badlogic.gdx.graphics.g2d.Batch as __Batch
-__Batch = __Batch
-import space.earlygrey.shapedrawer.SideEstimator as __SideEstimator
-__SideEstimator = __SideEstimator
-import java.lang.Object as __Object
-__Object = __Object
-import space.earlygrey.shapedrawer.ShapeDrawer as __ShapeDrawer
-__ShapeDrawer = __ShapeDrawer
-try:
-    from pygdx import math
-except ImportError:
-    math = __import_once__("pygdx.math")
-
-import java.lang.Integer as __int
-try:
-    from pygdx import graphics
-except ImportError:
-    graphics = __import_once__("pygdx.graphics")
-
-from builtins import bool
-from builtins import int
- 
-class ShapeDrawer():
-    """space.earlygrey.shapedrawer.ShapeDrawer"""
- 
-    @staticmethod
-    def __wrap(java_value: __ShapeDrawer) -> 'ShapeDrawer':
-        return ShapeDrawer(__dynamic__=java_value)
- 
-    #
-    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
-    #
-    @overload
-    def __init__(self, __dynamic__: __ShapeDrawer):
-        """
-        Dynamic initializer for ShapeDrawer.
-        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
- 
-        :param __dynamic__: The java object to wrap
-        """
-        self.__dict__ = __dynamic__.__dict__
-        self.__wrapper = __dynamic__
- 
-    def __getattr__(self, name: str):
-        return getattr(self.__wrapper, name)
- 
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
- 
-    def __delattr__(self, name: str):
-        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
- 
-    @overload
-    def polygon(self, arg0: 'Polygon', arg1: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(com.badlogic.gdx.math.Polygon,float)"""
-        super(__ShapeDrawer, self).polygon(arg0, __float.valueOf(arg1))
-
-    @overload
-    def rectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(float,float,float,float,float)"""
-        super(__ShapeDrawer, self).rectangle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4))
-
-    @overload
-    def rectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'Color', arg5: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(float,float,float,float,com.badlogic.gdx.graphics.Color,float)"""
-        super(__ShapeDrawer, self).rectangle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), arg4, __float.valueOf(arg5))
-
-    @overload
-    def setDefaultSnap(self, arg0: bool) -> bool:
-        """public boolean space.earlygrey.shapedrawer.AbstractShapeDrawer.setDefaultSnap(boolean)"""
-        return bool.__wrap(super(__AbstractShapeDrawer, self).setDefaultSnap(__boolean.valueOf(arg0)))
-
-    @overload
-    def triangle(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Vector2', arg3: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).triangle(arg0, arg1, arg2, arg3)
-
-    @override
-    @overload
-    def notifyAll(self):
-        """public final native void java.lang.Object.notifyAll()"""
-        super(object, self).notifyAll()
-
-    @overload
-    def filledEllipse(self, arg0: float, arg1: float, arg2: float, arg3: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledEllipse(float,float,float,float)"""
-        super(__ShapeDrawer, self).filledEllipse(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3))
-
-    @overload
-    def filledPolygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float,float,int,float,float,float,float,float)"""
-        super(__ShapeDrawer, self).filledPolygon(__float.valueOf(arg0), __float.valueOf(arg1), __int.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5), __float.valueOf(arg6), __float.valueOf(arg7))
-
-    @overload
-    def filledRectangle(self, arg0: float, arg1: float, arg2: float, arg3: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(float,float,float,float)"""
-        super(__ShapeDrawer, self).filledRectangle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3))
-
-    @overload
-    def sector(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.sector(float,float,float,float,float)"""
-        super(__ShapeDrawer, self).sector(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4))
-
-    @override
-    @overload
-    def getRegion(self) -> 'g2d.TextureRegion':
-        """public com.badlogic.gdx.graphics.g2d.TextureRegion space.earlygrey.shapedrawer.AbstractShapeDrawer.getRegion()"""
-        return 'g2d.TextureRegion'.__wrap(super(AbstractShapeDrawer, self).getRegion())
-
-    @overload
-    def setColor(self, arg0: float, arg1: float, arg2: float, arg3: float) -> float:
-        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.setColor(float,float,float,float)"""
-        return float.__wrap(super(__AbstractShapeDrawer, self).setColor(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3)))
-
-    @overload
-    def triangle(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Vector2', arg3: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,float)"""
-        super(__ShapeDrawer, self).triangle(arg0, arg1, arg2, __float.valueOf(arg3))
-
-    @overload
-    def triangles(self, arg0: 'float', arg1: 'short', arg2: float, arg3: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangles(float[],short[],float,float)"""
-        super(__ShapeDrawer, self).triangles(arg0, arg1, __float.valueOf(arg2), __float.valueOf(arg3))
-
-    @overload
-    def polygon(self, arg0: 'float', arg1: int, arg2: int, arg3: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float[],int,int,float)"""
-        super(__ShapeDrawer, self).polygon(arg0, __int.valueOf(arg1), __int.valueOf(arg2), __float.valueOf(arg3))
-
-    @overload
-    def line(self, arg0: 'Vector2', arg1: 'Vector2', arg2: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,float)"""
-        super(__ShapeDrawer, self).line(arg0, arg1, __float.valueOf(arg2))
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
-
-    @overload
-    def filledRectangle(self, arg0: 'Rectangle', arg1: float, arg2: 'Color', arg3: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(com.badlogic.gdx.math.Rectangle,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).filledRectangle(arg0, __float.valueOf(arg1), arg2, arg3)
-
-    @overload
-    def polygon(self, arg0: 'Polygon'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(com.badlogic.gdx.math.Polygon)"""
-        super(__ShapeDrawer, self).polygon(arg0)
-
-    @overload
-    def rectangle(self, arg0: float, arg1: float, arg2: float, arg3: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(float,float,float,float)"""
-        super(__ShapeDrawer, self).rectangle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3))
-
-    @overload
-    def line(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'Color', arg5: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float,com.badlogic.gdx.graphics.Color,float)"""
-        super(__ShapeDrawer, self).line(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), arg4, __float.valueOf(arg5))
-
-    @overload
-    def line(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: bool, arg6: 'Color', arg7: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float,float,boolean,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).line(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __boolean.valueOf(arg5), arg6, arg7)
-
-    @overload
-    def path(self, arg0: 'FloatArray', arg1: float, arg2: 'JoinType', arg3: bool):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(com.badlogic.gdx.utils.FloatArray,float,space.earlygrey.shapedrawer.JoinType,boolean)"""
-        super(__ShapeDrawer, self).path(arg0, __float.valueOf(arg1), arg2, __boolean.valueOf(arg3))
-
-    @overload
-    def rectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(float,float,float,float,float,float)"""
-        super(__ShapeDrawer, self).rectangle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5))
-
-    @overload
-    def ellipse(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: 'JoinType'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.ellipse(float,float,float,float,float,float,space.earlygrey.shapedrawer.JoinType)"""
-        super(__ShapeDrawer, self).ellipse(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5), arg6)
-
-    @overload
-    def arc(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.arc(float,float,float,float,float)"""
-        super(__ShapeDrawer, self).arc(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4))
-
-    @overload
-    def line(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'Color', arg5: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).line(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), arg4, arg5)
-
-    @overload
-    def triangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(float,float,float,float,float,float)"""
-        super(__ShapeDrawer, self).triangle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5))
-
-    @overload
-    def line(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Color', arg3: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.graphics.Color,float)"""
-        super(__ShapeDrawer, self).line(arg0, arg1, arg2, __float.valueOf(arg3))
-
-    @overload
-    def polygon(self, arg0: 'float'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float[])"""
-        super(__ShapeDrawer, self).polygon(arg0)
-
-    @overload
-    def setColor(self, arg0: 'Color') -> float:
-        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.setColor(com.badlogic.gdx.graphics.Color)"""
-        return float.__wrap(super(__AbstractShapeDrawer, self).setColor(arg0))
-
-    @overload
-    def rectangle(self, arg0: 'Rectangle', arg1: 'Color', arg2: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(com.badlogic.gdx.math.Rectangle,com.badlogic.gdx.graphics.Color,float)"""
-        super(__ShapeDrawer, self).rectangle(arg0, arg1, __float.valueOf(arg2))
-
-    @overload
-    def line(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: 'Color', arg6: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).line(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), arg5, arg6)
-
-    @overload
-    def filledPolygon(self, arg0: 'float', arg1: 'short'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float[],short[])"""
-        super(__ShapeDrawer, self).filledPolygon(arg0, arg1)
-
-    @overload
-    def filledRectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: 'Color', arg6: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(float,float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).filledRectangle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), arg5, arg6)
-
-    @overload
-    def filledTriangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledTriangle(float,float,float,float,float,float,float,float,float)"""
-        super(__ShapeDrawer, self).filledTriangle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5), __float.valueOf(arg6), __float.valueOf(arg7), __float.valueOf(arg8))
-
-    @override
-    @overload
-    def wait(self):
-        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
-        super(object, self).wait()
-
-    @overload
-    def setPixelSize(self, arg0: float) -> float:
-        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.setPixelSize(float)"""
-        return float.__wrap(super(__AbstractShapeDrawer, self).setPixelSize(__float.valueOf(arg0)))
-
-    @overload
-    def path(self, arg0: 'Array', arg1: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(com.badlogic.gdx.utils.Array<com.badlogic.gdx.math.Vector2>,float)"""
-        super(__ShapeDrawer, self).path(arg0, __float.valueOf(arg1))
-
-    @overload
-    def filledRectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'Color', arg5: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).filledRectangle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), arg4, arg5)
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def filledRectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(float,float,float,float,float,float,float,float,float)"""
-        super(__ShapeDrawer, self).filledRectangle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5), __float.valueOf(arg6), __float.valueOf(arg7), __float.valueOf(arg8))
-
-    @overload
-    def polygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float,float,int,float,float)"""
-        super(__ShapeDrawer, self).polygon(__float.valueOf(arg0), __float.valueOf(arg1), __int.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4))
-
-    @overload
-    def filledRectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'Color', arg5: 'Color', arg6: 'Color', arg7: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).filledRectangle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), arg4, arg5, arg6, arg7)
-
-    @overload
-    def ellipse(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.ellipse(float,float,float,float,float,float)"""
-        super(__ShapeDrawer, self).ellipse(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5))
-
-    @overload
-    def triangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(float,float,float,float,float,float,float,float)"""
-        super(__ShapeDrawer, self).triangle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5), __float.valueOf(arg6), __float.valueOf(arg7))
-
-    @overload
-    def filledRectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(float,float,float,float,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).filledRectangle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), arg4)
-
-    @overload
-    def polygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float, arg5: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float,float,int,float,float,float)"""
-        super(__ShapeDrawer, self).polygon(__float.valueOf(arg0), __float.valueOf(arg1), __int.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5))
-
-    @overload
-    def triangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(float,float,float,float,float,float,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).triangle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5), arg6)
-
-    @overload
-    def __init__(self, arg0: 'Batch', arg1: 'TextureRegion', arg2: 'SideEstimator'):
-        """public space.earlygrey.shapedrawer.ShapeDrawer(com.badlogic.gdx.graphics.g2d.Batch,com.badlogic.gdx.graphics.g2d.TextureRegion,space.earlygrey.shapedrawer.SideEstimator)"""
-        val = __ShapeDrawer(arg0, arg1, arg2)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @overload
-    def filledTriangle(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Vector2', arg3: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledTriangle(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).filledTriangle(arg0, arg1, arg2, arg3)
-
-    @overload
-    def path(self, arg0: 'float', arg1: float, arg2: 'JoinType', arg3: bool):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(float[],float,space.earlygrey.shapedrawer.JoinType,boolean)"""
-        super(__ShapeDrawer, self).path(arg0, __float.valueOf(arg1), arg2, __boolean.valueOf(arg3))
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @overload
-    def arc(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.arc(float,float,float,float,float,float)"""
-        super(__ShapeDrawer, self).arc(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5))
-
-    @overload
-    def rectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: 'JoinType'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(float,float,float,float,float,float,space.earlygrey.shapedrawer.JoinType)"""
-        super(__ShapeDrawer, self).rectangle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5), arg6)
-
-    @overload
-    def filledPolygon(self, arg0: 'Polygon', arg1: 'short'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(com.badlogic.gdx.math.Polygon,short[])"""
-        super(__ShapeDrawer, self).filledPolygon(arg0, arg1)
-
-    @overload
-    def filledPolygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float, arg5: float, arg6: 'Color', arg7: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float,float,int,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).filledPolygon(__float.valueOf(arg0), __float.valueOf(arg1), __int.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5), arg6, arg7)
-
-    @overload
-    def polygon(self, arg0: 'float', arg1: float, arg2: 'JoinType'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float[],float,space.earlygrey.shapedrawer.JoinType)"""
-        super(__ShapeDrawer, self).polygon(arg0, __float.valueOf(arg1), arg2)
-
-    @overload
-    def polygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float, arg5: float, arg6: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float,float,int,float,float,float,float)"""
-        super(__ShapeDrawer, self).polygon(__float.valueOf(arg0), __float.valueOf(arg1), __int.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5), __float.valueOf(arg6))
-
-    @overload
-    def polygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float, arg5: float, arg6: 'JoinType'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float,float,int,float,float,float,space.earlygrey.shapedrawer.JoinType)"""
-        super(__ShapeDrawer, self).polygon(__float.valueOf(arg0), __float.valueOf(arg1), __int.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5), arg6)
-
-    @overload
-    def sector(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: int):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.sector(float,float,float,float,float,int)"""
-        super(__ShapeDrawer, self).sector(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __int.valueOf(arg5))
-
-    @override
-    @overload
-    def update(self, arg0: bool):
-        """public void space.earlygrey.shapedrawer.AbstractShapeDrawer.update(boolean)"""
-        super(__AbstractShapeDrawer, self).update(__boolean.valueOf(arg0))
-
-    @overload
-    def filledPolygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float, arg5: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float,float,int,float,float,float)"""
-        super(__ShapeDrawer, self).filledPolygon(__float.valueOf(arg0), __float.valueOf(arg1), __int.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5))
-
-    @overload
-    def filledRectangle(self, arg0: 'Rectangle', arg1: 'Color', arg2: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(com.badlogic.gdx.math.Rectangle,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).filledRectangle(arg0, arg1, arg2)
-
-    @overload
-    def filledRectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: 'Color', arg6: 'Color', arg7: 'Color', arg8: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(float,float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).filledRectangle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), arg5, arg6, arg7, arg8)
-
-    @override
-    @overload
-    def getSideEstimator(self) -> 'SideEstimator':
-        """public final space.earlygrey.shapedrawer.SideEstimator space.earlygrey.shapedrawer.AbstractShapeDrawer.getSideEstimator()"""
-        return 'SideEstimator'.__wrap(super(AbstractShapeDrawer, self).getSideEstimator())
-
-    @overload
-    def filledTriangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledTriangle(float,float,float,float,float,float)"""
-        super(__ShapeDrawer, self).filledTriangle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5))
-
-    @overload
-    def line(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).line(arg0, arg1, arg2)
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def arc(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: bool):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.arc(float,float,float,float,float,float,boolean)"""
-        super(__ShapeDrawer, self).arc(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5), __boolean.valueOf(arg6))
-
-    @overload
-    def __init__(self, arg0: 'Batch'):
-        """public space.earlygrey.shapedrawer.ShapeDrawer(com.badlogic.gdx.graphics.g2d.Batch)"""
-        val = __ShapeDrawer(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @overload
-    def rectangle(self, arg0: 'Rectangle'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(com.badlogic.gdx.math.Rectangle)"""
-        super(__ShapeDrawer, self).rectangle(arg0)
-
-    @overload
-    def __init__(self, arg0: 'Batch', arg1: 'TextureRegion'):
-        """public space.earlygrey.shapedrawer.ShapeDrawer(com.badlogic.gdx.graphics.g2d.Batch,com.badlogic.gdx.graphics.g2d.TextureRegion)"""
-        val = __ShapeDrawer(arg0, arg1)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @override
-    @overload
-    def update(self):
-        """public void space.earlygrey.shapedrawer.AbstractShapeDrawer.update()"""
-        super(AbstractShapeDrawer, self).update()
-
-    @override
-    @overload
-    def getDefaultLineWidth(self) -> float:
-        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.getDefaultLineWidth()"""
-        return float.__wrap(super(AbstractShapeDrawer, self).getDefaultLineWidth())
-
-    @overload
-    def filledCircle(self, arg0: 'Vector2', arg1: float, arg2: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledCircle(com.badlogic.gdx.math.Vector2,float,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).filledCircle(arg0, __float.valueOf(arg1), arg2)
-
-    @overload
-    def circle(self, arg0: float, arg1: float, arg2: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.circle(float,float,float)"""
-        super(__ShapeDrawer, self).circle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2))
-
-    @overload
-    def filledRectangle(self, arg0: 'Rectangle', arg1: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(com.badlogic.gdx.math.Rectangle,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).filledRectangle(arg0, arg1)
-
-    @overload
-    def circle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'JoinType'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.circle(float,float,float,float,space.earlygrey.shapedrawer.JoinType)"""
-        super(__ShapeDrawer, self).circle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), arg4)
-
-    @overload
-    def filledTriangle(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Vector2', arg3: 'Color', arg4: 'Color', arg5: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledTriangle(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).filledTriangle(arg0, arg1, arg2, arg3, arg4, arg5)
-
-    @overload
-    def filledRectangle(self, arg0: 'Rectangle', arg1: 'Color', arg2: 'Color', arg3: 'Color', arg4: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(com.badlogic.gdx.math.Rectangle,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).filledRectangle(arg0, arg1, arg2, arg3, arg4)
-
-    @overload
-    def polygon(self, arg0: 'Polygon', arg1: float, arg2: 'JoinType'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(com.badlogic.gdx.math.Polygon,float,space.earlygrey.shapedrawer.JoinType)"""
-        super(__ShapeDrawer, self).polygon(arg0, __float.valueOf(arg1), arg2)
-
-    @overload
-    def polygon(self, arg0: float, arg1: float, arg2: int, arg3: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float,float,int,float)"""
-        super(__ShapeDrawer, self).polygon(__float.valueOf(arg0), __float.valueOf(arg1), __int.valueOf(arg2), __float.valueOf(arg3))
-
-    @overload
-    def triangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: 'JoinType', arg8: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(float,float,float,float,float,float,float,space.earlygrey.shapedrawer.JoinType,float)"""
-        super(__ShapeDrawer, self).triangle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5), __float.valueOf(arg6), arg7, __float.valueOf(arg8))
-
-    @overload
-    def line(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: bool):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float,float,boolean)"""
-        super(__ShapeDrawer, self).line(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __boolean.valueOf(arg5))
-
-    @overload
-    def path(self, arg0: 'Array', arg1: bool):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(com.badlogic.gdx.utils.Array<com.badlogic.gdx.math.Vector2>,boolean)"""
-        super(__ShapeDrawer, self).path(arg0, __boolean.valueOf(arg1))
-
-    @overload
-    def filledEllipse(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledEllipse(float,float,float,float,float)"""
-        super(__ShapeDrawer, self).filledEllipse(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4))
-
-    @overload
-    def filledPolygon(self, arg0: 'Polygon'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(com.badlogic.gdx.math.Polygon)"""
-        super(__ShapeDrawer, self).filledPolygon(arg0)
-
-    @overload
-    def setTextureRegion(self, arg0: 'TextureRegion') -> 'g2d.TextureRegion':
-        """public com.badlogic.gdx.graphics.g2d.TextureRegion space.earlygrey.shapedrawer.AbstractShapeDrawer.setTextureRegion(com.badlogic.gdx.graphics.g2d.TextureRegion)"""
-        return 'g2d.TextureRegion'.__wrap(super(__AbstractShapeDrawer, self).setTextureRegion(arg0))
-
-    @override
-    @overload
-    def notify(self):
-        """public final native void java.lang.Object.notify()"""
-        super(object, self).notify()
-
-    @overload
-    def triangle(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Vector2', arg3: float, arg4: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,float,float)"""
-        super(__ShapeDrawer, self).triangle(arg0, arg1, arg2, __float.valueOf(arg3), __float.valueOf(arg4))
-
-    @overload
-    def filledPolygon(self, arg0: float, arg1: float, arg2: int, arg3: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float,float,int,float)"""
-        super(__ShapeDrawer, self).filledPolygon(__float.valueOf(arg0), __float.valueOf(arg1), __int.valueOf(arg2), __float.valueOf(arg3))
-
-    @override
-    @overload
-    def getPackedColor(self) -> float:
-        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.getPackedColor()"""
-        return float.__wrap(super(AbstractShapeDrawer, self).getPackedColor())
-
-    @override
-    @overload
-    def updatePixelSize(self) -> float:
-        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.updatePixelSize()"""
-        return float.__wrap(super(AbstractShapeDrawer, self).updatePixelSize())
-
-    @override
-    @overload
-    def getBatch(self) -> 'g2d.Batch':
-        """public com.badlogic.gdx.graphics.g2d.Batch space.earlygrey.shapedrawer.AbstractShapeDrawer.getBatch()"""
-        return 'g2d.Batch'.__wrap(super(AbstractShapeDrawer, self).getBatch())
-
-    @overload
-    def path(self, arg0: 'float', arg1: int, arg2: int, arg3: float, arg4: 'JoinType', arg5: bool):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(float[],int,int,float,space.earlygrey.shapedrawer.JoinType,boolean)"""
-        super(__ShapeDrawer, self).path(arg0, __int.valueOf(arg1), __int.valueOf(arg2), __float.valueOf(arg3), arg4, __boolean.valueOf(arg5))
-
-    @overload
-    def filledPolygon(self, arg0: 'float'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float[])"""
-        super(__ShapeDrawer, self).filledPolygon(arg0)
-
-    @overload
-    def rectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(float,float,float,float,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).rectangle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), arg4)
-
-    @overload
-    def polygon(self, arg0: 'float', arg1: int, arg2: int, arg3: float, arg4: 'JoinType'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float[],int,int,float,space.earlygrey.shapedrawer.JoinType)"""
-        super(__ShapeDrawer, self).polygon(arg0, __int.valueOf(arg1), __int.valueOf(arg2), __float.valueOf(arg3), arg4)
-
-    @override
-    @overload
-    def stopRecording(self) -> 'Drawing':
-        """public space.earlygrey.shapedrawer.Drawing space.earlygrey.shapedrawer.AbstractShapeDrawer.stopRecording()"""
-        return 'Drawing'.__wrap(super(AbstractShapeDrawer, self).stopRecording())
-
-    @overload
-    def filledRectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(float,float,float,float,float)"""
-        super(__ShapeDrawer, self).filledRectangle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4))
-
-    @overload
-    def filledPolygon(self, arg0: 'float', arg1: 'short', arg2: float, arg3: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float[],short[],float,float)"""
-        super(__ShapeDrawer, self).filledPolygon(arg0, arg1, __float.valueOf(arg2), __float.valueOf(arg3))
-
-    @overload
-    def filledEllipse(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledEllipse(float,float,float,float,float,float,float)"""
-        super(__ShapeDrawer, self).filledEllipse(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5), __float.valueOf(arg6))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def path(self, arg0: 'Array', arg1: float, arg2: bool):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(com.badlogic.gdx.utils.Array<com.badlogic.gdx.math.Vector2>,float,boolean)"""
-        super(__ShapeDrawer, self).path(arg0, __float.valueOf(arg1), __boolean.valueOf(arg2))
-
-    @overload
-    def circle(self, arg0: float, arg1: float, arg2: float, arg3: 'JoinType'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.circle(float,float,float,space.earlygrey.shapedrawer.JoinType)"""
-        super(__ShapeDrawer, self).circle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), arg3)
-
-    @overload
-    def ellipse(self, arg0: float, arg1: float, arg2: float, arg3: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.ellipse(float,float,float,float)"""
-        super(__ShapeDrawer, self).ellipse(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3))
-
-    @overload
-    def line(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: bool, arg6: float, arg7: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float,float,boolean,float,float)"""
-        super(__ShapeDrawer, self).line(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __boolean.valueOf(arg5), __float.valueOf(arg6), __float.valueOf(arg7))
-
-    @overload
-    def setDefaultLineWidth(self, arg0: float) -> float:
-        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.setDefaultLineWidth(float)"""
-        return float.__wrap(super(__AbstractShapeDrawer, self).setDefaultLineWidth(__float.valueOf(arg0)))
-
-    @overload
-    def filledCircle(self, arg0: float, arg1: float, arg2: float, arg3: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledCircle(float,float,float,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).filledCircle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), arg3)
-
-    @overload
-    def sector(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: int, arg6: float, arg7: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.sector(float,float,float,float,float,int,float,float)"""
-        super(__ShapeDrawer, self).sector(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __int.valueOf(arg5), __float.valueOf(arg6), __float.valueOf(arg7))
-
-    @override
-    @overload
-    def startRecording(self):
-        """public void space.earlygrey.shapedrawer.AbstractShapeDrawer.startRecording()"""
-        super(AbstractShapeDrawer, self).startRecording()
-
-    @overload
-    def filledTriangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: 'Color', arg7: 'Color', arg8: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledTriangle(float,float,float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).filledTriangle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5), arg6, arg7, arg8)
-
-    @overload
-    def path(self, arg0: 'Array'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(com.badlogic.gdx.utils.Array<com.badlogic.gdx.math.Vector2>)"""
-        super(__ShapeDrawer, self).path(arg0)
-
-    @overload
-    def triangle(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Vector2', arg3: float, arg4: 'JoinType', arg5: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,float,space.earlygrey.shapedrawer.JoinType,float)"""
-        super(__ShapeDrawer, self).triangle(arg0, arg1, arg2, __float.valueOf(arg3), arg4, __float.valueOf(arg5))
-
-    @overload
-    def ellipse(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.ellipse(float,float,float,float,float)"""
-        super(__ShapeDrawer, self).ellipse(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4))
-
-    @overload
-    def sector(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: 'Color', arg6: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.sector(float,float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).sector(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), arg5, arg6)
-
-    @override
-    @overload
-    def getPixelSize(self) -> float:
-        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.getPixelSize()"""
-        return float.__wrap(super(AbstractShapeDrawer, self).getPixelSize())
-
-    @overload
-    def path(self, arg0: 'float', arg1: int, arg2: int, arg3: float, arg4: bool):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(float[],int,int,float,boolean)"""
-        super(__ShapeDrawer, self).path(arg0, __int.valueOf(arg1), __int.valueOf(arg2), __float.valueOf(arg3), __boolean.valueOf(arg4))
-
-    @override
-    @overload
-    def isDefaultSnap(self) -> bool:
-        """public boolean space.earlygrey.shapedrawer.AbstractShapeDrawer.isDefaultSnap()"""
-        return bool.__wrap(super(AbstractShapeDrawer, self).isDefaultSnap())
-
-    @overload
-    def setSideEstimator(self, arg0: 'SideEstimator') -> 'SideEstimator':
-        """public space.earlygrey.shapedrawer.SideEstimator space.earlygrey.shapedrawer.AbstractShapeDrawer.setSideEstimator(space.earlygrey.shapedrawer.SideEstimator)"""
-        return 'SideEstimator'.__wrap(super(__AbstractShapeDrawer, self).setSideEstimator(arg0))
-
-    @overload
-    def path(self, arg0: 'Array', arg1: 'JoinType'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(com.badlogic.gdx.utils.Array<com.badlogic.gdx.math.Vector2>,space.earlygrey.shapedrawer.JoinType)"""
-        super(__ShapeDrawer, self).path(arg0, arg1)
-
-    @overload
-    def setColor(self, arg0: float) -> float:
-        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.setColor(float)"""
-        return float.__wrap(super(__AbstractShapeDrawer, self).setColor(__float.valueOf(arg0)))
-
-    @overload
-    def filledPolygon(self, arg0: 'float', arg1: 'ShortArray'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float[],com.badlogic.gdx.utils.ShortArray)"""
-        super(__ShapeDrawer, self).filledPolygon(arg0, arg1)
-
-    @overload
-    def line(self, arg0: float, arg1: float, arg2: float, arg3: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float)"""
-        super(__ShapeDrawer, self).line(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3))
-
-    @overload
-    def circle(self, arg0: float, arg1: float, arg2: float, arg3: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.circle(float,float,float,float)"""
-        super(__ShapeDrawer, self).circle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3))
-
-    @overload
-    def line(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float,float)"""
-        super(__ShapeDrawer, self).line(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4))
-
-    @overload
-    def triangle(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Vector2'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2)"""
-        super(__ShapeDrawer, self).triangle(arg0, arg1, arg2)
-
-    @overload
-    def filledTriangle(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Vector2'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledTriangle(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2)"""
-        super(__ShapeDrawer, self).filledTriangle(arg0, arg1, arg2)
-
-    @overload
-    def arc(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: bool, arg7: int):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.arc(float,float,float,float,float,float,boolean,int)"""
-        super(__ShapeDrawer, self).arc(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5), __boolean.valueOf(arg6), __int.valueOf(arg7))
-
-    @overload
-    def path(self, arg0: 'Array', arg1: float, arg2: 'JoinType', arg3: bool):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(com.badlogic.gdx.utils.Array<com.badlogic.gdx.math.Vector2>,float,space.earlygrey.shapedrawer.JoinType,boolean)"""
-        super(__ShapeDrawer, self).path(arg0, __float.valueOf(arg1), arg2, __boolean.valueOf(arg3))
-
-    @overload
-    def triangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.triangle(float,float,float,float,float,float,float)"""
-        super(__ShapeDrawer, self).triangle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5), __float.valueOf(arg6))
-
-    @overload
-    def filledRectangle(self, arg0: 'Rectangle', arg1: float, arg2: 'Color', arg3: 'Color', arg4: 'Color', arg5: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(com.badlogic.gdx.math.Rectangle,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).filledRectangle(arg0, __float.valueOf(arg1), arg2, arg3, arg4, arg5)
-
-    @overload
-    def polygon(self, arg0: 'Polygon', arg1: 'JoinType'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(com.badlogic.gdx.math.Polygon,space.earlygrey.shapedrawer.JoinType)"""
-        super(__ShapeDrawer, self).polygon(arg0, arg1)
-
-    @overload
-    def line(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(float,float,float,float,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).line(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), arg4)
-
-    @overload
-    def line(self, arg0: 'Vector2', arg1: 'Vector2'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2)"""
-        super(__ShapeDrawer, self).line(arg0, arg1)
-
-    @overload
-    def rectangle(self, arg0: 'Rectangle', arg1: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(com.badlogic.gdx.math.Rectangle,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).rectangle(arg0, arg1)
-
-    @overload
-    def filledPolygon(self, arg0: 'float', arg1: int, arg2: int):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float[],int,int)"""
-        super(__ShapeDrawer, self).filledPolygon(arg0, __int.valueOf(arg1), __int.valueOf(arg2))
-
-    @overload
-    def filledEllipse(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: 'Color', arg6: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledEllipse(float,float,float,float,float,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).filledEllipse(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), arg5, arg6)
-
-    @overload
-    def line(self, arg0: 'Vector2', arg1: 'Vector2', arg2: 'Color', arg3: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.line(com.badlogic.gdx.math.Vector2,com.badlogic.gdx.math.Vector2,com.badlogic.gdx.graphics.Color,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).line(arg0, arg1, arg2, arg3)
-
-    @overload
-    def filledPolygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(float,float,int,float,float)"""
-        super(__ShapeDrawer, self).filledPolygon(__float.valueOf(arg0), __float.valueOf(arg1), __int.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4))
-
-    @overload
-    def filledCircle(self, arg0: 'Vector2', arg1: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledCircle(com.badlogic.gdx.math.Vector2,float)"""
-        super(__ShapeDrawer, self).filledCircle(arg0, __float.valueOf(arg1))
-
-    @overload
-    def rectangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: 'JoinType'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(float,float,float,float,float,space.earlygrey.shapedrawer.JoinType)"""
-        super(__ShapeDrawer, self).rectangle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), arg5)
-
-    @overload
-    def path(self, arg0: 'Array', arg1: 'JoinType', arg2: bool):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.path(com.badlogic.gdx.utils.Array<com.badlogic.gdx.math.Vector2>,space.earlygrey.shapedrawer.JoinType,boolean)"""
-        super(__ShapeDrawer, self).path(arg0, arg1, __boolean.valueOf(arg2))
-
-    @overload
-    def polygon(self, arg0: float, arg1: float, arg2: int, arg3: float, arg4: float, arg5: float, arg6: float, arg7: 'JoinType'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.polygon(float,float,int,float,float,float,float,space.earlygrey.shapedrawer.JoinType)"""
-        super(__ShapeDrawer, self).polygon(__float.valueOf(arg0), __float.valueOf(arg1), __int.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5), __float.valueOf(arg6), arg7)
-
-    @overload
-    def filledPolygon(self, arg0: 'Polygon', arg1: 'ShortArray'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledPolygon(com.badlogic.gdx.math.Polygon,com.badlogic.gdx.utils.ShortArray)"""
-        super(__ShapeDrawer, self).filledPolygon(arg0, arg1)
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @overload
-    def filledRectangle(self, arg0: 'Rectangle'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledRectangle(com.badlogic.gdx.math.Rectangle)"""
-        super(__ShapeDrawer, self).filledRectangle(arg0)
-
-    @overload
-    def filledCircle(self, arg0: float, arg1: float, arg2: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledCircle(float,float,float)"""
-        super(__ShapeDrawer, self).filledCircle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2))
-
-    @overload
-    def filledTriangle(self, arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: 'Color'):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.filledTriangle(float,float,float,float,float,float,com.badlogic.gdx.graphics.Color)"""
-        super(__ShapeDrawer, self).filledTriangle(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), __float.valueOf(arg5), arg6)
-
-    @overload
-    def rectangle(self, arg0: 'Rectangle', arg1: float):
-        """public void space.earlygrey.shapedrawer.ShapeDrawer.rectangle(com.badlogic.gdx.math.Rectangle,float)"""
-        super(__ShapeDrawer, self).rectangle(arg0, __float.valueOf(arg1)) 
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: space.earlygrey.shapedrawer.GraphDrawer
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
-import java.lang.Boolean as __boolean
 from pyquantum_helper import override
-import java.lang.Object as __object
-import space.earlygrey.shapedrawer.GraphDrawer as __GraphDrawer
-__GraphDrawer = __GraphDrawer
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
+import space.earlygrey.shapedrawer.JoinType as _JoinType
+_JoinType = _JoinType
 from builtins import float
-import java.lang.Long as __long
-import java.lang.Float as __float
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import space.earlygrey.shapedrawer.ShapeDrawer as __ShapeDrawer
-__ShapeDrawer = __ShapeDrawer
+import space.earlygrey.shapedrawer.ShapeDrawer as _ShapeDrawer
+_ShapeDrawer = _ShapeDrawer
+import java.lang.String as _String
+_String = _String
+import java.lang.Float as _float
+import java.lang.Boolean as _boolean
+import java.lang.Integer as _int
+import space.earlygrey.shapedrawer.GraphDrawer as _GraphDrawer
+_GraphDrawer = _GraphDrawer
 try:
     from pygdx import math
 except ImportError:
-    math = __import_once__("pygdx.math")
+    math = _import_once("pygdx.math")
 
-import java.lang.Integer as __int
-import space.earlygrey.shapedrawer.JoinType as __JoinType
-__JoinType = __JoinType
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class GraphDrawer():
     """space.earlygrey.shapedrawer.GraphDrawer"""
  
     @staticmethod
-    def __wrap(java_value: __GraphDrawer) -> 'GraphDrawer':
+    def _wrap(java_value: _GraphDrawer) -> 'GraphDrawer':
         return GraphDrawer(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __GraphDrawer):
+    def __init__(self, __dynamic__: _GraphDrawer):
         """
         Dynamic initializer for GraphDrawer.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_GraphDrawer__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_GraphDrawer__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def draw(self, arg0: 'Interpolation', arg1: float, arg2: float, arg3: float, arg4: float, arg5: 'JoinType', arg6: int, arg7: float, arg8: float, arg9: float, arg10: float, arg11: bool):
+        """public void space.earlygrey.shapedrawer.GraphDrawer.draw(com.badlogic.gdx.math.Interpolation,float,float,float,float,space.earlygrey.shapedrawer.JoinType,int,float,float,float,float,boolean)"""
+        super(_GraphDrawer, self).draw(arg0, _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), arg5, _int.valueOf(arg6), _float.valueOf(arg7), _float.valueOf(arg8), _float.valueOf(arg9), _float.valueOf(arg10), _boolean.valueOf(arg11))
 
     @overload
-    def draw(self, arg0: 'Interpolation', arg1: 'Rectangle', arg2: 'JoinType'):
-        """public void space.earlygrey.shapedrawer.GraphDrawer.draw(com.badlogic.gdx.math.Interpolation,com.badlogic.gdx.math.Rectangle,space.earlygrey.shapedrawer.JoinType)"""
-        super(__GraphDrawer, self).draw(arg0, arg1, arg2)
+    def getDomainEnd(self) -> float:
+        """public float space.earlygrey.shapedrawer.GraphDrawer.getDomainEnd()"""
+        return float._wrap(super(GraphDrawer, self).getDomainEnd())
 
     @overload
-    def draw(self, arg0: 'Interpolation', arg1: float, arg2: float, arg3: float, arg4: float, arg5: 'JoinType'):
-        """public void space.earlygrey.shapedrawer.GraphDrawer.draw(com.badlogic.gdx.math.Interpolation,float,float,float,float,space.earlygrey.shapedrawer.JoinType)"""
-        super(__GraphDrawer, self).draw(arg0, __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), arg5)
+    def getPlotBegin(self) -> float:
+        """public float space.earlygrey.shapedrawer.GraphDrawer.getPlotBegin()"""
+        return float._wrap(super(GraphDrawer, self).getPlotBegin())
 
     @overload
-    def getJoinType(self) -> 'JoinType':
-        """public space.earlygrey.shapedrawer.JoinType space.earlygrey.shapedrawer.GraphDrawer.getJoinType()"""
-        return 'JoinType'.__wrap(super(GraphDrawer, self).getJoinType())
-
-    @overload
-    def getShapeDrawer(self) -> 'ShapeDrawer':
-        """public space.earlygrey.shapedrawer.ShapeDrawer space.earlygrey.shapedrawer.GraphDrawer.getShapeDrawer()"""
-        return 'ShapeDrawer'.__wrap(super(GraphDrawer, self).getShapeDrawer())
+    def setShapeDrawer(self, arg0: 'ShapeDrawer'):
+        """public void space.earlygrey.shapedrawer.GraphDrawer.setShapeDrawer(space.earlygrey.shapedrawer.ShapeDrawer)"""
+        super(_GraphDrawer, self).setShapeDrawer(arg0)
 
     @override
     @overload
@@ -1813,9 +2271,20 @@ class GraphDrawer():
         super(object, self).notifyAll()
 
     @overload
-    def getDomainBegin(self) -> float:
-        """public float space.earlygrey.shapedrawer.GraphDrawer.getDomainBegin()"""
-        return float.__wrap(super(GraphDrawer, self).getDomainBegin())
+    def setJoinType(self, arg0: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.GraphDrawer.setJoinType(space.earlygrey.shapedrawer.JoinType)"""
+        super(_GraphDrawer, self).setJoinType(arg0)
+
+    @overload
+    def setDomainBegin(self, arg0: float):
+        """public void space.earlygrey.shapedrawer.GraphDrawer.setDomainBegin(float)"""
+        super(_GraphDrawer, self).setDomainBegin(_float.valueOf(arg0))
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -1824,95 +2293,98 @@ class GraphDrawer():
         super(object, self).notify()
 
     @overload
-    def __init__(self, arg0: 'ShapeDrawer'):
-        """public space.earlygrey.shapedrawer.GraphDrawer(space.earlygrey.shapedrawer.ShapeDrawer)"""
-        val = __GraphDrawer(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getSamples(self) -> int:
+        """public int space.earlygrey.shapedrawer.GraphDrawer.getSamples()"""
+        return int._wrap(super(GraphDrawer, self).getSamples())
 
     @overload
-    def getPlotEnd(self) -> float:
-        """public float space.earlygrey.shapedrawer.GraphDrawer.getPlotEnd()"""
-        return float.__wrap(super(GraphDrawer, self).getPlotEnd())
+    def draw(self, arg0: 'Interpolation', arg1: float, arg2: float, arg3: float, arg4: float, arg5: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.GraphDrawer.draw(com.badlogic.gdx.math.Interpolation,float,float,float,float,space.earlygrey.shapedrawer.JoinType)"""
+        super(_GraphDrawer, self).draw(arg0, _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4), arg5)
 
     @overload
-    def getPlotBegin(self) -> float:
-        """public float space.earlygrey.shapedrawer.GraphDrawer.getPlotBegin()"""
-        return float.__wrap(super(GraphDrawer, self).getPlotBegin())
+    def draw(self, arg0: 'Interpolation', arg1: float, arg2: float, arg3: float, arg4: float):
+        """public void space.earlygrey.shapedrawer.GraphDrawer.draw(com.badlogic.gdx.math.Interpolation,float,float,float,float)"""
+        super(_GraphDrawer, self).draw(arg0, _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3), _float.valueOf(arg4))
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @overload
+    def getShapeDrawer(self) -> 'ShapeDrawer':
+        """public space.earlygrey.shapedrawer.ShapeDrawer space.earlygrey.shapedrawer.GraphDrawer.getShapeDrawer()"""
+        return 'ShapeDrawer'._wrap(super(GraphDrawer, self).getShapeDrawer())
+
+    @overload
+    def getJoinType(self) -> 'JoinType':
+        """public space.earlygrey.shapedrawer.JoinType space.earlygrey.shapedrawer.GraphDrawer.getJoinType()"""
+        return 'JoinType'._wrap(super(GraphDrawer, self).getJoinType())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @overload
+    def getPlotEnd(self) -> float:
+        """public float space.earlygrey.shapedrawer.GraphDrawer.getPlotEnd()"""
+        return float._wrap(super(GraphDrawer, self).getPlotEnd())
 
     @override
     @overload
     def toString(self) -> str:
         """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+        return str._wrap(super(object, self).toString())
 
     @overload
-    def setPlotEnd(self, arg0: float):
-        """public void space.earlygrey.shapedrawer.GraphDrawer.setPlotEnd(float)"""
-        super(__GraphDrawer, self).setPlotEnd(__float.valueOf(arg0))
+    def setPlotBegin(self, arg0: float):
+        """public void space.earlygrey.shapedrawer.GraphDrawer.setPlotBegin(float)"""
+        super(_GraphDrawer, self).setPlotBegin(_float.valueOf(arg0))
 
     @overload
-    def setJoinType(self, arg0: 'JoinType'):
-        """public void space.earlygrey.shapedrawer.GraphDrawer.setJoinType(space.earlygrey.shapedrawer.JoinType)"""
-        super(__GraphDrawer, self).setJoinType(arg0)
+    def draw(self, arg0: 'Interpolation', arg1: 'Rectangle'):
+        """public void space.earlygrey.shapedrawer.GraphDrawer.draw(com.badlogic.gdx.math.Interpolation,com.badlogic.gdx.math.Rectangle)"""
+        super(_GraphDrawer, self).draw(arg0, arg1)
 
     @overload
-    def setDomainEnd(self, arg0: float):
-        """public void space.earlygrey.shapedrawer.GraphDrawer.setDomainEnd(float)"""
-        super(__GraphDrawer, self).setDomainEnd(__float.valueOf(arg0))
+    def setRescale(self, arg0: bool):
+        """public void space.earlygrey.shapedrawer.GraphDrawer.setRescale(boolean)"""
+        super(_GraphDrawer, self).setRescale(_boolean.valueOf(arg0))
 
     @overload
-    def getSamples(self) -> int:
-        """public int space.earlygrey.shapedrawer.GraphDrawer.getSamples()"""
-        return int.__wrap(super(GraphDrawer, self).getSamples())
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def getDomainBegin(self) -> float:
+        """public float space.earlygrey.shapedrawer.GraphDrawer.getDomainBegin()"""
+        return float._wrap(super(GraphDrawer, self).getDomainBegin())
 
     @override
     @overload
     def getClass(self) -> 'type.Class':
         """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @overload
-    def setRescale(self, arg0: bool):
-        """public void space.earlygrey.shapedrawer.GraphDrawer.setRescale(boolean)"""
-        super(__GraphDrawer, self).setRescale(__boolean.valueOf(arg0))
+    def draw(self, arg0: 'Interpolation', arg1: 'Rectangle', arg2: 'JoinType'):
+        """public void space.earlygrey.shapedrawer.GraphDrawer.draw(com.badlogic.gdx.math.Interpolation,com.badlogic.gdx.math.Rectangle,space.earlygrey.shapedrawer.JoinType)"""
+        super(_GraphDrawer, self).draw(arg0, arg1, arg2)
 
     @overload
-    def draw(self, arg0: 'Interpolation', arg1: 'Rectangle'):
-        """public void space.earlygrey.shapedrawer.GraphDrawer.draw(com.badlogic.gdx.math.Interpolation,com.badlogic.gdx.math.Rectangle)"""
-        super(__GraphDrawer, self).draw(arg0, arg1)
+    def __init__(self, arg0: 'ShapeDrawer'):
+        """public space.earlygrey.shapedrawer.GraphDrawer(space.earlygrey.shapedrawer.ShapeDrawer)"""
+        val = _GraphDrawer(arg0)
+        self.__wrapper = val
 
     @overload
-    def isRescale(self) -> bool:
-        """public boolean space.earlygrey.shapedrawer.GraphDrawer.isRescale()"""
-        return bool.__wrap(super(GraphDrawer, self).isRescale())
+    def setDomainEnd(self, arg0: float):
+        """public void space.earlygrey.shapedrawer.GraphDrawer.setDomainEnd(float)"""
+        super(_GraphDrawer, self).setDomainEnd(_float.valueOf(arg0))
 
     @overload
-    def setDomainBegin(self, arg0: float):
-        """public void space.earlygrey.shapedrawer.GraphDrawer.setDomainBegin(float)"""
-        super(__GraphDrawer, self).setDomainBegin(__float.valueOf(arg0))
-
-    @overload
-    def getDomainEnd(self) -> float:
-        """public float space.earlygrey.shapedrawer.GraphDrawer.getDomainEnd()"""
-        return float.__wrap(super(GraphDrawer, self).getDomainEnd())
+    def setPlotEnd(self, arg0: float):
+        """public void space.earlygrey.shapedrawer.GraphDrawer.setPlotEnd(float)"""
+        super(_GraphDrawer, self).setPlotEnd(_float.valueOf(arg0))
 
     @override
     @overload
@@ -1923,100 +2395,142 @@ class GraphDrawer():
     @overload
     def setSamples(self, arg0: int):
         """public void space.earlygrey.shapedrawer.GraphDrawer.setSamples(int)"""
-        super(__GraphDrawer, self).setSamples(__int.valueOf(arg0))
+        super(_GraphDrawer, self).setSamples(_int.valueOf(arg0))
 
     @overload
-    def setShapeDrawer(self, arg0: 'ShapeDrawer'):
-        """public void space.earlygrey.shapedrawer.GraphDrawer.setShapeDrawer(space.earlygrey.shapedrawer.ShapeDrawer)"""
-        super(__GraphDrawer, self).setShapeDrawer(arg0)
+    def isRescale(self) -> bool:
+        """public boolean space.earlygrey.shapedrawer.GraphDrawer.isRescale()"""
+        return bool._wrap(super(GraphDrawer, self).isRescale())
 
+    @override
     @overload
-    def draw(self, arg0: 'Interpolation', arg1: float, arg2: float, arg3: float, arg4: float, arg5: 'JoinType', arg6: int, arg7: float, arg8: float, arg9: float, arg10: float, arg11: bool):
-        """public void space.earlygrey.shapedrawer.GraphDrawer.draw(com.badlogic.gdx.math.Interpolation,float,float,float,float,space.earlygrey.shapedrawer.JoinType,int,float,float,float,float,boolean)"""
-        super(__GraphDrawer, self).draw(arg0, __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4), arg5, __int.valueOf(arg6), __float.valueOf(arg7), __float.valueOf(arg8), __float.valueOf(arg9), __float.valueOf(arg10), __boolean.valueOf(arg11))
-
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
+ 
+ 
+# CLASS: space.earlygrey.shapedrawer.SideEstimator
+import space.earlygrey.shapedrawer.SideEstimator as _SideEstimator
+_SideEstimator = _SideEstimator
+from abc import abstractmethod, ABC
+ 
+class SideEstimator():
+    """space.earlygrey.shapedrawer.SideEstimator"""
+ 
+    @staticmethod
+    def _wrap(java_value: _SideEstimator) -> 'SideEstimator':
+        return SideEstimator(__dynamic__=java_value)
+ 
+    #
+    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+    #
     @overload
-    def setPlotBegin(self, arg0: float):
-        """public void space.earlygrey.shapedrawer.GraphDrawer.setPlotBegin(float)"""
-        super(__GraphDrawer, self).setPlotBegin(__float.valueOf(arg0))
-
-    @overload
-    def draw(self, arg0: 'Interpolation', arg1: float, arg2: float, arg3: float, arg4: float):
-        """public void space.earlygrey.shapedrawer.GraphDrawer.draw(com.badlogic.gdx.math.Interpolation,float,float,float,float)"""
-        super(__GraphDrawer, self).draw(arg0, __float.valueOf(arg1), __float.valueOf(arg2), __float.valueOf(arg3), __float.valueOf(arg4)) 
+    def __init__(self, __dynamic__: _SideEstimator):
+        """
+        Dynamic initializer for SideEstimator.
+        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+ 
+        :param __dynamic__: The java object to wrap
+        """
+        self.__wrapper = __dynamic__
+ 
+    def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_SideEstimator__wrapper":
+            return object.__getattr__(self, name)
+        return getattr(self.__wrapper, name)
+ 
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_SideEstimator__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
+ 
+    def __delattr__(self, name: str):
+        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
+ 
+    @abstractmethod
+    def estimateSidesRequired(self, arg0: float, arg1: float, arg2: float):
+        """public abstract int space.earlygrey.shapedrawer.SideEstimator.estimateSidesRequired(float,float,float)"""
+        pass 
  
  
 # CLASS: space.earlygrey.shapedrawer.DefaultSideEstimator
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import space.earlygrey.shapedrawer.DefaultSideEstimator as __DefaultSideEstimator
-__DefaultSideEstimator = __DefaultSideEstimator
 from builtins import float
-import java.lang.Long as __long
-import java.lang.Float as __float
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import java.lang.Float as _float
+import java.lang.Integer as _int
 from builtins import bool
+import space.earlygrey.shapedrawer.DefaultSideEstimator as _DefaultSideEstimator
+_DefaultSideEstimator = _DefaultSideEstimator
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class DefaultSideEstimator():
     """space.earlygrey.shapedrawer.DefaultSideEstimator"""
  
     @staticmethod
-    def __wrap(java_value: __DefaultSideEstimator) -> 'DefaultSideEstimator':
+    def _wrap(java_value: _DefaultSideEstimator) -> 'DefaultSideEstimator':
         return DefaultSideEstimator(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __DefaultSideEstimator):
+    def __init__(self, __dynamic__: _DefaultSideEstimator):
         """
         Dynamic initializer for DefaultSideEstimator.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_DefaultSideEstimator__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_DefaultSideEstimator__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @overload
+    def setSideMultiplier(self, arg0: float):
+        """public void space.earlygrey.shapedrawer.DefaultSideEstimator.setSideMultiplier(float)"""
+        super(_DefaultSideEstimator, self).setSideMultiplier(_float.valueOf(arg0))
+
+    @overload
+    def __init__(self):
+        """public space.earlygrey.shapedrawer.DefaultSideEstimator()"""
+        val = _DefaultSideEstimator()
+        self.__wrapper = val
+
+    @overload
+    def setMinimumSides(self, arg0: int):
+        """public void space.earlygrey.shapedrawer.DefaultSideEstimator.setMinimumSides(int)"""
+        super(_DefaultSideEstimator, self).setMinimumSides(_int.valueOf(arg0))
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def setSideMultiplier(self, arg0: float):
-        """public void space.earlygrey.shapedrawer.DefaultSideEstimator.setSideMultiplier(float)"""
-        super(__DefaultSideEstimator, self).setSideMultiplier(__float.valueOf(arg0))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def estimateSidesRequired(self, arg0: float, arg1: float, arg2: float) -> int:
-        """public int space.earlygrey.shapedrawer.DefaultSideEstimator.estimateSidesRequired(float,float,float)"""
-        return int.__wrap(super(__DefaultSideEstimator, self).estimateSidesRequired(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2)))
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -2024,51 +2538,32 @@ class DefaultSideEstimator():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @override
     @overload
-    def __init__(self, ):
-        """public space.earlygrey.shapedrawer.DefaultSideEstimator()"""
-        val = __DefaultSideEstimator()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @overload
-    def getMaximumSides(self) -> int:
-        """public int space.earlygrey.shapedrawer.DefaultSideEstimator.getMaximumSides()"""
-        return int.__wrap(super(DefaultSideEstimator, self).getMaximumSides())
+    def getSideMultiplier(self) -> float:
+        """public float space.earlygrey.shapedrawer.DefaultSideEstimator.getSideMultiplier()"""
+        return float._wrap(super(DefaultSideEstimator, self).getSideMultiplier())
 
     @overload
-    def __init__(self):
-        """public space.earlygrey.shapedrawer.DefaultSideEstimator()"""
-        val = __DefaultSideEstimator()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def setMaximumSides(self, arg0: int):
+        """public void space.earlygrey.shapedrawer.DefaultSideEstimator.setMaximumSides(int)"""
+        super(_DefaultSideEstimator, self).setMaximumSides(_int.valueOf(arg0))
+
+    @overload
+    def getMinimumSides(self) -> int:
+        """public int space.earlygrey.shapedrawer.DefaultSideEstimator.getMinimumSides()"""
+        return int._wrap(super(DefaultSideEstimator, self).getMinimumSides())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def getMinimumSides(self) -> int:
-        """public int space.earlygrey.shapedrawer.DefaultSideEstimator.getMinimumSides()"""
-        return int.__wrap(super(DefaultSideEstimator, self).getMinimumSides())
-
-    @overload
-    def getSideMultiplier(self) -> float:
-        """public float space.earlygrey.shapedrawer.DefaultSideEstimator.getSideMultiplier()"""
-        return float.__wrap(super(DefaultSideEstimator, self).getSideMultiplier())
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @overload
-    def setMinimumSides(self, arg0: int):
-        """public void space.earlygrey.shapedrawer.DefaultSideEstimator.setMinimumSides(int)"""
-        super(__DefaultSideEstimator, self).setMinimumSides(__int.valueOf(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -2078,15 +2573,14 @@ class DefaultSideEstimator():
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @overload
     def __init__(self, arg0: int, arg1: int, arg2: float):
         """public space.earlygrey.shapedrawer.DefaultSideEstimator(int,int,float)"""
-        val = __DefaultSideEstimator(__int.valueOf(arg0), __int.valueOf(arg1), __float.valueOf(arg2))
-        self.__dict__ = val.__dict__
+        val = _DefaultSideEstimator(_int.valueOf(arg0), _int.valueOf(arg1), _float.valueOf(arg2))
         self.__wrapper = val
 
     @override
@@ -2096,11 +2590,257 @@ class DefaultSideEstimator():
         super(object, self).wait()
 
     @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+    def getMaximumSides(self) -> int:
+        """public int space.earlygrey.shapedrawer.DefaultSideEstimator.getMaximumSides()"""
+        return int._wrap(super(DefaultSideEstimator, self).getMaximumSides())
 
     @overload
-    def setMaximumSides(self, arg0: int):
-        """public void space.earlygrey.shapedrawer.DefaultSideEstimator.setMaximumSides(int)"""
-        super(__DefaultSideEstimator, self).setMaximumSides(__int.valueOf(arg0))
+    def __init__(self, ):
+        """public space.earlygrey.shapedrawer.DefaultSideEstimator()"""
+        val = _DefaultSideEstimator()
+        self.__wrapper = val
+
+    @overload
+    def estimateSidesRequired(self, arg0: float, arg1: float, arg2: float) -> int:
+        """public int space.earlygrey.shapedrawer.DefaultSideEstimator.estimateSidesRequired(float,float,float)"""
+        return int._wrap(super(_DefaultSideEstimator, self).estimateSidesRequired(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2)))
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
+ 
+ 
+# CLASS: space.earlygrey.shapedrawer.AbstractShapeDrawer
+from pyquantum_helper import import_once as _import_once
+import com.badlogic.gdx.graphics.g2d.TextureRegion as _TextureRegion
+_TextureRegion = _TextureRegion
+from builtins import str
+import com.badlogic.gdx.graphics.g2d.Batch as _Batch
+_Batch = _Batch
+import space.earlygrey.shapedrawer.AbstractShapeDrawer as _AbstractShapeDrawer
+_AbstractShapeDrawer = _AbstractShapeDrawer
+from pyquantum_helper import override
+try:
+    from pygdx.graphics import g2d
+except ImportError:
+    g2d = _import_once("pygdx.graphics.g2d")
+
+import space.earlygrey.shapedrawer.Drawing as _Drawing
+_Drawing = _Drawing
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
+from builtins import type
+from builtins import float
+import java.lang.String as _String
+_String = _String
+import java.lang.Float as _float
+import java.lang.Boolean as _boolean
+import java.lang.Integer as _int
+import space.earlygrey.shapedrawer.SideEstimator as _SideEstimator
+_SideEstimator = _SideEstimator
+try:
+    from pygdx import graphics
+except ImportError:
+    graphics = _import_once("pygdx.graphics")
+
+from builtins import bool
+import java.lang.Long as _long
+from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
+ 
+class AbstractShapeDrawer():
+    """space.earlygrey.shapedrawer.AbstractShapeDrawer"""
+ 
+    @staticmethod
+    def _wrap(java_value: _AbstractShapeDrawer) -> 'AbstractShapeDrawer':
+        return AbstractShapeDrawer(__dynamic__=java_value)
+ 
+    #
+    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+    #
+    @overload
+    def __init__(self, __dynamic__: _AbstractShapeDrawer):
+        """
+        Dynamic initializer for AbstractShapeDrawer.
+        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+ 
+        :param __dynamic__: The java object to wrap
+        """
+        self.__wrapper = __dynamic__
+ 
+    def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_AbstractShapeDrawer__wrapper":
+            return object.__getattr__(self, name)
+        return getattr(self.__wrapper, name)
+ 
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_AbstractShapeDrawer__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
+ 
+    def __delattr__(self, name: str):
+        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
+ 
+    @overload
+    def getPackedColor(self) -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.getPackedColor()"""
+        return float._wrap(super(AbstractShapeDrawer, self).getPackedColor())
+
+    @overload
+    def getRegion(self) -> 'g2d.TextureRegion':
+        """public com.badlogic.gdx.graphics.g2d.TextureRegion space.earlygrey.shapedrawer.AbstractShapeDrawer.getRegion()"""
+        return 'g2d.TextureRegion'._wrap(super(AbstractShapeDrawer, self).getRegion())
+
+    @overload
+    def update(self):
+        """public void space.earlygrey.shapedrawer.AbstractShapeDrawer.update()"""
+        super(AbstractShapeDrawer, self).update()
+
+    @override
+    @overload
+    def notifyAll(self):
+        """public final native void java.lang.Object.notifyAll()"""
+        super(object, self).notifyAll()
+
+    @overload
+    def setTextureRegion(self, arg0: 'TextureRegion') -> 'g2d.TextureRegion':
+        """public com.badlogic.gdx.graphics.g2d.TextureRegion space.earlygrey.shapedrawer.AbstractShapeDrawer.setTextureRegion(com.badlogic.gdx.graphics.g2d.TextureRegion)"""
+        return 'g2d.TextureRegion'._wrap(super(_AbstractShapeDrawer, self).setTextureRegion(arg0))
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @overload
+    def updatePixelSize(self) -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.updatePixelSize()"""
+        return float._wrap(super(AbstractShapeDrawer, self).updatePixelSize())
+
+    @overload
+    def setDefaultLineWidth(self, arg0: float) -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.setDefaultLineWidth(float)"""
+        return float._wrap(super(_AbstractShapeDrawer, self).setDefaultLineWidth(_float.valueOf(arg0)))
+
+    @override
+    @overload
+    def notify(self):
+        """public final native void java.lang.Object.notify()"""
+        super(object, self).notify()
+
+    @overload
+    def getSideEstimator(self) -> 'SideEstimator':
+        """public final space.earlygrey.shapedrawer.SideEstimator space.earlygrey.shapedrawer.AbstractShapeDrawer.getSideEstimator()"""
+        return 'SideEstimator'._wrap(super(AbstractShapeDrawer, self).getSideEstimator())
+
+    @overload
+    def stopRecording(self) -> 'Drawing':
+        """public space.earlygrey.shapedrawer.Drawing space.earlygrey.shapedrawer.AbstractShapeDrawer.stopRecording()"""
+        return 'Drawing'._wrap(super(AbstractShapeDrawer, self).stopRecording())
+
+    @overload
+    def getDefaultLineWidth(self) -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.getDefaultLineWidth()"""
+        return float._wrap(super(AbstractShapeDrawer, self).getDefaultLineWidth())
+
+    @overload
+    def setSideEstimator(self, arg0: 'SideEstimator') -> 'SideEstimator':
+        """public space.earlygrey.shapedrawer.SideEstimator space.earlygrey.shapedrawer.AbstractShapeDrawer.setSideEstimator(space.earlygrey.shapedrawer.SideEstimator)"""
+        return 'SideEstimator'._wrap(super(_AbstractShapeDrawer, self).setSideEstimator(arg0))
+
+    @overload
+    def setColor(self, arg0: 'Color') -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.setColor(com.badlogic.gdx.graphics.Color)"""
+        return float._wrap(super(_AbstractShapeDrawer, self).setColor(arg0))
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @overload
+    def getPixelSize(self) -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.getPixelSize()"""
+        return float._wrap(super(AbstractShapeDrawer, self).getPixelSize())
+
+    @overload
+    def setColor(self, arg0: float) -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.setColor(float)"""
+        return float._wrap(super(_AbstractShapeDrawer, self).setColor(_float.valueOf(arg0)))
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @overload
+    def setDefaultSnap(self, arg0: bool) -> bool:
+        """public boolean space.earlygrey.shapedrawer.AbstractShapeDrawer.setDefaultSnap(boolean)"""
+        return bool._wrap(super(_AbstractShapeDrawer, self).setDefaultSnap(_boolean.valueOf(arg0)))
+
+    @overload
+    def startRecording(self):
+        """public void space.earlygrey.shapedrawer.AbstractShapeDrawer.startRecording()"""
+        super(AbstractShapeDrawer, self).startRecording()
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @overload
+    def setPixelSize(self, arg0: float) -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.setPixelSize(float)"""
+        return float._wrap(super(_AbstractShapeDrawer, self).setPixelSize(_float.valueOf(arg0)))
+
+    @overload
+    def setColor(self, arg0: float, arg1: float, arg2: float, arg3: float) -> float:
+        """public float space.earlygrey.shapedrawer.AbstractShapeDrawer.setColor(float,float,float,float)"""
+        return float._wrap(super(_AbstractShapeDrawer, self).setColor(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2), _float.valueOf(arg3)))
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @overload
+    def isDefaultSnap(self) -> bool:
+        """public boolean space.earlygrey.shapedrawer.AbstractShapeDrawer.isDefaultSnap()"""
+        return bool._wrap(super(AbstractShapeDrawer, self).isDefaultSnap())
+
+    @override
+    @overload
+    def wait(self):
+        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
+        super(object, self).wait()
+
+    @overload
+    def update(self, arg0: bool):
+        """public void space.earlygrey.shapedrawer.AbstractShapeDrawer.update(boolean)"""
+        super(_AbstractShapeDrawer, self).update(_boolean.valueOf(arg0))
+
+    @overload
+    def getBatch(self) -> 'g2d.Batch':
+        """public com.badlogic.gdx.graphics.g2d.Batch space.earlygrey.shapedrawer.AbstractShapeDrawer.getBatch()"""
+        return 'g2d.Batch'._wrap(super(AbstractShapeDrawer, self).getBatch())
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())

@@ -3,36 +3,41 @@ from overload import overload
 
 
  
+import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as _ScreenEvents_MouseDrag
+_MouseDrag = _ScreenEvents_MouseDrag.MouseDrag
 from abc import abstractmethod, ABC
-import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as __ScreenEvents_MouseDrag
-__MouseDrag = __ScreenEvents_MouseDrag.MouseDrag
  
-class MouseDrag(ABC):
+class MouseDrag():
     """dev.ultreon.quantum.client.api.events.gui.ScreenEvents.MouseDrag"""
  
     @staticmethod
-    def __wrap(java_value: __MouseDrag) -> 'MouseDrag':
+    def _wrap(java_value: _MouseDrag) -> 'MouseDrag':
         return MouseDrag(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __MouseDrag):
+    def __init__(self, __dynamic__: _MouseDrag):
         """
         Dynamic initializer for MouseDrag.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_MouseDrag__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_MouseDrag__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -46,36 +51,41 @@ class MouseDrag(ABC):
  
  
 # CLASS: dev.ultreon.quantum.client.api.events.gui.ScreenEvents$MouseDrag
+import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as _ScreenEvents_MouseDrag
+_MouseDrag = _ScreenEvents_MouseDrag.MouseDrag
 from abc import abstractmethod, ABC
-import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as __ScreenEvents_MouseDrag
-__MouseDrag = __ScreenEvents_MouseDrag.MouseDrag
  
-class MouseDrag(ABC):
+class MouseDrag():
     """dev.ultreon.quantum.client.api.events.gui.ScreenEvents.MouseDrag"""
  
     @staticmethod
-    def __wrap(java_value: __MouseDrag) -> 'MouseDrag':
+    def _wrap(java_value: _MouseDrag) -> 'MouseDrag':
         return MouseDrag(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __MouseDrag):
+    def __init__(self, __dynamic__: _MouseDrag):
         """
         Dynamic initializer for MouseDrag.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_MouseDrag__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_MouseDrag__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -92,36 +102,41 @@ class MouseDrag(ABC):
  
  
 # CLASS: dev.ultreon.quantum.client.api.events.gui.ScreenEvents$MouseClick
-import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as __ScreenEvents_MouseClick
-__MouseClick = __ScreenEvents_MouseClick.MouseClick
+import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as _ScreenEvents_MouseClick
+_MouseClick = _ScreenEvents_MouseClick.MouseClick
 from abc import abstractmethod, ABC
  
-class MouseClick(ABC):
+class MouseClick():
     """dev.ultreon.quantum.client.api.events.gui.ScreenEvents.MouseClick"""
  
     @staticmethod
-    def __wrap(java_value: __MouseClick) -> 'MouseClick':
+    def _wrap(java_value: _MouseClick) -> 'MouseClick':
         return MouseClick(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __MouseClick):
+    def __init__(self, __dynamic__: _MouseClick):
         """
         Dynamic initializer for MouseClick.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_MouseClick__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_MouseClick__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -133,42 +148,47 @@ class MouseClick(ABC):
  
  
 # CLASS: dev.ultreon.quantum.client.api.events.gui.WidgetEvents$WidgetRemoved
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum.client.gui import widget
 except ImportError:
-    widget = __import_once__("pyquantum.client.gui.widget")
+    widget = _import_once("pyquantum.client.gui.widget")
 
+import dev.ultreon.quantum.client.api.events.gui.WidgetEvents as _WidgetEvents_WidgetRemoved
+_WidgetRemoved = _WidgetEvents_WidgetRemoved.WidgetRemoved
 from abc import abstractmethod, ABC
-import dev.ultreon.quantum.client.api.events.gui.WidgetEvents as __WidgetEvents_WidgetRemoved
-__WidgetRemoved = __WidgetEvents_WidgetRemoved.WidgetRemoved
  
-class WidgetRemoved(ABC):
+class WidgetRemoved():
     """dev.ultreon.quantum.client.api.events.gui.WidgetEvents.WidgetRemoved"""
  
     @staticmethod
-    def __wrap(java_value: __WidgetRemoved) -> 'WidgetRemoved':
+    def _wrap(java_value: _WidgetRemoved) -> 'WidgetRemoved':
         return WidgetRemoved(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __WidgetRemoved):
+    def __init__(self, __dynamic__: _WidgetRemoved):
         """
         Dynamic initializer for WidgetRemoved.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_WidgetRemoved__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_WidgetRemoved__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -180,84 +200,76 @@ class WidgetRemoved(ABC):
  
  
 # CLASS: dev.ultreon.quantum.client.api.events.gui.WidgetEvents
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum.events import api
 except ImportError:
-    api = __import_once__("pyquantum.events.api")
+    api = _import_once("pyquantum.events.api")
 
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.client.api.events.gui.WidgetEvents as __WidgetEvents
-__WidgetEvents = __WidgetEvents
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.client.api.events.gui.WidgetEvents as _WidgetEvents
+_WidgetEvents = _WidgetEvents
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class WidgetEvents():
     """dev.ultreon.quantum.client.api.events.gui.WidgetEvents"""
  
     @staticmethod
-    def __wrap(java_value: __WidgetEvents) -> 'WidgetEvents':
+    def _wrap(java_value: _WidgetEvents) -> 'WidgetEvents':
         return WidgetEvents(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __WidgetEvents):
+    def __init__(self, __dynamic__: _WidgetEvents):
         """
         Dynamic initializer for WidgetEvents.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_WidgetEvents__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_WidgetEvents__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.client.api.events.gui.WidgetEvents$WidgetRemoved> dev.ultreon.quantum.client.api.events.gui.WidgetEvents.WIDGET_REMOVED
-    WIDGET_REMOVED: 'api.Event' = __wrap(__api.Event.WIDGET_REMOVED)
-
     # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.client.api.events.gui.WidgetEvents$WidgetAdded> dev.ultreon.quantum.client.api.events.gui.WidgetEvents.WIDGET_ADDED
-    WIDGET_ADDED: 'api.Event' = __wrap(__api.Event.WIDGET_ADDED)
+    WIDGET_ADDED: 'api.Event' = _wrap(_api.Event.WIDGET_ADDED)
+
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.client.api.events.gui.WidgetEvents$WidgetRemoved> dev.ultreon.quantum.client.api.events.gui.WidgetEvents.WIDGET_REMOVED
+    WIDGET_REMOVED: 'api.Event' = _wrap(_api.Event.WIDGET_REMOVED)
 
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.client.api.events.gui.WidgetEvents()"""
-        val = __WidgetEvents()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -267,15 +279,21 @@ class WidgetEvents():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @overload
+    def __init__(self):
+        """public dev.ultreon.quantum.client.api.events.gui.WidgetEvents()"""
+        val = _WidgetEvents()
+        self.__wrapper = val
 
     @override
     @overload
@@ -289,56 +307,66 @@ class WidgetEvents():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @override
     @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.client.api.events.gui.WidgetEvents()"""
-        val = __WidgetEvents()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0)) 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
+
+    @overload
+    def __init__(self, ):
+        """public dev.ultreon.quantum.client.api.events.gui.WidgetEvents()"""
+        val = _WidgetEvents()
+        self.__wrapper = val 
  
  
 # CLASS: dev.ultreon.quantum.client.api.events.gui.ScreenEvents$MouseEnter
-import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as __ScreenEvents_MouseEnter
-__MouseEnter = __ScreenEvents_MouseEnter.MouseEnter
+import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as _ScreenEvents_MouseEnter
+_MouseEnter = _ScreenEvents_MouseEnter.MouseEnter
 from abc import abstractmethod, ABC
  
-class MouseEnter(ABC):
+class MouseEnter():
     """dev.ultreon.quantum.client.api.events.gui.ScreenEvents.MouseEnter"""
  
     @staticmethod
-    def __wrap(java_value: __MouseEnter) -> 'MouseEnter':
+    def _wrap(java_value: _MouseEnter) -> 'MouseEnter':
         return MouseEnter(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __MouseEnter):
+    def __init__(self, __dynamic__: _MouseEnter):
         """
         Dynamic initializer for MouseEnter.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_MouseEnter__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_MouseEnter__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -350,36 +378,41 @@ class MouseEnter(ABC):
  
  
 # CLASS: dev.ultreon.quantum.client.api.events.gui.ScreenEvents$MousePress
-import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as __ScreenEvents_MousePress
-__MousePress = __ScreenEvents_MousePress.MousePress
+import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as _ScreenEvents_MousePress
+_MousePress = _ScreenEvents_MousePress.MousePress
 from abc import abstractmethod, ABC
  
-class MousePress(ABC):
+class MousePress():
     """dev.ultreon.quantum.client.api.events.gui.ScreenEvents.MousePress"""
  
     @staticmethod
-    def __wrap(java_value: __MousePress) -> 'MousePress':
+    def _wrap(java_value: _MousePress) -> 'MousePress':
         return MousePress(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __MousePress):
+    def __init__(self, __dynamic__: _MousePress):
         """
         Dynamic initializer for MousePress.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_MousePress__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_MousePress__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -391,107 +424,106 @@ class MousePress(ABC):
  
  
 # CLASS: dev.ultreon.quantum.client.api.events.gui.ScreenEvents
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum.events import api
 except ImportError:
-    api = __import_once__("pyquantum.events.api")
+    api = _import_once("pyquantum.events.api")
 
 from builtins import str
+import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as _ScreenEvents
+_ScreenEvents = _ScreenEvents
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as __ScreenEvents
-__ScreenEvents = __ScreenEvents
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ScreenEvents():
     """dev.ultreon.quantum.client.api.events.gui.ScreenEvents"""
  
     @staticmethod
-    def __wrap(java_value: __ScreenEvents) -> 'ScreenEvents':
+    def _wrap(java_value: _ScreenEvents) -> 'ScreenEvents':
         return ScreenEvents(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ScreenEvents):
+    def __init__(self, __dynamic__: _ScreenEvents):
         """
         Dynamic initializer for ScreenEvents.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ScreenEvents__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ScreenEvents__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.client.api.events.gui.ScreenEvents$Close> dev.ultreon.quantum.client.api.events.gui.ScreenEvents.CLOSE
-    CLOSE: 'api.Event' = __wrap(__api.Event.CLOSE)
-
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.client.api.events.gui.ScreenEvents$KeyPress> dev.ultreon.quantum.client.api.events.gui.ScreenEvents.KEY_PRESS
-    KEY_PRESS: 'api.Event' = __wrap(__api.Event.KEY_PRESS)
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.client.api.events.gui.ScreenEvents$MouseRelease> dev.ultreon.quantum.client.api.events.gui.ScreenEvents.MOUSE_RELEASE
+    MOUSE_RELEASE: 'api.Event' = _wrap(_api.Event.MOUSE_RELEASE)
 
     # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.client.api.events.gui.ScreenEvents$MouseClick> dev.ultreon.quantum.client.api.events.gui.ScreenEvents.MOUSE_CLICK
-    MOUSE_CLICK: 'api.Event' = __wrap(__api.Event.MOUSE_CLICK)
+    MOUSE_CLICK: 'api.Event' = _wrap(_api.Event.MOUSE_CLICK)
 
     # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.client.api.events.gui.ScreenEvents$MousePress> dev.ultreon.quantum.client.api.events.gui.ScreenEvents.MOUSE_PRESS
-    MOUSE_PRESS: 'api.Event' = __wrap(__api.Event.MOUSE_PRESS)
-
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.client.api.events.gui.ScreenEvents$Open> dev.ultreon.quantum.client.api.events.gui.ScreenEvents.OPEN
-    OPEN: 'api.Event' = __wrap(__api.Event.OPEN)
-
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.client.api.events.gui.ScreenEvents$MouseRelease> dev.ultreon.quantum.client.api.events.gui.ScreenEvents.MOUSE_RELEASE
-    MOUSE_RELEASE: 'api.Event' = __wrap(__api.Event.MOUSE_RELEASE)
-
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.client.api.events.gui.ScreenEvents$MouseExit> dev.ultreon.quantum.client.api.events.gui.ScreenEvents.MOUSE_EXIT
-    MOUSE_EXIT: 'api.Event' = __wrap(__api.Event.MOUSE_EXIT)
-
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.client.api.events.gui.ScreenEvents$MouseWheel> dev.ultreon.quantum.client.api.events.gui.ScreenEvents.MOUSE_WHEEL
-    MOUSE_WHEEL: 'api.Event' = __wrap(__api.Event.MOUSE_WHEEL)
-
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.client.api.events.gui.ScreenEvents$MouseDrag> dev.ultreon.quantum.client.api.events.gui.ScreenEvents.MOUSE_DRAG
-    MOUSE_DRAG: 'api.Event' = __wrap(__api.Event.MOUSE_DRAG)
-
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.client.api.events.gui.ScreenEvents$MouseEnter> dev.ultreon.quantum.client.api.events.gui.ScreenEvents.MOUSE_ENTER
-    MOUSE_ENTER: 'api.Event' = __wrap(__api.Event.MOUSE_ENTER)
+    MOUSE_PRESS: 'api.Event' = _wrap(_api.Event.MOUSE_PRESS)
 
     # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.client.api.events.gui.ScreenEvents$KeyRelease> dev.ultreon.quantum.client.api.events.gui.ScreenEvents.KEY_RELEASE
-    KEY_RELEASE: 'api.Event' = __wrap(__api.Event.KEY_RELEASE)
+    KEY_RELEASE: 'api.Event' = _wrap(_api.Event.KEY_RELEASE)
+
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.client.api.events.gui.ScreenEvents$Close> dev.ultreon.quantum.client.api.events.gui.ScreenEvents.CLOSE
+    CLOSE: 'api.Event' = _wrap(_api.Event.CLOSE)
+
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.client.api.events.gui.ScreenEvents$Open> dev.ultreon.quantum.client.api.events.gui.ScreenEvents.OPEN
+    OPEN: 'api.Event' = _wrap(_api.Event.OPEN)
+
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.client.api.events.gui.ScreenEvents$MouseDrag> dev.ultreon.quantum.client.api.events.gui.ScreenEvents.MOUSE_DRAG
+    MOUSE_DRAG: 'api.Event' = _wrap(_api.Event.MOUSE_DRAG)
+
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.client.api.events.gui.ScreenEvents$MouseEnter> dev.ultreon.quantum.client.api.events.gui.ScreenEvents.MOUSE_ENTER
+    MOUSE_ENTER: 'api.Event' = _wrap(_api.Event.MOUSE_ENTER)
+
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.client.api.events.gui.ScreenEvents$MouseExit> dev.ultreon.quantum.client.api.events.gui.ScreenEvents.MOUSE_EXIT
+    MOUSE_EXIT: 'api.Event' = _wrap(_api.Event.MOUSE_EXIT)
+
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.client.api.events.gui.ScreenEvents$KeyPress> dev.ultreon.quantum.client.api.events.gui.ScreenEvents.KEY_PRESS
+    KEY_PRESS: 'api.Event' = _wrap(_api.Event.KEY_PRESS)
 
     # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.client.api.events.gui.ScreenEvents$CharType> dev.ultreon.quantum.client.api.events.gui.ScreenEvents.CHAR_TYPE
-    CHAR_TYPE: 'api.Event' = __wrap(__api.Event.CHAR_TYPE)
+    CHAR_TYPE: 'api.Event' = _wrap(_api.Event.CHAR_TYPE)
+
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.client.api.events.gui.ScreenEvents$MouseWheel> dev.ultreon.quantum.client.api.events.gui.ScreenEvents.MOUSE_WHEEL
+    MOUSE_WHEEL: 'api.Event' = _wrap(_api.Event.MOUSE_WHEEL)
 
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -501,22 +533,21 @@ class ScreenEvents():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @overload
     def __init__(self, ):
         """public dev.ultreon.quantum.client.api.events.gui.ScreenEvents()"""
-        val = __ScreenEvents()
-        self.__dict__ = val.__dict__
+        val = _ScreenEvents()
         self.__wrapper = val
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
 
     @override
     @overload
@@ -530,56 +561,66 @@ class ScreenEvents():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @override
     @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.client.api.events.gui.ScreenEvents()"""
-        val = __ScreenEvents()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0)) 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
+
+    @overload
+    def __init__(self):
+        """public dev.ultreon.quantum.client.api.events.gui.ScreenEvents()"""
+        val = _ScreenEvents()
+        self.__wrapper = val 
  
  
 # CLASS: dev.ultreon.quantum.client.api.events.gui.ScreenEvents$KeyRelease
+import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as _ScreenEvents_KeyRelease
+_KeyRelease = _ScreenEvents_KeyRelease.KeyRelease
 from abc import abstractmethod, ABC
-import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as __ScreenEvents_KeyRelease
-__KeyRelease = __ScreenEvents_KeyRelease.KeyRelease
  
-class KeyRelease(ABC):
+class KeyRelease():
     """dev.ultreon.quantum.client.api.events.gui.ScreenEvents.KeyRelease"""
  
     @staticmethod
-    def __wrap(java_value: __KeyRelease) -> 'KeyRelease':
+    def _wrap(java_value: _KeyRelease) -> 'KeyRelease':
         return KeyRelease(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __KeyRelease):
+    def __init__(self, __dynamic__: _KeyRelease):
         """
         Dynamic initializer for KeyRelease.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_KeyRelease__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_KeyRelease__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -591,42 +632,47 @@ class KeyRelease(ABC):
  
  
 # CLASS: dev.ultreon.quantum.client.api.events.gui.ScreenEvents$Open
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
+import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as _ScreenEvents_Open
+_Open = _ScreenEvents_Open.Open
 try:
     from pyquantum.client import gui
 except ImportError:
-    gui = __import_once__("pyquantum.client.gui")
+    gui = _import_once("pyquantum.client.gui")
 
-import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as __ScreenEvents_Open
-__Open = __ScreenEvents_Open.Open
 from abc import abstractmethod, ABC
  
-class Open(ABC):
+class Open():
     """dev.ultreon.quantum.client.api.events.gui.ScreenEvents.Open"""
  
     @staticmethod
-    def __wrap(java_value: __Open) -> 'Open':
+    def _wrap(java_value: _Open) -> 'Open':
         return Open(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Open):
+    def __init__(self, __dynamic__: _Open):
         """
         Dynamic initializer for Open.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Open__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Open__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -638,36 +684,41 @@ class Open(ABC):
  
  
 # CLASS: dev.ultreon.quantum.client.api.events.gui.ScreenEvents$KeyPress
-import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as __ScreenEvents_KeyPress
-__KeyPress = __ScreenEvents_KeyPress.KeyPress
+import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as _ScreenEvents_KeyPress
+_KeyPress = _ScreenEvents_KeyPress.KeyPress
 from abc import abstractmethod, ABC
  
-class KeyPress(ABC):
+class KeyPress():
     """dev.ultreon.quantum.client.api.events.gui.ScreenEvents.KeyPress"""
  
     @staticmethod
-    def __wrap(java_value: __KeyPress) -> 'KeyPress':
+    def _wrap(java_value: _KeyPress) -> 'KeyPress':
         return KeyPress(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __KeyPress):
+    def __init__(self, __dynamic__: _KeyPress):
         """
         Dynamic initializer for KeyPress.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_KeyPress__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_KeyPress__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -679,42 +730,47 @@ class KeyPress(ABC):
  
  
 # CLASS: dev.ultreon.quantum.client.api.events.gui.ScreenEvents$Close
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
+import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as _ScreenEvents_Close
+_Close = _ScreenEvents_Close.Close
 try:
     from pyquantum.client import gui
 except ImportError:
-    gui = __import_once__("pyquantum.client.gui")
+    gui = _import_once("pyquantum.client.gui")
 
 from abc import abstractmethod, ABC
-import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as __ScreenEvents_Close
-__Close = __ScreenEvents_Close.Close
  
-class Close(ABC):
+class Close():
     """dev.ultreon.quantum.client.api.events.gui.ScreenEvents.Close"""
  
     @staticmethod
-    def __wrap(java_value: __Close) -> 'Close':
+    def _wrap(java_value: _Close) -> 'Close':
         return Close(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Close):
+    def __init__(self, __dynamic__: _Close):
         """
         Dynamic initializer for Close.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Close__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Close__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -726,36 +782,41 @@ class Close(ABC):
  
  
 # CLASS: dev.ultreon.quantum.client.api.events.gui.ScreenEvents$CharType
-import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as __ScreenEvents_CharType
-__CharType = __ScreenEvents_CharType.CharType
+import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as _ScreenEvents_CharType
+_CharType = _ScreenEvents_CharType.CharType
 from abc import abstractmethod, ABC
  
-class CharType(ABC):
+class CharType():
     """dev.ultreon.quantum.client.api.events.gui.ScreenEvents.CharType"""
  
     @staticmethod
-    def __wrap(java_value: __CharType) -> 'CharType':
+    def _wrap(java_value: _CharType) -> 'CharType':
         return CharType(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __CharType):
+    def __init__(self, __dynamic__: _CharType):
         """
         Dynamic initializer for CharType.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_CharType__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_CharType__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -767,36 +828,41 @@ class CharType(ABC):
  
  
 # CLASS: dev.ultreon.quantum.client.api.events.gui.ScreenEvents$MouseExit
-import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as __ScreenEvents_MouseExit
-__MouseExit = __ScreenEvents_MouseExit.MouseExit
+import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as _ScreenEvents_MouseExit
+_MouseExit = _ScreenEvents_MouseExit.MouseExit
 from abc import abstractmethod, ABC
  
-class MouseExit(ABC):
+class MouseExit():
     """dev.ultreon.quantum.client.api.events.gui.ScreenEvents.MouseExit"""
  
     @staticmethod
-    def __wrap(java_value: __MouseExit) -> 'MouseExit':
+    def _wrap(java_value: _MouseExit) -> 'MouseExit':
         return MouseExit(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __MouseExit):
+    def __init__(self, __dynamic__: _MouseExit):
         """
         Dynamic initializer for MouseExit.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_MouseExit__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_MouseExit__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -808,36 +874,41 @@ class MouseExit(ABC):
  
  
 # CLASS: dev.ultreon.quantum.client.api.events.gui.ScreenEvents$MouseWheel
+import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as _ScreenEvents_MouseWheel
+_MouseWheel = _ScreenEvents_MouseWheel.MouseWheel
 from abc import abstractmethod, ABC
-import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as __ScreenEvents_MouseWheel
-__MouseWheel = __ScreenEvents_MouseWheel.MouseWheel
  
-class MouseWheel(ABC):
+class MouseWheel():
     """dev.ultreon.quantum.client.api.events.gui.ScreenEvents.MouseWheel"""
  
     @staticmethod
-    def __wrap(java_value: __MouseWheel) -> 'MouseWheel':
+    def _wrap(java_value: _MouseWheel) -> 'MouseWheel':
         return MouseWheel(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __MouseWheel):
+    def __init__(self, __dynamic__: _MouseWheel):
         """
         Dynamic initializer for MouseWheel.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_MouseWheel__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_MouseWheel__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -849,36 +920,41 @@ class MouseWheel(ABC):
  
  
 # CLASS: dev.ultreon.quantum.client.api.events.gui.ScreenEvents$MouseRelease
-import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as __ScreenEvents_MouseRelease
-__MouseRelease = __ScreenEvents_MouseRelease.MouseRelease
+import dev.ultreon.quantum.client.api.events.gui.ScreenEvents as _ScreenEvents_MouseRelease
+_MouseRelease = _ScreenEvents_MouseRelease.MouseRelease
 from abc import abstractmethod, ABC
  
-class MouseRelease(ABC):
+class MouseRelease():
     """dev.ultreon.quantum.client.api.events.gui.ScreenEvents.MouseRelease"""
  
     @staticmethod
-    def __wrap(java_value: __MouseRelease) -> 'MouseRelease':
+    def _wrap(java_value: _MouseRelease) -> 'MouseRelease':
         return MouseRelease(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __MouseRelease):
+    def __init__(self, __dynamic__: _MouseRelease):
         """
         Dynamic initializer for MouseRelease.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_MouseRelease__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_MouseRelease__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -890,42 +966,47 @@ class MouseRelease(ABC):
  
  
 # CLASS: dev.ultreon.quantum.client.api.events.gui.WidgetEvents$WidgetAdded
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum.client.gui import widget
 except ImportError:
-    widget = __import_once__("pyquantum.client.gui.widget")
+    widget = _import_once("pyquantum.client.gui.widget")
 
-import dev.ultreon.quantum.client.api.events.gui.WidgetEvents as __WidgetEvents_WidgetAdded
-__WidgetAdded = __WidgetEvents_WidgetAdded.WidgetAdded
+import dev.ultreon.quantum.client.api.events.gui.WidgetEvents as _WidgetEvents_WidgetAdded
+_WidgetAdded = _WidgetEvents_WidgetAdded.WidgetAdded
 from abc import abstractmethod, ABC
  
-class WidgetAdded(ABC):
+class WidgetAdded():
     """dev.ultreon.quantum.client.api.events.gui.WidgetEvents.WidgetAdded"""
  
     @staticmethod
-    def __wrap(java_value: __WidgetAdded) -> 'WidgetAdded':
+    def _wrap(java_value: _WidgetAdded) -> 'WidgetAdded':
         return WidgetAdded(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __WidgetAdded):
+    def __init__(self, __dynamic__: _WidgetAdded):
         """
         Dynamic initializer for WidgetAdded.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_WidgetAdded__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_WidgetAdded__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))

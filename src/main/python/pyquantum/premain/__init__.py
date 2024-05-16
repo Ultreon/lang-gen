@@ -4,63 +4,68 @@ from overload import overload
 
  
 from builtins import str
-import java.lang.Long as __long
+import dev.ultreon.quantum.premain.PreMain as _PreMain
+_PreMain = _PreMain
 from pyquantum_helper import override
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.Object as __object
-import java.lang.String as __String
-__String = __String
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Integer as _int
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Object as __Object
-__Object = __Object
-import dev.ultreon.quantum.premain.PreMain as __PreMain
-__PreMain = __PreMain
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class PreMain():
     """dev.ultreon.quantum.premain.PreMain"""
  
     @staticmethod
-    def __wrap(java_value: __PreMain) -> 'PreMain':
+    def _wrap(java_value: _PreMain) -> 'PreMain':
         return PreMain(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __PreMain):
+    def __init__(self, __dynamic__: _PreMain):
         """
         Dynamic initializer for PreMain.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_PreMain__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_PreMain__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def __init__(self):
+        """public dev.ultreon.quantum.premain.PreMain()"""
+        val = _PreMain()
+        self.__wrapper = val
 
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -68,30 +73,29 @@ class PreMain():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.premain.PreMain()"""
-        val = __PreMain()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
     @staticmethod
     @overload
     def main(arg0: 'String'):
         """public static void dev.ultreon.quantum.premain.PreMain.main(java.lang.String[])"""
-        __PreMain.main(arg0)
+        _PreMain.main(arg0)
+
+    @overload
+    def __init__(self, ):
+        """public dev.ultreon.quantum.premain.PreMain()"""
+        val = _PreMain()
+        self.__wrapper = val
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -105,86 +109,90 @@ class PreMain():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @override
     @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.premain.PreMain()"""
-        val = __PreMain()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
  
 # CLASS: dev.ultreon.quantum.premain.PreMain
 from builtins import str
-import java.lang.Long as __long
+import dev.ultreon.quantum.premain.PreMain as _PreMain
+_PreMain = _PreMain
 from pyquantum_helper import override
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.Object as __object
-import java.lang.String as __String
-__String = __String
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Integer as _int
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Object as __Object
-__Object = __Object
-import dev.ultreon.quantum.premain.PreMain as __PreMain
-__PreMain = __PreMain
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class PreMain():
     """dev.ultreon.quantum.premain.PreMain"""
  
     @staticmethod
-    def __wrap(java_value: __PreMain) -> 'PreMain':
+    def _wrap(java_value: _PreMain) -> 'PreMain':
         return PreMain(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __PreMain):
+    def __init__(self, __dynamic__: _PreMain):
         """
         Dynamic initializer for PreMain.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_PreMain__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_PreMain__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def __init__(self):
+        """public dev.ultreon.quantum.premain.PreMain()"""
+        val = _PreMain()
+        self.__wrapper = val
 
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -192,30 +200,29 @@ class PreMain():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.premain.PreMain()"""
-        val = __PreMain()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
     @staticmethod
     @overload
     def main(arg0: 'String'):
         """public static void dev.ultreon.quantum.premain.PreMain.main(java.lang.String[])"""
-        __PreMain.main(arg0)
+        _PreMain.main(arg0)
+
+    @overload
+    def __init__(self, ):
+        """public dev.ultreon.quantum.premain.PreMain()"""
+        val = _PreMain()
+        self.__wrapper = val
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -229,23 +236,22 @@ class PreMain():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @override
     @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.premain.PreMain()"""
-        val = __PreMain()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
@@ -255,63 +261,62 @@ class PreMain():
  
 # CLASS: dev.ultreon.quantum.premain.DevMain
 from builtins import str
-import java.lang.Long as __long
 from pyquantum_helper import override
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.Object as __object
-import java.lang.String as __String
-__String = __String
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Integer as _int
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
-import dev.ultreon.quantum.premain.DevMain as __DevMain
-__DevMain = __DevMain
+import dev.ultreon.quantum.premain.DevMain as _DevMain
+_DevMain = _DevMain
+import java.lang.String as _String
+_String = _String
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class DevMain():
     """dev.ultreon.quantum.premain.DevMain"""
  
     @staticmethod
-    def __wrap(java_value: __DevMain) -> 'DevMain':
+    def _wrap(java_value: _DevMain) -> 'DevMain':
         return DevMain(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __DevMain):
+    def __init__(self, __dynamic__: _DevMain):
         """
         Dynamic initializer for DevMain.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_DevMain__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_DevMain__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -319,24 +324,23 @@ class DevMain():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
     @overload
     def __init__(self, ):
         """public dev.ultreon.quantum.premain.DevMain()"""
-        val = __DevMain()
-        self.__dict__ = val.__dict__
+        val = _DevMain()
         self.__wrapper = val
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -344,32 +348,37 @@ class DevMain():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
-    @staticmethod
-    @overload
-    def main(arg0: 'String'):
-        """public static void dev.ultreon.quantum.premain.DevMain.main(java.lang.String[])"""
-        __DevMain.main(arg0)
-
     @override
     @overload
     def wait(self):
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @staticmethod
+    @overload
+    def main(arg0: 'String'):
+        """public static void dev.ultreon.quantum.premain.DevMain.main(java.lang.String[])"""
+        _DevMain.main(arg0)
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
     @overload
     def __init__(self):
         """public dev.ultreon.quantum.premain.DevMain()"""
-        val = __DevMain()
-        self.__dict__ = val.__dict__
+        val = _DevMain()
         self.__wrapper = val
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())

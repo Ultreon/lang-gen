@@ -5,95 +5,105 @@ from overload import overload
  
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.util.Optional as __Optional
-__Optional = __Optional
+import java.lang.String as _String
+_String = _String
 from typing import List
 import java.lang.Enum as Enum
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __string
-import java.lang.String as __String
-__String = __String
-import dev.ultreon.quantum.client.atlas.TextureStitcher as __TextureStitcher_Type
-__Type = __TextureStitcher_Type.Type
+import java.lang.String as _string
+import java.lang.Enum as _Enum
+_Enum = _Enum
+import java.lang.Integer as _int
+import java.util.Optional as _Optional
+_Optional = _Optional
 import java.util.Optional as Optional
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
-import java.lang.Enum as __Enum
-__Enum = __Enum
+import dev.ultreon.quantum.client.atlas.TextureStitcher as _TextureStitcher_Type
+_Type = _TextureStitcher_Type.Type
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class Type():
     """dev.ultreon.quantum.client.atlas.TextureStitcher.Type"""
  
     @staticmethod
-    def __wrap(java_value: __Type) -> 'Type':
+    def _wrap(java_value: _Type) -> 'Type':
         return Type(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Type):
+    def __init__(self, __dynamic__: _Type):
         """
         Dynamic initializer for Type.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Type__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Type__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    # public static final dev.ultreon.quantum.client.atlas.TextureStitcher$Type dev.ultreon.quantum.client.atlas.TextureStitcher$Type.DIFFUSE
-    DIFFUSE: 'Type' = __wrap(__Type.DIFFUSE)
-
-    # public static final dev.ultreon.quantum.client.atlas.TextureStitcher$Type dev.ultreon.quantum.client.atlas.TextureStitcher$Type.EMISSIVE
-    EMISSIVE: 'Type' = __wrap(__Type.EMISSIVE)
-
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @staticmethod
-    @overload
-    def valueOf(arg0: 'Class', arg1: str) -> 'Enum':
-        """public static <T extends java.lang.Enum<T>> T java.lang.Enum.valueOf(java.lang.Class<T>,java.lang.String)"""
-        return Enum.__wrap(__Enum.valueOf(arg0, arg1))
-
-    @override
-    @overload
-    def name(self) -> str:
-        """public final java.lang.String java.lang.Enum.name()"""
-        return str.__wrap(super(Enum, self).name())
-
     @staticmethod
     @overload
     def values() -> List['Type']:
         """public static dev.ultreon.quantum.client.atlas.TextureStitcher$Type[] dev.ultreon.quantum.client.atlas.TextureStitcher$Type.values()"""
-        return List[Type].__wrap(__Type.values())
+        return List[Type]._wrap(_Type.values())
 
     @override
     @overload
     def hashCode(self) -> int:
         """public final int java.lang.Enum.hashCode()"""
-        return int.__wrap(super(Enum, self).hashCode())
+        return int._wrap(super(Enum, self).hashCode())
+
+    @staticmethod
+    @overload
+    def valueOf(arg0: 'Class', arg1: str) -> 'Enum':
+        """public static <T extends java.lang.Enum<T>> T java.lang.Enum.valueOf(java.lang.Class<T>,java.lang.String)"""
+        return Enum._wrap(_Enum.valueOf(arg0, arg1))
+
+    @override
+    @overload
+    def name(self) -> str:
+        """public final java.lang.String java.lang.Enum.name()"""
+        return str._wrap(super(Enum, self).name())
+
+    @override
+    @overload
+    def describeConstable(self) -> 'Optional':
+        """public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable()"""
+        return 'Optional'._wrap(super(Enum, self).describeConstable())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Enum.toString()"""
+        return str._wrap(super(Enum, self).toString())
 
     @override
     @overload
@@ -103,26 +113,21 @@ class Type():
 
     @override
     @overload
-    def describeConstable(self) -> 'Optional':
-        """public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable()"""
-        return 'Optional'.__wrap(super(Enum, self).describeConstable())
+    def ordinal(self) -> int:
+        """public final int java.lang.Enum.ordinal()"""
+        return int._wrap(super(Enum, self).ordinal())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def compareTo(self, arg0: 'Enum') -> int:
-        """public final int java.lang.Enum.compareTo(E)"""
-        return int.__wrap(super(__Enum, self).compareTo(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def getDeclaringClass(self) -> 'type.Class':
+        """public final java.lang.Class<E> java.lang.Enum.getDeclaringClass()"""
+        return 'type.Class'._wrap(super(Enum, self).getDeclaringClass())
 
     @override
     @overload
@@ -133,19 +138,18 @@ class Type():
     @overload
     def equals(self, arg0: object) -> bool:
         """public final boolean java.lang.Enum.equals(java.lang.Object)"""
-        return bool.__wrap(super(__Enum, self).equals(arg0))
+        return bool._wrap(super(_Enum, self).equals(arg0))
 
     @override
     @overload
-    def getDeclaringClass(self) -> 'type.Class':
-        """public final java.lang.Class<E> java.lang.Enum.getDeclaringClass()"""
-        return 'type.Class'.__wrap(super(Enum, self).getDeclaringClass())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
-    @override
     @overload
-    def ordinal(self) -> int:
-        """public final int java.lang.Enum.ordinal()"""
-        return int.__wrap(super(Enum, self).ordinal())
+    def compareTo(self, arg0: 'Enum') -> int:
+        """public final int java.lang.Enum.compareTo(E)"""
+        return int._wrap(super(_Enum, self).compareTo(arg0))
 
     @override
     @overload
@@ -157,13 +161,12 @@ class Type():
     @overload
     def valueOf(arg0: str) -> 'Type':
         """public static dev.ultreon.quantum.client.atlas.TextureStitcher$Type dev.ultreon.quantum.client.atlas.TextureStitcher$Type.valueOf(java.lang.String)"""
-        return Type.__wrap(__Type.valueOf(arg0))
+        return Type._wrap(_Type.valueOf(arg0))
 
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Enum.toString()"""
-        return str.__wrap(super(Enum, self).toString())
+
+Type.EMISSIVE = Type._wrap(_EMISSIVE.EMISSIVE)
+
+Type.DIFFUSE = Type._wrap(_DIFFUSE.DIFFUSE)
 
  
  
@@ -171,95 +174,105 @@ class Type():
 # CLASS: dev.ultreon.quantum.client.atlas.TextureStitcher$Type
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.util.Optional as __Optional
-__Optional = __Optional
+import java.lang.String as _String
+_String = _String
 from typing import List
 import java.lang.Enum as Enum
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __string
-import java.lang.String as __String
-__String = __String
-import dev.ultreon.quantum.client.atlas.TextureStitcher as __TextureStitcher_Type
-__Type = __TextureStitcher_Type.Type
+import java.lang.String as _string
+import java.lang.Enum as _Enum
+_Enum = _Enum
+import java.lang.Integer as _int
+import java.util.Optional as _Optional
+_Optional = _Optional
 import java.util.Optional as Optional
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
-import java.lang.Enum as __Enum
-__Enum = __Enum
+import dev.ultreon.quantum.client.atlas.TextureStitcher as _TextureStitcher_Type
+_Type = _TextureStitcher_Type.Type
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class Type():
     """dev.ultreon.quantum.client.atlas.TextureStitcher.Type"""
  
     @staticmethod
-    def __wrap(java_value: __Type) -> 'Type':
+    def _wrap(java_value: _Type) -> 'Type':
         return Type(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Type):
+    def __init__(self, __dynamic__: _Type):
         """
         Dynamic initializer for Type.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Type__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Type__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    # public static final dev.ultreon.quantum.client.atlas.TextureStitcher$Type dev.ultreon.quantum.client.atlas.TextureStitcher$Type.DIFFUSE
-    DIFFUSE: 'Type' = __wrap(__Type.DIFFUSE)
-
-    # public static final dev.ultreon.quantum.client.atlas.TextureStitcher$Type dev.ultreon.quantum.client.atlas.TextureStitcher$Type.EMISSIVE
-    EMISSIVE: 'Type' = __wrap(__Type.EMISSIVE)
-
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @staticmethod
-    @overload
-    def valueOf(arg0: 'Class', arg1: str) -> 'Enum':
-        """public static <T extends java.lang.Enum<T>> T java.lang.Enum.valueOf(java.lang.Class<T>,java.lang.String)"""
-        return Enum.__wrap(__Enum.valueOf(arg0, arg1))
-
-    @override
-    @overload
-    def name(self) -> str:
-        """public final java.lang.String java.lang.Enum.name()"""
-        return str.__wrap(super(Enum, self).name())
-
     @staticmethod
     @overload
     def values() -> List['Type']:
         """public static dev.ultreon.quantum.client.atlas.TextureStitcher$Type[] dev.ultreon.quantum.client.atlas.TextureStitcher$Type.values()"""
-        return List[Type].__wrap(__Type.values())
+        return List[Type]._wrap(_Type.values())
 
     @override
     @overload
     def hashCode(self) -> int:
         """public final int java.lang.Enum.hashCode()"""
-        return int.__wrap(super(Enum, self).hashCode())
+        return int._wrap(super(Enum, self).hashCode())
+
+    @staticmethod
+    @overload
+    def valueOf(arg0: 'Class', arg1: str) -> 'Enum':
+        """public static <T extends java.lang.Enum<T>> T java.lang.Enum.valueOf(java.lang.Class<T>,java.lang.String)"""
+        return Enum._wrap(_Enum.valueOf(arg0, arg1))
+
+    @override
+    @overload
+    def name(self) -> str:
+        """public final java.lang.String java.lang.Enum.name()"""
+        return str._wrap(super(Enum, self).name())
+
+    @override
+    @overload
+    def describeConstable(self) -> 'Optional':
+        """public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable()"""
+        return 'Optional'._wrap(super(Enum, self).describeConstable())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Enum.toString()"""
+        return str._wrap(super(Enum, self).toString())
 
     @override
     @overload
@@ -269,26 +282,21 @@ class Type():
 
     @override
     @overload
-    def describeConstable(self) -> 'Optional':
-        """public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable()"""
-        return 'Optional'.__wrap(super(Enum, self).describeConstable())
+    def ordinal(self) -> int:
+        """public final int java.lang.Enum.ordinal()"""
+        return int._wrap(super(Enum, self).ordinal())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def compareTo(self, arg0: 'Enum') -> int:
-        """public final int java.lang.Enum.compareTo(E)"""
-        return int.__wrap(super(__Enum, self).compareTo(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def getDeclaringClass(self) -> 'type.Class':
+        """public final java.lang.Class<E> java.lang.Enum.getDeclaringClass()"""
+        return 'type.Class'._wrap(super(Enum, self).getDeclaringClass())
 
     @override
     @overload
@@ -299,19 +307,18 @@ class Type():
     @overload
     def equals(self, arg0: object) -> bool:
         """public final boolean java.lang.Enum.equals(java.lang.Object)"""
-        return bool.__wrap(super(__Enum, self).equals(arg0))
+        return bool._wrap(super(_Enum, self).equals(arg0))
 
     @override
     @overload
-    def getDeclaringClass(self) -> 'type.Class':
-        """public final java.lang.Class<E> java.lang.Enum.getDeclaringClass()"""
-        return 'type.Class'.__wrap(super(Enum, self).getDeclaringClass())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
-    @override
     @overload
-    def ordinal(self) -> int:
-        """public final int java.lang.Enum.ordinal()"""
-        return int.__wrap(super(Enum, self).ordinal())
+    def compareTo(self, arg0: 'Enum') -> int:
+        """public final int java.lang.Enum.compareTo(E)"""
+        return int._wrap(super(_Enum, self).compareTo(arg0))
 
     @override
     @overload
@@ -323,13 +330,12 @@ class Type():
     @overload
     def valueOf(arg0: str) -> 'Type':
         """public static dev.ultreon.quantum.client.atlas.TextureStitcher$Type dev.ultreon.quantum.client.atlas.TextureStitcher$Type.valueOf(java.lang.String)"""
-        return Type.__wrap(__Type.valueOf(arg0))
+        return Type._wrap(_Type.valueOf(arg0))
 
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Enum.toString()"""
-        return str.__wrap(super(Enum, self).toString())
+
+Type.EMISSIVE = Type._wrap(_EMISSIVE.EMISSIVE)
+
+Type.DIFFUSE = Type._wrap(_DIFFUSE.DIFFUSE)
 
  
  
@@ -338,83 +344,87 @@ class Type():
  
  
 # CLASS: dev.ultreon.quantum.client.atlas.TextureStitcher
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
+import java.lang.String as _String
+_String = _String
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import dev.ultreon.quantum.client.atlas.TextureStitcher as __TextureStitcher
-__TextureStitcher = __TextureStitcher
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import dev.ultreon.quantum.client.atlas.TextureAtlas as _TextureAtlas
+_TextureAtlas = _TextureAtlas
+import java.lang.Integer as _int
+import dev.ultreon.quantum.client.atlas.TextureStitcher as _TextureStitcher
+_TextureStitcher = _TextureStitcher
 try:
     from pygdx import graphics
 except ImportError:
-    graphics = __import_once__("pygdx.graphics")
+    graphics = _import_once("pygdx.graphics")
 
 from builtins import bool
-import dev.ultreon.quantum.client.atlas.TextureAtlas as __TextureAtlas
-__TextureAtlas = __TextureAtlas
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class TextureStitcher():
     """dev.ultreon.quantum.client.atlas.TextureStitcher"""
  
     @staticmethod
-    def __wrap(java_value: __TextureStitcher) -> 'TextureStitcher':
+    def _wrap(java_value: _TextureStitcher) -> 'TextureStitcher':
         return TextureStitcher(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __TextureStitcher):
+    def __init__(self, __dynamic__: _TextureStitcher):
         """
         Dynamic initializer for TextureStitcher.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_TextureStitcher__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_TextureStitcher__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @override
-    @overload
     def dispose(self):
         """public void dev.ultreon.quantum.client.atlas.TextureStitcher.dispose()"""
         super(TextureStitcher, self).dispose()
+
+    @overload
+    def add(self, arg0: 'Identifier', arg1: 'Texture', arg2: 'Texture'):
+        """public void dev.ultreon.quantum.client.atlas.TextureStitcher.add(dev.ultreon.quantum.util.Identifier,com.badlogic.gdx.graphics.Texture,com.badlogic.gdx.graphics.Texture)"""
+        super(_TextureStitcher, self).add(arg0, arg1, arg2)
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -422,29 +432,17 @@ class TextureStitcher():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @override
     @overload
-    def __init__(self, arg0: 'Identifier'):
-        """public dev.ultreon.quantum.client.atlas.TextureStitcher(dev.ultreon.quantum.util.Identifier)"""
-        val = __TextureStitcher(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @overload
-    def add(self, arg0: 'Identifier', arg1: 'Texture'):
-        """public void dev.ultreon.quantum.client.atlas.TextureStitcher.add(dev.ultreon.quantum.util.Identifier,com.badlogic.gdx.graphics.Texture)"""
-        super(__TextureStitcher, self).add(arg0, arg1)
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -455,18 +453,24 @@ class TextureStitcher():
     @overload
     def stitch(self) -> 'TextureAtlas':
         """public dev.ultreon.quantum.client.atlas.TextureAtlas dev.ultreon.quantum.client.atlas.TextureStitcher.stitch()"""
-        return 'TextureAtlas'.__wrap(super(TextureStitcher, self).stitch())
+        return 'TextureAtlas'._wrap(super(TextureStitcher, self).stitch())
 
     @overload
-    def add(self, arg0: 'Identifier', arg1: 'Texture', arg2: 'Texture'):
-        """public void dev.ultreon.quantum.client.atlas.TextureStitcher.add(dev.ultreon.quantum.util.Identifier,com.badlogic.gdx.graphics.Texture,com.badlogic.gdx.graphics.Texture)"""
-        super(__TextureStitcher, self).add(arg0, arg1, arg2)
+    def add(self, arg0: 'Identifier', arg1: 'Texture'):
+        """public void dev.ultreon.quantum.client.atlas.TextureStitcher.add(dev.ultreon.quantum.util.Identifier,com.badlogic.gdx.graphics.Texture)"""
+        super(_TextureStitcher, self).add(arg0, arg1)
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @overload
+    def __init__(self, arg0: 'Identifier'):
+        """public dev.ultreon.quantum.client.atlas.TextureStitcher(dev.ultreon.quantum.util.Identifier)"""
+        val = _TextureStitcher(arg0)
+        self.__wrapper = val
 
     @override
     @overload
@@ -477,94 +481,109 @@ class TextureStitcher():
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0)) 
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.client.atlas.TextureAtlas
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
+import com.badlogic.gdx.graphics.g2d.TextureRegion as _TextureRegion
+_TextureRegion = _TextureRegion
 from builtins import str
 from pyquantum_helper import override
 try:
     from pygdx.graphics import g2d
 except ImportError:
-    g2d = __import_once__("pygdx.graphics.g2d")
+    g2d = _import_once("pygdx.graphics.g2d")
 
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import com.badlogic.gdx.graphics.Texture as _Texture
+_Texture = _Texture
+import java.lang.Object as _object
 from builtins import type
+import java.lang.String as _String
+_String = _String
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import com.badlogic.gdx.graphics.g2d.TextureRegion as __TextureRegion
-__TextureRegion = __TextureRegion
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import com.badlogic.gdx.graphics.Texture as __Texture
-__Texture = __Texture
-import java.lang.Integer as __int
+import dev.ultreon.quantum.client.atlas.TextureAtlas as _TextureAtlas
+_TextureAtlas = _TextureAtlas
+import java.lang.Integer as _int
 try:
     from pygdx import graphics
 except ImportError:
-    graphics = __import_once__("pygdx.graphics")
+    graphics = _import_once("pygdx.graphics")
 
 from builtins import bool
 import java.util.Map as Map
-import dev.ultreon.quantum.client.atlas.TextureAtlas as __TextureAtlas
-__TextureAtlas = __TextureAtlas
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class TextureAtlas():
     """dev.ultreon.quantum.client.atlas.TextureAtlas"""
  
     @staticmethod
-    def __wrap(java_value: __TextureAtlas) -> 'TextureAtlas':
+    def _wrap(java_value: _TextureAtlas) -> 'TextureAtlas':
         return TextureAtlas(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __TextureAtlas):
+    def __init__(self, __dynamic__: _TextureAtlas):
         """
         Dynamic initializer for TextureAtlas.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_TextureAtlas__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_TextureAtlas__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @overload
+    def getTexture(self) -> 'graphics.Texture':
+        """public com.badlogic.gdx.graphics.Texture dev.ultreon.quantum.client.atlas.TextureAtlas.getTexture()"""
+        return 'graphics.Texture'._wrap(super(TextureAtlas, self).getTexture())
+
+    @overload
+    def get(self, arg0: 'Identifier') -> 'g2d.TextureRegion':
+        """public com.badlogic.gdx.graphics.g2d.TextureRegion dev.ultreon.quantum.client.atlas.TextureAtlas.get(dev.ultreon.quantum.util.Identifier)"""
+        return 'g2d.TextureRegion'._wrap(super(_TextureAtlas, self).get(arg0))
+
+    @overload
+    def getEmissiveTexture(self) -> 'graphics.Texture':
+        """public com.badlogic.gdx.graphics.Texture dev.ultreon.quantum.client.atlas.TextureAtlas.getEmissiveTexture()"""
+        return 'graphics.Texture'._wrap(super(TextureAtlas, self).getEmissiveTexture())
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def getTexture(self) -> 'graphics.Texture':
-        """public com.badlogic.gdx.graphics.Texture dev.ultreon.quantum.client.atlas.TextureAtlas.getTexture()"""
-        return 'graphics.Texture'.__wrap(super(TextureAtlas, self).getTexture())
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -572,11 +591,16 @@ class TextureAtlas():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @overload
+    def getEmissive(self, arg0: 'Identifier') -> 'g2d.TextureRegion':
+        """public com.badlogic.gdx.graphics.g2d.TextureRegion dev.ultreon.quantum.client.atlas.TextureAtlas.getEmissive(dev.ultreon.quantum.util.Identifier)"""
+        return 'g2d.TextureRegion'._wrap(super(_TextureAtlas, self).getEmissive(arg0))
+
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
@@ -586,9 +610,9 @@ class TextureAtlas():
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -596,18 +620,11 @@ class TextureAtlas():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @overload
-    def __init__(self, arg0: 'TextureStitcher', arg1: 'Identifier', arg2: 'Texture', arg3: 'Texture', arg4: 'Map'):
-        """public dev.ultreon.quantum.client.atlas.TextureAtlas(dev.ultreon.quantum.client.atlas.TextureStitcher,dev.ultreon.quantum.util.Identifier,com.badlogic.gdx.graphics.Texture,com.badlogic.gdx.graphics.Texture,java.util.Map<dev.ultreon.quantum.util.Identifier, dev.ultreon.quantum.client.util.TextureOffset>)"""
-        val = __TextureAtlas(arg0, arg1, arg2, arg3, arg4)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -616,21 +633,18 @@ class TextureAtlas():
         super(object, self).wait()
 
     @overload
-    def getEmissive(self, arg0: 'Identifier') -> 'g2d.TextureRegion':
-        """public com.badlogic.gdx.graphics.g2d.TextureRegion dev.ultreon.quantum.client.atlas.TextureAtlas.getEmissive(dev.ultreon.quantum.util.Identifier)"""
-        return 'g2d.TextureRegion'.__wrap(super(__TextureAtlas, self).getEmissive(arg0))
-
-    @overload
-    def get(self, arg0: 'Identifier') -> 'g2d.TextureRegion':
-        """public com.badlogic.gdx.graphics.g2d.TextureRegion dev.ultreon.quantum.client.atlas.TextureAtlas.get(dev.ultreon.quantum.util.Identifier)"""
-        return 'g2d.TextureRegion'.__wrap(super(__TextureAtlas, self).get(arg0))
-
-    @overload
-    def getEmissiveTexture(self) -> 'graphics.Texture':
-        """public com.badlogic.gdx.graphics.Texture dev.ultreon.quantum.client.atlas.TextureAtlas.getEmissiveTexture()"""
-        return 'graphics.Texture'.__wrap(super(TextureAtlas, self).getEmissiveTexture())
+    def __init__(self, arg0: 'TextureStitcher', arg1: 'Identifier', arg2: 'Texture', arg3: 'Texture', arg4: 'Map'):
+        """public dev.ultreon.quantum.client.atlas.TextureAtlas(dev.ultreon.quantum.client.atlas.TextureStitcher,dev.ultreon.quantum.util.Identifier,com.badlogic.gdx.graphics.Texture,com.badlogic.gdx.graphics.Texture,java.util.Map<dev.ultreon.quantum.util.Identifier, dev.ultreon.quantum.client.util.TextureOffset>)"""
+        val = _TextureAtlas(arg0, arg1, arg2, arg3, arg4)
+        self.__wrapper = val
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())

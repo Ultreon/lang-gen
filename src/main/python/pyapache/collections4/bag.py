@@ -3,989 +3,103 @@ from overload import overload
 
 
  
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 import java.util.function.Predicate as Predicate
-import org.apache.commons.collections4.collection.AbstractCollectionDecorator as __AbstractCollectionDecorator
-__AbstractCollectionDecorator = __AbstractCollectionDecorator
-import org.apache.commons.collections4.bag.UnmodifiableBag as __UnmodifiableBag
-__UnmodifiableBag = __UnmodifiableBag
+import java.lang.Object as _Object
+_Object = _Object
 from builtins import type
-import java.util.stream.Stream as __Stream
-__Stream = __Stream
-import java.util.Collection as Collection
-import org.apache.commons.collections4.bag.AbstractBagDecorator as __AbstractBagDecorator
-__AbstractBagDecorator = __AbstractBagDecorator
-import java.util.function.Consumer as Consumer
-import java.util.Collection as __Collection
-__Collection = __Collection
-import java.util.Spliterator as Spliterator
-import java.lang.Class as __Class
-__Class = __Class
-from builtins import bool
-from builtins import str
-from pyquantum_helper import override
-import java.lang.Object as __object
-import java.util.Iterator as __Iterator
-__Iterator = __Iterator
-import java.util.function.IntFunction as IntFunction
-import java.util.Set as __Set
-__Set = __Set
-import org.apache.commons.collections4.Bag as __Bag
-__Bag = __Bag
-from builtins import object
-import java.util.Iterator as Iterator
-from typing import List
-import java.util.Spliterator as __Spliterator
-__Spliterator = __Spliterator
-try:
-    from pyapache import collections4
-except ImportError:
-    collections4 = __import_once__("pyapache.collections4")
-
-import java.util.Set as Set
-import java.lang.Long as __long
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.util.stream.Stream as Stream
-import java.lang.Integer as __int
-from builtins import int
-import java.lang.Iterable as __Iterable
-__Iterable = __Iterable
- 
-class UnmodifiableBag():
-    """org.apache.commons.collections4.bag.UnmodifiableBag"""
- 
-    @staticmethod
-    def __wrap(java_value: __UnmodifiableBag) -> 'UnmodifiableBag':
-        return UnmodifiableBag(__dynamic__=java_value)
- 
-    #
-    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
-    #
-    @overload
-    def __init__(self, __dynamic__: __UnmodifiableBag):
-        """
-        Dynamic initializer for UnmodifiableBag.
-        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
- 
-        :param __dynamic__: The java object to wrap
-        """
-        self.__dict__ = __dynamic__.__dict__
-        self.__wrapper = __dynamic__
- 
-    def __getattr__(self, name: str):
-        return getattr(self.__wrapper, name)
- 
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
- 
-    def __delattr__(self, name: str):
-        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
- 
-    @override
-    @overload
-    def isEmpty(self) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.isEmpty()"""
-        return bool.__wrap(super(collection.AbstractCollectionDecorator, self).isEmpty())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def addAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.UnmodifiableBag.addAll(java.util.Collection<? extends E>)"""
-        return bool.__wrap(super(__UnmodifiableBag, self).addAll(arg0))
-
-    @overload
-    def contains(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.contains(java.lang.Object)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).contains(arg0))
-
-    @overload
-    def removeIf(self, arg0: 'Predicate') -> bool:
-        """public boolean org.apache.commons.collections4.bag.UnmodifiableBag.removeIf(java.util.function.Predicate<? super E>)"""
-        return bool.__wrap(super(__UnmodifiableBag, self).removeIf(arg0))
-
-    @override
-    @overload
-    def notifyAll(self):
-        """public final native void java.lang.Object.notifyAll()"""
-        super(object, self).notifyAll()
-
-    @override
-    @overload
-    def parallelStream(self) -> 'Stream':
-        """public default java.util.stream.Stream<E> java.util.Collection.parallelStream()"""
-        return 'Stream'.__wrap(super(Collection, self).parallelStream())
-
-    @overload
-    def add(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.UnmodifiableBag.add(E)"""
-        return bool.__wrap(super(__UnmodifiableBag, self).add(arg0))
-
-    @override
-    @overload
-    def size(self) -> int:
-        """public int org.apache.commons.collections4.collection.AbstractCollectionDecorator.size()"""
-        return int.__wrap(super(collection.AbstractCollectionDecorator, self).size())
-
-    @override
-    @overload
-    def clear(self):
-        """public void org.apache.commons.collections4.bag.UnmodifiableBag.clear()"""
-        super(UnmodifiableBag, self).clear()
-
-    @override
-    @overload
-    def toArray(self) -> List[object]:
-        """public java.lang.Object[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray()"""
-        return List[object].__wrap(super(collection.AbstractCollectionDecorator, self).toArray())
-
-    @override
-    @overload
-    def notify(self):
-        """public final native void java.lang.Object.notify()"""
-        super(object, self).notify()
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String org.apache.commons.collections4.collection.AbstractCollectionDecorator.toString()"""
-        return str.__wrap(super(collection.AbstractCollectionDecorator, self).toString())
-
-    @override
-    @overload
-    def spliterator(self) -> 'Spliterator':
-        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
-        return 'Spliterator'.__wrap(super(Collection, self).spliterator())
-
-    @override
-    @overload
-    def forEach(self, arg0: 'Consumer'):
-        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
-        super(__Iterable, self).forEach(arg0)
-
-    @overload
-    def getCount(self, arg0: object) -> int:
-        """public int org.apache.commons.collections4.bag.AbstractBagDecorator.getCount(java.lang.Object)"""
-        return int.__wrap(super(__AbstractBagDecorator, self).getCount(arg0))
-
-    @overload
-    def containsAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.containsAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).containsAll(arg0))
-
-    @overload
-    def remove(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.UnmodifiableBag.remove(java.lang.Object)"""
-        return bool.__wrap(super(__UnmodifiableBag, self).remove(arg0))
-
-    @staticmethod
-    @overload
-    def unmodifiableBag(arg0: 'Bag') -> 'collections4.Bag':
-        """public static <E> org.apache.commons.collections4.Bag<E> org.apache.commons.collections4.bag.UnmodifiableBag.unmodifiableBag(org.apache.commons.collections4.Bag<? extends E>)"""
-        return collections4.Bag.__wrap(__UnmodifiableBag.unmodifiableBag(arg0))
-
-    @override
-    @overload
-    def stream(self) -> 'Stream':
-        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
-        return 'Stream'.__wrap(super(Collection, self).stream())
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractBagDecorator.equals(java.lang.Object)"""
-        return bool.__wrap(super(__AbstractBagDecorator, self).equals(arg0))
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public int org.apache.commons.collections4.bag.AbstractBagDecorator.hashCode()"""
-        return int.__wrap(super(AbstractBagDecorator, self).hashCode())
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def add(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.UnmodifiableBag.add(E,int)"""
-        return bool.__wrap(super(__UnmodifiableBag, self).add(arg0, __int.valueOf(arg1)))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @overload
-    def toArray(self, arg0: 'IntFunction') -> List[object]:
-        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
-        return List[object].__wrap(super(__Collection, self).toArray(arg0))
-
-    @overload
-    def retainAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.UnmodifiableBag.retainAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__UnmodifiableBag, self).retainAll(arg0))
-
-    @overload
-    def remove(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.UnmodifiableBag.remove(java.lang.Object,int)"""
-        return bool.__wrap(super(__UnmodifiableBag, self).remove(arg0, __int.valueOf(arg1)))
-
-    @overload
-    def toArray(self, arg0: 'Object') -> List[object]:
-        """public <T> T[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray(T[])"""
-        return List[object].__wrap(super(__collection.AbstractCollectionDecorator, self).toArray(arg0))
-
-    @override
-    @overload
-    def iterator(self) -> 'Iterator':
-        """public java.util.Iterator<E> org.apache.commons.collections4.bag.UnmodifiableBag.iterator()"""
-        return 'Iterator'.__wrap(super(UnmodifiableBag, self).iterator())
-
-    @override
-    @overload
-    def uniqueSet(self) -> 'Set':
-        """public java.util.Set<E> org.apache.commons.collections4.bag.UnmodifiableBag.uniqueSet()"""
-        return 'Set'.__wrap(super(UnmodifiableBag, self).uniqueSet())
-
-    @override
-    @overload
-    def wait(self):
-        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
-        super(object, self).wait()
-
-    @overload
-    def removeAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.UnmodifiableBag.removeAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__UnmodifiableBag, self).removeAll(arg0))
-
- 
- 
- 
-# CLASS: org.apache.commons.collections4.bag.UnmodifiableBag
-from pyquantum_helper import import_once as __import_once__
-import java.util.function.Predicate as Predicate
-import org.apache.commons.collections4.collection.AbstractCollectionDecorator as __AbstractCollectionDecorator
-__AbstractCollectionDecorator = __AbstractCollectionDecorator
-import org.apache.commons.collections4.bag.UnmodifiableBag as __UnmodifiableBag
-__UnmodifiableBag = __UnmodifiableBag
-from builtins import type
-import java.util.stream.Stream as __Stream
-__Stream = __Stream
-import java.util.Collection as Collection
-import org.apache.commons.collections4.bag.AbstractBagDecorator as __AbstractBagDecorator
-__AbstractBagDecorator = __AbstractBagDecorator
-import java.util.function.Consumer as Consumer
-import java.util.Collection as __Collection
-__Collection = __Collection
-import java.util.Spliterator as Spliterator
-import java.lang.Class as __Class
-__Class = __Class
-from builtins import bool
-from builtins import str
-from pyquantum_helper import override
-import java.lang.Object as __object
-import java.util.Iterator as __Iterator
-__Iterator = __Iterator
-import java.util.function.IntFunction as IntFunction
-import java.util.Set as __Set
-__Set = __Set
-import org.apache.commons.collections4.Bag as __Bag
-__Bag = __Bag
-from builtins import object
-import java.util.Iterator as Iterator
-from typing import List
-import java.util.Spliterator as __Spliterator
-__Spliterator = __Spliterator
-try:
-    from pyapache import collections4
-except ImportError:
-    collections4 = __import_once__("pyapache.collections4")
-
-import java.util.Set as Set
-import java.lang.Long as __long
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.util.stream.Stream as Stream
-import java.lang.Integer as __int
-from builtins import int
-import java.lang.Iterable as __Iterable
-__Iterable = __Iterable
- 
-class UnmodifiableBag():
-    """org.apache.commons.collections4.bag.UnmodifiableBag"""
- 
-    @staticmethod
-    def __wrap(java_value: __UnmodifiableBag) -> 'UnmodifiableBag':
-        return UnmodifiableBag(__dynamic__=java_value)
- 
-    #
-    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
-    #
-    @overload
-    def __init__(self, __dynamic__: __UnmodifiableBag):
-        """
-        Dynamic initializer for UnmodifiableBag.
-        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
- 
-        :param __dynamic__: The java object to wrap
-        """
-        self.__dict__ = __dynamic__.__dict__
-        self.__wrapper = __dynamic__
- 
-    def __getattr__(self, name: str):
-        return getattr(self.__wrapper, name)
- 
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
- 
-    def __delattr__(self, name: str):
-        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
- 
-    @override
-    @overload
-    def isEmpty(self) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.isEmpty()"""
-        return bool.__wrap(super(collection.AbstractCollectionDecorator, self).isEmpty())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def addAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.UnmodifiableBag.addAll(java.util.Collection<? extends E>)"""
-        return bool.__wrap(super(__UnmodifiableBag, self).addAll(arg0))
-
-    @overload
-    def contains(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.contains(java.lang.Object)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).contains(arg0))
-
-    @overload
-    def removeIf(self, arg0: 'Predicate') -> bool:
-        """public boolean org.apache.commons.collections4.bag.UnmodifiableBag.removeIf(java.util.function.Predicate<? super E>)"""
-        return bool.__wrap(super(__UnmodifiableBag, self).removeIf(arg0))
-
-    @override
-    @overload
-    def notifyAll(self):
-        """public final native void java.lang.Object.notifyAll()"""
-        super(object, self).notifyAll()
-
-    @override
-    @overload
-    def parallelStream(self) -> 'Stream':
-        """public default java.util.stream.Stream<E> java.util.Collection.parallelStream()"""
-        return 'Stream'.__wrap(super(Collection, self).parallelStream())
-
-    @overload
-    def add(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.UnmodifiableBag.add(E)"""
-        return bool.__wrap(super(__UnmodifiableBag, self).add(arg0))
-
-    @override
-    @overload
-    def size(self) -> int:
-        """public int org.apache.commons.collections4.collection.AbstractCollectionDecorator.size()"""
-        return int.__wrap(super(collection.AbstractCollectionDecorator, self).size())
-
-    @override
-    @overload
-    def clear(self):
-        """public void org.apache.commons.collections4.bag.UnmodifiableBag.clear()"""
-        super(UnmodifiableBag, self).clear()
-
-    @override
-    @overload
-    def toArray(self) -> List[object]:
-        """public java.lang.Object[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray()"""
-        return List[object].__wrap(super(collection.AbstractCollectionDecorator, self).toArray())
-
-    @override
-    @overload
-    def notify(self):
-        """public final native void java.lang.Object.notify()"""
-        super(object, self).notify()
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String org.apache.commons.collections4.collection.AbstractCollectionDecorator.toString()"""
-        return str.__wrap(super(collection.AbstractCollectionDecorator, self).toString())
-
-    @override
-    @overload
-    def spliterator(self) -> 'Spliterator':
-        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
-        return 'Spliterator'.__wrap(super(Collection, self).spliterator())
-
-    @override
-    @overload
-    def forEach(self, arg0: 'Consumer'):
-        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
-        super(__Iterable, self).forEach(arg0)
-
-    @overload
-    def getCount(self, arg0: object) -> int:
-        """public int org.apache.commons.collections4.bag.AbstractBagDecorator.getCount(java.lang.Object)"""
-        return int.__wrap(super(__AbstractBagDecorator, self).getCount(arg0))
-
-    @overload
-    def containsAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.containsAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).containsAll(arg0))
-
-    @overload
-    def remove(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.UnmodifiableBag.remove(java.lang.Object)"""
-        return bool.__wrap(super(__UnmodifiableBag, self).remove(arg0))
-
-    @staticmethod
-    @overload
-    def unmodifiableBag(arg0: 'Bag') -> 'collections4.Bag':
-        """public static <E> org.apache.commons.collections4.Bag<E> org.apache.commons.collections4.bag.UnmodifiableBag.unmodifiableBag(org.apache.commons.collections4.Bag<? extends E>)"""
-        return collections4.Bag.__wrap(__UnmodifiableBag.unmodifiableBag(arg0))
-
-    @override
-    @overload
-    def stream(self) -> 'Stream':
-        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
-        return 'Stream'.__wrap(super(Collection, self).stream())
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractBagDecorator.equals(java.lang.Object)"""
-        return bool.__wrap(super(__AbstractBagDecorator, self).equals(arg0))
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public int org.apache.commons.collections4.bag.AbstractBagDecorator.hashCode()"""
-        return int.__wrap(super(AbstractBagDecorator, self).hashCode())
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def add(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.UnmodifiableBag.add(E,int)"""
-        return bool.__wrap(super(__UnmodifiableBag, self).add(arg0, __int.valueOf(arg1)))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @overload
-    def toArray(self, arg0: 'IntFunction') -> List[object]:
-        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
-        return List[object].__wrap(super(__Collection, self).toArray(arg0))
-
-    @overload
-    def retainAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.UnmodifiableBag.retainAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__UnmodifiableBag, self).retainAll(arg0))
-
-    @overload
-    def remove(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.UnmodifiableBag.remove(java.lang.Object,int)"""
-        return bool.__wrap(super(__UnmodifiableBag, self).remove(arg0, __int.valueOf(arg1)))
-
-    @overload
-    def toArray(self, arg0: 'Object') -> List[object]:
-        """public <T> T[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray(T[])"""
-        return List[object].__wrap(super(__collection.AbstractCollectionDecorator, self).toArray(arg0))
-
-    @override
-    @overload
-    def iterator(self) -> 'Iterator':
-        """public java.util.Iterator<E> org.apache.commons.collections4.bag.UnmodifiableBag.iterator()"""
-        return 'Iterator'.__wrap(super(UnmodifiableBag, self).iterator())
-
-    @override
-    @overload
-    def uniqueSet(self) -> 'Set':
-        """public java.util.Set<E> org.apache.commons.collections4.bag.UnmodifiableBag.uniqueSet()"""
-        return 'Set'.__wrap(super(UnmodifiableBag, self).uniqueSet())
-
-    @override
-    @overload
-    def wait(self):
-        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
-        super(object, self).wait()
-
-    @overload
-    def removeAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.UnmodifiableBag.removeAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__UnmodifiableBag, self).removeAll(arg0))
-
- 
- 
- 
-# CLASS: org.apache.commons.collections4.bag.UnmodifiableBag 
- 
- 
-# CLASS: org.apache.commons.collections4.bag.TransformedSortedBag
-from pyquantum_helper import import_once as __import_once__
-import java.util.function.Predicate as Predicate
-import org.apache.commons.collections4.collection.AbstractCollectionDecorator as __AbstractCollectionDecorator
-__AbstractCollectionDecorator = __AbstractCollectionDecorator
-from builtins import type
-import java.util.stream.Stream as __Stream
-__Stream = __Stream
+import org.apache.commons.collections4.bag.SynchronizedBag as _SynchronizedBag
+_SynchronizedBag = _SynchronizedBag
 import java.util.Collection as Collection
 try:
     from pyapache.collections4 import collection
 except ImportError:
-    collection = __import_once__("pyapache.collections4.collection")
+    collection = _import_once("pyapache.collections4.collection")
 
+import java.util.Set as _Set
+_Set = _Set
 import java.util.function.Consumer as Consumer
-import java.util.Comparator as __Comparator
-__Comparator = __Comparator
-import java.util.Collection as __Collection
-__Collection = __Collection
 import java.util.Spliterator as Spliterator
-import java.lang.Class as __Class
-__Class = __Class
-import org.apache.commons.collections4.bag.TransformedSortedBag as __TransformedSortedBag
-__TransformedSortedBag = __TransformedSortedBag
+import java.util.Iterator as _Iterator
+_Iterator = _Iterator
 from builtins import bool
-import org.apache.commons.collections4.collection.TransformedCollection as __TransformedCollection
-__TransformedCollection = __TransformedCollection
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
-import java.util.Iterator as __Iterator
-__Iterator = __Iterator
 import java.util.function.IntFunction as IntFunction
-import java.util.Set as __Set
-__Set = __Set
-import org.apache.commons.collections4.Bag as __Bag
-__Bag = __Bag
+import java.lang.Object as _object
+import java.util.Spliterator as _Spliterator
+_Spliterator = _Spliterator
+import java.lang.String as _String
+_String = _String
 from builtins import object
 import java.util.Iterator as Iterator
 from typing import List
-import java.util.Spliterator as __Spliterator
-__Spliterator = __Spliterator
 try:
     from pyapache import collections4
 except ImportError:
-    collections4 = __import_once__("pyapache.collections4")
+    collections4 = _import_once("pyapache.collections4")
 
-import java.util.Comparator as Comparator
-import org.apache.commons.collections4.bag.TransformedBag as __TransformedBag
-__TransformedBag = __TransformedBag
 import java.util.Set as Set
-import java.lang.Long as __long
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
+import java.util.Collection as _Collection
+_Collection = _Collection
+import java.lang.Integer as _int
+import java.lang.Iterable as _Iterable
+_Iterable = _Iterable
+import java.util.stream.Stream as _Stream
+_Stream = _Stream
+import org.apache.commons.collections4.collection.SynchronizedCollection as _SynchronizedCollection
+_SynchronizedCollection = _SynchronizedCollection
 import java.util.stream.Stream as Stream
-import java.lang.Integer as __int
+import java.lang.Long as _long
 from builtins import int
-import java.lang.Iterable as __Iterable
-__Iterable = __Iterable
+import java.lang.Class as _Class
+_Class = _Class
  
-class TransformedSortedBag():
-    """org.apache.commons.collections4.bag.TransformedSortedBag"""
+class SynchronizedBag():
+    """org.apache.commons.collections4.bag.SynchronizedBag"""
  
     @staticmethod
-    def __wrap(java_value: __TransformedSortedBag) -> 'TransformedSortedBag':
-        return TransformedSortedBag(__dynamic__=java_value)
+    def _wrap(java_value: _SynchronizedBag) -> 'SynchronizedBag':
+        return SynchronizedBag(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __TransformedSortedBag):
+    def __init__(self, __dynamic__: _SynchronizedBag):
         """
-        Dynamic initializer for TransformedSortedBag.
+        Dynamic initializer for SynchronizedBag.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_SynchronizedBag__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_SynchronizedBag__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
-    @overload
-    def isEmpty(self) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.isEmpty()"""
-        return bool.__wrap(super(collection.AbstractCollectionDecorator, self).isEmpty())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def remove(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.remove(java.lang.Object)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).remove(arg0))
-
-    @overload
-    def addAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.TransformedCollection.addAll(java.util.Collection<? extends E>)"""
-        return bool.__wrap(super(__collection.TransformedCollection, self).addAll(arg0))
-
-    @override
-    @overload
-    def comparator(self) -> 'Comparator':
-        """public java.util.Comparator<? super E> org.apache.commons.collections4.bag.TransformedSortedBag.comparator()"""
-        return 'Comparator'.__wrap(super(TransformedSortedBag, self).comparator())
-
-    @overload
-    def add(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.TransformedCollection.add(E)"""
-        return bool.__wrap(super(__collection.TransformedCollection, self).add(arg0))
-
-    @overload
-    def contains(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.contains(java.lang.Object)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).contains(arg0))
-
-    @override
-    @overload
-    def notifyAll(self):
-        """public final native void java.lang.Object.notifyAll()"""
-        super(object, self).notifyAll()
-
-    @override
-    @overload
-    def parallelStream(self) -> 'Stream':
-        """public default java.util.stream.Stream<E> java.util.Collection.parallelStream()"""
-        return 'Stream'.__wrap(super(Collection, self).parallelStream())
-
-    @override
-    @overload
-    def size(self) -> int:
-        """public int org.apache.commons.collections4.collection.AbstractCollectionDecorator.size()"""
-        return int.__wrap(super(collection.AbstractCollectionDecorator, self).size())
-
     @override
     @overload
     def toArray(self) -> List[object]:
-        """public java.lang.Object[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray()"""
-        return List[object].__wrap(super(collection.AbstractCollectionDecorator, self).toArray())
-
-    @override
-    @overload
-    def first(self) -> object:
-        """public E org.apache.commons.collections4.bag.TransformedSortedBag.first()"""
-        return object.__wrap(super(TransformedSortedBag, self).first())
-
-    @staticmethod
-    @overload
-    def transformedSortedBag(arg0: 'SortedBag', arg1: 'Transformer') -> 'TransformedSortedBag':
-        """public static <E> org.apache.commons.collections4.bag.TransformedSortedBag<E> org.apache.commons.collections4.bag.TransformedSortedBag.transformedSortedBag(org.apache.commons.collections4.SortedBag<E>,org.apache.commons.collections4.Transformer<? super E, ? extends E>)"""
-        return TransformedSortedBag.__wrap(__TransformedSortedBag.transformedSortedBag(arg0, arg1))
-
-    @staticmethod
-    @overload
-    def transformedBag(arg0: 'Bag', arg1: 'Transformer') -> 'collections4.Bag':
-        """public static <E> org.apache.commons.collections4.Bag<E> org.apache.commons.collections4.bag.TransformedBag.transformedBag(org.apache.commons.collections4.Bag<E>,org.apache.commons.collections4.Transformer<? super E, ? extends E>)"""
-        return collections4.Bag.__wrap(__TransformedBag.transformedBag(arg0, arg1))
-
-    @overload
-    def add(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.TransformedBag.add(E,int)"""
-        return bool.__wrap(super(__TransformedBag, self).add(arg0, __int.valueOf(arg1)))
-
-    @override
-    @overload
-    def notify(self):
-        """public final native void java.lang.Object.notify()"""
-        super(object, self).notify()
-
-    @overload
-    def removeAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).removeAll(arg0))
+        """public java.lang.Object[] org.apache.commons.collections4.collection.SynchronizedCollection.toArray()"""
+        return List[object]._wrap(super(collection.SynchronizedCollection, self).toArray())
 
     @overload
     def remove(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.TransformedBag.remove(java.lang.Object,int)"""
-        return bool.__wrap(super(__TransformedBag, self).remove(arg0, __int.valueOf(arg1)))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String org.apache.commons.collections4.collection.AbstractCollectionDecorator.toString()"""
-        return str.__wrap(super(collection.AbstractCollectionDecorator, self).toString())
-
-    @override
-    @overload
-    def spliterator(self) -> 'Spliterator':
-        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
-        return 'Spliterator'.__wrap(super(Collection, self).spliterator())
-
-    @override
-    @overload
-    def forEach(self, arg0: 'Consumer'):
-        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
-        super(__Iterable, self).forEach(arg0)
-
-    @override
-    @overload
-    def uniqueSet(self) -> 'Set':
-        """public java.util.Set<E> org.apache.commons.collections4.bag.TransformedBag.uniqueSet()"""
-        return 'Set'.__wrap(super(TransformedBag, self).uniqueSet())
-
-    @overload
-    def getCount(self, arg0: object) -> int:
-        """public int org.apache.commons.collections4.bag.TransformedBag.getCount(java.lang.Object)"""
-        return int.__wrap(super(__TransformedBag, self).getCount(arg0))
-
-    @overload
-    def containsAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.containsAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).containsAll(arg0))
-
-    @staticmethod
-    @overload
-    def transformingBag(arg0: 'Bag', arg1: 'Transformer') -> 'collections4.Bag':
-        """public static <E> org.apache.commons.collections4.Bag<E> org.apache.commons.collections4.bag.TransformedBag.transformingBag(org.apache.commons.collections4.Bag<E>,org.apache.commons.collections4.Transformer<? super E, ? extends E>)"""
-        return collections4.Bag.__wrap(__TransformedBag.transformingBag(arg0, arg1))
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.TransformedBag.equals(java.lang.Object)"""
-        return bool.__wrap(super(__TransformedBag, self).equals(arg0))
-
-    @override
-    @overload
-    def clear(self):
-        """public void org.apache.commons.collections4.collection.AbstractCollectionDecorator.clear()"""
-        super(collection.AbstractCollectionDecorator, self).clear()
-
-    @override
-    @overload
-    def stream(self) -> 'Stream':
-        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
-        return 'Stream'.__wrap(super(Collection, self).stream())
-
-    @override
-    @overload
-    def iterator(self) -> 'Iterator':
-        """public java.util.Iterator<E> org.apache.commons.collections4.collection.AbstractCollectionDecorator.iterator()"""
-        return 'Iterator'.__wrap(super(collection.AbstractCollectionDecorator, self).iterator())
-
-    @overload
-    def retainAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.retainAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).retainAll(arg0))
-
-    @override
-    @overload
-    def last(self) -> object:
-        """public E org.apache.commons.collections4.bag.TransformedSortedBag.last()"""
-        return object.__wrap(super(TransformedSortedBag, self).last())
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @overload
-    def removeIf(self, arg0: 'Predicate') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeIf(java.util.function.Predicate<? super E>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).removeIf(arg0))
-
-    @staticmethod
-    @overload
-    def transformedCollection(arg0: 'Collection', arg1: 'Transformer') -> 'collection.TransformedCollection':
-        """public static <E> org.apache.commons.collections4.collection.TransformedCollection<E> org.apache.commons.collections4.collection.TransformedCollection.transformedCollection(java.util.Collection<E>,org.apache.commons.collections4.Transformer<? super E, ? extends E>)"""
-        return collection.TransformedCollection.__wrap(__TransformedCollection.transformedCollection(arg0, arg1))
-
-    @overload
-    def toArray(self, arg0: 'IntFunction') -> List[object]:
-        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
-        return List[object].__wrap(super(__Collection, self).toArray(arg0))
-
-    @overload
-    def toArray(self, arg0: 'Object') -> List[object]:
-        """public <T> T[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray(T[])"""
-        return List[object].__wrap(super(__collection.AbstractCollectionDecorator, self).toArray(arg0))
-
-    @staticmethod
-    @overload
-    def transformingSortedBag(arg0: 'SortedBag', arg1: 'Transformer') -> 'TransformedSortedBag':
-        """public static <E> org.apache.commons.collections4.bag.TransformedSortedBag<E> org.apache.commons.collections4.bag.TransformedSortedBag.transformingSortedBag(org.apache.commons.collections4.SortedBag<E>,org.apache.commons.collections4.Transformer<? super E, ? extends E>)"""
-        return TransformedSortedBag.__wrap(__TransformedSortedBag.transformingSortedBag(arg0, arg1))
-
-    @override
-    @overload
-    def wait(self):
-        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
-        super(object, self).wait()
-
-    @staticmethod
-    @overload
-    def transformingCollection(arg0: 'Collection', arg1: 'Transformer') -> 'collection.TransformedCollection':
-        """public static <E> org.apache.commons.collections4.collection.TransformedCollection<E> org.apache.commons.collections4.collection.TransformedCollection.transformingCollection(java.util.Collection<E>,org.apache.commons.collections4.Transformer<? super E, ? extends E>)"""
-        return collection.TransformedCollection.__wrap(__TransformedCollection.transformingCollection(arg0, arg1))
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public int org.apache.commons.collections4.bag.TransformedBag.hashCode()"""
-        return int.__wrap(super(TransformedBag, self).hashCode()) 
- 
- 
-# CLASS: org.apache.commons.collections4.bag.PredicatedBag
-from pyquantum_helper import import_once as __import_once__
-import java.util.function.Predicate as Predicate
-import org.apache.commons.collections4.collection.PredicatedCollection as __PredicatedCollection_Builder
-__Builder = __PredicatedCollection_Builder.Builder
-import org.apache.commons.collections4.collection.AbstractCollectionDecorator as __AbstractCollectionDecorator
-__AbstractCollectionDecorator = __AbstractCollectionDecorator
-from builtins import type
-import java.util.stream.Stream as __Stream
-__Stream = __Stream
-import java.util.Collection as Collection
-try:
-    from pyapache.collections4 import collection
-except ImportError:
-    collection = __import_once__("pyapache.collections4.collection")
-
-import java.util.function.Consumer as Consumer
-import java.util.Collection as __Collection
-__Collection = __Collection
-import java.util.Spliterator as Spliterator
-import java.lang.Class as __Class
-__Class = __Class
-import org.apache.commons.collections4.bag.PredicatedBag as __PredicatedBag
-__PredicatedBag = __PredicatedBag
-from builtins import bool
-from builtins import str
-from pyquantum_helper import override
-import java.lang.Object as __object
-import java.util.Iterator as __Iterator
-__Iterator = __Iterator
-import java.util.function.IntFunction as IntFunction
-import java.util.Set as __Set
-__Set = __Set
-from builtins import object
-import java.util.Iterator as Iterator
-from typing import List
-import java.util.Spliterator as __Spliterator
-__Spliterator = __Spliterator
-try:
-    from pyapache import collections4
-except ImportError:
-    collections4 = __import_once__("pyapache.collections4")
-
-import java.util.Set as Set
-import java.lang.Long as __long
-import org.apache.commons.collections4.collection.PredicatedCollection as __PredicatedCollection
-__PredicatedCollection = __PredicatedCollection
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.util.stream.Stream as Stream
-import java.lang.Integer as __int
-from builtins import int
-import java.lang.Iterable as __Iterable
-__Iterable = __Iterable
- 
-class PredicatedBag():
-    """org.apache.commons.collections4.bag.PredicatedBag"""
- 
-    @staticmethod
-    def __wrap(java_value: __PredicatedBag) -> 'PredicatedBag':
-        return PredicatedBag(__dynamic__=java_value)
- 
-    #
-    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
-    #
-    @overload
-    def __init__(self, __dynamic__: __PredicatedBag):
-        """
-        Dynamic initializer for PredicatedBag.
-        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
- 
-        :param __dynamic__: The java object to wrap
-        """
-        self.__dict__ = __dynamic__.__dict__
-        self.__wrapper = __dynamic__
- 
-    def __getattr__(self, name: str):
-        return getattr(self.__wrapper, name)
- 
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
- 
-    def __delattr__(self, name: str):
-        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
- 
-    @override
-    @overload
-    def isEmpty(self) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.isEmpty()"""
-        return bool.__wrap(super(collection.AbstractCollectionDecorator, self).isEmpty())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def remove(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.PredicatedBag.remove(java.lang.Object,int)"""
-        return bool.__wrap(super(__PredicatedBag, self).remove(arg0, __int.valueOf(arg1)))
-
-    @overload
-    def remove(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.remove(java.lang.Object)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).remove(arg0))
-
-    @overload
-    def add(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.PredicatedCollection.add(E)"""
-        return bool.__wrap(super(__collection.PredicatedCollection, self).add(arg0))
-
-    @overload
-    def contains(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.contains(java.lang.Object)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).contains(arg0))
+        """public boolean org.apache.commons.collections4.bag.SynchronizedBag.remove(java.lang.Object,int)"""
+        return bool._wrap(super(_SynchronizedBag, self).remove(arg0, _int.valueOf(arg1)))
 
     @override
     @overload
@@ -994,1106 +108,9 @@ class PredicatedBag():
         super(object, self).notifyAll()
 
     @overload
-    def getCount(self, arg0: object) -> int:
-        """public int org.apache.commons.collections4.bag.PredicatedBag.getCount(java.lang.Object)"""
-        return int.__wrap(super(__PredicatedBag, self).getCount(arg0))
-
-    @override
-    @overload
-    def parallelStream(self) -> 'Stream':
-        """public default java.util.stream.Stream<E> java.util.Collection.parallelStream()"""
-        return 'Stream'.__wrap(super(Collection, self).parallelStream())
-
-    @override
-    @overload
-    def size(self) -> int:
-        """public int org.apache.commons.collections4.collection.AbstractCollectionDecorator.size()"""
-        return int.__wrap(super(collection.AbstractCollectionDecorator, self).size())
-
-    @overload
     def add(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.PredicatedBag.add(E,int)"""
-        return bool.__wrap(super(__PredicatedBag, self).add(arg0, __int.valueOf(arg1)))
-
-    @override
-    @overload
-    def toArray(self) -> List[object]:
-        """public java.lang.Object[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray()"""
-        return List[object].__wrap(super(collection.AbstractCollectionDecorator, self).toArray())
-
-    @staticmethod
-    @overload
-    def builder(arg0: 'Predicate') -> 'collection.PredicatedCollection$Builder':
-        """public static <E> org.apache.commons.collections4.collection.PredicatedCollection$Builder<E> org.apache.commons.collections4.collection.PredicatedCollection.builder(org.apache.commons.collections4.Predicate<? super E>)"""
-        return collection.PredicatedCollection$Builder.__wrap(__PredicatedCollection.builder(arg0))
-
-    @override
-    @overload
-    def notify(self):
-        """public final native void java.lang.Object.notify()"""
-        super(object, self).notify()
-
-    @staticmethod
-    @overload
-    def notNullBuilder() -> 'collection.PredicatedCollection$Builder':
-        """public static <E> org.apache.commons.collections4.collection.PredicatedCollection$Builder<E> org.apache.commons.collections4.collection.PredicatedCollection.notNullBuilder()"""
-        return collection.PredicatedCollection$Builder.__wrap(__PredicatedCollection.notNullBuilder())
-
-    @overload
-    def removeAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).removeAll(arg0))
-
-    @override
-    @overload
-    def uniqueSet(self) -> 'Set':
-        """public java.util.Set<E> org.apache.commons.collections4.bag.PredicatedBag.uniqueSet()"""
-        return 'Set'.__wrap(super(PredicatedBag, self).uniqueSet())
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String org.apache.commons.collections4.collection.AbstractCollectionDecorator.toString()"""
-        return str.__wrap(super(collection.AbstractCollectionDecorator, self).toString())
-
-    @override
-    @overload
-    def spliterator(self) -> 'Spliterator':
-        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
-        return 'Spliterator'.__wrap(super(Collection, self).spliterator())
-
-    @override
-    @overload
-    def forEach(self, arg0: 'Consumer'):
-        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
-        super(__Iterable, self).forEach(arg0)
-
-    @overload
-    def containsAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.containsAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).containsAll(arg0))
-
-    @staticmethod
-    @overload
-    def predicatedBag(arg0: 'Bag', arg1: 'Predicate') -> 'PredicatedBag':
-        """public static <E> org.apache.commons.collections4.bag.PredicatedBag<E> org.apache.commons.collections4.bag.PredicatedBag.predicatedBag(org.apache.commons.collections4.Bag<E>,org.apache.commons.collections4.Predicate<? super E>)"""
-        return PredicatedBag.__wrap(__PredicatedBag.predicatedBag(arg0, arg1))
-
-    @override
-    @overload
-    def clear(self):
-        """public void org.apache.commons.collections4.collection.AbstractCollectionDecorator.clear()"""
-        super(collection.AbstractCollectionDecorator, self).clear()
-
-    @override
-    @overload
-    def stream(self) -> 'Stream':
-        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
-        return 'Stream'.__wrap(super(Collection, self).stream())
-
-    @overload
-    def addAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.PredicatedCollection.addAll(java.util.Collection<? extends E>)"""
-        return bool.__wrap(super(__collection.PredicatedCollection, self).addAll(arg0))
-
-    @override
-    @overload
-    def iterator(self) -> 'Iterator':
-        """public java.util.Iterator<E> org.apache.commons.collections4.collection.AbstractCollectionDecorator.iterator()"""
-        return 'Iterator'.__wrap(super(collection.AbstractCollectionDecorator, self).iterator())
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.PredicatedBag.equals(java.lang.Object)"""
-        return bool.__wrap(super(__PredicatedBag, self).equals(arg0))
-
-    @overload
-    def retainAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.retainAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).retainAll(arg0))
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @overload
-    def removeIf(self, arg0: 'Predicate') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeIf(java.util.function.Predicate<? super E>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).removeIf(arg0))
-
-    @overload
-    def toArray(self, arg0: 'IntFunction') -> List[object]:
-        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
-        return List[object].__wrap(super(__Collection, self).toArray(arg0))
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public int org.apache.commons.collections4.bag.PredicatedBag.hashCode()"""
-        return int.__wrap(super(PredicatedBag, self).hashCode())
-
-    @overload
-    def toArray(self, arg0: 'Object') -> List[object]:
-        """public <T> T[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray(T[])"""
-        return List[object].__wrap(super(__collection.AbstractCollectionDecorator, self).toArray(arg0))
-
-    @staticmethod
-    @overload
-    def predicatedCollection(arg0: 'Collection', arg1: 'Predicate') -> 'collection.PredicatedCollection':
-        """public static <T> org.apache.commons.collections4.collection.PredicatedCollection<T> org.apache.commons.collections4.collection.PredicatedCollection.predicatedCollection(java.util.Collection<T>,org.apache.commons.collections4.Predicate<? super T>)"""
-        return collection.PredicatedCollection.__wrap(__PredicatedCollection.predicatedCollection(arg0, arg1))
-
-    @override
-    @overload
-    def wait(self):
-        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
-        super(object, self).wait() 
- 
- 
-# CLASS: org.apache.commons.collections4.bag.AbstractBagDecorator
-import java.util.function.Predicate as Predicate
-import org.apache.commons.collections4.collection.AbstractCollectionDecorator as __AbstractCollectionDecorator
-__AbstractCollectionDecorator = __AbstractCollectionDecorator
-from builtins import type
-import java.util.stream.Stream as __Stream
-__Stream = __Stream
-import java.util.Collection as Collection
-import org.apache.commons.collections4.bag.AbstractBagDecorator as __AbstractBagDecorator
-__AbstractBagDecorator = __AbstractBagDecorator
-import java.util.function.Consumer as Consumer
-import java.util.Collection as __Collection
-__Collection = __Collection
-import java.util.Spliterator as Spliterator
-import java.lang.Class as __Class
-__Class = __Class
-from builtins import bool
-from builtins import str
-from pyquantum_helper import override
-import java.lang.Object as __object
-import java.util.Iterator as __Iterator
-__Iterator = __Iterator
-import java.util.function.IntFunction as IntFunction
-import java.util.Set as __Set
-__Set = __Set
-from builtins import object
-import java.util.Iterator as Iterator
-from typing import List
-import java.util.Spliterator as __Spliterator
-__Spliterator = __Spliterator
-import java.util.Set as Set
-import java.lang.Long as __long
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.util.stream.Stream as Stream
-import java.lang.Integer as __int
-from builtins import int
-import java.lang.Iterable as __Iterable
-__Iterable = __Iterable
- 
-class AbstractBagDecorator(ABC):
-    """org.apache.commons.collections4.bag.AbstractBagDecorator"""
- 
-    @staticmethod
-    def __wrap(java_value: __AbstractBagDecorator) -> 'AbstractBagDecorator':
-        return AbstractBagDecorator(__dynamic__=java_value)
- 
-    #
-    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
-    #
-    @overload
-    def __init__(self, __dynamic__: __AbstractBagDecorator):
-        """
-        Dynamic initializer for AbstractBagDecorator.
-        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
- 
-        :param __dynamic__: The java object to wrap
-        """
-        self.__dict__ = __dynamic__.__dict__
-        self.__wrapper = __dynamic__
- 
-    def __getattr__(self, name: str):
-        return getattr(self.__wrapper, name)
- 
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
- 
-    def __delattr__(self, name: str):
-        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
- 
-    @override
-    @overload
-    def isEmpty(self) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.isEmpty()"""
-        return bool.__wrap(super(collection.AbstractCollectionDecorator, self).isEmpty())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def remove(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.remove(java.lang.Object)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).remove(arg0))
-
-    @overload
-    def remove(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractBagDecorator.remove(java.lang.Object,int)"""
-        return bool.__wrap(super(__AbstractBagDecorator, self).remove(arg0, __int.valueOf(arg1)))
-
-    @overload
-    def contains(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.contains(java.lang.Object)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).contains(arg0))
-
-    @override
-    @overload
-    def notifyAll(self):
-        """public final native void java.lang.Object.notifyAll()"""
-        super(object, self).notifyAll()
-
-    @override
-    @overload
-    def parallelStream(self) -> 'Stream':
-        """public default java.util.stream.Stream<E> java.util.Collection.parallelStream()"""
-        return 'Stream'.__wrap(super(Collection, self).parallelStream())
-
-    @override
-    @overload
-    def size(self) -> int:
-        """public int org.apache.commons.collections4.collection.AbstractCollectionDecorator.size()"""
-        return int.__wrap(super(collection.AbstractCollectionDecorator, self).size())
-
-    @overload
-    def add(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractBagDecorator.add(E,int)"""
-        return bool.__wrap(super(__AbstractBagDecorator, self).add(arg0, __int.valueOf(arg1)))
-
-    @override
-    @overload
-    def toArray(self) -> List[object]:
-        """public java.lang.Object[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray()"""
-        return List[object].__wrap(super(collection.AbstractCollectionDecorator, self).toArray())
-
-    @override
-    @overload
-    def notify(self):
-        """public final native void java.lang.Object.notify()"""
-        super(object, self).notify()
-
-    @overload
-    def add(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.add(E)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).add(arg0))
-
-    @overload
-    def removeAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).removeAll(arg0))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String org.apache.commons.collections4.collection.AbstractCollectionDecorator.toString()"""
-        return str.__wrap(super(collection.AbstractCollectionDecorator, self).toString())
-
-    @override
-    @overload
-    def spliterator(self) -> 'Spliterator':
-        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
-        return 'Spliterator'.__wrap(super(Collection, self).spliterator())
-
-    @override
-    @overload
-    def forEach(self, arg0: 'Consumer'):
-        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
-        super(__Iterable, self).forEach(arg0)
-
-    @overload
-    def getCount(self, arg0: object) -> int:
-        """public int org.apache.commons.collections4.bag.AbstractBagDecorator.getCount(java.lang.Object)"""
-        return int.__wrap(super(__AbstractBagDecorator, self).getCount(arg0))
-
-    @overload
-    def containsAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.containsAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).containsAll(arg0))
-
-    @override
-    @overload
-    def clear(self):
-        """public void org.apache.commons.collections4.collection.AbstractCollectionDecorator.clear()"""
-        super(collection.AbstractCollectionDecorator, self).clear()
-
-    @override
-    @overload
-    def stream(self) -> 'Stream':
-        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
-        return 'Stream'.__wrap(super(Collection, self).stream())
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractBagDecorator.equals(java.lang.Object)"""
-        return bool.__wrap(super(__AbstractBagDecorator, self).equals(arg0))
-
-    @override
-    @overload
-    def iterator(self) -> 'Iterator':
-        """public java.util.Iterator<E> org.apache.commons.collections4.collection.AbstractCollectionDecorator.iterator()"""
-        return 'Iterator'.__wrap(super(collection.AbstractCollectionDecorator, self).iterator())
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public int org.apache.commons.collections4.bag.AbstractBagDecorator.hashCode()"""
-        return int.__wrap(super(AbstractBagDecorator, self).hashCode())
-
-    @overload
-    def retainAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.retainAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).retainAll(arg0))
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @overload
-    def removeIf(self, arg0: 'Predicate') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeIf(java.util.function.Predicate<? super E>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).removeIf(arg0))
-
-    @overload
-    def addAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.addAll(java.util.Collection<? extends E>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).addAll(arg0))
-
-    @overload
-    def toArray(self, arg0: 'IntFunction') -> List[object]:
-        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
-        return List[object].__wrap(super(__Collection, self).toArray(arg0))
-
-    @overload
-    def toArray(self, arg0: 'Object') -> List[object]:
-        """public <T> T[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray(T[])"""
-        return List[object].__wrap(super(__collection.AbstractCollectionDecorator, self).toArray(arg0))
-
-    @override
-    @overload
-    def wait(self):
-        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
-        super(object, self).wait()
-
-    @override
-    @overload
-    def uniqueSet(self) -> 'Set':
-        """public java.util.Set<E> org.apache.commons.collections4.bag.AbstractBagDecorator.uniqueSet()"""
-        return 'Set'.__wrap(super(AbstractBagDecorator, self).uniqueSet()) 
- 
- 
-# CLASS: org.apache.commons.collections4.bag.HashBag
-import java.util.function.Predicate as Predicate
-from builtins import type
-import java.util.stream.Stream as __Stream
-__Stream = __Stream
-import java.util.Collection as Collection
-import java.util.function.Consumer as Consumer
-import java.util.Collection as __Collection
-__Collection = __Collection
-import java.util.Spliterator as Spliterator
-import java.lang.Class as __Class
-__Class = __Class
-import org.apache.commons.collections4.bag.AbstractMapBag as __AbstractMapBag
-__AbstractMapBag = __AbstractMapBag
-from builtins import bool
-import org.apache.commons.collections4.bag.HashBag as __HashBag
-__HashBag = __HashBag
-from builtins import str
-from pyquantum_helper import override
-import java.lang.Object as __object
-import java.util.Iterator as __Iterator
-__Iterator = __Iterator
-import java.util.function.IntFunction as IntFunction
-import java.util.Set as __Set
-__Set = __Set
-from builtins import object
-import java.util.Iterator as Iterator
-from typing import List
-import java.util.Spliterator as __Spliterator
-__Spliterator = __Spliterator
-import java.util.Set as Set
-import java.lang.Long as __long
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.util.stream.Stream as Stream
-import java.lang.Integer as __int
-from builtins import int
-import java.lang.Iterable as __Iterable
-__Iterable = __Iterable
- 
-class HashBag():
-    """org.apache.commons.collections4.bag.HashBag"""
- 
-    @staticmethod
-    def __wrap(java_value: __HashBag) -> 'HashBag':
-        return HashBag(__dynamic__=java_value)
- 
-    #
-    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
-    #
-    @overload
-    def __init__(self, __dynamic__: __HashBag):
-        """
-        Dynamic initializer for HashBag.
-        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
- 
-        :param __dynamic__: The java object to wrap
-        """
-        self.__dict__ = __dynamic__.__dict__
-        self.__wrapper = __dynamic__
- 
-    def __getattr__(self, name: str):
-        return getattr(self.__wrapper, name)
- 
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
- 
-    def __delattr__(self, name: str):
-        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
- 
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def size(self) -> int:
-        """public int org.apache.commons.collections4.bag.AbstractMapBag.size()"""
-        return int.__wrap(super(AbstractMapBag, self).size())
-
-    @overload
-    def removeAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.removeAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__AbstractMapBag, self).removeAll(arg0))
-
-    @override
-    @overload
-    def notifyAll(self):
-        """public final native void java.lang.Object.notifyAll()"""
-        super(object, self).notifyAll()
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.equals(java.lang.Object)"""
-        return bool.__wrap(super(__AbstractMapBag, self).equals(arg0))
-
-    @override
-    @overload
-    def iterator(self) -> 'Iterator':
-        """public java.util.Iterator<E> org.apache.commons.collections4.bag.AbstractMapBag.iterator()"""
-        return 'Iterator'.__wrap(super(AbstractMapBag, self).iterator())
-
-    @override
-    @overload
-    def parallelStream(self) -> 'Stream':
-        """public default java.util.stream.Stream<E> java.util.Collection.parallelStream()"""
-        return 'Stream'.__wrap(super(Collection, self).parallelStream())
-
-    @overload
-    def __init__(self, ):
-        """public org.apache.commons.collections4.bag.HashBag()"""
-        val = __HashBag()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @overload
-    def remove(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.remove(java.lang.Object,int)"""
-        return bool.__wrap(super(__AbstractMapBag, self).remove(arg0, __int.valueOf(arg1)))
-
-    @overload
-    def remove(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.remove(java.lang.Object)"""
-        return bool.__wrap(super(__AbstractMapBag, self).remove(arg0))
-
-    @overload
-    def add(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.add(E)"""
-        return bool.__wrap(super(__AbstractMapBag, self).add(arg0))
-
-    @override
-    @overload
-    def notify(self):
-        """public final native void java.lang.Object.notify()"""
-        super(object, self).notify()
-
-    @overload
-    def containsAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.containsAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__AbstractMapBag, self).containsAll(arg0))
-
-    @overload
-    def toArray(self, arg0: 'Object') -> List[object]:
-        """public <T> T[] org.apache.commons.collections4.bag.AbstractMapBag.toArray(T[])"""
-        return List[object].__wrap(super(__AbstractMapBag, self).toArray(arg0))
-
-    @override
-    @overload
-    def spliterator(self) -> 'Spliterator':
-        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
-        return 'Spliterator'.__wrap(super(Collection, self).spliterator())
-
-    @override
-    @overload
-    def forEach(self, arg0: 'Consumer'):
-        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
-        super(__Iterable, self).forEach(arg0)
-
-    @override
-    @overload
-    def clear(self):
-        """public void org.apache.commons.collections4.bag.AbstractMapBag.clear()"""
-        super(AbstractMapBag, self).clear()
-
-    @overload
-    def retainAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.retainAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__AbstractMapBag, self).retainAll(arg0))
-
-    @overload
-    def contains(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.contains(java.lang.Object)"""
-        return bool.__wrap(super(__AbstractMapBag, self).contains(arg0))
-
-    @overload
-    def add(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.add(E,int)"""
-        return bool.__wrap(super(__AbstractMapBag, self).add(arg0, __int.valueOf(arg1)))
-
-    @overload
-    def __init__(self):
-        """public org.apache.commons.collections4.bag.HashBag()"""
-        val = __HashBag()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @override
-    @overload
-    def stream(self) -> 'Stream':
-        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
-        return 'Stream'.__wrap(super(Collection, self).stream())
-
-    @overload
-    def addAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.addAll(java.util.Collection<? extends E>)"""
-        return bool.__wrap(super(__AbstractMapBag, self).addAll(arg0))
-
-    @override
-    @overload
-    def isEmpty(self) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.isEmpty()"""
-        return bool.__wrap(super(AbstractMapBag, self).isEmpty())
-
-    @override
-    @overload
-    def uniqueSet(self) -> 'Set':
-        """public java.util.Set<E> org.apache.commons.collections4.bag.AbstractMapBag.uniqueSet()"""
-        return 'Set'.__wrap(super(AbstractMapBag, self).uniqueSet())
-
-    @overload
-    def getCount(self, arg0: object) -> int:
-        """public int org.apache.commons.collections4.bag.AbstractMapBag.getCount(java.lang.Object)"""
-        return int.__wrap(super(__AbstractMapBag, self).getCount(arg0))
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def toArray(self) -> List[object]:
-        """public java.lang.Object[] org.apache.commons.collections4.bag.AbstractMapBag.toArray()"""
-        return List[object].__wrap(super(AbstractMapBag, self).toArray())
-
-    @overload
-    def toArray(self, arg0: 'IntFunction') -> List[object]:
-        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
-        return List[object].__wrap(super(__Collection, self).toArray(arg0))
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public int org.apache.commons.collections4.bag.AbstractMapBag.hashCode()"""
-        return int.__wrap(super(AbstractMapBag, self).hashCode())
-
-    @overload
-    def removeIf(self, arg0: 'Predicate') -> bool:
-        """public default boolean java.util.Collection.removeIf(java.util.function.Predicate<? super E>)"""
-        return bool.__wrap(super(__Collection, self).removeIf(arg0))
-
-    @override
-    @overload
-    def wait(self):
-        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
-        super(object, self).wait()
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String org.apache.commons.collections4.bag.AbstractMapBag.toString()"""
-        return str.__wrap(super(AbstractMapBag, self).toString())
-
-    @overload
-    def __init__(self, arg0: 'Collection'):
-        """public org.apache.commons.collections4.bag.HashBag(java.util.Collection<? extends E>)"""
-        val = __HashBag(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val 
- 
- 
-# CLASS: org.apache.commons.collections4.bag.CollectionSortedBag
-from pyquantum_helper import import_once as __import_once__
-import java.util.function.Predicate as Predicate
-import org.apache.commons.collections4.collection.AbstractCollectionDecorator as __AbstractCollectionDecorator
-__AbstractCollectionDecorator = __AbstractCollectionDecorator
-from builtins import type
-import java.util.stream.Stream as __Stream
-__Stream = __Stream
-import java.util.Collection as Collection
-import org.apache.commons.collections4.bag.AbstractBagDecorator as __AbstractBagDecorator
-__AbstractBagDecorator = __AbstractBagDecorator
-import java.util.function.Consumer as Consumer
-import java.util.Comparator as __Comparator
-__Comparator = __Comparator
-import org.apache.commons.collections4.SortedBag as __SortedBag
-__SortedBag = __SortedBag
-import java.util.Collection as __Collection
-__Collection = __Collection
-import java.util.Spliterator as Spliterator
-import java.lang.Class as __Class
-__Class = __Class
-from builtins import bool
-from builtins import str
-from pyquantum_helper import override
-import java.lang.Object as __object
-import java.util.Iterator as __Iterator
-__Iterator = __Iterator
-import java.util.function.IntFunction as IntFunction
-import java.util.Set as __Set
-__Set = __Set
-from builtins import object
-import java.util.Iterator as Iterator
-from typing import List
-import java.util.Spliterator as __Spliterator
-__Spliterator = __Spliterator
-try:
-    from pyapache import collections4
-except ImportError:
-    collections4 = __import_once__("pyapache.collections4")
-
-import java.util.Comparator as Comparator
-import java.util.Set as Set
-import java.lang.Long as __long
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.util.stream.Stream as Stream
-import org.apache.commons.collections4.bag.CollectionSortedBag as __CollectionSortedBag
-__CollectionSortedBag = __CollectionSortedBag
-import java.lang.Integer as __int
-import org.apache.commons.collections4.bag.AbstractSortedBagDecorator as __AbstractSortedBagDecorator
-__AbstractSortedBagDecorator = __AbstractSortedBagDecorator
-from builtins import int
-import java.lang.Iterable as __Iterable
-__Iterable = __Iterable
- 
-class CollectionSortedBag():
-    """org.apache.commons.collections4.bag.CollectionSortedBag"""
- 
-    @staticmethod
-    def __wrap(java_value: __CollectionSortedBag) -> 'CollectionSortedBag':
-        return CollectionSortedBag(__dynamic__=java_value)
- 
-    #
-    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
-    #
-    @overload
-    def __init__(self, __dynamic__: __CollectionSortedBag):
-        """
-        Dynamic initializer for CollectionSortedBag.
-        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
- 
-        :param __dynamic__: The java object to wrap
-        """
-        self.__dict__ = __dynamic__.__dict__
-        self.__wrapper = __dynamic__
- 
-    def __getattr__(self, name: str):
-        return getattr(self.__wrapper, name)
- 
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
- 
-    def __delattr__(self, name: str):
-        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
- 
-    @override
-    @overload
-    def isEmpty(self) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.isEmpty()"""
-        return bool.__wrap(super(collection.AbstractCollectionDecorator, self).isEmpty())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def containsAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.CollectionSortedBag.containsAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__CollectionSortedBag, self).containsAll(arg0))
-
-    @overload
-    def remove(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractBagDecorator.remove(java.lang.Object,int)"""
-        return bool.__wrap(super(__AbstractBagDecorator, self).remove(arg0, __int.valueOf(arg1)))
-
-    @overload
-    def contains(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.contains(java.lang.Object)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).contains(arg0))
-
-    @override
-    @overload
-    def notifyAll(self):
-        """public final native void java.lang.Object.notifyAll()"""
-        super(object, self).notifyAll()
-
-    @override
-    @overload
-    def parallelStream(self) -> 'Stream':
-        """public default java.util.stream.Stream<E> java.util.Collection.parallelStream()"""
-        return 'Stream'.__wrap(super(Collection, self).parallelStream())
-
-    @override
-    @overload
-    def size(self) -> int:
-        """public int org.apache.commons.collections4.collection.AbstractCollectionDecorator.size()"""
-        return int.__wrap(super(collection.AbstractCollectionDecorator, self).size())
-
-    @overload
-    def __init__(self, arg0: 'SortedBag'):
-        """public org.apache.commons.collections4.bag.CollectionSortedBag(org.apache.commons.collections4.SortedBag<E>)"""
-        val = __CollectionSortedBag(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @override
-    @overload
-    def comparator(self) -> 'Comparator':
-        """public java.util.Comparator<? super E> org.apache.commons.collections4.bag.AbstractSortedBagDecorator.comparator()"""
-        return 'Comparator'.__wrap(super(AbstractSortedBagDecorator, self).comparator())
-
-    @override
-    @overload
-    def toArray(self) -> List[object]:
-        """public java.lang.Object[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray()"""
-        return List[object].__wrap(super(collection.AbstractCollectionDecorator, self).toArray())
-
-    @overload
-    def add(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.CollectionSortedBag.add(E,int)"""
-        return bool.__wrap(super(__CollectionSortedBag, self).add(arg0, __int.valueOf(arg1)))
-
-    @override
-    @overload
-    def notify(self):
-        """public final native void java.lang.Object.notify()"""
-        super(object, self).notify()
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String org.apache.commons.collections4.collection.AbstractCollectionDecorator.toString()"""
-        return str.__wrap(super(collection.AbstractCollectionDecorator, self).toString())
-
-    @override
-    @overload
-    def spliterator(self) -> 'Spliterator':
-        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
-        return 'Spliterator'.__wrap(super(Collection, self).spliterator())
-
-    @override
-    @overload
-    def forEach(self, arg0: 'Consumer'):
-        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
-        super(__Iterable, self).forEach(arg0)
-
-    @overload
-    def remove(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.CollectionSortedBag.remove(java.lang.Object)"""
-        return bool.__wrap(super(__CollectionSortedBag, self).remove(arg0))
-
-    @overload
-    def getCount(self, arg0: object) -> int:
-        """public int org.apache.commons.collections4.bag.AbstractBagDecorator.getCount(java.lang.Object)"""
-        return int.__wrap(super(__AbstractBagDecorator, self).getCount(arg0))
-
-    @overload
-    def removeAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.CollectionSortedBag.removeAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__CollectionSortedBag, self).removeAll(arg0))
-
-    @overload
-    def addAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.CollectionSortedBag.addAll(java.util.Collection<? extends E>)"""
-        return bool.__wrap(super(__CollectionSortedBag, self).addAll(arg0))
-
-    @override
-    @overload
-    def clear(self):
-        """public void org.apache.commons.collections4.collection.AbstractCollectionDecorator.clear()"""
-        super(collection.AbstractCollectionDecorator, self).clear()
-
-    @override
-    @overload
-    def stream(self) -> 'Stream':
-        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
-        return 'Stream'.__wrap(super(Collection, self).stream())
-
-    @override
-    @overload
-    def first(self) -> object:
-        """public E org.apache.commons.collections4.bag.AbstractSortedBagDecorator.first()"""
-        return object.__wrap(super(AbstractSortedBagDecorator, self).first())
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractBagDecorator.equals(java.lang.Object)"""
-        return bool.__wrap(super(__AbstractBagDecorator, self).equals(arg0))
-
-    @override
-    @overload
-    def last(self) -> object:
-        """public E org.apache.commons.collections4.bag.AbstractSortedBagDecorator.last()"""
-        return object.__wrap(super(AbstractSortedBagDecorator, self).last())
-
-    @override
-    @overload
-    def iterator(self) -> 'Iterator':
-        """public java.util.Iterator<E> org.apache.commons.collections4.collection.AbstractCollectionDecorator.iterator()"""
-        return 'Iterator'.__wrap(super(collection.AbstractCollectionDecorator, self).iterator())
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public int org.apache.commons.collections4.bag.AbstractBagDecorator.hashCode()"""
-        return int.__wrap(super(AbstractBagDecorator, self).hashCode())
-
-    @staticmethod
-    @overload
-    def collectionSortedBag(arg0: 'SortedBag') -> 'collections4.SortedBag':
-        """public static <E> org.apache.commons.collections4.SortedBag<E> org.apache.commons.collections4.bag.CollectionSortedBag.collectionSortedBag(org.apache.commons.collections4.SortedBag<E>)"""
-        return collections4.SortedBag.__wrap(__CollectionSortedBag.collectionSortedBag(arg0))
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @overload
-    def removeIf(self, arg0: 'Predicate') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeIf(java.util.function.Predicate<? super E>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).removeIf(arg0))
-
-    @overload
-    def toArray(self, arg0: 'IntFunction') -> List[object]:
-        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
-        return List[object].__wrap(super(__Collection, self).toArray(arg0))
-
-    @overload
-    def toArray(self, arg0: 'Object') -> List[object]:
-        """public <T> T[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray(T[])"""
-        return List[object].__wrap(super(__collection.AbstractCollectionDecorator, self).toArray(arg0))
-
-    @override
-    @overload
-    def wait(self):
-        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
-        super(object, self).wait()
-
-    @overload
-    def retainAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.CollectionSortedBag.retainAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__CollectionSortedBag, self).retainAll(arg0))
-
-    @overload
-    def add(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.CollectionSortedBag.add(E)"""
-        return bool.__wrap(super(__CollectionSortedBag, self).add(arg0))
-
-    @override
-    @overload
-    def uniqueSet(self) -> 'Set':
-        """public java.util.Set<E> org.apache.commons.collections4.bag.AbstractBagDecorator.uniqueSet()"""
-        return 'Set'.__wrap(super(AbstractBagDecorator, self).uniqueSet()) 
- 
- 
-# CLASS: org.apache.commons.collections4.bag.SynchronizedSortedBag
-from pyquantum_helper import import_once as __import_once__
-import java.util.function.Predicate as Predicate
-import org.apache.commons.collections4.bag.SynchronizedSortedBag as __SynchronizedSortedBag
-__SynchronizedSortedBag = __SynchronizedSortedBag
-from builtins import type
-import java.util.stream.Stream as __Stream
-__Stream = __Stream
-import java.util.Collection as Collection
-try:
-    from pyapache.collections4 import collection
-except ImportError:
-    collection = __import_once__("pyapache.collections4.collection")
-
-import java.util.function.Consumer as Consumer
-import java.util.Comparator as __Comparator
-__Comparator = __Comparator
-import java.util.Collection as __Collection
-__Collection = __Collection
-import java.util.Spliterator as Spliterator
-import java.lang.Class as __Class
-__Class = __Class
-from builtins import bool
-import org.apache.commons.collections4.collection.SynchronizedCollection as __SynchronizedCollection
-__SynchronizedCollection = __SynchronizedCollection
-from builtins import str
-from pyquantum_helper import override
-import java.lang.Object as __object
-import java.util.Iterator as __Iterator
-__Iterator = __Iterator
-import java.util.function.IntFunction as IntFunction
-import java.util.Set as __Set
-__Set = __Set
-import org.apache.commons.collections4.bag.SynchronizedBag as __SynchronizedBag
-__SynchronizedBag = __SynchronizedBag
-from builtins import object
-import java.util.Iterator as Iterator
-from typing import List
-import java.util.Spliterator as __Spliterator
-__Spliterator = __Spliterator
-try:
-    from pyapache import collections4
-except ImportError:
-    collections4 = __import_once__("pyapache.collections4")
-
-import java.util.Comparator as Comparator
-import java.util.Set as Set
-import java.lang.Long as __long
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.util.stream.Stream as Stream
-import java.lang.Integer as __int
-from builtins import int
-import java.lang.Iterable as __Iterable
-__Iterable = __Iterable
- 
-class SynchronizedSortedBag():
-    """org.apache.commons.collections4.bag.SynchronizedSortedBag"""
- 
-    @staticmethod
-    def __wrap(java_value: __SynchronizedSortedBag) -> 'SynchronizedSortedBag':
-        return SynchronizedSortedBag(__dynamic__=java_value)
- 
-    #
-    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
-    #
-    @overload
-    def __init__(self, __dynamic__: __SynchronizedSortedBag):
-        """
-        Dynamic initializer for SynchronizedSortedBag.
-        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
- 
-        :param __dynamic__: The java object to wrap
-        """
-        self.__dict__ = __dynamic__.__dict__
-        self.__wrapper = __dynamic__
- 
-    def __getattr__(self, name: str):
-        return getattr(self.__wrapper, name)
- 
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
- 
-    def __delattr__(self, name: str):
-        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
- 
-    @overload
-    def contains(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.contains(java.lang.Object)"""
-        return bool.__wrap(super(__collection.SynchronizedCollection, self).contains(arg0))
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String org.apache.commons.collections4.collection.SynchronizedCollection.toString()"""
-        return str.__wrap(super(collection.SynchronizedCollection, self).toString())
-
-    @staticmethod
-    @overload
-    def synchronizedBag(arg0: 'Bag') -> 'SynchronizedBag':
-        """public static <E> org.apache.commons.collections4.bag.SynchronizedBag<E> org.apache.commons.collections4.bag.SynchronizedBag.synchronizedBag(org.apache.commons.collections4.Bag<E>)"""
-        return SynchronizedBag.__wrap(__SynchronizedBag.synchronizedBag(arg0))
-
-    @override
-    @overload
-    def notifyAll(self):
-        """public final native void java.lang.Object.notifyAll()"""
-        super(object, self).notifyAll()
+        """public boolean org.apache.commons.collections4.bag.SynchronizedBag.add(E,int)"""
+        return bool._wrap(super(_SynchronizedBag, self).add(arg0, _int.valueOf(arg1)))
 
     @override
     @overload
@@ -2102,37 +119,43 @@ class SynchronizedSortedBag():
         super(collection.SynchronizedCollection, self).clear()
 
     @overload
-    def containsAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.containsAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.SynchronizedCollection, self).containsAll(arg0))
+    def removeAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.removeAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.SynchronizedCollection, self).removeAll(arg0))
 
     @override
     @overload
     def parallelStream(self) -> 'Stream':
         """public default java.util.stream.Stream<E> java.util.Collection.parallelStream()"""
-        return 'Stream'.__wrap(super(Collection, self).parallelStream())
-
-    @override
-    @overload
-    def toArray(self) -> List[object]:
-        """public java.lang.Object[] org.apache.commons.collections4.collection.SynchronizedCollection.toArray()"""
-        return List[object].__wrap(super(collection.SynchronizedCollection, self).toArray())
-
-    @override
-    @overload
-    def last(self) -> object:
-        """public synchronized E org.apache.commons.collections4.bag.SynchronizedSortedBag.last()"""
-        return object.__wrap(super(SynchronizedSortedBag, self).last())
+        return 'Stream'._wrap(super(Collection, self).parallelStream())
 
     @overload
-    def remove(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.remove(java.lang.Object)"""
-        return bool.__wrap(super(__collection.SynchronizedCollection, self).remove(arg0))
+    def contains(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.contains(java.lang.Object)"""
+        return bool._wrap(super(_collection.SynchronizedCollection, self).contains(arg0))
 
     @overload
     def retainAll(self, arg0: 'Collection') -> bool:
         """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.retainAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.SynchronizedCollection, self).retainAll(arg0))
+        return bool._wrap(super(_collection.SynchronizedCollection, self).retainAll(arg0))
+
+    @staticmethod
+    @overload
+    def synchronizedBag(arg0: 'Bag') -> 'SynchronizedBag':
+        """public static <E> org.apache.commons.collections4.bag.SynchronizedBag<E> org.apache.commons.collections4.bag.SynchronizedBag.synchronizedBag(org.apache.commons.collections4.Bag<E>)"""
+        return SynchronizedBag._wrap(_SynchronizedBag.synchronizedBag(arg0))
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @override
+    @overload
+    def spliterator(self) -> 'Spliterator':
+        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
+        return 'Spliterator'._wrap(super(Collection, self).spliterator())
 
     @override
     @overload
@@ -2140,382 +163,93 @@ class SynchronizedSortedBag():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @override
     @overload
-    def iterator(self) -> 'Iterator':
-        """public java.util.Iterator<E> org.apache.commons.collections4.collection.SynchronizedCollection.iterator()"""
-        return 'Iterator'.__wrap(super(collection.SynchronizedCollection, self).iterator())
-
-    @staticmethod
-    @overload
-    def synchronizedSortedBag(arg0: 'SortedBag') -> 'SynchronizedSortedBag':
-        """public static <E> org.apache.commons.collections4.bag.SynchronizedSortedBag<E> org.apache.commons.collections4.bag.SynchronizedSortedBag.synchronizedSortedBag(org.apache.commons.collections4.SortedBag<E>)"""
-        return SynchronizedSortedBag.__wrap(__SynchronizedSortedBag.synchronizedSortedBag(arg0))
-
-    @override
-    @overload
-    def uniqueSet(self) -> 'Set':
-        """public java.util.Set<E> org.apache.commons.collections4.bag.SynchronizedBag.uniqueSet()"""
-        return 'Set'.__wrap(super(SynchronizedBag, self).uniqueSet())
+    def remove(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.remove(java.lang.Object)"""
+        return bool._wrap(super(_collection.SynchronizedCollection, self).remove(arg0))
 
     @overload
     def removeIf(self, arg0: 'Predicate') -> bool:
         """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.removeIf(java.util.function.Predicate<? super E>)"""
-        return bool.__wrap(super(__collection.SynchronizedCollection, self).removeIf(arg0))
-
-    @override
-    @overload
-    def spliterator(self) -> 'Spliterator':
-        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
-        return 'Spliterator'.__wrap(super(Collection, self).spliterator())
-
-    @override
-    @overload
-    def forEach(self, arg0: 'Consumer'):
-        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
-        super(__Iterable, self).forEach(arg0)
-
-    @overload
-    def getCount(self, arg0: object) -> int:
-        """public int org.apache.commons.collections4.bag.SynchronizedBag.getCount(java.lang.Object)"""
-        return int.__wrap(super(__SynchronizedBag, self).getCount(arg0))
-
-    @overload
-    def add(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.add(E)"""
-        return bool.__wrap(super(__collection.SynchronizedCollection, self).add(arg0))
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.SynchronizedBag.equals(java.lang.Object)"""
-        return bool.__wrap(super(__SynchronizedBag, self).equals(arg0))
-
-    @overload
-    def toArray(self, arg0: 'Object') -> List[object]:
-        """public <T> T[] org.apache.commons.collections4.collection.SynchronizedCollection.toArray(T[])"""
-        return List[object].__wrap(super(__collection.SynchronizedCollection, self).toArray(arg0))
-
-    @overload
-    def removeAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.removeAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.SynchronizedCollection, self).removeAll(arg0))
-
-    @override
-    @overload
-    def stream(self) -> 'Stream':
-        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
-        return 'Stream'.__wrap(super(Collection, self).stream())
-
-    @override
-    @overload
-    def first(self) -> object:
-        """public synchronized E org.apache.commons.collections4.bag.SynchronizedSortedBag.first()"""
-        return object.__wrap(super(SynchronizedSortedBag, self).first())
-
-    @override
-    @overload
-    def comparator(self) -> 'Comparator':
-        """public synchronized java.util.Comparator<? super E> org.apache.commons.collections4.bag.SynchronizedSortedBag.comparator()"""
-        return 'Comparator'.__wrap(super(SynchronizedSortedBag, self).comparator())
-
-    @overload
-    def add(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.SynchronizedBag.add(E,int)"""
-        return bool.__wrap(super(__SynchronizedBag, self).add(arg0, __int.valueOf(arg1)))
-
-    @override
-    @overload
-    def size(self) -> int:
-        """public int org.apache.commons.collections4.collection.SynchronizedCollection.size()"""
-        return int.__wrap(super(collection.SynchronizedCollection, self).size())
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @staticmethod
-    @overload
-    def synchronizedCollection(arg0: 'Collection') -> 'collection.SynchronizedCollection':
-        """public static <T> org.apache.commons.collections4.collection.SynchronizedCollection<T> org.apache.commons.collections4.collection.SynchronizedCollection.synchronizedCollection(java.util.Collection<T>)"""
-        return collection.SynchronizedCollection.__wrap(__SynchronizedCollection.synchronizedCollection(arg0))
-
-    @overload
-    def toArray(self, arg0: 'IntFunction') -> List[object]:
-        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
-        return List[object].__wrap(super(__Collection, self).toArray(arg0))
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public int org.apache.commons.collections4.bag.SynchronizedBag.hashCode()"""
-        return int.__wrap(super(SynchronizedBag, self).hashCode())
-
-    @overload
-    def addAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.addAll(java.util.Collection<? extends E>)"""
-        return bool.__wrap(super(__collection.SynchronizedCollection, self).addAll(arg0))
-
-    @overload
-    def remove(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.SynchronizedBag.remove(java.lang.Object,int)"""
-        return bool.__wrap(super(__SynchronizedBag, self).remove(arg0, __int.valueOf(arg1)))
+        return bool._wrap(super(_collection.SynchronizedCollection, self).removeIf(arg0))
 
     @override
     @overload
     def isEmpty(self) -> bool:
         """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.isEmpty()"""
-        return bool.__wrap(super(collection.SynchronizedCollection, self).isEmpty())
-
-    @override
-    @overload
-    def wait(self):
-        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
-        super(object, self).wait() 
- 
- 
-# CLASS: org.apache.commons.collections4.bag.AbstractMapBag
-import java.util.function.Predicate as Predicate
-from builtins import type
-import java.util.stream.Stream as __Stream
-__Stream = __Stream
-import java.util.Collection as Collection
-import java.util.function.Consumer as Consumer
-import java.util.Collection as __Collection
-__Collection = __Collection
-import java.util.Spliterator as Spliterator
-import java.lang.Class as __Class
-__Class = __Class
-import org.apache.commons.collections4.bag.AbstractMapBag as __AbstractMapBag
-__AbstractMapBag = __AbstractMapBag
-from builtins import bool
-from builtins import str
-from pyquantum_helper import override
-import java.lang.Object as __object
-import java.util.Iterator as __Iterator
-__Iterator = __Iterator
-import java.util.function.IntFunction as IntFunction
-import java.util.Set as __Set
-__Set = __Set
-from builtins import object
-import java.util.Iterator as Iterator
-from typing import List
-import java.util.Spliterator as __Spliterator
-__Spliterator = __Spliterator
-import java.util.Set as Set
-import java.lang.Long as __long
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.util.stream.Stream as Stream
-import java.lang.Integer as __int
-from builtins import int
-import java.lang.Iterable as __Iterable
-__Iterable = __Iterable
- 
-class AbstractMapBag(ABC):
-    """org.apache.commons.collections4.bag.AbstractMapBag"""
- 
-    @staticmethod
-    def __wrap(java_value: __AbstractMapBag) -> 'AbstractMapBag':
-        return AbstractMapBag(__dynamic__=java_value)
- 
-    #
-    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
-    #
-    @overload
-    def __init__(self, __dynamic__: __AbstractMapBag):
-        """
-        Dynamic initializer for AbstractMapBag.
-        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
- 
-        :param __dynamic__: The java object to wrap
-        """
-        self.__dict__ = __dynamic__.__dict__
-        self.__wrapper = __dynamic__
- 
-    def __getattr__(self, name: str):
-        return getattr(self.__wrapper, name)
- 
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
- 
-    def __delattr__(self, name: str):
-        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
- 
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def size(self) -> int:
-        """public int org.apache.commons.collections4.bag.AbstractMapBag.size()"""
-        return int.__wrap(super(AbstractMapBag, self).size())
+        return bool._wrap(super(collection.SynchronizedCollection, self).isEmpty())
 
     @overload
-    def removeAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.removeAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__AbstractMapBag, self).removeAll(arg0))
-
-    @override
-    @overload
-    def notifyAll(self):
-        """public final native void java.lang.Object.notifyAll()"""
-        super(object, self).notifyAll()
+    def add(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.add(E)"""
+        return bool._wrap(super(_collection.SynchronizedCollection, self).add(arg0))
 
     @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.equals(java.lang.Object)"""
-        return bool.__wrap(super(__AbstractMapBag, self).equals(arg0))
+    def toArray(self, arg0: 'Object') -> List[object]:
+        """public <T> T[] org.apache.commons.collections4.collection.SynchronizedCollection.toArray(T[])"""
+        return List[object]._wrap(super(_collection.SynchronizedCollection, self).toArray(arg0))
 
     @override
     @overload
     def iterator(self) -> 'Iterator':
-        """public java.util.Iterator<E> org.apache.commons.collections4.bag.AbstractMapBag.iterator()"""
-        return 'Iterator'.__wrap(super(AbstractMapBag, self).iterator())
-
-    @override
-    @overload
-    def parallelStream(self) -> 'Stream':
-        """public default java.util.stream.Stream<E> java.util.Collection.parallelStream()"""
-        return 'Stream'.__wrap(super(Collection, self).parallelStream())
-
-    @overload
-    def remove(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.remove(java.lang.Object,int)"""
-        return bool.__wrap(super(__AbstractMapBag, self).remove(arg0, __int.valueOf(arg1)))
-
-    @overload
-    def remove(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.remove(java.lang.Object)"""
-        return bool.__wrap(super(__AbstractMapBag, self).remove(arg0))
-
-    @overload
-    def add(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.add(E)"""
-        return bool.__wrap(super(__AbstractMapBag, self).add(arg0))
-
-    @override
-    @overload
-    def notify(self):
-        """public final native void java.lang.Object.notify()"""
-        super(object, self).notify()
+        """public java.util.Iterator<E> org.apache.commons.collections4.collection.SynchronizedCollection.iterator()"""
+        return 'Iterator'._wrap(super(collection.SynchronizedCollection, self).iterator())
 
     @overload
     def containsAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.containsAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__AbstractMapBag, self).containsAll(arg0))
-
-    @overload
-    def toArray(self, arg0: 'Object') -> List[object]:
-        """public <T> T[] org.apache.commons.collections4.bag.AbstractMapBag.toArray(T[])"""
-        return List[object].__wrap(super(__AbstractMapBag, self).toArray(arg0))
+        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.containsAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.SynchronizedCollection, self).containsAll(arg0))
 
     @override
     @overload
-    def spliterator(self) -> 'Spliterator':
-        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
-        return 'Spliterator'.__wrap(super(Collection, self).spliterator())
+    def uniqueSet(self) -> 'Set':
+        """public java.util.Set<E> org.apache.commons.collections4.bag.SynchronizedBag.uniqueSet()"""
+        return 'Set'._wrap(super(SynchronizedBag, self).uniqueSet())
 
     @override
     @overload
-    def forEach(self, arg0: 'Consumer'):
-        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
-        super(__Iterable, self).forEach(arg0)
-
-    @override
-    @overload
-    def clear(self):
-        """public void org.apache.commons.collections4.bag.AbstractMapBag.clear()"""
-        super(AbstractMapBag, self).clear()
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @overload
-    def retainAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.retainAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__AbstractMapBag, self).retainAll(arg0))
+    def equals(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.SynchronizedBag.equals(java.lang.Object)"""
+        return bool._wrap(super(_SynchronizedBag, self).equals(arg0))
 
     @overload
-    def contains(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.contains(java.lang.Object)"""
-        return bool.__wrap(super(__AbstractMapBag, self).contains(arg0))
-
-    @overload
-    def add(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.add(E,int)"""
-        return bool.__wrap(super(__AbstractMapBag, self).add(arg0, __int.valueOf(arg1)))
+    def toArray(self, arg0: 'IntFunction') -> List[object]:
+        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
+        return List[object]._wrap(super(_Collection, self).toArray(arg0))
 
     @override
     @overload
     def stream(self) -> 'Stream':
         """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
-        return 'Stream'.__wrap(super(Collection, self).stream())
-
-    @overload
-    def addAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.addAll(java.util.Collection<? extends E>)"""
-        return bool.__wrap(super(__AbstractMapBag, self).addAll(arg0))
+        return 'Stream'._wrap(super(Collection, self).stream())
 
     @override
     @overload
-    def isEmpty(self) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.isEmpty()"""
-        return bool.__wrap(super(AbstractMapBag, self).isEmpty())
-
-    @override
-    @overload
-    def uniqueSet(self) -> 'Set':
-        """public java.util.Set<E> org.apache.commons.collections4.bag.AbstractMapBag.uniqueSet()"""
-        return 'Set'.__wrap(super(AbstractMapBag, self).uniqueSet())
-
-    @overload
-    def getCount(self, arg0: object) -> int:
-        """public int org.apache.commons.collections4.bag.AbstractMapBag.getCount(java.lang.Object)"""
-        return int.__wrap(super(__AbstractMapBag, self).getCount(arg0))
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def hashCode(self) -> int:
+        """public int org.apache.commons.collections4.bag.SynchronizedBag.hashCode()"""
+        return int._wrap(super(SynchronizedBag, self).hashCode())
 
     @override
     @overload
     def getClass(self) -> 'type.Class':
         """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
-    def toArray(self) -> List[object]:
-        """public java.lang.Object[] org.apache.commons.collections4.bag.AbstractMapBag.toArray()"""
-        return List[object].__wrap(super(AbstractMapBag, self).toArray())
+    def size(self) -> int:
+        """public int org.apache.commons.collections4.collection.SynchronizedCollection.size()"""
+        return int._wrap(super(collection.SynchronizedCollection, self).size())
 
     @overload
-    def toArray(self, arg0: 'IntFunction') -> List[object]:
-        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
-        return List[object].__wrap(super(__Collection, self).toArray(arg0))
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public int org.apache.commons.collections4.bag.AbstractMapBag.hashCode()"""
-        return int.__wrap(super(AbstractMapBag, self).hashCode())
-
-    @overload
-    def removeIf(self, arg0: 'Predicate') -> bool:
-        """public default boolean java.util.Collection.removeIf(java.util.function.Predicate<? super E>)"""
-        return bool.__wrap(super(__Collection, self).removeIf(arg0))
+    def getCount(self, arg0: object) -> int:
+        """public int org.apache.commons.collections4.bag.SynchronizedBag.getCount(java.lang.Object)"""
+        return int._wrap(super(_SynchronizedBag, self).getCount(arg0))
 
     @override
     @overload
@@ -2526,119 +260,409 @@ class AbstractMapBag(ABC):
     @override
     @overload
     def toString(self) -> str:
-        """public java.lang.String org.apache.commons.collections4.bag.AbstractMapBag.toString()"""
-        return str.__wrap(super(AbstractMapBag, self).toString()) 
+        """public java.lang.String org.apache.commons.collections4.collection.SynchronizedCollection.toString()"""
+        return str._wrap(super(collection.SynchronizedCollection, self).toString())
+
+    @overload
+    def addAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.addAll(java.util.Collection<? extends E>)"""
+        return bool._wrap(super(_collection.SynchronizedCollection, self).addAll(arg0))
+
+    @staticmethod
+    @overload
+    def synchronizedCollection(arg0: 'Collection') -> 'collection.SynchronizedCollection':
+        """public static <T> org.apache.commons.collections4.collection.SynchronizedCollection<T> org.apache.commons.collections4.collection.SynchronizedCollection.synchronizedCollection(java.util.Collection<T>)"""
+        return collection.SynchronizedCollection._wrap(_SynchronizedCollection.synchronizedCollection(arg0))
+
+    @override
+    @overload
+    def forEach(self, arg0: 'Consumer'):
+        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
+        super(_Iterable, self).forEach(arg0)
+
  
  
-# CLASS: org.apache.commons.collections4.bag.CollectionBag
-from pyquantum_helper import import_once as __import_once__
+ 
+# CLASS: org.apache.commons.collections4.bag.SynchronizedBag
+from pyquantum_helper import import_once as _import_once
 import java.util.function.Predicate as Predicate
-import org.apache.commons.collections4.bag.CollectionBag as __CollectionBag
-__CollectionBag = __CollectionBag
-import org.apache.commons.collections4.collection.AbstractCollectionDecorator as __AbstractCollectionDecorator
-__AbstractCollectionDecorator = __AbstractCollectionDecorator
+import java.lang.Object as _Object
+_Object = _Object
 from builtins import type
-import java.util.stream.Stream as __Stream
-__Stream = __Stream
+import org.apache.commons.collections4.bag.SynchronizedBag as _SynchronizedBag
+_SynchronizedBag = _SynchronizedBag
 import java.util.Collection as Collection
-import org.apache.commons.collections4.bag.AbstractBagDecorator as __AbstractBagDecorator
-__AbstractBagDecorator = __AbstractBagDecorator
+try:
+    from pyapache.collections4 import collection
+except ImportError:
+    collection = _import_once("pyapache.collections4.collection")
+
+import java.util.Set as _Set
+_Set = _Set
 import java.util.function.Consumer as Consumer
-import java.util.Collection as __Collection
-__Collection = __Collection
 import java.util.Spliterator as Spliterator
-import java.lang.Class as __Class
-__Class = __Class
+import java.util.Iterator as _Iterator
+_Iterator = _Iterator
 from builtins import bool
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
-import java.util.Iterator as __Iterator
-__Iterator = __Iterator
 import java.util.function.IntFunction as IntFunction
-import java.util.Set as __Set
-__Set = __Set
-import org.apache.commons.collections4.Bag as __Bag
-__Bag = __Bag
+import java.lang.Object as _object
+import java.util.Spliterator as _Spliterator
+_Spliterator = _Spliterator
+import java.lang.String as _String
+_String = _String
 from builtins import object
 import java.util.Iterator as Iterator
 from typing import List
-import java.util.Spliterator as __Spliterator
-__Spliterator = __Spliterator
 try:
     from pyapache import collections4
 except ImportError:
-    collections4 = __import_once__("pyapache.collections4")
+    collections4 = _import_once("pyapache.collections4")
 
 import java.util.Set as Set
-import java.lang.Long as __long
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
+import java.util.Collection as _Collection
+_Collection = _Collection
+import java.lang.Integer as _int
+import java.lang.Iterable as _Iterable
+_Iterable = _Iterable
+import java.util.stream.Stream as _Stream
+_Stream = _Stream
+import org.apache.commons.collections4.collection.SynchronizedCollection as _SynchronizedCollection
+_SynchronizedCollection = _SynchronizedCollection
 import java.util.stream.Stream as Stream
-import java.lang.Integer as __int
+import java.lang.Long as _long
 from builtins import int
-import java.lang.Iterable as __Iterable
-__Iterable = __Iterable
+import java.lang.Class as _Class
+_Class = _Class
  
-class CollectionBag():
-    """org.apache.commons.collections4.bag.CollectionBag"""
+class SynchronizedBag():
+    """org.apache.commons.collections4.bag.SynchronizedBag"""
  
     @staticmethod
-    def __wrap(java_value: __CollectionBag) -> 'CollectionBag':
-        return CollectionBag(__dynamic__=java_value)
+    def _wrap(java_value: _SynchronizedBag) -> 'SynchronizedBag':
+        return SynchronizedBag(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __CollectionBag):
+    def __init__(self, __dynamic__: _SynchronizedBag):
         """
-        Dynamic initializer for CollectionBag.
+        Dynamic initializer for SynchronizedBag.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_SynchronizedBag__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_SynchronizedBag__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
+    def toArray(self) -> List[object]:
+        """public java.lang.Object[] org.apache.commons.collections4.collection.SynchronizedCollection.toArray()"""
+        return List[object]._wrap(super(collection.SynchronizedCollection, self).toArray())
+
+    @overload
+    def remove(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.SynchronizedBag.remove(java.lang.Object,int)"""
+        return bool._wrap(super(_SynchronizedBag, self).remove(arg0, _int.valueOf(arg1)))
+
+    @override
+    @overload
+    def notifyAll(self):
+        """public final native void java.lang.Object.notifyAll()"""
+        super(object, self).notifyAll()
+
+    @overload
+    def add(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.SynchronizedBag.add(E,int)"""
+        return bool._wrap(super(_SynchronizedBag, self).add(arg0, _int.valueOf(arg1)))
+
+    @override
+    @overload
+    def clear(self):
+        """public void org.apache.commons.collections4.collection.SynchronizedCollection.clear()"""
+        super(collection.SynchronizedCollection, self).clear()
+
+    @overload
+    def removeAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.removeAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.SynchronizedCollection, self).removeAll(arg0))
+
+    @override
+    @overload
+    def parallelStream(self) -> 'Stream':
+        """public default java.util.stream.Stream<E> java.util.Collection.parallelStream()"""
+        return 'Stream'._wrap(super(Collection, self).parallelStream())
+
+    @overload
+    def contains(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.contains(java.lang.Object)"""
+        return bool._wrap(super(_collection.SynchronizedCollection, self).contains(arg0))
+
+    @overload
+    def retainAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.retainAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.SynchronizedCollection, self).retainAll(arg0))
+
+    @staticmethod
+    @overload
+    def synchronizedBag(arg0: 'Bag') -> 'SynchronizedBag':
+        """public static <E> org.apache.commons.collections4.bag.SynchronizedBag<E> org.apache.commons.collections4.bag.SynchronizedBag.synchronizedBag(org.apache.commons.collections4.Bag<E>)"""
+        return SynchronizedBag._wrap(_SynchronizedBag.synchronizedBag(arg0))
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @override
+    @overload
+    def spliterator(self) -> 'Spliterator':
+        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
+        return 'Spliterator'._wrap(super(Collection, self).spliterator())
+
+    @override
+    @overload
+    def notify(self):
+        """public final native void java.lang.Object.notify()"""
+        super(object, self).notify()
+
+    @overload
+    def remove(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.remove(java.lang.Object)"""
+        return bool._wrap(super(_collection.SynchronizedCollection, self).remove(arg0))
+
+    @overload
+    def removeIf(self, arg0: 'Predicate') -> bool:
+        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.removeIf(java.util.function.Predicate<? super E>)"""
+        return bool._wrap(super(_collection.SynchronizedCollection, self).removeIf(arg0))
+
+    @override
+    @overload
     def isEmpty(self) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.isEmpty()"""
-        return bool.__wrap(super(collection.AbstractCollectionDecorator, self).isEmpty())
+        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.isEmpty()"""
+        return bool._wrap(super(collection.SynchronizedCollection, self).isEmpty())
+
+    @overload
+    def add(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.add(E)"""
+        return bool._wrap(super(_collection.SynchronizedCollection, self).add(arg0))
+
+    @overload
+    def toArray(self, arg0: 'Object') -> List[object]:
+        """public <T> T[] org.apache.commons.collections4.collection.SynchronizedCollection.toArray(T[])"""
+        return List[object]._wrap(super(_collection.SynchronizedCollection, self).toArray(arg0))
+
+    @override
+    @overload
+    def iterator(self) -> 'Iterator':
+        """public java.util.Iterator<E> org.apache.commons.collections4.collection.SynchronizedCollection.iterator()"""
+        return 'Iterator'._wrap(super(collection.SynchronizedCollection, self).iterator())
+
+    @overload
+    def containsAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.containsAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.SynchronizedCollection, self).containsAll(arg0))
+
+    @override
+    @overload
+    def uniqueSet(self) -> 'Set':
+        """public java.util.Set<E> org.apache.commons.collections4.bag.SynchronizedBag.uniqueSet()"""
+        return 'Set'._wrap(super(SynchronizedBag, self).uniqueSet())
 
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @overload
-    def remove(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractBagDecorator.remove(java.lang.Object,int)"""
-        return bool.__wrap(super(__AbstractBagDecorator, self).remove(arg0, __int.valueOf(arg1)))
+    def equals(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.SynchronizedBag.equals(java.lang.Object)"""
+        return bool._wrap(super(_SynchronizedBag, self).equals(arg0))
 
     @overload
-    def contains(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.contains(java.lang.Object)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).contains(arg0))
+    def toArray(self, arg0: 'IntFunction') -> List[object]:
+        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
+        return List[object]._wrap(super(_Collection, self).toArray(arg0))
+
+    @override
+    @overload
+    def stream(self) -> 'Stream':
+        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
+        return 'Stream'._wrap(super(Collection, self).stream())
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public int org.apache.commons.collections4.bag.SynchronizedBag.hashCode()"""
+        return int._wrap(super(SynchronizedBag, self).hashCode())
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
+    def size(self) -> int:
+        """public int org.apache.commons.collections4.collection.SynchronizedCollection.size()"""
+        return int._wrap(super(collection.SynchronizedCollection, self).size())
+
+    @overload
+    def getCount(self, arg0: object) -> int:
+        """public int org.apache.commons.collections4.bag.SynchronizedBag.getCount(java.lang.Object)"""
+        return int._wrap(super(_SynchronizedBag, self).getCount(arg0))
+
+    @override
+    @overload
+    def wait(self):
+        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
+        super(object, self).wait()
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String org.apache.commons.collections4.collection.SynchronizedCollection.toString()"""
+        return str._wrap(super(collection.SynchronizedCollection, self).toString())
+
+    @overload
+    def addAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.addAll(java.util.Collection<? extends E>)"""
+        return bool._wrap(super(_collection.SynchronizedCollection, self).addAll(arg0))
 
     @staticmethod
     @overload
-    def collectionBag(arg0: 'Bag') -> 'collections4.Bag':
-        """public static <E> org.apache.commons.collections4.Bag<E> org.apache.commons.collections4.bag.CollectionBag.collectionBag(org.apache.commons.collections4.Bag<E>)"""
-        return collections4.Bag.__wrap(__CollectionBag.collectionBag(arg0))
+    def synchronizedCollection(arg0: 'Collection') -> 'collection.SynchronizedCollection':
+        """public static <T> org.apache.commons.collections4.collection.SynchronizedCollection<T> org.apache.commons.collections4.collection.SynchronizedCollection.synchronizedCollection(java.util.Collection<T>)"""
+        return collection.SynchronizedCollection._wrap(_SynchronizedCollection.synchronizedCollection(arg0))
+
+    @override
+    @overload
+    def forEach(self, arg0: 'Consumer'):
+        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
+        super(_Iterable, self).forEach(arg0)
+
+ 
+ 
+ 
+# CLASS: org.apache.commons.collections4.bag.SynchronizedBag 
+ 
+ 
+# CLASS: org.apache.commons.collections4.bag.UnmodifiableBag
+from pyquantum_helper import import_once as _import_once
+import java.util.function.Predicate as Predicate
+import org.apache.commons.collections4.bag.AbstractBagDecorator as _AbstractBagDecorator
+_AbstractBagDecorator = _AbstractBagDecorator
+import java.lang.Object as _Object
+_Object = _Object
+from builtins import type
+import org.apache.commons.collections4.Bag as _Bag
+_Bag = _Bag
+import java.util.Collection as Collection
+import java.util.Set as _Set
+_Set = _Set
+import java.util.function.Consumer as Consumer
+import java.util.Spliterator as Spliterator
+import java.util.Iterator as _Iterator
+_Iterator = _Iterator
+from builtins import bool
+from builtins import str
+from pyquantum_helper import override
+import java.util.function.IntFunction as IntFunction
+import java.lang.Object as _object
+import java.util.Spliterator as _Spliterator
+_Spliterator = _Spliterator
+import java.lang.String as _String
+_String = _String
+from builtins import object
+import org.apache.commons.collections4.collection.AbstractCollectionDecorator as _AbstractCollectionDecorator
+_AbstractCollectionDecorator = _AbstractCollectionDecorator
+import org.apache.commons.collections4.bag.UnmodifiableBag as _UnmodifiableBag
+_UnmodifiableBag = _UnmodifiableBag
+import java.util.Iterator as Iterator
+from typing import List
+try:
+    from pyapache import collections4
+except ImportError:
+    collections4 = _import_once("pyapache.collections4")
+
+import java.util.Set as Set
+import java.util.Collection as _Collection
+_Collection = _Collection
+import java.lang.Integer as _int
+import java.lang.Iterable as _Iterable
+_Iterable = _Iterable
+import java.util.stream.Stream as _Stream
+_Stream = _Stream
+import java.util.stream.Stream as Stream
+import java.lang.Long as _long
+from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
+ 
+class UnmodifiableBag():
+    """org.apache.commons.collections4.bag.UnmodifiableBag"""
+ 
+    @staticmethod
+    def _wrap(java_value: _UnmodifiableBag) -> 'UnmodifiableBag':
+        return UnmodifiableBag(__dynamic__=java_value)
+ 
+    #
+    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+    #
+    @overload
+    def __init__(self, __dynamic__: _UnmodifiableBag):
+        """
+        Dynamic initializer for UnmodifiableBag.
+        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+ 
+        :param __dynamic__: The java object to wrap
+        """
+        self.__wrapper = __dynamic__
+ 
+    def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_UnmodifiableBag__wrapper":
+            return object.__getattr__(self, name)
+        return getattr(self.__wrapper, name)
+ 
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_UnmodifiableBag__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
+ 
+    def __delattr__(self, name: str):
+        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
+ 
+    @overload
+    def addAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.bag.UnmodifiableBag.addAll(java.util.Collection<? extends E>)"""
+        return bool._wrap(super(_UnmodifiableBag, self).addAll(arg0))
+
+    @overload
+    def getCount(self, arg0: object) -> int:
+        """public int org.apache.commons.collections4.bag.AbstractBagDecorator.getCount(java.lang.Object)"""
+        return int._wrap(super(_AbstractBagDecorator, self).getCount(arg0))
 
     @override
     @overload
@@ -2650,146 +674,146 @@ class CollectionBag():
     @overload
     def parallelStream(self) -> 'Stream':
         """public default java.util.stream.Stream<E> java.util.Collection.parallelStream()"""
-        return 'Stream'.__wrap(super(Collection, self).parallelStream())
-
-    @overload
-    def __init__(self, arg0: 'Bag'):
-        """public org.apache.commons.collections4.bag.CollectionBag(org.apache.commons.collections4.Bag<E>)"""
-        val = __CollectionBag(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+        return 'Stream'._wrap(super(Collection, self).parallelStream())
 
     @override
     @overload
-    def size(self) -> int:
-        """public int org.apache.commons.collections4.collection.AbstractCollectionDecorator.size()"""
-        return int.__wrap(super(collection.AbstractCollectionDecorator, self).size())
+    def clear(self):
+        """public void org.apache.commons.collections4.bag.UnmodifiableBag.clear()"""
+        super(UnmodifiableBag, self).clear()
+
+    @staticmethod
+    @overload
+    def unmodifiableBag(arg0: 'Bag') -> 'collections4.Bag':
+        """public static <E> org.apache.commons.collections4.Bag<E> org.apache.commons.collections4.bag.UnmodifiableBag.unmodifiableBag(org.apache.commons.collections4.Bag<? extends E>)"""
+        return collections4.Bag._wrap(_UnmodifiableBag.unmodifiableBag(arg0))
 
     @override
     @overload
-    def toArray(self) -> List[object]:
-        """public java.lang.Object[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray()"""
-        return List[object].__wrap(super(collection.AbstractCollectionDecorator, self).toArray())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @override
+    @overload
+    def spliterator(self) -> 'Spliterator':
+        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
+        return 'Spliterator'._wrap(super(Collection, self).spliterator())
 
     @overload
-    def addAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.CollectionBag.addAll(java.util.Collection<? extends E>)"""
-        return bool.__wrap(super(__CollectionBag, self).addAll(arg0))
+    def removeIf(self, arg0: 'Predicate') -> bool:
+        """public boolean org.apache.commons.collections4.bag.UnmodifiableBag.removeIf(java.util.function.Predicate<? super E>)"""
+        return bool._wrap(super(_UnmodifiableBag, self).removeIf(arg0))
 
     @override
     @overload
     def notify(self):
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String org.apache.commons.collections4.collection.AbstractCollectionDecorator.toString()"""
-        return str.__wrap(super(collection.AbstractCollectionDecorator, self).toString())
-
-    @override
-    @overload
-    def spliterator(self) -> 'Spliterator':
-        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
-        return 'Spliterator'.__wrap(super(Collection, self).spliterator())
-
-    @override
-    @overload
-    def forEach(self, arg0: 'Consumer'):
-        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
-        super(__Iterable, self).forEach(arg0)
-
-    @overload
-    def retainAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.CollectionBag.retainAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__CollectionBag, self).retainAll(arg0))
-
-    @overload
-    def getCount(self, arg0: object) -> int:
-        """public int org.apache.commons.collections4.bag.AbstractBagDecorator.getCount(java.lang.Object)"""
-        return int.__wrap(super(__AbstractBagDecorator, self).getCount(arg0))
-
-    @override
-    @overload
-    def clear(self):
-        """public void org.apache.commons.collections4.collection.AbstractCollectionDecorator.clear()"""
-        super(collection.AbstractCollectionDecorator, self).clear()
-
-    @override
-    @overload
-    def stream(self) -> 'Stream':
-        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
-        return 'Stream'.__wrap(super(Collection, self).stream())
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractBagDecorator.equals(java.lang.Object)"""
-        return bool.__wrap(super(__AbstractBagDecorator, self).equals(arg0))
-
-    @override
-    @overload
-    def iterator(self) -> 'Iterator':
-        """public java.util.Iterator<E> org.apache.commons.collections4.collection.AbstractCollectionDecorator.iterator()"""
-        return 'Iterator'.__wrap(super(collection.AbstractCollectionDecorator, self).iterator())
-
-    @overload
-    def removeAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.CollectionBag.removeAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__CollectionBag, self).removeAll(arg0))
 
     @override
     @overload
     def hashCode(self) -> int:
         """public int org.apache.commons.collections4.bag.AbstractBagDecorator.hashCode()"""
-        return int.__wrap(super(AbstractBagDecorator, self).hashCode())
+        return int._wrap(super(AbstractBagDecorator, self).hashCode())
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def uniqueSet(self) -> 'Set':
+        """public java.util.Set<E> org.apache.commons.collections4.bag.UnmodifiableBag.uniqueSet()"""
+        return 'Set'._wrap(super(UnmodifiableBag, self).uniqueSet())
+
+    @overload
+    def containsAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.containsAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).containsAll(arg0))
+
+    @overload
+    def toArray(self, arg0: 'Object') -> List[object]:
+        """public <T> T[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray(T[])"""
+        return List[object]._wrap(super(_collection.AbstractCollectionDecorator, self).toArray(arg0))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String org.apache.commons.collections4.collection.AbstractCollectionDecorator.toString()"""
+        return str._wrap(super(collection.AbstractCollectionDecorator, self).toString())
+
+    @overload
+    def add(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.UnmodifiableBag.add(E,int)"""
+        return bool._wrap(super(_UnmodifiableBag, self).add(arg0, _int.valueOf(arg1)))
+
+    @override
+    @overload
+    def iterator(self) -> 'Iterator':
+        """public java.util.Iterator<E> org.apache.commons.collections4.bag.UnmodifiableBag.iterator()"""
+        return 'Iterator'._wrap(super(UnmodifiableBag, self).iterator())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @overload
+    def remove(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.UnmodifiableBag.remove(java.lang.Object)"""
+        return bool._wrap(super(_UnmodifiableBag, self).remove(arg0))
+
+    @override
+    @overload
+    def toArray(self) -> List[object]:
+        """public java.lang.Object[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray()"""
+        return List[object]._wrap(super(collection.AbstractCollectionDecorator, self).toArray())
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractBagDecorator.equals(java.lang.Object)"""
+        return bool._wrap(super(_AbstractBagDecorator, self).equals(arg0))
+
+    @overload
+    def toArray(self, arg0: 'IntFunction') -> List[object]:
+        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
+        return List[object]._wrap(super(_Collection, self).toArray(arg0))
+
+    @overload
+    def contains(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.contains(java.lang.Object)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).contains(arg0))
+
+    @override
+    @overload
+    def stream(self) -> 'Stream':
+        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
+        return 'Stream'._wrap(super(Collection, self).stream())
+
+    @override
+    @overload
+    def size(self) -> int:
+        """public int org.apache.commons.collections4.collection.AbstractCollectionDecorator.size()"""
+        return int._wrap(super(collection.AbstractCollectionDecorator, self).size())
+
+    @overload
+    def removeAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.bag.UnmodifiableBag.removeAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_UnmodifiableBag, self).removeAll(arg0))
 
     @override
     @overload
     def getClass(self) -> 'type.Class':
         """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @overload
+    def remove(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.UnmodifiableBag.remove(java.lang.Object,int)"""
+        return bool._wrap(super(_UnmodifiableBag, self).remove(arg0, _int.valueOf(arg1)))
 
     @overload
     def add(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.CollectionBag.add(E)"""
-        return bool.__wrap(super(__CollectionBag, self).add(arg0))
-
-    @overload
-    def containsAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.CollectionBag.containsAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__CollectionBag, self).containsAll(arg0))
-
-    @overload
-    def removeIf(self, arg0: 'Predicate') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeIf(java.util.function.Predicate<? super E>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).removeIf(arg0))
-
-    @overload
-    def toArray(self, arg0: 'IntFunction') -> List[object]:
-        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
-        return List[object].__wrap(super(__Collection, self).toArray(arg0))
-
-    @overload
-    def remove(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.CollectionBag.remove(java.lang.Object)"""
-        return bool.__wrap(super(__CollectionBag, self).remove(arg0))
-
-    @overload
-    def toArray(self, arg0: 'Object') -> List[object]:
-        """public <T> T[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray(T[])"""
-        return List[object].__wrap(super(__collection.AbstractCollectionDecorator, self).toArray(arg0))
-
-    @overload
-    def add(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.CollectionBag.add(E,int)"""
-        return bool.__wrap(super(__CollectionBag, self).add(arg0, __int.valueOf(arg1)))
+        """public boolean org.apache.commons.collections4.bag.UnmodifiableBag.add(E)"""
+        return bool._wrap(super(_UnmodifiableBag, self).add(arg0))
 
     @override
     @overload
@@ -2797,116 +821,116 @@ class CollectionBag():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @overload
+    def retainAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.bag.UnmodifiableBag.retainAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_UnmodifiableBag, self).retainAll(arg0))
+
     @override
     @overload
-    def uniqueSet(self) -> 'Set':
-        """public java.util.Set<E> org.apache.commons.collections4.bag.AbstractBagDecorator.uniqueSet()"""
-        return 'Set'.__wrap(super(AbstractBagDecorator, self).uniqueSet()) 
+    def isEmpty(self) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.isEmpty()"""
+        return bool._wrap(super(collection.AbstractCollectionDecorator, self).isEmpty())
+
+    @override
+    @overload
+    def forEach(self, arg0: 'Consumer'):
+        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
+        super(_Iterable, self).forEach(arg0) 
  
  
 # CLASS: org.apache.commons.collections4.bag.AbstractSortedBagDecorator
 import java.util.function.Predicate as Predicate
-import org.apache.commons.collections4.collection.AbstractCollectionDecorator as __AbstractCollectionDecorator
-__AbstractCollectionDecorator = __AbstractCollectionDecorator
+import org.apache.commons.collections4.bag.AbstractBagDecorator as _AbstractBagDecorator
+_AbstractBagDecorator = _AbstractBagDecorator
+import java.lang.Object as _Object
+_Object = _Object
 from builtins import type
-import java.util.stream.Stream as __Stream
-__Stream = __Stream
+import org.apache.commons.collections4.bag.AbstractSortedBagDecorator as _AbstractSortedBagDecorator
+_AbstractSortedBagDecorator = _AbstractSortedBagDecorator
 import java.util.Collection as Collection
-import org.apache.commons.collections4.bag.AbstractBagDecorator as __AbstractBagDecorator
-__AbstractBagDecorator = __AbstractBagDecorator
+import java.util.Set as _Set
+_Set = _Set
 import java.util.function.Consumer as Consumer
-import java.util.Comparator as __Comparator
-__Comparator = __Comparator
-import java.util.Collection as __Collection
-__Collection = __Collection
 import java.util.Spliterator as Spliterator
-import java.lang.Class as __Class
-__Class = __Class
+import java.util.Iterator as _Iterator
+_Iterator = _Iterator
 from builtins import bool
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
-import java.util.Iterator as __Iterator
-__Iterator = __Iterator
 import java.util.function.IntFunction as IntFunction
-import java.util.Set as __Set
-__Set = __Set
+import java.lang.Object as _object
+import java.util.Spliterator as _Spliterator
+_Spliterator = _Spliterator
 from builtins import object
+import java.lang.String as _String
+_String = _String
+import org.apache.commons.collections4.collection.AbstractCollectionDecorator as _AbstractCollectionDecorator
+_AbstractCollectionDecorator = _AbstractCollectionDecorator
 import java.util.Iterator as Iterator
 from typing import List
-import java.util.Spliterator as __Spliterator
-__Spliterator = __Spliterator
 import java.util.Comparator as Comparator
 import java.util.Set as Set
-import java.lang.Long as __long
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
+import java.util.Collection as _Collection
+_Collection = _Collection
+import java.lang.Integer as _int
+import java.util.Comparator as _Comparator
+_Comparator = _Comparator
+import java.lang.Iterable as _Iterable
+_Iterable = _Iterable
+import java.util.stream.Stream as _Stream
+_Stream = _Stream
 import java.util.stream.Stream as Stream
-import java.lang.Integer as __int
-import org.apache.commons.collections4.bag.AbstractSortedBagDecorator as __AbstractSortedBagDecorator
-__AbstractSortedBagDecorator = __AbstractSortedBagDecorator
+import java.lang.Long as _long
 from builtins import int
-import java.lang.Iterable as __Iterable
-__Iterable = __Iterable
+import java.lang.Class as _Class
+_Class = _Class
  
-class AbstractSortedBagDecorator(ABC):
+class AbstractSortedBagDecorator():
     """org.apache.commons.collections4.bag.AbstractSortedBagDecorator"""
  
     @staticmethod
-    def __wrap(java_value: __AbstractSortedBagDecorator) -> 'AbstractSortedBagDecorator':
+    def _wrap(java_value: _AbstractSortedBagDecorator) -> 'AbstractSortedBagDecorator':
         return AbstractSortedBagDecorator(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __AbstractSortedBagDecorator):
+    def __init__(self, __dynamic__: _AbstractSortedBagDecorator):
         """
         Dynamic initializer for AbstractSortedBagDecorator.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_AbstractSortedBagDecorator__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_AbstractSortedBagDecorator__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
     @overload
-    def isEmpty(self) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.isEmpty()"""
-        return bool.__wrap(super(collection.AbstractCollectionDecorator, self).isEmpty())
+    def getCount(self, arg0: object) -> int:
+        """public int org.apache.commons.collections4.bag.AbstractBagDecorator.getCount(java.lang.Object)"""
+        return int._wrap(super(_AbstractBagDecorator, self).getCount(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def remove(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.remove(java.lang.Object)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).remove(arg0))
-
-    @overload
-    def remove(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractBagDecorator.remove(java.lang.Object,int)"""
-        return bool.__wrap(super(__AbstractBagDecorator, self).remove(arg0, __int.valueOf(arg1)))
-
-    @overload
-    def contains(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.contains(java.lang.Object)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).contains(arg0))
+    def uniqueSet(self) -> 'Set':
+        """public java.util.Set<E> org.apache.commons.collections4.bag.AbstractBagDecorator.uniqueSet()"""
+        return 'Set'._wrap(super(AbstractBagDecorator, self).uniqueSet())
 
     @override
     @overload
@@ -2914,34 +938,28 @@ class AbstractSortedBagDecorator(ABC):
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @overload
+    def add(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractBagDecorator.add(E,int)"""
+        return bool._wrap(super(_AbstractBagDecorator, self).add(arg0, _int.valueOf(arg1)))
+
     @override
     @overload
     def parallelStream(self) -> 'Stream':
         """public default java.util.stream.Stream<E> java.util.Collection.parallelStream()"""
-        return 'Stream'.__wrap(super(Collection, self).parallelStream())
+        return 'Stream'._wrap(super(Collection, self).parallelStream())
 
     @override
     @overload
-    def size(self) -> int:
-        """public int org.apache.commons.collections4.collection.AbstractCollectionDecorator.size()"""
-        return int.__wrap(super(collection.AbstractCollectionDecorator, self).size())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
-    def comparator(self) -> 'Comparator':
-        """public java.util.Comparator<? super E> org.apache.commons.collections4.bag.AbstractSortedBagDecorator.comparator()"""
-        return 'Comparator'.__wrap(super(AbstractSortedBagDecorator, self).comparator())
-
-    @overload
-    def add(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractBagDecorator.add(E,int)"""
-        return bool.__wrap(super(__AbstractBagDecorator, self).add(arg0, __int.valueOf(arg1)))
-
-    @override
-    @overload
-    def toArray(self) -> List[object]:
-        """public java.lang.Object[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray()"""
-        return List[object].__wrap(super(collection.AbstractCollectionDecorator, self).toArray())
+    def spliterator(self) -> 'Spliterator':
+        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
+        return 'Spliterator'._wrap(super(Collection, self).spliterator())
 
     @override
     @overload
@@ -2950,42 +968,36 @@ class AbstractSortedBagDecorator(ABC):
         super(object, self).notify()
 
     @overload
-    def add(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.add(E)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).add(arg0))
+    def remove(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractBagDecorator.remove(java.lang.Object,int)"""
+        return bool._wrap(super(_AbstractBagDecorator, self).remove(arg0, _int.valueOf(arg1)))
 
     @overload
-    def removeAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).removeAll(arg0))
+    def retainAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.retainAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).retainAll(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public int org.apache.commons.collections4.bag.AbstractBagDecorator.hashCode()"""
+        return int._wrap(super(AbstractBagDecorator, self).hashCode())
+
+    @overload
+    def containsAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.containsAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).containsAll(arg0))
+
+    @overload
+    def toArray(self, arg0: 'Object') -> List[object]:
+        """public <T> T[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray(T[])"""
+        return List[object]._wrap(super(_collection.AbstractCollectionDecorator, self).toArray(arg0))
 
     @override
     @overload
     def toString(self) -> str:
         """public java.lang.String org.apache.commons.collections4.collection.AbstractCollectionDecorator.toString()"""
-        return str.__wrap(super(collection.AbstractCollectionDecorator, self).toString())
-
-    @override
-    @overload
-    def spliterator(self) -> 'Spliterator':
-        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
-        return 'Spliterator'.__wrap(super(Collection, self).spliterator())
-
-    @override
-    @overload
-    def forEach(self, arg0: 'Consumer'):
-        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
-        super(__Iterable, self).forEach(arg0)
-
-    @overload
-    def getCount(self, arg0: object) -> int:
-        """public int org.apache.commons.collections4.bag.AbstractBagDecorator.getCount(java.lang.Object)"""
-        return int.__wrap(super(__AbstractBagDecorator, self).getCount(arg0))
-
-    @overload
-    def containsAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.containsAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).containsAll(arg0))
+        return str._wrap(super(collection.AbstractCollectionDecorator, self).toString())
 
     @override
     @overload
@@ -2993,168 +1005,83 @@ class AbstractSortedBagDecorator(ABC):
         """public void org.apache.commons.collections4.collection.AbstractCollectionDecorator.clear()"""
         super(collection.AbstractCollectionDecorator, self).clear()
 
-    @override
     @overload
-    def stream(self) -> 'Stream':
-        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
-        return 'Stream'.__wrap(super(Collection, self).stream())
-
-    @override
-    @overload
-    def first(self) -> object:
-        """public E org.apache.commons.collections4.bag.AbstractSortedBagDecorator.first()"""
-        return object.__wrap(super(AbstractSortedBagDecorator, self).first())
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractBagDecorator.equals(java.lang.Object)"""
-        return bool.__wrap(super(__AbstractBagDecorator, self).equals(arg0))
+    def removeAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).removeAll(arg0))
 
     @override
     @overload
     def last(self) -> object:
         """public E org.apache.commons.collections4.bag.AbstractSortedBagDecorator.last()"""
-        return object.__wrap(super(AbstractSortedBagDecorator, self).last())
-
-    @override
-    @overload
-    def iterator(self) -> 'Iterator':
-        """public java.util.Iterator<E> org.apache.commons.collections4.collection.AbstractCollectionDecorator.iterator()"""
-        return 'Iterator'.__wrap(super(collection.AbstractCollectionDecorator, self).iterator())
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public int org.apache.commons.collections4.bag.AbstractBagDecorator.hashCode()"""
-        return int.__wrap(super(AbstractBagDecorator, self).hashCode())
-
-    @overload
-    def retainAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.retainAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).retainAll(arg0))
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        return object._wrap(super(AbstractSortedBagDecorator, self).last())
 
     @overload
     def removeIf(self, arg0: 'Predicate') -> bool:
         """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeIf(java.util.function.Predicate<? super E>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).removeIf(arg0))
-
-    @overload
-    def addAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.addAll(java.util.Collection<? extends E>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).addAll(arg0))
-
-    @overload
-    def toArray(self, arg0: 'IntFunction') -> List[object]:
-        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
-        return List[object].__wrap(super(__Collection, self).toArray(arg0))
-
-    @overload
-    def toArray(self, arg0: 'Object') -> List[object]:
-        """public <T> T[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray(T[])"""
-        return List[object].__wrap(super(__collection.AbstractCollectionDecorator, self).toArray(arg0))
-
-    @override
-    @overload
-    def wait(self):
-        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
-        super(object, self).wait()
-
-    @override
-    @overload
-    def uniqueSet(self) -> 'Set':
-        """public java.util.Set<E> org.apache.commons.collections4.bag.AbstractBagDecorator.uniqueSet()"""
-        return 'Set'.__wrap(super(AbstractBagDecorator, self).uniqueSet()) 
- 
- 
-# CLASS: org.apache.commons.collections4.bag.AbstractMapBag$MutableInteger
-from builtins import str
-import java.lang.Long as __long
-from pyquantum_helper import override
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.Object as __object
-import java.lang.String as __String
-__String = __String
-from builtins import type
-import org.apache.commons.collections4.bag.AbstractMapBag as __AbstractMapBag_MutableInteger
-__MutableInteger = __AbstractMapBag_MutableInteger.MutableInteger
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
-from builtins import bool
-from builtins import int
- 
-class MutableInteger():
-    """org.apache.commons.collections4.bag.AbstractMapBag.MutableInteger"""
- 
-    @staticmethod
-    def __wrap(java_value: __MutableInteger) -> 'MutableInteger':
-        return MutableInteger(__dynamic__=java_value)
- 
-    #
-    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
-    #
-    @overload
-    def __init__(self, __dynamic__: __MutableInteger):
-        """
-        Dynamic initializer for MutableInteger.
-        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
- 
-        :param __dynamic__: The java object to wrap
-        """
-        self.__dict__ = __dynamic__.__dict__
-        self.__wrapper = __dynamic__
- 
-    def __getattr__(self, name: str):
-        return getattr(self.__wrapper, name)
- 
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
- 
-    def __delattr__(self, name: str):
-        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
- 
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).removeIf(arg0))
 
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
-    def notify(self):
-        """public final native void java.lang.Object.notify()"""
-        super(object, self).notify()
+    def comparator(self) -> 'Comparator':
+        """public java.util.Comparator<? super E> org.apache.commons.collections4.bag.AbstractSortedBagDecorator.comparator()"""
+        return 'Comparator'._wrap(super(AbstractSortedBagDecorator, self).comparator())
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def iterator(self) -> 'Iterator':
+        """public java.util.Iterator<E> org.apache.commons.collections4.collection.AbstractCollectionDecorator.iterator()"""
+        return 'Iterator'._wrap(super(collection.AbstractCollectionDecorator, self).iterator())
+
+    @overload
+    def addAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.addAll(java.util.Collection<? extends E>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).addAll(arg0))
 
     @override
     @overload
-    def notifyAll(self):
-        """public final native void java.lang.Object.notifyAll()"""
-        super(object, self).notifyAll()
+    def toArray(self) -> List[object]:
+        """public java.lang.Object[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray()"""
+        return List[object]._wrap(super(collection.AbstractCollectionDecorator, self).toArray())
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractBagDecorator.equals(java.lang.Object)"""
+        return bool._wrap(super(_AbstractBagDecorator, self).equals(arg0))
+
+    @overload
+    def toArray(self, arg0: 'IntFunction') -> List[object]:
+        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
+        return List[object]._wrap(super(_Collection, self).toArray(arg0))
+
+    @overload
+    def contains(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.contains(java.lang.Object)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).contains(arg0))
+
+    @override
+    @overload
+    def stream(self) -> 'Stream':
+        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
+        return 'Stream'._wrap(super(Collection, self).stream())
+
+    @override
+    @overload
+    def size(self) -> int:
+        """public int org.apache.commons.collections4.collection.AbstractCollectionDecorator.size()"""
+        return int._wrap(super(collection.AbstractCollectionDecorator, self).size())
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -3162,128 +1089,136 @@ class MutableInteger():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @override
     @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag$MutableInteger.equals(java.lang.Object)"""
-        return bool.__wrap(super(__MutableInteger, self).equals(arg0))
+    def isEmpty(self) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.isEmpty()"""
+        return bool._wrap(super(collection.AbstractCollectionDecorator, self).isEmpty())
+
+    @overload
+    def add(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.add(E)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).add(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def forEach(self, arg0: 'Consumer'):
+        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
+        super(_Iterable, self).forEach(arg0)
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public int org.apache.commons.collections4.bag.AbstractMapBag$MutableInteger.hashCode()"""
-        return int.__wrap(super(MutableInteger, self).hashCode()) 
+    def first(self) -> object:
+        """public E org.apache.commons.collections4.bag.AbstractSortedBagDecorator.first()"""
+        return object._wrap(super(AbstractSortedBagDecorator, self).first())
+
+    @overload
+    def remove(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.remove(java.lang.Object)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).remove(arg0)) 
  
  
 # CLASS: org.apache.commons.collections4.bag.TreeBag
 import java.util.function.Predicate as Predicate
+import java.lang.Object as _Object
+_Object = _Object
 from builtins import type
-import java.util.stream.Stream as __Stream
-__Stream = __Stream
 import java.util.Collection as Collection
+import java.util.Set as _Set
+_Set = _Set
 import java.util.function.Consumer as Consumer
-import java.util.Comparator as __Comparator
-__Comparator = __Comparator
-import java.util.Collection as __Collection
-__Collection = __Collection
+import org.apache.commons.collections4.bag.TreeBag as _TreeBag
+_TreeBag = _TreeBag
 import java.util.Spliterator as Spliterator
-import java.lang.Class as __Class
-__Class = __Class
-import org.apache.commons.collections4.bag.AbstractMapBag as __AbstractMapBag
-__AbstractMapBag = __AbstractMapBag
+import java.util.Iterator as _Iterator
+_Iterator = _Iterator
 from builtins import bool
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
-import java.util.Iterator as __Iterator
-__Iterator = __Iterator
 import java.util.function.IntFunction as IntFunction
-import java.util.Set as __Set
-__Set = __Set
+import java.lang.Object as _object
+import org.apache.commons.collections4.bag.AbstractMapBag as _AbstractMapBag
+_AbstractMapBag = _AbstractMapBag
+import java.util.Spliterator as _Spliterator
+_Spliterator = _Spliterator
 from builtins import object
-import org.apache.commons.collections4.bag.TreeBag as __TreeBag
-__TreeBag = __TreeBag
+import java.lang.String as _String
+_String = _String
 import java.util.Iterator as Iterator
 from typing import List
-import java.util.Spliterator as __Spliterator
-__Spliterator = __Spliterator
 import java.util.Comparator as Comparator
 import java.util.Set as Set
-import java.lang.Long as __long
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
+import java.util.Collection as _Collection
+_Collection = _Collection
+import java.lang.Integer as _int
+import java.util.Comparator as _Comparator
+_Comparator = _Comparator
+import java.lang.Iterable as _Iterable
+_Iterable = _Iterable
+import java.util.stream.Stream as _Stream
+_Stream = _Stream
 import java.util.stream.Stream as Stream
-import java.lang.Integer as __int
+import java.lang.Long as _long
 from builtins import int
-import java.lang.Iterable as __Iterable
-__Iterable = __Iterable
+import java.lang.Class as _Class
+_Class = _Class
  
 class TreeBag():
     """org.apache.commons.collections4.bag.TreeBag"""
  
     @staticmethod
-    def __wrap(java_value: __TreeBag) -> 'TreeBag':
+    def _wrap(java_value: _TreeBag) -> 'TreeBag':
         return TreeBag(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __TreeBag):
+    def __init__(self, __dynamic__: _TreeBag):
         """
         Dynamic initializer for TreeBag.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_TreeBag__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_TreeBag__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def remove(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.remove(java.lang.Object,int)"""
+        return bool._wrap(super(_AbstractMapBag, self).remove(arg0, _int.valueOf(arg1)))
 
     @overload
-    def __init__(self, arg0: 'Collection'):
-        """public org.apache.commons.collections4.bag.TreeBag(java.util.Collection<? extends E>)"""
-        val = __TreeBag(arg0)
-        self.__dict__ = val.__dict__
+    def __init__(self):
+        """public org.apache.commons.collections4.bag.TreeBag()"""
+        val = _TreeBag()
         self.__wrapper = val
 
-    @override
     @overload
-    def size(self) -> int:
-        """public int org.apache.commons.collections4.bag.AbstractMapBag.size()"""
-        return int.__wrap(super(AbstractMapBag, self).size())
-
-    @overload
-    def removeAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.removeAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__AbstractMapBag, self).removeAll(arg0))
+    def retainAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.retainAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_AbstractMapBag, self).retainAll(arg0))
 
     @override
     @overload
-    def first(self) -> object:
-        """public E org.apache.commons.collections4.bag.TreeBag.first()"""
-        return object.__wrap(super(TreeBag, self).first())
+    def uniqueSet(self) -> 'Set':
+        """public java.util.Set<E> org.apache.commons.collections4.bag.AbstractMapBag.uniqueSet()"""
+        return 'Set'._wrap(super(AbstractMapBag, self).uniqueSet())
 
     @override
     @overload
@@ -3291,37 +1226,29 @@ class TreeBag():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.equals(java.lang.Object)"""
-        return bool.__wrap(super(__AbstractMapBag, self).equals(arg0))
-
-    @override
-    @overload
-    def iterator(self) -> 'Iterator':
-        """public java.util.Iterator<E> org.apache.commons.collections4.bag.AbstractMapBag.iterator()"""
-        return 'Iterator'.__wrap(super(AbstractMapBag, self).iterator())
-
     @override
     @overload
     def parallelStream(self) -> 'Stream':
         """public default java.util.stream.Stream<E> java.util.Collection.parallelStream()"""
-        return 'Stream'.__wrap(super(Collection, self).parallelStream())
+        return 'Stream'._wrap(super(Collection, self).parallelStream())
 
+    @override
     @overload
-    def add(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.TreeBag.add(E)"""
-        return bool.__wrap(super(__TreeBag, self).add(arg0))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
+    @override
     @overload
-    def remove(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.remove(java.lang.Object,int)"""
-        return bool.__wrap(super(__AbstractMapBag, self).remove(arg0, __int.valueOf(arg1)))
+    def last(self) -> object:
+        """public E org.apache.commons.collections4.bag.TreeBag.last()"""
+        return object._wrap(super(TreeBag, self).last())
 
+    @override
     @overload
-    def remove(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.remove(java.lang.Object)"""
-        return bool.__wrap(super(__AbstractMapBag, self).remove(arg0))
+    def spliterator(self) -> 'Spliterator':
+        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
+        return 'Spliterator'._wrap(super(Collection, self).spliterator())
 
     @override
     @overload
@@ -3332,31 +1259,23 @@ class TreeBag():
     @overload
     def containsAll(self, arg0: 'Collection') -> bool:
         """public boolean org.apache.commons.collections4.bag.AbstractMapBag.containsAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__AbstractMapBag, self).containsAll(arg0))
+        return bool._wrap(super(_AbstractMapBag, self).containsAll(arg0))
 
     @overload
-    def toArray(self, arg0: 'Object') -> List[object]:
-        """public <T> T[] org.apache.commons.collections4.bag.AbstractMapBag.toArray(T[])"""
-        return List[object].__wrap(super(__AbstractMapBag, self).toArray(arg0))
+    def remove(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.remove(java.lang.Object)"""
+        return bool._wrap(super(_AbstractMapBag, self).remove(arg0))
+
+    @overload
+    def removeAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.removeAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_AbstractMapBag, self).removeAll(arg0))
 
     @override
     @overload
-    def spliterator(self) -> 'Spliterator':
-        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
-        return 'Spliterator'.__wrap(super(Collection, self).spliterator())
-
-    @override
-    @overload
-    def forEach(self, arg0: 'Consumer'):
-        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
-        super(__Iterable, self).forEach(arg0)
-
-    @overload
-    def __init__(self, arg0: 'Comparator'):
-        """public org.apache.commons.collections4.bag.TreeBag(java.util.Comparator<? super E>)"""
-        val = __TreeBag(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def toString(self) -> str:
+        """public java.lang.String org.apache.commons.collections4.bag.AbstractMapBag.toString()"""
+        return str._wrap(super(AbstractMapBag, self).toString())
 
     @override
     @overload
@@ -3365,106 +1284,99 @@ class TreeBag():
         super(AbstractMapBag, self).clear()
 
     @overload
-    def retainAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.retainAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__AbstractMapBag, self).retainAll(arg0))
+    def equals(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.equals(java.lang.Object)"""
+        return bool._wrap(super(_AbstractMapBag, self).equals(arg0))
 
     @override
     @overload
     def comparator(self) -> 'Comparator':
         """public java.util.Comparator<? super E> org.apache.commons.collections4.bag.TreeBag.comparator()"""
-        return 'Comparator'.__wrap(super(TreeBag, self).comparator())
+        return 'Comparator'._wrap(super(TreeBag, self).comparator())
 
     @overload
-    def contains(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.contains(java.lang.Object)"""
-        return bool.__wrap(super(__AbstractMapBag, self).contains(arg0))
-
-    @overload
-    def add(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.add(E,int)"""
-        return bool.__wrap(super(__AbstractMapBag, self).add(arg0, __int.valueOf(arg1)))
+    def toArray(self, arg0: 'Object') -> List[object]:
+        """public <T> T[] org.apache.commons.collections4.bag.AbstractMapBag.toArray(T[])"""
+        return List[object]._wrap(super(_AbstractMapBag, self).toArray(arg0))
 
     @override
     @overload
-    def stream(self) -> 'Stream':
-        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
-        return 'Stream'.__wrap(super(Collection, self).stream())
-
-    @overload
-    def addAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.addAll(java.util.Collection<? extends E>)"""
-        return bool.__wrap(super(__AbstractMapBag, self).addAll(arg0))
-
-    @override
-    @overload
-    def last(self) -> object:
-        """public E org.apache.commons.collections4.bag.TreeBag.last()"""
-        return object.__wrap(super(TreeBag, self).last())
-
-    @override
-    @overload
-    def isEmpty(self) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.isEmpty()"""
-        return bool.__wrap(super(AbstractMapBag, self).isEmpty())
-
-    @override
-    @overload
-    def uniqueSet(self) -> 'Set':
-        """public java.util.Set<E> org.apache.commons.collections4.bag.AbstractMapBag.uniqueSet()"""
-        return 'Set'.__wrap(super(AbstractMapBag, self).uniqueSet())
-
-    @overload
-    def getCount(self, arg0: object) -> int:
-        """public int org.apache.commons.collections4.bag.AbstractMapBag.getCount(java.lang.Object)"""
-        return int.__wrap(super(__AbstractMapBag, self).getCount(arg0))
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def toArray(self) -> List[object]:
-        """public java.lang.Object[] org.apache.commons.collections4.bag.AbstractMapBag.toArray()"""
-        return List[object].__wrap(super(AbstractMapBag, self).toArray())
-
-    @overload
-    def toArray(self, arg0: 'IntFunction') -> List[object]:
-        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
-        return List[object].__wrap(super(__Collection, self).toArray(arg0))
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
     def hashCode(self) -> int:
         """public int org.apache.commons.collections4.bag.AbstractMapBag.hashCode()"""
-        return int.__wrap(super(AbstractMapBag, self).hashCode())
-
-    @overload
-    def __init__(self, ):
-        """public org.apache.commons.collections4.bag.TreeBag()"""
-        val = __TreeBag()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+        return int._wrap(super(AbstractMapBag, self).hashCode())
 
     @overload
     def removeIf(self, arg0: 'Predicate') -> bool:
         """public default boolean java.util.Collection.removeIf(java.util.function.Predicate<? super E>)"""
-        return bool.__wrap(super(__Collection, self).removeIf(arg0))
+        return bool._wrap(super(_Collection, self).removeIf(arg0))
 
     @overload
-    def __init__(self):
+    def __init__(self, arg0: 'Collection'):
+        """public org.apache.commons.collections4.bag.TreeBag(java.util.Collection<? extends E>)"""
+        val = _TreeBag(arg0)
+        self.__wrapper = val
+
+    @override
+    @overload
+    def first(self) -> object:
+        """public E org.apache.commons.collections4.bag.TreeBag.first()"""
+        return object._wrap(super(TreeBag, self).first())
+
+    @override
+    @overload
+    def iterator(self) -> 'Iterator':
+        """public java.util.Iterator<E> org.apache.commons.collections4.bag.AbstractMapBag.iterator()"""
+        return 'Iterator'._wrap(super(AbstractMapBag, self).iterator())
+
+    @overload
+    def getCount(self, arg0: object) -> int:
+        """public int org.apache.commons.collections4.bag.AbstractMapBag.getCount(java.lang.Object)"""
+        return int._wrap(super(_AbstractMapBag, self).getCount(arg0))
+
+    @overload
+    def toArray(self, arg0: 'IntFunction') -> List[object]:
+        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
+        return List[object]._wrap(super(_Collection, self).toArray(arg0))
+
+    @override
+    @overload
+    def stream(self) -> 'Stream':
+        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
+        return 'Stream'._wrap(super(Collection, self).stream())
+
+    @overload
+    def add(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.add(E,int)"""
+        return bool._wrap(super(_AbstractMapBag, self).add(arg0, _int.valueOf(arg1)))
+
+    @override
+    @overload
+    def toArray(self) -> List[object]:
+        """public java.lang.Object[] org.apache.commons.collections4.bag.AbstractMapBag.toArray()"""
+        return List[object]._wrap(super(AbstractMapBag, self).toArray())
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
+    def isEmpty(self) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.isEmpty()"""
+        return bool._wrap(super(AbstractMapBag, self).isEmpty())
+
+    @overload
+    def __init__(self, ):
         """public org.apache.commons.collections4.bag.TreeBag()"""
-        val = __TreeBag()
-        self.__dict__ = val.__dict__
+        val = _TreeBag()
         self.__wrapper = val
 
     @override
@@ -3473,127 +1385,467 @@ class TreeBag():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @overload
+    def contains(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.contains(java.lang.Object)"""
+        return bool._wrap(super(_AbstractMapBag, self).contains(arg0))
+
+    @overload
+    def add(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.TreeBag.add(E)"""
+        return bool._wrap(super(_TreeBag, self).add(arg0))
+
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String org.apache.commons.collections4.bag.AbstractMapBag.toString()"""
-        return str.__wrap(super(AbstractMapBag, self).toString()) 
+    def size(self) -> int:
+        """public int org.apache.commons.collections4.bag.AbstractMapBag.size()"""
+        return int._wrap(super(AbstractMapBag, self).size())
+
+    @overload
+    def addAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.addAll(java.util.Collection<? extends E>)"""
+        return bool._wrap(super(_AbstractMapBag, self).addAll(arg0))
+
+    @override
+    @overload
+    def forEach(self, arg0: 'Consumer'):
+        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
+        super(_Iterable, self).forEach(arg0)
+
+    @overload
+    def __init__(self, arg0: 'Comparator'):
+        """public org.apache.commons.collections4.bag.TreeBag(java.util.Comparator<? super E>)"""
+        val = _TreeBag(arg0)
+        self.__wrapper = val 
  
  
-# CLASS: org.apache.commons.collections4.bag.UnmodifiableSortedBag
-from pyquantum_helper import import_once as __import_once__
+# CLASS: org.apache.commons.collections4.bag.SynchronizedSortedBag
+from pyquantum_helper import import_once as _import_once
+import org.apache.commons.collections4.bag.SynchronizedSortedBag as _SynchronizedSortedBag
+_SynchronizedSortedBag = _SynchronizedSortedBag
 import java.util.function.Predicate as Predicate
-import org.apache.commons.collections4.collection.AbstractCollectionDecorator as __AbstractCollectionDecorator
-__AbstractCollectionDecorator = __AbstractCollectionDecorator
+import java.lang.Object as _Object
+_Object = _Object
 from builtins import type
-import org.apache.commons.collections4.bag.UnmodifiableSortedBag as __UnmodifiableSortedBag
-__UnmodifiableSortedBag = __UnmodifiableSortedBag
-import java.util.stream.Stream as __Stream
-__Stream = __Stream
+import org.apache.commons.collections4.bag.SynchronizedBag as _SynchronizedBag
+_SynchronizedBag = _SynchronizedBag
 import java.util.Collection as Collection
-import org.apache.commons.collections4.bag.AbstractBagDecorator as __AbstractBagDecorator
-__AbstractBagDecorator = __AbstractBagDecorator
+try:
+    from pyapache.collections4 import collection
+except ImportError:
+    collection = _import_once("pyapache.collections4.collection")
+
+import java.util.Set as _Set
+_Set = _Set
 import java.util.function.Consumer as Consumer
-import java.util.Comparator as __Comparator
-__Comparator = __Comparator
-import org.apache.commons.collections4.SortedBag as __SortedBag
-__SortedBag = __SortedBag
-import java.util.Collection as __Collection
-__Collection = __Collection
 import java.util.Spliterator as Spliterator
-import java.lang.Class as __Class
-__Class = __Class
+import java.util.Iterator as _Iterator
+_Iterator = _Iterator
 from builtins import bool
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
-import java.util.Iterator as __Iterator
-__Iterator = __Iterator
 import java.util.function.IntFunction as IntFunction
-import java.util.Set as __Set
-__Set = __Set
+import java.lang.Object as _object
+import java.util.Spliterator as _Spliterator
+_Spliterator = _Spliterator
 from builtins import object
+import java.lang.String as _String
+_String = _String
 import java.util.Iterator as Iterator
 from typing import List
-import java.util.Spliterator as __Spliterator
-__Spliterator = __Spliterator
 try:
     from pyapache import collections4
 except ImportError:
-    collections4 = __import_once__("pyapache.collections4")
+    collections4 = _import_once("pyapache.collections4")
 
 import java.util.Comparator as Comparator
 import java.util.Set as Set
-import java.lang.Long as __long
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
+import java.util.Collection as _Collection
+_Collection = _Collection
+import java.lang.Integer as _int
+import java.util.Comparator as _Comparator
+_Comparator = _Comparator
+import java.lang.Iterable as _Iterable
+_Iterable = _Iterable
+import java.util.stream.Stream as _Stream
+_Stream = _Stream
+import org.apache.commons.collections4.collection.SynchronizedCollection as _SynchronizedCollection
+_SynchronizedCollection = _SynchronizedCollection
 import java.util.stream.Stream as Stream
-import java.lang.Integer as __int
-import org.apache.commons.collections4.bag.AbstractSortedBagDecorator as __AbstractSortedBagDecorator
-__AbstractSortedBagDecorator = __AbstractSortedBagDecorator
+import java.lang.Long as _long
 from builtins import int
-import java.lang.Iterable as __Iterable
-__Iterable = __Iterable
+import java.lang.Class as _Class
+_Class = _Class
  
-class UnmodifiableSortedBag():
-    """org.apache.commons.collections4.bag.UnmodifiableSortedBag"""
+class SynchronizedSortedBag():
+    """org.apache.commons.collections4.bag.SynchronizedSortedBag"""
  
     @staticmethod
-    def __wrap(java_value: __UnmodifiableSortedBag) -> 'UnmodifiableSortedBag':
-        return UnmodifiableSortedBag(__dynamic__=java_value)
+    def _wrap(java_value: _SynchronizedSortedBag) -> 'SynchronizedSortedBag':
+        return SynchronizedSortedBag(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __UnmodifiableSortedBag):
+    def __init__(self, __dynamic__: _SynchronizedSortedBag):
         """
-        Dynamic initializer for UnmodifiableSortedBag.
+        Dynamic initializer for SynchronizedSortedBag.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_SynchronizedSortedBag__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_SynchronizedSortedBag__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
+    def last(self) -> object:
+        """public synchronized E org.apache.commons.collections4.bag.SynchronizedSortedBag.last()"""
+        return object._wrap(super(SynchronizedSortedBag, self).last())
+
+    @override
+    @overload
+    def toArray(self) -> List[object]:
+        """public java.lang.Object[] org.apache.commons.collections4.collection.SynchronizedCollection.toArray()"""
+        return List[object]._wrap(super(collection.SynchronizedCollection, self).toArray())
+
+    @overload
+    def remove(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.SynchronizedBag.remove(java.lang.Object,int)"""
+        return bool._wrap(super(_SynchronizedBag, self).remove(arg0, _int.valueOf(arg1)))
+
+    @override
+    @overload
+    def notifyAll(self):
+        """public final native void java.lang.Object.notifyAll()"""
+        super(object, self).notifyAll()
+
+    @overload
+    def add(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.SynchronizedBag.add(E,int)"""
+        return bool._wrap(super(_SynchronizedBag, self).add(arg0, _int.valueOf(arg1)))
+
+    @override
+    @overload
+    def clear(self):
+        """public void org.apache.commons.collections4.collection.SynchronizedCollection.clear()"""
+        super(collection.SynchronizedCollection, self).clear()
+
+    @overload
+    def removeAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.removeAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.SynchronizedCollection, self).removeAll(arg0))
+
+    @override
+    @overload
+    def parallelStream(self) -> 'Stream':
+        """public default java.util.stream.Stream<E> java.util.Collection.parallelStream()"""
+        return 'Stream'._wrap(super(Collection, self).parallelStream())
+
+    @overload
+    def contains(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.contains(java.lang.Object)"""
+        return bool._wrap(super(_collection.SynchronizedCollection, self).contains(arg0))
+
+    @overload
+    def retainAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.retainAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.SynchronizedCollection, self).retainAll(arg0))
+
+    @staticmethod
+    @overload
+    def synchronizedBag(arg0: 'Bag') -> 'SynchronizedBag':
+        """public static <E> org.apache.commons.collections4.bag.SynchronizedBag<E> org.apache.commons.collections4.bag.SynchronizedBag.synchronizedBag(org.apache.commons.collections4.Bag<E>)"""
+        return SynchronizedBag._wrap(_SynchronizedBag.synchronizedBag(arg0))
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @override
+    @overload
+    def spliterator(self) -> 'Spliterator':
+        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
+        return 'Spliterator'._wrap(super(Collection, self).spliterator())
+
+    @override
+    @overload
+    def notify(self):
+        """public final native void java.lang.Object.notify()"""
+        super(object, self).notify()
+
+    @overload
+    def remove(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.remove(java.lang.Object)"""
+        return bool._wrap(super(_collection.SynchronizedCollection, self).remove(arg0))
+
+    @overload
+    def removeIf(self, arg0: 'Predicate') -> bool:
+        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.removeIf(java.util.function.Predicate<? super E>)"""
+        return bool._wrap(super(_collection.SynchronizedCollection, self).removeIf(arg0))
+
+    @override
+    @overload
     def isEmpty(self) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.isEmpty()"""
-        return bool.__wrap(super(collection.AbstractCollectionDecorator, self).isEmpty())
+        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.isEmpty()"""
+        return bool._wrap(super(collection.SynchronizedCollection, self).isEmpty())
+
+    @overload
+    def add(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.add(E)"""
+        return bool._wrap(super(_collection.SynchronizedCollection, self).add(arg0))
+
+    @overload
+    def toArray(self, arg0: 'Object') -> List[object]:
+        """public <T> T[] org.apache.commons.collections4.collection.SynchronizedCollection.toArray(T[])"""
+        return List[object]._wrap(super(_collection.SynchronizedCollection, self).toArray(arg0))
+
+    @override
+    @overload
+    def iterator(self) -> 'Iterator':
+        """public java.util.Iterator<E> org.apache.commons.collections4.collection.SynchronizedCollection.iterator()"""
+        return 'Iterator'._wrap(super(collection.SynchronizedCollection, self).iterator())
+
+    @overload
+    def containsAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.containsAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.SynchronizedCollection, self).containsAll(arg0))
+
+    @override
+    @overload
+    def uniqueSet(self) -> 'Set':
+        """public java.util.Set<E> org.apache.commons.collections4.bag.SynchronizedBag.uniqueSet()"""
+        return 'Set'._wrap(super(SynchronizedBag, self).uniqueSet())
 
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @overload
-    def removeAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.UnmodifiableSortedBag.removeAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__UnmodifiableSortedBag, self).removeAll(arg0))
+    def equals(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.SynchronizedBag.equals(java.lang.Object)"""
+        return bool._wrap(super(_SynchronizedBag, self).equals(arg0))
+
+    @override
+    @overload
+    def first(self) -> object:
+        """public synchronized E org.apache.commons.collections4.bag.SynchronizedSortedBag.first()"""
+        return object._wrap(super(SynchronizedSortedBag, self).first())
+
+    @override
+    @overload
+    def comparator(self) -> 'Comparator':
+        """public synchronized java.util.Comparator<? super E> org.apache.commons.collections4.bag.SynchronizedSortedBag.comparator()"""
+        return 'Comparator'._wrap(super(SynchronizedSortedBag, self).comparator())
+
+    @overload
+    def toArray(self, arg0: 'IntFunction') -> List[object]:
+        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
+        return List[object]._wrap(super(_Collection, self).toArray(arg0))
+
+    @override
+    @overload
+    def stream(self) -> 'Stream':
+        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
+        return 'Stream'._wrap(super(Collection, self).stream())
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public int org.apache.commons.collections4.bag.SynchronizedBag.hashCode()"""
+        return int._wrap(super(SynchronizedBag, self).hashCode())
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
+    def size(self) -> int:
+        """public int org.apache.commons.collections4.collection.SynchronizedCollection.size()"""
+        return int._wrap(super(collection.SynchronizedCollection, self).size())
+
+    @overload
+    def getCount(self, arg0: object) -> int:
+        """public int org.apache.commons.collections4.bag.SynchronizedBag.getCount(java.lang.Object)"""
+        return int._wrap(super(_SynchronizedBag, self).getCount(arg0))
+
+    @override
+    @overload
+    def wait(self):
+        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
+        super(object, self).wait()
 
     @staticmethod
     @overload
-    def unmodifiableSortedBag(arg0: 'SortedBag') -> 'collections4.SortedBag':
-        """public static <E> org.apache.commons.collections4.SortedBag<E> org.apache.commons.collections4.bag.UnmodifiableSortedBag.unmodifiableSortedBag(org.apache.commons.collections4.SortedBag<E>)"""
-        return collections4.SortedBag.__wrap(__UnmodifiableSortedBag.unmodifiableSortedBag(arg0))
+    def synchronizedSortedBag(arg0: 'SortedBag') -> 'SynchronizedSortedBag':
+        """public static <E> org.apache.commons.collections4.bag.SynchronizedSortedBag<E> org.apache.commons.collections4.bag.SynchronizedSortedBag.synchronizedSortedBag(org.apache.commons.collections4.SortedBag<E>)"""
+        return SynchronizedSortedBag._wrap(_SynchronizedSortedBag.synchronizedSortedBag(arg0))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String org.apache.commons.collections4.collection.SynchronizedCollection.toString()"""
+        return str._wrap(super(collection.SynchronizedCollection, self).toString())
 
     @overload
-    def contains(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.contains(java.lang.Object)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).contains(arg0))
+    def addAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.addAll(java.util.Collection<? extends E>)"""
+        return bool._wrap(super(_collection.SynchronizedCollection, self).addAll(arg0))
+
+    @staticmethod
+    @overload
+    def synchronizedCollection(arg0: 'Collection') -> 'collection.SynchronizedCollection':
+        """public static <T> org.apache.commons.collections4.collection.SynchronizedCollection<T> org.apache.commons.collections4.collection.SynchronizedCollection.synchronizedCollection(java.util.Collection<T>)"""
+        return collection.SynchronizedCollection._wrap(_SynchronizedCollection.synchronizedCollection(arg0))
+
+    @override
+    @overload
+    def forEach(self, arg0: 'Consumer'):
+        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
+        super(_Iterable, self).forEach(arg0) 
+ 
+ 
+# CLASS: org.apache.commons.collections4.bag.CollectionBag
+from pyquantum_helper import import_once as _import_once
+import java.util.function.Predicate as Predicate
+import org.apache.commons.collections4.bag.AbstractBagDecorator as _AbstractBagDecorator
+_AbstractBagDecorator = _AbstractBagDecorator
+import java.lang.Object as _Object
+_Object = _Object
+from builtins import type
+import org.apache.commons.collections4.Bag as _Bag
+_Bag = _Bag
+import java.util.Collection as Collection
+import java.util.Set as _Set
+_Set = _Set
+import java.util.function.Consumer as Consumer
+import java.util.Spliterator as Spliterator
+import java.util.Iterator as _Iterator
+_Iterator = _Iterator
+from builtins import bool
+from builtins import str
+from pyquantum_helper import override
+import java.util.function.IntFunction as IntFunction
+import java.lang.Object as _object
+import java.util.Spliterator as _Spliterator
+_Spliterator = _Spliterator
+import java.lang.String as _String
+_String = _String
+from builtins import object
+import org.apache.commons.collections4.collection.AbstractCollectionDecorator as _AbstractCollectionDecorator
+_AbstractCollectionDecorator = _AbstractCollectionDecorator
+import java.util.Iterator as Iterator
+from typing import List
+try:
+    from pyapache import collections4
+except ImportError:
+    collections4 = _import_once("pyapache.collections4")
+
+import org.apache.commons.collections4.bag.CollectionBag as _CollectionBag
+_CollectionBag = _CollectionBag
+import java.util.Set as Set
+import java.util.Collection as _Collection
+_Collection = _Collection
+import java.lang.Integer as _int
+import java.lang.Iterable as _Iterable
+_Iterable = _Iterable
+import java.util.stream.Stream as _Stream
+_Stream = _Stream
+import java.util.stream.Stream as Stream
+import java.lang.Long as _long
+from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
+ 
+class CollectionBag():
+    """org.apache.commons.collections4.bag.CollectionBag"""
+ 
+    @staticmethod
+    def _wrap(java_value: _CollectionBag) -> 'CollectionBag':
+        return CollectionBag(__dynamic__=java_value)
+ 
+    #
+    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+    #
+    @overload
+    def __init__(self, __dynamic__: _CollectionBag):
+        """
+        Dynamic initializer for CollectionBag.
+        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+ 
+        :param __dynamic__: The java object to wrap
+        """
+        self.__wrapper = __dynamic__
+ 
+    def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_CollectionBag__wrapper":
+            return object.__getattr__(self, name)
+        return getattr(self.__wrapper, name)
+ 
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_CollectionBag__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
+ 
+    def __delattr__(self, name: str):
+        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
+ 
+    @overload
+    def retainAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.bag.CollectionBag.retainAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_CollectionBag, self).retainAll(arg0))
+
+    @overload
+    def __init__(self, arg0: 'Bag'):
+        """public org.apache.commons.collections4.bag.CollectionBag(org.apache.commons.collections4.Bag<E>)"""
+        val = _CollectionBag(arg0)
+        self.__wrapper = val
+
+    @overload
+    def getCount(self, arg0: object) -> int:
+        """public int org.apache.commons.collections4.bag.AbstractBagDecorator.getCount(java.lang.Object)"""
+        return int._wrap(super(_AbstractBagDecorator, self).getCount(arg0))
+
+    @overload
+    def add(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.CollectionBag.add(E)"""
+        return bool._wrap(super(_CollectionBag, self).add(arg0))
+
+    @staticmethod
+    @overload
+    def collectionBag(arg0: 'Bag') -> 'collections4.Bag':
+        """public static <E> org.apache.commons.collections4.Bag<E> org.apache.commons.collections4.bag.CollectionBag.collectionBag(org.apache.commons.collections4.Bag<E>)"""
+        return collections4.Bag._wrap(_CollectionBag.collectionBag(arg0))
+
+    @override
+    @overload
+    def uniqueSet(self) -> 'Set':
+        """public java.util.Set<E> org.apache.commons.collections4.bag.AbstractBagDecorator.uniqueSet()"""
+        return 'Set'._wrap(super(AbstractBagDecorator, self).uniqueSet())
 
     @override
     @overload
@@ -3605,41 +1857,19 @@ class UnmodifiableSortedBag():
     @overload
     def parallelStream(self) -> 'Stream':
         """public default java.util.stream.Stream<E> java.util.Collection.parallelStream()"""
-        return 'Stream'.__wrap(super(Collection, self).parallelStream())
+        return 'Stream'._wrap(super(Collection, self).parallelStream())
 
     @override
     @overload
-    def uniqueSet(self) -> 'Set':
-        """public java.util.Set<E> org.apache.commons.collections4.bag.UnmodifiableSortedBag.uniqueSet()"""
-        return 'Set'.__wrap(super(UnmodifiableSortedBag, self).uniqueSet())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
-    def size(self) -> int:
-        """public int org.apache.commons.collections4.collection.AbstractCollectionDecorator.size()"""
-        return int.__wrap(super(collection.AbstractCollectionDecorator, self).size())
-
-    @override
-    @overload
-    def comparator(self) -> 'Comparator':
-        """public java.util.Comparator<? super E> org.apache.commons.collections4.bag.AbstractSortedBagDecorator.comparator()"""
-        return 'Comparator'.__wrap(super(AbstractSortedBagDecorator, self).comparator())
-
-    @overload
-    def add(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.UnmodifiableSortedBag.add(E)"""
-        return bool.__wrap(super(__UnmodifiableSortedBag, self).add(arg0))
-
-    @override
-    @overload
-    def toArray(self) -> List[object]:
-        """public java.lang.Object[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray()"""
-        return List[object].__wrap(super(collection.AbstractCollectionDecorator, self).toArray())
-
-    @overload
-    def addAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.UnmodifiableSortedBag.addAll(java.util.Collection<? extends E>)"""
-        return bool.__wrap(super(__UnmodifiableSortedBag, self).addAll(arg0))
+    def spliterator(self) -> 'Spliterator':
+        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
+        return 'Spliterator'._wrap(super(Collection, self).spliterator())
 
     @override
     @overload
@@ -3648,93 +1878,1670 @@ class UnmodifiableSortedBag():
         super(object, self).notify()
 
     @overload
-    def remove(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.UnmodifiableSortedBag.remove(java.lang.Object)"""
-        return bool.__wrap(super(__UnmodifiableSortedBag, self).remove(arg0))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String org.apache.commons.collections4.collection.AbstractCollectionDecorator.toString()"""
-        return str.__wrap(super(collection.AbstractCollectionDecorator, self).toString())
-
-    @override
-    @overload
-    def spliterator(self) -> 'Spliterator':
-        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
-        return 'Spliterator'.__wrap(super(Collection, self).spliterator())
-
-    @override
-    @overload
-    def forEach(self, arg0: 'Consumer'):
-        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
-        super(__Iterable, self).forEach(arg0)
-
-    @overload
-    def getCount(self, arg0: object) -> int:
-        """public int org.apache.commons.collections4.bag.AbstractBagDecorator.getCount(java.lang.Object)"""
-        return int.__wrap(super(__AbstractBagDecorator, self).getCount(arg0))
-
-    @overload
-    def containsAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.containsAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).containsAll(arg0))
-
-    @overload
     def remove(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.UnmodifiableSortedBag.remove(java.lang.Object,int)"""
-        return bool.__wrap(super(__UnmodifiableSortedBag, self).remove(arg0, __int.valueOf(arg1)))
+        """public boolean org.apache.commons.collections4.bag.AbstractBagDecorator.remove(java.lang.Object,int)"""
+        return bool._wrap(super(_AbstractBagDecorator, self).remove(arg0, _int.valueOf(arg1)))
 
     @overload
-    def add(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.UnmodifiableSortedBag.add(E,int)"""
-        return bool.__wrap(super(__UnmodifiableSortedBag, self).add(arg0, __int.valueOf(arg1)))
-
-    @override
-    @overload
-    def stream(self) -> 'Stream':
-        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
-        return 'Stream'.__wrap(super(Collection, self).stream())
-
-    @override
-    @overload
-    def first(self) -> object:
-        """public E org.apache.commons.collections4.bag.AbstractSortedBagDecorator.first()"""
-        return object.__wrap(super(AbstractSortedBagDecorator, self).first())
-
-    @overload
-    def retainAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.bag.UnmodifiableSortedBag.retainAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__UnmodifiableSortedBag, self).retainAll(arg0))
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.AbstractBagDecorator.equals(java.lang.Object)"""
-        return bool.__wrap(super(__AbstractBagDecorator, self).equals(arg0))
-
-    @override
-    @overload
-    def last(self) -> object:
-        """public E org.apache.commons.collections4.bag.AbstractSortedBagDecorator.last()"""
-        return object.__wrap(super(AbstractSortedBagDecorator, self).last())
+    def remove(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.CollectionBag.remove(java.lang.Object)"""
+        return bool._wrap(super(_CollectionBag, self).remove(arg0))
 
     @override
     @overload
     def hashCode(self) -> int:
         """public int org.apache.commons.collections4.bag.AbstractBagDecorator.hashCode()"""
-        return int.__wrap(super(AbstractBagDecorator, self).hashCode())
+        return int._wrap(super(AbstractBagDecorator, self).hashCode())
+
+    @overload
+    def toArray(self, arg0: 'Object') -> List[object]:
+        """public <T> T[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray(T[])"""
+        return List[object]._wrap(super(_collection.AbstractCollectionDecorator, self).toArray(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def toString(self) -> str:
+        """public java.lang.String org.apache.commons.collections4.collection.AbstractCollectionDecorator.toString()"""
+        return str._wrap(super(collection.AbstractCollectionDecorator, self).toString())
+
+    @override
+    @overload
+    def clear(self):
+        """public void org.apache.commons.collections4.collection.AbstractCollectionDecorator.clear()"""
+        super(collection.AbstractCollectionDecorator, self).clear()
+
+    @overload
+    def removeIf(self, arg0: 'Predicate') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeIf(java.util.function.Predicate<? super E>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).removeIf(arg0))
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @overload
+    def add(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.CollectionBag.add(E,int)"""
+        return bool._wrap(super(_CollectionBag, self).add(arg0, _int.valueOf(arg1)))
+
+    @override
+    @overload
+    def iterator(self) -> 'Iterator':
+        """public java.util.Iterator<E> org.apache.commons.collections4.collection.AbstractCollectionDecorator.iterator()"""
+        return 'Iterator'._wrap(super(collection.AbstractCollectionDecorator, self).iterator())
+
+    @override
+    @overload
+    def toArray(self) -> List[object]:
+        """public java.lang.Object[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray()"""
+        return List[object]._wrap(super(collection.AbstractCollectionDecorator, self).toArray())
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractBagDecorator.equals(java.lang.Object)"""
+        return bool._wrap(super(_AbstractBagDecorator, self).equals(arg0))
+
+    @overload
+    def toArray(self, arg0: 'IntFunction') -> List[object]:
+        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
+        return List[object]._wrap(super(_Collection, self).toArray(arg0))
+
+    @overload
+    def contains(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.contains(java.lang.Object)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).contains(arg0))
+
+    @override
+    @overload
+    def stream(self) -> 'Stream':
+        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
+        return 'Stream'._wrap(super(Collection, self).stream())
+
+    @override
+    @overload
+    def size(self) -> int:
+        """public int org.apache.commons.collections4.collection.AbstractCollectionDecorator.size()"""
+        return int._wrap(super(collection.AbstractCollectionDecorator, self).size())
+
+    @overload
+    def addAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.bag.CollectionBag.addAll(java.util.Collection<? extends E>)"""
+        return bool._wrap(super(_CollectionBag, self).addAll(arg0))
+
+    @overload
+    def removeAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.bag.CollectionBag.removeAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_CollectionBag, self).removeAll(arg0))
 
     @override
     @overload
     def getClass(self) -> 'type.Class':
         """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @overload
+    def containsAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.bag.CollectionBag.containsAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_CollectionBag, self).containsAll(arg0))
+
+    @override
+    @overload
+    def wait(self):
+        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
+        super(object, self).wait()
+
+    @override
+    @overload
+    def isEmpty(self) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.isEmpty()"""
+        return bool._wrap(super(collection.AbstractCollectionDecorator, self).isEmpty())
+
+    @override
+    @overload
+    def forEach(self, arg0: 'Consumer'):
+        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
+        super(_Iterable, self).forEach(arg0) 
+ 
+ 
+# CLASS: org.apache.commons.collections4.bag.AbstractMapBag$MutableInteger
+import org.apache.commons.collections4.bag.AbstractMapBag as _AbstractMapBag_MutableInteger
+_MutableInteger = _AbstractMapBag_MutableInteger.MutableInteger
+from builtins import str
+from pyquantum_helper import override
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Integer as _int
+import java.lang.Object as _object
+from builtins import type
+import java.lang.String as _String
+_String = _String
+from builtins import bool
+import java.lang.Long as _long
+from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
+ 
+class MutableInteger():
+    """org.apache.commons.collections4.bag.AbstractMapBag.MutableInteger"""
+ 
+    @staticmethod
+    def _wrap(java_value: _MutableInteger) -> 'MutableInteger':
+        return MutableInteger(__dynamic__=java_value)
+ 
+    #
+    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+    #
+    @overload
+    def __init__(self, __dynamic__: _MutableInteger):
+        """
+        Dynamic initializer for MutableInteger.
+        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+ 
+        :param __dynamic__: The java object to wrap
+        """
+        self.__wrapper = __dynamic__
+ 
+    def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_MutableInteger__wrapper":
+            return object.__getattr__(self, name)
+        return getattr(self.__wrapper, name)
+ 
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_MutableInteger__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
+ 
+    def __delattr__(self, name: str):
+        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
+ 
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @override
+    @overload
+    def notify(self):
+        """public final native void java.lang.Object.notify()"""
+        super(object, self).notify()
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag$MutableInteger.equals(java.lang.Object)"""
+        return bool._wrap(super(_MutableInteger, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public int org.apache.commons.collections4.bag.AbstractMapBag$MutableInteger.hashCode()"""
+        return int._wrap(super(MutableInteger, self).hashCode())
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @override
+    @overload
+    def notifyAll(self):
+        """public final native void java.lang.Object.notifyAll()"""
+        super(object, self).notifyAll()
+
+    @override
+    @overload
+    def wait(self):
+        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
+        super(object, self).wait()
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString()) 
+ 
+ 
+# CLASS: org.apache.commons.collections4.bag.PredicatedSortedBag
+from pyquantum_helper import import_once as _import_once
+import java.util.function.Predicate as Predicate
+import java.lang.Object as _Object
+_Object = _Object
+from builtins import type
+import org.apache.commons.collections4.collection.PredicatedCollection as _PredicatedCollection
+_PredicatedCollection = _PredicatedCollection
+import java.util.Collection as Collection
+try:
+    from pyapache.collections4 import collection
+except ImportError:
+    collection = _import_once("pyapache.collections4.collection")
+
+import java.util.Set as _Set
+_Set = _Set
+import java.util.function.Consumer as Consumer
+import java.util.Spliterator as Spliterator
+import java.util.Iterator as _Iterator
+_Iterator = _Iterator
+from builtins import bool
+from builtins import str
+from pyquantum_helper import override
+import java.util.function.IntFunction as IntFunction
+import org.apache.commons.collections4.bag.PredicatedSortedBag as _PredicatedSortedBag
+_PredicatedSortedBag = _PredicatedSortedBag
+import java.lang.Object as _object
+import java.util.Spliterator as _Spliterator
+_Spliterator = _Spliterator
+from builtins import object
+import java.lang.String as _String
+_String = _String
+import org.apache.commons.collections4.collection.AbstractCollectionDecorator as _AbstractCollectionDecorator
+_AbstractCollectionDecorator = _AbstractCollectionDecorator
+import java.util.Iterator as Iterator
+from typing import List
+try:
+    from pyapache import collections4
+except ImportError:
+    collections4 = _import_once("pyapache.collections4")
+
+import java.util.Comparator as Comparator
+import java.util.Set as Set
+import java.util.Collection as _Collection
+_Collection = _Collection
+import java.lang.Integer as _int
+import org.apache.commons.collections4.collection.PredicatedCollection as _PredicatedCollection_Builder
+_Builder = _PredicatedCollection_Builder.Builder
+import java.util.Comparator as _Comparator
+_Comparator = _Comparator
+import java.lang.Iterable as _Iterable
+_Iterable = _Iterable
+import java.util.stream.Stream as _Stream
+_Stream = _Stream
+import java.util.stream.Stream as Stream
+import org.apache.commons.collections4.bag.PredicatedBag as _PredicatedBag
+_PredicatedBag = _PredicatedBag
+import java.lang.Long as _long
+from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
+ 
+class PredicatedSortedBag():
+    """org.apache.commons.collections4.bag.PredicatedSortedBag"""
+ 
+    @staticmethod
+    def _wrap(java_value: _PredicatedSortedBag) -> 'PredicatedSortedBag':
+        return PredicatedSortedBag(__dynamic__=java_value)
+ 
+    #
+    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+    #
+    @overload
+    def __init__(self, __dynamic__: _PredicatedSortedBag):
+        """
+        Dynamic initializer for PredicatedSortedBag.
+        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+ 
+        :param __dynamic__: The java object to wrap
+        """
+        self.__wrapper = __dynamic__
+ 
+    def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_PredicatedSortedBag__wrapper":
+            return object.__getattr__(self, name)
+        return getattr(self.__wrapper, name)
+ 
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_PredicatedSortedBag__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
+ 
+    def __delattr__(self, name: str):
+        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
+ 
+    @staticmethod
+    @overload
+    def predicatedBag(arg0: 'Bag', arg1: 'Predicate') -> 'PredicatedBag':
+        """public static <E> org.apache.commons.collections4.bag.PredicatedBag<E> org.apache.commons.collections4.bag.PredicatedBag.predicatedBag(org.apache.commons.collections4.Bag<E>,org.apache.commons.collections4.Predicate<? super E>)"""
+        return PredicatedBag._wrap(_PredicatedBag.predicatedBag(arg0, arg1))
+
+    @override
+    @overload
+    def notifyAll(self):
+        """public final native void java.lang.Object.notifyAll()"""
+        super(object, self).notifyAll()
+
+    @staticmethod
+    @overload
+    def predicatedSortedBag(arg0: 'SortedBag', arg1: 'Predicate') -> 'PredicatedSortedBag':
+        """public static <E> org.apache.commons.collections4.bag.PredicatedSortedBag<E> org.apache.commons.collections4.bag.PredicatedSortedBag.predicatedSortedBag(org.apache.commons.collections4.SortedBag<E>,org.apache.commons.collections4.Predicate<? super E>)"""
+        return PredicatedSortedBag._wrap(_PredicatedSortedBag.predicatedSortedBag(arg0, arg1))
+
+    @override
+    @overload
+    def parallelStream(self) -> 'Stream':
+        """public default java.util.stream.Stream<E> java.util.Collection.parallelStream()"""
+        return 'Stream'._wrap(super(Collection, self).parallelStream())
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public int org.apache.commons.collections4.bag.PredicatedBag.hashCode()"""
+        return int._wrap(super(PredicatedBag, self).hashCode())
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @override
+    @overload
+    def spliterator(self) -> 'Spliterator':
+        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
+        return 'Spliterator'._wrap(super(Collection, self).spliterator())
+
+    @overload
+    def remove(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.PredicatedBag.remove(java.lang.Object,int)"""
+        return bool._wrap(super(_PredicatedBag, self).remove(arg0, _int.valueOf(arg1)))
+
+    @override
+    @overload
+    def notify(self):
+        """public final native void java.lang.Object.notify()"""
+        super(object, self).notify()
+
+    @overload
+    def retainAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.retainAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).retainAll(arg0))
+
+    @overload
+    def containsAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.containsAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).containsAll(arg0))
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.PredicatedBag.equals(java.lang.Object)"""
+        return bool._wrap(super(_PredicatedBag, self).equals(arg0))
+
+    @override
+    @overload
+    def uniqueSet(self) -> 'Set':
+        """public java.util.Set<E> org.apache.commons.collections4.bag.PredicatedBag.uniqueSet()"""
+        return 'Set'._wrap(super(PredicatedBag, self).uniqueSet())
+
+    @overload
+    def toArray(self, arg0: 'Object') -> List[object]:
+        """public <T> T[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray(T[])"""
+        return List[object]._wrap(super(_collection.AbstractCollectionDecorator, self).toArray(arg0))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String org.apache.commons.collections4.collection.AbstractCollectionDecorator.toString()"""
+        return str._wrap(super(collection.AbstractCollectionDecorator, self).toString())
+
+    @override
+    @overload
+    def clear(self):
+        """public void org.apache.commons.collections4.collection.AbstractCollectionDecorator.clear()"""
+        super(collection.AbstractCollectionDecorator, self).clear()
+
+    @overload
+    def removeAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).removeAll(arg0))
+
+    @override
+    @overload
+    def comparator(self) -> 'Comparator':
+        """public java.util.Comparator<? super E> org.apache.commons.collections4.bag.PredicatedSortedBag.comparator()"""
+        return 'Comparator'._wrap(super(PredicatedSortedBag, self).comparator())
+
+    @staticmethod
+    @overload
+    def notNullBuilder() -> 'collection.PredicatedCollection$Builder':
+        """public static <E> org.apache.commons.collections4.collection.PredicatedCollection$Builder<E> org.apache.commons.collections4.collection.PredicatedCollection.notNullBuilder()"""
+        return collection.PredicatedCollection$Builder._wrap(_PredicatedCollection.notNullBuilder())
+
+    @overload
+    def removeIf(self, arg0: 'Predicate') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeIf(java.util.function.Predicate<? super E>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).removeIf(arg0))
+
+    @overload
+    def add(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.PredicatedBag.add(E,int)"""
+        return bool._wrap(super(_PredicatedBag, self).add(arg0, _int.valueOf(arg1)))
+
+    @staticmethod
+    @overload
+    def predicatedCollection(arg0: 'Collection', arg1: 'Predicate') -> 'collection.PredicatedCollection':
+        """public static <T> org.apache.commons.collections4.collection.PredicatedCollection<T> org.apache.commons.collections4.collection.PredicatedCollection.predicatedCollection(java.util.Collection<T>,org.apache.commons.collections4.Predicate<? super T>)"""
+        return collection.PredicatedCollection._wrap(_PredicatedCollection.predicatedCollection(arg0, arg1))
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @override
+    @overload
+    def last(self) -> object:
+        """public E org.apache.commons.collections4.bag.PredicatedSortedBag.last()"""
+        return object._wrap(super(PredicatedSortedBag, self).last())
+
+    @override
+    @overload
+    def first(self) -> object:
+        """public E org.apache.commons.collections4.bag.PredicatedSortedBag.first()"""
+        return object._wrap(super(PredicatedSortedBag, self).first())
+
+    @override
+    @overload
+    def iterator(self) -> 'Iterator':
+        """public java.util.Iterator<E> org.apache.commons.collections4.collection.AbstractCollectionDecorator.iterator()"""
+        return 'Iterator'._wrap(super(collection.AbstractCollectionDecorator, self).iterator())
+
+    @override
+    @overload
+    def toArray(self) -> List[object]:
+        """public java.lang.Object[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray()"""
+        return List[object]._wrap(super(collection.AbstractCollectionDecorator, self).toArray())
+
+    @overload
+    def toArray(self, arg0: 'IntFunction') -> List[object]:
+        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
+        return List[object]._wrap(super(_Collection, self).toArray(arg0))
+
+    @overload
+    def add(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.PredicatedCollection.add(E)"""
+        return bool._wrap(super(_collection.PredicatedCollection, self).add(arg0))
+
+    @overload
+    def contains(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.contains(java.lang.Object)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).contains(arg0))
+
+    @override
+    @overload
+    def stream(self) -> 'Stream':
+        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
+        return 'Stream'._wrap(super(Collection, self).stream())
+
+    @override
+    @overload
+    def size(self) -> int:
+        """public int org.apache.commons.collections4.collection.AbstractCollectionDecorator.size()"""
+        return int._wrap(super(collection.AbstractCollectionDecorator, self).size())
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @staticmethod
+    @overload
+    def builder(arg0: 'Predicate') -> 'collection.PredicatedCollection$Builder':
+        """public static <E> org.apache.commons.collections4.collection.PredicatedCollection$Builder<E> org.apache.commons.collections4.collection.PredicatedCollection.builder(org.apache.commons.collections4.Predicate<? super E>)"""
+        return collection.PredicatedCollection$Builder._wrap(_PredicatedCollection.builder(arg0))
+
+    @override
+    @overload
+    def wait(self):
+        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
+        super(object, self).wait()
+
+    @override
+    @overload
+    def isEmpty(self) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.isEmpty()"""
+        return bool._wrap(super(collection.AbstractCollectionDecorator, self).isEmpty())
+
+    @override
+    @overload
+    def forEach(self, arg0: 'Consumer'):
+        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
+        super(_Iterable, self).forEach(arg0)
+
+    @overload
+    def remove(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.remove(java.lang.Object)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).remove(arg0))
+
+    @overload
+    def getCount(self, arg0: object) -> int:
+        """public int org.apache.commons.collections4.bag.PredicatedBag.getCount(java.lang.Object)"""
+        return int._wrap(super(_PredicatedBag, self).getCount(arg0))
+
+    @overload
+    def addAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.PredicatedCollection.addAll(java.util.Collection<? extends E>)"""
+        return bool._wrap(super(_collection.PredicatedCollection, self).addAll(arg0)) 
+ 
+ 
+# CLASS: org.apache.commons.collections4.bag.HashBag
+import java.util.function.Predicate as Predicate
+import java.lang.Object as _Object
+_Object = _Object
+from builtins import type
+import java.util.Collection as Collection
+import java.util.Set as _Set
+_Set = _Set
+import java.util.function.Consumer as Consumer
+import java.util.Spliterator as Spliterator
+import java.util.Iterator as _Iterator
+_Iterator = _Iterator
+from builtins import bool
+from builtins import str
+from pyquantum_helper import override
+import java.util.function.IntFunction as IntFunction
+import java.lang.Object as _object
+import org.apache.commons.collections4.bag.AbstractMapBag as _AbstractMapBag
+_AbstractMapBag = _AbstractMapBag
+import java.util.Spliterator as _Spliterator
+_Spliterator = _Spliterator
+import java.lang.String as _String
+_String = _String
+from builtins import object
+import java.util.Iterator as Iterator
+from typing import List
+import java.util.Set as Set
+import java.util.Collection as _Collection
+_Collection = _Collection
+import java.lang.Integer as _int
+import java.lang.Iterable as _Iterable
+_Iterable = _Iterable
+import org.apache.commons.collections4.bag.HashBag as _HashBag
+_HashBag = _HashBag
+import java.util.stream.Stream as _Stream
+_Stream = _Stream
+import java.util.stream.Stream as Stream
+import java.lang.Long as _long
+from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
+ 
+class HashBag():
+    """org.apache.commons.collections4.bag.HashBag"""
+ 
+    @staticmethod
+    def _wrap(java_value: _HashBag) -> 'HashBag':
+        return HashBag(__dynamic__=java_value)
+ 
+    #
+    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+    #
+    @overload
+    def __init__(self, __dynamic__: _HashBag):
+        """
+        Dynamic initializer for HashBag.
+        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+ 
+        :param __dynamic__: The java object to wrap
+        """
+        self.__wrapper = __dynamic__
+ 
+    def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_HashBag__wrapper":
+            return object.__getattr__(self, name)
+        return getattr(self.__wrapper, name)
+ 
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_HashBag__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
+ 
+    def __delattr__(self, name: str):
+        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
+ 
+    @overload
+    def remove(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.remove(java.lang.Object,int)"""
+        return bool._wrap(super(_AbstractMapBag, self).remove(arg0, _int.valueOf(arg1)))
+
+    @overload
+    def __init__(self, arg0: 'Collection'):
+        """public org.apache.commons.collections4.bag.HashBag(java.util.Collection<? extends E>)"""
+        val = _HashBag(arg0)
+        self.__wrapper = val
+
+    @overload
+    def __init__(self, ):
+        """public org.apache.commons.collections4.bag.HashBag()"""
+        val = _HashBag()
+        self.__wrapper = val
+
+    @overload
+    def retainAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.retainAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_AbstractMapBag, self).retainAll(arg0))
+
+    @override
+    @overload
+    def uniqueSet(self) -> 'Set':
+        """public java.util.Set<E> org.apache.commons.collections4.bag.AbstractMapBag.uniqueSet()"""
+        return 'Set'._wrap(super(AbstractMapBag, self).uniqueSet())
+
+    @overload
+    def add(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.add(E)"""
+        return bool._wrap(super(_AbstractMapBag, self).add(arg0))
+
+    @override
+    @overload
+    def notifyAll(self):
+        """public final native void java.lang.Object.notifyAll()"""
+        super(object, self).notifyAll()
+
+    @override
+    @overload
+    def parallelStream(self) -> 'Stream':
+        """public default java.util.stream.Stream<E> java.util.Collection.parallelStream()"""
+        return 'Stream'._wrap(super(Collection, self).parallelStream())
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @override
+    @overload
+    def spliterator(self) -> 'Spliterator':
+        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
+        return 'Spliterator'._wrap(super(Collection, self).spliterator())
+
+    @override
+    @overload
+    def notify(self):
+        """public final native void java.lang.Object.notify()"""
+        super(object, self).notify()
+
+    @overload
+    def containsAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.containsAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_AbstractMapBag, self).containsAll(arg0))
+
+    @overload
+    def remove(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.remove(java.lang.Object)"""
+        return bool._wrap(super(_AbstractMapBag, self).remove(arg0))
+
+    @overload
+    def removeAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.removeAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_AbstractMapBag, self).removeAll(arg0))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String org.apache.commons.collections4.bag.AbstractMapBag.toString()"""
+        return str._wrap(super(AbstractMapBag, self).toString())
+
+    @override
+    @overload
+    def clear(self):
+        """public void org.apache.commons.collections4.bag.AbstractMapBag.clear()"""
+        super(AbstractMapBag, self).clear()
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.equals(java.lang.Object)"""
+        return bool._wrap(super(_AbstractMapBag, self).equals(arg0))
+
+    @overload
+    def toArray(self, arg0: 'Object') -> List[object]:
+        """public <T> T[] org.apache.commons.collections4.bag.AbstractMapBag.toArray(T[])"""
+        return List[object]._wrap(super(_AbstractMapBag, self).toArray(arg0))
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public int org.apache.commons.collections4.bag.AbstractMapBag.hashCode()"""
+        return int._wrap(super(AbstractMapBag, self).hashCode())
+
+    @overload
+    def removeIf(self, arg0: 'Predicate') -> bool:
+        """public default boolean java.util.Collection.removeIf(java.util.function.Predicate<? super E>)"""
+        return bool._wrap(super(_Collection, self).removeIf(arg0))
+
+    @override
+    @overload
+    def iterator(self) -> 'Iterator':
+        """public java.util.Iterator<E> org.apache.commons.collections4.bag.AbstractMapBag.iterator()"""
+        return 'Iterator'._wrap(super(AbstractMapBag, self).iterator())
+
+    @overload
+    def getCount(self, arg0: object) -> int:
+        """public int org.apache.commons.collections4.bag.AbstractMapBag.getCount(java.lang.Object)"""
+        return int._wrap(super(_AbstractMapBag, self).getCount(arg0))
+
+    @overload
+    def __init__(self):
+        """public org.apache.commons.collections4.bag.HashBag()"""
+        val = _HashBag()
+        self.__wrapper = val
+
+    @overload
+    def toArray(self, arg0: 'IntFunction') -> List[object]:
+        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
+        return List[object]._wrap(super(_Collection, self).toArray(arg0))
+
+    @override
+    @overload
+    def stream(self) -> 'Stream':
+        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
+        return 'Stream'._wrap(super(Collection, self).stream())
+
+    @overload
+    def add(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.add(E,int)"""
+        return bool._wrap(super(_AbstractMapBag, self).add(arg0, _int.valueOf(arg1)))
+
+    @override
+    @overload
+    def toArray(self) -> List[object]:
+        """public java.lang.Object[] org.apache.commons.collections4.bag.AbstractMapBag.toArray()"""
+        return List[object]._wrap(super(AbstractMapBag, self).toArray())
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
+    def isEmpty(self) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.isEmpty()"""
+        return bool._wrap(super(AbstractMapBag, self).isEmpty())
+
+    @override
+    @overload
+    def wait(self):
+        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
+        super(object, self).wait()
+
+    @overload
+    def contains(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.contains(java.lang.Object)"""
+        return bool._wrap(super(_AbstractMapBag, self).contains(arg0))
+
+    @override
+    @overload
+    def size(self) -> int:
+        """public int org.apache.commons.collections4.bag.AbstractMapBag.size()"""
+        return int._wrap(super(AbstractMapBag, self).size())
+
+    @overload
+    def addAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.addAll(java.util.Collection<? extends E>)"""
+        return bool._wrap(super(_AbstractMapBag, self).addAll(arg0))
+
+    @override
+    @overload
+    def forEach(self, arg0: 'Consumer'):
+        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
+        super(_Iterable, self).forEach(arg0) 
+ 
+ 
+# CLASS: org.apache.commons.collections4.bag.CollectionSortedBag
+from pyquantum_helper import import_once as _import_once
+import org.apache.commons.collections4.bag.CollectionSortedBag as _CollectionSortedBag
+_CollectionSortedBag = _CollectionSortedBag
+import java.util.function.Predicate as Predicate
+import org.apache.commons.collections4.bag.AbstractBagDecorator as _AbstractBagDecorator
+_AbstractBagDecorator = _AbstractBagDecorator
+import java.lang.Object as _Object
+_Object = _Object
+from builtins import type
+import org.apache.commons.collections4.bag.AbstractSortedBagDecorator as _AbstractSortedBagDecorator
+_AbstractSortedBagDecorator = _AbstractSortedBagDecorator
+import java.util.Collection as Collection
+import java.util.Set as _Set
+_Set = _Set
+import java.util.function.Consumer as Consumer
+import java.util.Spliterator as Spliterator
+import org.apache.commons.collections4.SortedBag as _SortedBag
+_SortedBag = _SortedBag
+import java.util.Iterator as _Iterator
+_Iterator = _Iterator
+from builtins import bool
+from builtins import str
+from pyquantum_helper import override
+import java.util.function.IntFunction as IntFunction
+import java.lang.Object as _object
+import java.util.Spliterator as _Spliterator
+_Spliterator = _Spliterator
+from builtins import object
+import java.lang.String as _String
+_String = _String
+import org.apache.commons.collections4.collection.AbstractCollectionDecorator as _AbstractCollectionDecorator
+_AbstractCollectionDecorator = _AbstractCollectionDecorator
+import java.util.Iterator as Iterator
+from typing import List
+try:
+    from pyapache import collections4
+except ImportError:
+    collections4 = _import_once("pyapache.collections4")
+
+import java.util.Comparator as Comparator
+import java.util.Set as Set
+import java.util.Collection as _Collection
+_Collection = _Collection
+import java.lang.Integer as _int
+import java.util.Comparator as _Comparator
+_Comparator = _Comparator
+import java.lang.Iterable as _Iterable
+_Iterable = _Iterable
+import java.util.stream.Stream as _Stream
+_Stream = _Stream
+import java.util.stream.Stream as Stream
+import java.lang.Long as _long
+from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
+ 
+class CollectionSortedBag():
+    """org.apache.commons.collections4.bag.CollectionSortedBag"""
+ 
+    @staticmethod
+    def _wrap(java_value: _CollectionSortedBag) -> 'CollectionSortedBag':
+        return CollectionSortedBag(__dynamic__=java_value)
+ 
+    #
+    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+    #
+    @overload
+    def __init__(self, __dynamic__: _CollectionSortedBag):
+        """
+        Dynamic initializer for CollectionSortedBag.
+        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+ 
+        :param __dynamic__: The java object to wrap
+        """
+        self.__wrapper = __dynamic__
+ 
+    def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_CollectionSortedBag__wrapper":
+            return object.__getattr__(self, name)
+        return getattr(self.__wrapper, name)
+ 
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_CollectionSortedBag__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
+ 
+    def __delattr__(self, name: str):
+        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
+ 
+    @overload
+    def addAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.bag.CollectionSortedBag.addAll(java.util.Collection<? extends E>)"""
+        return bool._wrap(super(_CollectionSortedBag, self).addAll(arg0))
+
+    @overload
+    def getCount(self, arg0: object) -> int:
+        """public int org.apache.commons.collections4.bag.AbstractBagDecorator.getCount(java.lang.Object)"""
+        return int._wrap(super(_AbstractBagDecorator, self).getCount(arg0))
+
+    @overload
+    def add(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.CollectionSortedBag.add(E)"""
+        return bool._wrap(super(_CollectionSortedBag, self).add(arg0))
+
+    @override
+    @overload
+    def uniqueSet(self) -> 'Set':
+        """public java.util.Set<E> org.apache.commons.collections4.bag.AbstractBagDecorator.uniqueSet()"""
+        return 'Set'._wrap(super(AbstractBagDecorator, self).uniqueSet())
+
+    @overload
+    def retainAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.bag.CollectionSortedBag.retainAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_CollectionSortedBag, self).retainAll(arg0))
+
+    @override
+    @overload
+    def notifyAll(self):
+        """public final native void java.lang.Object.notifyAll()"""
+        super(object, self).notifyAll()
+
+    @staticmethod
+    @overload
+    def collectionSortedBag(arg0: 'SortedBag') -> 'collections4.SortedBag':
+        """public static <E> org.apache.commons.collections4.SortedBag<E> org.apache.commons.collections4.bag.CollectionSortedBag.collectionSortedBag(org.apache.commons.collections4.SortedBag<E>)"""
+        return collections4.SortedBag._wrap(_CollectionSortedBag.collectionSortedBag(arg0))
+
+    @override
+    @overload
+    def parallelStream(self) -> 'Stream':
+        """public default java.util.stream.Stream<E> java.util.Collection.parallelStream()"""
+        return 'Stream'._wrap(super(Collection, self).parallelStream())
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @override
+    @overload
+    def spliterator(self) -> 'Spliterator':
+        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
+        return 'Spliterator'._wrap(super(Collection, self).spliterator())
+
+    @override
+    @overload
+    def notify(self):
+        """public final native void java.lang.Object.notify()"""
+        super(object, self).notify()
+
+    @overload
+    def __init__(self, arg0: 'SortedBag'):
+        """public org.apache.commons.collections4.bag.CollectionSortedBag(org.apache.commons.collections4.SortedBag<E>)"""
+        val = _CollectionSortedBag(arg0)
+        self.__wrapper = val
+
+    @overload
+    def remove(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractBagDecorator.remove(java.lang.Object,int)"""
+        return bool._wrap(super(_AbstractBagDecorator, self).remove(arg0, _int.valueOf(arg1)))
+
+    @overload
+    def removeAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.bag.CollectionSortedBag.removeAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_CollectionSortedBag, self).removeAll(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public int org.apache.commons.collections4.bag.AbstractBagDecorator.hashCode()"""
+        return int._wrap(super(AbstractBagDecorator, self).hashCode())
+
+    @overload
+    def toArray(self, arg0: 'Object') -> List[object]:
+        """public <T> T[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray(T[])"""
+        return List[object]._wrap(super(_collection.AbstractCollectionDecorator, self).toArray(arg0))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String org.apache.commons.collections4.collection.AbstractCollectionDecorator.toString()"""
+        return str._wrap(super(collection.AbstractCollectionDecorator, self).toString())
+
+    @override
+    @overload
+    def clear(self):
+        """public void org.apache.commons.collections4.collection.AbstractCollectionDecorator.clear()"""
+        super(collection.AbstractCollectionDecorator, self).clear()
+
+    @overload
+    def containsAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.bag.CollectionSortedBag.containsAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_CollectionSortedBag, self).containsAll(arg0))
+
+    @override
+    @overload
+    def last(self) -> object:
+        """public E org.apache.commons.collections4.bag.AbstractSortedBagDecorator.last()"""
+        return object._wrap(super(AbstractSortedBagDecorator, self).last())
+
+    @overload
+    def add(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.CollectionSortedBag.add(E,int)"""
+        return bool._wrap(super(_CollectionSortedBag, self).add(arg0, _int.valueOf(arg1)))
+
+    @overload
+    def removeIf(self, arg0: 'Predicate') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeIf(java.util.function.Predicate<? super E>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).removeIf(arg0))
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @overload
+    def remove(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.CollectionSortedBag.remove(java.lang.Object)"""
+        return bool._wrap(super(_CollectionSortedBag, self).remove(arg0))
+
+    @override
+    @overload
+    def comparator(self) -> 'Comparator':
+        """public java.util.Comparator<? super E> org.apache.commons.collections4.bag.AbstractSortedBagDecorator.comparator()"""
+        return 'Comparator'._wrap(super(AbstractSortedBagDecorator, self).comparator())
+
+    @override
+    @overload
+    def iterator(self) -> 'Iterator':
+        """public java.util.Iterator<E> org.apache.commons.collections4.collection.AbstractCollectionDecorator.iterator()"""
+        return 'Iterator'._wrap(super(collection.AbstractCollectionDecorator, self).iterator())
+
+    @override
+    @overload
+    def toArray(self) -> List[object]:
+        """public java.lang.Object[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray()"""
+        return List[object]._wrap(super(collection.AbstractCollectionDecorator, self).toArray())
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractBagDecorator.equals(java.lang.Object)"""
+        return bool._wrap(super(_AbstractBagDecorator, self).equals(arg0))
+
+    @overload
+    def toArray(self, arg0: 'IntFunction') -> List[object]:
+        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
+        return List[object]._wrap(super(_Collection, self).toArray(arg0))
+
+    @overload
+    def contains(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.contains(java.lang.Object)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).contains(arg0))
+
+    @override
+    @overload
+    def stream(self) -> 'Stream':
+        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
+        return 'Stream'._wrap(super(Collection, self).stream())
+
+    @override
+    @overload
+    def size(self) -> int:
+        """public int org.apache.commons.collections4.collection.AbstractCollectionDecorator.size()"""
+        return int._wrap(super(collection.AbstractCollectionDecorator, self).size())
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
+    def wait(self):
+        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
+        super(object, self).wait()
+
+    @override
+    @overload
+    def isEmpty(self) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.isEmpty()"""
+        return bool._wrap(super(collection.AbstractCollectionDecorator, self).isEmpty())
+
+    @override
+    @overload
+    def forEach(self, arg0: 'Consumer'):
+        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
+        super(_Iterable, self).forEach(arg0)
+
+    @override
+    @overload
+    def first(self) -> object:
+        """public E org.apache.commons.collections4.bag.AbstractSortedBagDecorator.first()"""
+        return object._wrap(super(AbstractSortedBagDecorator, self).first()) 
+ 
+ 
+# CLASS: org.apache.commons.collections4.bag.TransformedBag
+from pyquantum_helper import import_once as _import_once
+import java.util.function.Predicate as Predicate
+import java.lang.Object as _Object
+_Object = _Object
+from builtins import type
+import org.apache.commons.collections4.Bag as _Bag
+_Bag = _Bag
+import org.apache.commons.collections4.collection.TransformedCollection as _TransformedCollection
+_TransformedCollection = _TransformedCollection
+import java.util.Collection as Collection
+try:
+    from pyapache.collections4 import collection
+except ImportError:
+    collection = _import_once("pyapache.collections4.collection")
+
+import java.util.Set as _Set
+_Set = _Set
+import java.util.function.Consumer as Consumer
+import java.util.Spliterator as Spliterator
+import org.apache.commons.collections4.bag.TransformedBag as _TransformedBag
+_TransformedBag = _TransformedBag
+import java.util.Iterator as _Iterator
+_Iterator = _Iterator
+from builtins import bool
+from builtins import str
+from pyquantum_helper import override
+import java.util.function.IntFunction as IntFunction
+import java.lang.Object as _object
+import java.util.Spliterator as _Spliterator
+_Spliterator = _Spliterator
+import java.lang.String as _String
+_String = _String
+from builtins import object
+import org.apache.commons.collections4.collection.AbstractCollectionDecorator as _AbstractCollectionDecorator
+_AbstractCollectionDecorator = _AbstractCollectionDecorator
+import java.util.Iterator as Iterator
+from typing import List
+try:
+    from pyapache import collections4
+except ImportError:
+    collections4 = _import_once("pyapache.collections4")
+
+import java.util.Set as Set
+import java.util.Collection as _Collection
+_Collection = _Collection
+import java.lang.Integer as _int
+import java.lang.Iterable as _Iterable
+_Iterable = _Iterable
+import java.util.stream.Stream as _Stream
+_Stream = _Stream
+import java.util.stream.Stream as Stream
+import java.lang.Long as _long
+from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
+ 
+class TransformedBag():
+    """org.apache.commons.collections4.bag.TransformedBag"""
+ 
+    @staticmethod
+    def _wrap(java_value: _TransformedBag) -> 'TransformedBag':
+        return TransformedBag(__dynamic__=java_value)
+ 
+    #
+    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+    #
+    @overload
+    def __init__(self, __dynamic__: _TransformedBag):
+        """
+        Dynamic initializer for TransformedBag.
+        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+ 
+        :param __dynamic__: The java object to wrap
+        """
+        self.__wrapper = __dynamic__
+ 
+    def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_TransformedBag__wrapper":
+            return object.__getattr__(self, name)
+        return getattr(self.__wrapper, name)
+ 
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_TransformedBag__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
+ 
+    def __delattr__(self, name: str):
+        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
+ 
+    @overload
+    def add(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.TransformedBag.add(E,int)"""
+        return bool._wrap(super(_TransformedBag, self).add(arg0, _int.valueOf(arg1)))
+
+    @overload
+    def remove(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.TransformedBag.remove(java.lang.Object,int)"""
+        return bool._wrap(super(_TransformedBag, self).remove(arg0, _int.valueOf(arg1)))
+
+    @overload
+    def add(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.TransformedCollection.add(E)"""
+        return bool._wrap(super(_collection.TransformedCollection, self).add(arg0))
+
+    @override
+    @overload
+    def uniqueSet(self) -> 'Set':
+        """public java.util.Set<E> org.apache.commons.collections4.bag.TransformedBag.uniqueSet()"""
+        return 'Set'._wrap(super(TransformedBag, self).uniqueSet())
+
+    @override
+    @overload
+    def notifyAll(self):
+        """public final native void java.lang.Object.notifyAll()"""
+        super(object, self).notifyAll()
+
+    @override
+    @overload
+    def parallelStream(self) -> 'Stream':
+        """public default java.util.stream.Stream<E> java.util.Collection.parallelStream()"""
+        return 'Stream'._wrap(super(Collection, self).parallelStream())
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.TransformedBag.equals(java.lang.Object)"""
+        return bool._wrap(super(_TransformedBag, self).equals(arg0))
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @override
+    @overload
+    def spliterator(self) -> 'Spliterator':
+        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
+        return 'Spliterator'._wrap(super(Collection, self).spliterator())
+
+    @override
+    @overload
+    def notify(self):
+        """public final native void java.lang.Object.notify()"""
+        super(object, self).notify()
+
+    @staticmethod
+    @overload
+    def transformedCollection(arg0: 'Collection', arg1: 'Transformer') -> 'collection.TransformedCollection':
+        """public static <E> org.apache.commons.collections4.collection.TransformedCollection<E> org.apache.commons.collections4.collection.TransformedCollection.transformedCollection(java.util.Collection<E>,org.apache.commons.collections4.Transformer<? super E, ? extends E>)"""
+        return collection.TransformedCollection._wrap(_TransformedCollection.transformedCollection(arg0, arg1))
+
+    @overload
+    def retainAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.retainAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).retainAll(arg0))
+
+    @overload
+    def addAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.TransformedCollection.addAll(java.util.Collection<? extends E>)"""
+        return bool._wrap(super(_collection.TransformedCollection, self).addAll(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public int org.apache.commons.collections4.bag.TransformedBag.hashCode()"""
+        return int._wrap(super(TransformedBag, self).hashCode())
+
+    @overload
+    def containsAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.containsAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).containsAll(arg0))
+
+    @overload
+    def toArray(self, arg0: 'Object') -> List[object]:
+        """public <T> T[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray(T[])"""
+        return List[object]._wrap(super(_collection.AbstractCollectionDecorator, self).toArray(arg0))
+
+    @staticmethod
+    @overload
+    def transformedBag(arg0: 'Bag', arg1: 'Transformer') -> 'collections4.Bag':
+        """public static <E> org.apache.commons.collections4.Bag<E> org.apache.commons.collections4.bag.TransformedBag.transformedBag(org.apache.commons.collections4.Bag<E>,org.apache.commons.collections4.Transformer<? super E, ? extends E>)"""
+        return collections4.Bag._wrap(_TransformedBag.transformedBag(arg0, arg1))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String org.apache.commons.collections4.collection.AbstractCollectionDecorator.toString()"""
+        return str._wrap(super(collection.AbstractCollectionDecorator, self).toString())
+
+    @override
+    @overload
+    def clear(self):
+        """public void org.apache.commons.collections4.collection.AbstractCollectionDecorator.clear()"""
+        super(collection.AbstractCollectionDecorator, self).clear()
+
+    @overload
+    def removeAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).removeAll(arg0))
+
+    @overload
+    def removeIf(self, arg0: 'Predicate') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeIf(java.util.function.Predicate<? super E>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).removeIf(arg0))
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @staticmethod
+    @overload
+    def transformingCollection(arg0: 'Collection', arg1: 'Transformer') -> 'collection.TransformedCollection':
+        """public static <E> org.apache.commons.collections4.collection.TransformedCollection<E> org.apache.commons.collections4.collection.TransformedCollection.transformingCollection(java.util.Collection<E>,org.apache.commons.collections4.Transformer<? super E, ? extends E>)"""
+        return collection.TransformedCollection._wrap(_TransformedCollection.transformingCollection(arg0, arg1))
+
+    @staticmethod
+    @overload
+    def transformingBag(arg0: 'Bag', arg1: 'Transformer') -> 'collections4.Bag':
+        """public static <E> org.apache.commons.collections4.Bag<E> org.apache.commons.collections4.bag.TransformedBag.transformingBag(org.apache.commons.collections4.Bag<E>,org.apache.commons.collections4.Transformer<? super E, ? extends E>)"""
+        return collections4.Bag._wrap(_TransformedBag.transformingBag(arg0, arg1))
+
+    @override
+    @overload
+    def iterator(self) -> 'Iterator':
+        """public java.util.Iterator<E> org.apache.commons.collections4.collection.AbstractCollectionDecorator.iterator()"""
+        return 'Iterator'._wrap(super(collection.AbstractCollectionDecorator, self).iterator())
+
+    @override
+    @overload
+    def toArray(self) -> List[object]:
+        """public java.lang.Object[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray()"""
+        return List[object]._wrap(super(collection.AbstractCollectionDecorator, self).toArray())
+
+    @overload
+    def toArray(self, arg0: 'IntFunction') -> List[object]:
+        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
+        return List[object]._wrap(super(_Collection, self).toArray(arg0))
+
+    @overload
+    def contains(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.contains(java.lang.Object)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).contains(arg0))
+
+    @override
+    @overload
+    def stream(self) -> 'Stream':
+        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
+        return 'Stream'._wrap(super(Collection, self).stream())
+
+    @override
+    @overload
+    def size(self) -> int:
+        """public int org.apache.commons.collections4.collection.AbstractCollectionDecorator.size()"""
+        return int._wrap(super(collection.AbstractCollectionDecorator, self).size())
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @overload
+    def getCount(self, arg0: object) -> int:
+        """public int org.apache.commons.collections4.bag.TransformedBag.getCount(java.lang.Object)"""
+        return int._wrap(super(_TransformedBag, self).getCount(arg0))
+
+    @override
+    @overload
+    def wait(self):
+        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
+        super(object, self).wait()
+
+    @override
+    @overload
+    def isEmpty(self) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.isEmpty()"""
+        return bool._wrap(super(collection.AbstractCollectionDecorator, self).isEmpty())
+
+    @override
+    @overload
+    def forEach(self, arg0: 'Consumer'):
+        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
+        super(_Iterable, self).forEach(arg0)
+
+    @overload
+    def remove(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.remove(java.lang.Object)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).remove(arg0)) 
+ 
+ 
+# CLASS: org.apache.commons.collections4.bag.UnmodifiableSortedBag
+from pyquantum_helper import import_once as _import_once
+import java.util.function.Predicate as Predicate
+import org.apache.commons.collections4.bag.AbstractBagDecorator as _AbstractBagDecorator
+_AbstractBagDecorator = _AbstractBagDecorator
+import java.lang.Object as _Object
+_Object = _Object
+from builtins import type
+import org.apache.commons.collections4.bag.AbstractSortedBagDecorator as _AbstractSortedBagDecorator
+_AbstractSortedBagDecorator = _AbstractSortedBagDecorator
+import java.util.Collection as Collection
+import java.util.Set as _Set
+_Set = _Set
+import java.util.function.Consumer as Consumer
+import java.util.Spliterator as Spliterator
+import org.apache.commons.collections4.SortedBag as _SortedBag
+_SortedBag = _SortedBag
+import java.util.Iterator as _Iterator
+_Iterator = _Iterator
+from builtins import bool
+from builtins import str
+from pyquantum_helper import override
+import java.util.function.IntFunction as IntFunction
+import java.lang.Object as _object
+import java.util.Spliterator as _Spliterator
+_Spliterator = _Spliterator
+import org.apache.commons.collections4.bag.UnmodifiableSortedBag as _UnmodifiableSortedBag
+_UnmodifiableSortedBag = _UnmodifiableSortedBag
+from builtins import object
+import java.lang.String as _String
+_String = _String
+import org.apache.commons.collections4.collection.AbstractCollectionDecorator as _AbstractCollectionDecorator
+_AbstractCollectionDecorator = _AbstractCollectionDecorator
+import java.util.Iterator as Iterator
+from typing import List
+try:
+    from pyapache import collections4
+except ImportError:
+    collections4 = _import_once("pyapache.collections4")
+
+import java.util.Comparator as Comparator
+import java.util.Set as Set
+import java.util.Collection as _Collection
+_Collection = _Collection
+import java.lang.Integer as _int
+import java.util.Comparator as _Comparator
+_Comparator = _Comparator
+import java.lang.Iterable as _Iterable
+_Iterable = _Iterable
+import java.util.stream.Stream as _Stream
+_Stream = _Stream
+import java.util.stream.Stream as Stream
+import java.lang.Long as _long
+from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
+ 
+class UnmodifiableSortedBag():
+    """org.apache.commons.collections4.bag.UnmodifiableSortedBag"""
+ 
+    @staticmethod
+    def _wrap(java_value: _UnmodifiableSortedBag) -> 'UnmodifiableSortedBag':
+        return UnmodifiableSortedBag(__dynamic__=java_value)
+ 
+    #
+    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+    #
+    @overload
+    def __init__(self, __dynamic__: _UnmodifiableSortedBag):
+        """
+        Dynamic initializer for UnmodifiableSortedBag.
+        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+ 
+        :param __dynamic__: The java object to wrap
+        """
+        self.__wrapper = __dynamic__
+ 
+    def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_UnmodifiableSortedBag__wrapper":
+            return object.__getattr__(self, name)
+        return getattr(self.__wrapper, name)
+ 
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_UnmodifiableSortedBag__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
+ 
+    def __delattr__(self, name: str):
+        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
+ 
+    @overload
+    def getCount(self, arg0: object) -> int:
+        """public int org.apache.commons.collections4.bag.AbstractBagDecorator.getCount(java.lang.Object)"""
+        return int._wrap(super(_AbstractBagDecorator, self).getCount(arg0))
+
+    @overload
+    def add(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.UnmodifiableSortedBag.add(E,int)"""
+        return bool._wrap(super(_UnmodifiableSortedBag, self).add(arg0, _int.valueOf(arg1)))
+
+    @override
+    @overload
+    def notifyAll(self):
+        """public final native void java.lang.Object.notifyAll()"""
+        super(object, self).notifyAll()
+
+    @override
+    @overload
+    def iterator(self) -> 'Iterator':
+        """public java.util.Iterator<E> org.apache.commons.collections4.bag.UnmodifiableSortedBag.iterator()"""
+        return 'Iterator'._wrap(super(UnmodifiableSortedBag, self).iterator())
+
+    @override
+    @overload
+    def parallelStream(self) -> 'Stream':
+        """public default java.util.stream.Stream<E> java.util.Collection.parallelStream()"""
+        return 'Stream'._wrap(super(Collection, self).parallelStream())
+
+    @overload
+    def remove(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.UnmodifiableSortedBag.remove(java.lang.Object)"""
+        return bool._wrap(super(_UnmodifiableSortedBag, self).remove(arg0))
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @override
+    @overload
+    def spliterator(self) -> 'Spliterator':
+        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
+        return 'Spliterator'._wrap(super(Collection, self).spliterator())
+
+    @override
+    @overload
+    def notify(self):
+        """public final native void java.lang.Object.notify()"""
+        super(object, self).notify()
+
+    @overload
+    def add(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.UnmodifiableSortedBag.add(E)"""
+        return bool._wrap(super(_UnmodifiableSortedBag, self).add(arg0))
+
+    @overload
+    def addAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.bag.UnmodifiableSortedBag.addAll(java.util.Collection<? extends E>)"""
+        return bool._wrap(super(_UnmodifiableSortedBag, self).addAll(arg0))
+
+    @override
+    @overload
+    def uniqueSet(self) -> 'Set':
+        """public java.util.Set<E> org.apache.commons.collections4.bag.UnmodifiableSortedBag.uniqueSet()"""
+        return 'Set'._wrap(super(UnmodifiableSortedBag, self).uniqueSet())
+
+    @staticmethod
+    @overload
+    def unmodifiableSortedBag(arg0: 'SortedBag') -> 'collections4.SortedBag':
+        """public static <E> org.apache.commons.collections4.SortedBag<E> org.apache.commons.collections4.bag.UnmodifiableSortedBag.unmodifiableSortedBag(org.apache.commons.collections4.SortedBag<E>)"""
+        return collections4.SortedBag._wrap(_UnmodifiableSortedBag.unmodifiableSortedBag(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public int org.apache.commons.collections4.bag.AbstractBagDecorator.hashCode()"""
+        return int._wrap(super(AbstractBagDecorator, self).hashCode())
+
+    @overload
+    def containsAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.containsAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).containsAll(arg0))
+
+    @overload
+    def removeIf(self, arg0: 'Predicate') -> bool:
+        """public boolean org.apache.commons.collections4.bag.UnmodifiableSortedBag.removeIf(java.util.function.Predicate<? super E>)"""
+        return bool._wrap(super(_UnmodifiableSortedBag, self).removeIf(arg0))
+
+    @overload
+    def toArray(self, arg0: 'Object') -> List[object]:
+        """public <T> T[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray(T[])"""
+        return List[object]._wrap(super(_collection.AbstractCollectionDecorator, self).toArray(arg0))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String org.apache.commons.collections4.collection.AbstractCollectionDecorator.toString()"""
+        return str._wrap(super(collection.AbstractCollectionDecorator, self).toString())
+
+    @override
+    @overload
+    def last(self) -> object:
+        """public E org.apache.commons.collections4.bag.AbstractSortedBagDecorator.last()"""
+        return object._wrap(super(AbstractSortedBagDecorator, self).last())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @override
+    @overload
+    def comparator(self) -> 'Comparator':
+        """public java.util.Comparator<? super E> org.apache.commons.collections4.bag.AbstractSortedBagDecorator.comparator()"""
+        return 'Comparator'._wrap(super(AbstractSortedBagDecorator, self).comparator())
+
+    @override
+    @overload
+    def toArray(self) -> List[object]:
+        """public java.lang.Object[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray()"""
+        return List[object]._wrap(super(collection.AbstractCollectionDecorator, self).toArray())
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractBagDecorator.equals(java.lang.Object)"""
+        return bool._wrap(super(_AbstractBagDecorator, self).equals(arg0))
+
+    @overload
+    def toArray(self, arg0: 'IntFunction') -> List[object]:
+        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
+        return List[object]._wrap(super(_Collection, self).toArray(arg0))
+
+    @overload
+    def contains(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.contains(java.lang.Object)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).contains(arg0))
+
+    @override
+    @overload
+    def stream(self) -> 'Stream':
+        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
+        return 'Stream'._wrap(super(Collection, self).stream())
 
     @override
     @overload
@@ -3742,15 +3549,22 @@ class UnmodifiableSortedBag():
         """public void org.apache.commons.collections4.bag.UnmodifiableSortedBag.clear()"""
         super(UnmodifiableSortedBag, self).clear()
 
+    @override
     @overload
-    def toArray(self, arg0: 'IntFunction') -> List[object]:
-        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
-        return List[object].__wrap(super(__Collection, self).toArray(arg0))
+    def size(self) -> int:
+        """public int org.apache.commons.collections4.collection.AbstractCollectionDecorator.size()"""
+        return int._wrap(super(collection.AbstractCollectionDecorator, self).size())
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @overload
-    def toArray(self, arg0: 'Object') -> List[object]:
-        """public <T> T[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray(T[])"""
-        return List[object].__wrap(super(__collection.AbstractCollectionDecorator, self).toArray(arg0))
+    def retainAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.bag.UnmodifiableSortedBag.retainAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_UnmodifiableSortedBag, self).retainAll(arg0))
 
     @override
     @overload
@@ -3758,123 +3572,130 @@ class UnmodifiableSortedBag():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @overload
+    def remove(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.UnmodifiableSortedBag.remove(java.lang.Object,int)"""
+        return bool._wrap(super(_UnmodifiableSortedBag, self).remove(arg0, _int.valueOf(arg1)))
+
     @override
     @overload
-    def iterator(self) -> 'Iterator':
-        """public java.util.Iterator<E> org.apache.commons.collections4.bag.UnmodifiableSortedBag.iterator()"""
-        return 'Iterator'.__wrap(super(UnmodifiableSortedBag, self).iterator())
+    def isEmpty(self) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.isEmpty()"""
+        return bool._wrap(super(collection.AbstractCollectionDecorator, self).isEmpty())
+
+    @override
+    @overload
+    def forEach(self, arg0: 'Consumer'):
+        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
+        super(_Iterable, self).forEach(arg0)
+
+    @override
+    @overload
+    def first(self) -> object:
+        """public E org.apache.commons.collections4.bag.AbstractSortedBagDecorator.first()"""
+        return object._wrap(super(AbstractSortedBagDecorator, self).first())
 
     @overload
-    def removeIf(self, arg0: 'Predicate') -> bool:
-        """public boolean org.apache.commons.collections4.bag.UnmodifiableSortedBag.removeIf(java.util.function.Predicate<? super E>)"""
-        return bool.__wrap(super(__UnmodifiableSortedBag, self).removeIf(arg0)) 
+    def removeAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.bag.UnmodifiableSortedBag.removeAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_UnmodifiableSortedBag, self).removeAll(arg0)) 
  
  
-# CLASS: org.apache.commons.collections4.bag.SynchronizedBag
-from pyquantum_helper import import_once as __import_once__
+# CLASS: org.apache.commons.collections4.bag.AbstractMapBag
 import java.util.function.Predicate as Predicate
+import java.lang.Object as _Object
+_Object = _Object
 from builtins import type
-import java.util.stream.Stream as __Stream
-__Stream = __Stream
 import java.util.Collection as Collection
-try:
-    from pyapache.collections4 import collection
-except ImportError:
-    collection = __import_once__("pyapache.collections4.collection")
-
+import java.util.Set as _Set
+_Set = _Set
 import java.util.function.Consumer as Consumer
-import java.util.Collection as __Collection
-__Collection = __Collection
 import java.util.Spliterator as Spliterator
-import java.lang.Class as __Class
-__Class = __Class
+import java.util.Iterator as _Iterator
+_Iterator = _Iterator
 from builtins import bool
-import org.apache.commons.collections4.collection.SynchronizedCollection as __SynchronizedCollection
-__SynchronizedCollection = __SynchronizedCollection
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
-import java.util.Iterator as __Iterator
-__Iterator = __Iterator
 import java.util.function.IntFunction as IntFunction
-import java.util.Set as __Set
-__Set = __Set
-import org.apache.commons.collections4.bag.SynchronizedBag as __SynchronizedBag
-__SynchronizedBag = __SynchronizedBag
+import java.lang.Object as _object
+import org.apache.commons.collections4.bag.AbstractMapBag as _AbstractMapBag
+_AbstractMapBag = _AbstractMapBag
+import java.util.Spliterator as _Spliterator
+_Spliterator = _Spliterator
+import java.lang.String as _String
+_String = _String
 from builtins import object
 import java.util.Iterator as Iterator
 from typing import List
-import java.util.Spliterator as __Spliterator
-__Spliterator = __Spliterator
-try:
-    from pyapache import collections4
-except ImportError:
-    collections4 = __import_once__("pyapache.collections4")
-
 import java.util.Set as Set
-import java.lang.Long as __long
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
+import java.util.Collection as _Collection
+_Collection = _Collection
+import java.lang.Integer as _int
+import java.lang.Iterable as _Iterable
+_Iterable = _Iterable
+import java.util.stream.Stream as _Stream
+_Stream = _Stream
 import java.util.stream.Stream as Stream
-import java.lang.Integer as __int
+import java.lang.Long as _long
 from builtins import int
-import java.lang.Iterable as __Iterable
-__Iterable = __Iterable
+import java.lang.Class as _Class
+_Class = _Class
  
-class SynchronizedBag():
-    """org.apache.commons.collections4.bag.SynchronizedBag"""
+class AbstractMapBag():
+    """org.apache.commons.collections4.bag.AbstractMapBag"""
  
     @staticmethod
-    def __wrap(java_value: __SynchronizedBag) -> 'SynchronizedBag':
-        return SynchronizedBag(__dynamic__=java_value)
+    def _wrap(java_value: _AbstractMapBag) -> 'AbstractMapBag':
+        return AbstractMapBag(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __SynchronizedBag):
+    def __init__(self, __dynamic__: _AbstractMapBag):
         """
-        Dynamic initializer for SynchronizedBag.
+        Dynamic initializer for AbstractMapBag.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_AbstractMapBag__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_AbstractMapBag__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @overload
-    def contains(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.contains(java.lang.Object)"""
-        return bool.__wrap(super(__collection.SynchronizedCollection, self).contains(arg0))
+    def remove(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.remove(java.lang.Object,int)"""
+        return bool._wrap(super(_AbstractMapBag, self).remove(arg0, _int.valueOf(arg1)))
+
+    @overload
+    def retainAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.retainAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_AbstractMapBag, self).retainAll(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def uniqueSet(self) -> 'Set':
+        """public java.util.Set<E> org.apache.commons.collections4.bag.AbstractMapBag.uniqueSet()"""
+        return 'Set'._wrap(super(AbstractMapBag, self).uniqueSet())
 
-    @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String org.apache.commons.collections4.collection.SynchronizedCollection.toString()"""
-        return str.__wrap(super(collection.SynchronizedCollection, self).toString())
-
-    @staticmethod
-    @overload
-    def synchronizedBag(arg0: 'Bag') -> 'SynchronizedBag':
-        """public static <E> org.apache.commons.collections4.bag.SynchronizedBag<E> org.apache.commons.collections4.bag.SynchronizedBag.synchronizedBag(org.apache.commons.collections4.Bag<E>)"""
-        return SynchronizedBag.__wrap(__SynchronizedBag.synchronizedBag(arg0))
+    def add(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.add(E)"""
+        return bool._wrap(super(_AbstractMapBag, self).add(arg0))
 
     @override
     @overload
@@ -3884,319 +3705,21 @@ class SynchronizedBag():
 
     @override
     @overload
-    def clear(self):
-        """public void org.apache.commons.collections4.collection.SynchronizedCollection.clear()"""
-        super(collection.SynchronizedCollection, self).clear()
-
-    @overload
-    def containsAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.containsAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.SynchronizedCollection, self).containsAll(arg0))
-
-    @override
-    @overload
     def parallelStream(self) -> 'Stream':
         """public default java.util.stream.Stream<E> java.util.Collection.parallelStream()"""
-        return 'Stream'.__wrap(super(Collection, self).parallelStream())
-
-    @override
-    @overload
-    def toArray(self) -> List[object]:
-        """public java.lang.Object[] org.apache.commons.collections4.collection.SynchronizedCollection.toArray()"""
-        return List[object].__wrap(super(collection.SynchronizedCollection, self).toArray())
-
-    @overload
-    def remove(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.remove(java.lang.Object)"""
-        return bool.__wrap(super(__collection.SynchronizedCollection, self).remove(arg0))
-
-    @overload
-    def retainAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.retainAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.SynchronizedCollection, self).retainAll(arg0))
-
-    @override
-    @overload
-    def notify(self):
-        """public final native void java.lang.Object.notify()"""
-        super(object, self).notify()
-
-    @override
-    @overload
-    def iterator(self) -> 'Iterator':
-        """public java.util.Iterator<E> org.apache.commons.collections4.collection.SynchronizedCollection.iterator()"""
-        return 'Iterator'.__wrap(super(collection.SynchronizedCollection, self).iterator())
-
-    @override
-    @overload
-    def uniqueSet(self) -> 'Set':
-        """public java.util.Set<E> org.apache.commons.collections4.bag.SynchronizedBag.uniqueSet()"""
-        return 'Set'.__wrap(super(SynchronizedBag, self).uniqueSet())
-
-    @overload
-    def removeIf(self, arg0: 'Predicate') -> bool:
-        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.removeIf(java.util.function.Predicate<? super E>)"""
-        return bool.__wrap(super(__collection.SynchronizedCollection, self).removeIf(arg0))
-
-    @override
-    @overload
-    def spliterator(self) -> 'Spliterator':
-        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
-        return 'Spliterator'.__wrap(super(Collection, self).spliterator())
-
-    @override
-    @overload
-    def forEach(self, arg0: 'Consumer'):
-        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
-        super(__Iterable, self).forEach(arg0)
-
-    @overload
-    def getCount(self, arg0: object) -> int:
-        """public int org.apache.commons.collections4.bag.SynchronizedBag.getCount(java.lang.Object)"""
-        return int.__wrap(super(__SynchronizedBag, self).getCount(arg0))
-
-    @overload
-    def add(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.add(E)"""
-        return bool.__wrap(super(__collection.SynchronizedCollection, self).add(arg0))
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.SynchronizedBag.equals(java.lang.Object)"""
-        return bool.__wrap(super(__SynchronizedBag, self).equals(arg0))
-
-    @overload
-    def toArray(self, arg0: 'Object') -> List[object]:
-        """public <T> T[] org.apache.commons.collections4.collection.SynchronizedCollection.toArray(T[])"""
-        return List[object].__wrap(super(__collection.SynchronizedCollection, self).toArray(arg0))
-
-    @overload
-    def removeAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.removeAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.SynchronizedCollection, self).removeAll(arg0))
-
-    @override
-    @overload
-    def stream(self) -> 'Stream':
-        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
-        return 'Stream'.__wrap(super(Collection, self).stream())
-
-    @overload
-    def add(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.SynchronizedBag.add(E,int)"""
-        return bool.__wrap(super(__SynchronizedBag, self).add(arg0, __int.valueOf(arg1)))
-
-    @override
-    @overload
-    def size(self) -> int:
-        """public int org.apache.commons.collections4.collection.SynchronizedCollection.size()"""
-        return int.__wrap(super(collection.SynchronizedCollection, self).size())
+        return 'Stream'._wrap(super(Collection, self).parallelStream())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @staticmethod
-    @overload
-    def synchronizedCollection(arg0: 'Collection') -> 'collection.SynchronizedCollection':
-        """public static <T> org.apache.commons.collections4.collection.SynchronizedCollection<T> org.apache.commons.collections4.collection.SynchronizedCollection.synchronizedCollection(java.util.Collection<T>)"""
-        return collection.SynchronizedCollection.__wrap(__SynchronizedCollection.synchronizedCollection(arg0))
-
-    @overload
-    def toArray(self, arg0: 'IntFunction') -> List[object]:
-        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
-        return List[object].__wrap(super(__Collection, self).toArray(arg0))
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public int org.apache.commons.collections4.bag.SynchronizedBag.hashCode()"""
-        return int.__wrap(super(SynchronizedBag, self).hashCode())
-
-    @overload
-    def addAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.addAll(java.util.Collection<? extends E>)"""
-        return bool.__wrap(super(__collection.SynchronizedCollection, self).addAll(arg0))
-
-    @overload
-    def remove(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.SynchronizedBag.remove(java.lang.Object,int)"""
-        return bool.__wrap(super(__SynchronizedBag, self).remove(arg0, __int.valueOf(arg1)))
-
-    @override
-    @overload
-    def isEmpty(self) -> bool:
-        """public boolean org.apache.commons.collections4.collection.SynchronizedCollection.isEmpty()"""
-        return bool.__wrap(super(collection.SynchronizedCollection, self).isEmpty())
-
-    @override
-    @overload
-    def wait(self):
-        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
-        super(object, self).wait() 
- 
- 
-# CLASS: org.apache.commons.collections4.bag.TransformedBag
-from pyquantum_helper import import_once as __import_once__
-import java.util.function.Predicate as Predicate
-import org.apache.commons.collections4.collection.AbstractCollectionDecorator as __AbstractCollectionDecorator
-__AbstractCollectionDecorator = __AbstractCollectionDecorator
-from builtins import type
-import java.util.stream.Stream as __Stream
-__Stream = __Stream
-import java.util.Collection as Collection
-try:
-    from pyapache.collections4 import collection
-except ImportError:
-    collection = __import_once__("pyapache.collections4.collection")
-
-import java.util.function.Consumer as Consumer
-import java.util.Collection as __Collection
-__Collection = __Collection
-import java.util.Spliterator as Spliterator
-import java.lang.Class as __Class
-__Class = __Class
-from builtins import bool
-import org.apache.commons.collections4.collection.TransformedCollection as __TransformedCollection
-__TransformedCollection = __TransformedCollection
-from builtins import str
-from pyquantum_helper import override
-import java.lang.Object as __object
-import java.util.Iterator as __Iterator
-__Iterator = __Iterator
-import java.util.function.IntFunction as IntFunction
-import java.util.Set as __Set
-__Set = __Set
-import org.apache.commons.collections4.Bag as __Bag
-__Bag = __Bag
-from builtins import object
-import java.util.Iterator as Iterator
-from typing import List
-import java.util.Spliterator as __Spliterator
-__Spliterator = __Spliterator
-try:
-    from pyapache import collections4
-except ImportError:
-    collections4 = __import_once__("pyapache.collections4")
-
-import org.apache.commons.collections4.bag.TransformedBag as __TransformedBag
-__TransformedBag = __TransformedBag
-import java.util.Set as Set
-import java.lang.Long as __long
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.util.stream.Stream as Stream
-import java.lang.Integer as __int
-from builtins import int
-import java.lang.Iterable as __Iterable
-__Iterable = __Iterable
- 
-class TransformedBag():
-    """org.apache.commons.collections4.bag.TransformedBag"""
- 
-    @staticmethod
-    def __wrap(java_value: __TransformedBag) -> 'TransformedBag':
-        return TransformedBag(__dynamic__=java_value)
- 
-    #
-    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
-    #
-    @overload
-    def __init__(self, __dynamic__: __TransformedBag):
-        """
-        Dynamic initializer for TransformedBag.
-        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
- 
-        :param __dynamic__: The java object to wrap
-        """
-        self.__dict__ = __dynamic__.__dict__
-        self.__wrapper = __dynamic__
- 
-    def __getattr__(self, name: str):
-        return getattr(self.__wrapper, name)
- 
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
- 
-    def __delattr__(self, name: str):
-        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
- 
-    @override
-    @overload
-    def isEmpty(self) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.isEmpty()"""
-        return bool.__wrap(super(collection.AbstractCollectionDecorator, self).isEmpty())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def remove(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.remove(java.lang.Object)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).remove(arg0))
-
-    @overload
-    def addAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.TransformedCollection.addAll(java.util.Collection<? extends E>)"""
-        return bool.__wrap(super(__collection.TransformedCollection, self).addAll(arg0))
-
-    @overload
-    def add(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.TransformedCollection.add(E)"""
-        return bool.__wrap(super(__collection.TransformedCollection, self).add(arg0))
-
-    @overload
-    def contains(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.contains(java.lang.Object)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).contains(arg0))
-
-    @override
-    @overload
-    def notifyAll(self):
-        """public final native void java.lang.Object.notifyAll()"""
-        super(object, self).notifyAll()
-
-    @override
-    @overload
-    def parallelStream(self) -> 'Stream':
-        """public default java.util.stream.Stream<E> java.util.Collection.parallelStream()"""
-        return 'Stream'.__wrap(super(Collection, self).parallelStream())
-
-    @override
-    @overload
-    def size(self) -> int:
-        """public int org.apache.commons.collections4.collection.AbstractCollectionDecorator.size()"""
-        return int.__wrap(super(collection.AbstractCollectionDecorator, self).size())
-
-    @override
-    @overload
-    def toArray(self) -> List[object]:
-        """public java.lang.Object[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray()"""
-        return List[object].__wrap(super(collection.AbstractCollectionDecorator, self).toArray())
-
-    @staticmethod
-    @overload
-    def transformedBag(arg0: 'Bag', arg1: 'Transformer') -> 'collections4.Bag':
-        """public static <E> org.apache.commons.collections4.Bag<E> org.apache.commons.collections4.bag.TransformedBag.transformedBag(org.apache.commons.collections4.Bag<E>,org.apache.commons.collections4.Transformer<? super E, ? extends E>)"""
-        return collections4.Bag.__wrap(__TransformedBag.transformedBag(arg0, arg1))
-
-    @overload
-    def add(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.TransformedBag.add(E,int)"""
-        return bool.__wrap(super(__TransformedBag, self).add(arg0, __int.valueOf(arg1)))
+    def spliterator(self) -> 'Spliterator':
+        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
+        return 'Spliterator'._wrap(super(Collection, self).spliterator())
 
     @override
     @overload
@@ -4205,264 +3728,250 @@ class TransformedBag():
         super(object, self).notify()
 
     @overload
-    def removeAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).removeAll(arg0))
+    def containsAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.containsAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_AbstractMapBag, self).containsAll(arg0))
 
     @overload
-    def remove(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.TransformedBag.remove(java.lang.Object,int)"""
-        return bool.__wrap(super(__TransformedBag, self).remove(arg0, __int.valueOf(arg1)))
+    def remove(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.remove(java.lang.Object)"""
+        return bool._wrap(super(_AbstractMapBag, self).remove(arg0))
+
+    @overload
+    def removeAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.removeAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_AbstractMapBag, self).removeAll(arg0))
 
     @override
     @overload
     def toString(self) -> str:
-        """public java.lang.String org.apache.commons.collections4.collection.AbstractCollectionDecorator.toString()"""
-        return str.__wrap(super(collection.AbstractCollectionDecorator, self).toString())
+        """public java.lang.String org.apache.commons.collections4.bag.AbstractMapBag.toString()"""
+        return str._wrap(super(AbstractMapBag, self).toString())
 
     @override
     @overload
-    def spliterator(self) -> 'Spliterator':
-        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
-        return 'Spliterator'.__wrap(super(Collection, self).spliterator())
+    def clear(self):
+        """public void org.apache.commons.collections4.bag.AbstractMapBag.clear()"""
+        super(AbstractMapBag, self).clear()
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.equals(java.lang.Object)"""
+        return bool._wrap(super(_AbstractMapBag, self).equals(arg0))
+
+    @overload
+    def toArray(self, arg0: 'Object') -> List[object]:
+        """public <T> T[] org.apache.commons.collections4.bag.AbstractMapBag.toArray(T[])"""
+        return List[object]._wrap(super(_AbstractMapBag, self).toArray(arg0))
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public int org.apache.commons.collections4.bag.AbstractMapBag.hashCode()"""
+        return int._wrap(super(AbstractMapBag, self).hashCode())
+
+    @overload
+    def removeIf(self, arg0: 'Predicate') -> bool:
+        """public default boolean java.util.Collection.removeIf(java.util.function.Predicate<? super E>)"""
+        return bool._wrap(super(_Collection, self).removeIf(arg0))
+
+    @override
+    @overload
+    def iterator(self) -> 'Iterator':
+        """public java.util.Iterator<E> org.apache.commons.collections4.bag.AbstractMapBag.iterator()"""
+        return 'Iterator'._wrap(super(AbstractMapBag, self).iterator())
+
+    @overload
+    def getCount(self, arg0: object) -> int:
+        """public int org.apache.commons.collections4.bag.AbstractMapBag.getCount(java.lang.Object)"""
+        return int._wrap(super(_AbstractMapBag, self).getCount(arg0))
+
+    @overload
+    def toArray(self, arg0: 'IntFunction') -> List[object]:
+        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
+        return List[object]._wrap(super(_Collection, self).toArray(arg0))
+
+    @override
+    @overload
+    def stream(self) -> 'Stream':
+        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
+        return 'Stream'._wrap(super(Collection, self).stream())
+
+    @overload
+    def add(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.add(E,int)"""
+        return bool._wrap(super(_AbstractMapBag, self).add(arg0, _int.valueOf(arg1)))
+
+    @override
+    @overload
+    def toArray(self) -> List[object]:
+        """public java.lang.Object[] org.apache.commons.collections4.bag.AbstractMapBag.toArray()"""
+        return List[object]._wrap(super(AbstractMapBag, self).toArray())
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
+    def isEmpty(self) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.isEmpty()"""
+        return bool._wrap(super(AbstractMapBag, self).isEmpty())
+
+    @override
+    @overload
+    def wait(self):
+        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
+        super(object, self).wait()
+
+    @overload
+    def contains(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.contains(java.lang.Object)"""
+        return bool._wrap(super(_AbstractMapBag, self).contains(arg0))
+
+    @override
+    @overload
+    def size(self) -> int:
+        """public int org.apache.commons.collections4.bag.AbstractMapBag.size()"""
+        return int._wrap(super(AbstractMapBag, self).size())
+
+    @overload
+    def addAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractMapBag.addAll(java.util.Collection<? extends E>)"""
+        return bool._wrap(super(_AbstractMapBag, self).addAll(arg0))
 
     @override
     @overload
     def forEach(self, arg0: 'Consumer'):
         """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
-        super(__Iterable, self).forEach(arg0)
+        super(_Iterable, self).forEach(arg0) 
+ 
+ 
+# CLASS: org.apache.commons.collections4.bag.TransformedSortedBag
+from pyquantum_helper import import_once as _import_once
+import java.util.function.Predicate as Predicate
+import java.lang.Object as _Object
+_Object = _Object
+from builtins import type
+import org.apache.commons.collections4.Bag as _Bag
+_Bag = _Bag
+import org.apache.commons.collections4.bag.TransformedSortedBag as _TransformedSortedBag
+_TransformedSortedBag = _TransformedSortedBag
+import org.apache.commons.collections4.collection.TransformedCollection as _TransformedCollection
+_TransformedCollection = _TransformedCollection
+import java.util.Collection as Collection
+try:
+    from pyapache.collections4 import collection
+except ImportError:
+    collection = _import_once("pyapache.collections4.collection")
+
+import java.util.Set as _Set
+_Set = _Set
+import java.util.function.Consumer as Consumer
+import java.util.Spliterator as Spliterator
+import org.apache.commons.collections4.bag.TransformedBag as _TransformedBag
+_TransformedBag = _TransformedBag
+import java.util.Iterator as _Iterator
+_Iterator = _Iterator
+from builtins import bool
+from builtins import str
+from pyquantum_helper import override
+import java.util.function.IntFunction as IntFunction
+import java.lang.Object as _object
+import java.util.Spliterator as _Spliterator
+_Spliterator = _Spliterator
+from builtins import object
+import java.lang.String as _String
+_String = _String
+import org.apache.commons.collections4.collection.AbstractCollectionDecorator as _AbstractCollectionDecorator
+_AbstractCollectionDecorator = _AbstractCollectionDecorator
+import java.util.Iterator as Iterator
+from typing import List
+try:
+    from pyapache import collections4
+except ImportError:
+    collections4 = _import_once("pyapache.collections4")
+
+import java.util.Comparator as Comparator
+import java.util.Set as Set
+import java.util.Collection as _Collection
+_Collection = _Collection
+import java.lang.Integer as _int
+import java.util.Comparator as _Comparator
+_Comparator = _Comparator
+import java.lang.Iterable as _Iterable
+_Iterable = _Iterable
+import java.util.stream.Stream as _Stream
+_Stream = _Stream
+import java.util.stream.Stream as Stream
+import java.lang.Long as _long
+from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
+ 
+class TransformedSortedBag():
+    """org.apache.commons.collections4.bag.TransformedSortedBag"""
+ 
+    @staticmethod
+    def _wrap(java_value: _TransformedSortedBag) -> 'TransformedSortedBag':
+        return TransformedSortedBag(__dynamic__=java_value)
+ 
+    #
+    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+    #
+    @overload
+    def __init__(self, __dynamic__: _TransformedSortedBag):
+        """
+        Dynamic initializer for TransformedSortedBag.
+        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+ 
+        :param __dynamic__: The java object to wrap
+        """
+        self.__wrapper = __dynamic__
+ 
+    def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_TransformedSortedBag__wrapper":
+            return object.__getattr__(self, name)
+        return getattr(self.__wrapper, name)
+ 
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_TransformedSortedBag__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
+ 
+    def __delattr__(self, name: str):
+        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
+ 
+    @overload
+    def add(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.TransformedBag.add(E,int)"""
+        return bool._wrap(super(_TransformedBag, self).add(arg0, _int.valueOf(arg1)))
+
+    @overload
+    def remove(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.TransformedBag.remove(java.lang.Object,int)"""
+        return bool._wrap(super(_TransformedBag, self).remove(arg0, _int.valueOf(arg1)))
+
+    @overload
+    def add(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.TransformedCollection.add(E)"""
+        return bool._wrap(super(_collection.TransformedCollection, self).add(arg0))
 
     @override
     @overload
     def uniqueSet(self) -> 'Set':
         """public java.util.Set<E> org.apache.commons.collections4.bag.TransformedBag.uniqueSet()"""
-        return 'Set'.__wrap(super(TransformedBag, self).uniqueSet())
-
-    @overload
-    def getCount(self, arg0: object) -> int:
-        """public int org.apache.commons.collections4.bag.TransformedBag.getCount(java.lang.Object)"""
-        return int.__wrap(super(__TransformedBag, self).getCount(arg0))
-
-    @overload
-    def containsAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.containsAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).containsAll(arg0))
-
-    @staticmethod
-    @overload
-    def transformingBag(arg0: 'Bag', arg1: 'Transformer') -> 'collections4.Bag':
-        """public static <E> org.apache.commons.collections4.Bag<E> org.apache.commons.collections4.bag.TransformedBag.transformingBag(org.apache.commons.collections4.Bag<E>,org.apache.commons.collections4.Transformer<? super E, ? extends E>)"""
-        return collections4.Bag.__wrap(__TransformedBag.transformingBag(arg0, arg1))
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.TransformedBag.equals(java.lang.Object)"""
-        return bool.__wrap(super(__TransformedBag, self).equals(arg0))
-
-    @override
-    @overload
-    def clear(self):
-        """public void org.apache.commons.collections4.collection.AbstractCollectionDecorator.clear()"""
-        super(collection.AbstractCollectionDecorator, self).clear()
-
-    @override
-    @overload
-    def stream(self) -> 'Stream':
-        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
-        return 'Stream'.__wrap(super(Collection, self).stream())
-
-    @override
-    @overload
-    def iterator(self) -> 'Iterator':
-        """public java.util.Iterator<E> org.apache.commons.collections4.collection.AbstractCollectionDecorator.iterator()"""
-        return 'Iterator'.__wrap(super(collection.AbstractCollectionDecorator, self).iterator())
-
-    @overload
-    def retainAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.retainAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).retainAll(arg0))
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @overload
-    def removeIf(self, arg0: 'Predicate') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeIf(java.util.function.Predicate<? super E>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).removeIf(arg0))
-
-    @staticmethod
-    @overload
-    def transformedCollection(arg0: 'Collection', arg1: 'Transformer') -> 'collection.TransformedCollection':
-        """public static <E> org.apache.commons.collections4.collection.TransformedCollection<E> org.apache.commons.collections4.collection.TransformedCollection.transformedCollection(java.util.Collection<E>,org.apache.commons.collections4.Transformer<? super E, ? extends E>)"""
-        return collection.TransformedCollection.__wrap(__TransformedCollection.transformedCollection(arg0, arg1))
-
-    @overload
-    def toArray(self, arg0: 'IntFunction') -> List[object]:
-        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
-        return List[object].__wrap(super(__Collection, self).toArray(arg0))
-
-    @overload
-    def toArray(self, arg0: 'Object') -> List[object]:
-        """public <T> T[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray(T[])"""
-        return List[object].__wrap(super(__collection.AbstractCollectionDecorator, self).toArray(arg0))
-
-    @override
-    @overload
-    def wait(self):
-        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
-        super(object, self).wait()
-
-    @staticmethod
-    @overload
-    def transformingCollection(arg0: 'Collection', arg1: 'Transformer') -> 'collection.TransformedCollection':
-        """public static <E> org.apache.commons.collections4.collection.TransformedCollection<E> org.apache.commons.collections4.collection.TransformedCollection.transformingCollection(java.util.Collection<E>,org.apache.commons.collections4.Transformer<? super E, ? extends E>)"""
-        return collection.TransformedCollection.__wrap(__TransformedCollection.transformingCollection(arg0, arg1))
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public int org.apache.commons.collections4.bag.TransformedBag.hashCode()"""
-        return int.__wrap(super(TransformedBag, self).hashCode()) 
- 
- 
-# CLASS: org.apache.commons.collections4.bag.PredicatedSortedBag
-from pyquantum_helper import import_once as __import_once__
-import org.apache.commons.collections4.bag.PredicatedSortedBag as __PredicatedSortedBag
-__PredicatedSortedBag = __PredicatedSortedBag
-import java.util.function.Predicate as Predicate
-import org.apache.commons.collections4.collection.PredicatedCollection as __PredicatedCollection_Builder
-__Builder = __PredicatedCollection_Builder.Builder
-import org.apache.commons.collections4.collection.AbstractCollectionDecorator as __AbstractCollectionDecorator
-__AbstractCollectionDecorator = __AbstractCollectionDecorator
-from builtins import type
-import java.util.stream.Stream as __Stream
-__Stream = __Stream
-import java.util.Collection as Collection
-try:
-    from pyapache.collections4 import collection
-except ImportError:
-    collection = __import_once__("pyapache.collections4.collection")
-
-import java.util.function.Consumer as Consumer
-import java.util.Comparator as __Comparator
-__Comparator = __Comparator
-import java.util.Collection as __Collection
-__Collection = __Collection
-import java.util.Spliterator as Spliterator
-import java.lang.Class as __Class
-__Class = __Class
-import org.apache.commons.collections4.bag.PredicatedBag as __PredicatedBag
-__PredicatedBag = __PredicatedBag
-from builtins import bool
-from builtins import str
-from pyquantum_helper import override
-import java.lang.Object as __object
-import java.util.Iterator as __Iterator
-__Iterator = __Iterator
-import java.util.function.IntFunction as IntFunction
-import java.util.Set as __Set
-__Set = __Set
-from builtins import object
-import java.util.Iterator as Iterator
-from typing import List
-import java.util.Spliterator as __Spliterator
-__Spliterator = __Spliterator
-try:
-    from pyapache import collections4
-except ImportError:
-    collections4 = __import_once__("pyapache.collections4")
-
-import java.util.Comparator as Comparator
-import java.util.Set as Set
-import java.lang.Long as __long
-import org.apache.commons.collections4.collection.PredicatedCollection as __PredicatedCollection
-__PredicatedCollection = __PredicatedCollection
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.util.stream.Stream as Stream
-import java.lang.Integer as __int
-from builtins import int
-import java.lang.Iterable as __Iterable
-__Iterable = __Iterable
- 
-class PredicatedSortedBag():
-    """org.apache.commons.collections4.bag.PredicatedSortedBag"""
- 
-    @staticmethod
-    def __wrap(java_value: __PredicatedSortedBag) -> 'PredicatedSortedBag':
-        return PredicatedSortedBag(__dynamic__=java_value)
- 
-    #
-    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
-    #
-    @overload
-    def __init__(self, __dynamic__: __PredicatedSortedBag):
-        """
-        Dynamic initializer for PredicatedSortedBag.
-        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
- 
-        :param __dynamic__: The java object to wrap
-        """
-        self.__dict__ = __dynamic__.__dict__
-        self.__wrapper = __dynamic__
- 
-    def __getattr__(self, name: str):
-        return getattr(self.__wrapper, name)
- 
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
- 
-    def __delattr__(self, name: str):
-        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
- 
-    @override
-    @overload
-    def isEmpty(self) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.isEmpty()"""
-        return bool.__wrap(super(collection.AbstractCollectionDecorator, self).isEmpty())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def remove(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.PredicatedBag.remove(java.lang.Object,int)"""
-        return bool.__wrap(super(__PredicatedBag, self).remove(arg0, __int.valueOf(arg1)))
-
-    @overload
-    def remove(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.remove(java.lang.Object)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).remove(arg0))
-
-    @overload
-    def add(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.PredicatedCollection.add(E)"""
-        return bool.__wrap(super(__collection.PredicatedCollection, self).add(arg0))
-
-    @override
-    @overload
-    def last(self) -> object:
-        """public E org.apache.commons.collections4.bag.PredicatedSortedBag.last()"""
-        return object.__wrap(super(PredicatedSortedBag, self).last())
-
-    @overload
-    def contains(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.contains(java.lang.Object)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).contains(arg0))
+        return 'Set'._wrap(super(TransformedBag, self).uniqueSet())
 
     @override
     @overload
@@ -4470,57 +3979,28 @@ class PredicatedSortedBag():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
-    @overload
-    def getCount(self, arg0: object) -> int:
-        """public int org.apache.commons.collections4.bag.PredicatedBag.getCount(java.lang.Object)"""
-        return int.__wrap(super(__PredicatedBag, self).getCount(arg0))
-
     @override
     @overload
     def parallelStream(self) -> 'Stream':
         """public default java.util.stream.Stream<E> java.util.Collection.parallelStream()"""
-        return 'Stream'.__wrap(super(Collection, self).parallelStream())
+        return 'Stream'._wrap(super(Collection, self).parallelStream())
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.TransformedBag.equals(java.lang.Object)"""
+        return bool._wrap(super(_TransformedBag, self).equals(arg0))
 
     @override
     @overload
-    def size(self) -> int:
-        """public int org.apache.commons.collections4.collection.AbstractCollectionDecorator.size()"""
-        return int.__wrap(super(collection.AbstractCollectionDecorator, self).size())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
-    def comparator(self) -> 'Comparator':
-        """public java.util.Comparator<? super E> org.apache.commons.collections4.bag.PredicatedSortedBag.comparator()"""
-        return 'Comparator'.__wrap(super(PredicatedSortedBag, self).comparator())
-
-    @staticmethod
-    @overload
-    def predicatedSortedBag(arg0: 'SortedBag', arg1: 'Predicate') -> 'PredicatedSortedBag':
-        """public static <E> org.apache.commons.collections4.bag.PredicatedSortedBag<E> org.apache.commons.collections4.bag.PredicatedSortedBag.predicatedSortedBag(org.apache.commons.collections4.SortedBag<E>,org.apache.commons.collections4.Predicate<? super E>)"""
-        return PredicatedSortedBag.__wrap(__PredicatedSortedBag.predicatedSortedBag(arg0, arg1))
-
-    @overload
-    def add(self, arg0: object, arg1: int) -> bool:
-        """public boolean org.apache.commons.collections4.bag.PredicatedBag.add(E,int)"""
-        return bool.__wrap(super(__PredicatedBag, self).add(arg0, __int.valueOf(arg1)))
-
-    @override
-    @overload
-    def toArray(self) -> List[object]:
-        """public java.lang.Object[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray()"""
-        return List[object].__wrap(super(collection.AbstractCollectionDecorator, self).toArray())
-
-    @override
-    @overload
-    def first(self) -> object:
-        """public E org.apache.commons.collections4.bag.PredicatedSortedBag.first()"""
-        return object.__wrap(super(PredicatedSortedBag, self).first())
-
-    @staticmethod
-    @overload
-    def builder(arg0: 'Predicate') -> 'collection.PredicatedCollection$Builder':
-        """public static <E> org.apache.commons.collections4.collection.PredicatedCollection$Builder<E> org.apache.commons.collections4.collection.PredicatedCollection.builder(org.apache.commons.collections4.Predicate<? super E>)"""
-        return collection.PredicatedCollection$Builder.__wrap(__PredicatedCollection.builder(arg0))
+    def spliterator(self) -> 'Spliterator':
+        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
+        return 'Spliterator'._wrap(super(Collection, self).spliterator())
 
     @override
     @overload
@@ -4530,49 +4010,59 @@ class PredicatedSortedBag():
 
     @staticmethod
     @overload
-    def notNullBuilder() -> 'collection.PredicatedCollection$Builder':
-        """public static <E> org.apache.commons.collections4.collection.PredicatedCollection$Builder<E> org.apache.commons.collections4.collection.PredicatedCollection.notNullBuilder()"""
-        return collection.PredicatedCollection$Builder.__wrap(__PredicatedCollection.notNullBuilder())
-
-    @overload
-    def removeAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).removeAll(arg0))
+    def transformedSortedBag(arg0: 'SortedBag', arg1: 'Transformer') -> 'TransformedSortedBag':
+        """public static <E> org.apache.commons.collections4.bag.TransformedSortedBag<E> org.apache.commons.collections4.bag.TransformedSortedBag.transformedSortedBag(org.apache.commons.collections4.SortedBag<E>,org.apache.commons.collections4.Transformer<? super E, ? extends E>)"""
+        return TransformedSortedBag._wrap(_TransformedSortedBag.transformedSortedBag(arg0, arg1))
 
     @override
     @overload
-    def uniqueSet(self) -> 'Set':
-        """public java.util.Set<E> org.apache.commons.collections4.bag.PredicatedBag.uniqueSet()"""
-        return 'Set'.__wrap(super(PredicatedBag, self).uniqueSet())
+    def first(self) -> object:
+        """public E org.apache.commons.collections4.bag.TransformedSortedBag.first()"""
+        return object._wrap(super(TransformedSortedBag, self).first())
+
+    @staticmethod
+    @overload
+    def transformedCollection(arg0: 'Collection', arg1: 'Transformer') -> 'collection.TransformedCollection':
+        """public static <E> org.apache.commons.collections4.collection.TransformedCollection<E> org.apache.commons.collections4.collection.TransformedCollection.transformedCollection(java.util.Collection<E>,org.apache.commons.collections4.Transformer<? super E, ? extends E>)"""
+        return collection.TransformedCollection._wrap(_TransformedCollection.transformedCollection(arg0, arg1))
+
+    @overload
+    def retainAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.retainAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).retainAll(arg0))
+
+    @overload
+    def addAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.TransformedCollection.addAll(java.util.Collection<? extends E>)"""
+        return bool._wrap(super(_collection.TransformedCollection, self).addAll(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public int org.apache.commons.collections4.bag.TransformedBag.hashCode()"""
+        return int._wrap(super(TransformedBag, self).hashCode())
+
+    @overload
+    def containsAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.containsAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).containsAll(arg0))
+
+    @overload
+    def toArray(self, arg0: 'Object') -> List[object]:
+        """public <T> T[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray(T[])"""
+        return List[object]._wrap(super(_collection.AbstractCollectionDecorator, self).toArray(arg0))
+
+    @staticmethod
+    @overload
+    def transformedBag(arg0: 'Bag', arg1: 'Transformer') -> 'collections4.Bag':
+        """public static <E> org.apache.commons.collections4.Bag<E> org.apache.commons.collections4.bag.TransformedBag.transformedBag(org.apache.commons.collections4.Bag<E>,org.apache.commons.collections4.Transformer<? super E, ? extends E>)"""
+        return collections4.Bag._wrap(_TransformedBag.transformedBag(arg0, arg1))
 
     @override
     @overload
     def toString(self) -> str:
         """public java.lang.String org.apache.commons.collections4.collection.AbstractCollectionDecorator.toString()"""
-        return str.__wrap(super(collection.AbstractCollectionDecorator, self).toString())
-
-    @override
-    @overload
-    def spliterator(self) -> 'Spliterator':
-        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
-        return 'Spliterator'.__wrap(super(Collection, self).spliterator())
-
-    @override
-    @overload
-    def forEach(self, arg0: 'Consumer'):
-        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
-        super(__Iterable, self).forEach(arg0)
-
-    @overload
-    def containsAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.containsAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).containsAll(arg0))
-
-    @staticmethod
-    @overload
-    def predicatedBag(arg0: 'Bag', arg1: 'Predicate') -> 'PredicatedBag':
-        """public static <E> org.apache.commons.collections4.bag.PredicatedBag<E> org.apache.commons.collections4.bag.PredicatedBag.predicatedBag(org.apache.commons.collections4.Bag<E>,org.apache.commons.collections4.Predicate<? super E>)"""
-        return PredicatedBag.__wrap(__PredicatedBag.predicatedBag(arg0, arg1))
+        return str._wrap(super(collection.AbstractCollectionDecorator, self).toString())
 
     @override
     @overload
@@ -4580,74 +4070,667 @@ class PredicatedSortedBag():
         """public void org.apache.commons.collections4.collection.AbstractCollectionDecorator.clear()"""
         super(collection.AbstractCollectionDecorator, self).clear()
 
+    @overload
+    def removeAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).removeAll(arg0))
+
     @override
     @overload
-    def stream(self) -> 'Stream':
-        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
-        return 'Stream'.__wrap(super(Collection, self).stream())
+    def last(self) -> object:
+        """public E org.apache.commons.collections4.bag.TransformedSortedBag.last()"""
+        return object._wrap(super(TransformedSortedBag, self).last())
+
+    @override
+    @overload
+    def comparator(self) -> 'Comparator':
+        """public java.util.Comparator<? super E> org.apache.commons.collections4.bag.TransformedSortedBag.comparator()"""
+        return 'Comparator'._wrap(super(TransformedSortedBag, self).comparator())
 
     @overload
-    def addAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.PredicatedCollection.addAll(java.util.Collection<? extends E>)"""
-        return bool.__wrap(super(__collection.PredicatedCollection, self).addAll(arg0))
+    def removeIf(self, arg0: 'Predicate') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeIf(java.util.function.Predicate<? super E>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).removeIf(arg0))
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @staticmethod
+    @overload
+    def transformingCollection(arg0: 'Collection', arg1: 'Transformer') -> 'collection.TransformedCollection':
+        """public static <E> org.apache.commons.collections4.collection.TransformedCollection<E> org.apache.commons.collections4.collection.TransformedCollection.transformingCollection(java.util.Collection<E>,org.apache.commons.collections4.Transformer<? super E, ? extends E>)"""
+        return collection.TransformedCollection._wrap(_TransformedCollection.transformingCollection(arg0, arg1))
+
+    @staticmethod
+    @overload
+    def transformingBag(arg0: 'Bag', arg1: 'Transformer') -> 'collections4.Bag':
+        """public static <E> org.apache.commons.collections4.Bag<E> org.apache.commons.collections4.bag.TransformedBag.transformingBag(org.apache.commons.collections4.Bag<E>,org.apache.commons.collections4.Transformer<? super E, ? extends E>)"""
+        return collections4.Bag._wrap(_TransformedBag.transformingBag(arg0, arg1))
 
     @override
     @overload
     def iterator(self) -> 'Iterator':
         """public java.util.Iterator<E> org.apache.commons.collections4.collection.AbstractCollectionDecorator.iterator()"""
-        return 'Iterator'.__wrap(super(collection.AbstractCollectionDecorator, self).iterator())
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean org.apache.commons.collections4.bag.PredicatedBag.equals(java.lang.Object)"""
-        return bool.__wrap(super(__PredicatedBag, self).equals(arg0))
-
-    @overload
-    def retainAll(self, arg0: 'Collection') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.retainAll(java.util.Collection<?>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).retainAll(arg0))
+        return 'Iterator'._wrap(super(collection.AbstractCollectionDecorator, self).iterator())
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def toArray(self) -> List[object]:
+        """public java.lang.Object[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray()"""
+        return List[object]._wrap(super(collection.AbstractCollectionDecorator, self).toArray())
+
+    @staticmethod
+    @overload
+    def transformingSortedBag(arg0: 'SortedBag', arg1: 'Transformer') -> 'TransformedSortedBag':
+        """public static <E> org.apache.commons.collections4.bag.TransformedSortedBag<E> org.apache.commons.collections4.bag.TransformedSortedBag.transformingSortedBag(org.apache.commons.collections4.SortedBag<E>,org.apache.commons.collections4.Transformer<? super E, ? extends E>)"""
+        return TransformedSortedBag._wrap(_TransformedSortedBag.transformingSortedBag(arg0, arg1))
+
+    @overload
+    def toArray(self, arg0: 'IntFunction') -> List[object]:
+        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
+        return List[object]._wrap(super(_Collection, self).toArray(arg0))
+
+    @overload
+    def contains(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.contains(java.lang.Object)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).contains(arg0))
+
+    @override
+    @overload
+    def stream(self) -> 'Stream':
+        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
+        return 'Stream'._wrap(super(Collection, self).stream())
+
+    @override
+    @overload
+    def size(self) -> int:
+        """public int org.apache.commons.collections4.collection.AbstractCollectionDecorator.size()"""
+        return int._wrap(super(collection.AbstractCollectionDecorator, self).size())
 
     @override
     @overload
     def getClass(self) -> 'type.Class':
         """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @overload
-    def removeIf(self, arg0: 'Predicate') -> bool:
-        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeIf(java.util.function.Predicate<? super E>)"""
-        return bool.__wrap(super(__collection.AbstractCollectionDecorator, self).removeIf(arg0))
-
-    @overload
-    def toArray(self, arg0: 'IntFunction') -> List[object]:
-        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
-        return List[object].__wrap(super(__Collection, self).toArray(arg0))
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public int org.apache.commons.collections4.bag.PredicatedBag.hashCode()"""
-        return int.__wrap(super(PredicatedBag, self).hashCode())
-
-    @overload
-    def toArray(self, arg0: 'Object') -> List[object]:
-        """public <T> T[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray(T[])"""
-        return List[object].__wrap(super(__collection.AbstractCollectionDecorator, self).toArray(arg0))
-
-    @staticmethod
-    @overload
-    def predicatedCollection(arg0: 'Collection', arg1: 'Predicate') -> 'collection.PredicatedCollection':
-        """public static <T> org.apache.commons.collections4.collection.PredicatedCollection<T> org.apache.commons.collections4.collection.PredicatedCollection.predicatedCollection(java.util.Collection<T>,org.apache.commons.collections4.Predicate<? super T>)"""
-        return collection.PredicatedCollection.__wrap(__PredicatedCollection.predicatedCollection(arg0, arg1))
+    def getCount(self, arg0: object) -> int:
+        """public int org.apache.commons.collections4.bag.TransformedBag.getCount(java.lang.Object)"""
+        return int._wrap(super(_TransformedBag, self).getCount(arg0))
 
     @override
     @overload
     def wait(self):
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
+
+    @override
+    @overload
+    def isEmpty(self) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.isEmpty()"""
+        return bool._wrap(super(collection.AbstractCollectionDecorator, self).isEmpty())
+
+    @override
+    @overload
+    def forEach(self, arg0: 'Consumer'):
+        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
+        super(_Iterable, self).forEach(arg0)
+
+    @overload
+    def remove(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.remove(java.lang.Object)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).remove(arg0)) 
+ 
+ 
+# CLASS: org.apache.commons.collections4.bag.PredicatedBag
+from pyquantum_helper import import_once as _import_once
+import java.util.function.Predicate as Predicate
+import java.lang.Object as _Object
+_Object = _Object
+from builtins import type
+import org.apache.commons.collections4.collection.PredicatedCollection as _PredicatedCollection
+_PredicatedCollection = _PredicatedCollection
+import java.util.Collection as Collection
+try:
+    from pyapache.collections4 import collection
+except ImportError:
+    collection = _import_once("pyapache.collections4.collection")
+
+import java.util.Set as _Set
+_Set = _Set
+import java.util.function.Consumer as Consumer
+import java.util.Spliterator as Spliterator
+import java.util.Iterator as _Iterator
+_Iterator = _Iterator
+from builtins import bool
+from builtins import str
+from pyquantum_helper import override
+import java.util.function.IntFunction as IntFunction
+import java.lang.Object as _object
+import java.util.Spliterator as _Spliterator
+_Spliterator = _Spliterator
+import java.lang.String as _String
+_String = _String
+from builtins import object
+import org.apache.commons.collections4.collection.AbstractCollectionDecorator as _AbstractCollectionDecorator
+_AbstractCollectionDecorator = _AbstractCollectionDecorator
+import java.util.Iterator as Iterator
+from typing import List
+try:
+    from pyapache import collections4
+except ImportError:
+    collections4 = _import_once("pyapache.collections4")
+
+import java.util.Set as Set
+import java.util.Collection as _Collection
+_Collection = _Collection
+import java.lang.Integer as _int
+import org.apache.commons.collections4.collection.PredicatedCollection as _PredicatedCollection_Builder
+_Builder = _PredicatedCollection_Builder.Builder
+import java.lang.Iterable as _Iterable
+_Iterable = _Iterable
+import java.util.stream.Stream as _Stream
+_Stream = _Stream
+import java.util.stream.Stream as Stream
+import org.apache.commons.collections4.bag.PredicatedBag as _PredicatedBag
+_PredicatedBag = _PredicatedBag
+import java.lang.Long as _long
+from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
+ 
+class PredicatedBag():
+    """org.apache.commons.collections4.bag.PredicatedBag"""
+ 
+    @staticmethod
+    def _wrap(java_value: _PredicatedBag) -> 'PredicatedBag':
+        return PredicatedBag(__dynamic__=java_value)
+ 
+    #
+    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+    #
+    @overload
+    def __init__(self, __dynamic__: _PredicatedBag):
+        """
+        Dynamic initializer for PredicatedBag.
+        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+ 
+        :param __dynamic__: The java object to wrap
+        """
+        self.__wrapper = __dynamic__
+ 
+    def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_PredicatedBag__wrapper":
+            return object.__getattr__(self, name)
+        return getattr(self.__wrapper, name)
+ 
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_PredicatedBag__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
+ 
+    def __delattr__(self, name: str):
+        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
+ 
+    @staticmethod
+    @overload
+    def predicatedBag(arg0: 'Bag', arg1: 'Predicate') -> 'PredicatedBag':
+        """public static <E> org.apache.commons.collections4.bag.PredicatedBag<E> org.apache.commons.collections4.bag.PredicatedBag.predicatedBag(org.apache.commons.collections4.Bag<E>,org.apache.commons.collections4.Predicate<? super E>)"""
+        return PredicatedBag._wrap(_PredicatedBag.predicatedBag(arg0, arg1))
+
+    @override
+    @overload
+    def notifyAll(self):
+        """public final native void java.lang.Object.notifyAll()"""
+        super(object, self).notifyAll()
+
+    @override
+    @overload
+    def parallelStream(self) -> 'Stream':
+        """public default java.util.stream.Stream<E> java.util.Collection.parallelStream()"""
+        return 'Stream'._wrap(super(Collection, self).parallelStream())
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public int org.apache.commons.collections4.bag.PredicatedBag.hashCode()"""
+        return int._wrap(super(PredicatedBag, self).hashCode())
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @override
+    @overload
+    def spliterator(self) -> 'Spliterator':
+        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
+        return 'Spliterator'._wrap(super(Collection, self).spliterator())
+
+    @overload
+    def remove(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.PredicatedBag.remove(java.lang.Object,int)"""
+        return bool._wrap(super(_PredicatedBag, self).remove(arg0, _int.valueOf(arg1)))
+
+    @override
+    @overload
+    def notify(self):
+        """public final native void java.lang.Object.notify()"""
+        super(object, self).notify()
+
+    @overload
+    def retainAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.retainAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).retainAll(arg0))
+
+    @overload
+    def containsAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.containsAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).containsAll(arg0))
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.PredicatedBag.equals(java.lang.Object)"""
+        return bool._wrap(super(_PredicatedBag, self).equals(arg0))
+
+    @override
+    @overload
+    def uniqueSet(self) -> 'Set':
+        """public java.util.Set<E> org.apache.commons.collections4.bag.PredicatedBag.uniqueSet()"""
+        return 'Set'._wrap(super(PredicatedBag, self).uniqueSet())
+
+    @overload
+    def toArray(self, arg0: 'Object') -> List[object]:
+        """public <T> T[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray(T[])"""
+        return List[object]._wrap(super(_collection.AbstractCollectionDecorator, self).toArray(arg0))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String org.apache.commons.collections4.collection.AbstractCollectionDecorator.toString()"""
+        return str._wrap(super(collection.AbstractCollectionDecorator, self).toString())
+
+    @override
+    @overload
+    def clear(self):
+        """public void org.apache.commons.collections4.collection.AbstractCollectionDecorator.clear()"""
+        super(collection.AbstractCollectionDecorator, self).clear()
+
+    @overload
+    def removeAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).removeAll(arg0))
+
+    @staticmethod
+    @overload
+    def notNullBuilder() -> 'collection.PredicatedCollection$Builder':
+        """public static <E> org.apache.commons.collections4.collection.PredicatedCollection$Builder<E> org.apache.commons.collections4.collection.PredicatedCollection.notNullBuilder()"""
+        return collection.PredicatedCollection$Builder._wrap(_PredicatedCollection.notNullBuilder())
+
+    @overload
+    def removeIf(self, arg0: 'Predicate') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeIf(java.util.function.Predicate<? super E>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).removeIf(arg0))
+
+    @overload
+    def add(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.PredicatedBag.add(E,int)"""
+        return bool._wrap(super(_PredicatedBag, self).add(arg0, _int.valueOf(arg1)))
+
+    @staticmethod
+    @overload
+    def predicatedCollection(arg0: 'Collection', arg1: 'Predicate') -> 'collection.PredicatedCollection':
+        """public static <T> org.apache.commons.collections4.collection.PredicatedCollection<T> org.apache.commons.collections4.collection.PredicatedCollection.predicatedCollection(java.util.Collection<T>,org.apache.commons.collections4.Predicate<? super T>)"""
+        return collection.PredicatedCollection._wrap(_PredicatedCollection.predicatedCollection(arg0, arg1))
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @override
+    @overload
+    def iterator(self) -> 'Iterator':
+        """public java.util.Iterator<E> org.apache.commons.collections4.collection.AbstractCollectionDecorator.iterator()"""
+        return 'Iterator'._wrap(super(collection.AbstractCollectionDecorator, self).iterator())
+
+    @override
+    @overload
+    def toArray(self) -> List[object]:
+        """public java.lang.Object[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray()"""
+        return List[object]._wrap(super(collection.AbstractCollectionDecorator, self).toArray())
+
+    @overload
+    def toArray(self, arg0: 'IntFunction') -> List[object]:
+        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
+        return List[object]._wrap(super(_Collection, self).toArray(arg0))
+
+    @overload
+    def add(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.PredicatedCollection.add(E)"""
+        return bool._wrap(super(_collection.PredicatedCollection, self).add(arg0))
+
+    @overload
+    def contains(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.contains(java.lang.Object)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).contains(arg0))
+
+    @override
+    @overload
+    def stream(self) -> 'Stream':
+        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
+        return 'Stream'._wrap(super(Collection, self).stream())
+
+    @override
+    @overload
+    def size(self) -> int:
+        """public int org.apache.commons.collections4.collection.AbstractCollectionDecorator.size()"""
+        return int._wrap(super(collection.AbstractCollectionDecorator, self).size())
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @staticmethod
+    @overload
+    def builder(arg0: 'Predicate') -> 'collection.PredicatedCollection$Builder':
+        """public static <E> org.apache.commons.collections4.collection.PredicatedCollection$Builder<E> org.apache.commons.collections4.collection.PredicatedCollection.builder(org.apache.commons.collections4.Predicate<? super E>)"""
+        return collection.PredicatedCollection$Builder._wrap(_PredicatedCollection.builder(arg0))
+
+    @override
+    @overload
+    def wait(self):
+        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
+        super(object, self).wait()
+
+    @override
+    @overload
+    def isEmpty(self) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.isEmpty()"""
+        return bool._wrap(super(collection.AbstractCollectionDecorator, self).isEmpty())
+
+    @override
+    @overload
+    def forEach(self, arg0: 'Consumer'):
+        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
+        super(_Iterable, self).forEach(arg0)
+
+    @overload
+    def remove(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.remove(java.lang.Object)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).remove(arg0))
+
+    @overload
+    def getCount(self, arg0: object) -> int:
+        """public int org.apache.commons.collections4.bag.PredicatedBag.getCount(java.lang.Object)"""
+        return int._wrap(super(_PredicatedBag, self).getCount(arg0))
+
+    @overload
+    def addAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.PredicatedCollection.addAll(java.util.Collection<? extends E>)"""
+        return bool._wrap(super(_collection.PredicatedCollection, self).addAll(arg0)) 
+ 
+ 
+# CLASS: org.apache.commons.collections4.bag.AbstractBagDecorator
+import java.util.function.Predicate as Predicate
+import org.apache.commons.collections4.bag.AbstractBagDecorator as _AbstractBagDecorator
+_AbstractBagDecorator = _AbstractBagDecorator
+import java.lang.Object as _Object
+_Object = _Object
+from builtins import type
+import java.util.Collection as Collection
+import java.util.Set as _Set
+_Set = _Set
+import java.util.function.Consumer as Consumer
+import java.util.Spliterator as Spliterator
+import java.util.Iterator as _Iterator
+_Iterator = _Iterator
+from builtins import bool
+from builtins import str
+from pyquantum_helper import override
+import java.util.function.IntFunction as IntFunction
+import java.lang.Object as _object
+import java.util.Spliterator as _Spliterator
+_Spliterator = _Spliterator
+import java.lang.String as _String
+_String = _String
+from builtins import object
+import org.apache.commons.collections4.collection.AbstractCollectionDecorator as _AbstractCollectionDecorator
+_AbstractCollectionDecorator = _AbstractCollectionDecorator
+import java.util.Iterator as Iterator
+from typing import List
+import java.util.Set as Set
+import java.util.Collection as _Collection
+_Collection = _Collection
+import java.lang.Integer as _int
+import java.lang.Iterable as _Iterable
+_Iterable = _Iterable
+import java.util.stream.Stream as _Stream
+_Stream = _Stream
+import java.util.stream.Stream as Stream
+import java.lang.Long as _long
+from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
+ 
+class AbstractBagDecorator():
+    """org.apache.commons.collections4.bag.AbstractBagDecorator"""
+ 
+    @staticmethod
+    def _wrap(java_value: _AbstractBagDecorator) -> 'AbstractBagDecorator':
+        return AbstractBagDecorator(__dynamic__=java_value)
+ 
+    #
+    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+    #
+    @overload
+    def __init__(self, __dynamic__: _AbstractBagDecorator):
+        """
+        Dynamic initializer for AbstractBagDecorator.
+        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+ 
+        :param __dynamic__: The java object to wrap
+        """
+        self.__wrapper = __dynamic__
+ 
+    def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_AbstractBagDecorator__wrapper":
+            return object.__getattr__(self, name)
+        return getattr(self.__wrapper, name)
+ 
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_AbstractBagDecorator__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
+ 
+    def __delattr__(self, name: str):
+        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
+ 
+    @overload
+    def getCount(self, arg0: object) -> int:
+        """public int org.apache.commons.collections4.bag.AbstractBagDecorator.getCount(java.lang.Object)"""
+        return int._wrap(super(_AbstractBagDecorator, self).getCount(arg0))
+
+    @override
+    @overload
+    def uniqueSet(self) -> 'Set':
+        """public java.util.Set<E> org.apache.commons.collections4.bag.AbstractBagDecorator.uniqueSet()"""
+        return 'Set'._wrap(super(AbstractBagDecorator, self).uniqueSet())
+
+    @override
+    @overload
+    def notifyAll(self):
+        """public final native void java.lang.Object.notifyAll()"""
+        super(object, self).notifyAll()
+
+    @overload
+    def add(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractBagDecorator.add(E,int)"""
+        return bool._wrap(super(_AbstractBagDecorator, self).add(arg0, _int.valueOf(arg1)))
+
+    @override
+    @overload
+    def parallelStream(self) -> 'Stream':
+        """public default java.util.stream.Stream<E> java.util.Collection.parallelStream()"""
+        return 'Stream'._wrap(super(Collection, self).parallelStream())
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @override
+    @overload
+    def spliterator(self) -> 'Spliterator':
+        """public default java.util.Spliterator<E> java.util.Collection.spliterator()"""
+        return 'Spliterator'._wrap(super(Collection, self).spliterator())
+
+    @override
+    @overload
+    def notify(self):
+        """public final native void java.lang.Object.notify()"""
+        super(object, self).notify()
+
+    @overload
+    def remove(self, arg0: object, arg1: int) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractBagDecorator.remove(java.lang.Object,int)"""
+        return bool._wrap(super(_AbstractBagDecorator, self).remove(arg0, _int.valueOf(arg1)))
+
+    @overload
+    def retainAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.retainAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).retainAll(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public int org.apache.commons.collections4.bag.AbstractBagDecorator.hashCode()"""
+        return int._wrap(super(AbstractBagDecorator, self).hashCode())
+
+    @overload
+    def containsAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.containsAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).containsAll(arg0))
+
+    @overload
+    def toArray(self, arg0: 'Object') -> List[object]:
+        """public <T> T[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray(T[])"""
+        return List[object]._wrap(super(_collection.AbstractCollectionDecorator, self).toArray(arg0))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String org.apache.commons.collections4.collection.AbstractCollectionDecorator.toString()"""
+        return str._wrap(super(collection.AbstractCollectionDecorator, self).toString())
+
+    @override
+    @overload
+    def clear(self):
+        """public void org.apache.commons.collections4.collection.AbstractCollectionDecorator.clear()"""
+        super(collection.AbstractCollectionDecorator, self).clear()
+
+    @overload
+    def removeAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeAll(java.util.Collection<?>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).removeAll(arg0))
+
+    @overload
+    def removeIf(self, arg0: 'Predicate') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.removeIf(java.util.function.Predicate<? super E>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).removeIf(arg0))
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @override
+    @overload
+    def iterator(self) -> 'Iterator':
+        """public java.util.Iterator<E> org.apache.commons.collections4.collection.AbstractCollectionDecorator.iterator()"""
+        return 'Iterator'._wrap(super(collection.AbstractCollectionDecorator, self).iterator())
+
+    @overload
+    def addAll(self, arg0: 'Collection') -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.addAll(java.util.Collection<? extends E>)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).addAll(arg0))
+
+    @override
+    @overload
+    def toArray(self) -> List[object]:
+        """public java.lang.Object[] org.apache.commons.collections4.collection.AbstractCollectionDecorator.toArray()"""
+        return List[object]._wrap(super(collection.AbstractCollectionDecorator, self).toArray())
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.bag.AbstractBagDecorator.equals(java.lang.Object)"""
+        return bool._wrap(super(_AbstractBagDecorator, self).equals(arg0))
+
+    @overload
+    def toArray(self, arg0: 'IntFunction') -> List[object]:
+        """public default <T> T[] java.util.Collection.toArray(java.util.function.IntFunction<T[]>)"""
+        return List[object]._wrap(super(_Collection, self).toArray(arg0))
+
+    @overload
+    def contains(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.contains(java.lang.Object)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).contains(arg0))
+
+    @override
+    @overload
+    def stream(self) -> 'Stream':
+        """public default java.util.stream.Stream<E> java.util.Collection.stream()"""
+        return 'Stream'._wrap(super(Collection, self).stream())
+
+    @override
+    @overload
+    def size(self) -> int:
+        """public int org.apache.commons.collections4.collection.AbstractCollectionDecorator.size()"""
+        return int._wrap(super(collection.AbstractCollectionDecorator, self).size())
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
+    def wait(self):
+        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
+        super(object, self).wait()
+
+    @override
+    @overload
+    def isEmpty(self) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.isEmpty()"""
+        return bool._wrap(super(collection.AbstractCollectionDecorator, self).isEmpty())
+
+    @overload
+    def add(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.add(E)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).add(arg0))
+
+    @override
+    @overload
+    def forEach(self, arg0: 'Consumer'):
+        """public default void java.lang.Iterable.forEach(java.util.function.Consumer<? super T>)"""
+        super(_Iterable, self).forEach(arg0)
+
+    @overload
+    def remove(self, arg0: object) -> bool:
+        """public boolean org.apache.commons.collections4.collection.AbstractCollectionDecorator.remove(java.lang.Object)"""
+        return bool._wrap(super(_collection.AbstractCollectionDecorator, self).remove(arg0))

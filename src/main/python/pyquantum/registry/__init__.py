@@ -3,58 +3,63 @@ from overload import overload
 
 
  
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 from pyquantum_helper import override
-import dev.ultreon.quantum.registry.Registry as __Registry_Builder
-__Builder = __Registry_Builder.Builder
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
+import java.lang.String as _String
+_String = _String
 from builtins import object
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import dev.ultreon.quantum.registry.Registry as __Registry
-__Registry = __Registry
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.Integer as _int
+import dev.ultreon.quantum.registry.Registry as _Registry
+_Registry = _Registry
+import dev.ultreon.quantum.registry.Registry as _Registry_Builder
+_Builder = _Registry_Builder.Builder
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class Builder():
     """dev.ultreon.quantum.registry.Registry.Builder"""
  
     @staticmethod
-    def __wrap(java_value: __Builder) -> 'Builder':
+    def _wrap(java_value: _Builder) -> 'Builder':
         return Builder(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Builder):
+    def __init__(self, __dynamic__: _Builder):
         """
         Dynamic initializer for Builder.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Builder__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Builder__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -63,23 +68,7 @@ class Builder():
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def doNotSync(self) -> 'Builder':
-        """public dev.ultreon.quantum.registry.Registry$Builder<T> dev.ultreon.quantum.registry.Registry$Builder.doNotSync()"""
-        return 'Builder'.__wrap(super(Builder, self).doNotSync())
-
-    @overload
-    def allowOverride(self) -> 'Builder':
-        """public dev.ultreon.quantum.registry.Registry$Builder<T> dev.ultreon.quantum.registry.Registry$Builder.allowOverride()"""
-        return 'Builder'.__wrap(super(Builder, self).allowOverride())
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -87,17 +76,22 @@ class Builder():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @overload
+    def doNotSync(self) -> 'Builder':
+        """public dev.ultreon.quantum.registry.Registry$Builder<T> dev.ultreon.quantum.registry.Registry$Builder.doNotSync()"""
+        return 'Builder'._wrap(super(Builder, self).doNotSync())
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -105,23 +99,16 @@ class Builder():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
     @overload
     def build(self) -> 'Registry':
         """public dev.ultreon.quantum.registry.Registry<T> dev.ultreon.quantum.registry.Registry$Builder.build()"""
-        return 'Registry'.__wrap(super(Builder, self).build())
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @overload
-    def __init__(self, arg0: 'Identifier', *arg1: object):
-        """public dev.ultreon.quantum.registry.Registry$Builder(dev.ultreon.quantum.util.Identifier,T...)"""
-        val = __Builder(arg0, arg1)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+        return 'Registry'._wrap(super(Builder, self).build())
 
     @override
     @overload
@@ -130,66 +117,88 @@ class Builder():
         super(object, self).wait()
 
     @overload
+    def __init__(self, arg0: 'Identifier', *arg1: object):
+        """public dev.ultreon.quantum.registry.Registry$Builder(dev.ultreon.quantum.util.Identifier,T...)"""
+        val = _Builder(arg0, arg1)
+        self.__wrapper = val
+
+    @overload
+    def allowOverride(self) -> 'Builder':
+        """public dev.ultreon.quantum.registry.Registry$Builder<T> dev.ultreon.quantum.registry.Registry$Builder.allowOverride()"""
+        return 'Builder'._wrap(super(Builder, self).allowOverride())
+
+    @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
  
 # CLASS: dev.ultreon.quantum.registry.Registry$Builder
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 from pyquantum_helper import override
-import dev.ultreon.quantum.registry.Registry as __Registry_Builder
-__Builder = __Registry_Builder.Builder
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
+import java.lang.String as _String
+_String = _String
 from builtins import object
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import dev.ultreon.quantum.registry.Registry as __Registry
-__Registry = __Registry
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.Integer as _int
+import dev.ultreon.quantum.registry.Registry as _Registry
+_Registry = _Registry
+import dev.ultreon.quantum.registry.Registry as _Registry_Builder
+_Builder = _Registry_Builder.Builder
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class Builder():
     """dev.ultreon.quantum.registry.Registry.Builder"""
  
     @staticmethod
-    def __wrap(java_value: __Builder) -> 'Builder':
+    def _wrap(java_value: _Builder) -> 'Builder':
         return Builder(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Builder):
+    def __init__(self, __dynamic__: _Builder):
         """
         Dynamic initializer for Builder.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Builder__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Builder__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -198,23 +207,7 @@ class Builder():
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def doNotSync(self) -> 'Builder':
-        """public dev.ultreon.quantum.registry.Registry$Builder<T> dev.ultreon.quantum.registry.Registry$Builder.doNotSync()"""
-        return 'Builder'.__wrap(super(Builder, self).doNotSync())
-
-    @overload
-    def allowOverride(self) -> 'Builder':
-        """public dev.ultreon.quantum.registry.Registry$Builder<T> dev.ultreon.quantum.registry.Registry$Builder.allowOverride()"""
-        return 'Builder'.__wrap(super(Builder, self).allowOverride())
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -222,17 +215,22 @@ class Builder():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @overload
+    def doNotSync(self) -> 'Builder':
+        """public dev.ultreon.quantum.registry.Registry$Builder<T> dev.ultreon.quantum.registry.Registry$Builder.doNotSync()"""
+        return 'Builder'._wrap(super(Builder, self).doNotSync())
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -240,23 +238,16 @@ class Builder():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
     @overload
     def build(self) -> 'Registry':
         """public dev.ultreon.quantum.registry.Registry<T> dev.ultreon.quantum.registry.Registry$Builder.build()"""
-        return 'Registry'.__wrap(super(Builder, self).build())
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @overload
-    def __init__(self, arg0: 'Identifier', *arg1: object):
-        """public dev.ultreon.quantum.registry.Registry$Builder(dev.ultreon.quantum.util.Identifier,T...)"""
-        val = __Builder(arg0, arg1)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+        return 'Registry'._wrap(super(Builder, self).build())
 
     @override
     @overload
@@ -265,9 +256,26 @@ class Builder():
         super(object, self).wait()
 
     @overload
+    def __init__(self, arg0: 'Identifier', *arg1: object):
+        """public dev.ultreon.quantum.registry.Registry$Builder(dev.ultreon.quantum.util.Identifier,T...)"""
+        val = _Builder(arg0, arg1)
+        self.__wrapper = val
+
+    @overload
+    def allowOverride(self) -> 'Builder':
+        """public dev.ultreon.quantum.registry.Registry$Builder<T> dev.ultreon.quantum.registry.Registry$Builder.allowOverride()"""
+        return 'Builder'._wrap(super(Builder, self).allowOverride())
+
+    @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
@@ -276,117 +284,132 @@ class Builder():
  
  
 # CLASS: dev.ultreon.quantum.registry.Registry
-from pyquantum_helper import import_once as __import_once__
-import dev.ultreon.quantum.registry.Registry as __Registry_Builder
-__Builder = __Registry_Builder.Builder
+from pyquantum_helper import import_once as _import_once
+import java.lang.Object as _Object
+_Object = _Object
 from builtins import type
-import dev.ultreon.quantum.registry.RegistryKey as __RegistryKey
-__RegistryKey = __RegistryKey
+import dev.ultreon.libs.commons.v0.Logger as _Logger
+_Logger = _Logger
 import java.util.Collection as Collection
-import dev.ultreon.quantum.registry.AbstractRegistry as __AbstractRegistry
-__AbstractRegistry = __AbstractRegistry
-import dev.ultreon.libs.commons.v0.Logger as __Logger
-__Logger = __Logger
-import java.util.Collection as __Collection
-__Collection = __Collection
-import java.lang.Class as __Class
-__Class = __Class
-import dev.ultreon.quantum.registry.Registry as __Registry
-__Registry = __Registry
-import java.lang.String as __string
+import java.util.Set as _Set
+_Set = _Set
+import java.lang.String as _string
+import dev.ultreon.quantum.registry.AbstractRegistry as _AbstractRegistry
+_AbstractRegistry = _AbstractRegistry
 import org.reactivestreams.Subscriber as Subscriber
+import java.util.Optional as _Optional
+_Optional = _Optional
 try:
     from pyquantum import tags
 except ImportError:
-    tags = __import_once__("pyquantum.tags")
+    tags = _import_once("pyquantum.tags")
 
 from builtins import bool
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
-import java.util.Set as __Set
-__Set = __Set
-import java.util.Optional as __Optional
-__Optional = __Optional
+import java.lang.Object as _object
 from builtins import object
-import dev.ultreon.quantum.tags.NamedTag as __NamedTag
-__NamedTag = __NamedTag
+import java.lang.String as _String
+_String = _String
+import java.util.List as _List
+_List = _List
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import java.util.List as __List
-__List = __List
+import dev.ultreon.quantum.registry.RegistryKey as _RegistryKey
+_RegistryKey = _RegistryKey
 import java.util.Set as Set
-import java.lang.Long as __long
+import java.util.Collection as _Collection
+_Collection = _Collection
+import java.lang.Integer as _int
 try:
     from pycorelibs.commons import v0
 except ImportError:
-    v0 = __import_once__("pycorelibs.commons.v0")
+    v0 = _import_once("pycorelibs.commons.v0")
 
-import java.lang.String as __String
-__String = __String
-import dev.ultreon.quantum.util.Identifier as __Identifier
-__Identifier = __Identifier
-import java.lang.Object as __Object
-__Object = __Object
 import java.util.Optional as Optional
-import java.lang.Integer as __int
+import dev.ultreon.quantum.registry.Registry as _Registry
+_Registry = _Registry
+import dev.ultreon.quantum.registry.Registry as _Registry_Builder
+_Builder = _Registry_Builder.Builder
+import dev.ultreon.quantum.util.Identifier as _Identifier
+_Identifier = _Identifier
+import dev.ultreon.quantum.tags.NamedTag as _NamedTag
+_NamedTag = _NamedTag
+import java.lang.Long as _long
 import java.util.List as List
+import java.lang.Class as _Class
+_Class = _Class
 from builtins import int
  
 class Registry():
     """dev.ultreon.quantum.registry.Registry"""
  
     @staticmethod
-    def __wrap(java_value: __Registry) -> 'Registry':
+    def _wrap(java_value: _Registry) -> 'Registry':
         return Registry(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Registry):
+    def __init__(self, __dynamic__: _Registry):
         """
         Dynamic initializer for Registry.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Registry__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Registry__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    # public static final dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.registry.Registry<?>> dev.ultreon.quantum.registry.Registry.REGISTRY
-    REGISTRY: 'Registry' = __wrap(__Registry.REGISTRY)
-
-
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def subscribe(self, arg0: 'Subscriber'):
+        """public void dev.ultreon.quantum.registry.Registry.subscribe(org.reactivestreams.Subscriber<? super dev.ultreon.quantum.registry.Registry<T>>)"""
+        super(_Registry, self).subscribe(arg0)
 
     @staticmethod
     @overload
-    def getRegistry(arg0: 'RegistryKey') -> 'Registry':
-        """public static <T> dev.ultreon.quantum.registry.Registry<T> dev.ultreon.quantum.registry.Registry.getRegistry(dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<T>>)"""
-        return Registry.__wrap(__Registry.getRegistry(arg0))
+    def builder(arg0: 'Identifier', *arg1: object) -> 'Builder':
+        """public static <T> dev.ultreon.quantum.registry.Registry$Builder<T> dev.ultreon.quantum.registry.Registry.builder(dev.ultreon.quantum.util.Identifier,T...)"""
+        return Builder._wrap(_Registry.builder(arg0, arg1))
 
-    @override
     @overload
-    def keys(self) -> 'List':
-        """public java.util.List<dev.ultreon.quantum.registry.RegistryKey<T>> dev.ultreon.quantum.registry.Registry.keys()"""
-        return 'List'.__wrap(super(Registry, self).keys())
+    def getId(self, arg0: object) -> 'util.Identifier':
+        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.registry.Registry.getId(T)"""
+        return 'util.Identifier'._wrap(super(_Registry, self).getId(arg0))
+
+    @overload
+    def unsubscribe(self, arg0: 'Subscriber'):
+        """public void dev.ultreon.quantum.registry.Registry.unsubscribe(org.reactivestreams.Subscriber<? super dev.ultreon.quantum.registry.Registry<T>>)"""
+        super(_Registry, self).unsubscribe(arg0)
+
+    @overload
+    def byId(self, arg0: int) -> object:
+        """public T dev.ultreon.quantum.registry.Registry.byId(int)"""
+        return object._wrap(super(_Registry, self).byId(_int.valueOf(arg0)))
+
+    @overload
+    def createTag(self, arg0: 'Identifier') -> 'tags.NamedTag':
+        """public dev.ultreon.quantum.tags.NamedTag<T> dev.ultreon.quantum.registry.Registry.createTag(dev.ultreon.quantum.util.Identifier)"""
+        return 'tags.NamedTag'._wrap(super(_Registry, self).createTag(arg0))
 
     @override
     @overload
@@ -394,32 +417,15 @@ class Registry():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
-    @override
     @overload
-    def subscribe(self, arg0: 'Subscriber'):
-        """public void dev.ultreon.quantum.registry.Registry.subscribe(org.reactivestreams.Subscriber<? super dev.ultreon.quantum.registry.Registry<T>>)"""
-        super(__Registry, self).subscribe(arg0)
-
-    @staticmethod
-    @overload
-    def getDumpLogger() -> 'v0.Logger':
-        """public static dev.ultreon.libs.commons.v0.Logger dev.ultreon.quantum.registry.Registry.getDumpLogger()"""
-        return v0.Logger.__wrap(__Registry.getDumpLogger())
+    def get(self, arg0: 'RegistryKey') -> object:
+        """public T dev.ultreon.quantum.registry.Registry.get(dev.ultreon.quantum.registry.RegistryKey<T>)"""
+        return object._wrap(super(_Registry, self).get(arg0))
 
     @overload
-    def register(self, arg0: 'Identifier', arg1: object):
-        """public void dev.ultreon.quantum.registry.Registry.register(dev.ultreon.quantum.util.Identifier,T)"""
-        super(__Registry, self).register(arg0, arg1)
-
-    @overload
-    def getKey(self, arg0: object) -> 'RegistryKey':
-        """public dev.ultreon.quantum.registry.RegistryKey<T> dev.ultreon.quantum.registry.Registry.getKey(T)"""
-        return 'RegistryKey'.__wrap(super(__Registry, self).getKey(arg0))
-
-    @overload
-    def getTag(self, arg0: 'Identifier') -> 'Optional':
-        """public java.util.Optional<dev.ultreon.quantum.tags.NamedTag<T>> dev.ultreon.quantum.registry.Registry.getTag(dev.ultreon.quantum.util.Identifier)"""
-        return 'Optional'.__wrap(super(__Registry, self).getTag(arg0))
+    def contains(self, arg0: 'Identifier') -> bool:
+        """public boolean dev.ultreon.quantum.registry.Registry.contains(dev.ultreon.quantum.util.Identifier)"""
+        return bool._wrap(super(_Registry, self).contains(arg0))
 
     @overload
     def dumpRegistry(self):
@@ -427,35 +433,15 @@ class Registry():
         super(Registry, self).dumpRegistry()
 
     @overload
-    def createTag(self, arg0: 'Identifier') -> 'tags.NamedTag':
-        """public dev.ultreon.quantum.tags.NamedTag<T> dev.ultreon.quantum.registry.Registry.createTag(dev.ultreon.quantum.util.Identifier)"""
-        return 'tags.NamedTag'.__wrap(super(__Registry, self).createTag(arg0))
+    def getRawId(self, arg0: object) -> int:
+        """public int dev.ultreon.quantum.registry.Registry.getRawId(T)"""
+        return int._wrap(super(_Registry, self).getRawId(arg0))
 
     @override
     @overload
-    def random(self) -> object:
-        """public V dev.ultreon.quantum.registry.AbstractRegistry.random()"""
-        return object.__wrap(super(AbstractRegistry, self).random())
-
-    @overload
-    def getRawId(self, arg0: object) -> int:
-        """public int dev.ultreon.quantum.registry.Registry.getRawId(T)"""
-        return int.__wrap(super(__Registry, self).getRawId(arg0))
-
-    @overload
-    def byId(self, arg0: int) -> object:
-        """public T dev.ultreon.quantum.registry.Registry.byId(int)"""
-        return object.__wrap(super(__Registry, self).byId(__int.valueOf(arg0)))
-
-    @overload
-    def isFrozen(self) -> bool:
-        """public boolean dev.ultreon.quantum.registry.Registry.isFrozen()"""
-        return bool.__wrap(super(Registry, self).isFrozen())
-
-    @overload
-    def isOverrideAllowed(self) -> bool:
-        """public boolean dev.ultreon.quantum.registry.Registry.isOverrideAllowed()"""
-        return bool.__wrap(super(Registry, self).isOverrideAllowed())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -463,94 +449,98 @@ class Registry():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
+    @staticmethod
     @overload
-    def getType(self) -> 'type.Class':
-        """public java.lang.Class<T> dev.ultreon.quantum.registry.Registry.getType()"""
-        return 'type.Class'.__wrap(super(Registry, self).getType())
+    def getDumpLogger() -> 'v0.Logger':
+        """public static dev.ultreon.libs.commons.v0.Logger dev.ultreon.quantum.registry.Registry.getDumpLogger()"""
+        return v0.Logger._wrap(_Registry.getDumpLogger())
 
-    @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def key(self) -> 'RegistryKey':
+        """public dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<T>> dev.ultreon.quantum.registry.Registry.key()"""
+        return 'RegistryKey'._wrap(super(Registry, self).key())
 
         @staticmethod
         @overload
         def freeze():
             """public static void dev.ultreon.quantum.registry.Registry.freeze()"""
-            __Registry.freeze()
-
-    @overload
-    def register(self, arg0: 'RegistryKey', arg1: object):
-        """public void dev.ultreon.quantum.registry.Registry.register(dev.ultreon.quantum.registry.RegistryKey<T>,T)"""
-        super(__Registry, self).register(arg0, arg1)
-
-    @overload
-    def contains(self, arg0: 'Identifier') -> bool:
-        """public boolean dev.ultreon.quantum.registry.Registry.contains(dev.ultreon.quantum.util.Identifier)"""
-        return bool.__wrap(super(__Registry, self).contains(arg0))
-
-    @overload
-    def key(self) -> 'RegistryKey':
-        """public dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<T>> dev.ultreon.quantum.registry.Registry.key()"""
-        return 'RegistryKey'.__wrap(super(Registry, self).key())
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
-
-    @staticmethod
-    @overload
-    def setDumpLogger(arg0: 'Logger'):
-        """public static void dev.ultreon.quantum.registry.Registry.setDumpLogger(dev.ultreon.libs.commons.v0.Logger)"""
-        __Registry.setDumpLogger(arg0)
-
-    @staticmethod
-    @overload
-    def builder(arg0: str, *arg1: object) -> 'Builder':
-        """public static <T> dev.ultreon.quantum.registry.Registry$Builder<T> dev.ultreon.quantum.registry.Registry.builder(java.lang.String,T...)"""
-        return Builder.__wrap(__Registry.builder(arg0, arg1))
-
-    @staticmethod
-    @overload
-    def builder(arg0: 'Identifier', *arg1: object) -> 'Builder':
-        """public static <T> dev.ultreon.quantum.registry.Registry$Builder<T> dev.ultreon.quantum.registry.Registry.builder(dev.ultreon.quantum.util.Identifier,T...)"""
-        return Builder.__wrap(__Registry.builder(arg0, arg1))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+            _Registry.freeze()
 
     @override
     @overload
     def values(self) -> 'List':
         """public java.util.List<T> dev.ultreon.quantum.registry.Registry.values()"""
-        return 'List'.__wrap(super(Registry, self).values())
+        return 'List'._wrap(super(Registry, self).values())
+
+    @overload
+    def isSyncDisabled(self) -> bool:
+        """public boolean dev.ultreon.quantum.registry.Registry.isSyncDisabled()"""
+        return bool._wrap(super(Registry, self).isSyncDisabled())
+
+    @staticmethod
+    @overload
+    def create(arg0: 'Identifier', *arg1: object) -> 'Registry':
+        """public static <T> dev.ultreon.quantum.registry.Registry<T> dev.ultreon.quantum.registry.Registry.create(dev.ultreon.quantum.util.Identifier,T...)"""
+        return Registry._wrap(_Registry.create(arg0, arg1))
+
+    @overload
+    def id(self) -> 'util.Identifier':
+        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.registry.Registry.id()"""
+        return 'util.Identifier'._wrap(super(Registry, self).id())
+
+    @override
+    @overload
+    def keys(self) -> 'List':
+        """public java.util.List<dev.ultreon.quantum.registry.RegistryKey<T>> dev.ultreon.quantum.registry.Registry.keys()"""
+        return 'List'._wrap(super(Registry, self).keys())
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @overload
+    def getTag(self, arg0: 'Identifier') -> 'Optional':
+        """public java.util.Optional<dev.ultreon.quantum.tags.NamedTag<T>> dev.ultreon.quantum.registry.Registry.getTag(dev.ultreon.quantum.util.Identifier)"""
+        return 'Optional'._wrap(super(_Registry, self).getTag(arg0))
+
+    @overload
+    def isOverrideAllowed(self) -> bool:
+        """public boolean dev.ultreon.quantum.registry.Registry.isOverrideAllowed()"""
+        return bool._wrap(super(Registry, self).isOverrideAllowed())
+
+    @overload
+    def isFrozen(self) -> bool:
+        """public boolean dev.ultreon.quantum.registry.Registry.isFrozen()"""
+        return bool._wrap(super(Registry, self).isFrozen())
+
+    @overload
+    def ids(self) -> 'List':
+        """public java.util.List<dev.ultreon.quantum.util.Identifier> dev.ultreon.quantum.registry.Registry.ids()"""
+        return 'List'._wrap(super(Registry, self).ids())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @overload
+    def register(self, arg0: 'RegistryKey', arg1: object):
+        """public void dev.ultreon.quantum.registry.Registry.register(dev.ultreon.quantum.registry.RegistryKey<T>,T)"""
+        super(_Registry, self).register(arg0, arg1)
 
         @staticmethod
         @overload
         def dump():
             """public static void dev.ultreon.quantum.registry.Registry.dump()"""
-            __Registry.dump()
+            _Registry.dump()
 
     @override
     @overload
     def entries(self) -> 'Set':
         """public java.util.Set<java.util.Map$Entry<dev.ultreon.quantum.registry.RegistryKey<T>, T>> dev.ultreon.quantum.registry.Registry.entries()"""
-        return 'Set'.__wrap(super(Registry, self).entries())
-
-    @overload
-    def unsubscribe(self, arg0: 'Subscriber'):
-        """public void dev.ultreon.quantum.registry.Registry.unsubscribe(org.reactivestreams.Subscriber<? super dev.ultreon.quantum.registry.Registry<T>>)"""
-        super(__Registry, self).unsubscribe(arg0)
-
-    @overload
-    def isSyncDisabled(self) -> bool:
-        """public boolean dev.ultreon.quantum.registry.Registry.isSyncDisabled()"""
-        return bool.__wrap(super(Registry, self).isSyncDisabled())
+        return 'Set'._wrap(super(Registry, self).entries())
 
     @overload
     def publish(self):
@@ -559,40 +549,59 @@ class Registry():
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @staticmethod
+    @overload
+    def builder(arg0: str, *arg1: object) -> 'Builder':
+        """public static <T> dev.ultreon.quantum.registry.Registry$Builder<T> dev.ultreon.quantum.registry.Registry.builder(java.lang.String,T...)"""
+        return Builder._wrap(_Registry.builder(arg0, arg1))
+
+    @overload
+    def getKey(self, arg0: object) -> 'RegistryKey':
+        """public dev.ultreon.quantum.registry.RegistryKey<T> dev.ultreon.quantum.registry.Registry.getKey(T)"""
+        return 'RegistryKey'._wrap(super(_Registry, self).getKey(arg0))
+
+    @overload
+    def register(self, arg0: 'Identifier', arg1: object):
+        """public void dev.ultreon.quantum.registry.Registry.register(dev.ultreon.quantum.util.Identifier,T)"""
+        super(_Registry, self).register(arg0, arg1)
 
     @override
     @overload
     def getClass(self) -> 'type.Class':
         """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @overload
-    def get(self, arg0: 'RegistryKey') -> object:
-        """public T dev.ultreon.quantum.registry.Registry.get(dev.ultreon.quantum.registry.RegistryKey<T>)"""
-        return object.__wrap(super(__Registry, self).get(arg0))
-
-    @overload
-    def ids(self) -> 'List':
-        """public java.util.List<dev.ultreon.quantum.util.Identifier> dev.ultreon.quantum.registry.Registry.ids()"""
-        return 'List'.__wrap(super(Registry, self).ids())
-
-    @overload
-    def id(self) -> 'util.Identifier':
-        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.registry.Registry.id()"""
-        return 'util.Identifier'.__wrap(super(Registry, self).id())
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @overload
     def get(self, arg0: 'Identifier') -> object:
         """public T dev.ultreon.quantum.registry.Registry.get(dev.ultreon.quantum.util.Identifier)"""
-        return object.__wrap(super(__Registry, self).get(arg0))
+        return object._wrap(super(_Registry, self).get(arg0))
+
+    @staticmethod
+    @overload
+    def getRegistries() -> 'Collection':
+        """public static java.util.Collection<dev.ultreon.quantum.registry.Registry<?>> dev.ultreon.quantum.registry.Registry.getRegistries()"""
+        return Collection._wrap(_Registry.getRegistries())
 
     @overload
-    def getId(self, arg0: object) -> 'util.Identifier':
-        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.registry.Registry.getId(T)"""
-        return 'util.Identifier'.__wrap(super(__Registry, self).getId(arg0))
+    def getType(self) -> 'type.Class':
+        """public java.lang.Class<T> dev.ultreon.quantum.registry.Registry.getType()"""
+        return 'type.Class'._wrap(super(Registry, self).getType())
+
+    @staticmethod
+    @overload
+    def setDumpLogger(arg0: 'Logger'):
+        """public static void dev.ultreon.quantum.registry.Registry.setDumpLogger(dev.ultreon.libs.commons.v0.Logger)"""
+        _Registry.setDumpLogger(arg0)
+
+    @staticmethod
+    @overload
+    def getRegistry(arg0: 'RegistryKey') -> 'Registry':
+        """public static <T> dev.ultreon.quantum.registry.Registry<T> dev.ultreon.quantum.registry.Registry.getRegistry(dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<T>>)"""
+        return Registry._wrap(_Registry.getRegistry(arg0))
 
     @override
     @overload
@@ -600,17 +609,20 @@ class Registry():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
-    @staticmethod
+    @override
     @overload
-    def create(arg0: 'Identifier', *arg1: object) -> 'Registry':
-        """public static <T> dev.ultreon.quantum.registry.Registry<T> dev.ultreon.quantum.registry.Registry.create(dev.ultreon.quantum.util.Identifier,T...)"""
-        return Registry.__wrap(__Registry.create(arg0, arg1))
+    def random(self) -> object:
+        """public V dev.ultreon.quantum.registry.AbstractRegistry.random()"""
+        return object._wrap(super(AbstractRegistry, self).random())
 
-    @staticmethod
+    @override
     @overload
-    def getRegistries() -> 'Collection':
-        """public static java.util.Collection<dev.ultreon.quantum.registry.Registry<?>> dev.ultreon.quantum.registry.Registry.getRegistries()"""
-        return Collection.__wrap(__Registry.getRegistries()) 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
+
+
+Registry.REGISTRY = Registry._wrap(_REGISTRY.REGISTRY) 
  
  
 # CLASS: dev.ultreon.quantum.registry.DeferRegistry
@@ -618,70 +630,70 @@ import groovy.lang.Closure as Closure
 import java.util.function.Supplier as Supplier
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.registry.DeferredElement as __DeferredElement
-__DeferredElement = __DeferredElement
-import dev.ultreon.quantum.registry.DeferRegistry as __DeferRegistry
-__DeferRegistry = __DeferRegistry
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __string
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import java.lang.String as _string
+import dev.ultreon.quantum.registry.DeferredElement as _DeferredElement
+_DeferredElement = _DeferredElement
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
+import dev.ultreon.quantum.registry.DeferRegistry as _DeferRegistry
+_DeferRegistry = _DeferRegistry
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class DeferRegistry():
     """dev.ultreon.quantum.registry.DeferRegistry"""
  
     @staticmethod
-    def __wrap(java_value: __DeferRegistry) -> 'DeferRegistry':
+    def _wrap(java_value: _DeferRegistry) -> 'DeferRegistry':
         return DeferRegistry(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __DeferRegistry):
+    def __init__(self, __dynamic__: _DeferRegistry):
         """
         Dynamic initializer for DeferRegistry.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_DeferRegistry__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_DeferRegistry__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @staticmethod
+    @overload
+    def of(arg0: str, arg1: 'Registry') -> 'DeferRegistry':
+        """public static <T> dev.ultreon.quantum.registry.DeferRegistry<T> dev.ultreon.quantum.registry.DeferRegistry.of(java.lang.String,dev.ultreon.quantum.registry.Registry<T>)"""
+        return DeferRegistry._wrap(_DeferRegistry.of(arg0, arg1))
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def defer(self, arg0: str, arg1: 'Closure') -> 'DeferredElement':
-        """public <C extends T> dev.ultreon.quantum.registry.DeferredElement<C> dev.ultreon.quantum.registry.DeferRegistry.defer(java.lang.String,groovy.lang.Closure<C>)"""
-        return 'DeferredElement'.__wrap(super(__DeferRegistry, self).defer(arg0, arg1))
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -691,20 +703,15 @@ class DeferRegistry():
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def defer(self, arg0: str, arg1: 'Supplier') -> 'DeferredElement':
-        """public <C extends T> dev.ultreon.quantum.registry.DeferredElement<C> dev.ultreon.quantum.registry.DeferRegistry.defer(java.lang.String,java.util.function.Supplier<C>)"""
-        return 'DeferredElement'.__wrap(super(__DeferRegistry, self).defer(arg0, arg1))
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -712,11 +719,11 @@ class DeferRegistry():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @staticmethod
+    @override
     @overload
-    def of(arg0: str, arg1: 'Registry') -> 'DeferRegistry':
-        """public static <T> dev.ultreon.quantum.registry.DeferRegistry<T> dev.ultreon.quantum.registry.DeferRegistry.of(java.lang.String,dev.ultreon.quantum.registry.Registry<T>)"""
-        return DeferRegistry.__wrap(__DeferRegistry.of(arg0, arg1))
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @overload
     def register(self):
@@ -725,101 +732,103 @@ class DeferRegistry():
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @override
-    @overload
     def wait(self):
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
     @overload
+    def defer(self, arg0: str, arg1: 'Supplier') -> 'DeferredElement':
+        """public <C extends T> dev.ultreon.quantum.registry.DeferredElement<C> dev.ultreon.quantum.registry.DeferRegistry.defer(java.lang.String,java.util.function.Supplier<C>)"""
+        return 'DeferredElement'._wrap(super(_DeferRegistry, self).defer(arg0, arg1))
+
+    @overload
+    def defer(self, arg0: str, arg1: 'Closure') -> 'DeferredElement':
+        """public <C extends T> dev.ultreon.quantum.registry.DeferredElement<C> dev.ultreon.quantum.registry.DeferRegistry.defer(java.lang.String,groovy.lang.Closure<C>)"""
+        return 'DeferredElement'._wrap(super(_DeferRegistry, self).defer(arg0, arg1))
+
+    @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0)) 
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.registry.CustomKeyRegistry
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.registry.CustomKeyRegistry as __CustomKeyRegistry
-__CustomKeyRegistry = __CustomKeyRegistry
 try:
     from pyquantum import text
 except ImportError:
-    text = __import_once__("pyquantum.text")
+    text = _import_once("pyquantum.text")
 
+import java.lang.String as _String
+_String = _String
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import dev.ultreon.quantum.registry.CustomKeyRegistry as _CustomKeyRegistry
+_CustomKeyRegistry = _CustomKeyRegistry
+import java.lang.Integer as _int
+import dev.ultreon.quantum.text.TextKey as _TextKey
+_TextKey = _TextKey
 from builtins import bool
-import dev.ultreon.quantum.text.TextKey as __TextKey
-__TextKey = __TextKey
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class CustomKeyRegistry():
     """dev.ultreon.quantum.registry.CustomKeyRegistry"""
  
     @staticmethod
-    def __wrap(java_value: __CustomKeyRegistry) -> 'CustomKeyRegistry':
+    def _wrap(java_value: _CustomKeyRegistry) -> 'CustomKeyRegistry':
         return CustomKeyRegistry(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __CustomKeyRegistry):
+    def __init__(self, __dynamic__: _CustomKeyRegistry):
         """
         Dynamic initializer for CustomKeyRegistry.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_CustomKeyRegistry__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_CustomKeyRegistry__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.registry.CustomKeyRegistry()"""
-        val = __CustomKeyRegistry()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -829,28 +838,21 @@ class CustomKeyRegistry():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.registry.CustomKeyRegistry()"""
-        val = __CustomKeyRegistry()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @staticmethod
     @overload
     def get(arg0: 'Identifier') -> 'text.TextKey':
         """public static dev.ultreon.quantum.text.TextKey dev.ultreon.quantum.registry.CustomKeyRegistry.get(dev.ultreon.quantum.util.Identifier)"""
-        return text.TextKey.__wrap(__CustomKeyRegistry.get(arg0))
+        return text.TextKey._wrap(_CustomKeyRegistry.get(arg0))
 
     @override
     @overload
@@ -865,116 +867,139 @@ class CustomKeyRegistry():
         super(object, self).wait()
 
     @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+    def __init__(self, ):
+        """public dev.ultreon.quantum.registry.CustomKeyRegistry()"""
+        val = _CustomKeyRegistry()
+        self.__wrapper = val
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0)) 
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
+
+    @overload
+    def __init__(self):
+        """public dev.ultreon.quantum.registry.CustomKeyRegistry()"""
+        val = _CustomKeyRegistry()
+        self.__wrapper = val 
  
  
 # CLASS: dev.ultreon.quantum.registry.RegistryKeys
 from builtins import str
-import java.lang.Long as __long
 from pyquantum_helper import override
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.Object as __object
-import java.lang.String as __String
-__String = __String
+import dev.ultreon.quantum.registry.RegistryKeys as _RegistryKeys
+_RegistryKeys = _RegistryKeys
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Integer as _int
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.registry.RegistryKeys as __RegistryKeys
-__RegistryKeys = __RegistryKeys
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class RegistryKeys():
     """dev.ultreon.quantum.registry.RegistryKeys"""
  
     @staticmethod
-    def __wrap(java_value: __RegistryKeys) -> 'RegistryKeys':
+    def _wrap(java_value: _RegistryKeys) -> 'RegistryKeys':
         return RegistryKeys(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __RegistryKeys):
+    def __init__(self, __dynamic__: _RegistryKeys):
         """
         Dynamic initializer for RegistryKeys.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_RegistryKeys__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_RegistryKeys__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    # public static final dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.world.gen.noise.NoiseConfig>> dev.ultreon.quantum.registry.RegistryKeys.NOISE_SETTINGS
-    NOISE_SETTINGS: 'RegistryKey' = __wrap(__RegistryKey.NOISE_SETTINGS)
-
-    # public static final dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.block.Block>> dev.ultreon.quantum.registry.RegistryKeys.BLOCK
-    BLOCK: 'RegistryKey' = __wrap(__RegistryKey.BLOCK)
-
-    # public static final dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.weather.Weather>> dev.ultreon.quantum.registry.RegistryKeys.WEATHER
-    WEATHER: 'RegistryKey' = __wrap(__RegistryKey.WEATHER)
-
-    # public static final dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.recipe.RecipeType<?>>> dev.ultreon.quantum.registry.RegistryKeys.RECIPE_TYPE
-    RECIPE_TYPE: 'RegistryKey' = __wrap(__RegistryKey.RECIPE_TYPE)
-
-    # public static final dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.item.Item>> dev.ultreon.quantum.registry.RegistryKeys.ITEM
-    ITEM: 'RegistryKey' = __wrap(__RegistryKey.ITEM)
+    # public static final dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.world.SoundEvent>> dev.ultreon.quantum.registry.RegistryKeys.SOUND_EVENT
+    SOUND_EVENT: 'RegistryKey' = _wrap(_RegistryKey.SOUND_EVENT)
 
     # public static final dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.entity.EntityType<?>>> dev.ultreon.quantum.registry.RegistryKeys.ENTITY_TYPE
-    ENTITY_TYPE: 'RegistryKey' = __wrap(__RegistryKey.ENTITY_TYPE)
-
-    # public static final dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.entity.Attribute>> dev.ultreon.quantum.registry.RegistryKeys.ATTRIBUTE
-    ATTRIBUTE: 'RegistryKey' = __wrap(__RegistryKey.ATTRIBUTE)
-
-    # public static final dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.world.Biome>> dev.ultreon.quantum.registry.RegistryKeys.BIOME
-    BIOME: 'RegistryKey' = __wrap(__RegistryKey.BIOME)
-
-    # public static final dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.menu.MenuType<?>>> dev.ultreon.quantum.registry.RegistryKeys.MENU_TYPE
-    MENU_TYPE: 'RegistryKey' = __wrap(__RegistryKey.MENU_TYPE)
-
-    # public static final dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.block.entity.BlockEntityType<?>>> dev.ultreon.quantum.registry.RegistryKeys.BLOCK_ENTITY_TYPE
-    BLOCK_ENTITY_TYPE: 'RegistryKey' = __wrap(__RegistryKey.BLOCK_ENTITY_TYPE)
+    ENTITY_TYPE: 'RegistryKey' = _wrap(_RegistryKey.ENTITY_TYPE)
 
     # public static final dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.world.particles.ParticleType>> dev.ultreon.quantum.registry.RegistryKeys.PARTICLE_TYPE
-    PARTICLE_TYPE: 'RegistryKey' = __wrap(__RegistryKey.PARTICLE_TYPE)
+    PARTICLE_TYPE: 'RegistryKey' = _wrap(_RegistryKey.PARTICLE_TYPE)
 
-    # public static final dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.world.SoundEvent>> dev.ultreon.quantum.registry.RegistryKeys.SOUND_EVENT
-    SOUND_EVENT: 'RegistryKey' = __wrap(__RegistryKey.SOUND_EVENT)
+    # public static final dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.weather.Weather>> dev.ultreon.quantum.registry.RegistryKeys.WEATHER
+    WEATHER: 'RegistryKey' = _wrap(_RegistryKey.WEATHER)
+
+    # public static final dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.block.Block>> dev.ultreon.quantum.registry.RegistryKeys.BLOCK
+    BLOCK: 'RegistryKey' = _wrap(_RegistryKey.BLOCK)
+
+    # public static final dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.recipe.RecipeType<?>>> dev.ultreon.quantum.registry.RegistryKeys.RECIPE_TYPE
+    RECIPE_TYPE: 'RegistryKey' = _wrap(_RegistryKey.RECIPE_TYPE)
 
     # public static final dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.entity.damagesource.DamageSource>> dev.ultreon.quantum.registry.RegistryKeys.DAMAGE_SOURCE
-    DAMAGE_SOURCE: 'RegistryKey' = __wrap(__RegistryKey.DAMAGE_SOURCE)
+    DAMAGE_SOURCE: 'RegistryKey' = _wrap(_RegistryKey.DAMAGE_SOURCE)
+
+    # public static final dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.menu.MenuType<?>>> dev.ultreon.quantum.registry.RegistryKeys.MENU_TYPE
+    MENU_TYPE: 'RegistryKey' = _wrap(_RegistryKey.MENU_TYPE)
+
+    # public static final dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.block.entity.BlockEntityType<?>>> dev.ultreon.quantum.registry.RegistryKeys.BLOCK_ENTITY_TYPE
+    BLOCK_ENTITY_TYPE: 'RegistryKey' = _wrap(_RegistryKey.BLOCK_ENTITY_TYPE)
+
+    # public static final dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.item.Item>> dev.ultreon.quantum.registry.RegistryKeys.ITEM
+    ITEM: 'RegistryKey' = _wrap(_RegistryKey.ITEM)
+
+    # public static final dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.world.Biome>> dev.ultreon.quantum.registry.RegistryKeys.BIOME
+    BIOME: 'RegistryKey' = _wrap(_RegistryKey.BIOME)
+
+    # public static final dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.world.gen.noise.NoiseConfig>> dev.ultreon.quantum.registry.RegistryKeys.NOISE_SETTINGS
+    NOISE_SETTINGS: 'RegistryKey' = _wrap(_RegistryKey.NOISE_SETTINGS)
+
+    # public static final dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.entity.Attribute>> dev.ultreon.quantum.registry.RegistryKeys.ATTRIBUTE
+    ATTRIBUTE: 'RegistryKey' = _wrap(_RegistryKey.ATTRIBUTE)
 
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
-    @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def __init__(self):
+        """public dev.ultreon.quantum.registry.RegistryKeys()"""
+        val = _RegistryKeys()
+        self.__wrapper = val
 
     @override
     @overload
@@ -984,22 +1009,15 @@ class RegistryKeys():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.registry.RegistryKeys()"""
-        val = __RegistryKeys()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -1014,147 +1032,145 @@ class RegistryKeys():
         super(object, self).wait()
 
     @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+    def __init__(self, ):
+        """public dev.ultreon.quantum.registry.RegistryKeys()"""
+        val = _RegistryKeys()
+        self.__wrapper = val
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.registry.RegistryKeys()"""
-        val = __RegistryKeys()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val 
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.registry.Registries
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
+import dev.ultreon.quantum.registry.Registries as _Registries
+_Registries = _Registries
 from builtins import object
+import java.lang.String as _String
+_String = _String
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import dev.ultreon.quantum.registry.Registry as __Registry
-__Registry = __Registry
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.Integer as _int
+import dev.ultreon.quantum.registry.Registry as _Registry
+_Registry = _Registry
 from builtins import bool
-import dev.ultreon.quantum.registry.Registries as __Registries
-__Registries = __Registries
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class Registries():
     """dev.ultreon.quantum.registry.Registries"""
  
     @staticmethod
-    def __wrap(java_value: __Registries) -> 'Registries':
+    def _wrap(java_value: _Registries) -> 'Registries':
         return Registries(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Registries):
+    def __init__(self, __dynamic__: _Registries):
         """
         Dynamic initializer for Registries.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Registries__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Registries__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    # public static final dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.entity.damagesource.DamageSource> dev.ultreon.quantum.registry.Registries.DAMAGE_SOURCE
-    DAMAGE_SOURCE: 'Registry' = __wrap(__Registry.DAMAGE_SOURCE)
-
-    # public static final dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.world.SoundEvent> dev.ultreon.quantum.registry.Registries.SOUND_EVENT
-    SOUND_EVENT: 'Registry' = __wrap(__Registry.SOUND_EVENT)
-
-    # public static final dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.block.entity.BlockEntityType<?>> dev.ultreon.quantum.registry.Registries.BLOCK_ENTITY_TYPE
-    BLOCK_ENTITY_TYPE: 'Registry' = __wrap(__Registry.BLOCK_ENTITY_TYPE)
-
-    # public static final dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.block.Block> dev.ultreon.quantum.registry.Registries.BLOCK
-    BLOCK: 'Registry' = __wrap(__Registry.BLOCK)
+    # public static final dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.world.gen.noise.NoiseConfig> dev.ultreon.quantum.registry.Registries.NOISE_SETTINGS
+    NOISE_SETTINGS: 'Registry' = _wrap(_Registry.NOISE_SETTINGS)
 
     # public static final dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.world.particles.ParticleType> dev.ultreon.quantum.registry.Registries.PARTICLE_TYPES
-    PARTICLE_TYPES: 'Registry' = __wrap(__Registry.PARTICLE_TYPES)
+    PARTICLE_TYPES: 'Registry' = _wrap(_Registry.PARTICLE_TYPES)
 
-    # public static final dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.item.Item> dev.ultreon.quantum.registry.Registries.ITEM
-    ITEM: 'Registry' = __wrap(__Registry.ITEM)
-
-    # public static final dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.registry.Registry<?>> dev.ultreon.quantum.registry.Registries.REGISTRY
-    REGISTRY: 'Registry' = __wrap(__Registry.REGISTRY)
-
-    # public static final dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.world.gen.noise.NoiseConfig> dev.ultreon.quantum.registry.Registries.NOISE_SETTINGS
-    NOISE_SETTINGS: 'Registry' = __wrap(__Registry.NOISE_SETTINGS)
-
-    # public static final dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.menu.MenuType<?>> dev.ultreon.quantum.registry.Registries.MENU_TYPE
-    MENU_TYPE: 'Registry' = __wrap(__Registry.MENU_TYPE)
+    # public static final dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.world.SoundEvent> dev.ultreon.quantum.registry.Registries.SOUND_EVENT
+    SOUND_EVENT: 'Registry' = _wrap(_Registry.SOUND_EVENT)
 
     # public static final dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.entity.Attribute> dev.ultreon.quantum.registry.Registries.ATTRIBUTE
-    ATTRIBUTE: 'Registry' = __wrap(__Registry.ATTRIBUTE)
+    ATTRIBUTE: 'Registry' = _wrap(_Registry.ATTRIBUTE)
 
     # public static final dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.world.Biome> dev.ultreon.quantum.registry.Registries.BIOME
-    BIOME: 'Registry' = __wrap(__Registry.BIOME)
-
-    # public static final dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.weather.Weather> dev.ultreon.quantum.registry.Registries.WEATHER
-    WEATHER: 'Registry' = __wrap(__Registry.WEATHER)
-
-    # public static final dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.entity.EntityType<?>> dev.ultreon.quantum.registry.Registries.ENTITY_TYPE
-    ENTITY_TYPE: 'Registry' = __wrap(__Registry.ENTITY_TYPE)
+    BIOME: 'Registry' = _wrap(_Registry.BIOME)
 
     # public static final dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.recipe.RecipeType<?>> dev.ultreon.quantum.registry.Registries.RECIPE_TYPE
-    RECIPE_TYPE: 'Registry' = __wrap(__Registry.RECIPE_TYPE)
+    RECIPE_TYPE: 'Registry' = _wrap(_Registry.RECIPE_TYPE)
 
+    # public static final dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.menu.MenuType<?>> dev.ultreon.quantum.registry.Registries.MENU_TYPE
+    MENU_TYPE: 'Registry' = _wrap(_Registry.MENU_TYPE)
 
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    # public static final dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.weather.Weather> dev.ultreon.quantum.registry.Registries.WEATHER
+    WEATHER: 'Registry' = _wrap(_Registry.WEATHER)
 
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    # public static final dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.block.entity.BlockEntityType<?>> dev.ultreon.quantum.registry.Registries.BLOCK_ENTITY_TYPE
+    BLOCK_ENTITY_TYPE: 'Registry' = _wrap(_Registry.BLOCK_ENTITY_TYPE)
 
-    @staticmethod
-    @overload
-    def create(arg0: 'RegistryKey', *arg1: object) -> 'Registry':
-        """public static <T> dev.ultreon.quantum.registry.Registry<T> dev.ultreon.quantum.registry.Registries.create(dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<T>>,T...)"""
-        return Registry.__wrap(__Registries.create(arg0, arg1))
+    # public static final dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.entity.EntityType<?>> dev.ultreon.quantum.registry.Registries.ENTITY_TYPE
+    ENTITY_TYPE: 'Registry' = _wrap(_Registry.ENTITY_TYPE)
+
+    # public static final dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.registry.Registry<?>> dev.ultreon.quantum.registry.Registries.REGISTRY
+    REGISTRY: 'Registry' = _wrap(_Registry.REGISTRY)
+
+    # public static final dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.block.Block> dev.ultreon.quantum.registry.Registries.BLOCK
+    BLOCK: 'Registry' = _wrap(_Registry.BLOCK)
+
+    # public static final dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.entity.damagesource.DamageSource> dev.ultreon.quantum.registry.Registries.DAMAGE_SOURCE
+    DAMAGE_SOURCE: 'Registry' = _wrap(_Registry.DAMAGE_SOURCE)
+
+    # public static final dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.item.Item> dev.ultreon.quantum.registry.Registries.ITEM
+    ITEM: 'Registry' = _wrap(_Registry.ITEM)
+
 
         @staticmethod
         @overload
         def nopInit():
             """public static void dev.ultreon.quantum.registry.Registries.nopInit()"""
-            __Registries.nopInit()
+            _Registries.nopInit()
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -1162,24 +1178,23 @@ class Registries():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @staticmethod
     @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.registry.Registries()"""
-        val = __Registries()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def create(arg0: 'Identifier', *arg1: object) -> 'Registry':
+        """public static <T> dev.ultreon.quantum.registry.Registry<T> dev.ultreon.quantum.registry.Registries.create(dev.ultreon.quantum.util.Identifier,T...)"""
+        return Registry._wrap(_Registries.create(arg0, arg1))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -1189,15 +1204,20 @@ class Registries():
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @staticmethod
+    @overload
+    def create(arg0: 'RegistryKey', *arg1: object) -> 'Registry':
+        """public static <T> dev.ultreon.quantum.registry.Registry<T> dev.ultreon.quantum.registry.Registries.create(dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<T>>,T...)"""
+        return Registry._wrap(_Registries.create(arg0, arg1))
 
     @overload
-    def __init__(self, ):
+    def __init__(self):
         """public dev.ultreon.quantum.registry.Registries()"""
-        val = __Registries()
-        self.__dict__ = val.__dict__
+        val = _Registries()
         self.__wrapper = val
 
     @override
@@ -1206,79 +1226,89 @@ class Registries():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
-    @staticmethod
-    @overload
-    def create(arg0: 'Identifier', *arg1: object) -> 'Registry':
-        """public static <T> dev.ultreon.quantum.registry.Registry<T> dev.ultreon.quantum.registry.Registries.create(dev.ultreon.quantum.util.Identifier,T...)"""
-        return Registry.__wrap(__Registries.create(arg0, arg1))
-
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0)) 
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
+
+    @overload
+    def __init__(self, ):
+        """public dev.ultreon.quantum.registry.Registries()"""
+        val = _Registries()
+        self.__wrapper = val 
  
  
 # CLASS: dev.ultreon.quantum.registry.AbstractRegistry
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.registry.AbstractRegistry as __AbstractRegistry
-__AbstractRegistry = __AbstractRegistry
 from abc import abstractmethod, ABC
 from builtins import object
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.registry.AbstractRegistry as _AbstractRegistry
+_AbstractRegistry = _AbstractRegistry
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
-class AbstractRegistry(ABC):
+class AbstractRegistry():
     """dev.ultreon.quantum.registry.AbstractRegistry"""
  
     @staticmethod
-    def __wrap(java_value: __AbstractRegistry) -> 'AbstractRegistry':
+    def _wrap(java_value: _AbstractRegistry) -> 'AbstractRegistry':
         return AbstractRegistry(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __AbstractRegistry):
+    def __init__(self, __dynamic__: _AbstractRegistry):
         """
         Dynamic initializer for AbstractRegistry.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_AbstractRegistry__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_AbstractRegistry__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @overload
+    def random(self) -> object:
+        """public V dev.ultreon.quantum.registry.AbstractRegistry.random()"""
+        return object._wrap(super(AbstractRegistry, self).random())
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -1301,16 +1331,11 @@ class AbstractRegistry(ABC):
         """public abstract V dev.ultreon.quantum.registry.AbstractRegistry.get(K)"""
         pass
 
-    @overload
-    def random(self) -> object:
-        """public V dev.ultreon.quantum.registry.AbstractRegistry.random()"""
-        return object.__wrap(super(AbstractRegistry, self).random())
-
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @abstractmethod
     def entries(self, ):
@@ -1324,9 +1349,9 @@ class AbstractRegistry(ABC):
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -1336,9 +1361,9 @@ class AbstractRegistry(ABC):
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -1349,102 +1374,93 @@ class AbstractRegistry(ABC):
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0)) 
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.registry.RegistryKey
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.registry.RegistryKey as __RegistryKey
-__RegistryKey = __RegistryKey
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.registry.RegistryKey as _RegistryKey
+_RegistryKey = _RegistryKey
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import dev.ultreon.quantum.util.Identifier as __Identifier
-__Identifier = __Identifier
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.Integer as _int
+import dev.ultreon.quantum.util.Identifier as _Identifier
+_Identifier = _Identifier
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class RegistryKey():
     """dev.ultreon.quantum.registry.RegistryKey"""
  
     @staticmethod
-    def __wrap(java_value: __RegistryKey) -> 'RegistryKey':
+    def _wrap(java_value: _RegistryKey) -> 'RegistryKey':
         return RegistryKey(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __RegistryKey):
+    def __init__(self, __dynamic__: _RegistryKey):
         """
         Dynamic initializer for RegistryKey.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_RegistryKey__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_RegistryKey__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    # public static final dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<dev.ultreon.quantum.registry.Registry<?>>> dev.ultreon.quantum.registry.RegistryKey.ROOT
-    ROOT: 'RegistryKey' = __wrap(__RegistryKey.ROOT)
+    @staticmethod
+    @overload
+    def registry(arg0: 'Registry') -> 'RegistryKey':
+        """public static <T extends dev.ultreon.quantum.registry.Registry<?>> dev.ultreon.quantum.registry.RegistryKey<T> dev.ultreon.quantum.registry.RegistryKey.registry(T)"""
+        return RegistryKey._wrap(_RegistryKey.registry(arg0))
 
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.registry.RegistryKey.toString()"""
+        return str._wrap(super(RegistryKey, self).toString())
 
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def element(self) -> 'util.Identifier':
-        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.registry.RegistryKey.element()"""
-        return 'util.Identifier'.__wrap(super(RegistryKey, self).element())
-
-    @overload
-    def parent(self) -> 'RegistryKey':
-        """public dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<T>> dev.ultreon.quantum.registry.RegistryKey.parent()"""
-        return 'RegistryKey'.__wrap(super(RegistryKey, self).parent())
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean dev.ultreon.quantum.registry.RegistryKey.equals(java.lang.Object)"""
-        return bool.__wrap(super(__RegistryKey, self).equals(arg0))
-
-    @staticmethod
-    @overload
-    def registry(arg0: 'Identifier') -> 'RegistryKey':
-        """public static <T extends dev.ultreon.quantum.registry.Registry<?>> dev.ultreon.quantum.registry.RegistryKey<T> dev.ultreon.quantum.registry.RegistryKey.registry(dev.ultreon.quantum.util.Identifier)"""
-        return RegistryKey.__wrap(__RegistryKey.registry(arg0))
-
-    @overload
-    def __init__(self, arg0: 'RegistryKey', arg1: 'Identifier'):
-        """public dev.ultreon.quantum.registry.RegistryKey(dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<T>>,dev.ultreon.quantum.util.Identifier)"""
-        val = __RegistryKey(arg0, arg1)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -1452,29 +1468,33 @@ class RegistryKey():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean dev.ultreon.quantum.registry.RegistryKey.equals(java.lang.Object)"""
+        return bool._wrap(super(_RegistryKey, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public int dev.ultreon.quantum.registry.RegistryKey.hashCode()"""
+        return int._wrap(super(RegistryKey, self).hashCode())
+
+    @overload
+    def parent(self) -> 'RegistryKey':
+        """public dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<T>> dev.ultreon.quantum.registry.RegistryKey.parent()"""
+        return 'RegistryKey'._wrap(super(RegistryKey, self).parent())
+
     @staticmethod
     @overload
     def of(arg0: 'RegistryKey', arg1: 'Identifier') -> 'RegistryKey':
         """public static <T> dev.ultreon.quantum.registry.RegistryKey<T> dev.ultreon.quantum.registry.RegistryKey.of(dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<T>>,dev.ultreon.quantum.util.Identifier)"""
-        return RegistryKey.__wrap(__RegistryKey.of(arg0, arg1))
+        return RegistryKey._wrap(_RegistryKey.of(arg0, arg1))
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @staticmethod
-    @overload
-    def registry(arg0: 'Registry') -> 'RegistryKey':
-        """public static <T extends dev.ultreon.quantum.registry.Registry<?>> dev.ultreon.quantum.registry.RegistryKey<T> dev.ultreon.quantum.registry.RegistryKey.registry(T)"""
-        return RegistryKey.__wrap(__RegistryKey.registry(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -1484,9 +1504,21 @@ class RegistryKey():
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public int dev.ultreon.quantum.registry.RegistryKey.hashCode()"""
-        return int.__wrap(super(RegistryKey, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @overload
+    def __init__(self, arg0: 'RegistryKey', arg1: 'Identifier'):
+        """public dev.ultreon.quantum.registry.RegistryKey(dev.ultreon.quantum.registry.RegistryKey<dev.ultreon.quantum.registry.Registry<T>>,dev.ultreon.quantum.util.Identifier)"""
+        val = _RegistryKey(arg0, arg1)
+        self.__wrapper = val
+
+    @staticmethod
+    @overload
+    def registry(arg0: 'Identifier') -> 'RegistryKey':
+        """public static <T extends dev.ultreon.quantum.registry.Registry<?>> dev.ultreon.quantum.registry.RegistryKey<T> dev.ultreon.quantum.registry.RegistryKey.registry(dev.ultreon.quantum.util.Identifier)"""
+        return RegistryKey._wrap(_RegistryKey.registry(arg0))
 
     @override
     @overload
@@ -1494,44 +1526,51 @@ class RegistryKey():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
-    @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.registry.RegistryKey.toString()"""
-        return str.__wrap(super(RegistryKey, self).toString()) 
+    def element(self) -> 'util.Identifier':
+        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.registry.RegistryKey.element()"""
+        return 'util.Identifier'._wrap(super(RegistryKey, self).element())
+
+
+RegistryKey.ROOT = RegistryKey._wrap(_ROOT.ROOT) 
  
  
 # CLASS: dev.ultreon.quantum.registry.RawIdMap
-import dev.ultreon.quantum.registry.RawIdMap as __RawIdMap
-__RawIdMap = __RawIdMap
+import dev.ultreon.quantum.registry.RawIdMap as _RawIdMap
+_RawIdMap = _RawIdMap
 from abc import abstractmethod, ABC
  
-class RawIdMap(ABC):
+class RawIdMap():
     """dev.ultreon.quantum.registry.RawIdMap"""
  
     @staticmethod
-    def __wrap(java_value: __RawIdMap) -> 'RawIdMap':
+    def _wrap(java_value: _RawIdMap) -> 'RawIdMap':
         return RawIdMap(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __RawIdMap):
+    def __init__(self, __dynamic__: _RawIdMap):
         """
         Dynamic initializer for RawIdMap.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_RawIdMap__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_RawIdMap__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -1548,82 +1587,87 @@ class RawIdMap(ABC):
  
  
 # CLASS: dev.ultreon.quantum.registry.CommandRegistry
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import dev.ultreon.quantum.api.commands.Command as _Command
+_Command = _Command
+import java.lang.Object as _object
 from builtins import type
 try:
     from pyquantum.api import commands
 except ImportError:
-    commands = __import_once__("pyquantum.api.commands")
+    commands = _import_once("pyquantum.api.commands")
 
-import java.util.stream.Stream as __Stream
-__Stream = __Stream
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __string
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import dev.ultreon.quantum.registry.CommandRegistry as __CommandRegistry
-__CommandRegistry = __CommandRegistry
+import java.lang.String as _String
+_String = _String
+import java.lang.String as _string
+import java.lang.Integer as _int
+import java.util.stream.Stream as _Stream
+_Stream = _Stream
 import java.util.stream.Stream as Stream
-import java.lang.Integer as __int
+import dev.ultreon.quantum.registry.CommandRegistry as _CommandRegistry
+_CommandRegistry = _CommandRegistry
 from builtins import bool
-import dev.ultreon.quantum.api.commands.Command as __Command
-__Command = __Command
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class CommandRegistry():
     """dev.ultreon.quantum.registry.CommandRegistry"""
  
     @staticmethod
-    def __wrap(java_value: __CommandRegistry) -> 'CommandRegistry':
+    def _wrap(java_value: _CommandRegistry) -> 'CommandRegistry':
         return CommandRegistry(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __CommandRegistry):
+    def __init__(self, __dynamic__: _CommandRegistry):
         """
         Dynamic initializer for CommandRegistry.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_CommandRegistry__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_CommandRegistry__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @overload
+    def __init__(self, ):
+        """public dev.ultreon.quantum.registry.CommandRegistry()"""
+        val = _CommandRegistry()
+        self.__wrapper = val
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @staticmethod
     @overload
-    def get(arg0: str) -> 'commands.Command':
-        """public static dev.ultreon.quantum.api.commands.Command dev.ultreon.quantum.registry.CommandRegistry.get(java.lang.String)"""
-        return commands.Command.__wrap(__CommandRegistry.get(arg0))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def getCommands() -> 'Stream':
+        """public static java.util.stream.Stream<dev.ultreon.quantum.api.commands.Command> dev.ultreon.quantum.registry.CommandRegistry.getCommands()"""
+        return Stream._wrap(_CommandRegistry.getCommands())
 
     @override
     @overload
@@ -1633,34 +1677,27 @@ class CommandRegistry():
 
     @staticmethod
     @overload
-    def getCommands() -> 'Stream':
-        """public static java.util.stream.Stream<dev.ultreon.quantum.api.commands.Command> dev.ultreon.quantum.registry.CommandRegistry.getCommands()"""
-        return Stream.__wrap(__CommandRegistry.getCommands())
+    def register(arg0: 'Command'):
+        """public static void dev.ultreon.quantum.registry.CommandRegistry.register(dev.ultreon.quantum.api.commands.Command)"""
+        _CommandRegistry.register(arg0)
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @staticmethod
     @overload
     def getCommandNames() -> 'Stream':
         """public static java.util.stream.Stream<java.lang.String> dev.ultreon.quantum.registry.CommandRegistry.getCommandNames()"""
-        return Stream.__wrap(__CommandRegistry.getCommandNames())
+        return Stream._wrap(_CommandRegistry.getCommandNames())
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.registry.CommandRegistry()"""
-        val = __CommandRegistry()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -1668,11 +1705,23 @@ class CommandRegistry():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
+    @staticmethod
+    @overload
+    def get(arg0: str) -> 'commands.Command':
+        """public static dev.ultreon.quantum.api.commands.Command dev.ultreon.quantum.registry.CommandRegistry.get(java.lang.String)"""
+        return commands.Command._wrap(_CommandRegistry.get(arg0))
+
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @overload
+    def __init__(self):
+        """public dev.ultreon.quantum.registry.CommandRegistry()"""
+        val = _CommandRegistry()
+        self.__wrapper = val
 
     @override
     @overload
@@ -1681,78 +1730,76 @@ class CommandRegistry():
         super(object, self).wait()
 
     @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.registry.CommandRegistry()"""
-        val = __CommandRegistry()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
-    @staticmethod
+    @override
     @overload
-    def register(arg0: 'Command'):
-        """public static void dev.ultreon.quantum.registry.CommandRegistry.register(dev.ultreon.quantum.api.commands.Command)"""
-        __CommandRegistry.register(arg0) 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.registry.DeferredElement
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 import java.util.function.Supplier as Supplier
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.registry.DeferredElement as __DeferredElement
-__DeferredElement = __DeferredElement
 from builtins import object
+import java.lang.String as _String
+_String = _String
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import dev.ultreon.quantum.util.Identifier as __Identifier
-__Identifier = __Identifier
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import dev.ultreon.quantum.registry.DeferredElement as _DeferredElement
+_DeferredElement = _DeferredElement
+import java.lang.Integer as _int
+import dev.ultreon.quantum.util.Identifier as _Identifier
+_Identifier = _Identifier
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class DeferredElement():
     """dev.ultreon.quantum.registry.DeferredElement"""
  
     @staticmethod
-    def __wrap(java_value: __DeferredElement) -> 'DeferredElement':
+    def _wrap(java_value: _DeferredElement) -> 'DeferredElement':
         return DeferredElement(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __DeferredElement):
+    def __init__(self, __dynamic__: _DeferredElement):
         """
         Dynamic initializer for DeferredElement.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_DeferredElement__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_DeferredElement__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -1761,19 +1808,7 @@ class DeferredElement():
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def get(self) -> object:
-        """public T dev.ultreon.quantum.registry.DeferredElement.get()"""
-        return object.__wrap(super(DeferredElement, self).get())
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -1781,22 +1816,22 @@ class DeferredElement():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @override
     @overload
-    def id(self) -> 'util.Identifier':
-        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.registry.DeferredElement.id()"""
-        return 'util.Identifier'.__wrap(super(DeferredElement, self).id())
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
-    @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def id(self) -> 'util.Identifier':
+        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.registry.DeferredElement.id()"""
+        return 'util.Identifier'._wrap(super(DeferredElement, self).id())
 
     @override
     @overload
@@ -1811,16 +1846,21 @@ class DeferredElement():
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @overload
     def __init__(self, arg0: 'Registry', arg1: 'Supplier', arg2: 'Identifier'):
         """public dev.ultreon.quantum.registry.DeferredElement(dev.ultreon.quantum.registry.Registry<? super T>,java.util.function.Supplier<T>,dev.ultreon.quantum.util.Identifier)"""
-        val = __DeferredElement(arg0, arg1, arg2)
-        self.__dict__ = val.__dict__
+        val = _DeferredElement(arg0, arg1, arg2)
         self.__wrapper = val
+
+    @override
+    @overload
+    def get(self) -> object:
+        """public T dev.ultreon.quantum.registry.DeferredElement.get()"""
+        return object._wrap(super(DeferredElement, self).get())
 
     @override
     @overload
@@ -1831,4 +1871,10 @@ class DeferredElement():
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())

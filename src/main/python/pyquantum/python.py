@@ -3,74 +3,72 @@ from overload import overload
 
 
  
+import org.graalvm.polyglot.Context as _Context
+_Context = _Context
 import org.graalvm.polyglot.Context as Context
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import org.graalvm.polyglot.Context as __Context
-__Context = __Context
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import dev.ultreon.quantum.python.PyLang as __PyLang
-__PyLang = __PyLang
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.python.PyLang as _PyLang
+_PyLang = _PyLang
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class PyLang():
     """dev.ultreon.quantum.python.PyLang"""
  
     @staticmethod
-    def __wrap(java_value: __PyLang) -> 'PyLang':
+    def _wrap(java_value: _PyLang) -> 'PyLang':
         return PyLang(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __PyLang):
+    def __init__(self, __dynamic__: _PyLang):
         """
         Dynamic initializer for PyLang.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_PyLang__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_PyLang__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @staticmethod
+    @overload
+    def getContext() -> 'Context':
+        """public static org.graalvm.polyglot.Context dev.ultreon.quantum.python.PyLang.getContext()"""
+        return Context._wrap(_PyLang.getContext())
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.python.PyLang()"""
-        val = __PyLang()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -78,17 +76,29 @@ class PyLang():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @overload
+    def __init__(self):
+        """public dev.ultreon.quantum.python.PyLang()"""
+        val = _PyLang()
+        self.__wrapper = val
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @overload
+    def __init__(self, ):
+        """public dev.ultreon.quantum.python.PyLang()"""
+        val = _PyLang()
+        self.__wrapper = val
+
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -96,24 +106,11 @@ class PyLang():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.python.PyLang()"""
-        val = __PyLang()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @staticmethod
-    @overload
-    def getContext() -> 'Context':
-        """public static org.graalvm.polyglot.Context dev.ultreon.quantum.python.PyLang.getContext()"""
-        return Context.__wrap(__PyLang.getContext())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -129,80 +126,84 @@ class PyLang():
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
  
 # CLASS: dev.ultreon.quantum.python.PyLang
+import org.graalvm.polyglot.Context as _Context
+_Context = _Context
 import org.graalvm.polyglot.Context as Context
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import org.graalvm.polyglot.Context as __Context
-__Context = __Context
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import dev.ultreon.quantum.python.PyLang as __PyLang
-__PyLang = __PyLang
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.python.PyLang as _PyLang
+_PyLang = _PyLang
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class PyLang():
     """dev.ultreon.quantum.python.PyLang"""
  
     @staticmethod
-    def __wrap(java_value: __PyLang) -> 'PyLang':
+    def _wrap(java_value: _PyLang) -> 'PyLang':
         return PyLang(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __PyLang):
+    def __init__(self, __dynamic__: _PyLang):
         """
         Dynamic initializer for PyLang.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_PyLang__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_PyLang__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @staticmethod
+    @overload
+    def getContext() -> 'Context':
+        """public static org.graalvm.polyglot.Context dev.ultreon.quantum.python.PyLang.getContext()"""
+        return Context._wrap(_PyLang.getContext())
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.python.PyLang()"""
-        val = __PyLang()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -210,17 +211,29 @@ class PyLang():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @overload
+    def __init__(self):
+        """public dev.ultreon.quantum.python.PyLang()"""
+        val = _PyLang()
+        self.__wrapper = val
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @overload
+    def __init__(self, ):
+        """public dev.ultreon.quantum.python.PyLang()"""
+        val = _PyLang()
+        self.__wrapper = val
+
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -228,24 +241,11 @@ class PyLang():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.python.PyLang()"""
-        val = __PyLang()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @staticmethod
-    @overload
-    def getContext() -> 'Context':
-        """public static org.graalvm.polyglot.Context dev.ultreon.quantum.python.PyLang.getContext()"""
-        return Context.__wrap(__PyLang.getContext())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -261,7 +261,13 @@ class PyLang():
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
@@ -271,63 +277,62 @@ class PyLang():
  
 # CLASS: dev.ultreon.quantum.python.PyAdditionalMixins
 from builtins import str
-import java.lang.Long as __long
 from pyquantum_helper import override
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.Object as __object
-import dev.ultreon.quantum.python.PyAdditionalMixins as __PyAdditionalMixins
-__PyAdditionalMixins = __PyAdditionalMixins
-import java.lang.String as __String
-__String = __String
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Integer as _int
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import dev.ultreon.quantum.python.PyAdditionalMixins as _PyAdditionalMixins
+_PyAdditionalMixins = _PyAdditionalMixins
+import java.lang.String as _String
+_String = _String
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class PyAdditionalMixins():
     """dev.ultreon.quantum.python.PyAdditionalMixins"""
  
     @staticmethod
-    def __wrap(java_value: __PyAdditionalMixins) -> 'PyAdditionalMixins':
+    def _wrap(java_value: _PyAdditionalMixins) -> 'PyAdditionalMixins':
         return PyAdditionalMixins(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __PyAdditionalMixins):
+    def __init__(self, __dynamic__: _PyAdditionalMixins):
         """
         Dynamic initializer for PyAdditionalMixins.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_PyAdditionalMixins__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_PyAdditionalMixins__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -337,22 +342,15 @@ class PyAdditionalMixins():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.python.PyAdditionalMixins()"""
-        val = __PyAdditionalMixins()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -369,88 +367,93 @@ class PyAdditionalMixins():
     @overload
     def __init__(self):
         """public dev.ultreon.quantum.python.PyAdditionalMixins()"""
-        val = __PyAdditionalMixins()
-        self.__dict__ = val.__dict__
+        val = _PyAdditionalMixins()
         self.__wrapper = val
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0)) 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
+
+    @overload
+    def __init__(self, ):
+        """public dev.ultreon.quantum.python.PyAdditionalMixins()"""
+        val = _PyAdditionalMixins()
+        self.__wrapper = val 
  
  
 # CLASS: dev.ultreon.quantum.python.PyLoader
 import org.graalvm.polyglot.Context as Context
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
 import java.lang.Runnable as Runnable
 import java.nio.file.Path as Path
 import java.util.Collection as Collection
-import java.util.Collection as __Collection
-__Collection = __Collection
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __string
-import java.lang.String as __String
-__String = __String
-import dev.ultreon.quantum.python.PyLoader as __PyLoader
-__PyLoader = __PyLoader
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.python.PyLoader as _PyLoader
+_PyLoader = _PyLoader
+import java.lang.String as _string
+import java.util.Collection as _Collection
+_Collection = _Collection
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class PyLoader():
     """dev.ultreon.quantum.python.PyLoader"""
  
     @staticmethod
-    def __wrap(java_value: __PyLoader) -> 'PyLoader':
+    def _wrap(java_value: _PyLoader) -> 'PyLoader':
         return PyLoader(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __PyLoader):
+    def __init__(self, __dynamic__: _PyLoader):
         """
         Dynamic initializer for PyLoader.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_PyLoader__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_PyLoader__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def init(self, arg0: 'Path', arg1: 'Context'):
-        """public void dev.ultreon.quantum.python.PyLoader.init(java.nio.file.Path,org.graalvm.polyglot.Context) throws java.io.IOException"""
-        super(__PyLoader, self).init(arg0, arg1)
-
     @overload
     def close(self):
         """public void dev.ultreon.quantum.python.PyLoader.close()"""
@@ -458,9 +461,9 @@ class PyLoader():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -469,39 +472,37 @@ class PyLoader():
         super(object, self).notifyAll()
 
     @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.python.PyLoader()"""
-        val = __PyLoader()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def init(self, arg0: 'Path', arg1: 'Context'):
+        """public void dev.ultreon.quantum.python.PyLoader.init(java.nio.file.Path,org.graalvm.polyglot.Context) throws java.io.IOException"""
+        super(_PyLoader, self).init(arg0, arg1)
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @overload
     def initMods(self):
         """public void dev.ultreon.quantum.python.PyLoader.initMods()"""
         super(PyLoader, self).initMods()
 
+    @overload
+    def register(self, arg0: str, arg1: 'Runnable'):
+        """public void dev.ultreon.quantum.python.PyLoader.register(java.lang.String,java.lang.Runnable)"""
+        super(_PyLoader, self).register(arg0, arg1)
+
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @overload
-    def register(self, arg0: str, arg1: 'Runnable'):
-        """public void dev.ultreon.quantum.python.PyLoader.register(java.lang.String,java.lang.Runnable)"""
-        super(__PyLoader, self).register(arg0, arg1)
-
-    @staticmethod
-    @overload
-    def getInstance() -> 'PyLoader':
-        """public static dev.ultreon.quantum.python.PyLoader dev.ultreon.quantum.python.PyLoader.getInstance()"""
-        return PyLoader.__wrap(__PyLoader.getInstance())
+    def __init__(self):
+        """public dev.ultreon.quantum.python.PyLoader()"""
+        val = _PyLoader()
+        self.__wrapper = val
 
     @override
     @overload
@@ -509,16 +510,17 @@ class PyLoader():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @overload
-    def getMods(self) -> 'Collection':
-        """public java.util.Collection<dev.ultreon.quantum.python.PyMod> dev.ultreon.quantum.python.PyLoader.getMods()"""
-        return 'Collection'.__wrap(super(PyLoader, self).getMods())
-
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @staticmethod
+    @overload
+    def getInstance() -> 'PyLoader':
+        """public static dev.ultreon.quantum.python.PyLoader dev.ultreon.quantum.python.PyLoader.getInstance()"""
+        return PyLoader._wrap(_PyLoader.getInstance())
 
     @override
     @overload
@@ -527,95 +529,112 @@ class PyLoader():
         super(object, self).wait()
 
     @overload
-    def __init__(self):
+    def __init__(self, ):
         """public dev.ultreon.quantum.python.PyLoader()"""
-        val = __PyLoader()
-        self.__dict__ = val.__dict__
+        val = _PyLoader()
         self.__wrapper = val
+
+    @overload
+    def getMods(self) -> 'Collection':
+        """public java.util.Collection<dev.ultreon.quantum.python.PyMod> dev.ultreon.quantum.python.PyLoader.getMods()"""
+        return 'Collection'._wrap(super(PyLoader, self).getMods())
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0)) 
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.python.PyMod
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
-import java.nio.file.Path as __Path
-__Path = __Path
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
 import java.nio.file.Path as Path
-import dev.ultreon.quantum.python.PyMod as __PyMod
-__PyMod = __PyMod
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.String as __string
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import java.nio.file.Path as _Path
+_Path = _Path
+import java.lang.String as _string
+import java.lang.Integer as _int
+import dev.ultreon.quantum.python.PyMod as _PyMod
+_PyMod = _PyMod
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class PyMod():
     """dev.ultreon.quantum.python.PyMod"""
  
     @staticmethod
-    def __wrap(java_value: __PyMod) -> 'PyMod':
+    def _wrap(java_value: _PyMod) -> 'PyMod':
         return PyMod(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __PyMod):
+    def __init__(self, __dynamic__: _PyMod):
         """
         Dynamic initializer for PyMod.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_PyMod__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_PyMod__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def name(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.python.PyMod.name()"""
-        return str.__wrap(super(PyMod, self).name())
+    def toString(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.python.PyMod.toString()"""
+        return str._wrap(super(PyMod, self).toString())
 
     @overload
     def setPath(self, arg0: 'Path'):
         """public void dev.ultreon.quantum.python.PyMod.setPath(java.nio.file.Path)"""
-        super(__PyMod, self).setPath(arg0)
+        super(_PyMod, self).setPath(arg0)
 
     @overload
-    def author(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.python.PyMod.author()"""
-        return str.__wrap(super(PyMod, self).author())
+    def description(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.python.PyMod.description()"""
+        return str._wrap(super(PyMod, self).description())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean dev.ultreon.quantum.python.PyMod.equals(java.lang.Object)"""
-        return bool.__wrap(super(__PyMod, self).equals(arg0))
+    def __init__(self, arg0: str):
+        """public dev.ultreon.quantum.python.PyMod(java.lang.String)"""
+        val = _PyMod(arg0)
+        self.__wrapper = val
 
     @override
     @overload
@@ -624,44 +643,25 @@ class PyMod():
         super(object, self).notifyAll()
 
     @overload
-    def description(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.python.PyMod.description()"""
-        return str.__wrap(super(PyMod, self).description())
+    def author(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.python.PyMod.author()"""
+        return str._wrap(super(PyMod, self).author())
 
-    @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.python.PyMod.toString()"""
-        return str.__wrap(super(PyMod, self).toString())
+    def id(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.python.PyMod.id()"""
+        return str._wrap(super(PyMod, self).id())
+
+    @overload
+    def getPath(self) -> 'Path':
+        """public java.nio.file.Path dev.ultreon.quantum.python.PyMod.getPath()"""
+        return 'Path'._wrap(super(PyMod, self).getPath())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def version(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.python.PyMod.version()"""
-        return str.__wrap(super(PyMod, self).version())
-
-    @overload
-    def id(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.python.PyMod.id()"""
-        return str.__wrap(super(PyMod, self).id())
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @overload
-    def __init__(self, arg0: str):
-        """public dev.ultreon.quantum.python.PyMod(java.lang.String)"""
-        val = __PyMod(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -670,9 +670,21 @@ class PyMod():
         super(object, self).notify()
 
     @overload
-    def getPath(self) -> 'Path':
-        """public java.nio.file.Path dev.ultreon.quantum.python.PyMod.getPath()"""
-        return 'Path'.__wrap(super(PyMod, self).getPath())
+    def equals(self, arg0: object) -> bool:
+        """public boolean dev.ultreon.quantum.python.PyMod.equals(java.lang.Object)"""
+        return bool._wrap(super(_PyMod, self).equals(arg0))
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public int dev.ultreon.quantum.python.PyMod.hashCode()"""
+        return int._wrap(super(PyMod, self).hashCode())
 
     @override
     @overload
@@ -680,8 +692,12 @@ class PyMod():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
-    @override
     @overload
-    def hashCode(self) -> int:
-        """public int dev.ultreon.quantum.python.PyMod.hashCode()"""
-        return int.__wrap(super(PyMod, self).hashCode())
+    def name(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.python.PyMod.name()"""
+        return str._wrap(super(PyMod, self).name())
+
+    @overload
+    def version(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.python.PyMod.version()"""
+        return str._wrap(super(PyMod, self).version())

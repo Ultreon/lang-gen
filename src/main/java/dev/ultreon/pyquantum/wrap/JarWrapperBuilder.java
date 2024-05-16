@@ -131,7 +131,7 @@ public class JarWrapperBuilder extends WrapperBuilder {
                             try:
                                 %1$s
                             except ImportError:
-                                %3$s = __import_once__("%2$s")
+                                %3$s = _import_once("%2$s")
                             """.formatted(
                             substring.replace("\n", "").replace("\r", ""),
                             s1,
@@ -146,7 +146,7 @@ public class JarWrapperBuilder extends WrapperBuilder {
 
             if (importOnce.get()) {
                 imports = """
-                        from pyquantum_helper import import_once as __import_once__
+                        from pyquantum_helper import import_once as _import_once
                         """ + imports;
             }
 

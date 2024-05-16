@@ -4,86 +4,84 @@ from overload import overload
 
  
 from builtins import str
+import java.lang.StackTraceElement as _StackTraceElement
+_StackTraceElement = _StackTraceElement
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Throwable as __Throwable
-__Throwable = __Throwable
 import java.io.PrintWriter as PrintWriter
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.server.util.TimeFormatException as _TimeFormatException
+_TimeFormatException = _TimeFormatException
 import java.lang.StackTraceElement as StackTraceElement
-import java.lang.StackTraceElement as __StackTraceElement
-__StackTraceElement = __StackTraceElement
 from typing import List
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
+import java.lang.String as _string
 import java.io.PrintStream as PrintStream
-import java.lang.String as __String
-__String = __String
-import java.lang.String as __string
-import java.lang.Object as __Object
-__Object = __Object
+import java.lang.Integer as _int
+import java.lang.Throwable as _Throwable
+_Throwable = _Throwable
 import java.lang.Throwable as Throwable
-import java.lang.Integer as __int
 from builtins import bool
-import dev.ultreon.quantum.server.util.TimeFormatException as __TimeFormatException
-__TimeFormatException = __TimeFormatException
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class TimeFormatException():
     """dev.ultreon.quantum.server.util.TimeFormatException"""
  
     @staticmethod
-    def __wrap(java_value: __TimeFormatException) -> 'TimeFormatException':
+    def _wrap(java_value: _TimeFormatException) -> 'TimeFormatException':
         return TimeFormatException(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __TimeFormatException):
+    def __init__(self, __dynamic__: _TimeFormatException):
         """
         Dynamic initializer for TimeFormatException.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_TimeFormatException__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_TimeFormatException__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def getLocalizedMessage(self) -> str:
+        """public java.lang.String java.lang.Throwable.getLocalizedMessage()"""
+        return str._wrap(super(Throwable, self).getLocalizedMessage())
 
     @override
     @overload
-    def getStackTrace(self) -> List['StackTraceElement']:
-        """public java.lang.StackTraceElement[] java.lang.Throwable.getStackTrace()"""
-        return List['StackTraceElement'].__wrap(super(Throwable, self).getStackTrace())
+    def getCause(self) -> 'Throwable':
+        """public synchronized java.lang.Throwable java.lang.Throwable.getCause()"""
+        return 'Throwable'._wrap(super(Throwable, self).getCause())
 
     @overload
-    def __init__(self, arg0: str, arg1: 'Throwable'):
-        """public dev.ultreon.quantum.server.util.TimeFormatException(java.lang.String,java.lang.Throwable)"""
-        val = __TimeFormatException(arg0, arg1)
-        self.__dict__ = val.__dict__
+    def __init__(self, arg0: str):
+        """public dev.ultreon.quantum.server.util.TimeFormatException(java.lang.String)"""
+        val = _TimeFormatException(arg0)
         self.__wrapper = val
-
-    @override
-    @overload
-    def printStackTrace(self, arg0: 'PrintWriter'):
-        """public void java.lang.Throwable.printStackTrace(java.io.PrintWriter)"""
-        super(__Throwable, self).printStackTrace(arg0)
 
     @override
     @overload
@@ -91,18 +89,17 @@ class TimeFormatException():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @override
     @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.server.util.TimeFormatException()"""
-        val = __TimeFormatException()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def printStackTrace(self, arg0: 'PrintWriter'):
+        """public void java.lang.Throwable.printStackTrace(java.io.PrintWriter)"""
+        super(_Throwable, self).printStackTrace(arg0)
 
     @override
     @overload
-    def getMessage(self) -> str:
-        """public java.lang.String java.lang.Throwable.getMessage()"""
-        return str.__wrap(super(Throwable, self).getMessage())
+    def fillInStackTrace(self) -> 'Throwable':
+        """public synchronized java.lang.Throwable java.lang.Throwable.fillInStackTrace()"""
+        return 'Throwable'._wrap(super(Throwable, self).fillInStackTrace())
 
     @override
     @overload
@@ -112,9 +109,38 @@ class TimeFormatException():
 
     @override
     @overload
-    def getCause(self) -> 'Throwable':
-        """public synchronized java.lang.Throwable java.lang.Throwable.getCause()"""
-        return 'Throwable'.__wrap(super(Throwable, self).getCause())
+    def getSuppressed(self) -> List['Throwable']:
+        """public final synchronized java.lang.Throwable[] java.lang.Throwable.getSuppressed()"""
+        return List['Throwable']._wrap(super(Throwable, self).getSuppressed())
+
+    @override
+    @overload
+    def getMessage(self) -> str:
+        """public java.lang.String java.lang.Throwable.getMessage()"""
+        return str._wrap(super(Throwable, self).getMessage())
+
+    @override
+    @overload
+    def printStackTrace(self, arg0: 'PrintStream'):
+        """public void java.lang.Throwable.printStackTrace(java.io.PrintStream)"""
+        super(_Throwable, self).printStackTrace(arg0)
+
+    @overload
+    def initCause(self, arg0: 'Throwable') -> 'Throwable':
+        """public synchronized java.lang.Throwable java.lang.Throwable.initCause(java.lang.Throwable)"""
+        return 'Throwable'._wrap(super(_Throwable, self).initCause(arg0))
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @overload
+    def __init__(self, arg0: str, arg1: 'Throwable'):
+        """public dev.ultreon.quantum.server.util.TimeFormatException(java.lang.String,java.lang.Throwable)"""
+        val = _TimeFormatException(arg0, arg1)
+        self.__wrapper = val
 
     @override
     @overload
@@ -124,69 +150,62 @@ class TimeFormatException():
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Throwable.toString()"""
+        return str._wrap(super(Throwable, self).toString())
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
-
-    @override
-    @overload
-    def printStackTrace(self, arg0: 'PrintStream'):
-        """public void java.lang.Throwable.printStackTrace(java.io.PrintStream)"""
-        super(__Throwable, self).printStackTrace(arg0)
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Throwable.toString()"""
-        return str.__wrap(super(Throwable, self).toString())
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @overload
     def __init__(self, ):
         """public dev.ultreon.quantum.server.util.TimeFormatException()"""
-        val = __TimeFormatException()
-        self.__dict__ = val.__dict__
+        val = _TimeFormatException()
         self.__wrapper = val
 
     @overload
     def __init__(self, arg0: 'Throwable'):
         """public dev.ultreon.quantum.server.util.TimeFormatException(java.lang.Throwable)"""
-        val = __TimeFormatException(arg0)
-        self.__dict__ = val.__dict__
+        val = _TimeFormatException(arg0)
         self.__wrapper = val
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @overload
-    def initCause(self, arg0: 'Throwable') -> 'Throwable':
-        """public synchronized java.lang.Throwable java.lang.Throwable.initCause(java.lang.Throwable)"""
-        return 'Throwable'.__wrap(super(__Throwable, self).initCause(arg0))
+    def __init__(self):
+        """public dev.ultreon.quantum.server.util.TimeFormatException()"""
+        val = _TimeFormatException()
+        self.__wrapper = val
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def getStackTrace(self) -> List['StackTraceElement']:
+        """public java.lang.StackTraceElement[] java.lang.Throwable.getStackTrace()"""
+        return List['StackTraceElement']._wrap(super(Throwable, self).getStackTrace())
 
     @override
     @overload
     def addSuppressed(self, arg0: 'Throwable'):
         """public final synchronized void java.lang.Throwable.addSuppressed(java.lang.Throwable)"""
-        super(__Throwable, self).addSuppressed(arg0)
+        super(_Throwable, self).addSuppressed(arg0)
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
     def setStackTrace(self, arg0: 'StackTraceElement'):
         """public void java.lang.Throwable.setStackTrace(java.lang.StackTraceElement[])"""
-        super(__Throwable, self).setStackTrace(arg0)
+        super(_Throwable, self).setStackTrace(arg0)
 
     @override
     @overload
@@ -196,114 +215,93 @@ class TimeFormatException():
 
     @override
     @overload
-    def getLocalizedMessage(self) -> str:
-        """public java.lang.String java.lang.Throwable.getLocalizedMessage()"""
-        return str.__wrap(super(Throwable, self).getLocalizedMessage())
-
-    @overload
-    def __init__(self, arg0: str):
-        """public dev.ultreon.quantum.server.util.TimeFormatException(java.lang.String)"""
-        val = __TimeFormatException(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @override
-    @overload
-    def getSuppressed(self) -> List['Throwable']:
-        """public final synchronized java.lang.Throwable[] java.lang.Throwable.getSuppressed()"""
-        return List['Throwable'].__wrap(super(Throwable, self).getSuppressed())
-
-    @override
-    @overload
-    def fillInStackTrace(self) -> 'Throwable':
-        """public synchronized java.lang.Throwable java.lang.Throwable.fillInStackTrace()"""
-        return 'Throwable'.__wrap(super(Throwable, self).fillInStackTrace())
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
  
 # CLASS: dev.ultreon.quantum.server.util.TimeFormatException
 from builtins import str
+import java.lang.StackTraceElement as _StackTraceElement
+_StackTraceElement = _StackTraceElement
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Throwable as __Throwable
-__Throwable = __Throwable
 import java.io.PrintWriter as PrintWriter
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.server.util.TimeFormatException as _TimeFormatException
+_TimeFormatException = _TimeFormatException
 import java.lang.StackTraceElement as StackTraceElement
-import java.lang.StackTraceElement as __StackTraceElement
-__StackTraceElement = __StackTraceElement
 from typing import List
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
+import java.lang.String as _string
 import java.io.PrintStream as PrintStream
-import java.lang.String as __String
-__String = __String
-import java.lang.String as __string
-import java.lang.Object as __Object
-__Object = __Object
+import java.lang.Integer as _int
+import java.lang.Throwable as _Throwable
+_Throwable = _Throwable
 import java.lang.Throwable as Throwable
-import java.lang.Integer as __int
 from builtins import bool
-import dev.ultreon.quantum.server.util.TimeFormatException as __TimeFormatException
-__TimeFormatException = __TimeFormatException
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class TimeFormatException():
     """dev.ultreon.quantum.server.util.TimeFormatException"""
  
     @staticmethod
-    def __wrap(java_value: __TimeFormatException) -> 'TimeFormatException':
+    def _wrap(java_value: _TimeFormatException) -> 'TimeFormatException':
         return TimeFormatException(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __TimeFormatException):
+    def __init__(self, __dynamic__: _TimeFormatException):
         """
         Dynamic initializer for TimeFormatException.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_TimeFormatException__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_TimeFormatException__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def getLocalizedMessage(self) -> str:
+        """public java.lang.String java.lang.Throwable.getLocalizedMessage()"""
+        return str._wrap(super(Throwable, self).getLocalizedMessage())
 
     @override
     @overload
-    def getStackTrace(self) -> List['StackTraceElement']:
-        """public java.lang.StackTraceElement[] java.lang.Throwable.getStackTrace()"""
-        return List['StackTraceElement'].__wrap(super(Throwable, self).getStackTrace())
+    def getCause(self) -> 'Throwable':
+        """public synchronized java.lang.Throwable java.lang.Throwable.getCause()"""
+        return 'Throwable'._wrap(super(Throwable, self).getCause())
 
     @overload
-    def __init__(self, arg0: str, arg1: 'Throwable'):
-        """public dev.ultreon.quantum.server.util.TimeFormatException(java.lang.String,java.lang.Throwable)"""
-        val = __TimeFormatException(arg0, arg1)
-        self.__dict__ = val.__dict__
+    def __init__(self, arg0: str):
+        """public dev.ultreon.quantum.server.util.TimeFormatException(java.lang.String)"""
+        val = _TimeFormatException(arg0)
         self.__wrapper = val
-
-    @override
-    @overload
-    def printStackTrace(self, arg0: 'PrintWriter'):
-        """public void java.lang.Throwable.printStackTrace(java.io.PrintWriter)"""
-        super(__Throwable, self).printStackTrace(arg0)
 
     @override
     @overload
@@ -311,18 +309,17 @@ class TimeFormatException():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @override
     @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.server.util.TimeFormatException()"""
-        val = __TimeFormatException()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def printStackTrace(self, arg0: 'PrintWriter'):
+        """public void java.lang.Throwable.printStackTrace(java.io.PrintWriter)"""
+        super(_Throwable, self).printStackTrace(arg0)
 
     @override
     @overload
-    def getMessage(self) -> str:
-        """public java.lang.String java.lang.Throwable.getMessage()"""
-        return str.__wrap(super(Throwable, self).getMessage())
+    def fillInStackTrace(self) -> 'Throwable':
+        """public synchronized java.lang.Throwable java.lang.Throwable.fillInStackTrace()"""
+        return 'Throwable'._wrap(super(Throwable, self).fillInStackTrace())
 
     @override
     @overload
@@ -332,9 +329,38 @@ class TimeFormatException():
 
     @override
     @overload
-    def getCause(self) -> 'Throwable':
-        """public synchronized java.lang.Throwable java.lang.Throwable.getCause()"""
-        return 'Throwable'.__wrap(super(Throwable, self).getCause())
+    def getSuppressed(self) -> List['Throwable']:
+        """public final synchronized java.lang.Throwable[] java.lang.Throwable.getSuppressed()"""
+        return List['Throwable']._wrap(super(Throwable, self).getSuppressed())
+
+    @override
+    @overload
+    def getMessage(self) -> str:
+        """public java.lang.String java.lang.Throwable.getMessage()"""
+        return str._wrap(super(Throwable, self).getMessage())
+
+    @override
+    @overload
+    def printStackTrace(self, arg0: 'PrintStream'):
+        """public void java.lang.Throwable.printStackTrace(java.io.PrintStream)"""
+        super(_Throwable, self).printStackTrace(arg0)
+
+    @overload
+    def initCause(self, arg0: 'Throwable') -> 'Throwable':
+        """public synchronized java.lang.Throwable java.lang.Throwable.initCause(java.lang.Throwable)"""
+        return 'Throwable'._wrap(super(_Throwable, self).initCause(arg0))
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @overload
+    def __init__(self, arg0: str, arg1: 'Throwable'):
+        """public dev.ultreon.quantum.server.util.TimeFormatException(java.lang.String,java.lang.Throwable)"""
+        val = _TimeFormatException(arg0, arg1)
+        self.__wrapper = val
 
     @override
     @overload
@@ -344,69 +370,62 @@ class TimeFormatException():
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Throwable.toString()"""
+        return str._wrap(super(Throwable, self).toString())
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
-
-    @override
-    @overload
-    def printStackTrace(self, arg0: 'PrintStream'):
-        """public void java.lang.Throwable.printStackTrace(java.io.PrintStream)"""
-        super(__Throwable, self).printStackTrace(arg0)
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Throwable.toString()"""
-        return str.__wrap(super(Throwable, self).toString())
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @overload
     def __init__(self, ):
         """public dev.ultreon.quantum.server.util.TimeFormatException()"""
-        val = __TimeFormatException()
-        self.__dict__ = val.__dict__
+        val = _TimeFormatException()
         self.__wrapper = val
 
     @overload
     def __init__(self, arg0: 'Throwable'):
         """public dev.ultreon.quantum.server.util.TimeFormatException(java.lang.Throwable)"""
-        val = __TimeFormatException(arg0)
-        self.__dict__ = val.__dict__
+        val = _TimeFormatException(arg0)
         self.__wrapper = val
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @overload
-    def initCause(self, arg0: 'Throwable') -> 'Throwable':
-        """public synchronized java.lang.Throwable java.lang.Throwable.initCause(java.lang.Throwable)"""
-        return 'Throwable'.__wrap(super(__Throwable, self).initCause(arg0))
+    def __init__(self):
+        """public dev.ultreon.quantum.server.util.TimeFormatException()"""
+        val = _TimeFormatException()
+        self.__wrapper = val
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def getStackTrace(self) -> List['StackTraceElement']:
+        """public java.lang.StackTraceElement[] java.lang.Throwable.getStackTrace()"""
+        return List['StackTraceElement']._wrap(super(Throwable, self).getStackTrace())
 
     @override
     @overload
     def addSuppressed(self, arg0: 'Throwable'):
         """public final synchronized void java.lang.Throwable.addSuppressed(java.lang.Throwable)"""
-        super(__Throwable, self).addSuppressed(arg0)
+        super(_Throwable, self).addSuppressed(arg0)
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
     def setStackTrace(self, arg0: 'StackTraceElement'):
         """public void java.lang.Throwable.setStackTrace(java.lang.StackTraceElement[])"""
-        super(__Throwable, self).setStackTrace(arg0)
+        super(_Throwable, self).setStackTrace(arg0)
 
     @override
     @overload
@@ -416,28 +435,9 @@ class TimeFormatException():
 
     @override
     @overload
-    def getLocalizedMessage(self) -> str:
-        """public java.lang.String java.lang.Throwable.getLocalizedMessage()"""
-        return str.__wrap(super(Throwable, self).getLocalizedMessage())
-
-    @overload
-    def __init__(self, arg0: str):
-        """public dev.ultreon.quantum.server.util.TimeFormatException(java.lang.String)"""
-        val = __TimeFormatException(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @override
-    @overload
-    def getSuppressed(self) -> List['Throwable']:
-        """public final synchronized java.lang.Throwable[] java.lang.Throwable.getSuppressed()"""
-        return List['Throwable'].__wrap(super(Throwable, self).getSuppressed())
-
-    @override
-    @overload
-    def fillInStackTrace(self) -> 'Throwable':
-        """public synchronized java.lang.Throwable java.lang.Throwable.fillInStackTrace()"""
-        return 'Throwable'.__wrap(super(Throwable, self).fillInStackTrace())
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
@@ -446,120 +446,119 @@ class TimeFormatException():
  
  
 # CLASS: dev.ultreon.quantum.server.util.Utils
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
 import java.util.function.Supplier as Supplier
 from builtins import str
-import java.lang.Character as __char
+import java.lang.Character as _char
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.server.util.Utils as __Utils
-__Utils = __Utils
+import dev.ultreon.quantum.world.ChunkPos as _ChunkPos
+_ChunkPos = _ChunkPos
 from builtins import object
+import java.lang.String as _String
+_String = _String
 try:
     from pycorelibs.commons.v0 import vector
 except ImportError:
-    vector = __import_once__("pycorelibs.commons.v0.vector")
+    vector = _import_once("pycorelibs.commons.v0.vector")
 
 import java.util.function.Consumer as Consumer
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import dev.ultreon.quantum.world.ChunkPos as __ChunkPos
-__ChunkPos = __ChunkPos
-import java.lang.Byte as __byte
-import java.lang.String as __string
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
+import java.lang.String as _string
+import java.lang.Integer as _int
+import java.lang.Byte as _byte
 try:
     from pycorelibs.datetime import v0
 except ImportError:
-    v0 = __import_once__("pycorelibs.datetime.v0")
+    v0 = _import_once("pycorelibs.datetime.v0")
 
-import dev.ultreon.libs.datetime.v0.Duration as __Duration
-__Duration = __Duration
-import java.lang.Integer as __int
+import dev.ultreon.libs.datetime.v0.Duration as _Duration
+_Duration = _Duration
+import dev.ultreon.quantum.server.util.Utils as _Utils
+_Utils = _Utils
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class Utils():
     """dev.ultreon.quantum.server.util.Utils"""
  
     @staticmethod
-    def __wrap(java_value: __Utils) -> 'Utils':
+    def _wrap(java_value: _Utils) -> 'Utils':
         return Utils(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Utils):
+    def __init__(self, __dynamic__: _Utils):
         """
         Dynamic initializer for Utils.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Utils__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Utils__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @staticmethod
-    @overload
-    def make(arg0: object, arg1: 'Consumer') -> object:
-        """public static <T> T dev.ultreon.quantum.server.util.Utils.make(T,java.util.function.Consumer<T>)"""
-        return object.__wrap(__Utils.make(arg0, arg1))
-
     @staticmethod
     @overload
     def normalizeToInt(arg0: int) -> int:
         """public static int dev.ultreon.quantum.server.util.Utils.normalizeToInt(byte)"""
-        return int.__wrap(__Utils.normalizeToInt(__byte.valueOf(arg0)))
+        return int._wrap(_Utils.normalizeToInt(_byte.valueOf(arg0)))
 
     @staticmethod
     @overload
     def parseDuration(arg0: str) -> 'v0.Duration':
         """public static dev.ultreon.libs.datetime.v0.Duration dev.ultreon.quantum.server.util.Utils.parseDuration(java.lang.String)"""
-        return v0.Duration.__wrap(__Utils.parseDuration(arg0))
+        return v0.Duration._wrap(_Utils.parseDuration(arg0))
 
     @staticmethod
     @overload
-    def chunkPosFromBlockCoords(arg0: 'Vec3d') -> 'world.ChunkPos':
-        """public static dev.ultreon.quantum.world.ChunkPos dev.ultreon.quantum.server.util.Utils.chunkPosFromBlockCoords(dev.ultreon.libs.commons.v0.vector.Vec3d)"""
-        return world.ChunkPos.__wrap(__Utils.chunkPosFromBlockCoords(arg0))
+    def reprChar(arg0: str) -> str:
+        """public static java.lang.String dev.ultreon.quantum.server.util.Utils.reprChar(char)"""
+        return str._wrap(_Utils.reprChar(_char.valueOf(arg0)))
+
+    @overload
+    def __init__(self):
+        """public dev.ultreon.quantum.server.util.Utils()"""
+        val = _Utils()
+        self.__wrapper = val
+
+    @overload
+    def __init__(self, ):
+        """public dev.ultreon.quantum.server.util.Utils()"""
+        val = _Utils()
+        self.__wrapper = val
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @staticmethod
-    @overload
-    def chunkPosFromBlockCoords(arg0: 'Vec3i') -> 'world.ChunkPos':
-        """public static dev.ultreon.quantum.world.ChunkPos dev.ultreon.quantum.server.util.Utils.chunkPosFromBlockCoords(dev.ultreon.libs.commons.v0.vector.Vec3i)"""
-        return world.ChunkPos.__wrap(__Utils.chunkPosFromBlockCoords(arg0))
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -571,39 +570,25 @@ class Utils():
     @overload
     def toChunkPos(arg0: 'BlockPos') -> 'world.ChunkPos':
         """public static dev.ultreon.quantum.world.ChunkPos dev.ultreon.quantum.server.util.Utils.toChunkPos(dev.ultreon.quantum.world.BlockPos)"""
-        return world.ChunkPos.__wrap(__Utils.toChunkPos(arg0))
+        return world.ChunkPos._wrap(_Utils.toChunkPos(arg0))
 
+    @override
     @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.server.util.Utils()"""
-        val = __Utils()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.server.util.Utils()"""
-        val = __Utils()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @staticmethod
     @overload
-    def reprChar(arg0: str) -> str:
-        """public static java.lang.String dev.ultreon.quantum.server.util.Utils.reprChar(char)"""
-        return str.__wrap(__Utils.reprChar(__char.valueOf(arg0)))
+    def make(arg0: object, arg1: 'Consumer') -> object:
+        """public static <T> T dev.ultreon.quantum.server.util.Utils.make(T,java.util.function.Consumer<T>)"""
+        return object._wrap(_Utils.make(arg0, arg1))
 
     @override
     @overload
@@ -615,13 +600,13 @@ class Utils():
     @overload
     def make(arg0: 'Supplier') -> object:
         """public static <T> T dev.ultreon.quantum.server.util.Utils.make(java.util.function.Supplier<T>)"""
-        return object.__wrap(__Utils.make(arg0))
+        return object._wrap(_Utils.make(arg0))
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -629,7 +614,25 @@ class Utils():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @staticmethod
+    @overload
+    def chunkPosFromBlockCoords(arg0: 'Vec3d') -> 'world.ChunkPos':
+        """public static dev.ultreon.quantum.world.ChunkPos dev.ultreon.quantum.server.util.Utils.chunkPosFromBlockCoords(dev.ultreon.libs.commons.v0.vector.Vec3d)"""
+        return world.ChunkPos._wrap(_Utils.chunkPosFromBlockCoords(arg0))
+
+    @staticmethod
+    @overload
+    def chunkPosFromBlockCoords(arg0: 'Vec3i') -> 'world.ChunkPos':
+        """public static dev.ultreon.quantum.world.ChunkPos dev.ultreon.quantum.server.util.Utils.chunkPosFromBlockCoords(dev.ultreon.libs.commons.v0.vector.Vec3i)"""
+        return world.ChunkPos._wrap(_Utils.chunkPosFromBlockCoords(arg0))
+
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())

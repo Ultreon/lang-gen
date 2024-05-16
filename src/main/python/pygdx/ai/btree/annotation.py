@@ -3,38 +3,43 @@ from overload import overload
 
 
  
-import java.lang.annotation.Annotation as __Annotation
-__Annotation = __Annotation
-import com.badlogic.gdx.ai.btree.annotation.TaskAttribute as __TaskAttribute
-__TaskAttribute = __TaskAttribute
+import com.badlogic.gdx.ai.btree.annotation.TaskAttribute as _TaskAttribute
+_TaskAttribute = _TaskAttribute
 from abc import abstractmethod, ABC
+import java.lang.annotation.Annotation as _Annotation
+_Annotation = _Annotation
  
-class TaskAttribute(ABC):
+class TaskAttribute():
     """com.badlogic.gdx.ai.btree.annotation.TaskAttribute"""
  
     @staticmethod
-    def __wrap(java_value: __TaskAttribute) -> 'TaskAttribute':
+    def _wrap(java_value: _TaskAttribute) -> 'TaskAttribute':
         return TaskAttribute(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __TaskAttribute):
+    def __init__(self, __dynamic__: _TaskAttribute):
         """
         Dynamic initializer for TaskAttribute.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_TaskAttribute__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_TaskAttribute__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -73,38 +78,43 @@ class TaskAttribute(ABC):
  
  
 # CLASS: com.badlogic.gdx.ai.btree.annotation.TaskAttribute
-import java.lang.annotation.Annotation as __Annotation
-__Annotation = __Annotation
-import com.badlogic.gdx.ai.btree.annotation.TaskAttribute as __TaskAttribute
-__TaskAttribute = __TaskAttribute
+import com.badlogic.gdx.ai.btree.annotation.TaskAttribute as _TaskAttribute
+_TaskAttribute = _TaskAttribute
 from abc import abstractmethod, ABC
+import java.lang.annotation.Annotation as _Annotation
+_Annotation = _Annotation
  
-class TaskAttribute(ABC):
+class TaskAttribute():
     """com.badlogic.gdx.ai.btree.annotation.TaskAttribute"""
  
     @staticmethod
-    def __wrap(java_value: __TaskAttribute) -> 'TaskAttribute':
+    def _wrap(java_value: _TaskAttribute) -> 'TaskAttribute':
         return TaskAttribute(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __TaskAttribute):
+    def __init__(self, __dynamic__: _TaskAttribute):
         """
         Dynamic initializer for TaskAttribute.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_TaskAttribute__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_TaskAttribute__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -146,38 +156,43 @@ class TaskAttribute(ABC):
  
  
 # CLASS: com.badlogic.gdx.ai.btree.annotation.TaskConstraint
-import com.badlogic.gdx.ai.btree.annotation.TaskConstraint as __TaskConstraint
-__TaskConstraint = __TaskConstraint
-import java.lang.annotation.Annotation as __Annotation
-__Annotation = __Annotation
+import com.badlogic.gdx.ai.btree.annotation.TaskConstraint as _TaskConstraint
+_TaskConstraint = _TaskConstraint
 from abc import abstractmethod, ABC
+import java.lang.annotation.Annotation as _Annotation
+_Annotation = _Annotation
  
-class TaskConstraint(ABC):
+class TaskConstraint():
     """com.badlogic.gdx.ai.btree.annotation.TaskConstraint"""
  
     @staticmethod
-    def __wrap(java_value: __TaskConstraint) -> 'TaskConstraint':
+    def _wrap(java_value: _TaskConstraint) -> 'TaskConstraint':
         return TaskConstraint(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __TaskConstraint):
+    def __init__(self, __dynamic__: _TaskConstraint):
         """
         Dynamic initializer for TaskConstraint.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_TaskConstraint__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_TaskConstraint__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))

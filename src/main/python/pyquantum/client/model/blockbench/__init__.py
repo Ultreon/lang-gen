@@ -3,86 +3,107 @@ from overload import overload
 
 
  
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
-import dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace as __BBModelMeshFace
-__BBModelMeshFace = __BBModelMeshFace
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace as _BBModelMeshFace
+_BBModelMeshFace = _BBModelMeshFace
+import java.lang.Object as _object
 from builtins import type
-import java.util.Map as __Map
-__Map = __Map
+import java.util.Map as _Map
+_Map = _Map
+import java.lang.String as _String
+_String = _String
 try:
     from pycorelibs.commons.v0 import vector
 except ImportError:
-    vector = __import_once__("pycorelibs.commons.v0.vector")
+    vector = _import_once("pycorelibs.commons.v0.vector")
 
-import java.util.List as __List
-__List = __List
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.util.List as _List
+_List = _List
+import java.lang.Integer as _int
 from builtins import bool
 import java.util.Map as Map
 try:
     from pygdx.graphics.g3d import utils
 except ImportError:
-    utils = __import_once__("pygdx.graphics.g3d.utils")
+    utils = _import_once("pygdx.graphics.g3d.utils")
 
+import java.lang.Long as _long
 from builtins import int
 import java.util.List as List
+import java.lang.Class as _Class
+_Class = _Class
  
 class BBModelMeshFace():
     """dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace"""
  
     @staticmethod
-    def __wrap(java_value: __BBModelMeshFace) -> 'BBModelMeshFace':
+    def _wrap(java_value: _BBModelMeshFace) -> 'BBModelMeshFace':
         return BBModelMeshFace(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BBModelMeshFace):
+    def __init__(self, __dynamic__: _BBModelMeshFace):
         """
         Dynamic initializer for BBModelMeshFace.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BBModelMeshFace__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BBModelMeshFace__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @overload
-    def uvs(self) -> 'Map':
-        """public java.util.Map<java.lang.String, dev.ultreon.libs.commons.v0.vector.Vec2f> dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.uvs()"""
-        return 'Map'.__wrap(super(BBModelMeshFace, self).uvs())
+    def texture(self) -> int:
+        """public int dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.texture()"""
+        return int._wrap(super(BBModelMeshFace, self).texture())
+
+    @overload
+    def __init__(self, arg0: 'Map', arg1: 'List', arg2: int):
+        """public dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace(java.util.Map<java.lang.String, dev.ultreon.libs.commons.v0.vector.Vec2f>,java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelVertex>,int)"""
+        val = _BBModelMeshFace(arg0, arg1, _int.valueOf(arg2))
+        self.__wrapper = val
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.equals(java.lang.Object)"""
+        return bool._wrap(super(_BBModelMeshFace, self).equals(arg0))
 
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
     def hashCode(self) -> int:
         """public int dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.hashCode()"""
-        return int.__wrap(super(BBModelMeshFace, self).hashCode())
+        return int._wrap(super(BBModelMeshFace, self).hashCode())
+
+    @overload
+    def write(self, arg0: 'ModelBuilder', arg1: 'Map', arg2: 'Map', arg3: 'Vec2f'):
+        """public void dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.write(com.badlogic.gdx.graphics.g3d.utils.ModelBuilder,java.util.Map<java.lang.Integer, dev.ultreon.quantum.client.model.blockbench.BBTexture>,java.util.Map<dev.ultreon.quantum.client.model.blockbench.BBTexture, com.badlogic.gdx.graphics.g3d.utils.MeshPartBuilder>,dev.ultreon.libs.commons.v0.vector.Vec2f)"""
+        super(_BBModelMeshFace, self).write(arg0, arg1, arg2, arg3)
 
     @override
     @overload
@@ -92,26 +113,14 @@ class BBModelMeshFace():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.toString()"""
-        return str.__wrap(super(BBModelMeshFace, self).toString())
-
-    @overload
-    def texture(self) -> int:
-        """public int dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.texture()"""
-        return int.__wrap(super(BBModelMeshFace, self).texture())
-
-    @override
-    @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
-    @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def vertices(self) -> 'List':
+        """public java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelVertex> dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.vertices()"""
+        return 'List'._wrap(super(BBModelMeshFace, self).vertices())
 
     @override
     @overload
@@ -119,10 +128,17 @@ class BBModelMeshFace():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
+    @override
     @overload
-    def vertices(self) -> 'List':
-        """public java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelVertex> dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.vertices()"""
-        return 'List'.__wrap(super(BBModelMeshFace, self).vertices())
+    def toString(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.toString()"""
+        return str._wrap(super(BBModelMeshFace, self).toString())
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -131,106 +147,115 @@ class BBModelMeshFace():
         super(object, self).wait()
 
     @overload
-    def __init__(self, arg0: 'Map', arg1: 'List', arg2: int):
-        """public dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace(java.util.Map<java.lang.String, dev.ultreon.libs.commons.v0.vector.Vec2f>,java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelVertex>,int)"""
-        val = __BBModelMeshFace(arg0, arg1, __int.valueOf(arg2))
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.equals(java.lang.Object)"""
-        return bool.__wrap(super(__BBModelMeshFace, self).equals(arg0))
-
-    @overload
-    def write(self, arg0: 'ModelBuilder', arg1: 'Map', arg2: 'Map', arg3: 'Vec2f'):
-        """public void dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.write(com.badlogic.gdx.graphics.g3d.utils.ModelBuilder,java.util.Map<java.lang.Integer, dev.ultreon.quantum.client.model.blockbench.BBTexture>,java.util.Map<dev.ultreon.quantum.client.model.blockbench.BBTexture, com.badlogic.gdx.graphics.g3d.utils.MeshPartBuilder>,dev.ultreon.libs.commons.v0.vector.Vec2f)"""
-        super(__BBModelMeshFace, self).write(arg0, arg1, arg2, arg3)
+    def uvs(self) -> 'Map':
+        """public java.util.Map<java.lang.String, dev.ultreon.libs.commons.v0.vector.Vec2f> dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.uvs()"""
+        return 'Map'._wrap(super(BBModelMeshFace, self).uvs())
 
  
  
  
 # CLASS: dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
-import dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace as __BBModelMeshFace
-__BBModelMeshFace = __BBModelMeshFace
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace as _BBModelMeshFace
+_BBModelMeshFace = _BBModelMeshFace
+import java.lang.Object as _object
 from builtins import type
-import java.util.Map as __Map
-__Map = __Map
+import java.util.Map as _Map
+_Map = _Map
+import java.lang.String as _String
+_String = _String
 try:
     from pycorelibs.commons.v0 import vector
 except ImportError:
-    vector = __import_once__("pycorelibs.commons.v0.vector")
+    vector = _import_once("pycorelibs.commons.v0.vector")
 
-import java.util.List as __List
-__List = __List
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.util.List as _List
+_List = _List
+import java.lang.Integer as _int
 from builtins import bool
 import java.util.Map as Map
 try:
     from pygdx.graphics.g3d import utils
 except ImportError:
-    utils = __import_once__("pygdx.graphics.g3d.utils")
+    utils = _import_once("pygdx.graphics.g3d.utils")
 
+import java.lang.Long as _long
 from builtins import int
 import java.util.List as List
+import java.lang.Class as _Class
+_Class = _Class
  
 class BBModelMeshFace():
     """dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace"""
  
     @staticmethod
-    def __wrap(java_value: __BBModelMeshFace) -> 'BBModelMeshFace':
+    def _wrap(java_value: _BBModelMeshFace) -> 'BBModelMeshFace':
         return BBModelMeshFace(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BBModelMeshFace):
+    def __init__(self, __dynamic__: _BBModelMeshFace):
         """
         Dynamic initializer for BBModelMeshFace.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BBModelMeshFace__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BBModelMeshFace__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @overload
-    def uvs(self) -> 'Map':
-        """public java.util.Map<java.lang.String, dev.ultreon.libs.commons.v0.vector.Vec2f> dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.uvs()"""
-        return 'Map'.__wrap(super(BBModelMeshFace, self).uvs())
+    def texture(self) -> int:
+        """public int dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.texture()"""
+        return int._wrap(super(BBModelMeshFace, self).texture())
+
+    @overload
+    def __init__(self, arg0: 'Map', arg1: 'List', arg2: int):
+        """public dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace(java.util.Map<java.lang.String, dev.ultreon.libs.commons.v0.vector.Vec2f>,java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelVertex>,int)"""
+        val = _BBModelMeshFace(arg0, arg1, _int.valueOf(arg2))
+        self.__wrapper = val
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.equals(java.lang.Object)"""
+        return bool._wrap(super(_BBModelMeshFace, self).equals(arg0))
 
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
     def hashCode(self) -> int:
         """public int dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.hashCode()"""
-        return int.__wrap(super(BBModelMeshFace, self).hashCode())
+        return int._wrap(super(BBModelMeshFace, self).hashCode())
+
+    @overload
+    def write(self, arg0: 'ModelBuilder', arg1: 'Map', arg2: 'Map', arg3: 'Vec2f'):
+        """public void dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.write(com.badlogic.gdx.graphics.g3d.utils.ModelBuilder,java.util.Map<java.lang.Integer, dev.ultreon.quantum.client.model.blockbench.BBTexture>,java.util.Map<dev.ultreon.quantum.client.model.blockbench.BBTexture, com.badlogic.gdx.graphics.g3d.utils.MeshPartBuilder>,dev.ultreon.libs.commons.v0.vector.Vec2f)"""
+        super(_BBModelMeshFace, self).write(arg0, arg1, arg2, arg3)
 
     @override
     @overload
@@ -240,26 +265,14 @@ class BBModelMeshFace():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.toString()"""
-        return str.__wrap(super(BBModelMeshFace, self).toString())
-
-    @overload
-    def texture(self) -> int:
-        """public int dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.texture()"""
-        return int.__wrap(super(BBModelMeshFace, self).texture())
-
-    @override
-    @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
-    @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def vertices(self) -> 'List':
+        """public java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelVertex> dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.vertices()"""
+        return 'List'._wrap(super(BBModelMeshFace, self).vertices())
 
     @override
     @overload
@@ -267,10 +280,17 @@ class BBModelMeshFace():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
+    @override
     @overload
-    def vertices(self) -> 'List':
-        """public java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelVertex> dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.vertices()"""
-        return 'List'.__wrap(super(BBModelMeshFace, self).vertices())
+    def toString(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.toString()"""
+        return str._wrap(super(BBModelMeshFace, self).toString())
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -279,21 +299,9 @@ class BBModelMeshFace():
         super(object, self).wait()
 
     @overload
-    def __init__(self, arg0: 'Map', arg1: 'List', arg2: int):
-        """public dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace(java.util.Map<java.lang.String, dev.ultreon.libs.commons.v0.vector.Vec2f>,java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelVertex>,int)"""
-        val = __BBModelMeshFace(arg0, arg1, __int.valueOf(arg2))
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.equals(java.lang.Object)"""
-        return bool.__wrap(super(__BBModelMeshFace, self).equals(arg0))
-
-    @overload
-    def write(self, arg0: 'ModelBuilder', arg1: 'Map', arg2: 'Map', arg3: 'Vec2f'):
-        """public void dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.write(com.badlogic.gdx.graphics.g3d.utils.ModelBuilder,java.util.Map<java.lang.Integer, dev.ultreon.quantum.client.model.blockbench.BBTexture>,java.util.Map<dev.ultreon.quantum.client.model.blockbench.BBTexture, com.badlogic.gdx.graphics.g3d.utils.MeshPartBuilder>,dev.ultreon.libs.commons.v0.vector.Vec2f)"""
-        super(__BBModelMeshFace, self).write(arg0, arg1, arg2, arg3)
+    def uvs(self) -> 'Map':
+        """public java.util.Map<java.lang.String, dev.ultreon.libs.commons.v0.vector.Vec2f> dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace.uvs()"""
+        return 'Map'._wrap(super(BBModelMeshFace, self).uvs())
 
  
  
@@ -302,135 +310,112 @@ class BBModelMeshFace():
  
  
 # CLASS: dev.ultreon.quantum.client.model.blockbench.BBModelLoader
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 import java.util.UUID as UUID
-import dev.ultreon.libs.commons.v0.vector.Vec2f as __Vec2f
-__Vec2f = __Vec2f
+import java.lang.Object as _Object
+_Object = _Object
 from builtins import type
-import dev.ultreon.quantum.client.model.blockbench.BBModelLoader as __BBModelLoader
-__BBModelLoader = __BBModelLoader
-import dev.ultreon.quantum.client.model.blockbench.BBModelElement as __BBModelElement
-__BBModelElement = __BBModelElement
 try:
     from pycorelibs.commons.v0 import vector
 except ImportError:
-    vector = __import_once__("pycorelibs.commons.v0.vector")
+    vector = _import_once("pycorelibs.commons.v0.vector")
 
-import com.badlogic.gdx.graphics.g3d.Model as __Model
-__Model = __Model
-import java.lang.Class as __Class
-__Class = __Class
 from builtins import bool
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import dev.ultreon.quantum.client.model.blockbench.BBModelLoader as _BBModelLoader
+_BBModelLoader = _BBModelLoader
 try:
     from pygdx.graphics import g3d
 except ImportError:
-    g3d = __import_once__("pygdx.graphics.g3d")
+    g3d = _import_once("pygdx.graphics.g3d")
 
-import dev.ultreon.quantum.client.model.blockbench.BBMeta as __BBMeta
-__BBMeta = __BBMeta
-import dev.ultreon.quantum.client.model.blockbench.BBModelOutliner as __BBModelOutliner
-__BBModelOutliner = __BBModelOutliner
-import dev.ultreon.libs.commons.v0.vector.Vec3f as __Vec3f
-__Vec3f = __Vec3f
+import java.lang.Object as _object
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.libs.commons.v0.vector.Vec3f as _Vec3f
+_Vec3f = _Vec3f
+import java.util.List as _List
+_List = _List
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import java.util.List as __List
-__List = __List
-import java.lang.Long as __long
-import java.lang.String as __String
-__String = __String
-import dev.ultreon.quantum.util.Identifier as __Identifier
-__Identifier = __Identifier
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import dev.ultreon.quantum.client.model.blockbench.BBModelOutliner as _BBModelOutliner
+_BBModelOutliner = _BBModelOutliner
+import dev.ultreon.quantum.client.model.blockbench.BBModelElement as _BBModelElement
+_BBModelElement = _BBModelElement
+import java.lang.Integer as _int
+import dev.ultreon.libs.commons.v0.vector.Vec2f as _Vec2f
+_Vec2f = _Vec2f
+import com.badlogic.gdx.graphics.g3d.Model as _Model
+_Model = _Model
+import dev.ultreon.quantum.client.model.blockbench.BBMeta as _BBMeta
+_BBMeta = _BBMeta
+import dev.ultreon.quantum.util.Identifier as _Identifier
+_Identifier = _Identifier
 try:
     from pyquantum import resources
 except ImportError:
-    resources = __import_once__("pyquantum.resources")
+    resources = _import_once("pyquantum.resources")
 
+import java.lang.Long as _long
 import java.util.List as List
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class BBModelLoader():
     """dev.ultreon.quantum.client.model.blockbench.BBModelLoader"""
  
     @staticmethod
-    def __wrap(java_value: __BBModelLoader) -> 'BBModelLoader':
+    def _wrap(java_value: _BBModelLoader) -> 'BBModelLoader':
         return BBModelLoader(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BBModelLoader):
+    def __init__(self, __dynamic__: _BBModelLoader):
         """
         Dynamic initializer for BBModelLoader.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BBModelLoader__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BBModelLoader__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @overload
+    def getMeta(self) -> 'BBMeta':
+        """public dev.ultreon.quantum.client.model.blockbench.BBMeta dev.ultreon.quantum.client.model.blockbench.BBModelLoader.getMeta()"""
+        return 'BBMeta'._wrap(super(BBModelLoader, self).getMeta())
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def getId(self) -> 'util.Identifier':
-        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.client.model.blockbench.BBModelLoader.getId()"""
-        return 'util.Identifier'.__wrap(super(BBModelLoader, self).getId())
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @overload
     def getAnimations(self) -> 'List':
         """public java.util.List<dev.ultreon.quantum.client.model.blockbench.anim.BBAnimation> dev.ultreon.quantum.client.model.blockbench.BBModelLoader.getAnimations()"""
-        return 'List'.__wrap(super(BBModelLoader, self).getAnimations())
-
-    @overload
-    def getModelIdentifier(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBModelLoader.getModelIdentifier()"""
-        return str.__wrap(super(BBModelLoader, self).getModelIdentifier())
-
-    @overload
-    def getVisibleBox(self) -> 'vector.Vec3f':
-        """public dev.ultreon.libs.commons.v0.vector.Vec3f dev.ultreon.quantum.client.model.blockbench.BBModelLoader.getVisibleBox()"""
-        return 'vector.Vec3f'.__wrap(super(BBModelLoader, self).getVisibleBox())
-
-    @overload
-    def __init__(self, arg0: 'Identifier'):
-        """public dev.ultreon.quantum.client.model.blockbench.BBModelLoader(dev.ultreon.quantum.util.Identifier)"""
-        val = __BBModelLoader(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @overload
-    def getMeta(self) -> 'BBMeta':
-        """public dev.ultreon.quantum.client.model.blockbench.BBMeta dev.ultreon.quantum.client.model.blockbench.BBModelLoader.getMeta()"""
-        return 'BBMeta'.__wrap(super(BBModelLoader, self).getMeta())
+        return 'List'._wrap(super(BBModelLoader, self).getAnimations())
 
     @override
     @overload
@@ -439,26 +424,37 @@ class BBModelLoader():
         super(object, self).notifyAll()
 
     @overload
-    def getElements(self) -> 'List':
-        """public java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelElement> dev.ultreon.quantum.client.model.blockbench.BBModelLoader.getElements()"""
-        return 'List'.__wrap(super(BBModelLoader, self).getElements())
+    def getId(self) -> 'util.Identifier':
+        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.client.model.blockbench.BBModelLoader.getId()"""
+        return 'util.Identifier'._wrap(super(BBModelLoader, self).getId())
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @overload
+    def getVisibleBox(self) -> 'vector.Vec3f':
+        """public dev.ultreon.libs.commons.v0.vector.Vec3f dev.ultreon.quantum.client.model.blockbench.BBModelLoader.getVisibleBox()"""
+        return 'vector.Vec3f'._wrap(super(BBModelLoader, self).getVisibleBox())
+
+    @override
+    @overload
+    def createModel(self) -> 'g3d.Model':
+        """public com.badlogic.gdx.graphics.g3d.Model dev.ultreon.quantum.client.model.blockbench.BBModelLoader.createModel()"""
+        return 'g3d.Model'._wrap(super(BBModelLoader, self).createModel())
+
+    @overload
+    def getModelIdentifier(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBModelLoader.getModelIdentifier()"""
+        return str._wrap(super(BBModelLoader, self).getModelIdentifier())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @overload
-    def getName(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBModelLoader.getName()"""
-        return str.__wrap(super(BBModelLoader, self).getName())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -466,18 +462,43 @@ class BBModelLoader():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getOutliner(self) -> 'BBModelOutliner':
+        """public dev.ultreon.quantum.client.model.blockbench.BBModelOutliner dev.ultreon.quantum.client.model.blockbench.BBModelLoader.getOutliner()"""
+        return 'BBModelOutliner'._wrap(super(BBModelLoader, self).getOutliner())
 
     @overload
-    def __init__(self, arg0: 'Identifier', arg1: 'Resource'):
-        """public dev.ultreon.quantum.client.model.blockbench.BBModelLoader(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.resources.Resource)"""
-        val = __BBModelLoader(arg0, arg1)
-        self.__dict__ = val.__dict__
+    def __init__(self, arg0: 'Identifier'):
+        """public dev.ultreon.quantum.client.model.blockbench.BBModelLoader(dev.ultreon.quantum.util.Identifier)"""
+        val = _BBModelLoader(arg0)
         self.__wrapper = val
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @overload
+    def getElement(self, arg0: 'UUID') -> 'BBModelElement':
+        """public dev.ultreon.quantum.client.model.blockbench.BBModelElement dev.ultreon.quantum.client.model.blockbench.BBModelLoader.getElement(java.util.UUID)"""
+        return 'BBModelElement'._wrap(super(_BBModelLoader, self).getElement(arg0))
+
+    @override
+    @overload
+    def getModel(self) -> 'g3d.Model':
+        """public com.badlogic.gdx.graphics.g3d.Model dev.ultreon.quantum.client.model.blockbench.BBModelLoader.getModel()"""
+        return 'g3d.Model'._wrap(super(BBModelLoader, self).getModel())
+
+    @overload
+    def getElements(self) -> 'List':
+        """public java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelElement> dev.ultreon.quantum.client.model.blockbench.BBModelLoader.getElements()"""
+        return 'List'._wrap(super(BBModelLoader, self).getElements())
+
+    @overload
+    def getResolution(self) -> 'vector.Vec2f':
+        """public dev.ultreon.libs.commons.v0.vector.Vec2f dev.ultreon.quantum.client.model.blockbench.BBModelLoader.getResolution()"""
+        return 'vector.Vec2f'._wrap(super(BBModelLoader, self).getResolution())
 
     @override
     @overload
@@ -485,109 +506,110 @@ class BBModelLoader():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
-    @override
     @overload
-    def createModel(self) -> 'g3d.Model':
-        """public com.badlogic.gdx.graphics.g3d.Model dev.ultreon.quantum.client.model.blockbench.BBModelLoader.createModel()"""
-        return 'g3d.Model'.__wrap(super(BBModelLoader, self).createModel())
+    def __init__(self, arg0: 'Identifier', arg1: 'Resource'):
+        """public dev.ultreon.quantum.client.model.blockbench.BBModelLoader(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.resources.Resource)"""
+        val = _BBModelLoader(arg0, arg1)
+        self.__wrapper = val
 
     @overload
-    def getOutliner(self) -> 'BBModelOutliner':
-        """public dev.ultreon.quantum.client.model.blockbench.BBModelOutliner dev.ultreon.quantum.client.model.blockbench.BBModelLoader.getOutliner()"""
-        return 'BBModelOutliner'.__wrap(super(BBModelLoader, self).getOutliner())
-
-    @overload
-    def getResolution(self) -> 'vector.Vec2f':
-        """public dev.ultreon.libs.commons.v0.vector.Vec2f dev.ultreon.quantum.client.model.blockbench.BBModelLoader.getResolution()"""
-        return 'vector.Vec2f'.__wrap(super(BBModelLoader, self).getResolution())
-
-    @overload
-    def getElement(self, arg0: 'UUID') -> 'BBModelElement':
-        """public dev.ultreon.quantum.client.model.blockbench.BBModelElement dev.ultreon.quantum.client.model.blockbench.BBModelLoader.getElement(java.util.UUID)"""
-        return 'BBModelElement'.__wrap(super(__BBModelLoader, self).getElement(arg0))
-
-    @override
-    @overload
-    def getModel(self) -> 'g3d.Model':
-        """public com.badlogic.gdx.graphics.g3d.Model dev.ultreon.quantum.client.model.blockbench.BBModelLoader.getModel()"""
-        return 'g3d.Model'.__wrap(super(BBModelLoader, self).getModel())
+    def getName(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBModelLoader.getName()"""
+        return str._wrap(super(BBModelLoader, self).getName())
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0)) 
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.client.model.blockbench.BBModelOutliner
 import java.util.UUID as UUID
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.client.model.blockbench.BBModelOutliner as __BBModelOutliner
-__BBModelOutliner = __BBModelOutliner
-import dev.ultreon.quantum.client.model.blockbench.BBModelOutlineInfo as __BBModelOutlineInfo
-__BBModelOutlineInfo = __BBModelOutlineInfo
-import java.util.List as __List
-__List = __List
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import java.util.List as _List
+_List = _List
+import dev.ultreon.quantum.client.model.blockbench.BBModelOutliner as _BBModelOutliner
+_BBModelOutliner = _BBModelOutliner
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
+import dev.ultreon.quantum.client.model.blockbench.BBModelOutlineInfo as _BBModelOutlineInfo
+_BBModelOutlineInfo = _BBModelOutlineInfo
 from builtins import int
 import java.util.List as List
+import java.lang.Class as _Class
+_Class = _Class
  
 class BBModelOutliner():
     """dev.ultreon.quantum.client.model.blockbench.BBModelOutliner"""
  
     @staticmethod
-    def __wrap(java_value: __BBModelOutliner) -> 'BBModelOutliner':
+    def _wrap(java_value: _BBModelOutliner) -> 'BBModelOutliner':
         return BBModelOutliner(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BBModelOutliner):
+    def __init__(self, __dynamic__: _BBModelOutliner):
         """
         Dynamic initializer for BBModelOutliner.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BBModelOutliner__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BBModelOutliner__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def toString(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBModelOutliner.toString()"""
+        return str._wrap(super(BBModelOutliner, self).toString())
 
     @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.blockbench.BBModelOutliner.equals(java.lang.Object)"""
-        return bool.__wrap(super(__BBModelOutliner, self).equals(arg0))
+    def __init__(self, arg0: 'List'):
+        """public dev.ultreon.quantum.client.model.blockbench.BBModelOutliner(java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelOutlineInfo>)"""
+        val = _BBModelOutliner(arg0)
+        self.__wrapper = val
+
+    @overload
+    def parent(self, arg0: 'UUID') -> 'BBModelOutlineInfo':
+        """public dev.ultreon.quantum.client.model.blockbench.BBModelOutlineInfo dev.ultreon.quantum.client.model.blockbench.BBModelOutliner.parent(java.util.UUID)"""
+        return 'BBModelOutlineInfo'._wrap(super(_BBModelOutliner, self).parent(arg0))
 
     @override
     @overload
@@ -595,11 +617,33 @@ class BBModelOutliner():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.blockbench.BBModelOutliner.equals(java.lang.Object)"""
+        return bool._wrap(super(_BBModelOutliner, self).equals(arg0))
+
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBModelOutliner.toString()"""
-        return str.__wrap(super(BBModelOutliner, self).toString())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @overload
+    def entries(self) -> 'List':
+        """public java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelOutlineInfo> dev.ultreon.quantum.client.model.blockbench.BBModelOutliner.entries()"""
+        return 'List'._wrap(super(BBModelOutliner, self).entries())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public int dev.ultreon.quantum.client.model.blockbench.BBModelOutliner.hashCode()"""
+        return int._wrap(super(BBModelOutliner, self).hashCode())
 
     @override
     @overload
@@ -609,116 +653,86 @@ class BBModelOutliner():
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public int dev.ultreon.quantum.client.model.blockbench.BBModelOutliner.hashCode()"""
-        return int.__wrap(super(BBModelOutliner, self).hashCode())
-
-    @override
-    @overload
     def wait(self):
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
-        super(object, self).wait()
-
-    @overload
-    def __init__(self, arg0: 'List'):
-        """public dev.ultreon.quantum.client.model.blockbench.BBModelOutliner(java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelOutlineInfo>)"""
-        val = __BBModelOutliner(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @overload
-    def parent(self, arg0: 'UUID') -> 'BBModelOutlineInfo':
-        """public dev.ultreon.quantum.client.model.blockbench.BBModelOutlineInfo dev.ultreon.quantum.client.model.blockbench.BBModelOutliner.parent(java.util.UUID)"""
-        return 'BBModelOutlineInfo'.__wrap(super(__BBModelOutliner, self).parent(arg0))
-
-    @overload
-    def entries(self) -> 'List':
-        """public java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelOutlineInfo> dev.ultreon.quantum.client.model.blockbench.BBModelOutliner.entries()"""
-        return 'List'.__wrap(super(BBModelOutliner, self).entries())
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0)) 
+        super(object, self).wait() 
  
  
 # CLASS: dev.ultreon.quantum.client.model.blockbench.BBModelElement
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import dev.ultreon.quantum.client.model.blockbench.BBModelNode as _BBModelNode
+_BBModelNode = _BBModelNode
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.client.model.blockbench.BBModelElement as __BBModelElement
-__BBModelElement = __BBModelElement
+import com.badlogic.gdx.math.Matrix4 as _Matrix4
+_Matrix4 = _Matrix4
 from abc import abstractmethod, ABC
 try:
     from pycorelibs.commons.v0 import vector
 except ImportError:
-    vector = __import_once__("pycorelibs.commons.v0.vector")
+    vector = _import_once("pycorelibs.commons.v0.vector")
 
-import com.badlogic.gdx.math.Matrix4 as __Matrix4
-__Matrix4 = __Matrix4
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import dev.ultreon.quantum.client.model.blockbench.BBModelNode as __BBModelNode
-__BBModelNode = __BBModelNode
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.client.model.blockbench.BBModelElement as _BBModelElement
+_BBModelElement = _BBModelElement
+import java.lang.Integer as _int
 try:
     from pygdx import math
 except ImportError:
-    math = __import_once__("pygdx.math")
+    math = _import_once("pygdx.math")
 
-import java.lang.Integer as __int
 import java.util.Map as Map
 from builtins import bool
 try:
     from pygdx.graphics.g3d import utils
 except ImportError:
-    utils = __import_once__("pygdx.graphics.g3d.utils")
+    utils = _import_once("pygdx.graphics.g3d.utils")
 
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
-class BBModelElement(ABC):
+class BBModelElement():
     """dev.ultreon.quantum.client.model.blockbench.BBModelElement"""
  
     @staticmethod
-    def __wrap(java_value: __BBModelElement) -> 'BBModelElement':
+    def _wrap(java_value: _BBModelElement) -> 'BBModelElement':
         return BBModelElement(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BBModelElement):
+    def __init__(self, __dynamic__: _BBModelElement):
         """
         Dynamic initializer for BBModelElement.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BBModelElement__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BBModelElement__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
     @abstractmethod
     def write(self, arg0: 'ModelBuilder', arg1: 'Map', arg2: 'Map', arg3: 'BBModelLoader', arg4: 'Vec2f'):
         """public abstract com.badlogic.gdx.graphics.g3d.model.Node dev.ultreon.quantum.client.model.blockbench.BBModelElement.write(com.badlogic.gdx.graphics.g3d.utils.ModelBuilder,java.util.Map<java.util.UUID, com.badlogic.gdx.graphics.g3d.utils.ModelBuilder>,java.util.Map<java.lang.Integer, dev.ultreon.quantum.client.model.blockbench.BBTexture>,dev.ultreon.quantum.client.model.blockbench.BBModelLoader,dev.ultreon.libs.commons.v0.vector.Vec2f)"""
@@ -726,9 +740,9 @@ class BBModelElement(ABC):
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @abstractmethod
     def allowMirrorModeling(self, ):
@@ -740,6 +754,18 @@ class BBModelElement(ABC):
     def notifyAll(self):
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
+
+    @override
+    @overload
+    def parent(self) -> 'BBModelNode':
+        """public dev.ultreon.quantum.client.model.blockbench.BBModelNode dev.ultreon.quantum.client.model.blockbench.BBModelElement.parent()"""
+        return 'BBModelNode'._wrap(super(BBModelElement, self).parent())
+
+    @override
+    @overload
+    def rotationMatrix(self) -> 'math.Matrix4':
+        """public com.badlogic.gdx.math.Matrix4 dev.ultreon.quantum.client.model.blockbench.BBModelElement.rotationMatrix()"""
+        return 'math.Matrix4'._wrap(super(BBModelElement, self).rotationMatrix())
 
     @abstractmethod
     def origin(self, ):
@@ -753,21 +779,27 @@ class BBModelElement(ABC):
 
     @override
     @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @override
+    @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
-    @override
     @overload
-    def parent(self) -> 'BBModelNode':
-        """public dev.ultreon.quantum.client.model.blockbench.BBModelNode dev.ultreon.quantum.client.model.blockbench.BBModelElement.parent()"""
-        return 'BBModelNode'.__wrap(super(BBModelElement, self).parent())
+    def __init__(self):
+        """public dev.ultreon.quantum.client.model.blockbench.BBModelElement()"""
+        val = _BBModelElement()
+        self.__wrapper = val
 
-    @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def __init__(self, ):
+        """public dev.ultreon.quantum.client.model.blockbench.BBModelElement()"""
+        val = _BBModelElement()
+        self.__wrapper = val
 
     @override
     @overload
@@ -787,27 +819,14 @@ class BBModelElement(ABC):
 
     @override
     @overload
-    def rotationMatrix(self) -> 'math.Matrix4':
-        """public com.badlogic.gdx.math.Matrix4 dev.ultreon.quantum.client.model.blockbench.BBModelElement.rotationMatrix()"""
-        return 'math.Matrix4'.__wrap(super(BBModelElement, self).rotationMatrix())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @abstractmethod
     def locked(self, ):
         """public abstract boolean dev.ultreon.quantum.client.model.blockbench.BBModelElement.locked()"""
         pass
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.client.model.blockbench.BBModelElement()"""
-        val = __BBModelElement()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
 
     @override
     @overload
@@ -820,13 +839,6 @@ class BBModelElement(ABC):
         """public abstract dev.ultreon.libs.commons.v0.vector.Vec3f dev.ultreon.quantum.client.model.blockbench.BBModelElement.rotation()"""
         pass
 
-    @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.client.model.blockbench.BBModelElement()"""
-        val = __BBModelElement()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
     @abstractmethod
     def color(self, ):
         """public abstract dev.ultreon.quantum.util.RgbColor dev.ultreon.quantum.client.model.blockbench.BBModelElement.color()"""
@@ -835,128 +847,111 @@ class BBModelElement(ABC):
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0)) 
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.client.model.blockbench.BBColor
-import dev.ultreon.quantum.client.model.blockbench.BBColor as __BBColor
-__BBColor = __BBColor
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.util.Optional as __Optional
-__Optional = __Optional
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.client.model.blockbench.BBColor as _BBColor
+_BBColor = _BBColor
 from typing import List
 import java.lang.Enum as Enum
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __string
-import java.lang.String as __String
-__String = __String
+import java.lang.String as _string
+import java.lang.Enum as _Enum
+_Enum = _Enum
+import java.lang.Integer as _int
+import java.util.Optional as _Optional
+_Optional = _Optional
 import java.util.Optional as Optional
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
-import java.lang.Enum as __Enum
-__Enum = __Enum
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class BBColor():
     """dev.ultreon.quantum.client.model.blockbench.BBColor"""
  
     @staticmethod
-    def __wrap(java_value: __BBColor) -> 'BBColor':
+    def _wrap(java_value: _BBColor) -> 'BBColor':
         return BBColor(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BBColor):
+    def __init__(self, __dynamic__: _BBColor):
         """
         Dynamic initializer for BBColor.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BBColor__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BBColor__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    # public static final dev.ultreon.quantum.client.model.blockbench.BBColor dev.ultreon.quantum.client.model.blockbench.BBColor.BLACK
-    BLACK: 'BBColor' = __wrap(__BBColor.BLACK)
-
-    # public static final dev.ultreon.quantum.client.model.blockbench.BBColor dev.ultreon.quantum.client.model.blockbench.BBColor.GRAY
-    GRAY: 'BBColor' = __wrap(__BBColor.GRAY)
-
-    # public static final dev.ultreon.quantum.client.model.blockbench.BBColor dev.ultreon.quantum.client.model.blockbench.BBColor.CYAN
-    CYAN: 'BBColor' = __wrap(__BBColor.CYAN)
-
-    # public static final dev.ultreon.quantum.client.model.blockbench.BBColor dev.ultreon.quantum.client.model.blockbench.BBColor.YELLOW
-    YELLOW: 'BBColor' = __wrap(__BBColor.YELLOW)
-
-    # public static final dev.ultreon.quantum.client.model.blockbench.BBColor dev.ultreon.quantum.client.model.blockbench.BBColor.BROWN
-    BROWN: 'BBColor' = __wrap(__BBColor.BROWN)
-
-    # public static final dev.ultreon.quantum.client.model.blockbench.BBColor dev.ultreon.quantum.client.model.blockbench.BBColor.LIGHT_GRAY
-    LIGHT_GRAY: 'BBColor' = __wrap(__BBColor.LIGHT_GRAY)
-
-    # public static final dev.ultreon.quantum.client.model.blockbench.BBColor dev.ultreon.quantum.client.model.blockbench.BBColor.ORANGE
-    ORANGE: 'BBColor' = __wrap(__BBColor.ORANGE)
-
-    # public static final dev.ultreon.quantum.client.model.blockbench.BBColor dev.ultreon.quantum.client.model.blockbench.BBColor.WHITE
-    WHITE: 'BBColor' = __wrap(__BBColor.WHITE)
-
-    # public static final dev.ultreon.quantum.client.model.blockbench.BBColor dev.ultreon.quantum.client.model.blockbench.BBColor.PINK
-    PINK: 'BBColor' = __wrap(__BBColor.PINK)
-
-    # public static final dev.ultreon.quantum.client.model.blockbench.BBColor dev.ultreon.quantum.client.model.blockbench.BBColor.PURPLE
-    PURPLE: 'BBColor' = __wrap(__BBColor.PURPLE)
-
-    # public static final dev.ultreon.quantum.client.model.blockbench.BBColor dev.ultreon.quantum.client.model.blockbench.BBColor.RED
-    RED: 'BBColor' = __wrap(__BBColor.RED)
-
-    # public static final dev.ultreon.quantum.client.model.blockbench.BBColor dev.ultreon.quantum.client.model.blockbench.BBColor.GREEN
-    GREEN: 'BBColor' = __wrap(__BBColor.GREEN)
-
-    # public static final dev.ultreon.quantum.client.model.blockbench.BBColor dev.ultreon.quantum.client.model.blockbench.BBColor.BLUE
-    BLUE: 'BBColor' = __wrap(__BBColor.BLUE)
-
-
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def hashCode(self) -> int:
+        """public final int java.lang.Enum.hashCode()"""
+        return int._wrap(super(Enum, self).hashCode())
 
     @staticmethod
     @overload
     def valueOf(arg0: 'Class', arg1: str) -> 'Enum':
         """public static <T extends java.lang.Enum<T>> T java.lang.Enum.valueOf(java.lang.Class<T>,java.lang.String)"""
-        return Enum.__wrap(__Enum.valueOf(arg0, arg1))
+        return Enum._wrap(_Enum.valueOf(arg0, arg1))
 
     @override
     @overload
     def name(self) -> str:
         """public final java.lang.String java.lang.Enum.name()"""
-        return str.__wrap(super(Enum, self).name())
+        return str._wrap(super(Enum, self).name())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public final int java.lang.Enum.hashCode()"""
-        return int.__wrap(super(Enum, self).hashCode())
+    def describeConstable(self) -> 'Optional':
+        """public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable()"""
+        return 'Optional'._wrap(super(Enum, self).describeConstable())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Enum.toString()"""
+        return str._wrap(super(Enum, self).toString())
 
     @override
     @overload
@@ -966,32 +961,21 @@ class BBColor():
 
     @override
     @overload
-    def describeConstable(self) -> 'Optional':
-        """public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable()"""
-        return 'Optional'.__wrap(super(Enum, self).describeConstable())
+    def ordinal(self) -> int:
+        """public final int java.lang.Enum.ordinal()"""
+        return int._wrap(super(Enum, self).ordinal())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def compareTo(self, arg0: 'Enum') -> int:
-        """public final int java.lang.Enum.compareTo(E)"""
-        return int.__wrap(super(__Enum, self).compareTo(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @staticmethod
-    @overload
-    def valueOf(arg0: str) -> 'BBColor':
-        """public static dev.ultreon.quantum.client.model.blockbench.BBColor dev.ultreon.quantum.client.model.blockbench.BBColor.valueOf(java.lang.String)"""
-        return BBColor.__wrap(__BBColor.valueOf(arg0))
+    def getDeclaringClass(self) -> 'type.Class':
+        """public final java.lang.Class<E> java.lang.Enum.getDeclaringClass()"""
+        return 'type.Class'._wrap(super(Enum, self).getDeclaringClass())
 
     @override
     @overload
@@ -999,28 +983,33 @@ class BBColor():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public final boolean java.lang.Enum.equals(java.lang.Object)"""
-        return bool.__wrap(super(__Enum, self).equals(arg0))
-
     @staticmethod
     @overload
     def values() -> List['BBColor']:
         """public static dev.ultreon.quantum.client.model.blockbench.BBColor[] dev.ultreon.quantum.client.model.blockbench.BBColor.values()"""
-        return List[BBColor].__wrap(__BBColor.values())
+        return List[BBColor]._wrap(_BBColor.values())
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public final boolean java.lang.Enum.equals(java.lang.Object)"""
+        return bool._wrap(super(_Enum, self).equals(arg0))
 
     @override
     @overload
-    def getDeclaringClass(self) -> 'type.Class':
-        """public final java.lang.Class<E> java.lang.Enum.getDeclaringClass()"""
-        return 'type.Class'.__wrap(super(Enum, self).getDeclaringClass())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
-    @override
+    @staticmethod
     @overload
-    def ordinal(self) -> int:
-        """public final int java.lang.Enum.ordinal()"""
-        return int.__wrap(super(Enum, self).ordinal())
+    def valueOf(arg0: str) -> 'BBColor':
+        """public static dev.ultreon.quantum.client.model.blockbench.BBColor dev.ultreon.quantum.client.model.blockbench.BBColor.valueOf(java.lang.String)"""
+        return BBColor._wrap(_BBColor.valueOf(arg0))
+
+    @overload
+    def compareTo(self, arg0: 'Enum') -> int:
+        """public final int java.lang.Enum.compareTo(E)"""
+        return int._wrap(super(_Enum, self).compareTo(arg0))
 
     @override
     @overload
@@ -1028,113 +1017,144 @@ class BBColor():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Enum.toString()"""
-        return str.__wrap(super(Enum, self).toString()) 
+
+BBColor.CYAN = BBColor._wrap(_CYAN.CYAN)
+
+BBColor.ORANGE = BBColor._wrap(_ORANGE.ORANGE)
+
+BBColor.PURPLE = BBColor._wrap(_PURPLE.PURPLE)
+
+BBColor.BROWN = BBColor._wrap(_BROWN.BROWN)
+
+BBColor.PINK = BBColor._wrap(_PINK.PINK)
+
+BBColor.YELLOW = BBColor._wrap(_YELLOW.YELLOW)
+
+BBColor.RED = BBColor._wrap(_RED.RED)
+
+BBColor.LIGHT_GRAY = BBColor._wrap(_LIGHT_GRAY.LIGHT_GRAY)
+
+BBColor.BLACK = BBColor._wrap(_BLACK.BLACK)
+
+BBColor.BLUE = BBColor._wrap(_BLUE.BLUE)
+
+BBColor.GREEN = BBColor._wrap(_GREEN.GREEN)
+
+BBColor.GRAY = BBColor._wrap(_GRAY.GRAY)
+
+BBColor.WHITE = BBColor._wrap(_WHITE.WHITE) 
  
  
 # CLASS: dev.ultreon.quantum.client.model.blockbench.BBModelGroup
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 import java.util.UUID as UUID
-import java.lang.Boolean as __boolean
+import java.lang.Object as _Object
+_Object = _Object
+import dev.ultreon.quantum.client.model.blockbench.BBModelNode as _BBModelNode
+_BBModelNode = _BBModelNode
 from builtins import type
-import dev.ultreon.quantum.client.model.blockbench.BBModelLoader as __BBModelLoader
-__BBModelLoader = __BBModelLoader
-import dev.ultreon.quantum.client.model.blockbench.BBModelElement as __BBModelElement
-__BBModelElement = __BBModelElement
 try:
     from pycorelibs.commons.v0 import vector
 except ImportError:
-    vector = __import_once__("pycorelibs.commons.v0.vector")
+    vector = _import_once("pycorelibs.commons.v0.vector")
 
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __string
-import dev.ultreon.quantum.client.model.blockbench.BBModelNode as __BBModelNode
-__BBModelNode = __BBModelNode
+import dev.ultreon.quantum.util.RgbColor as _RgbColor
+_RgbColor = _RgbColor
+import java.lang.String as _string
+import java.lang.Boolean as _boolean
 try:
     from pygdx import math
 except ImportError:
-    math = __import_once__("pygdx.math")
+    math = _import_once("pygdx.math")
 
+import dev.ultreon.quantum.client.model.blockbench.BBModelGroup as _BBModelGroup
+_BBModelGroup = _BBModelGroup
 from builtins import bool
 from builtins import str
-import dev.ultreon.quantum.util.RgbColor as __RgbColor
-__RgbColor = __RgbColor
 from pyquantum_helper import override
-import java.lang.Object as __object
-import dev.ultreon.libs.commons.v0.vector.Vec3f as __Vec3f
-__Vec3f = __Vec3f
+import dev.ultreon.quantum.client.model.blockbench.BBModelLoader as _BBModelLoader
+_BBModelLoader = _BBModelLoader
+import java.lang.Object as _object
+import com.badlogic.gdx.math.Matrix4 as _Matrix4
+_Matrix4 = _Matrix4
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.libs.commons.v0.vector.Vec3f as _Vec3f
+_Vec3f = _Vec3f
+import java.util.List as _List
+_List = _List
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import com.badlogic.gdx.math.Matrix4 as __Matrix4
-__Matrix4 = __Matrix4
-import dev.ultreon.quantum.client.model.blockbench.BBModelGroup as __BBModelGroup
-__BBModelGroup = __BBModelGroup
-import java.util.List as __List
-__List = __List
-import java.lang.Long as __long
-import java.lang.String as __String
-__String = __String
-import java.util.UUID as __UUID
-__UUID = __UUID
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import dev.ultreon.quantum.client.model.blockbench.BBModelElement as _BBModelElement
+_BBModelElement = _BBModelElement
+import java.lang.Integer as _int
+import java.lang.Long as _long
 from builtins import int
 import java.util.List as List
+import java.util.UUID as _UUID
+_UUID = _UUID
+import java.lang.Class as _Class
+_Class = _Class
  
 class BBModelGroup():
     """dev.ultreon.quantum.client.model.blockbench.BBModelGroup"""
  
     @staticmethod
-    def __wrap(java_value: __BBModelGroup) -> 'BBModelGroup':
+    def _wrap(java_value: _BBModelGroup) -> 'BBModelGroup':
         return BBModelGroup(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BBModelGroup):
+    def __init__(self, __dynamic__: _BBModelGroup):
         """
         Dynamic initializer for BBModelGroup.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BBModelGroup__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BBModelGroup__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def uuid(self) -> 'UUID':
+        """public java.util.UUID dev.ultreon.quantum.client.model.blockbench.BBModelGroup.uuid()"""
+        return 'UUID'._wrap(super(BBModelGroup, self).uuid())
+
+    @overload
+    def element(self) -> 'BBModelElement':
+        """public dev.ultreon.quantum.client.model.blockbench.BBModelElement dev.ultreon.quantum.client.model.blockbench.BBModelGroup.element()"""
+        return 'BBModelElement'._wrap(super(BBModelGroup, self).element())
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBModelGroup.toString()"""
-        return str.__wrap(super(BBModelGroup, self).toString())
+    def parent(self) -> 'BBModelNode':
+        """public dev.ultreon.quantum.client.model.blockbench.BBModelNode dev.ultreon.quantum.client.model.blockbench.BBModelGroup.parent()"""
+        return 'BBModelNode'._wrap(super(BBModelGroup, self).parent())
 
     @overload
-    def children(self) -> 'List':
-        """public java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelOutlineInfo> dev.ultreon.quantum.client.model.blockbench.BBModelGroup.children()"""
-        return 'List'.__wrap(super(BBModelGroup, self).children())
+    def model(self) -> 'BBModelLoader':
+        """public dev.ultreon.quantum.client.model.blockbench.BBModelLoader dev.ultreon.quantum.client.model.blockbench.BBModelGroup.model()"""
+        return 'BBModelLoader'._wrap(super(BBModelGroup, self).model())
 
     @override
     @overload
@@ -1142,45 +1162,17 @@ class BBModelGroup():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
-    @overload
-    def autouv(self) -> int:
-        """public int dev.ultreon.quantum.client.model.blockbench.BBModelGroup.autouv()"""
-        return int.__wrap(super(BBModelGroup, self).autouv())
-
-    @overload
-    def export(self) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.blockbench.BBModelGroup.export()"""
-        return bool.__wrap(super(BBModelGroup, self).export())
-
     @override
     @overload
-    def rotationMatrix(self) -> 'math.Matrix4':
-        """public com.badlogic.gdx.math.Matrix4 dev.ultreon.quantum.client.model.blockbench.BBModelGroup.rotationMatrix()"""
-        return 'math.Matrix4'.__wrap(super(BBModelGroup, self).rotationMatrix())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
     def hashCode(self) -> int:
         """public int dev.ultreon.quantum.client.model.blockbench.BBModelGroup.hashCode()"""
-        return int.__wrap(super(BBModelGroup, self).hashCode())
-
-    @overload
-    def element(self) -> 'BBModelElement':
-        """public dev.ultreon.quantum.client.model.blockbench.BBModelElement dev.ultreon.quantum.client.model.blockbench.BBModelGroup.element()"""
-        return 'BBModelElement'.__wrap(super(BBModelGroup, self).element())
-
-    @overload
-    def __init__(self, arg0: 'BBModelLoader', arg1: str, arg2: 'Vec3f', arg3: 'RgbColor', arg4: 'UUID', arg5: bool, arg6: bool, arg7: bool, arg8: bool, arg9: int, arg10: 'List', arg11: 'Vec3f'):
-        """public dev.ultreon.quantum.client.model.blockbench.BBModelGroup(dev.ultreon.quantum.client.model.blockbench.BBModelLoader,java.lang.String,dev.ultreon.libs.commons.v0.vector.Vec3f,dev.ultreon.quantum.util.RgbColor,java.util.UUID,boolean,boolean,boolean,boolean,int,java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelOutlineInfo>,dev.ultreon.libs.commons.v0.vector.Vec3f)"""
-        val = __BBModelGroup(arg0, arg1, arg2, arg3, arg4, __boolean.valueOf(arg5), __boolean.valueOf(arg6), __boolean.valueOf(arg7), __boolean.valueOf(arg8), __int.valueOf(arg9), arg10, arg11)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @override
-    @overload
-    def parent(self) -> 'BBModelNode':
-        """public dev.ultreon.quantum.client.model.blockbench.BBModelNode dev.ultreon.quantum.client.model.blockbench.BBModelGroup.parent()"""
-        return 'BBModelNode'.__wrap(super(BBModelGroup, self).parent())
+        return int._wrap(super(BBModelGroup, self).hashCode())
 
     @override
     @overload
@@ -1190,149 +1182,165 @@ class BBModelGroup():
 
     @override
     @overload
-    def origin(self) -> 'vector.Vec3f':
-        """public dev.ultreon.libs.commons.v0.vector.Vec3f dev.ultreon.quantum.client.model.blockbench.BBModelGroup.origin()"""
-        return 'vector.Vec3f'.__wrap(super(BBModelGroup, self).origin())
-
-    @overload
-    def model(self) -> 'BBModelLoader':
-        """public dev.ultreon.quantum.client.model.blockbench.BBModelLoader dev.ultreon.quantum.client.model.blockbench.BBModelGroup.model()"""
-        return 'BBModelLoader'.__wrap(super(BBModelGroup, self).model())
-
-    @override
-    @overload
     def rotation(self) -> 'vector.Vec3f':
         """public dev.ultreon.libs.commons.v0.vector.Vec3f dev.ultreon.quantum.client.model.blockbench.BBModelGroup.rotation()"""
-        return 'vector.Vec3f'.__wrap(super(BBModelGroup, self).rotation())
-
-    @overload
-    def color(self) -> 'util.RgbColor':
-        """public dev.ultreon.quantum.util.RgbColor dev.ultreon.quantum.client.model.blockbench.BBModelGroup.color()"""
-        return 'util.RgbColor'.__wrap(super(BBModelGroup, self).color())
+        return 'vector.Vec3f'._wrap(super(BBModelGroup, self).rotation())
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean dev.ultreon.quantum.client.model.blockbench.BBModelGroup.equals(java.lang.Object)"""
-        return bool.__wrap(super(__BBModelGroup, self).equals(arg0))
+        return bool._wrap(super(_BBModelGroup, self).equals(arg0))
 
     @overload
-    def name(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBModelGroup.name()"""
-        return str.__wrap(super(BBModelGroup, self).name())
+    def color(self) -> 'util.RgbColor':
+        """public dev.ultreon.quantum.util.RgbColor dev.ultreon.quantum.client.model.blockbench.BBModelGroup.color()"""
+        return 'util.RgbColor'._wrap(super(BBModelGroup, self).color())
+
+    @override
+    @overload
+    def origin(self) -> 'vector.Vec3f':
+        """public dev.ultreon.libs.commons.v0.vector.Vec3f dev.ultreon.quantum.client.model.blockbench.BBModelGroup.origin()"""
+        return 'vector.Vec3f'._wrap(super(BBModelGroup, self).origin())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @overload
+    def __init__(self, arg0: 'BBModelLoader', arg1: str, arg2: 'Vec3f', arg3: 'RgbColor', arg4: 'UUID', arg5: bool, arg6: bool, arg7: bool, arg8: bool, arg9: int, arg10: 'List', arg11: 'Vec3f'):
+        """public dev.ultreon.quantum.client.model.blockbench.BBModelGroup(dev.ultreon.quantum.client.model.blockbench.BBModelLoader,java.lang.String,dev.ultreon.libs.commons.v0.vector.Vec3f,dev.ultreon.quantum.util.RgbColor,java.util.UUID,boolean,boolean,boolean,boolean,int,java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelOutlineInfo>,dev.ultreon.libs.commons.v0.vector.Vec3f)"""
+        val = _BBModelGroup(arg0, arg1, arg2, arg3, arg4, _boolean.valueOf(arg5), _boolean.valueOf(arg6), _boolean.valueOf(arg7), _boolean.valueOf(arg8), _int.valueOf(arg9), arg10, arg11)
+        self.__wrapper = val
+
+    @overload
+    def children(self) -> 'List':
+        """public java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelOutlineInfo> dev.ultreon.quantum.client.model.blockbench.BBModelGroup.children()"""
+        return 'List'._wrap(super(BBModelGroup, self).children())
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBModelGroup.toString()"""
+        return str._wrap(super(BBModelGroup, self).toString())
 
     @overload
     def mirrorUV(self) -> bool:
         """public boolean dev.ultreon.quantum.client.model.blockbench.BBModelGroup.mirrorUV()"""
-        return bool.__wrap(super(BBModelGroup, self).mirrorUV())
+        return bool._wrap(super(BBModelGroup, self).mirrorUV())
+
+    @overload
+    def autouv(self) -> int:
+        """public int dev.ultreon.quantum.client.model.blockbench.BBModelGroup.autouv()"""
+        return int._wrap(super(BBModelGroup, self).autouv())
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def rotationMatrix(self) -> 'math.Matrix4':
+        """public com.badlogic.gdx.math.Matrix4 dev.ultreon.quantum.client.model.blockbench.BBModelGroup.rotationMatrix()"""
+        return 'math.Matrix4'._wrap(super(BBModelGroup, self).rotationMatrix())
+
+    @overload
+    def export(self) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.blockbench.BBModelGroup.export()"""
+        return bool._wrap(super(BBModelGroup, self).export())
 
     @overload
     def visibility(self) -> bool:
         """public boolean dev.ultreon.quantum.client.model.blockbench.BBModelGroup.visibility()"""
-        return bool.__wrap(super(BBModelGroup, self).visibility())
+        return bool._wrap(super(BBModelGroup, self).visibility())
+
+    @overload
+    def name(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBModelGroup.name()"""
+        return str._wrap(super(BBModelGroup, self).name())
 
     @override
     @overload
     def getClass(self) -> 'type.Class':
         """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def uuid(self) -> 'UUID':
-        """public java.util.UUID dev.ultreon.quantum.client.model.blockbench.BBModelGroup.uuid()"""
-        return 'UUID'.__wrap(super(BBModelGroup, self).uuid())
-
-    @overload
-    def isOpen(self) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.blockbench.BBModelGroup.isOpen()"""
-        return bool.__wrap(super(BBModelGroup, self).isOpen())
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
     def wait(self):
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
-        super(object, self).wait() 
+        super(object, self).wait()
+
+    @overload
+    def isOpen(self) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.blockbench.BBModelGroup.isOpen()"""
+        return bool._wrap(super(BBModelGroup, self).isOpen()) 
  
  
 # CLASS: dev.ultreon.quantum.client.model.blockbench.BBModelElementReference
-import dev.ultreon.quantum.client.model.blockbench.BBModelElementReference as __BBModelElementReference
-__BBModelElementReference = __BBModelElementReference
 from builtins import str
 import java.util.UUID as UUID
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.util.UUID as __UUID
-__UUID = __UUID
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import java.lang.Integer as _int
+import dev.ultreon.quantum.client.model.blockbench.BBModelElementReference as _BBModelElementReference
+_BBModelElementReference = _BBModelElementReference
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.util.UUID as _UUID
+_UUID = _UUID
+import java.lang.Class as _Class
+_Class = _Class
  
 class BBModelElementReference():
     """dev.ultreon.quantum.client.model.blockbench.BBModelElementReference"""
  
     @staticmethod
-    def __wrap(java_value: __BBModelElementReference) -> 'BBModelElementReference':
+    def _wrap(java_value: _BBModelElementReference) -> 'BBModelElementReference':
         return BBModelElementReference(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BBModelElementReference):
+    def __init__(self, __dynamic__: _BBModelElementReference):
         """
         Dynamic initializer for BBModelElementReference.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BBModelElementReference__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BBModelElementReference__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def hashCode(self) -> int:
-        """public int dev.ultreon.quantum.client.model.blockbench.BBModelElementReference.hashCode()"""
-        return int.__wrap(super(BBModelElementReference, self).hashCode())
+    def toString(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBModelElementReference.toString()"""
+        return str._wrap(super(BBModelElementReference, self).toString())
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.blockbench.BBModelElementReference.equals(java.lang.Object)"""
-        return bool.__wrap(super(__BBModelElementReference, self).equals(arg0))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -1342,22 +1350,32 @@ class BBModelElementReference():
 
     @override
     @overload
-    def uuid(self) -> 'UUID':
-        """public java.util.UUID dev.ultreon.quantum.client.model.blockbench.BBModelElementReference.uuid()"""
-        return 'UUID'.__wrap(super(BBModelElementReference, self).uuid())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.blockbench.BBModelElementReference.equals(java.lang.Object)"""
+        return bool._wrap(super(_BBModelElementReference, self).equals(arg0))
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public int dev.ultreon.quantum.client.model.blockbench.BBModelElementReference.hashCode()"""
+        return int._wrap(super(BBModelElementReference, self).hashCode())
 
     @override
     @overload
     def notifyAll(self):
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
-
-    @overload
-    def __init__(self, arg0: 'UUID'):
-        """public dev.ultreon.quantum.client.model.blockbench.BBModelElementReference(java.util.UUID)"""
-        val = __BBModelElementReference(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
 
     @override
     @overload
@@ -1367,106 +1385,113 @@ class BBModelElementReference():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBModelElementReference.toString()"""
-        return str.__wrap(super(BBModelElementReference, self).toString())
+    def uuid(self) -> 'UUID':
+        """public java.util.UUID dev.ultreon.quantum.client.model.blockbench.BBModelElementReference.uuid()"""
+        return 'UUID'._wrap(super(BBModelElementReference, self).uuid())
 
-    @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0)) 
+    def __init__(self, arg0: 'UUID'):
+        """public dev.ultreon.quantum.client.model.blockbench.BBModelElementReference(java.util.UUID)"""
+        val = _BBModelElementReference(arg0)
+        self.__wrapper = val 
  
  
 # CLASS: dev.ultreon.quantum.client.model.blockbench.BBModelFormat
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.util.Optional as __Optional
-__Optional = __Optional
+import java.lang.String as _String
+_String = _String
 from typing import List
 import java.lang.Enum as Enum
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __string
-import java.lang.String as __String
-__String = __String
+import java.lang.String as _string
+import java.lang.Enum as _Enum
+_Enum = _Enum
+import java.lang.Integer as _int
+import dev.ultreon.quantum.client.model.blockbench.BBModelFormat as _BBModelFormat
+_BBModelFormat = _BBModelFormat
+import java.util.Optional as _Optional
+_Optional = _Optional
 import java.util.Optional as Optional
-import java.lang.Object as __Object
-__Object = __Object
-import dev.ultreon.quantum.client.model.blockbench.BBModelFormat as __BBModelFormat
-__BBModelFormat = __BBModelFormat
-import java.lang.Integer as __int
-import java.lang.Enum as __Enum
-__Enum = __Enum
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class BBModelFormat():
     """dev.ultreon.quantum.client.model.blockbench.BBModelFormat"""
  
     @staticmethod
-    def __wrap(java_value: __BBModelFormat) -> 'BBModelFormat':
+    def _wrap(java_value: _BBModelFormat) -> 'BBModelFormat':
         return BBModelFormat(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BBModelFormat):
+    def __init__(self, __dynamic__: _BBModelFormat):
         """
         Dynamic initializer for BBModelFormat.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BBModelFormat__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BBModelFormat__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    # public static final dev.ultreon.quantum.client.model.blockbench.BBModelFormat dev.ultreon.quantum.client.model.blockbench.BBModelFormat.FREE
-    FREE: 'BBModelFormat' = __wrap(__BBModelFormat.FREE)
-
-
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def hashCode(self) -> int:
+        """public final int java.lang.Enum.hashCode()"""
+        return int._wrap(super(Enum, self).hashCode())
 
     @staticmethod
     @overload
     def valueOf(arg0: 'Class', arg1: str) -> 'Enum':
         """public static <T extends java.lang.Enum<T>> T java.lang.Enum.valueOf(java.lang.Class<T>,java.lang.String)"""
-        return Enum.__wrap(__Enum.valueOf(arg0, arg1))
+        return Enum._wrap(_Enum.valueOf(arg0, arg1))
 
     @override
     @overload
     def name(self) -> str:
         """public final java.lang.String java.lang.Enum.name()"""
-        return str.__wrap(super(Enum, self).name())
+        return str._wrap(super(Enum, self).name())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public final int java.lang.Enum.hashCode()"""
-        return int.__wrap(super(Enum, self).hashCode())
+    def describeConstable(self) -> 'Optional':
+        """public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable()"""
+        return 'Optional'._wrap(super(Enum, self).describeConstable())
 
-    @staticmethod
+    @override
     @overload
-    def valueOf(arg0: str) -> 'BBModelFormat':
-        """public static dev.ultreon.quantum.client.model.blockbench.BBModelFormat dev.ultreon.quantum.client.model.blockbench.BBModelFormat.valueOf(java.lang.String)"""
-        return BBModelFormat.__wrap(__BBModelFormat.valueOf(arg0))
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Enum.toString()"""
+        return str._wrap(super(Enum, self).toString())
 
     @override
     @overload
@@ -1476,26 +1501,21 @@ class BBModelFormat():
 
     @override
     @overload
-    def describeConstable(self) -> 'Optional':
-        """public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable()"""
-        return 'Optional'.__wrap(super(Enum, self).describeConstable())
+    def ordinal(self) -> int:
+        """public final int java.lang.Enum.ordinal()"""
+        return int._wrap(super(Enum, self).ordinal())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def compareTo(self, arg0: 'Enum') -> int:
-        """public final int java.lang.Enum.compareTo(E)"""
-        return int.__wrap(super(__Enum, self).compareTo(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def getDeclaringClass(self) -> 'type.Class':
+        """public final java.lang.Class<E> java.lang.Enum.getDeclaringClass()"""
+        return 'type.Class'._wrap(super(Enum, self).getDeclaringClass())
 
     @override
     @overload
@@ -1506,19 +1526,30 @@ class BBModelFormat():
     @overload
     def equals(self, arg0: object) -> bool:
         """public final boolean java.lang.Enum.equals(java.lang.Object)"""
-        return bool.__wrap(super(__Enum, self).equals(arg0))
+        return bool._wrap(super(_Enum, self).equals(arg0))
+
+    @staticmethod
+    @overload
+    def valueOf(arg0: str) -> 'BBModelFormat':
+        """public static dev.ultreon.quantum.client.model.blockbench.BBModelFormat dev.ultreon.quantum.client.model.blockbench.BBModelFormat.valueOf(java.lang.String)"""
+        return BBModelFormat._wrap(_BBModelFormat.valueOf(arg0))
+
+    @staticmethod
+    @overload
+    def values() -> List['BBModelFormat']:
+        """public static dev.ultreon.quantum.client.model.blockbench.BBModelFormat[] dev.ultreon.quantum.client.model.blockbench.BBModelFormat.values()"""
+        return List[BBModelFormat]._wrap(_BBModelFormat.values())
 
     @override
     @overload
-    def getDeclaringClass(self) -> 'type.Class':
-        """public final java.lang.Class<E> java.lang.Enum.getDeclaringClass()"""
-        return 'type.Class'.__wrap(super(Enum, self).getDeclaringClass())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
-    @override
     @overload
-    def ordinal(self) -> int:
-        """public final int java.lang.Enum.ordinal()"""
-        return int.__wrap(super(Enum, self).ordinal())
+    def compareTo(self, arg0: 'Enum') -> int:
+        """public final int java.lang.Enum.compareTo(E)"""
+        return int._wrap(super(_Enum, self).compareTo(arg0))
 
     @override
     @overload
@@ -1526,131 +1557,117 @@ class BBModelFormat():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Enum.toString()"""
-        return str.__wrap(super(Enum, self).toString())
 
-    @staticmethod
-    @overload
-    def values() -> List['BBModelFormat']:
-        """public static dev.ultreon.quantum.client.model.blockbench.BBModelFormat[] dev.ultreon.quantum.client.model.blockbench.BBModelFormat.values()"""
-        return List[BBModelFormat].__wrap(__BBModelFormat.values()) 
+BBModelFormat.FREE = BBModelFormat._wrap(_FREE.FREE) 
  
  
 # CLASS: dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 import java.util.UUID as UUID
-import java.lang.Boolean as __boolean
+import java.lang.Object as _Object
+_Object = _Object
+import dev.ultreon.quantum.client.model.blockbench.BBModelNode as _BBModelNode
+_BBModelNode = _BBModelNode
 from builtins import type
-import dev.ultreon.quantum.client.model.blockbench.BBModelElement as __BBModelElement
-__BBModelElement = __BBModelElement
+import dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement as _BBCubeModelElement
+_BBCubeModelElement = _BBCubeModelElement
 try:
     from pycorelibs.commons.v0 import vector
 except ImportError:
-    vector = __import_once__("pycorelibs.commons.v0.vector")
+    vector = _import_once("pycorelibs.commons.v0.vector")
 
-import com.badlogic.gdx.graphics.g3d.model.Node as __Node
-__Node = __Node
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __string
-import dev.ultreon.quantum.client.model.blockbench.BBModelNode as __BBModelNode
-__BBModelNode = __BBModelNode
+import dev.ultreon.quantum.util.RgbColor as _RgbColor
+_RgbColor = _RgbColor
+import java.lang.String as _string
+import java.lang.Boolean as _boolean
+import com.badlogic.gdx.graphics.g3d.model.Node as _Node
+_Node = _Node
 try:
     from pygdx import math
 except ImportError:
-    math = __import_once__("pygdx.math")
+    math = _import_once("pygdx.math")
 
 from builtins import bool
-import dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement as __BBCubeModelElement
-__BBCubeModelElement = __BBCubeModelElement
 from builtins import str
-import dev.ultreon.quantum.util.RgbColor as __RgbColor
-__RgbColor = __RgbColor
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _object
 from builtins import float
-import dev.ultreon.libs.commons.v0.vector.Vec3f as __Vec3f
-__Vec3f = __Vec3f
+import com.badlogic.gdx.math.Matrix4 as _Matrix4
+_Matrix4 = _Matrix4
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.libs.commons.v0.vector.Vec3f as _Vec3f
+_Vec3f = _Vec3f
+import java.util.List as _List
+_List = _List
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import com.badlogic.gdx.math.Matrix4 as __Matrix4
-__Matrix4 = __Matrix4
-import java.util.List as __List
-__List = __List
-import java.lang.Long as __long
-import java.lang.Float as __float
-import java.lang.String as __String
-__String = __String
+import java.lang.Float as _float
+import dev.ultreon.quantum.client.model.blockbench.BBModelElement as _BBModelElement
+_BBModelElement = _BBModelElement
+import java.lang.Integer as _int
 try:
     from pygdx.graphics.g3d import model
 except ImportError:
-    model = __import_once__("pygdx.graphics.g3d.model")
+    model = _import_once("pygdx.graphics.g3d.model")
 
-import java.util.UUID as __UUID
-__UUID = __UUID
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
 import java.util.Map as Map
 try:
     from pygdx.graphics.g3d import utils
 except ImportError:
-    utils = __import_once__("pygdx.graphics.g3d.utils")
+    utils = _import_once("pygdx.graphics.g3d.utils")
 
+import java.lang.Long as _long
 from builtins import int
+import java.util.UUID as _UUID
+_UUID = _UUID
 import java.util.List as List
+import java.lang.Class as _Class
+_Class = _Class
  
 class BBCubeModelElement():
     """dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement"""
  
     @staticmethod
-    def __wrap(java_value: __BBCubeModelElement) -> 'BBCubeModelElement':
+    def _wrap(java_value: _BBCubeModelElement) -> 'BBCubeModelElement':
         return BBCubeModelElement(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BBCubeModelElement):
+    def __init__(self, __dynamic__: _BBCubeModelElement):
         """
         Dynamic initializer for BBCubeModelElement.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BBCubeModelElement__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BBCubeModelElement__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.equals(java.lang.Object)"""
-        return bool.__wrap(super(__BBCubeModelElement, self).equals(arg0))
-
-    @overload
-    def write(self, arg0: 'ModelBuilder', arg1: 'Map', arg2: 'Map', arg3: 'BBModelLoader', arg4: 'Vec2f') -> 'model.Node':
-        """public com.badlogic.gdx.graphics.g3d.model.Node dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.write(com.badlogic.gdx.graphics.g3d.utils.ModelBuilder,java.util.Map<java.util.UUID, com.badlogic.gdx.graphics.g3d.utils.ModelBuilder>,java.util.Map<java.lang.Integer, dev.ultreon.quantum.client.model.blockbench.BBTexture>,dev.ultreon.quantum.client.model.blockbench.BBModelLoader,dev.ultreon.libs.commons.v0.vector.Vec2f)"""
-        return 'model.Node'.__wrap(super(__BBCubeModelElement, self).write(arg0, arg1, arg2, arg3, arg4))
+    def locked(self) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.locked()"""
+        return bool._wrap(super(BBCubeModelElement, self).locked())
 
     @override
     @overload
@@ -1659,34 +1676,21 @@ class BBCubeModelElement():
         super(object, self).notifyAll()
 
     @overload
-    def __init__(self, arg0: str, arg1: bool, arg2: bool, arg3: bool, arg4: str, arg5: bool, arg6: 'Vec3f', arg7: 'Vec3f', arg8: float, arg9: 'RgbColor', arg10: 'Vec3f', arg11: 'List', arg12: 'UUID'):
-        """public dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement(java.lang.String,boolean,boolean,boolean,java.lang.String,boolean,dev.ultreon.libs.commons.v0.vector.Vec3f,dev.ultreon.libs.commons.v0.vector.Vec3f,float,dev.ultreon.quantum.util.RgbColor,dev.ultreon.libs.commons.v0.vector.Vec3f,java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelFace>,java.util.UUID)"""
-        val = __BBCubeModelElement(arg0, __boolean.valueOf(arg1), __boolean.valueOf(arg2), __boolean.valueOf(arg3), arg4, __boolean.valueOf(arg5), arg6, arg7, __float.valueOf(arg8), arg9, arg10, arg11, arg12)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @overload
-    def rescale(self) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.rescale()"""
-        return bool.__wrap(super(BBCubeModelElement, self).rescale())
+    def from(self) -> 'vector.Vec3f':
+        """public dev.ultreon.libs.commons.v0.vector.Vec3f dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.from()"""
+        return 'vector.Vec3f'._wrap(super(BBCubeModelElement, self).from())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public int dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.hashCode()"""
-        return int.__wrap(super(BBCubeModelElement, self).hashCode())
+    def toString(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.toString()"""
+        return str._wrap(super(BBCubeModelElement, self).toString())
 
     @override
     @overload
-    def color(self) -> 'util.RgbColor':
-        """public dev.ultreon.quantum.util.RgbColor dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.color()"""
-        return 'util.RgbColor'.__wrap(super(BBCubeModelElement, self).color())
-
-    @override
-    @overload
-    def locked(self) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.locked()"""
-        return bool.__wrap(super(BBCubeModelElement, self).locked())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -1694,96 +1698,111 @@ class BBCubeModelElement():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
+    @override
     @overload
-    def to(self) -> 'vector.Vec3f':
-        """public dev.ultreon.libs.commons.v0.vector.Vec3f dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.to()"""
-        return 'vector.Vec3f'.__wrap(super(BBCubeModelElement, self).to())
+    def hashCode(self) -> int:
+        """public int dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.hashCode()"""
+        return int._wrap(super(BBCubeModelElement, self).hashCode())
+
+    @overload
+    def bake(self, arg0: 'ModelBuilder', arg1: 'Map', arg2: 'Vec2f') -> 'model.Node':
+        """public com.badlogic.gdx.graphics.g3d.model.Node dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.bake(com.badlogic.gdx.graphics.g3d.utils.ModelBuilder,java.util.Map<java.lang.Integer, dev.ultreon.quantum.client.model.blockbench.BBTexture>,dev.ultreon.libs.commons.v0.vector.Vec2f)"""
+        return 'model.Node'._wrap(super(_BBCubeModelElement, self).bake(arg0, arg1, arg2))
+
+    @overload
+    def write(self, arg0: 'ModelBuilder', arg1: 'Map', arg2: 'Map', arg3: 'BBModelLoader', arg4: 'Vec2f') -> 'model.Node':
+        """public com.badlogic.gdx.graphics.g3d.model.Node dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.write(com.badlogic.gdx.graphics.g3d.utils.ModelBuilder,java.util.Map<java.util.UUID, com.badlogic.gdx.graphics.g3d.utils.ModelBuilder>,java.util.Map<java.lang.Integer, dev.ultreon.quantum.client.model.blockbench.BBTexture>,dev.ultreon.quantum.client.model.blockbench.BBModelLoader,dev.ultreon.libs.commons.v0.vector.Vec2f)"""
+        return 'model.Node'._wrap(super(_BBCubeModelElement, self).write(arg0, arg1, arg2, arg3, arg4))
 
     @override
     @overload
     def rotation(self) -> 'vector.Vec3f':
         """public dev.ultreon.libs.commons.v0.vector.Vec3f dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.rotation()"""
-        return 'vector.Vec3f'.__wrap(super(BBCubeModelElement, self).rotation())
-
-    @overload
-    def boxUv(self) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.boxUv()"""
-        return bool.__wrap(super(BBCubeModelElement, self).boxUv())
+        return 'vector.Vec3f'._wrap(super(BBCubeModelElement, self).rotation())
 
     @override
     @overload
-    def rotationMatrix(self) -> 'math.Matrix4':
-        """public com.badlogic.gdx.math.Matrix4 dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.rotationMatrix()"""
-        return 'math.Matrix4'.__wrap(super(BBCubeModelElement, self).rotationMatrix())
+    def color(self) -> 'util.RgbColor':
+        """public dev.ultreon.quantum.util.RgbColor dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.color()"""
+        return 'util.RgbColor'._wrap(super(BBCubeModelElement, self).color())
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.equals(java.lang.Object)"""
+        return bool._wrap(super(_BBCubeModelElement, self).equals(arg0))
+
+    @overload
+    def faces(self) -> 'List':
+        """public java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelFace> dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.faces()"""
+        return 'List'._wrap(super(BBCubeModelElement, self).faces())
+
+    @overload
+    def rescale(self) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.rescale()"""
+        return bool._wrap(super(BBCubeModelElement, self).rescale())
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.toString()"""
-        return str.__wrap(super(BBCubeModelElement, self).toString())
-
-    @overload
-    def autouv(self) -> float:
-        """public float dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.autouv()"""
-        return float.__wrap(super(BBCubeModelElement, self).autouv())
-
-    @override
-    @overload
-    def name(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.name()"""
-        return str.__wrap(super(BBCubeModelElement, self).name())
-
-    @overload
-    def bake(self, arg0: 'ModelBuilder', arg1: 'Map', arg2: 'Vec2f') -> 'model.Node':
-        """public com.badlogic.gdx.graphics.g3d.model.Node dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.bake(com.badlogic.gdx.graphics.g3d.utils.ModelBuilder,java.util.Map<java.lang.Integer, dev.ultreon.quantum.client.model.blockbench.BBTexture>,dev.ultreon.libs.commons.v0.vector.Vec2f)"""
-        return 'model.Node'.__wrap(super(__BBCubeModelElement, self).bake(arg0, arg1, arg2))
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
     def parent(self) -> 'BBModelNode':
         """public dev.ultreon.quantum.client.model.blockbench.BBModelNode dev.ultreon.quantum.client.model.blockbench.BBModelElement.parent()"""
-        return 'BBModelNode'.__wrap(super(BBModelElement, self).parent())
+        return 'BBModelNode'._wrap(super(BBModelElement, self).parent())
+
+    @overload
+    def __init__(self, arg0: str, arg1: bool, arg2: bool, arg3: bool, arg4: str, arg5: bool, arg6: 'Vec3f', arg7: 'Vec3f', arg8: float, arg9: 'RgbColor', arg10: 'Vec3f', arg11: 'List', arg12: 'UUID'):
+        """public dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement(java.lang.String,boolean,boolean,boolean,java.lang.String,boolean,dev.ultreon.libs.commons.v0.vector.Vec3f,dev.ultreon.libs.commons.v0.vector.Vec3f,float,dev.ultreon.quantum.util.RgbColor,dev.ultreon.libs.commons.v0.vector.Vec3f,java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelFace>,java.util.UUID)"""
+        val = _BBCubeModelElement(arg0, _boolean.valueOf(arg1), _boolean.valueOf(arg2), _boolean.valueOf(arg3), arg4, _boolean.valueOf(arg5), arg6, arg7, _float.valueOf(arg8), arg9, arg10, arg11, arg12)
+        self.__wrapper = val
+
+    @override
+    @overload
+    def renderOrder(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.renderOrder()"""
+        return str._wrap(super(BBCubeModelElement, self).renderOrder())
+
+    @override
+    @overload
+    def rotationMatrix(self) -> 'math.Matrix4':
+        """public com.badlogic.gdx.math.Matrix4 dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.rotationMatrix()"""
+        return 'math.Matrix4'._wrap(super(BBCubeModelElement, self).rotationMatrix())
+
+    @overload
+    def autouv(self) -> float:
+        """public float dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.autouv()"""
+        return float._wrap(super(BBCubeModelElement, self).autouv())
 
     @override
     @overload
     def getClass(self) -> 'type.Class':
         """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @overload
-    def faces(self) -> 'List':
-        """public java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelFace> dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.faces()"""
-        return 'List'.__wrap(super(BBCubeModelElement, self).faces())
-
-    @overload
-    def from(self) -> 'vector.Vec3f':
-        """public dev.ultreon.libs.commons.v0.vector.Vec3f dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.from()"""
-        return 'vector.Vec3f'.__wrap(super(BBCubeModelElement, self).from())
-
-    @overload
-    def __init__(self, arg0: str, arg1: bool, arg2: bool, arg3: bool, arg4: str, arg5: bool, arg6: 'Vec3f', arg7: 'Vec3f', arg8: float, arg9: 'RgbColor', arg10: 'Vec3f', arg11: 'List', arg12: 'UUID', arg13: 'Vec3f'):
-        """public dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement(java.lang.String,boolean,boolean,boolean,java.lang.String,boolean,dev.ultreon.libs.commons.v0.vector.Vec3f,dev.ultreon.libs.commons.v0.vector.Vec3f,float,dev.ultreon.quantum.util.RgbColor,dev.ultreon.libs.commons.v0.vector.Vec3f,java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelFace>,java.util.UUID,dev.ultreon.libs.commons.v0.vector.Vec3f)"""
-        val = __BBCubeModelElement(arg0, __boolean.valueOf(arg1), __boolean.valueOf(arg2), __boolean.valueOf(arg3), arg4, __boolean.valueOf(arg5), arg6, arg7, __float.valueOf(arg8), arg9, arg10, arg11, arg12, arg13)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
-    def origin(self) -> 'vector.Vec3f':
-        """public dev.ultreon.libs.commons.v0.vector.Vec3f dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.origin()"""
-        return 'vector.Vec3f'.__wrap(super(BBCubeModelElement, self).origin())
+    def allowMirrorModeling(self) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.allowMirrorModeling()"""
+        return bool._wrap(super(BBCubeModelElement, self).allowMirrorModeling())
 
     @override
     @overload
-    def uuid(self) -> 'UUID':
-        """public java.util.UUID dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.uuid()"""
-        return 'UUID'.__wrap(super(BBCubeModelElement, self).uuid())
+    def name(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.name()"""
+        return str._wrap(super(BBCubeModelElement, self).name())
+
+    @overload
+    def to(self) -> 'vector.Vec3f':
+        """public dev.ultreon.libs.commons.v0.vector.Vec3f dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.to()"""
+        return 'vector.Vec3f'._wrap(super(BBCubeModelElement, self).to())
+
+    @overload
+    def boxUv(self) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.boxUv()"""
+        return bool._wrap(super(BBCubeModelElement, self).boxUv())
 
     @override
     @overload
@@ -1793,65 +1812,76 @@ class BBCubeModelElement():
 
     @override
     @overload
-    def allowMirrorModeling(self) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.allowMirrorModeling()"""
-        return bool.__wrap(super(BBCubeModelElement, self).allowMirrorModeling())
+    def origin(self) -> 'vector.Vec3f':
+        """public dev.ultreon.libs.commons.v0.vector.Vec3f dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.origin()"""
+        return 'vector.Vec3f'._wrap(super(BBCubeModelElement, self).origin())
+
+    @overload
+    def __init__(self, arg0: str, arg1: bool, arg2: bool, arg3: bool, arg4: str, arg5: bool, arg6: 'Vec3f', arg7: 'Vec3f', arg8: float, arg9: 'RgbColor', arg10: 'Vec3f', arg11: 'List', arg12: 'UUID', arg13: 'Vec3f'):
+        """public dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement(java.lang.String,boolean,boolean,boolean,java.lang.String,boolean,dev.ultreon.libs.commons.v0.vector.Vec3f,dev.ultreon.libs.commons.v0.vector.Vec3f,float,dev.ultreon.quantum.util.RgbColor,dev.ultreon.libs.commons.v0.vector.Vec3f,java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelFace>,java.util.UUID,dev.ultreon.libs.commons.v0.vector.Vec3f)"""
+        val = _BBCubeModelElement(arg0, _boolean.valueOf(arg1), _boolean.valueOf(arg2), _boolean.valueOf(arg3), arg4, _boolean.valueOf(arg5), arg6, arg7, _float.valueOf(arg8), arg9, arg10, arg11, arg12, arg13)
+        self.__wrapper = val
 
     @override
     @overload
-    def renderOrder(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.renderOrder()"""
-        return str.__wrap(super(BBCubeModelElement, self).renderOrder()) 
+    def uuid(self) -> 'UUID':
+        """public java.util.UUID dev.ultreon.quantum.client.model.blockbench.BBCubeModelElement.uuid()"""
+        return 'UUID'._wrap(super(BBCubeModelElement, self).uuid()) 
  
  
 # CLASS: dev.ultreon.quantum.client.model.blockbench.BBMeta
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Boolean as __boolean
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.client.model.blockbench.BBMeta as __BBMeta
-__BBMeta = __BBMeta
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.String as __string
-import java.lang.Object as __Object
-__Object = __Object
-import dev.ultreon.quantum.client.model.blockbench.BBModelFormat as __BBModelFormat
-__BBModelFormat = __BBModelFormat
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import java.lang.String as _string
+import java.lang.Boolean as _boolean
+import java.lang.Integer as _int
+import dev.ultreon.quantum.client.model.blockbench.BBModelFormat as _BBModelFormat
+_BBModelFormat = _BBModelFormat
+import dev.ultreon.quantum.client.model.blockbench.BBMeta as _BBMeta
+_BBMeta = _BBMeta
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class BBMeta():
     """dev.ultreon.quantum.client.model.blockbench.BBMeta"""
  
     @staticmethod
-    def __wrap(java_value: __BBMeta) -> 'BBMeta':
+    def _wrap(java_value: _BBMeta) -> 'BBMeta':
         return BBMeta(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BBMeta):
+    def __init__(self, __dynamic__: _BBMeta):
         """
         Dynamic initializer for BBMeta.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BBMeta__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BBMeta__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -1860,28 +1890,12 @@ class BBMeta():
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.blockbench.BBMeta.equals(java.lang.Object)"""
-        return bool.__wrap(super(__BBMeta, self).equals(arg0))
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public int dev.ultreon.quantum.client.model.blockbench.BBMeta.hashCode()"""
-        return int.__wrap(super(BBMeta, self).hashCode())
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @overload
     def boxUv(self) -> bool:
         """public boolean dev.ultreon.quantum.client.model.blockbench.BBMeta.boxUv()"""
-        return bool.__wrap(super(BBMeta, self).boxUv())
-
-    @overload
-    def modelFormat(self) -> 'BBModelFormat':
-        """public dev.ultreon.quantum.client.model.blockbench.BBModelFormat dev.ultreon.quantum.client.model.blockbench.BBMeta.modelFormat()"""
-        return 'BBModelFormat'.__wrap(super(BBMeta, self).modelFormat())
+        return bool._wrap(super(BBMeta, self).boxUv())
 
     @override
     @overload
@@ -1889,24 +1903,22 @@ class BBMeta():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
-    @overload
-    def __init__(self, arg0: str, arg1: 'BBModelFormat', arg2: bool):
-        """public dev.ultreon.quantum.client.model.blockbench.BBMeta(java.lang.String,dev.ultreon.quantum.client.model.blockbench.BBModelFormat,boolean)"""
-        val = __BBMeta(arg0, arg1, __boolean.valueOf(arg2))
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @overload
+    def modelFormat(self) -> 'BBModelFormat':
+        """public dev.ultreon.quantum.client.model.blockbench.BBModelFormat dev.ultreon.quantum.client.model.blockbench.BBMeta.modelFormat()"""
+        return 'BBModelFormat'._wrap(super(BBMeta, self).modelFormat())
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def hashCode(self) -> int:
+        """public int dev.ultreon.quantum.client.model.blockbench.BBMeta.hashCode()"""
+        return int._wrap(super(BBMeta, self).hashCode())
 
     @override
     @overload
@@ -1916,14 +1928,325 @@ class BBMeta():
 
     @override
     @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
     def toString(self) -> str:
         """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBMeta.toString()"""
-        return str.__wrap(super(BBMeta, self).toString())
+        return str._wrap(super(BBMeta, self).toString())
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.blockbench.BBMeta.equals(java.lang.Object)"""
+        return bool._wrap(super(_BBMeta, self).equals(arg0))
+
+    @override
+    @overload
+    def wait(self):
+        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
+        super(object, self).wait()
 
     @overload
     def formatVersion(self) -> str:
         """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBMeta.formatVersion()"""
-        return str.__wrap(super(BBMeta, self).formatVersion())
+        return str._wrap(super(BBMeta, self).formatVersion())
+
+    @overload
+    def __init__(self, arg0: str, arg1: 'BBModelFormat', arg2: bool):
+        """public dev.ultreon.quantum.client.model.blockbench.BBMeta(java.lang.String,dev.ultreon.quantum.client.model.blockbench.BBModelFormat,boolean)"""
+        val = _BBMeta(arg0, arg1, _boolean.valueOf(arg2))
+        self.__wrapper = val 
+ 
+ 
+# CLASS: dev.ultreon.quantum.client.model.blockbench.BBModelOutline
+import dev.ultreon.quantum.client.model.blockbench.BBModelOutline as _BBModelOutline
+_BBModelOutline = _BBModelOutline
+ 
+class BBModelOutline():
+    """dev.ultreon.quantum.client.model.blockbench.BBModelOutline"""
+ 
+    @staticmethod
+    def _wrap(java_value: _BBModelOutline) -> 'BBModelOutline':
+        return BBModelOutline(__dynamic__=java_value)
+ 
+    #
+    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+    #
+    @overload
+    def __init__(self, __dynamic__: _BBModelOutline):
+        """
+        Dynamic initializer for BBModelOutline.
+        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+ 
+        :param __dynamic__: The java object to wrap
+        """
+        self.__wrapper = __dynamic__
+ 
+    def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BBModelOutline__wrapper":
+            return object.__getattr__(self, name)
+        return getattr(self.__wrapper, name)
+ 
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BBModelOutline__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
+ 
+    def __delattr__(self, name: str):
+        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__)) 
+ 
+ 
+# CLASS: dev.ultreon.quantum.client.model.blockbench.BBTexture
+from pyquantum_helper import import_once as _import_once
+from builtins import str
+import java.net.URI as _URI
+_URI = _URI
+import java.util.UUID as UUID
+from pyquantum_helper import override
+import java.net.URI as URI
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
+import com.badlogic.gdx.graphics.Texture as _Texture
+_Texture = _Texture
+from builtins import type
+import java.lang.String as _String
+_String = _String
+import java.lang.String as _string
+import java.lang.Boolean as _boolean
+import java.lang.Integer as _int
+import dev.ultreon.quantum.client.model.blockbench.BBTexture as _BBTexture
+_BBTexture = _BBTexture
+from builtins import bool
+try:
+    from pygdx import graphics
+except ImportError:
+    graphics = _import_once("pygdx.graphics")
+
+import java.lang.Long as _long
+from builtins import int
+import java.util.UUID as _UUID
+_UUID = _UUID
+import java.lang.Class as _Class
+_Class = _Class
+ 
+class BBTexture():
+    """dev.ultreon.quantum.client.model.blockbench.BBTexture"""
+ 
+    @staticmethod
+    def _wrap(java_value: _BBTexture) -> 'BBTexture':
+        return BBTexture(__dynamic__=java_value)
+ 
+    #
+    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+    #
+    @overload
+    def __init__(self, __dynamic__: _BBTexture):
+        """
+        Dynamic initializer for BBTexture.
+        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+ 
+        :param __dynamic__: The java object to wrap
+        """
+        self.__wrapper = __dynamic__
+ 
+    def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BBTexture__wrapper":
+            return object.__getattr__(self, name)
+        return getattr(self.__wrapper, name)
+ 
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BBTexture__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
+ 
+    def __delattr__(self, name: str):
+        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
+ 
+    @overload
+    def path(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBTexture.path()"""
+        return str._wrap(super(BBTexture, self).path())
+
+    @overload
+    def data(self) -> 'URI':
+        """public java.net.URI dev.ultreon.quantum.client.model.blockbench.BBTexture.data()"""
+        return 'URI'._wrap(super(BBTexture, self).data())
+
+    @overload
+    def uvWidth(self) -> int:
+        """public int dev.ultreon.quantum.client.model.blockbench.BBTexture.uvWidth()"""
+        return int._wrap(super(BBTexture, self).uvWidth())
+
+    @overload
+    def particle(self) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.blockbench.BBTexture.particle()"""
+        return bool._wrap(super(BBTexture, self).particle())
+
+    @overload
+    def height(self) -> int:
+        """public int dev.ultreon.quantum.client.model.blockbench.BBTexture.height()"""
+        return int._wrap(super(BBTexture, self).height())
+
+    @overload
+    def uuid(self) -> 'UUID':
+        """public java.util.UUID dev.ultreon.quantum.client.model.blockbench.BBTexture.uuid()"""
+        return 'UUID'._wrap(super(BBTexture, self).uuid())
+
+    @overload
+    def syncToProject(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBTexture.syncToProject()"""
+        return str._wrap(super(BBTexture, self).syncToProject())
+
+    @override
+    @overload
+    def notifyAll(self):
+        """public final native void java.lang.Object.notifyAll()"""
+        super(object, self).notifyAll()
+
+    @overload
+    def saved(self) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.blockbench.BBTexture.saved()"""
+        return bool._wrap(super(BBTexture, self).saved())
+
+    @overload
+    def id(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBTexture.id()"""
+        return str._wrap(super(BBTexture, self).id())
+
+    @overload
+    def namespace(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBTexture.namespace()"""
+        return str._wrap(super(BBTexture, self).namespace())
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBTexture.toString()"""
+        return str._wrap(super(BBTexture, self).toString())
+
+    @overload
+    def loadOrGetTexture(self) -> 'graphics.Texture':
+        """public com.badlogic.gdx.graphics.Texture dev.ultreon.quantum.client.model.blockbench.BBTexture.loadOrGetTexture() throws java.io.IOException"""
+        return 'graphics.Texture'._wrap(super(BBTexture, self).loadOrGetTexture())
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @overload
+    def renderSides(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBTexture.renderSides()"""
+        return str._wrap(super(BBTexture, self).renderSides())
+
+    @override
+    @overload
+    def notify(self):
+        """public final native void java.lang.Object.notify()"""
+        super(object, self).notify()
+
+    @overload
+    def folder(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBTexture.folder()"""
+        return str._wrap(super(BBTexture, self).folder())
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public int dev.ultreon.quantum.client.model.blockbench.BBTexture.hashCode()"""
+        return int._wrap(super(BBTexture, self).hashCode())
+
+    @overload
+    def uvHeight(self) -> int:
+        """public int dev.ultreon.quantum.client.model.blockbench.BBTexture.uvHeight()"""
+        return int._wrap(super(BBTexture, self).uvHeight())
+
+    @overload
+    def width(self) -> int:
+        """public int dev.ultreon.quantum.client.model.blockbench.BBTexture.width()"""
+        return int._wrap(super(BBTexture, self).width())
+
+    @overload
+    def __init__(self, arg0: str, arg1: str, arg2: str, arg3: str, arg4: str, arg5: int, arg6: int, arg7: int, arg8: int, arg9: bool, arg10: bool, arg11: str, arg12: str, arg13: str, arg14: int, arg15: str, arg16: str, arg17: bool, arg18: bool, arg19: bool, arg20: bool, arg21: 'UUID', arg22: str, arg23: 'URI'):
+        """public dev.ultreon.quantum.client.model.blockbench.BBTexture(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,int,int,int,boolean,boolean,java.lang.String,java.lang.String,java.lang.String,int,java.lang.String,java.lang.String,boolean,boolean,boolean,boolean,java.util.UUID,java.lang.String,java.net.URI)"""
+        val = _BBTexture(arg0, arg1, arg2, arg3, arg4, _int.valueOf(arg5), _int.valueOf(arg6), _int.valueOf(arg7), _int.valueOf(arg8), _boolean.valueOf(arg9), _boolean.valueOf(arg10), arg11, arg12, arg13, _int.valueOf(arg14), arg15, arg16, _boolean.valueOf(arg17), _boolean.valueOf(arg18), _boolean.valueOf(arg19), _boolean.valueOf(arg20), arg21, arg22, arg23)
+        self.__wrapper = val
+
+    @overload
+    def internal(self) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.blockbench.BBTexture.internal()"""
+        return bool._wrap(super(BBTexture, self).internal())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @overload
+    def name(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBTexture.name()"""
+        return str._wrap(super(BBTexture, self).name())
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.blockbench.BBTexture.equals(java.lang.Object)"""
+        return bool._wrap(super(_BBTexture, self).equals(arg0))
+
+    @overload
+    def visible(self) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.blockbench.BBTexture.visible()"""
+        return bool._wrap(super(BBTexture, self).visible())
+
+    @overload
+    def frameTime(self) -> int:
+        """public int dev.ultreon.quantum.client.model.blockbench.BBTexture.frameTime()"""
+        return int._wrap(super(BBTexture, self).frameTime())
+
+    @overload
+    def renderMode(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBTexture.renderMode()"""
+        return str._wrap(super(BBTexture, self).renderMode())
+
+    @overload
+    def frameOrderType(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBTexture.frameOrderType()"""
+        return str._wrap(super(BBTexture, self).frameOrderType())
+
+    @overload
+    def relativePath(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBTexture.relativePath()"""
+        return str._wrap(super(BBTexture, self).relativePath())
+
+    @overload
+    def frameOrder(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBTexture.frameOrder()"""
+        return str._wrap(super(BBTexture, self).frameOrder())
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @overload
+    def frameInterpolate(self) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.blockbench.BBTexture.frameInterpolate()"""
+        return bool._wrap(super(BBTexture, self).frameInterpolate())
+
+    @overload
+    def layersEnabled(self) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.blockbench.BBTexture.layersEnabled()"""
+        return bool._wrap(super(BBTexture, self).layersEnabled())
 
     @override
     @overload
@@ -1932,379 +2255,88 @@ class BBMeta():
         super(object, self).wait() 
  
  
-# CLASS: dev.ultreon.quantum.client.model.blockbench.BBModelOutline
-import dev.ultreon.quantum.client.model.blockbench.BBModelOutline as __BBModelOutline
-__BBModelOutline = __BBModelOutline
- 
-class BBModelOutline(ABC):
-    """dev.ultreon.quantum.client.model.blockbench.BBModelOutline"""
- 
-    @staticmethod
-    def __wrap(java_value: __BBModelOutline) -> 'BBModelOutline':
-        return BBModelOutline(__dynamic__=java_value)
- 
-    #
-    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
-    #
-    @overload
-    def __init__(self, __dynamic__: __BBModelOutline):
-        """
-        Dynamic initializer for BBModelOutline.
-        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
- 
-        :param __dynamic__: The java object to wrap
-        """
-        self.__dict__ = __dynamic__.__dict__
-        self.__wrapper = __dynamic__
- 
-    def __getattr__(self, name: str):
-        return getattr(self.__wrapper, name)
- 
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
- 
-    def __delattr__(self, name: str):
-        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__)) 
- 
- 
-# CLASS: dev.ultreon.quantum.client.model.blockbench.BBTexture
-from pyquantum_helper import import_once as __import_once__
-from builtins import str
-import java.util.UUID as UUID
-from pyquantum_helper import override
-import java.net.URI as URI
-import java.lang.Boolean as __boolean
-import java.lang.Object as __object
-from builtins import type
-import java.net.URI as __URI
-__URI = __URI
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.util.UUID as __UUID
-__UUID = __UUID
-import java.lang.String as __string
-import java.lang.Object as __Object
-__Object = __Object
-import dev.ultreon.quantum.client.model.blockbench.BBTexture as __BBTexture
-__BBTexture = __BBTexture
-import com.badlogic.gdx.graphics.Texture as __Texture
-__Texture = __Texture
-import java.lang.Integer as __int
-from builtins import bool
-try:
-    from pygdx import graphics
-except ImportError:
-    graphics = __import_once__("pygdx.graphics")
-
-from builtins import int
- 
-class BBTexture():
-    """dev.ultreon.quantum.client.model.blockbench.BBTexture"""
- 
-    @staticmethod
-    def __wrap(java_value: __BBTexture) -> 'BBTexture':
-        return BBTexture(__dynamic__=java_value)
- 
-    #
-    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
-    #
-    @overload
-    def __init__(self, __dynamic__: __BBTexture):
-        """
-        Dynamic initializer for BBTexture.
-        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
- 
-        :param __dynamic__: The java object to wrap
-        """
-        self.__dict__ = __dynamic__.__dict__
-        self.__wrapper = __dynamic__
- 
-    def __getattr__(self, name: str):
-        return getattr(self.__wrapper, name)
- 
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
- 
-    def __delattr__(self, name: str):
-        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
- 
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def uuid(self) -> 'UUID':
-        """public java.util.UUID dev.ultreon.quantum.client.model.blockbench.BBTexture.uuid()"""
-        return 'UUID'.__wrap(super(BBTexture, self).uuid())
-
-    @overload
-    def folder(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBTexture.folder()"""
-        return str.__wrap(super(BBTexture, self).folder())
-
-    @overload
-    def __init__(self, arg0: str, arg1: str, arg2: str, arg3: str, arg4: str, arg5: int, arg6: int, arg7: int, arg8: int, arg9: bool, arg10: bool, arg11: str, arg12: str, arg13: str, arg14: int, arg15: str, arg16: str, arg17: bool, arg18: bool, arg19: bool, arg20: bool, arg21: 'UUID', arg22: str, arg23: 'URI'):
-        """public dev.ultreon.quantum.client.model.blockbench.BBTexture(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,int,int,int,boolean,boolean,java.lang.String,java.lang.String,java.lang.String,int,java.lang.String,java.lang.String,boolean,boolean,boolean,boolean,java.util.UUID,java.lang.String,java.net.URI)"""
-        val = __BBTexture(arg0, arg1, arg2, arg3, arg4, __int.valueOf(arg5), __int.valueOf(arg6), __int.valueOf(arg7), __int.valueOf(arg8), __boolean.valueOf(arg9), __boolean.valueOf(arg10), arg11, arg12, arg13, __int.valueOf(arg14), arg15, arg16, __boolean.valueOf(arg17), __boolean.valueOf(arg18), __boolean.valueOf(arg19), __boolean.valueOf(arg20), arg21, arg22, arg23)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @overload
-    def uvWidth(self) -> int:
-        """public int dev.ultreon.quantum.client.model.blockbench.BBTexture.uvWidth()"""
-        return int.__wrap(super(BBTexture, self).uvWidth())
-
-    @override
-    @overload
-    def notifyAll(self):
-        """public final native void java.lang.Object.notifyAll()"""
-        super(object, self).notifyAll()
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBTexture.toString()"""
-        return str.__wrap(super(BBTexture, self).toString())
-
-    @overload
-    def saved(self) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.blockbench.BBTexture.saved()"""
-        return bool.__wrap(super(BBTexture, self).saved())
-
-    @overload
-    def renderSides(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBTexture.renderSides()"""
-        return str.__wrap(super(BBTexture, self).renderSides())
-
-    @override
-    @overload
-    def notify(self):
-        """public final native void java.lang.Object.notify()"""
-        super(object, self).notify()
-
-    @overload
-    def width(self) -> int:
-        """public int dev.ultreon.quantum.client.model.blockbench.BBTexture.width()"""
-        return int.__wrap(super(BBTexture, self).width())
-
-    @overload
-    def internal(self) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.blockbench.BBTexture.internal()"""
-        return bool.__wrap(super(BBTexture, self).internal())
-
-    @overload
-    def name(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBTexture.name()"""
-        return str.__wrap(super(BBTexture, self).name())
-
-    @overload
-    def frameOrder(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBTexture.frameOrder()"""
-        return str.__wrap(super(BBTexture, self).frameOrder())
-
-    @overload
-    def frameInterpolate(self) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.blockbench.BBTexture.frameInterpolate()"""
-        return bool.__wrap(super(BBTexture, self).frameInterpolate())
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.blockbench.BBTexture.equals(java.lang.Object)"""
-        return bool.__wrap(super(__BBTexture, self).equals(arg0))
-
-    @overload
-    def syncToProject(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBTexture.syncToProject()"""
-        return str.__wrap(super(BBTexture, self).syncToProject())
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public int dev.ultreon.quantum.client.model.blockbench.BBTexture.hashCode()"""
-        return int.__wrap(super(BBTexture, self).hashCode())
-
-    @overload
-    def height(self) -> int:
-        """public int dev.ultreon.quantum.client.model.blockbench.BBTexture.height()"""
-        return int.__wrap(super(BBTexture, self).height())
-
-    @overload
-    def particle(self) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.blockbench.BBTexture.particle()"""
-        return bool.__wrap(super(BBTexture, self).particle())
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def path(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBTexture.path()"""
-        return str.__wrap(super(BBTexture, self).path())
-
-    @overload
-    def layersEnabled(self) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.blockbench.BBTexture.layersEnabled()"""
-        return bool.__wrap(super(BBTexture, self).layersEnabled())
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @overload
-    def visible(self) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.blockbench.BBTexture.visible()"""
-        return bool.__wrap(super(BBTexture, self).visible())
-
-    @overload
-    def frameTime(self) -> int:
-        """public int dev.ultreon.quantum.client.model.blockbench.BBTexture.frameTime()"""
-        return int.__wrap(super(BBTexture, self).frameTime())
-
-    @overload
-    def id(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBTexture.id()"""
-        return str.__wrap(super(BBTexture, self).id())
-
-    @overload
-    def renderMode(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBTexture.renderMode()"""
-        return str.__wrap(super(BBTexture, self).renderMode())
-
-    @overload
-    def namespace(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBTexture.namespace()"""
-        return str.__wrap(super(BBTexture, self).namespace())
-
-    @override
-    @overload
-    def wait(self):
-        """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
-        super(object, self).wait()
-
-    @overload
-    def data(self) -> 'URI':
-        """public java.net.URI dev.ultreon.quantum.client.model.blockbench.BBTexture.data()"""
-        return 'URI'.__wrap(super(BBTexture, self).data())
-
-    @overload
-    def frameOrderType(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBTexture.frameOrderType()"""
-        return str.__wrap(super(BBTexture, self).frameOrderType())
-
-    @overload
-    def relativePath(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBTexture.relativePath()"""
-        return str.__wrap(super(BBTexture, self).relativePath())
-
-    @overload
-    def loadOrGetTexture(self) -> 'graphics.Texture':
-        """public com.badlogic.gdx.graphics.Texture dev.ultreon.quantum.client.model.blockbench.BBTexture.loadOrGetTexture() throws java.io.IOException"""
-        return 'graphics.Texture'.__wrap(super(BBTexture, self).loadOrGetTexture())
-
-    @overload
-    def uvHeight(self) -> int:
-        """public int dev.ultreon.quantum.client.model.blockbench.BBTexture.uvHeight()"""
-        return int.__wrap(super(BBTexture, self).uvHeight()) 
- 
- 
 # CLASS: dev.ultreon.quantum.client.model.blockbench.BBModelVertex
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.libs.commons.v0.vector.Vec3f as __Vec3f
-__Vec3f = __Vec3f
+import dev.ultreon.quantum.client.model.blockbench.BBModelVertex as _BBModelVertex
+_BBModelVertex = _BBModelVertex
+import java.lang.String as _String
+_String = _String
 try:
     from pycorelibs.commons.v0 import vector
 except ImportError:
-    vector = __import_once__("pycorelibs.commons.v0.vector")
+    vector = _import_once("pycorelibs.commons.v0.vector")
 
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import dev.ultreon.quantum.client.model.blockbench.BBModelVertex as __BBModelVertex
-__BBModelVertex = __BBModelVertex
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import dev.ultreon.libs.commons.v0.vector.Vec3f as _Vec3f
+_Vec3f = _Vec3f
+import java.lang.Integer as _int
 from builtins import bool
 try:
     from pygdx.graphics.g3d import utils
 except ImportError:
-    utils = __import_once__("pygdx.graphics.g3d.utils")
+    utils = _import_once("pygdx.graphics.g3d.utils")
 
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class BBModelVertex():
     """dev.ultreon.quantum.client.model.blockbench.BBModelVertex"""
  
     @staticmethod
-    def __wrap(java_value: __BBModelVertex) -> 'BBModelVertex':
+    def _wrap(java_value: _BBModelVertex) -> 'BBModelVertex':
         return BBModelVertex(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BBModelVertex):
+    def __init__(self, __dynamic__: _BBModelVertex):
         """
         Dynamic initializer for BBModelVertex.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BBModelVertex__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BBModelVertex__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBModelVertex.toString()"""
+        return str._wrap(super(BBModelVertex, self).toString())
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
     @overload
     def vertex(self) -> 'vector.Vec3f':
         """public dev.ultreon.libs.commons.v0.vector.Vec3f dev.ultreon.quantum.client.model.blockbench.BBModelVertex.vertex()"""
-        return 'vector.Vec3f'.__wrap(super(BBModelVertex, self).vertex())
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public int dev.ultreon.quantum.client.model.blockbench.BBModelVertex.hashCode()"""
-        return int.__wrap(super(BBModelVertex, self).hashCode())
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.blockbench.BBModelVertex.equals(java.lang.Object)"""
-        return bool.__wrap(super(__BBModelVertex, self).equals(arg0))
+        return 'vector.Vec3f'._wrap(super(BBModelVertex, self).vertex())
 
     @override
     @overload
@@ -2312,24 +2344,39 @@ class BBModelVertex():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
+    @overload
+    def write(self, arg0: 'MeshPartBuilder', arg1: 'Vec2f'):
+        """public void dev.ultreon.quantum.client.model.blockbench.BBModelVertex.write(com.badlogic.gdx.graphics.g3d.utils.MeshPartBuilder,dev.ultreon.libs.commons.v0.vector.Vec2f)"""
+        super(_BBModelVertex, self).write(arg0, arg1)
+
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBModelVertex.toString()"""
-        return str.__wrap(super(BBModelVertex, self).toString())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.blockbench.BBModelVertex.equals(java.lang.Object)"""
+        return bool._wrap(super(_BBModelVertex, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public int dev.ultreon.quantum.client.model.blockbench.BBModelVertex.hashCode()"""
+        return int._wrap(super(BBModelVertex, self).hashCode())
 
     @override
     @overload
     def notifyAll(self):
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
-
-    @overload
-    def __init__(self, arg0: 'Vec3f'):
-        """public dev.ultreon.quantum.client.model.blockbench.BBModelVertex(dev.ultreon.libs.commons.v0.vector.Vec3f)"""
-        val = __BBModelVertex(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
 
     @override
     @overload
@@ -2338,76 +2385,76 @@ class BBModelVertex():
         super(object, self).wait()
 
     @overload
-    def write(self, arg0: 'MeshPartBuilder', arg1: 'Vec2f'):
-        """public void dev.ultreon.quantum.client.model.blockbench.BBModelVertex.write(com.badlogic.gdx.graphics.g3d.utils.MeshPartBuilder,dev.ultreon.libs.commons.v0.vector.Vec2f)"""
-        super(__BBModelVertex, self).write(arg0, arg1)
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0)) 
+    def __init__(self, arg0: 'Vec3f'):
+        """public dev.ultreon.quantum.client.model.blockbench.BBModelVertex(dev.ultreon.libs.commons.v0.vector.Vec3f)"""
+        val = _BBModelVertex(arg0)
+        self.__wrapper = val 
  
  
 # CLASS: dev.ultreon.quantum.client.model.blockbench.BBModelFace
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
-import dev.ultreon.quantum.world.CubicDirection as __CubicDirection
-__CubicDirection = __CubicDirection
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.libs.commons.v0.vector.Vec4f as __Vec4f
-__Vec4f = __Vec4f
+import java.lang.String as _String
+_String = _String
 try:
     from pycorelibs.commons.v0 import vector
 except ImportError:
-    vector = __import_once__("pycorelibs.commons.v0.vector")
+    vector = _import_once("pycorelibs.commons.v0.vector")
 
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import dev.ultreon.libs.commons.v0.vector.Vec4f as _Vec4f
+_Vec4f = _Vec4f
+import dev.ultreon.quantum.world.CubicDirection as _CubicDirection
+_CubicDirection = _CubicDirection
+import java.lang.Integer as _int
+import dev.ultreon.quantum.client.model.blockbench.BBModelFace as _BBModelFace
+_BBModelFace = _BBModelFace
 from builtins import bool
-import dev.ultreon.quantum.client.model.blockbench.BBModelFace as __BBModelFace
-__BBModelFace = __BBModelFace
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class BBModelFace():
     """dev.ultreon.quantum.client.model.blockbench.BBModelFace"""
  
     @staticmethod
-    def __wrap(java_value: __BBModelFace) -> 'BBModelFace':
+    def _wrap(java_value: _BBModelFace) -> 'BBModelFace':
         return BBModelFace(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BBModelFace):
+    def __init__(self, __dynamic__: _BBModelFace):
         """
         Dynamic initializer for BBModelFace.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BBModelFace__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BBModelFace__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -2416,7 +2463,7 @@ class BBModelFace():
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -2427,32 +2474,14 @@ class BBModelFace():
     @overload
     def __init__(self, arg0: 'CubicDirection', arg1: 'Vec4f', arg2: int):
         """public dev.ultreon.quantum.client.model.blockbench.BBModelFace(dev.ultreon.quantum.world.CubicDirection,dev.ultreon.libs.commons.v0.vector.Vec4f,int)"""
-        val = __BBModelFace(arg0, arg1, __int.valueOf(arg2))
-        self.__dict__ = val.__dict__
+        val = _BBModelFace(arg0, arg1, _int.valueOf(arg2))
         self.__wrapper = val
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def texture(self) -> int:
-        """public int dev.ultreon.quantum.client.model.blockbench.BBModelFace.texture()"""
-        return int.__wrap(super(BBModelFace, self).texture())
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBModelFace.toString()"""
-        return str.__wrap(super(BBModelFace, self).toString())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -2461,14 +2490,26 @@ class BBModelFace():
         super(object, self).notify()
 
     @overload
-    def blockFace(self) -> 'world.CubicDirection':
-        """public dev.ultreon.quantum.world.CubicDirection dev.ultreon.quantum.client.model.blockbench.BBModelFace.blockFace()"""
-        return 'world.CubicDirection'.__wrap(super(BBModelFace, self).blockFace())
+    def texture(self) -> int:
+        """public int dev.ultreon.quantum.client.model.blockbench.BBModelFace.texture()"""
+        return int._wrap(super(BBModelFace, self).texture())
 
     @overload
     def uv(self) -> 'vector.Vec4f':
         """public dev.ultreon.libs.commons.v0.vector.Vec4f dev.ultreon.quantum.client.model.blockbench.BBModelFace.uv()"""
-        return 'vector.Vec4f'.__wrap(super(BBModelFace, self).uv())
+        return 'vector.Vec4f'._wrap(super(BBModelFace, self).uv())
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public int dev.ultreon.quantum.client.model.blockbench.BBModelFace.hashCode()"""
+        return int._wrap(super(BBModelFace, self).hashCode())
 
     @override
     @overload
@@ -2476,49 +2517,59 @@ class BBModelFace():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBModelFace.toString()"""
+        return str._wrap(super(BBModelFace, self).toString())
+
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean dev.ultreon.quantum.client.model.blockbench.BBModelFace.equals(java.lang.Object)"""
-        return bool.__wrap(super(__BBModelFace, self).equals(arg0))
+        return bool._wrap(super(_BBModelFace, self).equals(arg0))
 
-    @override
     @overload
-    def hashCode(self) -> int:
-        """public int dev.ultreon.quantum.client.model.blockbench.BBModelFace.hashCode()"""
-        return int.__wrap(super(BBModelFace, self).hashCode()) 
+    def blockFace(self) -> 'world.CubicDirection':
+        """public dev.ultreon.quantum.world.CubicDirection dev.ultreon.quantum.client.model.blockbench.BBModelFace.blockFace()"""
+        return 'world.CubicDirection'._wrap(super(BBModelFace, self).blockFace()) 
  
  
 # CLASS: dev.ultreon.quantum.client.model.blockbench.BBModelOutlineInfo
 from abc import abstractmethod, ABC
-import dev.ultreon.quantum.client.model.blockbench.BBModelOutlineInfo as __BBModelOutlineInfo
-__BBModelOutlineInfo = __BBModelOutlineInfo
+import dev.ultreon.quantum.client.model.blockbench.BBModelOutlineInfo as _BBModelOutlineInfo
+_BBModelOutlineInfo = _BBModelOutlineInfo
  
-class BBModelOutlineInfo(ABC):
+class BBModelOutlineInfo():
     """dev.ultreon.quantum.client.model.blockbench.BBModelOutlineInfo"""
  
     @staticmethod
-    def __wrap(java_value: __BBModelOutlineInfo) -> 'BBModelOutlineInfo':
+    def _wrap(java_value: _BBModelOutlineInfo) -> 'BBModelOutlineInfo':
         return BBModelOutlineInfo(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BBModelOutlineInfo):
+    def __init__(self, __dynamic__: _BBModelOutlineInfo):
         """
         Dynamic initializer for BBModelOutlineInfo.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BBModelOutlineInfo__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BBModelOutlineInfo__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -2530,123 +2581,145 @@ class BBModelOutlineInfo(ABC):
  
  
 # CLASS: dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 import java.util.UUID as UUID
-import java.lang.Boolean as __boolean
+import java.lang.Object as _Object
+_Object = _Object
+import dev.ultreon.quantum.client.model.blockbench.BBModelNode as _BBModelNode
+_BBModelNode = _BBModelNode
 from builtins import type
-import dev.ultreon.quantum.client.model.blockbench.BBModelElement as __BBModelElement
-__BBModelElement = __BBModelElement
 try:
     from pycorelibs.commons.v0 import vector
 except ImportError:
-    vector = __import_once__("pycorelibs.commons.v0.vector")
+    vector = _import_once("pycorelibs.commons.v0.vector")
 
-import com.badlogic.gdx.graphics.g3d.model.Node as __Node
-__Node = __Node
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __string
-import dev.ultreon.quantum.client.model.blockbench.BBModelNode as __BBModelNode
-__BBModelNode = __BBModelNode
+import dev.ultreon.quantum.util.RgbColor as _RgbColor
+_RgbColor = _RgbColor
+import java.lang.String as _string
+import java.lang.Boolean as _boolean
+import com.badlogic.gdx.graphics.g3d.model.Node as _Node
+_Node = _Node
 try:
     from pygdx import math
 except ImportError:
-    math = __import_once__("pygdx.math")
+    math = _import_once("pygdx.math")
 
 from builtins import bool
 from builtins import str
-import dev.ultreon.quantum.util.RgbColor as __RgbColor
-__RgbColor = __RgbColor
 from pyquantum_helper import override
-import java.lang.Object as __object
-import dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement as __BBMeshModelElement
-__BBMeshModelElement = __BBMeshModelElement
-import dev.ultreon.libs.commons.v0.vector.Vec3f as __Vec3f
-__Vec3f = __Vec3f
+import java.lang.Object as _object
+import com.badlogic.gdx.math.Matrix4 as _Matrix4
+_Matrix4 = _Matrix4
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.libs.commons.v0.vector.Vec3f as _Vec3f
+_Vec3f = _Vec3f
+import java.util.List as _List
+_List = _List
+import dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement as _BBMeshModelElement
+_BBMeshModelElement = _BBMeshModelElement
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import com.badlogic.gdx.math.Matrix4 as __Matrix4
-__Matrix4 = __Matrix4
-import java.util.List as __List
-__List = __List
-import java.lang.Long as __long
-import java.lang.String as __String
-__String = __String
+import dev.ultreon.quantum.client.model.blockbench.BBModelElement as _BBModelElement
+_BBModelElement = _BBModelElement
+import java.lang.Integer as _int
 try:
     from pygdx.graphics.g3d import model
 except ImportError:
-    model = __import_once__("pygdx.graphics.g3d.model")
+    model = _import_once("pygdx.graphics.g3d.model")
 
-import java.util.UUID as __UUID
-__UUID = __UUID
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
 import java.util.Map as Map
 try:
     from pygdx.graphics.g3d import utils
 except ImportError:
-    utils = __import_once__("pygdx.graphics.g3d.utils")
+    utils = _import_once("pygdx.graphics.g3d.utils")
 
+import java.lang.Long as _long
 from builtins import int
+import java.util.UUID as _UUID
+_UUID = _UUID
 import java.util.List as List
+import java.lang.Class as _Class
+_Class = _Class
  
 class BBMeshModelElement():
     """dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement"""
  
     @staticmethod
-    def __wrap(java_value: __BBMeshModelElement) -> 'BBMeshModelElement':
+    def _wrap(java_value: _BBMeshModelElement) -> 'BBMeshModelElement':
         return BBMeshModelElement(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BBMeshModelElement):
+    def __init__(self, __dynamic__: _BBMeshModelElement):
         """
         Dynamic initializer for BBMeshModelElement.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BBMeshModelElement__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BBMeshModelElement__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
     def name(self) -> str:
         """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement.name()"""
-        return str.__wrap(super(BBMeshModelElement, self).name())
+        return str._wrap(super(BBMeshModelElement, self).name())
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement.toString()"""
-        return str.__wrap(super(BBMeshModelElement, self).toString())
+    def hashCode(self) -> int:
+        """public int dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement.hashCode()"""
+        return int._wrap(super(BBMeshModelElement, self).hashCode())
+
+    @overload
+    def export(self) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement.export()"""
+        return bool._wrap(super(BBMeshModelElement, self).export())
 
     @override
     @overload
-    def renderOrder(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement.renderOrder()"""
-        return str.__wrap(super(BBMeshModelElement, self).renderOrder())
+    def locked(self) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement.locked()"""
+        return bool._wrap(super(BBMeshModelElement, self).locked())
+
+    @overload
+    def __init__(self, arg0: str, arg1: 'RgbColor', arg2: 'Vec3f', arg3: 'Vec3f', arg4: bool, arg5: bool, arg6: bool, arg7: str, arg8: bool, arg9: 'List', arg10: 'UUID'):
+        """public dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement(java.lang.String,dev.ultreon.quantum.util.RgbColor,dev.ultreon.libs.commons.v0.vector.Vec3f,dev.ultreon.libs.commons.v0.vector.Vec3f,boolean,boolean,boolean,java.lang.String,boolean,java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace>,java.util.UUID)"""
+        val = _BBMeshModelElement(arg0, arg1, arg2, arg3, _boolean.valueOf(arg4), _boolean.valueOf(arg5), _boolean.valueOf(arg6), arg7, _boolean.valueOf(arg8), arg9, arg10)
+        self.__wrapper = val
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @override
+    @overload
+    def allowMirrorModeling(self) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement.allowMirrorModeling()"""
+        return bool._wrap(super(BBMeshModelElement, self).allowMirrorModeling())
 
     @override
     @overload
@@ -2657,53 +2730,60 @@ class BBMeshModelElement():
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement.equals(java.lang.Object)"""
-        return bool.__wrap(super(__BBMeshModelElement, self).equals(arg0))
+        return bool._wrap(super(_BBMeshModelElement, self).equals(arg0))
 
     @overload
     def write(self, arg0: 'ModelBuilder', arg1: 'Map', arg2: 'Map', arg3: 'BBModelLoader', arg4: 'Vec2f') -> 'model.Node':
         """public com.badlogic.gdx.graphics.g3d.model.Node dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement.write(com.badlogic.gdx.graphics.g3d.utils.ModelBuilder,java.util.Map<java.util.UUID, com.badlogic.gdx.graphics.g3d.utils.ModelBuilder>,java.util.Map<java.lang.Integer, dev.ultreon.quantum.client.model.blockbench.BBTexture>,dev.ultreon.quantum.client.model.blockbench.BBModelLoader,dev.ultreon.libs.commons.v0.vector.Vec2f)"""
-        return 'model.Node'.__wrap(super(__BBMeshModelElement, self).write(arg0, arg1, arg2, arg3, arg4))
-
-    @overload
-    def export(self) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement.export()"""
-        return bool.__wrap(super(BBMeshModelElement, self).export())
-
-    @override
-    @overload
-    def rotation(self) -> 'vector.Vec3f':
-        """public dev.ultreon.libs.commons.v0.vector.Vec3f dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement.rotation()"""
-        return 'vector.Vec3f'.__wrap(super(BBMeshModelElement, self).rotation())
-
-    @override
-    @overload
-    def locked(self) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement.locked()"""
-        return bool.__wrap(super(BBMeshModelElement, self).locked())
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def parent(self) -> 'BBModelNode':
-        """public dev.ultreon.quantum.client.model.blockbench.BBModelNode dev.ultreon.quantum.client.model.blockbench.BBModelElement.parent()"""
-        return 'BBModelNode'.__wrap(super(BBModelElement, self).parent())
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        return 'model.Node'._wrap(super(_BBMeshModelElement, self).write(arg0, arg1, arg2, arg3, arg4))
 
     @override
     @overload
     def uuid(self) -> 'UUID':
         """public java.util.UUID dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement.uuid()"""
-        return 'UUID'.__wrap(super(BBMeshModelElement, self).uuid())
+        return 'UUID'._wrap(super(BBMeshModelElement, self).uuid())
+
+    @override
+    @overload
+    def parent(self) -> 'BBModelNode':
+        """public dev.ultreon.quantum.client.model.blockbench.BBModelNode dev.ultreon.quantum.client.model.blockbench.BBModelElement.parent()"""
+        return 'BBModelNode'._wrap(super(BBModelElement, self).parent())
+
+    @override
+    @overload
+    def rotationMatrix(self) -> 'math.Matrix4':
+        """public com.badlogic.gdx.math.Matrix4 dev.ultreon.quantum.client.model.blockbench.BBModelElement.rotationMatrix()"""
+        return 'math.Matrix4'._wrap(super(BBModelElement, self).rotationMatrix())
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement.toString()"""
+        return str._wrap(super(BBMeshModelElement, self).toString())
+
+    @override
+    @overload
+    def renderOrder(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement.renderOrder()"""
+        return str._wrap(super(BBMeshModelElement, self).renderOrder())
+
+    @override
+    @overload
+    def origin(self) -> 'vector.Vec3f':
+        """public dev.ultreon.libs.commons.v0.vector.Vec3f dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement.origin()"""
+        return 'vector.Vec3f'._wrap(super(BBMeshModelElement, self).origin())
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @override
+    @overload
+    def color(self) -> 'util.RgbColor':
+        """public dev.ultreon.quantum.util.RgbColor dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement.color()"""
+        return 'util.RgbColor'._wrap(super(BBMeshModelElement, self).color())
 
     @override
     @overload
@@ -2711,35 +2791,22 @@ class BBMeshModelElement():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @override
     @overload
-    def hashCode(self) -> int:
-        """public int dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement.hashCode()"""
-        return int.__wrap(super(BBMeshModelElement, self).hashCode())
+    def faces(self) -> 'List':
+        """public java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace> dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement.faces()"""
+        return 'List'._wrap(super(BBMeshModelElement, self).faces())
 
     @override
     @overload
-    def allowMirrorModeling(self) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement.allowMirrorModeling()"""
-        return bool.__wrap(super(BBMeshModelElement, self).allowMirrorModeling())
+    def rotation(self) -> 'vector.Vec3f':
+        """public dev.ultreon.libs.commons.v0.vector.Vec3f dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement.rotation()"""
+        return 'vector.Vec3f'._wrap(super(BBMeshModelElement, self).rotation())
 
     @override
     @overload
-    def rotationMatrix(self) -> 'math.Matrix4':
-        """public com.badlogic.gdx.math.Matrix4 dev.ultreon.quantum.client.model.blockbench.BBModelElement.rotationMatrix()"""
-        return 'math.Matrix4'.__wrap(super(BBModelElement, self).rotationMatrix())
-
-    @override
-    @overload
-    def color(self) -> 'util.RgbColor':
-        """public dev.ultreon.quantum.util.RgbColor dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement.color()"""
-        return 'util.RgbColor'.__wrap(super(BBMeshModelElement, self).color())
-
-    @override
-    @overload
-    def origin(self) -> 'vector.Vec3f':
-        """public dev.ultreon.libs.commons.v0.vector.Vec3f dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement.origin()"""
-        return 'vector.Vec3f'.__wrap(super(BBMeshModelElement, self).origin())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -2750,52 +2817,45 @@ class BBMeshModelElement():
     @overload
     def visibility(self) -> bool:
         """public boolean dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement.visibility()"""
-        return bool.__wrap(super(BBMeshModelElement, self).visibility())
-
-    @overload
-    def faces(self) -> 'List':
-        """public java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace> dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement.faces()"""
-        return 'List'.__wrap(super(BBMeshModelElement, self).faces())
-
-    @overload
-    def __init__(self, arg0: str, arg1: 'RgbColor', arg2: 'Vec3f', arg3: 'Vec3f', arg4: bool, arg5: bool, arg6: bool, arg7: str, arg8: bool, arg9: 'List', arg10: 'UUID'):
-        """public dev.ultreon.quantum.client.model.blockbench.BBMeshModelElement(java.lang.String,dev.ultreon.quantum.util.RgbColor,dev.ultreon.libs.commons.v0.vector.Vec3f,dev.ultreon.libs.commons.v0.vector.Vec3f,boolean,boolean,boolean,java.lang.String,boolean,java.util.List<dev.ultreon.quantum.client.model.blockbench.BBModelMeshFace>,java.util.UUID)"""
-        val = __BBMeshModelElement(arg0, arg1, arg2, arg3, __boolean.valueOf(arg4), __boolean.valueOf(arg5), __boolean.valueOf(arg6), arg7, __boolean.valueOf(arg8), arg9, arg10)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val 
+        return bool._wrap(super(BBMeshModelElement, self).visibility()) 
  
  
 # CLASS: dev.ultreon.quantum.client.model.blockbench.BBModelNode
-import dev.ultreon.quantum.client.model.blockbench.BBModelNode as __BBModelNode
-__BBModelNode = __BBModelNode
+import dev.ultreon.quantum.client.model.blockbench.BBModelNode as _BBModelNode
+_BBModelNode = _BBModelNode
 from abc import abstractmethod, ABC
  
-class BBModelNode(ABC):
+class BBModelNode():
     """dev.ultreon.quantum.client.model.blockbench.BBModelNode"""
  
     @staticmethod
-    def __wrap(java_value: __BBModelNode) -> 'BBModelNode':
+    def _wrap(java_value: _BBModelNode) -> 'BBModelNode':
         return BBModelNode(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BBModelNode):
+    def __init__(self, __dynamic__: _BBModelNode):
         """
         Dynamic initializer for BBModelNode.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BBModelNode__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BBModelNode__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))

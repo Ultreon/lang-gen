@@ -3,72 +3,76 @@ from overload import overload
 
 
  
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 import java.util.function.Supplier as Supplier
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.network.api.packet.ModPacket as __ModPacket
-__ModPacket = __ModPacket
+import dev.ultreon.quantum.network.api.packet.ModPacket as _ModPacket
+_ModPacket = _ModPacket
 from abc import abstractmethod, ABC
-import java.lang.Long as __long
+import java.lang.String as _String
+_String = _String
 try:
     from pyquantum import network
 except ImportError:
-    network = __import_once__("pyquantum.network")
+    network = _import_once("pyquantum.network")
 
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
-class ModPacket(ABC):
+class ModPacket():
     """dev.ultreon.quantum.network.api.packet.ModPacket"""
  
     @staticmethod
-    def __wrap(java_value: __ModPacket) -> 'ModPacket':
+    def _wrap(java_value: _ModPacket) -> 'ModPacket':
         return ModPacket(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ModPacket):
+    def __init__(self, __dynamic__: _ModPacket):
         """
         Dynamic initializer for ModPacket.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ModPacket__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ModPacket__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @overload
+    def handlePacket(self, arg0: 'Supplier') -> bool:
+        """public final boolean dev.ultreon.quantum.network.api.packet.ModPacket.handlePacket(java.util.function.Supplier<dev.ultreon.quantum.network.api.packet.ModPacketContext>)"""
+        return bool._wrap(super(_ModPacket, self).handlePacket(arg0))
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @abstractmethod
     def toBytes(self, arg0: 'PacketIO'):
@@ -82,21 +86,22 @@ class ModPacket(ABC):
         super(object, self).notifyAll()
 
     @overload
-    def handlePacket(self, arg0: 'Supplier') -> bool:
-        """public final boolean dev.ultreon.quantum.network.api.packet.ModPacket.handlePacket(java.util.function.Supplier<dev.ultreon.quantum.network.api.packet.ModPacketContext>)"""
-        return bool.__wrap(super(__ModPacket, self).handlePacket(arg0))
+    def __init__(self):
+        """public dev.ultreon.quantum.network.api.packet.ModPacket()"""
+        val = _ModPacket()
+        self.__wrapper = val
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -106,9 +111,9 @@ class ModPacket(ABC):
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -117,94 +122,96 @@ class ModPacket(ABC):
         super(object, self).wait()
 
     @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
-
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.network.api.packet.ModPacket()"""
-        val = __ModPacket()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @overload
     def __init__(self, ):
         """public dev.ultreon.quantum.network.api.packet.ModPacket()"""
-        val = __ModPacket()
-        self.__dict__ = val.__dict__
+        val = _ModPacket()
         self.__wrapper = val
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
  
 # CLASS: dev.ultreon.quantum.network.api.packet.ModPacket
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 import java.util.function.Supplier as Supplier
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.network.api.packet.ModPacket as __ModPacket
-__ModPacket = __ModPacket
+import dev.ultreon.quantum.network.api.packet.ModPacket as _ModPacket
+_ModPacket = _ModPacket
 from abc import abstractmethod, ABC
-import java.lang.Long as __long
+import java.lang.String as _String
+_String = _String
 try:
     from pyquantum import network
 except ImportError:
-    network = __import_once__("pyquantum.network")
+    network = _import_once("pyquantum.network")
 
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
-class ModPacket(ABC):
+class ModPacket():
     """dev.ultreon.quantum.network.api.packet.ModPacket"""
  
     @staticmethod
-    def __wrap(java_value: __ModPacket) -> 'ModPacket':
+    def _wrap(java_value: _ModPacket) -> 'ModPacket':
         return ModPacket(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ModPacket):
+    def __init__(self, __dynamic__: _ModPacket):
         """
         Dynamic initializer for ModPacket.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ModPacket__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ModPacket__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @overload
+    def handlePacket(self, arg0: 'Supplier') -> bool:
+        """public final boolean dev.ultreon.quantum.network.api.packet.ModPacket.handlePacket(java.util.function.Supplier<dev.ultreon.quantum.network.api.packet.ModPacketContext>)"""
+        return bool._wrap(super(_ModPacket, self).handlePacket(arg0))
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @abstractmethod
     def toBytes(self, arg0: 'PacketIO'):
@@ -218,21 +225,22 @@ class ModPacket(ABC):
         super(object, self).notifyAll()
 
     @overload
-    def handlePacket(self, arg0: 'Supplier') -> bool:
-        """public final boolean dev.ultreon.quantum.network.api.packet.ModPacket.handlePacket(java.util.function.Supplier<dev.ultreon.quantum.network.api.packet.ModPacketContext>)"""
-        return bool.__wrap(super(__ModPacket, self).handlePacket(arg0))
+    def __init__(self):
+        """public dev.ultreon.quantum.network.api.packet.ModPacket()"""
+        val = _ModPacket()
+        self.__wrapper = val
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -242,9 +250,9 @@ class ModPacket(ABC):
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -253,23 +261,21 @@ class ModPacket(ABC):
         super(object, self).wait()
 
     @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
-
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.network.api.packet.ModPacket()"""
-        val = __ModPacket()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @overload
     def __init__(self, ):
         """public dev.ultreon.quantum.network.api.packet.ModPacket()"""
-        val = __ModPacket()
-        self.__dict__ = val.__dict__
+        val = _ModPacket()
         self.__wrapper = val
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
@@ -278,115 +284,113 @@ class ModPacket(ABC):
  
  
 # CLASS: dev.ultreon.quantum.network.api.packet.ModPacketContext
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
+import dev.ultreon.quantum.network.system.IConnection as _IConnection
+_IConnection = _IConnection
 from builtins import str
+import dev.ultreon.quantum.network.NetworkChannel as _NetworkChannel
+_NetworkChannel = _NetworkChannel
 from pyquantum_helper import override
-import dev.ultreon.quantum.network.api.packet.ModPacketContext as __ModPacketContext
-__ModPacketContext = __ModPacketContext
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
 import java.lang.Runnable as Runnable
-import dev.ultreon.quantum.util.Env as __Env
-__Env = __Env
-import dev.ultreon.quantum.network.NetworkChannel as __NetworkChannel
-__NetworkChannel = __NetworkChannel
-import dev.ultreon.quantum.network.system.IConnection as __IConnection
-__IConnection = __IConnection
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.util.Env as _Env
+_Env = _Env
+import dev.ultreon.quantum.network.api.packet.ModPacketContext as _ModPacketContext
+_ModPacketContext = _ModPacketContext
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import dev.ultreon.quantum.server.player.ServerPlayer as __ServerPlayer
-__ServerPlayer = __ServerPlayer
-import java.lang.Long as __long
+import dev.ultreon.quantum.server.player.ServerPlayer as _ServerPlayer
+_ServerPlayer = _ServerPlayer
 try:
     from pyquantum import network
 except ImportError:
-    network = __import_once__("pyquantum.network")
+    network = _import_once("pyquantum.network")
 
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
+import java.lang.Integer as _int
 try:
     from pyquantum.server import player
 except ImportError:
-    player = __import_once__("pyquantum.server.player")
+    player = _import_once("pyquantum.server.player")
 
-import java.lang.Object as __Object
-__Object = __Object
-import dev.ultreon.quantum.network.PacketContext as __PacketContext
-__PacketContext = __PacketContext
-import java.lang.Integer as __int
 from builtins import bool
+import dev.ultreon.quantum.network.PacketContext as _PacketContext
+_PacketContext = _PacketContext
 try:
     from pyquantum.network import system
 except ImportError:
-    system = __import_once__("pyquantum.network.system")
+    system = _import_once("pyquantum.network.system")
 
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ModPacketContext():
     """dev.ultreon.quantum.network.api.packet.ModPacketContext"""
  
     @staticmethod
-    def __wrap(java_value: __ModPacketContext) -> 'ModPacketContext':
+    def _wrap(java_value: _ModPacketContext) -> 'ModPacketContext':
         return ModPacketContext(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ModPacketContext):
+    def __init__(self, __dynamic__: _ModPacketContext):
         """
         Dynamic initializer for ModPacketContext.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ModPacketContext__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ModPacketContext__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
     def requirePlayer(self) -> 'player.ServerPlayer':
         """public dev.ultreon.quantum.server.player.ServerPlayer dev.ultreon.quantum.network.PacketContext.requirePlayer()"""
-        return 'player.ServerPlayer'.__wrap(super(network.PacketContext, self).requirePlayer())
+        return 'player.ServerPlayer'._wrap(super(network.PacketContext, self).requirePlayer())
 
     @override
     @overload
-    def getDestination(self) -> 'util.Env':
-        """public dev.ultreon.quantum.util.Env dev.ultreon.quantum.network.PacketContext.getDestination()"""
-        return 'util.Env'.__wrap(super(network.PacketContext, self).getDestination())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
-    def queue(self, arg0: 'Runnable'):
-        """public void dev.ultreon.quantum.network.PacketContext.queue(java.lang.Runnable)"""
-        super(__network.PacketContext, self).queue(arg0)
+    def getPlayer(self) -> 'player.ServerPlayer':
+        """public dev.ultreon.quantum.server.player.ServerPlayer dev.ultreon.quantum.network.PacketContext.getPlayer()"""
+        return 'player.ServerPlayer'._wrap(super(network.PacketContext, self).getPlayer())
 
+    @override
     @overload
-    def __init__(self, arg0: 'NetworkChannel', arg1: 'ServerPlayer', arg2: 'IConnection', arg3: 'Env'):
-        """public dev.ultreon.quantum.network.api.packet.ModPacketContext(dev.ultreon.quantum.network.NetworkChannel,dev.ultreon.quantum.server.player.ServerPlayer,dev.ultreon.quantum.network.system.IConnection,dev.ultreon.quantum.util.Env)"""
-        val = __ModPacketContext(arg0, arg1, arg2, arg3)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def getConnection(self) -> 'system.IConnection':
+        """public dev.ultreon.quantum.network.system.IConnection<?, ?> dev.ultreon.quantum.network.PacketContext.getConnection()"""
+        return 'system.IConnection'._wrap(super(network.PacketContext, self).getConnection())
 
     @override
     @overload
@@ -396,27 +400,32 @@ class ModPacketContext():
 
     @override
     @overload
+    def toString(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.network.PacketContext.toString()"""
+        return str._wrap(super(network.PacketContext, self).toString())
+
+    @override
+    @overload
+    def queue(self, arg0: 'Runnable'):
+        """public void dev.ultreon.quantum.network.PacketContext.queue(java.lang.Runnable)"""
+        super(_network.PacketContext, self).queue(arg0)
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public int dev.ultreon.quantum.network.api.packet.ModPacketContext.hashCode()"""
+        return int._wrap(super(ModPacketContext, self).hashCode())
+
+    @override
+    @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
-    @override
     @overload
-    def getConnection(self) -> 'system.IConnection':
-        """public dev.ultreon.quantum.network.system.IConnection<?, ?> dev.ultreon.quantum.network.PacketContext.getConnection()"""
-        return 'system.IConnection'.__wrap(super(network.PacketContext, self).getConnection())
-
-    @override
-    @overload
-    def getPlayer(self) -> 'player.ServerPlayer':
-        """public dev.ultreon.quantum.server.player.ServerPlayer dev.ultreon.quantum.network.PacketContext.getPlayer()"""
-        return 'player.ServerPlayer'.__wrap(super(network.PacketContext, self).getPlayer())
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def getChannel(self) -> 'network.NetworkChannel':
+        """public dev.ultreon.quantum.network.NetworkChannel dev.ultreon.quantum.network.api.packet.ModPacketContext.getChannel()"""
+        return 'network.NetworkChannel'._wrap(super(ModPacketContext, self).getChannel())
 
     @override
     @overload
@@ -424,16 +433,16 @@ class ModPacketContext():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean dev.ultreon.quantum.network.api.packet.ModPacketContext.equals(java.lang.Object)"""
+        return bool._wrap(super(_ModPacketContext, self).equals(arg0))
+
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.network.PacketContext.toString()"""
-        return str.__wrap(super(network.PacketContext, self).toString())
-
-    @overload
-    def getChannel(self) -> 'network.NetworkChannel':
-        """public dev.ultreon.quantum.network.NetworkChannel dev.ultreon.quantum.network.api.packet.ModPacketContext.getChannel()"""
-        return 'network.NetworkChannel'.__wrap(super(ModPacketContext, self).getChannel())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -441,92 +450,109 @@ class ModPacketContext():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean dev.ultreon.quantum.network.api.packet.ModPacketContext.equals(java.lang.Object)"""
-        return bool.__wrap(super(__ModPacketContext, self).equals(arg0))
-
     @override
     @overload
-    def hashCode(self) -> int:
-        """public int dev.ultreon.quantum.network.api.packet.ModPacketContext.hashCode()"""
-        return int.__wrap(super(ModPacketContext, self).hashCode()) 
+    def getDestination(self) -> 'util.Env':
+        """public dev.ultreon.quantum.util.Env dev.ultreon.quantum.network.PacketContext.getDestination()"""
+        return 'util.Env'._wrap(super(network.PacketContext, self).getDestination())
+
+    @overload
+    def __init__(self, arg0: 'NetworkChannel', arg1: 'ServerPlayer', arg2: 'IConnection', arg3: 'Env'):
+        """public dev.ultreon.quantum.network.api.packet.ModPacketContext(dev.ultreon.quantum.network.NetworkChannel,dev.ultreon.quantum.server.player.ServerPlayer,dev.ultreon.quantum.network.system.IConnection,dev.ultreon.quantum.util.Env)"""
+        val = _ModPacketContext(arg0, arg1, arg2, arg3)
+        self.__wrapper = val 
  
  
 # CLASS: dev.ultreon.quantum.network.api.packet.ModPacketToServer
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 import java.util.function.Supplier as Supplier
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.network.api.packet.ModPacket as __ModPacket
-__ModPacket = __ModPacket
+import dev.ultreon.quantum.network.api.packet.ModPacketToServer as _ModPacketToServer
+_ModPacketToServer = _ModPacketToServer
+import dev.ultreon.quantum.network.api.packet.ModPacket as _ModPacket
+_ModPacket = _ModPacket
 from abc import abstractmethod, ABC
-import dev.ultreon.quantum.network.api.packet.ModPacketToServer as __ModPacketToServer
-__ModPacketToServer = __ModPacketToServer
-import java.lang.Long as __long
+import java.lang.String as _String
+_String = _String
 try:
     from pyquantum import network
 except ImportError:
-    network = __import_once__("pyquantum.network")
+    network = _import_once("pyquantum.network")
 
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
-class ModPacketToServer(ABC):
+class ModPacketToServer():
     """dev.ultreon.quantum.network.api.packet.ModPacketToServer"""
  
     @staticmethod
-    def __wrap(java_value: __ModPacketToServer) -> 'ModPacketToServer':
+    def _wrap(java_value: _ModPacketToServer) -> 'ModPacketToServer':
         return ModPacketToServer(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ModPacketToServer):
+    def __init__(self, __dynamic__: _ModPacketToServer):
         """
         Dynamic initializer for ModPacketToServer.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ModPacketToServer__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ModPacketToServer__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @overload
+    def handlePacket(self, arg0: 'Supplier') -> bool:
+        """public final boolean dev.ultreon.quantum.network.api.packet.ModPacket.handlePacket(java.util.function.Supplier<dev.ultreon.quantum.network.api.packet.ModPacketContext>)"""
+        return bool._wrap(super(_ModPacket, self).handlePacket(arg0))
+
+    @overload
+    def __init__(self):
+        """public dev.ultreon.quantum.network.api.packet.ModPacketToServer()"""
+        val = _ModPacketToServer()
+        self.__wrapper = val
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @abstractmethod
     def toBytes(self, arg0: 'PacketIO'):
         """public abstract void dev.ultreon.quantum.network.api.packet.ModPacket.toBytes(dev.ultreon.quantum.network.PacketIO)"""
         pass
+
+    @overload
+    def __init__(self, ):
+        """public dev.ultreon.quantum.network.api.packet.ModPacketToServer()"""
+        val = _ModPacketToServer()
+        self.__wrapper = val
 
     @override
     @overload
@@ -535,35 +561,21 @@ class ModPacketToServer(ABC):
         super(object, self).notifyAll()
 
     @overload
-    def handlePacket(self, arg0: 'Supplier') -> bool:
-        """public final boolean dev.ultreon.quantum.network.api.packet.ModPacket.handlePacket(java.util.function.Supplier<dev.ultreon.quantum.network.api.packet.ModPacketContext>)"""
-        return bool.__wrap(super(__ModPacket, self).handlePacket(arg0))
+    def handle(self, arg0: 'Supplier') -> bool:
+        """public final boolean dev.ultreon.quantum.network.api.packet.ModPacketToServer.handle(java.util.function.Supplier<dev.ultreon.quantum.network.api.packet.ModPacketContext>)"""
+        return bool._wrap(super(_ModPacketToServer, self).handle(arg0))
 
+    @override
     @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.network.api.packet.ModPacketToServer()"""
-        val = __ModPacketToServer()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.network.api.packet.ModPacketToServer()"""
-        val = __ModPacketToServer()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -573,14 +585,9 @@ class ModPacketToServer(ABC):
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @overload
-    def handle(self, arg0: 'Supplier') -> bool:
-        """public final boolean dev.ultreon.quantum.network.api.packet.ModPacketToServer.handle(java.util.function.Supplier<dev.ultreon.quantum.network.api.packet.ModPacketContext>)"""
-        return bool.__wrap(super(__ModPacketToServer, self).handle(arg0))
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -591,78 +598,93 @@ class ModPacketToServer(ABC):
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0)) 
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.network.api.packet.ModPacketToClient
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 import java.util.function.Supplier as Supplier
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.network.api.packet.ModPacket as __ModPacket
-__ModPacket = __ModPacket
+import dev.ultreon.quantum.network.api.packet.ModPacket as _ModPacket
+_ModPacket = _ModPacket
+import dev.ultreon.quantum.network.api.packet.ModPacketToClient as _ModPacketToClient
+_ModPacketToClient = _ModPacketToClient
 from abc import abstractmethod, ABC
-import java.lang.Long as __long
+import java.lang.String as _String
+_String = _String
 try:
     from pyquantum import network
 except ImportError:
-    network = __import_once__("pyquantum.network")
+    network = _import_once("pyquantum.network")
 
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import dev.ultreon.quantum.network.api.packet.ModPacketToClient as __ModPacketToClient
-__ModPacketToClient = __ModPacketToClient
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
-class ModPacketToClient(ABC):
+class ModPacketToClient():
     """dev.ultreon.quantum.network.api.packet.ModPacketToClient"""
  
     @staticmethod
-    def __wrap(java_value: __ModPacketToClient) -> 'ModPacketToClient':
+    def _wrap(java_value: _ModPacketToClient) -> 'ModPacketToClient':
         return ModPacketToClient(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ModPacketToClient):
+    def __init__(self, __dynamic__: _ModPacketToClient):
         """
         Dynamic initializer for ModPacketToClient.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ModPacketToClient__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ModPacketToClient__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @overload
+    def handlePacket(self, arg0: 'Supplier') -> bool:
+        """public final boolean dev.ultreon.quantum.network.api.packet.ModPacket.handlePacket(java.util.function.Supplier<dev.ultreon.quantum.network.api.packet.ModPacketContext>)"""
+        return bool._wrap(super(_ModPacket, self).handlePacket(arg0))
+
+    @overload
+    def handle(self, arg0: 'Supplier') -> bool:
+        """public final boolean dev.ultreon.quantum.network.api.packet.ModPacketToClient.handle(java.util.function.Supplier<dev.ultreon.quantum.network.api.packet.ModPacketContext>)"""
+        return bool._wrap(super(_ModPacketToClient, self).handle(arg0))
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @abstractmethod
     def toBytes(self, arg0: 'PacketIO'):
@@ -675,35 +697,22 @@ class ModPacketToClient(ABC):
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @override
     @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.network.api.packet.ModPacketToClient()"""
-        val = __ModPacketToClient()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @overload
-    def handlePacket(self, arg0: 'Supplier') -> bool:
-        """public final boolean dev.ultreon.quantum.network.api.packet.ModPacket.handlePacket(java.util.function.Supplier<dev.ultreon.quantum.network.api.packet.ModPacketContext>)"""
-        return bool.__wrap(super(__ModPacket, self).handlePacket(arg0))
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @overload
     def __init__(self):
         """public dev.ultreon.quantum.network.api.packet.ModPacketToClient()"""
-        val = __ModPacketToClient()
-        self.__dict__ = val.__dict__
+        val = _ModPacketToClient()
         self.__wrapper = val
 
     @override
@@ -714,14 +723,9 @@ class ModPacketToClient(ABC):
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @overload
-    def handle(self, arg0: 'Supplier') -> bool:
-        """public final boolean dev.ultreon.quantum.network.api.packet.ModPacketToClient.handle(java.util.function.Supplier<dev.ultreon.quantum.network.api.packet.ModPacketContext>)"""
-        return bool.__wrap(super(__ModPacketToClient, self).handle(arg0))
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -730,167 +734,187 @@ class ModPacketToClient(ABC):
         super(object, self).wait()
 
     @overload
+    def __init__(self, ):
+        """public dev.ultreon.quantum.network.api.packet.ModPacketToClient()"""
+        val = _ModPacketToClient()
+        self.__wrapper = val
+
+    @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0)) 
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.network.api.packet.ServerEndpoint
-import dev.ultreon.quantum.network.api.packet.ServerEndpoint as __ServerEndpoint
-__ServerEndpoint = __ServerEndpoint
+import dev.ultreon.quantum.network.api.packet.ServerEndpoint as _ServerEndpoint
+_ServerEndpoint = _ServerEndpoint
  
-class ServerEndpoint(ABC):
+class ServerEndpoint():
     """dev.ultreon.quantum.network.api.packet.ServerEndpoint"""
  
     @staticmethod
-    def __wrap(java_value: __ServerEndpoint) -> 'ServerEndpoint':
+    def _wrap(java_value: _ServerEndpoint) -> 'ServerEndpoint':
         return ServerEndpoint(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ServerEndpoint):
+    def __init__(self, __dynamic__: _ServerEndpoint):
         """
         Dynamic initializer for ServerEndpoint.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ServerEndpoint__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ServerEndpoint__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__)) 
  
  
 # CLASS: dev.ultreon.quantum.network.api.packet.ClientEndpoint
-import dev.ultreon.quantum.network.api.packet.ClientEndpoint as __ClientEndpoint
-__ClientEndpoint = __ClientEndpoint
+import dev.ultreon.quantum.network.api.packet.ClientEndpoint as _ClientEndpoint
+_ClientEndpoint = _ClientEndpoint
  
-class ClientEndpoint(ABC):
+class ClientEndpoint():
     """dev.ultreon.quantum.network.api.packet.ClientEndpoint"""
  
     @staticmethod
-    def __wrap(java_value: __ClientEndpoint) -> 'ClientEndpoint':
+    def _wrap(java_value: _ClientEndpoint) -> 'ClientEndpoint':
         return ClientEndpoint(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ClientEndpoint):
+    def __init__(self, __dynamic__: _ClientEndpoint):
         """
         Dynamic initializer for ClientEndpoint.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ClientEndpoint__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ClientEndpoint__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__)) 
  
  
 # CLASS: dev.ultreon.quantum.network.api.packet.BiDirectionalModPacket
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 import java.util.function.Supplier as Supplier
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.network.api.packet.ModPacket as __ModPacket
-__ModPacket = __ModPacket
+import dev.ultreon.quantum.network.api.packet.ModPacket as _ModPacket
+_ModPacket = _ModPacket
 from abc import abstractmethod, ABC
-import dev.ultreon.quantum.network.api.packet.BiDirectionalModPacket as __BiDirectionalModPacket
-__BiDirectionalModPacket = __BiDirectionalModPacket
-import java.lang.Long as __long
+import java.lang.String as _String
+_String = _String
 try:
     from pyquantum import network
 except ImportError:
-    network = __import_once__("pyquantum.network")
+    network = _import_once("pyquantum.network")
 
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.Integer as _int
+import dev.ultreon.quantum.network.api.packet.BiDirectionalModPacket as _BiDirectionalModPacket
+_BiDirectionalModPacket = _BiDirectionalModPacket
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
-class BiDirectionalModPacket(ABC):
+class BiDirectionalModPacket():
     """dev.ultreon.quantum.network.api.packet.BiDirectionalModPacket"""
  
     @staticmethod
-    def __wrap(java_value: __BiDirectionalModPacket) -> 'BiDirectionalModPacket':
+    def _wrap(java_value: _BiDirectionalModPacket) -> 'BiDirectionalModPacket':
         return BiDirectionalModPacket(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BiDirectionalModPacket):
+    def __init__(self, __dynamic__: _BiDirectionalModPacket):
         """
         Dynamic initializer for BiDirectionalModPacket.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BiDirectionalModPacket__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BiDirectionalModPacket__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @overload
+    def handlePacket(self, arg0: 'Supplier') -> bool:
+        """public final boolean dev.ultreon.quantum.network.api.packet.ModPacket.handlePacket(java.util.function.Supplier<dev.ultreon.quantum.network.api.packet.ModPacketContext>)"""
+        return bool._wrap(super(_ModPacket, self).handlePacket(arg0))
+
+    @overload
+    def __init__(self, ):
+        """public dev.ultreon.quantum.network.api.packet.BiDirectionalModPacket()"""
+        val = _BiDirectionalModPacket()
+        self.__wrapper = val
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def handle(self, arg0: 'Supplier') -> bool:
-        """public final boolean dev.ultreon.quantum.network.api.packet.BiDirectionalModPacket.handle(java.util.function.Supplier<dev.ultreon.quantum.network.api.packet.ModPacketContext>)"""
-        return bool.__wrap(super(__BiDirectionalModPacket, self).handle(arg0))
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @abstractmethod
     def toBytes(self, arg0: 'PacketIO'):
         """public abstract void dev.ultreon.quantum.network.api.packet.ModPacket.toBytes(dev.ultreon.quantum.network.PacketIO)"""
         pass
-
-    @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.network.api.packet.BiDirectionalModPacket()"""
-        val = __BiDirectionalModPacket()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
 
     @override
     @overload
@@ -898,22 +922,17 @@ class BiDirectionalModPacket(ABC):
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @override
     @overload
-    def handlePacket(self, arg0: 'Supplier') -> bool:
-        """public final boolean dev.ultreon.quantum.network.api.packet.ModPacket.handlePacket(java.util.function.Supplier<dev.ultreon.quantum.network.api.packet.ModPacketContext>)"""
-        return bool.__wrap(super(__ModPacket, self).handlePacket(arg0))
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -923,16 +942,9 @@ class BiDirectionalModPacket(ABC):
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.network.api.packet.BiDirectionalModPacket()"""
-        val = __BiDirectionalModPacket()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -941,6 +953,23 @@ class BiDirectionalModPacket(ABC):
         super(object, self).wait()
 
     @overload
+    def __init__(self):
+        """public dev.ultreon.quantum.network.api.packet.BiDirectionalModPacket()"""
+        val = _BiDirectionalModPacket()
+        self.__wrapper = val
+
+    @overload
+    def handle(self, arg0: 'Supplier') -> bool:
+        """public final boolean dev.ultreon.quantum.network.api.packet.BiDirectionalModPacket.handle(java.util.function.Supplier<dev.ultreon.quantum.network.api.packet.ModPacketContext>)"""
+        return bool._wrap(super(_BiDirectionalModPacket, self).handle(arg0))
+
+    @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())

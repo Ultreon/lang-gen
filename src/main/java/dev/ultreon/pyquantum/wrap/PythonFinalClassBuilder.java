@@ -16,6 +16,7 @@ public class PythonFinalClassBuilder {
     private final Set<String> imports = new HashSet<>();
     private final Set<String> staticMembers = new HashSet<>();
     private final Set<String> members = new HashSet<>();
+    private final Set<String> postinit = new HashSet<>();
     private Logger logger = Logger.getLogger("PythonFinalClassBuilder");
 
     public PythonFinalClassBuilder(Class<?> clazz) {
@@ -107,7 +108,7 @@ public class PythonFinalClassBuilder {
                             try:
                                 %1$s
                             except ImportError:
-                                %3$s = __import_once__("%2$s")
+                                %3$s = _import_once("%2$s")
                             """.formatted(
                             substring.replace("\n", "").replace("\r", ""),
                             s1,
@@ -127,28 +128,33 @@ public class PythonFinalClassBuilder {
                         \"""%3$s\"""
                     \s
                         @staticmethod
-                        def __wrap(java_value: __%1$s) -> '%1$s':
+                        def _wrap(java_value: _%1$s) -> '%1$s':
                             return %1$s(__dynamic__=java_value)
                     \s
                         #
                         # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
                         #
                         @overload
-                        def __init__(self, __dynamic__: __%1$s):
+                        def __init__(self, __dynamic__: _%1$s):
                             \"""
                             Dynamic initializer for %1$s.
                             WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
                     \s
                             :param __dynamic__: The java object to wrap
                             \"""
-                            self.__dict__ = __dynamic__.__dict__
                             self.__wrapper = __dynamic__
                     \s
                         def __getattr__(self, name: str):
+                            print("Getting attribute %%s" %% name)
+                            if name == "_%1$s__wrapper":
+                                return object.__getattr__(self, name)
                             return getattr(self.__wrapper, name)
                     \s
-                        def __setattr__(self, name: str, value: object):
-                            return setattr(self.__wrapper, name, value)
+                        def __setattr__(self, name: str, value: Any):
+                            print("Setting attribute %%s to %%s" %% (name, value))
+                            if name == "_%1$s__wrapper":
+                                return object.__setattr__(self, name, value)
+                            setattr(self.__wrapper, name, value)
                     \s
                         def __delattr__(self, name: str):
                             raise AttributeError("Cannot delete attribute '%%s' from %%s" %% (name, self.__wrapper.__class__.__name__))
@@ -156,7 +162,7 @@ public class PythonFinalClassBuilder {
                     clazz.getSimpleName(),
                     toPyClassSignature(clazz, clazz.getSuperclass(), clazz.getInterfaces()),
                     clazz.getName().replace("$", "."),
-                    (importOnce.get() ? "from pyquantum_helper import import_once as __import_once__\n" : "") + collect));
+                    (importOnce.get() ? "from pyquantum_helper import import_once as _import_once\n" : "") + collect));
 
             if (!staticMembers.isEmpty()) {
                 writer.write("\n");
@@ -175,6 +181,18 @@ public class PythonFinalClassBuilder {
                     List<String> list = member.lines().toList();
                     for (String line : list) {
                         writer.write("    " + line);
+                        writer.write("\n");
+                    }
+                    writer.write("\n");
+                }
+            }
+
+            if (!postinit.isEmpty()) {
+                writer.write("\n");
+                for (String member : postinit) {
+                    List<String> list = member.lines().toList();
+                    for (String line : list) {
+                        writer.write(line);
                         writer.write("\n");
                     }
                     writer.write("\n");
@@ -205,13 +223,13 @@ public class PythonFinalClassBuilder {
 
     private String toPyClassSignature(Class<?> clazz, Class<?> superclass, Class<?>... interfaces) {
         StringBuilder builder = new StringBuilder();
-        if (Modifier.isInterface(clazz.getModifiers()) || Modifier.isAbstract(clazz.getModifiers())) {
-            builder.append(", ABC");
-            addImport("from abc import ABC");
-        }
-
+//        if (Modifier.isInterface(clazz.getModifiers()) || Modifier.isAbstract(clazz.getModifiers())) {
+//            builder.append(", ABC");
+//            addImport("from abc import ABC");
+//        }
+//
 //        if (superclass != null && superclass != Object.class) {
-//            builder.append(", ").append(toPyAnno(superclass, "__").replace("'", ""))
+//            builder.append(", ").append(toPyAnno(superclass, "_").replace("'", ""))
 //                    .append(", ").append(toPyAnno(superclass).replace("'", ""));
 //
 //            addImport(toPyImport(superclass));
@@ -219,7 +237,7 @@ public class PythonFinalClassBuilder {
 //        }
 //
 //        for (Class<?> anInterface : interfaces) {
-//            builder.append(", ").append(toPyAnno(anInterface, "__").replace("'", ""))
+//            builder.append(", ").append(toPyAnno(anInterface, "_").replace("'", ""))
 //                    .append(", ").append(toPyAnno(anInterface).replace("'", ""));
 //
 //            addImport(toPyImport(anInterface));
@@ -246,8 +264,7 @@ public class PythonFinalClassBuilder {
                     @overload
                     def __init__(self):
                         \"""%1$s\"""
-                        val = __%2$s()
-                        self.__dict__ = val.__dict__
+                        val = _%2$s()
                         self.__wrapper = val
                     """.formatted(
                     constructor.toGenericString(),
@@ -259,8 +276,7 @@ public class PythonFinalClassBuilder {
                 @overload
                 def __init__(self, %3$s):
                     \"""%1$s\"""
-                    val = __%2$s(%4$s)
-                    self.__dict__ = val.__dict__
+                    val = _%2$s(%4$s)
                     self.__wrapper = val
                 """.formatted(
                 constructor.toGenericString(),
@@ -284,27 +300,27 @@ public class PythonFinalClassBuilder {
             builder.append(toPyArgument(parameter.getType(), parameter.getName()));
 
             if (parameter.getType() == int.class) {
-                this.addImport("import java.lang.Integer as __int");
+                this.addImport("import java.lang.Integer as _int");
             } else if (parameter.getType() == long.class) {
-                this.addImport("import java.lang.Long as __long");
+                this.addImport("import java.lang.Long as _long");
             } else if (parameter.getType() == float.class) {
-                this.addImport("import java.lang.Float as __float");
+                this.addImport("import java.lang.Float as _float");
             } else if (parameter.getType() == double.class) {
-                this.addImport("import java.lang.Double as __double");
+                this.addImport("import java.lang.Double as _double");
             } else if (parameter.getType() == boolean.class) {
-                this.addImport("import java.lang.Boolean as __boolean");
+                this.addImport("import java.lang.Boolean as _boolean");
             } else if (parameter.getType() == String.class) {
-                this.addImport("import java.lang.String as __string");
+                this.addImport("import java.lang.String as _string");
             } else if (parameter.getType() == byte.class) {
-                this.addImport("import java.lang.Byte as __byte");
+                this.addImport("import java.lang.Byte as _byte");
             } else if (parameter.getType() == short.class) {
-                this.addImport("import java.lang.Short as __short");
+                this.addImport("import java.lang.Short as _short");
             } else if (parameter.getType() == char.class) {
-                this.addImport("import java.lang.Character as __char");
+                this.addImport("import java.lang.Character as _char");
             } else if (parameter.getType() == void.class) {
-                this.addImport("import java.lang.Void as __void");
+                this.addImport("import java.lang.Void as _void");
             } else if (parameter.getType() == Object.class) {
-                this.addImport("import java.lang.Object as __object");
+                this.addImport("import java.lang.Object as _object");
             }
         }
 
@@ -343,15 +359,15 @@ public class PythonFinalClassBuilder {
 
     private String toPyArgument(Class<?> type, String name) {
         if (type == int.class) {
-            return "__int.valueOf(" + name + ")";
+            return "_int.valueOf(" + name + ")";
         } else if (type == long.class) {
-            return "__long.valueOf(" + name + ")";
+            return "_long.valueOf(" + name + ")";
         } else if (type == float.class) {
-            return "__float.valueOf(" + name + ")";
+            return "_float.valueOf(" + name + ")";
         } else if (type == double.class) {
-            return "__double.valueOf(" + name + ")";
+            return "_double.valueOf(" + name + ")";
         } else if (type == boolean.class) {
-            return "__boolean.valueOf(" + name + ")";
+            return "_boolean.valueOf(" + name + ")";
         } else if (type == String.class) {
             return name;
         } else if (type == void.class) {
@@ -361,11 +377,11 @@ public class PythonFinalClassBuilder {
         } else if (type == Object.class) {
             return name;
         } else if (type == byte.class) {
-            return "__byte.valueOf(" + name + ")";
+            return "_byte.valueOf(" + name + ")";
         } else if (type == short.class) {
-            return "__short.valueOf(" + name + ")";
+            return "_short.valueOf(" + name + ")";
         } else if (type == char.class) {
-            return "__char.valueOf(" + name + ")";
+            return "_char.valueOf(" + name + ")";
         } else {
             return name;
         }
@@ -481,7 +497,7 @@ public class PythonFinalClassBuilder {
                     @overload
                     def %1$s(self, %4$s):
                         \"""%2$s\"""
-                        super(__%6$s, self).%3$s(%5$s)
+                        super(_%6$s, self).%3$s(%5$s)
                     """.formatted(
                     name,
                     method.toGenericString(),
@@ -502,7 +518,7 @@ public class PythonFinalClassBuilder {
                         @overload
                         def %1$s(self) -> %2$s:
                             \"""%3$s\"""
-                            return __transform(super(%5$s, self).%4$s()).%2$sValue()
+                            return _transform(super(%5$s, self).%4$s()).%2$sValue()
                         """.formatted(
                         name,
                         toPyAnno(method.getReturnType()),
@@ -512,7 +528,7 @@ public class PythonFinalClassBuilder {
                 ));
 
                 this.addImport(toJavaImport(method.getDeclaringClass()));
-                this.addImport("from pyquantum_helper import transform as __transform");
+                this.addImport("from pyquantum_helper import transform as _transform");
 
                 return;
             }
@@ -521,7 +537,7 @@ public class PythonFinalClassBuilder {
                     @overload
                     def %1$s(self) -> %2$s:
                         \"""%3$s\"""
-                        return %2$s.__wrap(super(%5$s, self).%4$s())
+                        return %2$s._wrap(super(%5$s, self).%4$s())
                     """.formatted(
                     name,
                     toPyAnno(method.getReturnType()),
@@ -542,7 +558,7 @@ public class PythonFinalClassBuilder {
                     @overload
                     def %1$s(self, %5$s) -> %2$s:
                         \"""%3$s\"""
-                        return __transform(super(__%7$s, self).%4$s(%6$s)).%2$sValue()
+                        return _transform(super(_%7$s, self).%4$s(%6$s)).%2$sValue()
                     """.formatted(
                     name,
                     toPyAnno(method.getReturnType()),
@@ -554,7 +570,7 @@ public class PythonFinalClassBuilder {
             ));
 
             this.addImport(toJavaImport(method.getDeclaringClass()));
-            this.addImport("from pyquantum_helper import transform as __transform");
+            this.addImport("from pyquantum_helper import transform as _transform");
 
             return;
         }
@@ -563,7 +579,7 @@ public class PythonFinalClassBuilder {
                 @overload
                 def %1$s(self, %5$s) -> %2$s:
                     \"""%3$s\"""
-                    return %2$s.__wrap(super(__%7$s, self).%4$s(%6$s))
+                    return %2$s._wrap(super(_%7$s, self).%4$s(%6$s))
                 """.formatted(
                 name,
                 toPyAnno(method.getReturnType()),
@@ -589,7 +605,7 @@ public class PythonFinalClassBuilder {
                             @overload
                             def %1$s():
                                 \"""%2$s\"""
-                                __%3$s.%4$s()
+                                _%3$s.%4$s()
                         """.formatted(
                         s,
                         method.toGenericString(),
@@ -606,7 +622,7 @@ public class PythonFinalClassBuilder {
                     @overload
                     def %1$s(%5$s):
                         \"""%2$s\"""
-                        __%3$s.%4$s(%6$s)
+                        _%3$s.%4$s(%6$s)
                     """.formatted(
                     s,
                     method.toGenericString(),
@@ -628,7 +644,7 @@ public class PythonFinalClassBuilder {
                         @overload
                         def %1$s() -> %2$s:
                             \"""%3$s\"""
-                            return __transform(__%4$s.%5$s()).%2$sValue()
+                            return _transform(_%4$s.%5$s()).%2$sValue()
                         """.formatted(
                         s,
 
@@ -649,7 +665,7 @@ public class PythonFinalClassBuilder {
                     @overload
                     def %1$s() -> %2$s:
                         \"""%3$s\"""
-                        return %6$s.__wrap(__%4$s.%5$s())
+                        return %6$s._wrap(_%4$s.%5$s())
                     """.formatted(
                     s,
                     toPyAnno(method.getReturnType()),
@@ -672,7 +688,7 @@ public class PythonFinalClassBuilder {
                     @overload
                     def %1$s(%5$s) -> %2$s:
                         \"""%3$s\"""
-                        return __transform(__%7$s.%4$s(%6$s)).%2$sValue()
+                        return _transform(_%7$s.%4$s(%6$s)).%2$sValue()
                     """.formatted(
                     s,
                     toPyAnno(method.getReturnType()),
@@ -692,7 +708,7 @@ public class PythonFinalClassBuilder {
                 @overload
                 def %1$s(%6$s) -> %2$s:
                     \"""%3$s\"""
-                    return %8$s.__wrap(__%4$s.%5$s(%7$s))
+                    return %8$s._wrap(_%4$s.%5$s(%7$s))
                 """.formatted(
                 s,
                 toPyAnno(method.getReturnType()),
@@ -836,7 +852,7 @@ public class PythonFinalClassBuilder {
         this.members.add("""
                 @property
                 def %1$s(self) -> %2$s:
-                    return %2$s.__wrap(super(__%4$s).%3$s())
+                    return %2$s._wrap(super(_%4$s).%3$s())
                 """.formatted(
                 toLowerUnderscore(field.getName()),
                 field.getType().getSimpleName(),
@@ -848,7 +864,7 @@ public class PythonFinalClassBuilder {
             this.members.add("""
                     @property
                     def %1$s(self, value: %2$s):
-                        super(__%4$s).%3$s(value)
+                        super(_%4$s).%3$s(value)
                     """.formatted(
                     toLowerUnderscore(field.getName()),
                     toPyAnno(field.getType()),
@@ -922,9 +938,21 @@ public class PythonFinalClassBuilder {
     }
 
     private void addConstField(Field field) {
+        if (field.getType().equals(field.getDeclaringClass())) {
+            this.postinit.add("""
+                    %1$s.%2$s = %1$s._wrap(_%2$s.%3$s)
+                    """.formatted(
+                    toPyAnno(field.getDeclaringClass()).replace("'", ""),
+                    field.getName(),
+                    field.getName()
+            ));
+
+            return;
+        }
+
         this.staticMembers.add("""
                 # %4$s
-                %1$s: '%2$s' = __wrap(__%2$s.%3$s)""".formatted(
+                %1$s: '%2$s' = _wrap(_%2$s.%3$s)""".formatted(
                 field.getName(),
                 toPyAnno(field.getType()).replace("'", ""),
                 field.getName(),
@@ -946,14 +974,14 @@ public class PythonFinalClassBuilder {
         String simpleName = type.getSimpleName();
         String[] name = type.getName().split("\\.");
         String importName = name[name.length - 1].replace("$", "_");
-        String s = "import " + type.getName().split("\\$")[0] + " as __" + importName;
+        String s = "import " + type.getName().split("\\$")[0] + " as _" + importName;
         String[] split = type.getName().split("\\.");
         String s1 = split[split.length - 1];
         String replace = s1.replace("$", "_");
         if (s1.contains("$")) {
-            s += "\n__" + simpleName + " = __" + replace + "." + String.join(".", ArrayUtils.remove(s1.split("\\$"), 0));
+            s += "\n_" + simpleName + " = _" + replace + "." + String.join(".", ArrayUtils.remove(s1.split("\\$"), 0));
         } else {
-            s += "\n__" + simpleName + " = __" + replace;
+            s += "\n_" + simpleName + " = _" + replace;
         }
 
         return s;

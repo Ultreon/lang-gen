@@ -3,70 +3,68 @@ from overload import overload
 
 
  
-import dev.ultreon.quantum.client.particle.ParticleEmitters as __ParticleEmitters
-__ParticleEmitters = __ParticleEmitters
+import dev.ultreon.quantum.client.particle.ParticleEmitters as _ParticleEmitters
+_ParticleEmitters = _ParticleEmitters
 from builtins import str
-import java.lang.Long as __long
 from pyquantum_helper import override
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.Object as __object
-import java.lang.String as __String
-__String = __String
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Integer as _int
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ParticleEmitters():
     """dev.ultreon.quantum.client.particle.ParticleEmitters"""
  
     @staticmethod
-    def __wrap(java_value: __ParticleEmitters) -> 'ParticleEmitters':
+    def _wrap(java_value: _ParticleEmitters) -> 'ParticleEmitters':
         return ParticleEmitters(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ParticleEmitters):
+    def __init__(self, __dynamic__: _ParticleEmitters):
         """
         Dynamic initializer for ParticleEmitters.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ParticleEmitters__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ParticleEmitters__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @overload
     def __init__(self, ):
         """public dev.ultreon.quantum.client.particle.ParticleEmitters()"""
-        val = __ParticleEmitters()
-        self.__dict__ = val.__dict__
+        val = _ParticleEmitters()
         self.__wrapper = val
 
     @override
@@ -77,21 +75,20 @@ class ParticleEmitters():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @overload
     def __init__(self):
         """public dev.ultreon.quantum.client.particle.ParticleEmitters()"""
-        val = __ParticleEmitters()
-        self.__dict__ = val.__dict__
+        val = _ParticleEmitters()
         self.__wrapper = val
 
     @override
@@ -106,91 +103,95 @@ class ParticleEmitters():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
         @staticmethod
         @overload
         def init():
             """public static void dev.ultreon.quantum.client.particle.ParticleEmitters.init()"""
-            __ParticleEmitters.init()
+            _ParticleEmitters.init()
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
  
 # CLASS: dev.ultreon.quantum.client.particle.ParticleEmitters
-import dev.ultreon.quantum.client.particle.ParticleEmitters as __ParticleEmitters
-__ParticleEmitters = __ParticleEmitters
+import dev.ultreon.quantum.client.particle.ParticleEmitters as _ParticleEmitters
+_ParticleEmitters = _ParticleEmitters
 from builtins import str
-import java.lang.Long as __long
 from pyquantum_helper import override
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.Object as __object
-import java.lang.String as __String
-__String = __String
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Integer as _int
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ParticleEmitters():
     """dev.ultreon.quantum.client.particle.ParticleEmitters"""
  
     @staticmethod
-    def __wrap(java_value: __ParticleEmitters) -> 'ParticleEmitters':
+    def _wrap(java_value: _ParticleEmitters) -> 'ParticleEmitters':
         return ParticleEmitters(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ParticleEmitters):
+    def __init__(self, __dynamic__: _ParticleEmitters):
         """
         Dynamic initializer for ParticleEmitters.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ParticleEmitters__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ParticleEmitters__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @overload
     def __init__(self, ):
         """public dev.ultreon.quantum.client.particle.ParticleEmitters()"""
-        val = __ParticleEmitters()
-        self.__dict__ = val.__dict__
+        val = _ParticleEmitters()
         self.__wrapper = val
 
     @override
@@ -201,21 +202,20 @@ class ParticleEmitters():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @overload
     def __init__(self):
         """public dev.ultreon.quantum.client.particle.ParticleEmitters()"""
-        val = __ParticleEmitters()
-        self.__dict__ = val.__dict__
+        val = _ParticleEmitters()
         self.__wrapper = val
 
     @override
@@ -230,22 +230,28 @@ class ParticleEmitters():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
         @staticmethod
         @overload
         def init():
             """public static void dev.ultreon.quantum.client.particle.ParticleEmitters.init()"""
-            __ParticleEmitters.init()
+            _ParticleEmitters.init()
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
@@ -255,76 +261,62 @@ class ParticleEmitters():
  
 # CLASS: dev.ultreon.quantum.client.particle.ParticleControllers
 from builtins import str
-import java.lang.Long as __long
 from pyquantum_helper import override
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.Object as __object
-import java.lang.String as __String
-__String = __String
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Integer as _int
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Object as __Object
-__Object = __Object
-import dev.ultreon.quantum.client.particle.ParticleControllers as __ParticleControllers
-__ParticleControllers = __ParticleControllers
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
 from builtins import bool
+import java.lang.Long as _long
+import dev.ultreon.quantum.client.particle.ParticleControllers as _ParticleControllers
+_ParticleControllers = _ParticleControllers
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ParticleControllers():
     """dev.ultreon.quantum.client.particle.ParticleControllers"""
  
     @staticmethod
-    def __wrap(java_value: __ParticleControllers) -> 'ParticleControllers':
+    def _wrap(java_value: _ParticleControllers) -> 'ParticleControllers':
         return ParticleControllers(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ParticleControllers):
+    def __init__(self, __dynamic__: _ParticleControllers):
         """
         Dynamic initializer for ParticleControllers.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ParticleControllers__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ParticleControllers__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.client.particle.ParticleControllers()"""
-        val = __ParticleControllers()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-        @staticmethod
-        @overload
-        def init():
-            """public static void dev.ultreon.quantum.client.particle.ParticleControllers.init()"""
-            __ParticleControllers.init()
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -334,15 +326,15 @@ class ParticleControllers():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -350,109 +342,120 @@ class ParticleControllers():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @overload
+    def __init__(self):
+        """public dev.ultreon.quantum.client.particle.ParticleControllers()"""
+        val = _ParticleControllers()
+        self.__wrapper = val
+
     @override
     @overload
     def wait(self):
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        @staticmethod
+        @overload
+        def init():
+            """public static void dev.ultreon.quantum.client.particle.ParticleControllers.init()"""
+            _ParticleControllers.init()
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @overload
     def __init__(self, ):
         """public dev.ultreon.quantum.client.particle.ParticleControllers()"""
-        val = __ParticleControllers()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val 
+        val = _ParticleControllers()
+        self.__wrapper = val
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.client.particle.PFXPool
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
+import dev.ultreon.quantum.client.particle.PFXPool as _PFXPool
+_PFXPool = _PFXPool
 from builtins import str
 try:
     from pygdx.graphics.g3d import particles
 except ImportError:
-    particles = __import_once__("pygdx.graphics.g3d.particles")
+    particles = _import_once("pygdx.graphics.g3d.particles")
 
 try:
     from pygdx import utils
 except ImportError:
-    utils = __import_once__("pygdx.utils")
+    utils = _import_once("pygdx.utils")
 
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
+import com.badlogic.gdx.utils.Pool as _Pool
+_Pool = _Pool
 from builtins import object
-import java.lang.Long as __long
-import dev.ultreon.quantum.client.particle.PFXPool as __PFXPool
-__PFXPool = __PFXPool
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import com.badlogic.gdx.utils.Pool as __Pool
-__Pool = __Pool
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class PFXPool():
     """dev.ultreon.quantum.client.particle.PFXPool"""
  
     @staticmethod
-    def __wrap(java_value: __PFXPool) -> 'PFXPool':
+    def _wrap(java_value: _PFXPool) -> 'PFXPool':
         return PFXPool(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __PFXPool):
+    def __init__(self, __dynamic__: _PFXPool):
         """
         Dynamic initializer for PFXPool.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_PFXPool__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_PFXPool__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def free(self, arg0: 'ParticleEffect'):
-        """public void dev.ultreon.quantum.client.particle.PFXPool.free(com.badlogic.gdx.graphics.g3d.particles.ParticleEffect)"""
-        super(__PFXPool, self).free(arg0)
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def __init__(self, arg0: 'ParticleEffect'):
+        """public dev.ultreon.quantum.client.particle.PFXPool(com.badlogic.gdx.graphics.g3d.particles.ParticleEffect)"""
+        val = _PFXPool(arg0)
+        self.__wrapper = val
 
     @override
     @overload
@@ -462,9 +465,26 @@ class PFXPool():
 
     @override
     @overload
-    def freeAll(self, arg0: 'Array'):
-        """public void com.badlogic.gdx.utils.Pool.freeAll(com.badlogic.gdx.utils.Array<T>)"""
-        super(__utils.Pool, self).freeAll(arg0)
+    def getFree(self) -> int:
+        """public int com.badlogic.gdx.utils.Pool.getFree()"""
+        return int._wrap(super(utils.Pool, self).getFree())
+
+    @overload
+    def free(self, arg0: 'ParticleEffect'):
+        """public void dev.ultreon.quantum.client.particle.PFXPool.free(com.badlogic.gdx.graphics.g3d.particles.ParticleEffect)"""
+        super(_PFXPool, self).free(arg0)
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @override
+    @overload
+    def fill(self, arg0: int):
+        """public void com.badlogic.gdx.utils.Pool.fill(int)"""
+        super(_utils.Pool, self).fill(_int.valueOf(arg0))
 
     @override
     @overload
@@ -472,42 +492,17 @@ class PFXPool():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
-    @overload
-    def __init__(self, arg0: 'ParticleEffect'):
-        """public dev.ultreon.quantum.client.particle.PFXPool(com.badlogic.gdx.graphics.g3d.particles.ParticleEffect)"""
-        val = __PFXPool(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
     @override
     @overload
-    def fill(self, arg0: int):
-        """public void com.badlogic.gdx.utils.Pool.fill(int)"""
-        super(__utils.Pool, self).fill(__int.valueOf(arg0))
-
-    @override
-    @overload
-    def getFree(self) -> int:
-        """public int com.badlogic.gdx.utils.Pool.getFree()"""
-        return int.__wrap(super(utils.Pool, self).getFree())
-
-    @override
-    @overload
-    def obtain(self) -> object:
-        """public T com.badlogic.gdx.utils.Pool.obtain()"""
-        return object.__wrap(super(utils.Pool, self).obtain())
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -517,9 +512,21 @@ class PFXPool():
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
+    def obtain(self) -> object:
+        """public T com.badlogic.gdx.utils.Pool.obtain()"""
+        return object._wrap(super(utils.Pool, self).obtain())
+
+    @override
+    @overload
+    def freeAll(self, arg0: 'Array'):
+        """public void com.badlogic.gdx.utils.Pool.freeAll(com.badlogic.gdx.utils.Array<T>)"""
+        super(_utils.Pool, self).freeAll(arg0)
 
     @override
     @overload
@@ -530,109 +537,113 @@ class PFXPool():
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0)) 
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.client.particle.ClientParticle
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
+import dev.ultreon.quantum.client.particle.PFXPool as _PFXPool
+_PFXPool = _PFXPool
 from builtins import str
 try:
     from pygdx import utils
 except ImportError:
-    utils = __import_once__("pygdx.utils")
+    utils = _import_once("pygdx.utils")
 
 try:
     from pygdx.graphics.g3d import particles
 except ImportError:
-    particles = __import_once__("pygdx.graphics.g3d.particles")
+    particles = _import_once("pygdx.graphics.g3d.particles")
 
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.client.particle.ClientParticle as __ClientParticle
-__ClientParticle = __ClientParticle
-import dev.ultreon.quantum.world.particles.ParticleType as __ParticleType
-__ParticleType = __ParticleType
-import java.lang.Long as __long
-import dev.ultreon.quantum.client.particle.PFXPool as __PFXPool
-__PFXPool = __PFXPool
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import com.badlogic.gdx.graphics.g3d.particles.ParticleController as __ParticleController
-__ParticleController = __ParticleController
+import dev.ultreon.quantum.world.particles.ParticleType as _ParticleType
+_ParticleType = _ParticleType
+import java.lang.String as _String
+_String = _String
+import com.badlogic.gdx.graphics.g3d.particles.ParticleController as _ParticleController
+_ParticleController = _ParticleController
+import dev.ultreon.quantum.client.particle.ClientParticle as _ClientParticle
+_ClientParticle = _ClientParticle
+import java.lang.Integer as _int
+import com.badlogic.gdx.graphics.g3d.particles.ParticleEffect as _ParticleEffect
+_ParticleEffect = _ParticleEffect
 try:
     from pyquantum.world import particles
 except ImportError:
-    particles = __import_once__("pyquantum.world.particles")
+    particles = _import_once("pyquantum.world.particles")
 
-import java.lang.Integer as __int
-import com.badlogic.gdx.graphics.g3d.particles.ParticleEffect as __ParticleEffect
-__ParticleEffect = __ParticleEffect
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ClientParticle():
     """dev.ultreon.quantum.client.particle.ClientParticle"""
  
     @staticmethod
-    def __wrap(java_value: __ClientParticle) -> 'ClientParticle':
+    def _wrap(java_value: _ClientParticle) -> 'ClientParticle':
         return ClientParticle(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ClientParticle):
+    def __init__(self, __dynamic__: _ClientParticle):
         """
         Dynamic initializer for ClientParticle.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ClientParticle__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ClientParticle__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def getParticleController(self) -> 'particles.ParticleController':
-        """public com.badlogic.gdx.graphics.g3d.particles.ParticleController dev.ultreon.quantum.client.particle.ClientParticle.getParticleController()"""
-        return 'particles.ParticleController'.__wrap(super(ClientParticle, self).getParticleController())
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def __init__(self, arg0: 'ParticleType'):
-        """public dev.ultreon.quantum.client.particle.ClientParticle(dev.ultreon.quantum.world.particles.ParticleType)"""
-        val = __ClientParticle(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def load(self, arg0: 'Array'):
+        """public void dev.ultreon.quantum.client.particle.ClientParticle.load(com.badlogic.gdx.utils.Array<com.badlogic.gdx.graphics.g3d.particles.batches.ParticleBatch<?>>)"""
+        super(_ClientParticle, self).load(arg0)
 
     @overload
     def getParticleEffect(self) -> 'particles.ParticleEffect':
         """public com.badlogic.gdx.graphics.g3d.particles.ParticleEffect dev.ultreon.quantum.client.particle.ClientParticle.getParticleEffect()"""
-        return 'particles.ParticleEffect'.__wrap(super(ClientParticle, self).getParticleEffect())
+        return 'particles.ParticleEffect'._wrap(super(ClientParticle, self).getParticleEffect())
+
+    @overload
+    def __init__(self, arg0: 'ParticleType'):
+        """public dev.ultreon.quantum.client.particle.ClientParticle(dev.ultreon.quantum.world.particles.ParticleType)"""
+        val = _ClientParticle(arg0)
+        self.__wrapper = val
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -640,22 +651,22 @@ class ClientParticle():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @override
     @overload
-    def getType(self) -> 'particles.ParticleType':
-        """public dev.ultreon.quantum.world.particles.ParticleType dev.ultreon.quantum.client.particle.ClientParticle.getType()"""
-        return 'particles.ParticleType'.__wrap(super(ClientParticle, self).getType())
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @overload
+    def getPool(self) -> 'PFXPool':
+        """public dev.ultreon.quantum.client.particle.PFXPool dev.ultreon.quantum.client.particle.ClientParticle.getPool()"""
+        return 'PFXPool'._wrap(super(ClientParticle, self).getPool())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -664,15 +675,20 @@ class ClientParticle():
         super(object, self).notify()
 
     @overload
-    def getPool(self) -> 'PFXPool':
-        """public dev.ultreon.quantum.client.particle.PFXPool dev.ultreon.quantum.client.particle.ClientParticle.getPool()"""
-        return 'PFXPool'.__wrap(super(ClientParticle, self).getPool())
+    def getType(self) -> 'particles.ParticleType':
+        """public dev.ultreon.quantum.world.particles.ParticleType dev.ultreon.quantum.client.particle.ClientParticle.getType()"""
+        return 'particles.ParticleType'._wrap(super(ClientParticle, self).getType())
+
+    @overload
+    def getParticleController(self) -> 'particles.ParticleController':
+        """public com.badlogic.gdx.graphics.g3d.particles.ParticleController dev.ultreon.quantum.client.particle.ClientParticle.getParticleController()"""
+        return 'particles.ParticleController'._wrap(super(ClientParticle, self).getParticleController())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -681,107 +697,107 @@ class ClientParticle():
         super(object, self).wait()
 
     @overload
-    def load(self, arg0: 'Array'):
-        """public void dev.ultreon.quantum.client.particle.ClientParticle.load(com.badlogic.gdx.utils.Array<com.badlogic.gdx.graphics.g3d.particles.batches.ParticleBatch<?>>)"""
-        super(__ClientParticle, self).load(arg0)
-
-    @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0)) 
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.client.particle.ClientParticleRegistry
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 try:
     from pygdx import utils
 except ImportError:
-    utils = __import_once__("pygdx.utils")
+    utils = _import_once("pygdx.utils")
 
 try:
     from pygdx.graphics.g3d import particles
 except ImportError:
-    particles = __import_once__("pygdx.graphics.g3d.particles")
+    particles = _import_once("pygdx.graphics.g3d.particles")
 
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.client.particle.ClientParticle as __ClientParticle
-__ClientParticle = __ClientParticle
-import dev.ultreon.quantum.client.particle.ClientParticleRegistry as __ClientParticleRegistry
-__ClientParticleRegistry = __ClientParticleRegistry
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import com.badlogic.gdx.graphics.g3d.particles.ParticleController as __ParticleController
-__ParticleController = __ParticleController
+import dev.ultreon.quantum.client.particle.ClientParticleRegistry as _ClientParticleRegistry
+_ClientParticleRegistry = _ClientParticleRegistry
+import java.lang.String as _String
+_String = _String
+import com.badlogic.gdx.graphics.g3d.particles.ParticleController as _ParticleController
+_ParticleController = _ParticleController
+import dev.ultreon.quantum.client.particle.ClientParticle as _ClientParticle
+_ClientParticle = _ClientParticle
+import java.lang.Integer as _int
 try:
     from pyquantum.world import particles
 except ImportError:
-    particles = __import_once__("pyquantum.world.particles")
+    particles = _import_once("pyquantum.world.particles")
 
-import java.lang.Integer as __int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ClientParticleRegistry():
     """dev.ultreon.quantum.client.particle.ClientParticleRegistry"""
  
     @staticmethod
-    def __wrap(java_value: __ClientParticleRegistry) -> 'ClientParticleRegistry':
+    def _wrap(java_value: _ClientParticleRegistry) -> 'ClientParticleRegistry':
         return ClientParticleRegistry(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ClientParticleRegistry):
+    def __init__(self, __dynamic__: _ClientParticleRegistry):
         """
         Dynamic initializer for ClientParticleRegistry.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ClientParticleRegistry__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ClientParticleRegistry__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def __init__(self):
+        """public dev.ultreon.quantum.client.particle.ClientParticleRegistry()"""
+        val = _ClientParticleRegistry()
+        self.__wrapper = val
 
     @staticmethod
     @overload
     def getController(arg0: 'ParticleType') -> 'particles.ParticleController':
         """public static com.badlogic.gdx.graphics.g3d.particles.ParticleController dev.ultreon.quantum.client.particle.ClientParticleRegistry.getController(dev.ultreon.quantum.world.particles.ParticleType)"""
-        return particles.ParticleController.__wrap(__ClientParticleRegistry.getController(arg0))
-
-    @staticmethod
-    @overload
-    def registerController(arg0: 'ParticleType', arg1: 'ParticleController'):
-        """public static void dev.ultreon.quantum.client.particle.ClientParticleRegistry.registerController(dev.ultreon.quantum.world.particles.ParticleType,com.badlogic.gdx.graphics.g3d.particles.ParticleController)"""
-        __ClientParticleRegistry.registerController(arg0, arg1)
+        return particles.ParticleController._wrap(_ClientParticleRegistry.getController(arg0))
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -791,22 +807,21 @@ class ClientParticleRegistry():
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.client.particle.ClientParticleRegistry()"""
-        val = __ClientParticleRegistry()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @overload
+    def __init__(self, ):
+        """public dev.ultreon.quantum.client.particle.ClientParticleRegistry()"""
+        val = _ClientParticleRegistry()
+        self.__wrapper = val
 
     @override
     @overload
@@ -818,32 +833,31 @@ class ClientParticleRegistry():
     @overload
     def getParticle(arg0: 'ParticleType') -> 'ClientParticle':
         """public static dev.ultreon.quantum.client.particle.ClientParticle dev.ultreon.quantum.client.particle.ClientParticleRegistry.getParticle(dev.ultreon.quantum.world.particles.ParticleType)"""
-        return ClientParticle.__wrap(__ClientParticleRegistry.getParticle(arg0))
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+        return ClientParticle._wrap(_ClientParticleRegistry.getParticle(arg0))
 
         @staticmethod
         @overload
         def registerAll():
             """public static void dev.ultreon.quantum.client.particle.ClientParticleRegistry.registerAll()"""
-            __ClientParticleRegistry.registerAll()
+            _ClientParticleRegistry.registerAll()
 
+    @override
     @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.client.particle.ClientParticleRegistry()"""
-        val = __ClientParticleRegistry()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @staticmethod
+    @overload
+    def registerController(arg0: 'ParticleType', arg1: 'ParticleController'):
+        """public static void dev.ultreon.quantum.client.particle.ClientParticleRegistry.registerController(dev.ultreon.quantum.world.particles.ParticleType,com.badlogic.gdx.graphics.g3d.particles.ParticleController)"""
+        _ClientParticleRegistry.registerController(arg0, arg1)
 
     @staticmethod
     @overload
     def loadAll(arg0: 'Array'):
         """public static void dev.ultreon.quantum.client.particle.ClientParticleRegistry.loadAll(com.badlogic.gdx.utils.Array<com.badlogic.gdx.graphics.g3d.particles.batches.ParticleBatch<?>>)"""
-        __ClientParticleRegistry.loadAll(arg0)
+        _ClientParticleRegistry.loadAll(arg0)
 
     @override
     @overload
@@ -854,68 +868,73 @@ class ClientParticleRegistry():
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0)) 
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.client.particle.ParticleControllerRenderers
 from builtins import str
-import java.lang.Long as __long
+import dev.ultreon.quantum.client.particle.ParticleControllerRenderers as _ParticleControllerRenderers
+_ParticleControllerRenderers = _ParticleControllerRenderers
 from pyquantum_helper import override
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.Object as __object
-import java.lang.String as __String
-__String = __String
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Integer as _int
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Object as __Object
-__Object = __Object
-import dev.ultreon.quantum.client.particle.ParticleControllerRenderers as __ParticleControllerRenderers
-__ParticleControllerRenderers = __ParticleControllerRenderers
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ParticleControllerRenderers():
     """dev.ultreon.quantum.client.particle.ParticleControllerRenderers"""
  
     @staticmethod
-    def __wrap(java_value: __ParticleControllerRenderers) -> 'ParticleControllerRenderers':
+    def _wrap(java_value: _ParticleControllerRenderers) -> 'ParticleControllerRenderers':
         return ParticleControllerRenderers(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ParticleControllerRenderers):
+    def __init__(self, __dynamic__: _ParticleControllerRenderers):
         """
         Dynamic initializer for ParticleControllerRenderers.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ParticleControllerRenderers__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ParticleControllerRenderers__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -925,22 +944,21 @@ class ParticleControllerRenderers():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.client.particle.ParticleControllerRenderers()"""
-        val = __ParticleControllerRenderers()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @overload
+    def __init__(self, ):
+        """public dev.ultreon.quantum.client.particle.ParticleControllerRenderers()"""
+        val = _ParticleControllerRenderers()
+        self.__wrapper = val
 
     @override
     @overload
@@ -955,25 +973,30 @@ class ParticleControllerRenderers():
         super(object, self).wait()
 
     @overload
-    def __init__(self, ):
+    def __init__(self):
         """public dev.ultreon.quantum.client.particle.ParticleControllerRenderers()"""
-        val = __ParticleControllerRenderers()
-        self.__dict__ = val.__dict__
+        val = _ParticleControllerRenderers()
         self.__wrapper = val
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
         @staticmethod
         @overload
         def init():
             """public static void dev.ultreon.quantum.client.particle.ParticleControllerRenderers.init()"""
-            __ParticleControllerRenderers.init()
+            _ParticleControllerRenderers.init()
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())

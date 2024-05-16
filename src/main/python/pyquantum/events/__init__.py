@@ -3,42 +3,47 @@ from overload import overload
 
 
  
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import recipe
 except ImportError:
-    recipe = __import_once__("pyquantum.recipe")
+    recipe = _import_once("pyquantum.recipe")
 
-import dev.ultreon.quantum.events.LoadingEvent as __LoadingEvent_RecipeState
-__RecipeState = __LoadingEvent_RecipeState.RecipeState
+import dev.ultreon.quantum.events.LoadingEvent as _LoadingEvent_RecipeState
+_RecipeState = _LoadingEvent_RecipeState.RecipeState
 from abc import abstractmethod, ABC
  
-class RecipeState(ABC):
+class RecipeState():
     """dev.ultreon.quantum.events.LoadingEvent.RecipeState"""
  
     @staticmethod
-    def __wrap(java_value: __RecipeState) -> 'RecipeState':
+    def _wrap(java_value: _RecipeState) -> 'RecipeState':
         return RecipeState(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __RecipeState):
+    def __init__(self, __dynamic__: _RecipeState):
         """
         Dynamic initializer for RecipeState.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_RecipeState__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_RecipeState__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -52,42 +57,47 @@ class RecipeState(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.LoadingEvent$RecipeState
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import recipe
 except ImportError:
-    recipe = __import_once__("pyquantum.recipe")
+    recipe = _import_once("pyquantum.recipe")
 
-import dev.ultreon.quantum.events.LoadingEvent as __LoadingEvent_RecipeState
-__RecipeState = __LoadingEvent_RecipeState.RecipeState
+import dev.ultreon.quantum.events.LoadingEvent as _LoadingEvent_RecipeState
+_RecipeState = _LoadingEvent_RecipeState.RecipeState
 from abc import abstractmethod, ABC
  
-class RecipeState(ABC):
+class RecipeState():
     """dev.ultreon.quantum.events.LoadingEvent.RecipeState"""
  
     @staticmethod
-    def __wrap(java_value: __RecipeState) -> 'RecipeState':
+    def _wrap(java_value: _RecipeState) -> 'RecipeState':
         return RecipeState(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __RecipeState):
+    def __init__(self, __dynamic__: _RecipeState):
         """
         Dynamic initializer for RecipeState.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_RecipeState__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_RecipeState__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -104,57 +114,62 @@ class RecipeState(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.BlockEvents$BlockPlaced
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
 try:
     from pyquantum.entity import player
 except ImportError:
-    player = __import_once__("pyquantum.entity.player")
+    player = _import_once("pyquantum.entity.player")
 
 try:
     from pyquantum import block
 except ImportError:
-    block = __import_once__("pyquantum.block")
+    block = _import_once("pyquantum.block")
 
+import dev.ultreon.quantum.events.BlockEvents as _BlockEvents_BlockPlaced
+_BlockPlaced = _BlockEvents_BlockPlaced.BlockPlaced
 try:
     from pyquantum import item
 except ImportError:
-    item = __import_once__("pyquantum.item")
+    item = _import_once("pyquantum.item")
 
 from abc import abstractmethod, ABC
-import dev.ultreon.quantum.events.BlockEvents as __BlockEvents_BlockPlaced
-__BlockPlaced = __BlockEvents_BlockPlaced.BlockPlaced
  
-class BlockPlaced(ABC):
+class BlockPlaced():
     """dev.ultreon.quantum.events.BlockEvents.BlockPlaced"""
  
     @staticmethod
-    def __wrap(java_value: __BlockPlaced) -> 'BlockPlaced':
+    def _wrap(java_value: _BlockPlaced) -> 'BlockPlaced':
         return BlockPlaced(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BlockPlaced):
+    def __init__(self, __dynamic__: _BlockPlaced):
         """
         Dynamic initializer for BlockPlaced.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BlockPlaced__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BlockPlaced__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -166,42 +181,47 @@ class BlockPlaced(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.WorldEvents$ChunkUnloaded
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
-import dev.ultreon.quantum.events.WorldEvents as __WorldEvents_ChunkUnloaded
-__ChunkUnloaded = __WorldEvents_ChunkUnloaded.ChunkUnloaded
 from abc import abstractmethod, ABC
+import dev.ultreon.quantum.events.WorldEvents as _WorldEvents_ChunkUnloaded
+_ChunkUnloaded = _WorldEvents_ChunkUnloaded.ChunkUnloaded
  
-class ChunkUnloaded(ABC):
+class ChunkUnloaded():
     """dev.ultreon.quantum.events.WorldEvents.ChunkUnloaded"""
  
     @staticmethod
-    def __wrap(java_value: __ChunkUnloaded) -> 'ChunkUnloaded':
+    def _wrap(java_value: _ChunkUnloaded) -> 'ChunkUnloaded':
         return ChunkUnloaded(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ChunkUnloaded):
+    def __init__(self, __dynamic__: _ChunkUnloaded):
         """
         Dynamic initializer for ChunkUnloaded.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ChunkUnloaded__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ChunkUnloaded__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -213,47 +233,52 @@ class ChunkUnloaded(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.WorldEvents$LoadChunk
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
-import dev.ultreon.quantum.events.WorldEvents as __WorldEvents_LoadChunk
-__LoadChunk = __WorldEvents_LoadChunk.LoadChunk
+import dev.ultreon.quantum.events.WorldEvents as _WorldEvents_LoadChunk
+_LoadChunk = _WorldEvents_LoadChunk.LoadChunk
 from abc import abstractmethod, ABC
 try:
     from pyubo import types
 except ImportError:
-    types = __import_once__("pyubo.types")
+    types = _import_once("pyubo.types")
 
  
-class LoadChunk(ABC):
+class LoadChunk():
     """dev.ultreon.quantum.events.WorldEvents.LoadChunk"""
  
     @staticmethod
-    def __wrap(java_value: __LoadChunk) -> 'LoadChunk':
+    def _wrap(java_value: _LoadChunk) -> 'LoadChunk':
         return LoadChunk(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __LoadChunk):
+    def __init__(self, __dynamic__: _LoadChunk):
         """
         Dynamic initializer for LoadChunk.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_LoadChunk__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_LoadChunk__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -265,42 +290,47 @@ class LoadChunk(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.WorldEvents$ChunkBuilt
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
-import dev.ultreon.quantum.events.WorldEvents as __WorldEvents_ChunkBuilt
-__ChunkBuilt = __WorldEvents_ChunkBuilt.ChunkBuilt
+import dev.ultreon.quantum.events.WorldEvents as _WorldEvents_ChunkBuilt
+_ChunkBuilt = _WorldEvents_ChunkBuilt.ChunkBuilt
 from abc import abstractmethod, ABC
  
-class ChunkBuilt(ABC):
+class ChunkBuilt():
     """dev.ultreon.quantum.events.WorldEvents.ChunkBuilt"""
  
     @staticmethod
-    def __wrap(java_value: __ChunkBuilt) -> 'ChunkBuilt':
+    def _wrap(java_value: _ChunkBuilt) -> 'ChunkBuilt':
         return ChunkBuilt(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ChunkBuilt):
+    def __init__(self, __dynamic__: _ChunkBuilt):
         """
         Dynamic initializer for ChunkBuilt.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ChunkBuilt__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ChunkBuilt__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -312,42 +342,47 @@ class ChunkBuilt(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.WorldEvents$LoadWorld
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
-import dev.ultreon.quantum.events.WorldEvents as __WorldEvents_LoadWorld
-__LoadWorld = __WorldEvents_LoadWorld.LoadWorld
+import dev.ultreon.quantum.events.WorldEvents as _WorldEvents_LoadWorld
+_LoadWorld = _WorldEvents_LoadWorld.LoadWorld
 from abc import abstractmethod, ABC
  
-class LoadWorld(ABC):
+class LoadWorld():
     """dev.ultreon.quantum.events.WorldEvents.LoadWorld"""
  
     @staticmethod
-    def __wrap(java_value: __LoadWorld) -> 'LoadWorld':
+    def _wrap(java_value: _LoadWorld) -> 'LoadWorld':
         return LoadWorld(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __LoadWorld):
+    def __init__(self, __dynamic__: _LoadWorld):
         """
         Dynamic initializer for LoadWorld.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_LoadWorld__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_LoadWorld__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -359,74 +394,73 @@ class LoadWorld(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.ConfigEvents
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum.events import api
 except ImportError:
-    api = __import_once__("pyquantum.events.api")
+    api = _import_once("pyquantum.events.api")
 
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import dev.ultreon.quantum.events.ConfigEvents as _ConfigEvents
+_ConfigEvents = _ConfigEvents
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import dev.ultreon.quantum.events.ConfigEvents as __ConfigEvents
-__ConfigEvents = __ConfigEvents
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ConfigEvents():
     """dev.ultreon.quantum.events.ConfigEvents"""
  
     @staticmethod
-    def __wrap(java_value: __ConfigEvents) -> 'ConfigEvents':
+    def _wrap(java_value: _ConfigEvents) -> 'ConfigEvents':
         return ConfigEvents(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ConfigEvents):
+    def __init__(self, __dynamic__: _ConfigEvents):
         """
         Dynamic initializer for ConfigEvents.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ConfigEvents__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ConfigEvents__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.ConfigEvents$Load> dev.ultreon.quantum.events.ConfigEvents.LOAD
-    LOAD: 'api.Event' = __wrap(__api.Event.LOAD)
+    LOAD: 'api.Event' = _wrap(_api.Event.LOAD)
 
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -436,29 +470,15 @@ class ConfigEvents():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.events.ConfigEvents()"""
-        val = __ConfigEvents()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.events.ConfigEvents()"""
-        val = __ConfigEvents()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -472,49 +492,72 @@ class ConfigEvents():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @overload
+    def __init__(self, ):
+        """public dev.ultreon.quantum.events.ConfigEvents()"""
+        val = _ConfigEvents()
+        self.__wrapper = val
+
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0)) 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
+
+    @overload
+    def __init__(self):
+        """public dev.ultreon.quantum.events.ConfigEvents()"""
+        val = _ConfigEvents()
+        self.__wrapper = val 
  
  
 # CLASS: dev.ultreon.quantum.events.LoadingEvent$RegisterCommands
-import dev.ultreon.quantum.events.LoadingEvent as __LoadingEvent_RegisterCommands
-__RegisterCommands = __LoadingEvent_RegisterCommands.RegisterCommands
+import dev.ultreon.quantum.events.LoadingEvent as _LoadingEvent_RegisterCommands
+_RegisterCommands = _LoadingEvent_RegisterCommands.RegisterCommands
 from abc import abstractmethod, ABC
  
-class RegisterCommands(ABC):
+class RegisterCommands():
     """dev.ultreon.quantum.events.LoadingEvent.RegisterCommands"""
  
     @staticmethod
-    def __wrap(java_value: __RegisterCommands) -> 'RegisterCommands':
+    def _wrap(java_value: _RegisterCommands) -> 'RegisterCommands':
         return RegisterCommands(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __RegisterCommands):
+    def __init__(self, __dynamic__: _RegisterCommands):
         """
         Dynamic initializer for RegisterCommands.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_RegisterCommands__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_RegisterCommands__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -526,57 +569,62 @@ class RegisterCommands(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.BlockEvents$AttemptBlockRemoval
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
 try:
     from pyquantum.block import state
 except ImportError:
-    state = __import_once__("pyquantum.block.state")
+    state = _import_once("pyquantum.block.state")
 
 try:
     from pyquantum.server import player
 except ImportError:
-    player = __import_once__("pyquantum.server.player")
+    player = _import_once("pyquantum.server.player")
 
 try:
     from pyquantum import item
 except ImportError:
-    item = __import_once__("pyquantum.item")
+    item = _import_once("pyquantum.item")
 
-import dev.ultreon.quantum.events.BlockEvents as __BlockEvents_AttemptBlockRemoval
-__AttemptBlockRemoval = __BlockEvents_AttemptBlockRemoval.AttemptBlockRemoval
+import dev.ultreon.quantum.events.BlockEvents as _BlockEvents_AttemptBlockRemoval
+_AttemptBlockRemoval = _BlockEvents_AttemptBlockRemoval.AttemptBlockRemoval
 from abc import abstractmethod, ABC
  
-class AttemptBlockRemoval(ABC):
+class AttemptBlockRemoval():
     """dev.ultreon.quantum.events.BlockEvents.AttemptBlockRemoval"""
  
     @staticmethod
-    def __wrap(java_value: __AttemptBlockRemoval) -> 'AttemptBlockRemoval':
+    def _wrap(java_value: _AttemptBlockRemoval) -> 'AttemptBlockRemoval':
         return AttemptBlockRemoval(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __AttemptBlockRemoval):
+    def __init__(self, __dynamic__: _AttemptBlockRemoval):
         """
         Dynamic initializer for AttemptBlockRemoval.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_AttemptBlockRemoval__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_AttemptBlockRemoval__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -588,89 +636,88 @@ class AttemptBlockRemoval(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.BlockEvents
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum.events import api
 except ImportError:
-    api = __import_once__("pyquantum.events.api")
+    api = _import_once("pyquantum.events.api")
 
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import dev.ultreon.quantum.events.BlockEvents as __BlockEvents
-__BlockEvents = __BlockEvents
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.events.BlockEvents as _BlockEvents
+_BlockEvents = _BlockEvents
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class BlockEvents():
     """dev.ultreon.quantum.events.BlockEvents"""
  
     @staticmethod
-    def __wrap(java_value: __BlockEvents) -> 'BlockEvents':
+    def _wrap(java_value: _BlockEvents) -> 'BlockEvents':
         return BlockEvents(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BlockEvents):
+    def __init__(self, __dynamic__: _BlockEvents):
         """
         Dynamic initializer for BlockEvents.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BlockEvents__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BlockEvents__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.BlockEvents$BlockPlaced> dev.ultreon.quantum.events.BlockEvents.BLOCK_PLACED
-    BLOCK_PLACED: 'api.Event' = __wrap(__api.Event.BLOCK_PLACED)
-
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.BlockEvents$BlockRemoved> dev.ultreon.quantum.events.BlockEvents.BLOCK_REMOVED
-    BLOCK_REMOVED: 'api.Event' = __wrap(__api.Event.BLOCK_REMOVED)
-
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.BlockEvents$AttemptBlockRemoval> dev.ultreon.quantum.events.BlockEvents.ATTEMPT_BLOCK_REMOVAL
-    ATTEMPT_BLOCK_REMOVAL: 'api.Event' = __wrap(__api.Event.ATTEMPT_BLOCK_REMOVAL)
-
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.BlockEvents$BreakBlock> dev.ultreon.quantum.events.BlockEvents.BREAK_BLOCK
-    BREAK_BLOCK: 'api.Event' = __wrap(__api.Event.BREAK_BLOCK)
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.BlockEvents$SetBlock> dev.ultreon.quantum.events.BlockEvents.SET_BLOCK
+    SET_BLOCK: 'api.Event' = _wrap(_api.Event.SET_BLOCK)
 
     # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.BlockEvents$AttemptBlockPlacement> dev.ultreon.quantum.events.BlockEvents.ATTEMPT_BLOCK_PLACEMENT
-    ATTEMPT_BLOCK_PLACEMENT: 'api.Event' = __wrap(__api.Event.ATTEMPT_BLOCK_PLACEMENT)
+    ATTEMPT_BLOCK_PLACEMENT: 'api.Event' = _wrap(_api.Event.ATTEMPT_BLOCK_PLACEMENT)
 
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.BlockEvents$SetBlock> dev.ultreon.quantum.events.BlockEvents.SET_BLOCK
-    SET_BLOCK: 'api.Event' = __wrap(__api.Event.SET_BLOCK)
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.BlockEvents$BreakBlock> dev.ultreon.quantum.events.BlockEvents.BREAK_BLOCK
+    BREAK_BLOCK: 'api.Event' = _wrap(_api.Event.BREAK_BLOCK)
+
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.BlockEvents$AttemptBlockRemoval> dev.ultreon.quantum.events.BlockEvents.ATTEMPT_BLOCK_REMOVAL
+    ATTEMPT_BLOCK_REMOVAL: 'api.Event' = _wrap(_api.Event.ATTEMPT_BLOCK_REMOVAL)
+
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.BlockEvents$BlockPlaced> dev.ultreon.quantum.events.BlockEvents.BLOCK_PLACED
+    BLOCK_PLACED: 'api.Event' = _wrap(_api.Event.BLOCK_PLACED)
+
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.BlockEvents$BlockRemoved> dev.ultreon.quantum.events.BlockEvents.BLOCK_REMOVED
+    BLOCK_REMOVED: 'api.Event' = _wrap(_api.Event.BLOCK_REMOVED)
 
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -680,22 +727,15 @@ class BlockEvents():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.events.BlockEvents()"""
-        val = __BlockEvents()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -712,59 +752,75 @@ class BlockEvents():
     @overload
     def __init__(self, ):
         """public dev.ultreon.quantum.events.BlockEvents()"""
-        val = __BlockEvents()
-        self.__dict__ = val.__dict__
+        val = _BlockEvents()
+        self.__wrapper = val
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @overload
+    def __init__(self):
+        """public dev.ultreon.quantum.events.BlockEvents()"""
+        val = _BlockEvents()
         self.__wrapper = val
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0)) 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.events.WorldEvents$SaveRegion
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
-import dev.ultreon.quantum.events.WorldEvents as __WorldEvents_SaveRegion
-__SaveRegion = __WorldEvents_SaveRegion.SaveRegion
+import dev.ultreon.quantum.events.WorldEvents as _WorldEvents_SaveRegion
+_SaveRegion = _WorldEvents_SaveRegion.SaveRegion
 from abc import abstractmethod, ABC
  
-class SaveRegion(ABC):
+class SaveRegion():
     """dev.ultreon.quantum.events.WorldEvents.SaveRegion"""
  
     @staticmethod
-    def __wrap(java_value: __SaveRegion) -> 'SaveRegion':
+    def _wrap(java_value: _SaveRegion) -> 'SaveRegion':
         return SaveRegion(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __SaveRegion):
+    def __init__(self, __dynamic__: _SaveRegion):
         """
         Dynamic initializer for SaveRegion.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_SaveRegion__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_SaveRegion__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -776,57 +832,62 @@ class SaveRegion(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.BlockEvents$AttemptBlockPlacement
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
 try:
     from pyquantum.entity import player
 except ImportError:
-    player = __import_once__("pyquantum.entity.player")
+    player = _import_once("pyquantum.entity.player")
 
 try:
     from pyquantum import block
 except ImportError:
-    block = __import_once__("pyquantum.block")
+    block = _import_once("pyquantum.block")
 
+import dev.ultreon.quantum.events.BlockEvents as _BlockEvents_AttemptBlockPlacement
+_AttemptBlockPlacement = _BlockEvents_AttemptBlockPlacement.AttemptBlockPlacement
 try:
     from pyquantum import item
 except ImportError:
-    item = __import_once__("pyquantum.item")
+    item = _import_once("pyquantum.item")
 
-import dev.ultreon.quantum.events.BlockEvents as __BlockEvents_AttemptBlockPlacement
-__AttemptBlockPlacement = __BlockEvents_AttemptBlockPlacement.AttemptBlockPlacement
 from abc import abstractmethod, ABC
  
-class AttemptBlockPlacement(ABC):
+class AttemptBlockPlacement():
     """dev.ultreon.quantum.events.BlockEvents.AttemptBlockPlacement"""
  
     @staticmethod
-    def __wrap(java_value: __AttemptBlockPlacement) -> 'AttemptBlockPlacement':
+    def _wrap(java_value: _AttemptBlockPlacement) -> 'AttemptBlockPlacement':
         return AttemptBlockPlacement(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __AttemptBlockPlacement):
+    def __init__(self, __dynamic__: _AttemptBlockPlacement):
         """
         Dynamic initializer for AttemptBlockPlacement.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_AttemptBlockPlacement__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_AttemptBlockPlacement__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -838,42 +899,47 @@ class AttemptBlockPlacement(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.ConfigEvents$Load
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import dev.ultreon.quantum.events.ConfigEvents as __ConfigEvents_Load
-__Load = __ConfigEvents_Load.Load
+import dev.ultreon.quantum.events.ConfigEvents as _ConfigEvents_Load
+_Load = _ConfigEvents_Load.Load
 from abc import abstractmethod, ABC
  
-class Load(ABC):
+class Load():
     """dev.ultreon.quantum.events.ConfigEvents.Load"""
  
     @staticmethod
-    def __wrap(java_value: __Load) -> 'Load':
+    def _wrap(java_value: _Load) -> 'Load':
         return Load(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Load):
+    def __init__(self, __dynamic__: _Load):
         """
         Dynamic initializer for Load.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Load__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Load__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -885,74 +951,73 @@ class Load(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.ResourceEvent
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum.events import api
 except ImportError:
-    api = __import_once__("pyquantum.events.api")
+    api = _import_once("pyquantum.events.api")
 
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import java.lang.Integer as _int
 from builtins import bool
-import dev.ultreon.quantum.events.ResourceEvent as __ResourceEvent
-__ResourceEvent = __ResourceEvent
+import dev.ultreon.quantum.events.ResourceEvent as _ResourceEvent
+_ResourceEvent = _ResourceEvent
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ResourceEvent():
     """dev.ultreon.quantum.events.ResourceEvent"""
  
     @staticmethod
-    def __wrap(java_value: __ResourceEvent) -> 'ResourceEvent':
+    def _wrap(java_value: _ResourceEvent) -> 'ResourceEvent':
         return ResourceEvent(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ResourceEvent):
+    def __init__(self, __dynamic__: _ResourceEvent):
         """
         Dynamic initializer for ResourceEvent.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ResourceEvent__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ResourceEvent__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.ResourceEvent$PackageImported> dev.ultreon.quantum.events.ResourceEvent.IMPORTED
-    IMPORTED: 'api.Event' = __wrap(__api.Event.IMPORTED)
+    IMPORTED: 'api.Event' = _wrap(_api.Event.IMPORTED)
 
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -960,24 +1025,29 @@ class ResourceEvent():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
     @overload
     def __init__(self):
         """public dev.ultreon.quantum.events.ResourceEvent()"""
-        val = __ResourceEvent()
-        self.__dict__ = val.__dict__
+        val = _ResourceEvent()
         self.__wrapper = val
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @overload
+    def __init__(self, ):
+        """public dev.ultreon.quantum.events.ResourceEvent()"""
+        val = _ResourceEvent()
+        self.__wrapper = val
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -991,97 +1061,95 @@ class ResourceEvent():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.events.ResourceEvent()"""
-        val = __ResourceEvent()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.events.ItemEvents
-from pyquantum_helper import import_once as __import_once__
-import dev.ultreon.quantum.events.ItemEvents as __ItemEvents
-__ItemEvents = __ItemEvents
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum.events import api
 except ImportError:
-    api = __import_once__("pyquantum.events.api")
+    api = _import_once("pyquantum.events.api")
 
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import dev.ultreon.quantum.events.ItemEvents as _ItemEvents
+_ItemEvents = _ItemEvents
+import java.lang.String as _String
+_String = _String
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ItemEvents():
     """dev.ultreon.quantum.events.ItemEvents"""
  
     @staticmethod
-    def __wrap(java_value: __ItemEvents) -> 'ItemEvents':
+    def _wrap(java_value: _ItemEvents) -> 'ItemEvents':
         return ItemEvents(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ItemEvents):
+    def __init__(self, __dynamic__: _ItemEvents):
         """
         Dynamic initializer for ItemEvents.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ItemEvents__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ItemEvents__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.ItemEvents$Use> dev.ultreon.quantum.events.ItemEvents.USE
-    USE: 'api.Event' = __wrap(__api.Event.USE)
-
     # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.ItemEvents$Dropped> dev.ultreon.quantum.events.ItemEvents.DROPPED
-    DROPPED: 'api.Event' = __wrap(__api.Event.DROPPED)
+    DROPPED: 'api.Event' = _wrap(_api.Event.DROPPED)
+
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.ItemEvents$Use> dev.ultreon.quantum.events.ItemEvents.USE
+    USE: 'api.Event' = _wrap(_api.Event.USE)
 
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -1089,24 +1157,23 @@ class ItemEvents():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
     @overload
     def __init__(self, ):
         """public dev.ultreon.quantum.events.ItemEvents()"""
-        val = __ItemEvents()
-        self.__dict__ = val.__dict__
+        val = _ItemEvents()
         self.__wrapper = val
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
 
     @override
     @overload
@@ -1123,59 +1190,69 @@ class ItemEvents():
     @overload
     def __init__(self):
         """public dev.ultreon.quantum.events.ItemEvents()"""
-        val = __ItemEvents()
-        self.__dict__ = val.__dict__
+        val = _ItemEvents()
         self.__wrapper = val
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0)) 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.events.WorldEvents$ChunkLoaded
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
-import dev.ultreon.quantum.events.WorldEvents as __WorldEvents_ChunkLoaded
-__ChunkLoaded = __WorldEvents_ChunkLoaded.ChunkLoaded
+import dev.ultreon.quantum.events.WorldEvents as _WorldEvents_ChunkLoaded
+_ChunkLoaded = _WorldEvents_ChunkLoaded.ChunkLoaded
 from abc import abstractmethod, ABC
  
-class ChunkLoaded(ABC):
+class ChunkLoaded():
     """dev.ultreon.quantum.events.WorldEvents.ChunkLoaded"""
  
     @staticmethod
-    def __wrap(java_value: __ChunkLoaded) -> 'ChunkLoaded':
+    def _wrap(java_value: _ChunkLoaded) -> 'ChunkLoaded':
         return ChunkLoaded(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ChunkLoaded):
+    def __init__(self, __dynamic__: _ChunkLoaded):
         """
         Dynamic initializer for ChunkLoaded.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ChunkLoaded__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ChunkLoaded__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -1187,83 +1264,82 @@ class ChunkLoaded(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.EntityEvents
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum.events import api
 except ImportError:
-    api = __import_once__("pyquantum.events.api")
+    api = _import_once("pyquantum.events.api")
 
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import dev.ultreon.quantum.events.EntityEvents as __EntityEvents
-__EntityEvents = __EntityEvents
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.events.EntityEvents as _EntityEvents
+_EntityEvents = _EntityEvents
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class EntityEvents():
     """dev.ultreon.quantum.events.EntityEvents"""
  
     @staticmethod
-    def __wrap(java_value: __EntityEvents) -> 'EntityEvents':
+    def _wrap(java_value: _EntityEvents) -> 'EntityEvents':
         return EntityEvents(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __EntityEvents):
+    def __init__(self, __dynamic__: _EntityEvents):
         """
         Dynamic initializer for EntityEvents.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_EntityEvents__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_EntityEvents__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.EntityEvents$Death> dev.ultreon.quantum.events.EntityEvents.DEATH
+    DEATH: 'api.Event' = _wrap(_api.Event.DEATH)
+
     # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.EntityEvents$Move> dev.ultreon.quantum.events.EntityEvents.MOVE
-    MOVE: 'api.Event' = __wrap(__api.Event.MOVE)
+    MOVE: 'api.Event' = _wrap(_api.Event.MOVE)
 
     # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.EntityEvents$Removed> dev.ultreon.quantum.events.EntityEvents.REMOVED
-    REMOVED: 'api.Event' = __wrap(__api.Event.REMOVED)
-
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.EntityEvents$Death> dev.ultreon.quantum.events.EntityEvents.DEATH
-    DEATH: 'api.Event' = __wrap(__api.Event.DEATH)
+    REMOVED: 'api.Event' = _wrap(_api.Event.REMOVED)
 
     # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.EntityEvents$Damage> dev.ultreon.quantum.events.EntityEvents.DAMAGE
-    DAMAGE: 'api.Event' = __wrap(__api.Event.DAMAGE)
+    DAMAGE: 'api.Event' = _wrap(_api.Event.DAMAGE)
 
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -1273,22 +1349,15 @@ class EntityEvents():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.events.EntityEvents()"""
-        val = __EntityEvents()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -1302,62 +1371,78 @@ class EntityEvents():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
     @overload
     def __init__(self, ):
         """public dev.ultreon.quantum.events.EntityEvents()"""
-        val = __EntityEvents()
-        self.__dict__ = val.__dict__
+        val = _EntityEvents()
         self.__wrapper = val
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0)) 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
+
+    @overload
+    def __init__(self):
+        """public dev.ultreon.quantum.events.EntityEvents()"""
+        val = _EntityEvents()
+        self.__wrapper = val 
  
  
 # CLASS: dev.ultreon.quantum.events.LoadingEvent$ModifyRecipes
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import recipe
 except ImportError:
-    recipe = __import_once__("pyquantum.recipe")
+    recipe = _import_once("pyquantum.recipe")
 
-import dev.ultreon.quantum.events.LoadingEvent as __LoadingEvent_ModifyRecipes
-__ModifyRecipes = __LoadingEvent_ModifyRecipes.ModifyRecipes
 from abc import abstractmethod, ABC
+import dev.ultreon.quantum.events.LoadingEvent as _LoadingEvent_ModifyRecipes
+_ModifyRecipes = _LoadingEvent_ModifyRecipes.ModifyRecipes
  
-class ModifyRecipes(ABC):
+class ModifyRecipes():
     """dev.ultreon.quantum.events.LoadingEvent.ModifyRecipes"""
  
     @staticmethod
-    def __wrap(java_value: __ModifyRecipes) -> 'ModifyRecipes':
+    def _wrap(java_value: _ModifyRecipes) -> 'ModifyRecipes':
         return ModifyRecipes(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ModifyRecipes):
+    def __init__(self, __dynamic__: _ModifyRecipes):
         """
         Dynamic initializer for ModifyRecipes.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ModifyRecipes__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ModifyRecipes__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -1369,42 +1454,47 @@ class ModifyRecipes(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.ResourceEvent$PackageImported
-from pyquantum_helper import import_once as __import_once__
-import dev.ultreon.quantum.events.ResourceEvent as __ResourceEvent_PackageImported
-__PackageImported = __ResourceEvent_PackageImported.PackageImported
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import resources
 except ImportError:
-    resources = __import_once__("pyquantum.resources")
+    resources = _import_once("pyquantum.resources")
 
 from abc import abstractmethod, ABC
+import dev.ultreon.quantum.events.ResourceEvent as _ResourceEvent_PackageImported
+_PackageImported = _ResourceEvent_PackageImported.PackageImported
  
-class PackageImported(ABC):
+class PackageImported():
     """dev.ultreon.quantum.events.ResourceEvent.PackageImported"""
  
     @staticmethod
-    def __wrap(java_value: __PackageImported) -> 'PackageImported':
+    def _wrap(java_value: _PackageImported) -> 'PackageImported':
         return PackageImported(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __PackageImported):
+    def __init__(self, __dynamic__: _PackageImported):
         """
         Dynamic initializer for PackageImported.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_PackageImported__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_PackageImported__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -1416,47 +1506,52 @@ class PackageImported(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.EntityEvents$Death
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import entity
 except ImportError:
-    entity = __import_once__("pyquantum.entity")
+    entity = _import_once("pyquantum.entity")
 
 try:
     from pyquantum.entity import damagesource
 except ImportError:
-    damagesource = __import_once__("pyquantum.entity.damagesource")
+    damagesource = _import_once("pyquantum.entity.damagesource")
 
-import dev.ultreon.quantum.events.EntityEvents as __EntityEvents_Death
-__Death = __EntityEvents_Death.Death
 from abc import abstractmethod, ABC
+import dev.ultreon.quantum.events.EntityEvents as _EntityEvents_Death
+_Death = _EntityEvents_Death.Death
  
-class Death(ABC):
+class Death():
     """dev.ultreon.quantum.events.EntityEvents.Death"""
  
     @staticmethod
-    def __wrap(java_value: __Death) -> 'Death':
+    def _wrap(java_value: _Death) -> 'Death':
         return Death(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Death):
+    def __init__(self, __dynamic__: _Death):
         """
         Dynamic initializer for Death.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Death__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Death__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -1468,52 +1563,57 @@ class Death(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.BlockEvents$BreakBlock
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
-import dev.ultreon.quantum.events.BlockEvents as __BlockEvents_BreakBlock
-__BreakBlock = __BlockEvents_BreakBlock.BreakBlock
 try:
     from pyquantum.entity import player
 except ImportError:
-    player = __import_once__("pyquantum.entity.player")
+    player = _import_once("pyquantum.entity.player")
 
 try:
     from pyquantum.block import state
 except ImportError:
-    state = __import_once__("pyquantum.block.state")
+    state = _import_once("pyquantum.block.state")
 
+import dev.ultreon.quantum.events.BlockEvents as _BlockEvents_BreakBlock
+_BreakBlock = _BlockEvents_BreakBlock.BreakBlock
 from abc import abstractmethod, ABC
  
-class BreakBlock(ABC):
+class BreakBlock():
     """dev.ultreon.quantum.events.BlockEvents.BreakBlock"""
  
     @staticmethod
-    def __wrap(java_value: __BreakBlock) -> 'BreakBlock':
+    def _wrap(java_value: _BreakBlock) -> 'BreakBlock':
         return BreakBlock(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BreakBlock):
+    def __init__(self, __dynamic__: _BreakBlock):
         """
         Dynamic initializer for BreakBlock.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BreakBlock__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BreakBlock__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -1525,74 +1625,73 @@ class BreakBlock(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.WorldLifecycleEvents
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
+import dev.ultreon.quantum.events.WorldLifecycleEvents as _WorldLifecycleEvents
+_WorldLifecycleEvents = _WorldLifecycleEvents
 try:
     from pyquantum.events import api
 except ImportError:
-    api = __import_once__("pyquantum.events.api")
+    api = _import_once("pyquantum.events.api")
 
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.events.WorldLifecycleEvents as __WorldLifecycleEvents
-__WorldLifecycleEvents = __WorldLifecycleEvents
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class WorldLifecycleEvents():
     """dev.ultreon.quantum.events.WorldLifecycleEvents"""
  
     @staticmethod
-    def __wrap(java_value: __WorldLifecycleEvents) -> 'WorldLifecycleEvents':
+    def _wrap(java_value: _WorldLifecycleEvents) -> 'WorldLifecycleEvents':
         return WorldLifecycleEvents(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __WorldLifecycleEvents):
+    def __init__(self, __dynamic__: _WorldLifecycleEvents):
         """
         Dynamic initializer for WorldLifecycleEvents.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_WorldLifecycleEvents__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_WorldLifecycleEvents__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.WorldLifecycleEvents$BiomeLayersBuilt> dev.ultreon.quantum.events.WorldLifecycleEvents.BIOME_LAYERS_BUILT
-    BIOME_LAYERS_BUILT: 'api.Event' = __wrap(__api.Event.BIOME_LAYERS_BUILT)
+    BIOME_LAYERS_BUILT: 'api.Event' = _wrap(_api.Event.BIOME_LAYERS_BUILT)
 
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -1602,21 +1701,20 @@ class WorldLifecycleEvents():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @overload
-    def __init__(self):
+    def __init__(self, ):
         """public dev.ultreon.quantum.events.WorldLifecycleEvents()"""
-        val = __WorldLifecycleEvents()
-        self.__dict__ = val.__dict__
+        val = _WorldLifecycleEvents()
         self.__wrapper = val
 
     @override
@@ -1625,68 +1723,78 @@ class WorldLifecycleEvents():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @overload
+    def __init__(self):
+        """public dev.ultreon.quantum.events.WorldLifecycleEvents()"""
+        val = _WorldLifecycleEvents()
+        self.__wrapper = val
+
     @override
     @overload
     def wait(self):
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.events.WorldLifecycleEvents()"""
-        val = __WorldLifecycleEvents()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.events.WorldEvents$PostTick
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
+import dev.ultreon.quantum.events.WorldEvents as _WorldEvents_PostTick
+_PostTick = _WorldEvents_PostTick.PostTick
 from abc import abstractmethod, ABC
-import dev.ultreon.quantum.events.WorldEvents as __WorldEvents_PostTick
-__PostTick = __WorldEvents_PostTick.PostTick
  
-class PostTick(ABC):
+class PostTick():
     """dev.ultreon.quantum.events.WorldEvents.PostTick"""
  
     @staticmethod
-    def __wrap(java_value: __PostTick) -> 'PostTick':
+    def _wrap(java_value: _PostTick) -> 'PostTick':
         return PostTick(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __PostTick):
+    def __init__(self, __dynamic__: _PostTick):
         """
         Dynamic initializer for PostTick.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_PostTick__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_PostTick__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -1698,47 +1806,52 @@ class PostTick(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.WorldEvents$SaveChunk
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
-import dev.ultreon.quantum.events.WorldEvents as __WorldEvents_SaveChunk
-__SaveChunk = __WorldEvents_SaveChunk.SaveChunk
+import dev.ultreon.quantum.events.WorldEvents as _WorldEvents_SaveChunk
+_SaveChunk = _WorldEvents_SaveChunk.SaveChunk
 from abc import abstractmethod, ABC
 try:
     from pyubo import types
 except ImportError:
-    types = __import_once__("pyubo.types")
+    types = _import_once("pyubo.types")
 
  
-class SaveChunk(ABC):
+class SaveChunk():
     """dev.ultreon.quantum.events.WorldEvents.SaveChunk"""
  
     @staticmethod
-    def __wrap(java_value: __SaveChunk) -> 'SaveChunk':
+    def _wrap(java_value: _SaveChunk) -> 'SaveChunk':
         return SaveChunk(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __SaveChunk):
+    def __init__(self, __dynamic__: _SaveChunk):
         """
         Dynamic initializer for SaveChunk.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_SaveChunk__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_SaveChunk__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -1750,47 +1863,52 @@ class SaveChunk(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.MenuEvents$MenuClickEvent
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum.server import player
 except ImportError:
-    player = __import_once__("pyquantum.server.player")
+    player = _import_once("pyquantum.server.player")
 
+import dev.ultreon.quantum.events.MenuEvents as _MenuEvents_MenuClickEvent
+_MenuClickEvent = _MenuEvents_MenuClickEvent.MenuClickEvent
 from abc import abstractmethod, ABC
-import dev.ultreon.quantum.events.MenuEvents as __MenuEvents_MenuClickEvent
-__MenuClickEvent = __MenuEvents_MenuClickEvent.MenuClickEvent
 try:
     from pyquantum import menu
 except ImportError:
-    menu = __import_once__("pyquantum.menu")
+    menu = _import_once("pyquantum.menu")
 
  
-class MenuClickEvent(ABC):
+class MenuClickEvent():
     """dev.ultreon.quantum.events.MenuEvents.MenuClickEvent"""
  
     @staticmethod
-    def __wrap(java_value: __MenuClickEvent) -> 'MenuClickEvent':
+    def _wrap(java_value: _MenuClickEvent) -> 'MenuClickEvent':
         return MenuClickEvent(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __MenuClickEvent):
+    def __init__(self, __dynamic__: _MenuClickEvent):
         """
         Dynamic initializer for MenuClickEvent.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_MenuClickEvent__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_MenuClickEvent__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -1802,48 +1920,53 @@ class MenuClickEvent(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.WorldEvents$CreateBiome
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
+import dev.ultreon.quantum.events.WorldEvents as _WorldEvents_CreateBiome
+_CreateBiome = _WorldEvents_CreateBiome.CreateBiome
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
-import dev.ultreon.quantum.events.WorldEvents as __WorldEvents_CreateBiome
-__CreateBiome = __WorldEvents_CreateBiome.CreateBiome
 try:
     from pyquantum.world.gen import noise
 except ImportError:
-    noise = __import_once__("pyquantum.world.gen.noise")
+    noise = _import_once("pyquantum.world.gen.noise")
 
 from abc import abstractmethod, ABC
 import java.util.List as List
  
-class CreateBiome(ABC):
+class CreateBiome():
     """dev.ultreon.quantum.events.WorldEvents.CreateBiome"""
  
     @staticmethod
-    def __wrap(java_value: __CreateBiome) -> 'CreateBiome':
+    def _wrap(java_value: _CreateBiome) -> 'CreateBiome':
         return CreateBiome(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __CreateBiome):
+    def __init__(self, __dynamic__: _CreateBiome):
         """
         Dynamic initializer for CreateBiome.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_CreateBiome__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_CreateBiome__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -1855,42 +1978,47 @@ class CreateBiome(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.WorldEvents$LoadRegion
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
-import dev.ultreon.quantum.events.WorldEvents as __WorldEvents_LoadRegion
-__LoadRegion = __WorldEvents_LoadRegion.LoadRegion
+import dev.ultreon.quantum.events.WorldEvents as _WorldEvents_LoadRegion
+_LoadRegion = _WorldEvents_LoadRegion.LoadRegion
 from abc import abstractmethod, ABC
  
-class LoadRegion(ABC):
+class LoadRegion():
     """dev.ultreon.quantum.events.WorldEvents.LoadRegion"""
  
     @staticmethod
-    def __wrap(java_value: __LoadRegion) -> 'LoadRegion':
+    def _wrap(java_value: _LoadRegion) -> 'LoadRegion':
         return LoadRegion(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __LoadRegion):
+    def __init__(self, __dynamic__: _LoadRegion):
         """
         Dynamic initializer for LoadRegion.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_LoadRegion__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_LoadRegion__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -1902,80 +2030,79 @@ class LoadRegion(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.MenuEvents
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum.events import api
 except ImportError:
-    api = __import_once__("pyquantum.events.api")
+    api = _import_once("pyquantum.events.api")
 
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.events.MenuEvents as __MenuEvents
-__MenuEvents = __MenuEvents
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.events.MenuEvents as _MenuEvents
+_MenuEvents = _MenuEvents
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class MenuEvents():
     """dev.ultreon.quantum.events.MenuEvents"""
  
     @staticmethod
-    def __wrap(java_value: __MenuEvents) -> 'MenuEvents':
+    def _wrap(java_value: _MenuEvents) -> 'MenuEvents':
         return MenuEvents(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __MenuEvents):
+    def __init__(self, __dynamic__: _MenuEvents):
         """
         Dynamic initializer for MenuEvents.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_MenuEvents__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_MenuEvents__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.MenuEvents$MenuCloseEvent> dev.ultreon.quantum.events.MenuEvents.MENU_CLOSE
-    MENU_CLOSE: 'api.Event' = __wrap(__api.Event.MENU_CLOSE)
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.MenuEvents$MenuClickEvent> dev.ultreon.quantum.events.MenuEvents.MENU_CLICK
+    MENU_CLICK: 'api.Event' = _wrap(_api.Event.MENU_CLICK)
 
     # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.MenuEvents$MenuOpenEvent> dev.ultreon.quantum.events.MenuEvents.MENU_OPEN
-    MENU_OPEN: 'api.Event' = __wrap(__api.Event.MENU_OPEN)
+    MENU_OPEN: 'api.Event' = _wrap(_api.Event.MENU_OPEN)
 
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.MenuEvents$MenuClickEvent> dev.ultreon.quantum.events.MenuEvents.MENU_CLICK
-    MENU_CLICK: 'api.Event' = __wrap(__api.Event.MENU_CLICK)
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.MenuEvents$MenuCloseEvent> dev.ultreon.quantum.events.MenuEvents.MENU_CLOSE
+    MENU_CLOSE: 'api.Event' = _wrap(_api.Event.MENU_CLOSE)
 
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
 
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -1985,15 +2112,15 @@ class MenuEvents():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -2008,68 +2135,77 @@ class MenuEvents():
         super(object, self).wait()
 
     @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.events.MenuEvents()"""
-        val = __MenuEvents()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @overload
     def __init__(self, ):
         """public dev.ultreon.quantum.events.MenuEvents()"""
-        val = __MenuEvents()
-        self.__dict__ = val.__dict__
+        val = _MenuEvents()
+        self.__wrapper = val
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @overload
+    def __init__(self):
+        """public dev.ultreon.quantum.events.MenuEvents()"""
+        val = _MenuEvents()
         self.__wrapper = val
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0)) 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.events.EntityEvents$Move
-from pyquantum_helper import import_once as __import_once__
-import dev.ultreon.quantum.events.EntityEvents as __EntityEvents_Move
-__Move = __EntityEvents_Move.Move
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import entity
 except ImportError:
-    entity = __import_once__("pyquantum.entity")
+    entity = _import_once("pyquantum.entity")
 
+import dev.ultreon.quantum.events.EntityEvents as _EntityEvents_Move
+_Move = _EntityEvents_Move.Move
 from abc import abstractmethod, ABC
  
-class Move(ABC):
+class Move():
     """dev.ultreon.quantum.events.EntityEvents.Move"""
  
     @staticmethod
-    def __wrap(java_value: __Move) -> 'Move':
+    def _wrap(java_value: _Move) -> 'Move':
         return Move(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Move):
+    def __init__(self, __dynamic__: _Move):
         """
         Dynamic initializer for Move.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Move__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Move__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -2081,42 +2217,47 @@ class Move(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.PlayerEvents$Spawned
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
+import dev.ultreon.quantum.events.PlayerEvents as _PlayerEvents_Spawned
+_Spawned = _PlayerEvents_Spawned.Spawned
 try:
     from pyquantum.server import player
 except ImportError:
-    player = __import_once__("pyquantum.server.player")
+    player = _import_once("pyquantum.server.player")
 
-import dev.ultreon.quantum.events.PlayerEvents as __PlayerEvents_Spawned
-__Spawned = __PlayerEvents_Spawned.Spawned
 from abc import abstractmethod, ABC
  
-class Spawned(ABC):
+class Spawned():
     """dev.ultreon.quantum.events.PlayerEvents.Spawned"""
  
     @staticmethod
-    def __wrap(java_value: __Spawned) -> 'Spawned':
+    def _wrap(java_value: _Spawned) -> 'Spawned':
         return Spawned(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Spawned):
+    def __init__(self, __dynamic__: _Spawned):
         """
         Dynamic initializer for Spawned.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Spawned__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Spawned__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -2128,114 +2269,106 @@ class Spawned(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.WorldEvents
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
+import dev.ultreon.quantum.events.WorldEvents as _WorldEvents
+_WorldEvents = _WorldEvents
 try:
     from pyquantum.events import api
 except ImportError:
-    api = __import_once__("pyquantum.events.api")
+    api = _import_once("pyquantum.events.api")
 
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import dev.ultreon.quantum.events.WorldEvents as __WorldEvents
-__WorldEvents = __WorldEvents
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class WorldEvents():
     """dev.ultreon.quantum.events.WorldEvents"""
  
     @staticmethod
-    def __wrap(java_value: __WorldEvents) -> 'WorldEvents':
+    def _wrap(java_value: _WorldEvents) -> 'WorldEvents':
         return WorldEvents(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __WorldEvents):
+    def __init__(self, __dynamic__: _WorldEvents):
         """
         Dynamic initializer for WorldEvents.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_WorldEvents__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_WorldEvents__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.WorldEvents$SaveRegion> dev.ultreon.quantum.events.WorldEvents.SAVE_REGION
-    SAVE_REGION: 'api.Event' = __wrap(__api.Event.SAVE_REGION)
-
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.WorldEvents$PreTick> dev.ultreon.quantum.events.WorldEvents.PRE_TICK
-    PRE_TICK: 'api.Event' = __wrap(__api.Event.PRE_TICK)
-
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.WorldEvents$LoadRegion> dev.ultreon.quantum.events.WorldEvents.LOAD_REGION
-    LOAD_REGION: 'api.Event' = __wrap(__api.Event.LOAD_REGION)
-
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.WorldEvents$SaveChunk> dev.ultreon.quantum.events.WorldEvents.SAVE_CHUNK
-    SAVE_CHUNK: 'api.Event' = __wrap(__api.Event.SAVE_CHUNK)
-
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.WorldEvents$LoadChunk> dev.ultreon.quantum.events.WorldEvents.LOAD_CHUNK
-    LOAD_CHUNK: 'api.Event' = __wrap(__api.Event.LOAD_CHUNK)
-
     # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.WorldEvents$ChunkBuilt> dev.ultreon.quantum.events.WorldEvents.CHUNK_BUILT
-    CHUNK_BUILT: 'api.Event' = __wrap(__api.Event.CHUNK_BUILT)
-
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.WorldEvents$CreateBiome> dev.ultreon.quantum.events.WorldEvents.CREATE_BIOME
-    CREATE_BIOME: 'api.Event' = __wrap(__api.Event.CREATE_BIOME)
+    CHUNK_BUILT: 'api.Event' = _wrap(_api.Event.CHUNK_BUILT)
 
     # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.WorldEvents$ChunkUnloaded> dev.ultreon.quantum.events.WorldEvents.CHUNK_UNLOADED
-    CHUNK_UNLOADED: 'api.Event' = __wrap(__api.Event.CHUNK_UNLOADED)
+    CHUNK_UNLOADED: 'api.Event' = _wrap(_api.Event.CHUNK_UNLOADED)
 
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.WorldEvents$SaveWorld> dev.ultreon.quantum.events.WorldEvents.SAVE_WORLD
-    SAVE_WORLD: 'api.Event' = __wrap(__api.Event.SAVE_WORLD)
-
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.WorldEvents$PostTick> dev.ultreon.quantum.events.WorldEvents.POST_TICK
-    POST_TICK: 'api.Event' = __wrap(__api.Event.POST_TICK)
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.WorldEvents$SaveRegion> dev.ultreon.quantum.events.WorldEvents.SAVE_REGION
+    SAVE_REGION: 'api.Event' = _wrap(_api.Event.SAVE_REGION)
 
     # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.WorldEvents$ChunkLoaded> dev.ultreon.quantum.events.WorldEvents.CHUNK_LOADED
-    CHUNK_LOADED: 'api.Event' = __wrap(__api.Event.CHUNK_LOADED)
+    CHUNK_LOADED: 'api.Event' = _wrap(_api.Event.CHUNK_LOADED)
+
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.WorldEvents$PreTick> dev.ultreon.quantum.events.WorldEvents.PRE_TICK
+    PRE_TICK: 'api.Event' = _wrap(_api.Event.PRE_TICK)
+
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.WorldEvents$CreateBiome> dev.ultreon.quantum.events.WorldEvents.CREATE_BIOME
+    CREATE_BIOME: 'api.Event' = _wrap(_api.Event.CREATE_BIOME)
+
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.WorldEvents$SaveWorld> dev.ultreon.quantum.events.WorldEvents.SAVE_WORLD
+    SAVE_WORLD: 'api.Event' = _wrap(_api.Event.SAVE_WORLD)
 
     # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.WorldEvents$LoadWorld> dev.ultreon.quantum.events.WorldEvents.LOAD_WORLD
-    LOAD_WORLD: 'api.Event' = __wrap(__api.Event.LOAD_WORLD)
+    LOAD_WORLD: 'api.Event' = _wrap(_api.Event.LOAD_WORLD)
+
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.WorldEvents$LoadRegion> dev.ultreon.quantum.events.WorldEvents.LOAD_REGION
+    LOAD_REGION: 'api.Event' = _wrap(_api.Event.LOAD_REGION)
+
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.WorldEvents$LoadChunk> dev.ultreon.quantum.events.WorldEvents.LOAD_CHUNK
+    LOAD_CHUNK: 'api.Event' = _wrap(_api.Event.LOAD_CHUNK)
+
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.WorldEvents$PostTick> dev.ultreon.quantum.events.WorldEvents.POST_TICK
+    POST_TICK: 'api.Event' = _wrap(_api.Event.POST_TICK)
+
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.WorldEvents$SaveChunk> dev.ultreon.quantum.events.WorldEvents.SAVE_CHUNK
+    SAVE_CHUNK: 'api.Event' = _wrap(_api.Event.SAVE_CHUNK)
 
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.events.WorldEvents()"""
-        val = __WorldEvents()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -2245,22 +2378,15 @@ class WorldEvents():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.events.WorldEvents()"""
-        val = __WorldEvents()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -2275,59 +2401,82 @@ class WorldEvents():
         super(object, self).wait()
 
     @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+    def __init__(self):
+        """public dev.ultreon.quantum.events.WorldEvents()"""
+        val = _WorldEvents()
+        self.__wrapper = val
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0)) 
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @overload
+    def __init__(self, ):
+        """public dev.ultreon.quantum.events.WorldEvents()"""
+        val = _WorldEvents()
+        self.__wrapper = val
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.events.PlayerEvents$InitialItems
-from pyquantum_helper import import_once as __import_once__
-import dev.ultreon.quantum.events.PlayerEvents as __PlayerEvents_InitialItems
-__InitialItems = __PlayerEvents_InitialItems.InitialItems
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum.server import player
 except ImportError:
-    player = __import_once__("pyquantum.server.player")
+    player = _import_once("pyquantum.server.player")
 
+import dev.ultreon.quantum.events.PlayerEvents as _PlayerEvents_InitialItems
+_InitialItems = _PlayerEvents_InitialItems.InitialItems
 from abc import abstractmethod, ABC
 try:
     from pyquantum import menu
 except ImportError:
-    menu = __import_once__("pyquantum.menu")
+    menu = _import_once("pyquantum.menu")
 
  
-class InitialItems(ABC):
+class InitialItems():
     """dev.ultreon.quantum.events.PlayerEvents.InitialItems"""
  
     @staticmethod
-    def __wrap(java_value: __InitialItems) -> 'InitialItems':
+    def _wrap(java_value: _InitialItems) -> 'InitialItems':
         return InitialItems(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __InitialItems):
+    def __init__(self, __dynamic__: _InitialItems):
         """
         Dynamic initializer for InitialItems.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_InitialItems__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_InitialItems__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -2339,42 +2488,47 @@ class InitialItems(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.EntityEvents$Removed
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import entity
 except ImportError:
-    entity = __import_once__("pyquantum.entity")
+    entity = _import_once("pyquantum.entity")
 
+import dev.ultreon.quantum.events.EntityEvents as _EntityEvents_Removed
+_Removed = _EntityEvents_Removed.Removed
 from abc import abstractmethod, ABC
-import dev.ultreon.quantum.events.EntityEvents as __EntityEvents_Removed
-__Removed = __EntityEvents_Removed.Removed
  
-class Removed(ABC):
+class Removed():
     """dev.ultreon.quantum.events.EntityEvents.Removed"""
  
     @staticmethod
-    def __wrap(java_value: __Removed) -> 'Removed':
+    def _wrap(java_value: _Removed) -> 'Removed':
         return Removed(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Removed):
+    def __init__(self, __dynamic__: _Removed):
         """
         Dynamic initializer for Removed.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Removed__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Removed__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -2386,42 +2540,47 @@ class Removed(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.WorldEvents$PreTick
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
+import dev.ultreon.quantum.events.WorldEvents as _WorldEvents_PreTick
+_PreTick = _WorldEvents_PreTick.PreTick
 from abc import abstractmethod, ABC
-import dev.ultreon.quantum.events.WorldEvents as __WorldEvents_PreTick
-__PreTick = __WorldEvents_PreTick.PreTick
  
-class PreTick(ABC):
+class PreTick():
     """dev.ultreon.quantum.events.WorldEvents.PreTick"""
  
     @staticmethod
-    def __wrap(java_value: __PreTick) -> 'PreTick':
+    def _wrap(java_value: _PreTick) -> 'PreTick':
         return PreTick(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __PreTick):
+    def __init__(self, __dynamic__: _PreTick):
         """
         Dynamic initializer for PreTick.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_PreTick__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_PreTick__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -2433,57 +2592,62 @@ class PreTick(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.BlockEvents$BlockRemoved
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
-import dev.ultreon.quantum.events.BlockEvents as __BlockEvents_BlockRemoved
-__BlockRemoved = __BlockEvents_BlockRemoved.BlockRemoved
 try:
     from pyquantum.block import state
 except ImportError:
-    state = __import_once__("pyquantum.block.state")
+    state = _import_once("pyquantum.block.state")
 
 try:
     from pyquantum.server import player
 except ImportError:
-    player = __import_once__("pyquantum.server.player")
+    player = _import_once("pyquantum.server.player")
 
+import dev.ultreon.quantum.events.BlockEvents as _BlockEvents_BlockRemoved
+_BlockRemoved = _BlockEvents_BlockRemoved.BlockRemoved
 try:
     from pyquantum import item
 except ImportError:
-    item = __import_once__("pyquantum.item")
+    item = _import_once("pyquantum.item")
 
 from abc import abstractmethod, ABC
  
-class BlockRemoved(ABC):
+class BlockRemoved():
     """dev.ultreon.quantum.events.BlockEvents.BlockRemoved"""
  
     @staticmethod
-    def __wrap(java_value: __BlockRemoved) -> 'BlockRemoved':
+    def _wrap(java_value: _BlockRemoved) -> 'BlockRemoved':
         return BlockRemoved(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BlockRemoved):
+    def __init__(self, __dynamic__: _BlockRemoved):
         """
         Dynamic initializer for BlockRemoved.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BlockRemoved__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BlockRemoved__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -2495,42 +2659,47 @@ class BlockRemoved(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.ItemEvents$Dropped
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import item
 except ImportError:
-    item = __import_once__("pyquantum.item")
+    item = _import_once("pyquantum.item")
 
+import dev.ultreon.quantum.events.ItemEvents as _ItemEvents_Dropped
+_Dropped = _ItemEvents_Dropped.Dropped
 from abc import abstractmethod, ABC
-import dev.ultreon.quantum.events.ItemEvents as __ItemEvents_Dropped
-__Dropped = __ItemEvents_Dropped.Dropped
  
-class Dropped(ABC):
+class Dropped():
     """dev.ultreon.quantum.events.ItemEvents.Dropped"""
  
     @staticmethod
-    def __wrap(java_value: __Dropped) -> 'Dropped':
+    def _wrap(java_value: _Dropped) -> 'Dropped':
         return Dropped(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Dropped):
+    def __init__(self, __dynamic__: _Dropped):
         """
         Dynamic initializer for Dropped.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Dropped__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Dropped__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -2542,47 +2711,52 @@ class Dropped(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.BlockEvents$SetBlock
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
-import dev.ultreon.quantum.events.BlockEvents as __BlockEvents_SetBlock
-__SetBlock = __BlockEvents_SetBlock.SetBlock
 try:
     from pyquantum.block import state
 except ImportError:
-    state = __import_once__("pyquantum.block.state")
+    state = _import_once("pyquantum.block.state")
 
+import dev.ultreon.quantum.events.BlockEvents as _BlockEvents_SetBlock
+_SetBlock = _BlockEvents_SetBlock.SetBlock
 from abc import abstractmethod, ABC
  
-class SetBlock(ABC):
+class SetBlock():
     """dev.ultreon.quantum.events.BlockEvents.SetBlock"""
  
     @staticmethod
-    def __wrap(java_value: __SetBlock) -> 'SetBlock':
+    def _wrap(java_value: _SetBlock) -> 'SetBlock':
         return SetBlock(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __SetBlock):
+    def __init__(self, __dynamic__: _SetBlock):
         """
         Dynamic initializer for SetBlock.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_SetBlock__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_SetBlock__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -2594,42 +2768,47 @@ class SetBlock(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.WorldEvents$SaveWorld
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
-import dev.ultreon.quantum.events.WorldEvents as __WorldEvents_SaveWorld
-__SaveWorld = __WorldEvents_SaveWorld.SaveWorld
+import dev.ultreon.quantum.events.WorldEvents as _WorldEvents_SaveWorld
+_SaveWorld = _WorldEvents_SaveWorld.SaveWorld
 from abc import abstractmethod, ABC
  
-class SaveWorld(ABC):
+class SaveWorld():
     """dev.ultreon.quantum.events.WorldEvents.SaveWorld"""
  
     @staticmethod
-    def __wrap(java_value: __SaveWorld) -> 'SaveWorld':
+    def _wrap(java_value: _SaveWorld) -> 'SaveWorld':
         return SaveWorld(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __SaveWorld):
+    def __init__(self, __dynamic__: _SaveWorld):
         """
         Dynamic initializer for SaveWorld.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_SaveWorld__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_SaveWorld__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -2641,47 +2820,52 @@ class SaveWorld(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.MenuEvents$MenuOpenEvent
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum.server import player
 except ImportError:
-    player = __import_once__("pyquantum.server.player")
+    player = _import_once("pyquantum.server.player")
 
-import dev.ultreon.quantum.events.MenuEvents as __MenuEvents_MenuOpenEvent
-__MenuOpenEvent = __MenuEvents_MenuOpenEvent.MenuOpenEvent
+import dev.ultreon.quantum.events.MenuEvents as _MenuEvents_MenuOpenEvent
+_MenuOpenEvent = _MenuEvents_MenuOpenEvent.MenuOpenEvent
 from abc import abstractmethod, ABC
 try:
     from pyquantum import menu
 except ImportError:
-    menu = __import_once__("pyquantum.menu")
+    menu = _import_once("pyquantum.menu")
 
  
-class MenuOpenEvent(ABC):
+class MenuOpenEvent():
     """dev.ultreon.quantum.events.MenuEvents.MenuOpenEvent"""
  
     @staticmethod
-    def __wrap(java_value: __MenuOpenEvent) -> 'MenuOpenEvent':
+    def _wrap(java_value: _MenuOpenEvent) -> 'MenuOpenEvent':
         return MenuOpenEvent(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __MenuOpenEvent):
+    def __init__(self, __dynamic__: _MenuOpenEvent):
         """
         Dynamic initializer for MenuOpenEvent.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_MenuOpenEvent__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_MenuOpenEvent__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -2693,47 +2877,52 @@ class MenuOpenEvent(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.MenuEvents$MenuCloseEvent
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
+import dev.ultreon.quantum.events.MenuEvents as _MenuEvents_MenuCloseEvent
+_MenuCloseEvent = _MenuEvents_MenuCloseEvent.MenuCloseEvent
 try:
     from pyquantum.server import player
 except ImportError:
-    player = __import_once__("pyquantum.server.player")
+    player = _import_once("pyquantum.server.player")
 
-import dev.ultreon.quantum.events.MenuEvents as __MenuEvents_MenuCloseEvent
-__MenuCloseEvent = __MenuEvents_MenuCloseEvent.MenuCloseEvent
 from abc import abstractmethod, ABC
 try:
     from pyquantum import menu
 except ImportError:
-    menu = __import_once__("pyquantum.menu")
+    menu = _import_once("pyquantum.menu")
 
  
-class MenuCloseEvent(ABC):
+class MenuCloseEvent():
     """dev.ultreon.quantum.events.MenuEvents.MenuCloseEvent"""
  
     @staticmethod
-    def __wrap(java_value: __MenuCloseEvent) -> 'MenuCloseEvent':
+    def _wrap(java_value: _MenuCloseEvent) -> 'MenuCloseEvent':
         return MenuCloseEvent(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __MenuCloseEvent):
+    def __init__(self, __dynamic__: _MenuCloseEvent):
         """
         Dynamic initializer for MenuCloseEvent.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_MenuCloseEvent__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_MenuCloseEvent__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -2745,47 +2934,52 @@ class MenuCloseEvent(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.EntityEvents$Damage
-from pyquantum_helper import import_once as __import_once__
-import dev.ultreon.quantum.events.EntityEvents as __EntityEvents_Damage
-__Damage = __EntityEvents_Damage.Damage
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import entity
 except ImportError:
-    entity = __import_once__("pyquantum.entity")
+    entity = _import_once("pyquantum.entity")
 
 try:
     from pyquantum.entity import damagesource
 except ImportError:
-    damagesource = __import_once__("pyquantum.entity.damagesource")
+    damagesource = _import_once("pyquantum.entity.damagesource")
 
 from abc import abstractmethod, ABC
+import dev.ultreon.quantum.events.EntityEvents as _EntityEvents_Damage
+_Damage = _EntityEvents_Damage.Damage
  
-class Damage(ABC):
+class Damage():
     """dev.ultreon.quantum.events.EntityEvents.Damage"""
  
     @staticmethod
-    def __wrap(java_value: __Damage) -> 'Damage':
+    def _wrap(java_value: _Damage) -> 'Damage':
         return Damage(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Damage):
+    def __init__(self, __dynamic__: _Damage):
         """
         Dynamic initializer for Damage.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Damage__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Damage__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -2797,43 +2991,48 @@ class Damage(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.WorldLifecycleEvents$BiomeLayersBuilt
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
+import dev.ultreon.quantum.events.WorldLifecycleEvents as _WorldLifecycleEvents_BiomeLayersBuilt
+_BiomeLayersBuilt = _WorldLifecycleEvents_BiomeLayersBuilt.BiomeLayersBuilt
 from abc import abstractmethod, ABC
-import dev.ultreon.quantum.events.WorldLifecycleEvents as __WorldLifecycleEvents_BiomeLayersBuilt
-__BiomeLayersBuilt = __WorldLifecycleEvents_BiomeLayersBuilt.BiomeLayersBuilt
 import java.util.List as List
  
-class BiomeLayersBuilt(ABC):
+class BiomeLayersBuilt():
     """dev.ultreon.quantum.events.WorldLifecycleEvents.BiomeLayersBuilt"""
  
     @staticmethod
-    def __wrap(java_value: __BiomeLayersBuilt) -> 'BiomeLayersBuilt':
+    def _wrap(java_value: _BiomeLayersBuilt) -> 'BiomeLayersBuilt':
         return BiomeLayersBuilt(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BiomeLayersBuilt):
+    def __init__(self, __dynamic__: _BiomeLayersBuilt):
         """
         Dynamic initializer for BiomeLayersBuilt.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BiomeLayersBuilt__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BiomeLayersBuilt__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -2845,42 +3044,47 @@ class BiomeLayersBuilt(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.PlayerEvents$Joined
-from pyquantum_helper import import_once as __import_once__
-import dev.ultreon.quantum.events.PlayerEvents as __PlayerEvents_Joined
-__Joined = __PlayerEvents_Joined.Joined
+from pyquantum_helper import import_once as _import_once
+import dev.ultreon.quantum.events.PlayerEvents as _PlayerEvents_Joined
+_Joined = _PlayerEvents_Joined.Joined
 try:
     from pyquantum.server import player
 except ImportError:
-    player = __import_once__("pyquantum.server.player")
+    player = _import_once("pyquantum.server.player")
 
 from abc import abstractmethod, ABC
  
-class Joined(ABC):
+class Joined():
     """dev.ultreon.quantum.events.PlayerEvents.Joined"""
  
     @staticmethod
-    def __wrap(java_value: __Joined) -> 'Joined':
+    def _wrap(java_value: _Joined) -> 'Joined':
         return Joined(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Joined):
+    def __init__(self, __dynamic__: _Joined):
         """
         Dynamic initializer for Joined.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Joined__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Joined__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -2892,42 +3096,47 @@ class Joined(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.PlayerEvents$Left
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
+import dev.ultreon.quantum.events.PlayerEvents as _PlayerEvents_Left
+_Left = _PlayerEvents_Left.Left
 try:
     from pyquantum.server import player
 except ImportError:
-    player = __import_once__("pyquantum.server.player")
+    player = _import_once("pyquantum.server.player")
 
-import dev.ultreon.quantum.events.PlayerEvents as __PlayerEvents_Left
-__Left = __PlayerEvents_Left.Left
 from abc import abstractmethod, ABC
  
-class Left(ABC):
+class Left():
     """dev.ultreon.quantum.events.PlayerEvents.Left"""
  
     @staticmethod
-    def __wrap(java_value: __Left) -> 'Left':
+    def _wrap(java_value: _Left) -> 'Left':
         return Left(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Left):
+    def __init__(self, __dynamic__: _Left):
         """
         Dynamic initializer for Left.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Left__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Left__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -2939,83 +3148,88 @@ class Left(ABC):
  
  
 # CLASS: dev.ultreon.quantum.events.PlayerEvents
-from pyquantum_helper import import_once as __import_once__
-import dev.ultreon.quantum.events.PlayerEvents as __PlayerEvents
-__PlayerEvents = __PlayerEvents
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum.events import api
 except ImportError:
-    api = __import_once__("pyquantum.events.api")
+    api = _import_once("pyquantum.events.api")
 
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import java.lang.Integer as _int
+import dev.ultreon.quantum.events.PlayerEvents as _PlayerEvents
+_PlayerEvents = _PlayerEvents
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class PlayerEvents():
     """dev.ultreon.quantum.events.PlayerEvents"""
  
     @staticmethod
-    def __wrap(java_value: __PlayerEvents) -> 'PlayerEvents':
+    def _wrap(java_value: _PlayerEvents) -> 'PlayerEvents':
         return PlayerEvents(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __PlayerEvents):
+    def __init__(self, __dynamic__: _PlayerEvents):
         """
         Dynamic initializer for PlayerEvents.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_PlayerEvents__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_PlayerEvents__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.PlayerEvents$Joined> dev.ultreon.quantum.events.PlayerEvents.PLAYER_JOINED
-    PLAYER_JOINED: 'api.Event' = __wrap(__api.Event.PLAYER_JOINED)
-
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.PlayerEvents$Spawned> dev.ultreon.quantum.events.PlayerEvents.PLAYER_SPAWNED
-    PLAYER_SPAWNED: 'api.Event' = __wrap(__api.Event.PLAYER_SPAWNED)
+    PLAYER_JOINED: 'api.Event' = _wrap(_api.Event.PLAYER_JOINED)
 
     # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.PlayerEvents$Left> dev.ultreon.quantum.events.PlayerEvents.PLAYER_LEFT
-    PLAYER_LEFT: 'api.Event' = __wrap(__api.Event.PLAYER_LEFT)
+    PLAYER_LEFT: 'api.Event' = _wrap(_api.Event.PLAYER_LEFT)
+
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.PlayerEvents$Spawned> dev.ultreon.quantum.events.PlayerEvents.PLAYER_SPAWNED
+    PLAYER_SPAWNED: 'api.Event' = _wrap(_api.Event.PLAYER_SPAWNED)
 
     # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.PlayerEvents$InitialItems> dev.ultreon.quantum.events.PlayerEvents.INITIAL_ITEMS
-    INITIAL_ITEMS: 'api.Event' = __wrap(__api.Event.INITIAL_ITEMS)
+    INITIAL_ITEMS: 'api.Event' = _wrap(_api.Event.INITIAL_ITEMS)
 
+
+    @overload
+    def __init__(self):
+        """public dev.ultreon.quantum.events.PlayerEvents()"""
+        val = _PlayerEvents()
+        self.__wrapper = val
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -3025,22 +3239,15 @@ class PlayerEvents():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.events.PlayerEvents()"""
-        val = __PlayerEvents()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -3055,102 +3262,106 @@ class PlayerEvents():
         super(object, self).wait()
 
     @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+    def __init__(self, ):
+        """public dev.ultreon.quantum.events.PlayerEvents()"""
+        val = _PlayerEvents()
+        self.__wrapper = val
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.events.PlayerEvents()"""
-        val = __PlayerEvents()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val 
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.events.LoadingEvent
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum.events import api
 except ImportError:
-    api = __import_once__("pyquantum.events.api")
+    api = _import_once("pyquantum.events.api")
 
 from builtins import str
 from pyquantum_helper import override
-import dev.ultreon.quantum.events.LoadingEvent as __LoadingEvent
-__LoadingEvent = __LoadingEvent
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import dev.ultreon.quantum.events.LoadingEvent as _LoadingEvent
+_LoadingEvent = _LoadingEvent
+import java.lang.String as _String
+_String = _String
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class LoadingEvent():
     """dev.ultreon.quantum.events.LoadingEvent"""
  
     @staticmethod
-    def __wrap(java_value: __LoadingEvent) -> 'LoadingEvent':
+    def _wrap(java_value: _LoadingEvent) -> 'LoadingEvent':
         return LoadingEvent(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __LoadingEvent):
+    def __init__(self, __dynamic__: _LoadingEvent):
         """
         Dynamic initializer for LoadingEvent.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_LoadingEvent__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_LoadingEvent__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.LoadingEvent$ModifyRecipes> dev.ultreon.quantum.events.LoadingEvent.MODIFY_RECIPES
-    MODIFY_RECIPES: 'api.Event' = __wrap(__api.Event.MODIFY_RECIPES)
-
     # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.LoadingEvent$RecipeState> dev.ultreon.quantum.events.LoadingEvent.LOAD_RECIPES
-    LOAD_RECIPES: 'api.Event' = __wrap(__api.Event.LOAD_RECIPES)
+    LOAD_RECIPES: 'api.Event' = _wrap(_api.Event.LOAD_RECIPES)
+
+    # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.LoadingEvent$ModifyRecipes> dev.ultreon.quantum.events.LoadingEvent.MODIFY_RECIPES
+    MODIFY_RECIPES: 'api.Event' = _wrap(_api.Event.MODIFY_RECIPES)
 
     # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.LoadingEvent$RecipeState> dev.ultreon.quantum.events.LoadingEvent.UNLOAD_RECIPES
-    UNLOAD_RECIPES: 'api.Event' = __wrap(__api.Event.UNLOAD_RECIPES)
+    UNLOAD_RECIPES: 'api.Event' = _wrap(_api.Event.UNLOAD_RECIPES)
 
     # public static final dev.ultreon.quantum.events.api.Event<dev.ultreon.quantum.events.LoadingEvent$RegisterCommands> dev.ultreon.quantum.events.LoadingEvent.REGISTER_COMMANDS
-    REGISTER_COMMANDS: 'api.Event' = __wrap(__api.Event.REGISTER_COMMANDS)
+    REGISTER_COMMANDS: 'api.Event' = _wrap(_api.Event.REGISTER_COMMANDS)
 
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -3158,24 +3369,29 @@ class LoadingEvent():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def __init__(self, ):
+        """public dev.ultreon.quantum.events.LoadingEvent()"""
+        val = _LoadingEvent()
+        self.__wrapper = val
 
     @overload
     def __init__(self):
         """public dev.ultreon.quantum.events.LoadingEvent()"""
-        val = __LoadingEvent()
-        self.__dict__ = val.__dict__
+        val = _LoadingEvent()
         self.__wrapper = val
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -3189,62 +3405,66 @@ class LoadingEvent():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.events.LoadingEvent()"""
-        val = __LoadingEvent()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.events.ItemEvents$Use
-from pyquantum_helper import import_once as __import_once__
-import dev.ultreon.quantum.events.ItemEvents as __ItemEvents_Use
-__Use = __ItemEvents_Use.Use
+from pyquantum_helper import import_once as _import_once
+import dev.ultreon.quantum.events.ItemEvents as _ItemEvents_Use
+_Use = _ItemEvents_Use.Use
 try:
     from pyquantum import item
 except ImportError:
-    item = __import_once__("pyquantum.item")
+    item = _import_once("pyquantum.item")
 
 from abc import abstractmethod, ABC
  
-class Use(ABC):
+class Use():
     """dev.ultreon.quantum.events.ItemEvents.Use"""
  
     @staticmethod
-    def __wrap(java_value: __Use) -> 'Use':
+    def _wrap(java_value: _Use) -> 'Use':
         return Use(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Use):
+    def __init__(self, __dynamic__: _Use):
         """
         Dynamic initializer for Use.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Use__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Use__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))

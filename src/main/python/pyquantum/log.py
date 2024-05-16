@@ -3,37 +3,42 @@ from overload import overload
 
 
  
-import dev.ultreon.quantum.log.Logger as __Logger
-__Logger = __Logger
 import java.lang.Throwable as Throwable
 from abc import abstractmethod, ABC
+import dev.ultreon.quantum.log.Logger as _Logger
+_Logger = _Logger
  
-class Logger(ABC):
+class Logger():
     """dev.ultreon.quantum.log.Logger"""
  
     @staticmethod
-    def __wrap(java_value: __Logger) -> 'Logger':
+    def _wrap(java_value: _Logger) -> 'Logger':
         return Logger(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Logger):
+    def __init__(self, __dynamic__: _Logger):
         """
         Dynamic initializer for Logger.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Logger__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Logger__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -142,37 +147,42 @@ class Logger(ABC):
  
  
 # CLASS: dev.ultreon.quantum.log.Logger
-import dev.ultreon.quantum.log.Logger as __Logger
-__Logger = __Logger
 import java.lang.Throwable as Throwable
 from abc import abstractmethod, ABC
+import dev.ultreon.quantum.log.Logger as _Logger
+_Logger = _Logger
  
-class Logger(ABC):
+class Logger():
     """dev.ultreon.quantum.log.Logger"""
  
     @staticmethod
-    def __wrap(java_value: __Logger) -> 'Logger':
+    def _wrap(java_value: _Logger) -> 'Logger':
         return Logger(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Logger):
+    def __init__(self, __dynamic__: _Logger):
         """
         Dynamic initializer for Logger.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Logger__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Logger__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -285,80 +295,77 @@ class Logger(ABC):
  
 # CLASS: dev.ultreon.quantum.log.LoggerFactory
 from builtins import str
-import dev.ultreon.quantum.log.LoggerFactory as __LoggerFactory
-__LoggerFactory = __LoggerFactory
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
 from builtins import type
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __string
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import dev.ultreon.quantum.log.Logger as __Logger
-__Logger = __Logger
-import java.lang.Integer as __int
+import java.lang.Object as _object
+import java.lang.String as _String
+_String = _String
+import java.lang.String as _string
+import dev.ultreon.quantum.log.LoggerFactory as _LoggerFactory
+_LoggerFactory = _LoggerFactory
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
+import dev.ultreon.quantum.log.Logger as _Logger
+_Logger = _Logger
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class LoggerFactory():
     """dev.ultreon.quantum.log.LoggerFactory"""
  
     @staticmethod
-    def __wrap(java_value: __LoggerFactory) -> 'LoggerFactory':
+    def _wrap(java_value: _LoggerFactory) -> 'LoggerFactory':
         return LoggerFactory(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __LoggerFactory):
+    def __init__(self, __dynamic__: _LoggerFactory):
         """
         Dynamic initializer for LoggerFactory.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_LoggerFactory__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_LoggerFactory__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @overload
+    def __init__(self, ):
+        """public dev.ultreon.quantum.log.LoggerFactory()"""
+        val = _LoggerFactory()
+        self.__wrapper = val
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
+    @staticmethod
     @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.log.LoggerFactory()"""
-        val = __LoggerFactory()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.log.LoggerFactory()"""
-        val = __LoggerFactory()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def getLogger(arg0: str) -> 'Logger':
+        """public static dev.ultreon.quantum.log.Logger dev.ultreon.quantum.log.LoggerFactory.getLogger(java.lang.String)"""
+        return Logger._wrap(_LoggerFactory.getLogger(arg0))
 
     @override
     @overload
@@ -368,27 +375,15 @@ class LoggerFactory():
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @staticmethod
-    @overload
-    def getLogger(arg0: str) -> 'Logger':
-        """public static dev.ultreon.quantum.log.Logger dev.ultreon.quantum.log.LoggerFactory.getLogger(java.lang.String)"""
-        return Logger.__wrap(__LoggerFactory.getLogger(arg0))
-
-    @staticmethod
-    @overload
-    def getLogger(arg0: 'Class') -> 'Logger':
-        """public static dev.ultreon.quantum.log.Logger dev.ultreon.quantum.log.LoggerFactory.getLogger(java.lang.Class<?>)"""
-        return Logger.__wrap(__LoggerFactory.getLogger(arg0))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -398,9 +393,15 @@ class LoggerFactory():
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @staticmethod
+    @overload
+    def getLogger(arg0: 'Class') -> 'Logger':
+        """public static dev.ultreon.quantum.log.Logger dev.ultreon.quantum.log.LoggerFactory.getLogger(java.lang.Class<?>)"""
+        return Logger._wrap(_LoggerFactory.getLogger(arg0))
 
     @override
     @overload
@@ -409,6 +410,18 @@ class LoggerFactory():
         super(object, self).wait()
 
     @overload
+    def __init__(self):
+        """public dev.ultreon.quantum.log.LoggerFactory()"""
+        val = _LoggerFactory()
+        self.__wrapper = val
+
+    @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())

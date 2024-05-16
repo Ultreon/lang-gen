@@ -3,123 +3,104 @@ from overload import overload
 
 
  
-from pyquantum_helper import import_once as __import_once__
 from builtins import str
-try:
-    from pygdx import utils
-except ImportError:
-    utils = __import_once__("pygdx.utils")
-
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import com.badlogic.gdx.controllers.Controllers as __Controllers
-__Controllers = __Controllers
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import com.badlogic.gdx.utils.Array as __Array
-__Array = __Array
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import com.badlogic.gdx.controllers.Controller as __Controller
-__Controller = __Controller
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import java.lang.Float as _float
+import com.badlogic.gdx.controllers.AbstractControllerManager as _AbstractControllerManager_ManageCurrentControllerListener
+_ManageCurrentControllerListener = _AbstractControllerManager_ManageCurrentControllerListener.ManageCurrentControllerListener
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
-class Controllers():
-    """com.badlogic.gdx.controllers.Controllers"""
+class ManageCurrentControllerListener():
+    """com.badlogic.gdx.controllers.AbstractControllerManager.ManageCurrentControllerListener"""
  
     @staticmethod
-    def __wrap(java_value: __Controllers) -> 'Controllers':
-        return Controllers(__dynamic__=java_value)
+    def _wrap(java_value: _ManageCurrentControllerListener) -> 'ManageCurrentControllerListener':
+        return ManageCurrentControllerListener(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Controllers):
+    def __init__(self, __dynamic__: _ManageCurrentControllerListener):
         """
-        Dynamic initializer for Controllers.
+        Dynamic initializer for ManageCurrentControllerListener.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ManageCurrentControllerListener__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ManageCurrentControllerListener__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @overload
+    def buttonDown(self, arg0: 'Controller', arg1: int) -> bool:
+        """public boolean com.badlogic.gdx.controllers.AbstractControllerManager$ManageCurrentControllerListener.buttonDown(com.badlogic.gdx.controllers.Controller,int)"""
+        return bool._wrap(super(_ManageCurrentControllerListener, self).buttonDown(arg0, _int.valueOf(arg1)))
+
+    @overload
+    def __init__(self, arg0: 'AbstractControllerManager'):
+        """public com.badlogic.gdx.controllers.AbstractControllerManager$ManageCurrentControllerListener(com.badlogic.gdx.controllers.AbstractControllerManager)"""
+        val = _ManageCurrentControllerListener(arg0)
+        self.__wrapper = val
+
+    @override
+    @overload
+    def connected(self, arg0: 'Controller'):
+        """public void com.badlogic.gdx.controllers.AbstractControllerManager$ManageCurrentControllerListener.connected(com.badlogic.gdx.controllers.Controller)"""
+        super(_ManageCurrentControllerListener, self).connected(arg0)
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
-        @staticmethod
-        @overload
-        def clearListeners():
-            """public static void com.badlogic.gdx.controllers.Controllers.clearListeners()"""
-            __Controllers.clearListeners()
+    @override
+    @overload
+    def notifyAll(self):
+        """public final native void java.lang.Object.notifyAll()"""
+        super(object, self).notifyAll()
+
+    @overload
+    def buttonUp(self, arg0: 'Controller', arg1: int) -> bool:
+        """public boolean com.badlogic.gdx.controllers.AbstractControllerManager$ManageCurrentControllerListener.buttonUp(com.badlogic.gdx.controllers.Controller,int)"""
+        return bool._wrap(super(_ManageCurrentControllerListener, self).buttonUp(arg0, _int.valueOf(arg1)))
 
     @override
     @overload
     def toString(self) -> str:
         """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @staticmethod
-    @overload
-    def addListener(arg0: 'ControllerListener'):
-        """public static void com.badlogic.gdx.controllers.Controllers.addListener(com.badlogic.gdx.controllers.ControllerListener)"""
-        __Controllers.addListener(arg0)
-
-    @override
-    @overload
-    def notifyAll(self):
-        """public final native void java.lang.Object.notifyAll()"""
-        super(object, self).notifyAll()
-
-    @staticmethod
-    @overload
-    def removeListener(arg0: 'ControllerListener'):
-        """public static void com.badlogic.gdx.controllers.Controllers.removeListener(com.badlogic.gdx.controllers.ControllerListener)"""
-        __Controllers.removeListener(arg0)
-
-    @staticmethod
-    @overload
-    def getControllers() -> 'utils.Array':
-        """public static com.badlogic.gdx.utils.Array<com.badlogic.gdx.controllers.Controller> com.badlogic.gdx.controllers.Controllers.getControllers()"""
-        return utils.Array.__wrap(__Controllers.getControllers())
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @overload
-    def __init__(self):
-        """public com.badlogic.gdx.controllers.Controllers()"""
-        val = __Controllers()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -129,9 +110,9 @@ class Controllers():
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -140,150 +121,129 @@ class Controllers():
         super(object, self).wait()
 
     @overload
-    def __init__(self, ):
-        """public com.badlogic.gdx.controllers.Controllers()"""
-        val = __Controllers()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def axisMoved(self, arg0: 'Controller', arg1: int, arg2: float) -> bool:
+        """public boolean com.badlogic.gdx.controllers.AbstractControllerManager$ManageCurrentControllerListener.axisMoved(com.badlogic.gdx.controllers.Controller,int,float)"""
+        return bool._wrap(super(_ManageCurrentControllerListener, self).axisMoved(arg0, _int.valueOf(arg1), _float.valueOf(arg2)))
 
-    @staticmethod
+    @override
     @overload
-    def getListeners() -> 'utils.Array':
-        """public static com.badlogic.gdx.utils.Array<com.badlogic.gdx.controllers.ControllerListener> com.badlogic.gdx.controllers.Controllers.getListeners()"""
-        return utils.Array.__wrap(__Controllers.getListeners())
-
-    @staticmethod
-    @overload
-    def getCurrent() -> 'Controller':
-        """public static com.badlogic.gdx.controllers.Controller com.badlogic.gdx.controllers.Controllers.getCurrent()"""
-        return Controller.__wrap(__Controllers.getCurrent())
+    def disconnected(self, arg0: 'Controller'):
+        """public void com.badlogic.gdx.controllers.AbstractControllerManager$ManageCurrentControllerListener.disconnected(com.badlogic.gdx.controllers.Controller)"""
+        super(_ManageCurrentControllerListener, self).disconnected(arg0)
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
  
-# CLASS: com.badlogic.gdx.controllers.Controllers
-from pyquantum_helper import import_once as __import_once__
+# CLASS: com.badlogic.gdx.controllers.AbstractControllerManager$ManageCurrentControllerListener
 from builtins import str
-try:
-    from pygdx import utils
-except ImportError:
-    utils = __import_once__("pygdx.utils")
-
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import com.badlogic.gdx.controllers.Controllers as __Controllers
-__Controllers = __Controllers
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import com.badlogic.gdx.utils.Array as __Array
-__Array = __Array
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import com.badlogic.gdx.controllers.Controller as __Controller
-__Controller = __Controller
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import java.lang.Float as _float
+import com.badlogic.gdx.controllers.AbstractControllerManager as _AbstractControllerManager_ManageCurrentControllerListener
+_ManageCurrentControllerListener = _AbstractControllerManager_ManageCurrentControllerListener.ManageCurrentControllerListener
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
-class Controllers():
-    """com.badlogic.gdx.controllers.Controllers"""
+class ManageCurrentControllerListener():
+    """com.badlogic.gdx.controllers.AbstractControllerManager.ManageCurrentControllerListener"""
  
     @staticmethod
-    def __wrap(java_value: __Controllers) -> 'Controllers':
-        return Controllers(__dynamic__=java_value)
+    def _wrap(java_value: _ManageCurrentControllerListener) -> 'ManageCurrentControllerListener':
+        return ManageCurrentControllerListener(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Controllers):
+    def __init__(self, __dynamic__: _ManageCurrentControllerListener):
         """
-        Dynamic initializer for Controllers.
+        Dynamic initializer for ManageCurrentControllerListener.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ManageCurrentControllerListener__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ManageCurrentControllerListener__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @overload
+    def buttonDown(self, arg0: 'Controller', arg1: int) -> bool:
+        """public boolean com.badlogic.gdx.controllers.AbstractControllerManager$ManageCurrentControllerListener.buttonDown(com.badlogic.gdx.controllers.Controller,int)"""
+        return bool._wrap(super(_ManageCurrentControllerListener, self).buttonDown(arg0, _int.valueOf(arg1)))
+
+    @overload
+    def __init__(self, arg0: 'AbstractControllerManager'):
+        """public com.badlogic.gdx.controllers.AbstractControllerManager$ManageCurrentControllerListener(com.badlogic.gdx.controllers.AbstractControllerManager)"""
+        val = _ManageCurrentControllerListener(arg0)
+        self.__wrapper = val
+
+    @override
+    @overload
+    def connected(self, arg0: 'Controller'):
+        """public void com.badlogic.gdx.controllers.AbstractControllerManager$ManageCurrentControllerListener.connected(com.badlogic.gdx.controllers.Controller)"""
+        super(_ManageCurrentControllerListener, self).connected(arg0)
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
-        @staticmethod
-        @overload
-        def clearListeners():
-            """public static void com.badlogic.gdx.controllers.Controllers.clearListeners()"""
-            __Controllers.clearListeners()
+    @override
+    @overload
+    def notifyAll(self):
+        """public final native void java.lang.Object.notifyAll()"""
+        super(object, self).notifyAll()
+
+    @overload
+    def buttonUp(self, arg0: 'Controller', arg1: int) -> bool:
+        """public boolean com.badlogic.gdx.controllers.AbstractControllerManager$ManageCurrentControllerListener.buttonUp(com.badlogic.gdx.controllers.Controller,int)"""
+        return bool._wrap(super(_ManageCurrentControllerListener, self).buttonUp(arg0, _int.valueOf(arg1)))
 
     @override
     @overload
     def toString(self) -> str:
         """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @staticmethod
-    @overload
-    def addListener(arg0: 'ControllerListener'):
-        """public static void com.badlogic.gdx.controllers.Controllers.addListener(com.badlogic.gdx.controllers.ControllerListener)"""
-        __Controllers.addListener(arg0)
-
-    @override
-    @overload
-    def notifyAll(self):
-        """public final native void java.lang.Object.notifyAll()"""
-        super(object, self).notifyAll()
-
-    @staticmethod
-    @overload
-    def removeListener(arg0: 'ControllerListener'):
-        """public static void com.badlogic.gdx.controllers.Controllers.removeListener(com.badlogic.gdx.controllers.ControllerListener)"""
-        __Controllers.removeListener(arg0)
-
-    @staticmethod
-    @overload
-    def getControllers() -> 'utils.Array':
-        """public static com.badlogic.gdx.utils.Array<com.badlogic.gdx.controllers.Controller> com.badlogic.gdx.controllers.Controllers.getControllers()"""
-        return utils.Array.__wrap(__Controllers.getControllers())
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @overload
-    def __init__(self):
-        """public com.badlogic.gdx.controllers.Controllers()"""
-        val = __Controllers()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -293,9 +253,9 @@ class Controllers():
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -304,114 +264,98 @@ class Controllers():
         super(object, self).wait()
 
     @overload
-    def __init__(self, ):
-        """public com.badlogic.gdx.controllers.Controllers()"""
-        val = __Controllers()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def axisMoved(self, arg0: 'Controller', arg1: int, arg2: float) -> bool:
+        """public boolean com.badlogic.gdx.controllers.AbstractControllerManager$ManageCurrentControllerListener.axisMoved(com.badlogic.gdx.controllers.Controller,int,float)"""
+        return bool._wrap(super(_ManageCurrentControllerListener, self).axisMoved(arg0, _int.valueOf(arg1), _float.valueOf(arg2)))
 
-    @staticmethod
+    @override
     @overload
-    def getListeners() -> 'utils.Array':
-        """public static com.badlogic.gdx.utils.Array<com.badlogic.gdx.controllers.ControllerListener> com.badlogic.gdx.controllers.Controllers.getListeners()"""
-        return utils.Array.__wrap(__Controllers.getListeners())
-
-    @staticmethod
-    @overload
-    def getCurrent() -> 'Controller':
-        """public static com.badlogic.gdx.controllers.Controller com.badlogic.gdx.controllers.Controllers.getCurrent()"""
-        return Controller.__wrap(__Controllers.getCurrent())
+    def disconnected(self, arg0: 'Controller'):
+        """public void com.badlogic.gdx.controllers.AbstractControllerManager$ManageCurrentControllerListener.disconnected(com.badlogic.gdx.controllers.Controller)"""
+        super(_ManageCurrentControllerListener, self).disconnected(arg0)
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
  
-# CLASS: com.badlogic.gdx.controllers.Controllers 
+# CLASS: com.badlogic.gdx.controllers.AbstractControllerManager$ManageCurrentControllerListener 
  
  
-# CLASS: com.badlogic.gdx.controllers.ControllerPowerLevel
+# CLASS: com.badlogic.gdx.controllers.ControllerAdapter
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import com.badlogic.gdx.controllers.ControllerAdapter as _ControllerAdapter
+_ControllerAdapter = _ControllerAdapter
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.util.Optional as __Optional
-__Optional = __Optional
-from typing import List
-import java.lang.Enum as Enum
-import com.badlogic.gdx.controllers.ControllerPowerLevel as __ControllerPowerLevel
-__ControllerPowerLevel = __ControllerPowerLevel
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __string
-import java.lang.String as __String
-__String = __String
-import java.util.Optional as Optional
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
-import java.lang.Enum as __Enum
-__Enum = __Enum
+import java.lang.String as _String
+_String = _String
+import java.lang.Float as _float
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
-class ControllerPowerLevel():
-    """com.badlogic.gdx.controllers.ControllerPowerLevel"""
+class ControllerAdapter():
+    """com.badlogic.gdx.controllers.ControllerAdapter"""
  
     @staticmethod
-    def __wrap(java_value: __ControllerPowerLevel) -> 'ControllerPowerLevel':
-        return ControllerPowerLevel(__dynamic__=java_value)
+    def _wrap(java_value: _ControllerAdapter) -> 'ControllerAdapter':
+        return ControllerAdapter(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ControllerPowerLevel):
+    def __init__(self, __dynamic__: _ControllerAdapter):
         """
-        Dynamic initializer for ControllerPowerLevel.
+        Dynamic initializer for ControllerAdapter.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ControllerAdapter__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ControllerAdapter__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
+    def disconnected(self, arg0: 'Controller'):
+        """public void com.badlogic.gdx.controllers.ControllerAdapter.disconnected(com.badlogic.gdx.controllers.Controller)"""
+        super(_ControllerAdapter, self).disconnected(arg0)
+
+    @override
+    @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @staticmethod
-    @overload
-    def valueOf(arg0: 'Class', arg1: str) -> 'Enum':
-        """public static <T extends java.lang.Enum<T>> T java.lang.Enum.valueOf(java.lang.Class<T>,java.lang.String)"""
-        return Enum.__wrap(__Enum.valueOf(arg0, arg1))
-
-    @override
-    @overload
-    def name(self) -> str:
-        """public final java.lang.String java.lang.Enum.name()"""
-        return str.__wrap(super(Enum, self).name())
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public final int java.lang.Enum.hashCode()"""
-        return int.__wrap(super(Enum, self).hashCode())
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -421,32 +365,31 @@ class ControllerPowerLevel():
 
     @override
     @overload
-    def describeConstable(self) -> 'Optional':
-        """public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable()"""
-        return 'Optional'.__wrap(super(Enum, self).describeConstable())
+    def connected(self, arg0: 'Controller'):
+        """public void com.badlogic.gdx.controllers.ControllerAdapter.connected(com.badlogic.gdx.controllers.Controller)"""
+        super(_ControllerAdapter, self).connected(arg0)
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @overload
+    def axisMoved(self, arg0: 'Controller', arg1: int, arg2: float) -> bool:
+        """public boolean com.badlogic.gdx.controllers.ControllerAdapter.axisMoved(com.badlogic.gdx.controllers.Controller,int,float)"""
+        return bool._wrap(super(_ControllerAdapter, self).axisMoved(arg0, _int.valueOf(arg1), _float.valueOf(arg2)))
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @overload
-    def compareTo(self, arg0: 'Enum') -> int:
-        """public final int java.lang.Enum.compareTo(E)"""
-        return int.__wrap(super(__Enum, self).compareTo(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @staticmethod
-    @overload
-    def valueOf(arg0: str) -> 'ControllerPowerLevel':
-        """public static com.badlogic.gdx.controllers.ControllerPowerLevel com.badlogic.gdx.controllers.ControllerPowerLevel.valueOf(java.lang.String)"""
-        return ControllerPowerLevel.__wrap(__ControllerPowerLevel.valueOf(arg0))
+    def buttonUp(self, arg0: 'Controller', arg1: int) -> bool:
+        """public boolean com.badlogic.gdx.controllers.ControllerAdapter.buttonUp(com.badlogic.gdx.controllers.Controller,int)"""
+        return bool._wrap(super(_ControllerAdapter, self).buttonUp(arg0, _int.valueOf(arg1)))
 
     @override
     @overload
@@ -455,27 +398,16 @@ class ControllerPowerLevel():
         super(object, self).notify()
 
     @overload
-    def equals(self, arg0: object) -> bool:
-        """public final boolean java.lang.Enum.equals(java.lang.Object)"""
-        return bool.__wrap(super(__Enum, self).equals(arg0))
-
-    @staticmethod
-    @overload
-    def values() -> List['ControllerPowerLevel']:
-        """public static com.badlogic.gdx.controllers.ControllerPowerLevel[] com.badlogic.gdx.controllers.ControllerPowerLevel.values()"""
-        return List[ControllerPowerLevel].__wrap(__ControllerPowerLevel.values())
+    def __init__(self, ):
+        """public com.badlogic.gdx.controllers.ControllerAdapter()"""
+        val = _ControllerAdapter()
+        self.__wrapper = val
 
     @override
     @overload
-    def getDeclaringClass(self) -> 'type.Class':
-        """public final java.lang.Class<E> java.lang.Enum.getDeclaringClass()"""
-        return 'type.Class'.__wrap(super(Enum, self).getDeclaringClass())
-
-    @override
-    @overload
-    def ordinal(self) -> int:
-        """public final int java.lang.Enum.ordinal()"""
-        return int.__wrap(super(Enum, self).ordinal())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -483,44 +415,136 @@ class ControllerPowerLevel():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @overload
+    def buttonDown(self, arg0: 'Controller', arg1: int) -> bool:
+        """public boolean com.badlogic.gdx.controllers.ControllerAdapter.buttonDown(com.badlogic.gdx.controllers.Controller,int)"""
+        return bool._wrap(super(_ControllerAdapter, self).buttonDown(arg0, _int.valueOf(arg1)))
+
+    @overload
+    def __init__(self):
+        """public com.badlogic.gdx.controllers.ControllerAdapter()"""
+        val = _ControllerAdapter()
+        self.__wrapper = val
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Enum.toString()"""
-        return str.__wrap(super(Enum, self).toString()) 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
+ 
+ 
+# CLASS: com.badlogic.gdx.controllers.ControllerManager
+import com.badlogic.gdx.controllers.ControllerManager as _ControllerManager
+_ControllerManager = _ControllerManager
+from abc import abstractmethod, ABC
+ 
+class ControllerManager():
+    """com.badlogic.gdx.controllers.ControllerManager"""
+ 
+    @staticmethod
+    def _wrap(java_value: _ControllerManager) -> 'ControllerManager':
+        return ControllerManager(__dynamic__=java_value)
+ 
+    #
+    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+    #
+    @overload
+    def __init__(self, __dynamic__: _ControllerManager):
+        """
+        Dynamic initializer for ControllerManager.
+        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
+ 
+        :param __dynamic__: The java object to wrap
+        """
+        self.__wrapper = __dynamic__
+ 
+    def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ControllerManager__wrapper":
+            return object.__getattr__(self, name)
+        return getattr(self.__wrapper, name)
+ 
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ControllerManager__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
+ 
+    def __delattr__(self, name: str):
+        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
+ 
+    @abstractmethod
+    def clearListeners(self, ):
+        """public abstract void com.badlogic.gdx.controllers.ControllerManager.clearListeners()"""
+        pass
+
+    @abstractmethod
+    def addListener(self, arg0: 'ControllerListener'):
+        """public abstract void com.badlogic.gdx.controllers.ControllerManager.addListener(com.badlogic.gdx.controllers.ControllerListener)"""
+        pass
+
+    @abstractmethod
+    def getListeners(self, ):
+        """public abstract com.badlogic.gdx.utils.Array<com.badlogic.gdx.controllers.ControllerListener> com.badlogic.gdx.controllers.ControllerManager.getListeners()"""
+        pass
+
+    @abstractmethod
+    def removeListener(self, arg0: 'ControllerListener'):
+        """public abstract void com.badlogic.gdx.controllers.ControllerManager.removeListener(com.badlogic.gdx.controllers.ControllerListener)"""
+        pass
+
+    @abstractmethod
+    def getCurrentController(self, ):
+        """public abstract com.badlogic.gdx.controllers.Controller com.badlogic.gdx.controllers.ControllerManager.getCurrentController()"""
+        pass
+
+    @abstractmethod
+    def getControllers(self, ):
+        """public abstract com.badlogic.gdx.utils.Array<com.badlogic.gdx.controllers.Controller> com.badlogic.gdx.controllers.ControllerManager.getControllers()"""
+        pass 
  
  
 # CLASS: com.badlogic.gdx.controllers.Controller
-import com.badlogic.gdx.controllers.Controller as __Controller
-__Controller = __Controller
+import com.badlogic.gdx.controllers.Controller as _Controller
+_Controller = _Controller
 from abc import abstractmethod, ABC
  
-class Controller(ABC):
+class Controller():
     """com.badlogic.gdx.controllers.Controller"""
  
     @staticmethod
-    def __wrap(java_value: __Controller) -> 'Controller':
+    def _wrap(java_value: _Controller) -> 'Controller':
         return Controller(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Controller):
+    def __init__(self, __dynamic__: _Controller):
         """
         Dynamic initializer for Controller.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Controller__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Controller__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -621,89 +645,108 @@ class Controller(ABC):
         pass 
  
  
-# CLASS: com.badlogic.gdx.controllers.AbstractControllerManager$ManageCurrentControllerListener
+# CLASS: com.badlogic.gdx.controllers.ControllerPowerLevel
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Long as __long
-import java.lang.Float as __float
-import java.lang.Class as __Class
-__Class = __Class
-import com.badlogic.gdx.controllers.AbstractControllerManager as __AbstractControllerManager_ManageCurrentControllerListener
-__ManageCurrentControllerListener = __AbstractControllerManager_ManageCurrentControllerListener.ManageCurrentControllerListener
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+from typing import List
+import java.lang.Enum as Enum
+import java.lang.String as _string
+import java.lang.Enum as _Enum
+_Enum = _Enum
+import java.lang.Integer as _int
+import java.util.Optional as _Optional
+_Optional = _Optional
+import java.util.Optional as Optional
+import com.badlogic.gdx.controllers.ControllerPowerLevel as _ControllerPowerLevel
+_ControllerPowerLevel = _ControllerPowerLevel
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
-class ManageCurrentControllerListener():
-    """com.badlogic.gdx.controllers.AbstractControllerManager.ManageCurrentControllerListener"""
+class ControllerPowerLevel():
+    """com.badlogic.gdx.controllers.ControllerPowerLevel"""
  
     @staticmethod
-    def __wrap(java_value: __ManageCurrentControllerListener) -> 'ManageCurrentControllerListener':
-        return ManageCurrentControllerListener(__dynamic__=java_value)
+    def _wrap(java_value: _ControllerPowerLevel) -> 'ControllerPowerLevel':
+        return ControllerPowerLevel(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ManageCurrentControllerListener):
+    def __init__(self, __dynamic__: _ControllerPowerLevel):
         """
-        Dynamic initializer for ManageCurrentControllerListener.
+        Dynamic initializer for ControllerPowerLevel.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ControllerPowerLevel__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ControllerPowerLevel__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @override
     @overload
-    def buttonDown(self, arg0: 'Controller', arg1: int) -> bool:
-        """public boolean com.badlogic.gdx.controllers.AbstractControllerManager$ManageCurrentControllerListener.buttonDown(com.badlogic.gdx.controllers.Controller,int)"""
-        return bool.__wrap(super(__ManageCurrentControllerListener, self).buttonDown(arg0, __int.valueOf(arg1)))
+    def hashCode(self) -> int:
+        """public final int java.lang.Enum.hashCode()"""
+        return int._wrap(super(Enum, self).hashCode())
+
+    @staticmethod
+    @overload
+    def valueOf(arg0: 'Class', arg1: str) -> 'Enum':
+        """public static <T extends java.lang.Enum<T>> T java.lang.Enum.valueOf(java.lang.Class<T>,java.lang.String)"""
+        return Enum._wrap(_Enum.valueOf(arg0, arg1))
+
+    @staticmethod
+    @overload
+    def valueOf(arg0: str) -> 'ControllerPowerLevel':
+        """public static com.badlogic.gdx.controllers.ControllerPowerLevel com.badlogic.gdx.controllers.ControllerPowerLevel.valueOf(java.lang.String)"""
+        return ControllerPowerLevel._wrap(_ControllerPowerLevel.valueOf(arg0))
+
+    @override
+    @overload
+    def name(self) -> str:
+        """public final java.lang.String java.lang.Enum.name()"""
+        return str._wrap(super(Enum, self).name())
+
+    @override
+    @overload
+    def describeConstable(self) -> 'Optional':
+        """public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable()"""
+        return 'Optional'._wrap(super(Enum, self).describeConstable())
 
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def axisMoved(self, arg0: 'Controller', arg1: int, arg2: float) -> bool:
-        """public boolean com.badlogic.gdx.controllers.AbstractControllerManager$ManageCurrentControllerListener.axisMoved(com.badlogic.gdx.controllers.Controller,int,float)"""
-        return bool.__wrap(super(__ManageCurrentControllerListener, self).axisMoved(arg0, __int.valueOf(arg1), __float.valueOf(arg2)))
-
-    @overload
-    def __init__(self, arg0: 'AbstractControllerManager'):
-        """public com.badlogic.gdx.controllers.AbstractControllerManager$ManageCurrentControllerListener(com.badlogic.gdx.controllers.AbstractControllerManager)"""
-        val = __ManageCurrentControllerListener(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
     def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @override
-    @overload
-    def connected(self, arg0: 'Controller'):
-        """public void com.badlogic.gdx.controllers.AbstractControllerManager$ManageCurrentControllerListener.connected(com.badlogic.gdx.controllers.Controller)"""
-        super(__ManageCurrentControllerListener, self).connected(arg0)
+        """public java.lang.String java.lang.Enum.toString()"""
+        return str._wrap(super(Enum, self).toString())
 
     @override
     @overload
@@ -713,21 +756,27 @@ class ManageCurrentControllerListener():
 
     @override
     @overload
+    def ordinal(self) -> int:
+        """public final int java.lang.Enum.ordinal()"""
+        return int._wrap(super(Enum, self).ordinal())
+
+    @staticmethod
+    @overload
+    def values() -> List['ControllerPowerLevel']:
+        """public static com.badlogic.gdx.controllers.ControllerPowerLevel[] com.badlogic.gdx.controllers.ControllerPowerLevel.values()"""
+        return List[ControllerPowerLevel]._wrap(_ControllerPowerLevel.values())
+
+    @override
+    @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
-    def disconnected(self, arg0: 'Controller'):
-        """public void com.badlogic.gdx.controllers.AbstractControllerManager$ManageCurrentControllerListener.disconnected(com.badlogic.gdx.controllers.Controller)"""
-        super(__ManageCurrentControllerListener, self).disconnected(arg0)
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def getDeclaringClass(self) -> 'type.Class':
+        """public final java.lang.Class<E> java.lang.Enum.getDeclaringClass()"""
+        return 'type.Class'._wrap(super(Enum, self).getDeclaringClass())
 
     @override
     @overload
@@ -736,118 +785,110 @@ class ManageCurrentControllerListener():
         super(object, self).notify()
 
     @overload
-    def buttonUp(self, arg0: 'Controller', arg1: int) -> bool:
-        """public boolean com.badlogic.gdx.controllers.AbstractControllerManager$ManageCurrentControllerListener.buttonUp(com.badlogic.gdx.controllers.Controller,int)"""
-        return bool.__wrap(super(__ManageCurrentControllerListener, self).buttonUp(arg0, __int.valueOf(arg1)))
+    def equals(self, arg0: object) -> bool:
+        """public final boolean java.lang.Enum.equals(java.lang.Object)"""
+        return bool._wrap(super(_Enum, self).equals(arg0))
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @overload
+    def compareTo(self, arg0: 'Enum') -> int:
+        """public final int java.lang.Enum.compareTo(E)"""
+        return int._wrap(super(_Enum, self).compareTo(arg0))
 
     @override
     @overload
     def wait(self):
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
-        super(object, self).wait()
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0)) 
+        super(object, self).wait() 
  
  
 # CLASS: com.badlogic.gdx.controllers.ControllerManagerStub
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 try:
     from pygdx import utils
 except ImportError:
-    utils = __import_once__("pygdx.utils")
+    utils = _import_once("pygdx.utils")
 
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import com.badlogic.gdx.controllers.AbstractControllerManager as __AbstractControllerManager
-__AbstractControllerManager = __AbstractControllerManager
-import com.badlogic.gdx.controllers.ControllerManagerStub as __ControllerManagerStub
-__ControllerManagerStub = __ControllerManagerStub
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import com.badlogic.gdx.utils.Array as __Array
-__Array = __Array
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import com.badlogic.gdx.controllers.Controller as __Controller
-__Controller = __Controller
-import java.lang.Integer as __int
+import com.badlogic.gdx.controllers.ControllerManagerStub as _ControllerManagerStub
+_ControllerManagerStub = _ControllerManagerStub
+import java.lang.String as _String
+_String = _String
+import com.badlogic.gdx.utils.Array as _Array
+_Array = _Array
+import com.badlogic.gdx.controllers.Controller as _Controller
+_Controller = _Controller
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
+import com.badlogic.gdx.controllers.AbstractControllerManager as _AbstractControllerManager
+_AbstractControllerManager = _AbstractControllerManager
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ControllerManagerStub():
     """com.badlogic.gdx.controllers.ControllerManagerStub"""
  
     @staticmethod
-    def __wrap(java_value: __ControllerManagerStub) -> 'ControllerManagerStub':
+    def _wrap(java_value: _ControllerManagerStub) -> 'ControllerManagerStub':
         return ControllerManagerStub(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ControllerManagerStub):
+    def __init__(self, __dynamic__: _ControllerManagerStub):
         """
         Dynamic initializer for ControllerManagerStub.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ControllerManagerStub__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ControllerManagerStub__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def getControllers(self) -> 'utils.Array':
+        """public com.badlogic.gdx.utils.Array<com.badlogic.gdx.controllers.Controller> com.badlogic.gdx.controllers.AbstractControllerManager.getControllers()"""
+        return 'utils.Array'._wrap(super(AbstractControllerManager, self).getControllers())
 
     @overload
     def __init__(self, ):
         """public com.badlogic.gdx.controllers.ControllerManagerStub()"""
-        val = __ControllerManagerStub()
-        self.__dict__ = val.__dict__
+        val = _ControllerManagerStub()
         self.__wrapper = val
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @override
-    @overload
-    def addListener(self, arg0: 'ControllerListener'):
-        """public void com.badlogic.gdx.controllers.ControllerManagerStub.addListener(com.badlogic.gdx.controllers.ControllerListener)"""
-        super(__ControllerManagerStub, self).addListener(arg0)
-
-    @override
-    @overload
-    def getListeners(self) -> 'utils.Array':
-        """public com.badlogic.gdx.utils.Array<com.badlogic.gdx.controllers.ControllerListener> com.badlogic.gdx.controllers.ControllerManagerStub.getListeners()"""
-        return 'utils.Array'.__wrap(super(ControllerManagerStub, self).getListeners())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -857,22 +898,21 @@ class ControllerManagerStub():
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def __init__(self):
-        """public com.badlogic.gdx.controllers.ControllerManagerStub()"""
-        val = __ControllerManagerStub()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def removeListener(self, arg0: 'ControllerListener'):
+        """public void com.badlogic.gdx.controllers.ControllerManagerStub.removeListener(com.badlogic.gdx.controllers.ControllerListener)"""
+        super(_ControllerManagerStub, self).removeListener(arg0)
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -882,33 +922,39 @@ class ControllerManagerStub():
 
     @override
     @overload
-    def removeListener(self, arg0: 'ControllerListener'):
-        """public void com.badlogic.gdx.controllers.ControllerManagerStub.removeListener(com.badlogic.gdx.controllers.ControllerListener)"""
-        super(__ControllerManagerStub, self).removeListener(arg0)
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
+    def getListeners(self) -> 'utils.Array':
+        """public com.badlogic.gdx.utils.Array<com.badlogic.gdx.controllers.ControllerListener> com.badlogic.gdx.controllers.ControllerManagerStub.getListeners()"""
+        return 'utils.Array'._wrap(super(ControllerManagerStub, self).getListeners())
 
     @override
     @overload
     def getCurrentController(self) -> 'Controller':
         """public com.badlogic.gdx.controllers.Controller com.badlogic.gdx.controllers.AbstractControllerManager.getCurrentController()"""
-        return 'Controller'.__wrap(super(AbstractControllerManager, self).getCurrentController())
+        return 'Controller'._wrap(super(AbstractControllerManager, self).getCurrentController())
 
-    @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @override
-    @overload
-    def getControllers(self) -> 'utils.Array':
-        """public com.badlogic.gdx.utils.Array<com.badlogic.gdx.controllers.Controller> com.badlogic.gdx.controllers.AbstractControllerManager.getControllers()"""
-        return 'utils.Array'.__wrap(super(AbstractControllerManager, self).getControllers())
+    def __init__(self):
+        """public com.badlogic.gdx.controllers.ControllerManagerStub()"""
+        val = _ControllerManagerStub()
+        self.__wrapper = val
 
     @override
     @overload
     def wait(self):
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
+
+    @override
+    @overload
+    def addListener(self, arg0: 'ControllerListener'):
+        """public void com.badlogic.gdx.controllers.ControllerManagerStub.addListener(com.badlogic.gdx.controllers.ControllerListener)"""
+        super(_ControllerManagerStub, self).addListener(arg0)
 
     @override
     @overload
@@ -919,147 +965,89 @@ class ControllerManagerStub():
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0)) 
- 
- 
-# CLASS: com.badlogic.gdx.controllers.ControllerManager
-import com.badlogic.gdx.controllers.ControllerManager as __ControllerManager
-__ControllerManager = __ControllerManager
-from abc import abstractmethod, ABC
- 
-class ControllerManager(ABC):
-    """com.badlogic.gdx.controllers.ControllerManager"""
- 
-    @staticmethod
-    def __wrap(java_value: __ControllerManager) -> 'ControllerManager':
-        return ControllerManager(__dynamic__=java_value)
- 
-    #
-    # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
-    #
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
     @overload
-    def __init__(self, __dynamic__: __ControllerManager):
-        """
-        Dynamic initializer for ControllerManager.
-        WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
- 
-        :param __dynamic__: The java object to wrap
-        """
-        self.__dict__ = __dynamic__.__dict__
-        self.__wrapper = __dynamic__
- 
-    def __getattr__(self, name: str):
-        return getattr(self.__wrapper, name)
- 
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
- 
-    def __delattr__(self, name: str):
-        raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
- 
-    @abstractmethod
-    def clearListeners(self, ):
-        """public abstract void com.badlogic.gdx.controllers.ControllerManager.clearListeners()"""
-        pass
-
-    @abstractmethod
-    def addListener(self, arg0: 'ControllerListener'):
-        """public abstract void com.badlogic.gdx.controllers.ControllerManager.addListener(com.badlogic.gdx.controllers.ControllerListener)"""
-        pass
-
-    @abstractmethod
-    def getListeners(self, ):
-        """public abstract com.badlogic.gdx.utils.Array<com.badlogic.gdx.controllers.ControllerListener> com.badlogic.gdx.controllers.ControllerManager.getListeners()"""
-        pass
-
-    @abstractmethod
-    def removeListener(self, arg0: 'ControllerListener'):
-        """public abstract void com.badlogic.gdx.controllers.ControllerManager.removeListener(com.badlogic.gdx.controllers.ControllerListener)"""
-        pass
-
-    @abstractmethod
-    def getCurrentController(self, ):
-        """public abstract com.badlogic.gdx.controllers.Controller com.badlogic.gdx.controllers.ControllerManager.getCurrentController()"""
-        pass
-
-    @abstractmethod
-    def getControllers(self, ):
-        """public abstract com.badlogic.gdx.utils.Array<com.badlogic.gdx.controllers.Controller> com.badlogic.gdx.controllers.ControllerManager.getControllers()"""
-        pass 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
-# CLASS: com.badlogic.gdx.controllers.AbstractControllerManager
-from pyquantum_helper import import_once as __import_once__
+# CLASS: com.badlogic.gdx.controllers.Controllers
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 try:
     from pygdx import utils
 except ImportError:
-    utils = __import_once__("pygdx.utils")
+    utils = _import_once("pygdx.utils")
 
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import com.badlogic.gdx.controllers.AbstractControllerManager as __AbstractControllerManager
-__AbstractControllerManager = __AbstractControllerManager
-from abc import abstractmethod, ABC
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import com.badlogic.gdx.utils.Array as __Array
-__Array = __Array
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import com.badlogic.gdx.controllers.Controller as __Controller
-__Controller = __Controller
-import java.lang.Integer as __int
-import com.badlogic.gdx.controllers.ControllerManager as __ControllerManager
-__ControllerManager = __ControllerManager
+import java.lang.String as _String
+_String = _String
+import com.badlogic.gdx.utils.Array as _Array
+_Array = _Array
+import com.badlogic.gdx.controllers.Controller as _Controller
+_Controller = _Controller
+import java.lang.Integer as _int
+import com.badlogic.gdx.controllers.Controllers as _Controllers
+_Controllers = _Controllers
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
-class AbstractControllerManager(ABC):
-    """com.badlogic.gdx.controllers.AbstractControllerManager"""
+class Controllers():
+    """com.badlogic.gdx.controllers.Controllers"""
  
     @staticmethod
-    def __wrap(java_value: __AbstractControllerManager) -> 'AbstractControllerManager':
-        return AbstractControllerManager(__dynamic__=java_value)
+    def _wrap(java_value: _Controllers) -> 'Controllers':
+        return Controllers(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __AbstractControllerManager):
+    def __init__(self, __dynamic__: _Controllers):
         """
-        Dynamic initializer for AbstractControllerManager.
+        Dynamic initializer for Controllers.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Controllers__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Controllers__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @staticmethod
+    @overload
+    def getCurrent() -> 'Controller':
+        """public static com.badlogic.gdx.controllers.Controller com.badlogic.gdx.controllers.Controllers.getCurrent()"""
+        return Controller._wrap(_Controllers.getCurrent())
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -1067,32 +1055,41 @@ class AbstractControllerManager(ABC):
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
-    @abstractmethod
-    def removeListener(self, arg0: 'ControllerListener'):
-        """public abstract void com.badlogic.gdx.controllers.ControllerManager.removeListener(com.badlogic.gdx.controllers.ControllerListener)"""
-        pass
+    @overload
+    def __init__(self, ):
+        """public com.badlogic.gdx.controllers.Controllers()"""
+        val = _Controllers()
+        self.__wrapper = val
+
+    @staticmethod
+    @overload
+    def removeListener(arg0: 'ControllerListener'):
+        """public static void com.badlogic.gdx.controllers.Controllers.removeListener(com.badlogic.gdx.controllers.ControllerListener)"""
+        _Controllers.removeListener(arg0)
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
-    @override
+    @staticmethod
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def getListeners() -> 'utils.Array':
+        """public static com.badlogic.gdx.utils.Array<com.badlogic.gdx.controllers.ControllerListener> com.badlogic.gdx.controllers.Controllers.getListeners()"""
+        return utils.Array._wrap(_Controllers.getListeners())
 
-    @abstractmethod
-    def clearListeners(self, ):
-        """public abstract void com.badlogic.gdx.controllers.ControllerManager.clearListeners()"""
-        pass
-
-    @abstractmethod
-    def addListener(self, arg0: 'ControllerListener'):
-        """public abstract void com.badlogic.gdx.controllers.ControllerManager.addListener(com.badlogic.gdx.controllers.ControllerListener)"""
-        pass
+    @staticmethod
+    @overload
+    def getControllers() -> 'utils.Array':
+        """public static com.badlogic.gdx.utils.Array<com.badlogic.gdx.controllers.Controller> com.badlogic.gdx.controllers.Controllers.getControllers()"""
+        return utils.Array._wrap(_Controllers.getControllers())
 
     @override
     @overload
@@ -1102,33 +1099,15 @@ class AbstractControllerManager(ABC):
 
     @overload
     def __init__(self):
-        """public com.badlogic.gdx.controllers.AbstractControllerManager()"""
-        val = __AbstractControllerManager()
-        self.__dict__ = val.__dict__
+        """public com.badlogic.gdx.controllers.Controllers()"""
+        val = _Controllers()
         self.__wrapper = val
 
     @override
     @overload
-    def getCurrentController(self) -> 'Controller':
-        """public com.badlogic.gdx.controllers.Controller com.badlogic.gdx.controllers.AbstractControllerManager.getCurrentController()"""
-        return 'Controller'.__wrap(super(AbstractControllerManager, self).getCurrentController())
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @abstractmethod
-    def getListeners(self, ):
-        """public abstract com.badlogic.gdx.utils.Array<com.badlogic.gdx.controllers.ControllerListener> com.badlogic.gdx.controllers.ControllerManager.getListeners()"""
-        pass
-
-    @override
-    @overload
-    def getControllers(self) -> 'utils.Array':
-        """public com.badlogic.gdx.utils.Array<com.badlogic.gdx.controllers.Controller> com.badlogic.gdx.controllers.AbstractControllerManager.getControllers()"""
-        return 'utils.Array'.__wrap(super(AbstractControllerManager, self).getControllers())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -1136,78 +1115,88 @@ class AbstractControllerManager(ABC):
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+        @staticmethod
+        @overload
+        def clearListeners():
+            """public static void com.badlogic.gdx.controllers.Controllers.clearListeners()"""
+            _Controllers.clearListeners()
+
+    @staticmethod
     @overload
-    def __init__(self, ):
-        """public com.badlogic.gdx.controllers.AbstractControllerManager()"""
-        val = __AbstractControllerManager()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def addListener(arg0: 'ControllerListener'):
+        """public static void com.badlogic.gdx.controllers.Controllers.addListener(com.badlogic.gdx.controllers.ControllerListener)"""
+        _Controllers.addListener(arg0)
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0)) 
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: com.badlogic.gdx.controllers.ControllerMapping
+import com.badlogic.gdx.controllers.ControllerMapping as _ControllerMapping
+_ControllerMapping = _ControllerMapping
 from builtins import str
-import java.lang.Long as __long
 from pyquantum_helper import override
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.Object as __object
-import java.lang.String as __String
-__String = __String
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Integer as _int
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
 from builtins import bool
-import com.badlogic.gdx.controllers.ControllerMapping as __ControllerMapping
-__ControllerMapping = __ControllerMapping
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ControllerMapping():
     """com.badlogic.gdx.controllers.ControllerMapping"""
  
     @staticmethod
-    def __wrap(java_value: __ControllerMapping) -> 'ControllerMapping':
+    def _wrap(java_value: _ControllerMapping) -> 'ControllerMapping':
         return ControllerMapping(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ControllerMapping):
+    def __init__(self, __dynamic__: _ControllerMapping):
         """
         Dynamic initializer for ControllerMapping.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ControllerMapping__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ControllerMapping__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -1217,15 +1206,15 @@ class ControllerMapping():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -1239,85 +1228,113 @@ class ControllerMapping():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0)) 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
-# CLASS: com.badlogic.gdx.controllers.ControllerAdapter
+# CLASS: com.badlogic.gdx.controllers.AbstractControllerManager
+from pyquantum_helper import import_once as _import_once
+import com.badlogic.gdx.controllers.ControllerManager as _ControllerManager
+_ControllerManager = _ControllerManager
 from builtins import str
+try:
+    from pygdx import utils
+except ImportError:
+    utils = _import_once("pygdx.utils")
+
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import com.badlogic.gdx.controllers.ControllerAdapter as __ControllerAdapter
-__ControllerAdapter = __ControllerAdapter
-import java.lang.Long as __long
-import java.lang.Float as __float
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+from abc import abstractmethod, ABC
+import com.badlogic.gdx.utils.Array as _Array
+_Array = _Array
+import com.badlogic.gdx.controllers.Controller as _Controller
+_Controller = _Controller
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
+import com.badlogic.gdx.controllers.AbstractControllerManager as _AbstractControllerManager
+_AbstractControllerManager = _AbstractControllerManager
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
-class ControllerAdapter():
-    """com.badlogic.gdx.controllers.ControllerAdapter"""
+class AbstractControllerManager():
+    """com.badlogic.gdx.controllers.AbstractControllerManager"""
  
     @staticmethod
-    def __wrap(java_value: __ControllerAdapter) -> 'ControllerAdapter':
-        return ControllerAdapter(__dynamic__=java_value)
+    def _wrap(java_value: _AbstractControllerManager) -> 'AbstractControllerManager':
+        return AbstractControllerManager(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ControllerAdapter):
+    def __init__(self, __dynamic__: _AbstractControllerManager):
         """
-        Dynamic initializer for ControllerAdapter.
+        Dynamic initializer for AbstractControllerManager.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_AbstractControllerManager__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_AbstractControllerManager__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @overload
+    def __init__(self):
+        """public com.badlogic.gdx.controllers.AbstractControllerManager()"""
+        val = _AbstractControllerManager()
+        self.__wrapper = val
+
+    @override
+    @overload
+    def getControllers(self) -> 'utils.Array':
+        """public com.badlogic.gdx.utils.Array<com.badlogic.gdx.controllers.Controller> com.badlogic.gdx.controllers.AbstractControllerManager.getControllers()"""
+        return 'utils.Array'._wrap(super(AbstractControllerManager, self).getControllers())
+
+    @overload
+    def __init__(self, ):
+        """public com.badlogic.gdx.controllers.AbstractControllerManager()"""
+        val = _AbstractControllerManager()
+        self.__wrapper = val
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def __init__(self, ):
-        """public com.badlogic.gdx.controllers.ControllerAdapter()"""
-        val = __ControllerAdapter()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -1327,31 +1344,30 @@ class ControllerAdapter():
 
     @override
     @overload
-    def disconnected(self, arg0: 'Controller'):
-        """public void com.badlogic.gdx.controllers.ControllerAdapter.disconnected(com.badlogic.gdx.controllers.Controller)"""
-        super(__ControllerAdapter, self).disconnected(arg0)
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
-    @overload
-    def axisMoved(self, arg0: 'Controller', arg1: int, arg2: float) -> bool:
-        """public boolean com.badlogic.gdx.controllers.ControllerAdapter.axisMoved(com.badlogic.gdx.controllers.Controller,int,float)"""
-        return bool.__wrap(super(__ControllerAdapter, self).axisMoved(arg0, __int.valueOf(arg1), __float.valueOf(arg2)))
+    @abstractmethod
+    def removeListener(self, arg0: 'ControllerListener'):
+        """public abstract void com.badlogic.gdx.controllers.ControllerManager.removeListener(com.badlogic.gdx.controllers.ControllerListener)"""
+        pass
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    @abstractmethod
+    def clearListeners(self, ):
+        """public abstract void com.badlogic.gdx.controllers.ControllerManager.clearListeners()"""
+        pass
 
-    @overload
-    def buttonDown(self, arg0: 'Controller', arg1: int) -> bool:
-        """public boolean com.badlogic.gdx.controllers.ControllerAdapter.buttonDown(com.badlogic.gdx.controllers.Controller,int)"""
-        return bool.__wrap(super(__ControllerAdapter, self).buttonDown(arg0, __int.valueOf(arg1)))
+    @abstractmethod
+    def addListener(self, arg0: 'ControllerListener'):
+        """public abstract void com.badlogic.gdx.controllers.ControllerManager.addListener(com.badlogic.gdx.controllers.ControllerListener)"""
+        pass
 
     @override
     @overload
@@ -1359,29 +1375,22 @@ class ControllerAdapter():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
+    @override
     @overload
-    def __init__(self):
-        """public com.badlogic.gdx.controllers.ControllerAdapter()"""
-        val = __ControllerAdapter()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
-    @overload
-    def buttonUp(self, arg0: 'Controller', arg1: int) -> bool:
-        """public boolean com.badlogic.gdx.controllers.ControllerAdapter.buttonUp(com.badlogic.gdx.controllers.Controller,int)"""
-        return bool.__wrap(super(__ControllerAdapter, self).buttonUp(arg0, __int.valueOf(arg1)))
+    @abstractmethod
+    def getListeners(self, ):
+        """public abstract com.badlogic.gdx.utils.Array<com.badlogic.gdx.controllers.ControllerListener> com.badlogic.gdx.controllers.ControllerManager.getListeners()"""
+        pass
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @override
-    @overload
-    def connected(self, arg0: 'Controller'):
-        """public void com.badlogic.gdx.controllers.ControllerAdapter.connected(com.badlogic.gdx.controllers.Controller)"""
-        super(__ControllerAdapter, self).connected(arg0)
+    def getCurrentController(self) -> 'Controller':
+        """public com.badlogic.gdx.controllers.Controller com.badlogic.gdx.controllers.AbstractControllerManager.getCurrentController()"""
+        return 'Controller'._wrap(super(AbstractControllerManager, self).getCurrentController())
 
     @override
     @overload
@@ -1392,40 +1401,51 @@ class ControllerAdapter():
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0)) 
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: com.badlogic.gdx.controllers.ControllerListener
-import com.badlogic.gdx.controllers.ControllerListener as __ControllerListener
-__ControllerListener = __ControllerListener
+import com.badlogic.gdx.controllers.ControllerListener as _ControllerListener
+_ControllerListener = _ControllerListener
 from abc import abstractmethod, ABC
  
-class ControllerListener(ABC):
+class ControllerListener():
     """com.badlogic.gdx.controllers.ControllerListener"""
  
     @staticmethod
-    def __wrap(java_value: __ControllerListener) -> 'ControllerListener':
+    def _wrap(java_value: _ControllerListener) -> 'ControllerListener':
         return ControllerListener(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ControllerListener):
+    def __init__(self, __dynamic__: _ControllerListener):
         """
         Dynamic initializer for ControllerListener.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ControllerListener__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ControllerListener__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))

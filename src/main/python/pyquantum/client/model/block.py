@@ -3,89 +3,81 @@ from overload import overload
 
 
  
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
-import dev.ultreon.quantum.client.model.block.ModelProperties as __ModelProperties_Builder
-__Builder = __ModelProperties_Builder.Builder
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
+import dev.ultreon.quantum.client.model.block.ModelProperties as _ModelProperties_Builder
+_Builder = _ModelProperties_Builder.Builder
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.client.model.block.ModelProperties as _ModelProperties
+_ModelProperties = _ModelProperties
+import java.lang.Integer as _int
 try:
     from pyquantum.client import world
 except ImportError:
-    world = __import_once__("pyquantum.client.world")
+    world = _import_once("pyquantum.client.world")
 
-import java.lang.Integer as __int
 from builtins import bool
-import dev.ultreon.quantum.client.model.block.ModelProperties as __ModelProperties
-__ModelProperties = __ModelProperties
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class Builder():
     """dev.ultreon.quantum.client.model.block.ModelProperties.Builder"""
  
     @staticmethod
-    def __wrap(java_value: __Builder) -> 'Builder':
+    def _wrap(java_value: _Builder) -> 'Builder':
         return Builder(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Builder):
+    def __init__(self, __dynamic__: _Builder):
         """
         Dynamic initializer for Builder.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Builder__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Builder__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @overload
+    def right(self, arg0: 'FaceProperties') -> 'Builder':
+        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.right(dev.ultreon.quantum.client.world.FaceProperties)"""
+        return 'Builder'._wrap(super(_Builder, self).right(arg0))
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder()"""
-        val = __Builder()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def top(self, arg0: 'FaceProperties') -> 'Builder':
-        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.top(dev.ultreon.quantum.client.world.FaceProperties)"""
-        return 'Builder'.__wrap(super(__Builder, self).top(arg0))
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -93,34 +85,29 @@ class Builder():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @overload
+    def __init__(self):
+        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder()"""
+        val = _Builder()
+        self.__wrapper = val
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def rotateHorizontal(self, arg0: 'CubicDirection') -> 'Builder':
-        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.rotateHorizontal(dev.ultreon.quantum.world.CubicDirection)"""
-        return 'Builder'.__wrap(super(__Builder, self).rotateHorizontal(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @overload
     def __init__(self, ):
         """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder()"""
-        val = __Builder()
-        self.__dict__ = val.__dict__
+        val = _Builder()
         self.__wrapper = val
-
-    @overload
-    def front(self, arg0: 'FaceProperties') -> 'Builder':
-        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.front(dev.ultreon.quantum.client.world.FaceProperties)"""
-        return 'Builder'.__wrap(super(__Builder, self).front(arg0))
 
     @override
     @overload
@@ -128,16 +115,26 @@ class Builder():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
+    @overload
+    def bottom(self, arg0: 'FaceProperties') -> 'Builder':
+        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.bottom(dev.ultreon.quantum.client.world.FaceProperties)"""
+        return 'Builder'._wrap(super(_Builder, self).bottom(arg0))
+
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @overload
-    def build(self) -> 'ModelProperties':
-        """public dev.ultreon.quantum.client.model.block.ModelProperties dev.ultreon.quantum.client.model.block.ModelProperties$Builder.build()"""
-        return 'ModelProperties'.__wrap(super(Builder, self).build())
+    def rotateHorizontal(self, arg0: 'CubicDirection') -> 'Builder':
+        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.rotateHorizontal(dev.ultreon.quantum.world.CubicDirection)"""
+        return 'Builder'._wrap(super(_Builder, self).rotateHorizontal(arg0))
+
+    @overload
+    def front(self, arg0: 'FaceProperties') -> 'Builder':
+        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.front(dev.ultreon.quantum.client.world.FaceProperties)"""
+        return 'Builder'._wrap(super(_Builder, self).front(arg0))
 
     @override
     @overload
@@ -146,117 +143,115 @@ class Builder():
         super(object, self).wait()
 
     @overload
-    def back(self, arg0: 'FaceProperties') -> 'Builder':
-        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.back(dev.ultreon.quantum.client.world.FaceProperties)"""
-        return 'Builder'.__wrap(super(__Builder, self).back(arg0))
-
-    @overload
     def left(self, arg0: 'FaceProperties') -> 'Builder':
         """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.left(dev.ultreon.quantum.client.world.FaceProperties)"""
-        return 'Builder'.__wrap(super(__Builder, self).left(arg0))
+        return 'Builder'._wrap(super(_Builder, self).left(arg0))
 
     @overload
-    def right(self, arg0: 'FaceProperties') -> 'Builder':
-        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.right(dev.ultreon.quantum.client.world.FaceProperties)"""
-        return 'Builder'.__wrap(super(__Builder, self).right(arg0))
+    def back(self, arg0: 'FaceProperties') -> 'Builder':
+        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.back(dev.ultreon.quantum.client.world.FaceProperties)"""
+        return 'Builder'._wrap(super(_Builder, self).back(arg0))
 
     @overload
-    def bottom(self, arg0: 'FaceProperties') -> 'Builder':
-        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.bottom(dev.ultreon.quantum.client.world.FaceProperties)"""
-        return 'Builder'.__wrap(super(__Builder, self).bottom(arg0))
+    def build(self) -> 'ModelProperties':
+        """public dev.ultreon.quantum.client.model.block.ModelProperties dev.ultreon.quantum.client.model.block.ModelProperties$Builder.build()"""
+        return 'ModelProperties'._wrap(super(Builder, self).build())
+
+    @overload
+    def top(self, arg0: 'FaceProperties') -> 'Builder':
+        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.top(dev.ultreon.quantum.client.world.FaceProperties)"""
+        return 'Builder'._wrap(super(_Builder, self).top(arg0))
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
  
 # CLASS: dev.ultreon.quantum.client.model.block.ModelProperties$Builder
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
-import dev.ultreon.quantum.client.model.block.ModelProperties as __ModelProperties_Builder
-__Builder = __ModelProperties_Builder.Builder
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
+import dev.ultreon.quantum.client.model.block.ModelProperties as _ModelProperties_Builder
+_Builder = _ModelProperties_Builder.Builder
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.client.model.block.ModelProperties as _ModelProperties
+_ModelProperties = _ModelProperties
+import java.lang.Integer as _int
 try:
     from pyquantum.client import world
 except ImportError:
-    world = __import_once__("pyquantum.client.world")
+    world = _import_once("pyquantum.client.world")
 
-import java.lang.Integer as __int
 from builtins import bool
-import dev.ultreon.quantum.client.model.block.ModelProperties as __ModelProperties
-__ModelProperties = __ModelProperties
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class Builder():
     """dev.ultreon.quantum.client.model.block.ModelProperties.Builder"""
  
     @staticmethod
-    def __wrap(java_value: __Builder) -> 'Builder':
+    def _wrap(java_value: _Builder) -> 'Builder':
         return Builder(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Builder):
+    def __init__(self, __dynamic__: _Builder):
         """
         Dynamic initializer for Builder.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Builder__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Builder__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @overload
+    def right(self, arg0: 'FaceProperties') -> 'Builder':
+        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.right(dev.ultreon.quantum.client.world.FaceProperties)"""
+        return 'Builder'._wrap(super(_Builder, self).right(arg0))
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder()"""
-        val = __Builder()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def top(self, arg0: 'FaceProperties') -> 'Builder':
-        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.top(dev.ultreon.quantum.client.world.FaceProperties)"""
-        return 'Builder'.__wrap(super(__Builder, self).top(arg0))
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -264,34 +259,29 @@ class Builder():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @overload
+    def __init__(self):
+        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder()"""
+        val = _Builder()
+        self.__wrapper = val
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def rotateHorizontal(self, arg0: 'CubicDirection') -> 'Builder':
-        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.rotateHorizontal(dev.ultreon.quantum.world.CubicDirection)"""
-        return 'Builder'.__wrap(super(__Builder, self).rotateHorizontal(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @overload
     def __init__(self, ):
         """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder()"""
-        val = __Builder()
-        self.__dict__ = val.__dict__
+        val = _Builder()
         self.__wrapper = val
-
-    @overload
-    def front(self, arg0: 'FaceProperties') -> 'Builder':
-        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.front(dev.ultreon.quantum.client.world.FaceProperties)"""
-        return 'Builder'.__wrap(super(__Builder, self).front(arg0))
 
     @override
     @overload
@@ -299,16 +289,26 @@ class Builder():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
+    @overload
+    def bottom(self, arg0: 'FaceProperties') -> 'Builder':
+        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.bottom(dev.ultreon.quantum.client.world.FaceProperties)"""
+        return 'Builder'._wrap(super(_Builder, self).bottom(arg0))
+
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @overload
-    def build(self) -> 'ModelProperties':
-        """public dev.ultreon.quantum.client.model.block.ModelProperties dev.ultreon.quantum.client.model.block.ModelProperties$Builder.build()"""
-        return 'ModelProperties'.__wrap(super(Builder, self).build())
+    def rotateHorizontal(self, arg0: 'CubicDirection') -> 'Builder':
+        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.rotateHorizontal(dev.ultreon.quantum.world.CubicDirection)"""
+        return 'Builder'._wrap(super(_Builder, self).rotateHorizontal(arg0))
+
+    @overload
+    def front(self, arg0: 'FaceProperties') -> 'Builder':
+        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.front(dev.ultreon.quantum.client.world.FaceProperties)"""
+        return 'Builder'._wrap(super(_Builder, self).front(arg0))
 
     @override
     @overload
@@ -317,29 +317,35 @@ class Builder():
         super(object, self).wait()
 
     @overload
-    def back(self, arg0: 'FaceProperties') -> 'Builder':
-        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.back(dev.ultreon.quantum.client.world.FaceProperties)"""
-        return 'Builder'.__wrap(super(__Builder, self).back(arg0))
-
-    @overload
     def left(self, arg0: 'FaceProperties') -> 'Builder':
         """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.left(dev.ultreon.quantum.client.world.FaceProperties)"""
-        return 'Builder'.__wrap(super(__Builder, self).left(arg0))
+        return 'Builder'._wrap(super(_Builder, self).left(arg0))
 
     @overload
-    def right(self, arg0: 'FaceProperties') -> 'Builder':
-        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.right(dev.ultreon.quantum.client.world.FaceProperties)"""
-        return 'Builder'.__wrap(super(__Builder, self).right(arg0))
+    def back(self, arg0: 'FaceProperties') -> 'Builder':
+        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.back(dev.ultreon.quantum.client.world.FaceProperties)"""
+        return 'Builder'._wrap(super(_Builder, self).back(arg0))
 
     @overload
-    def bottom(self, arg0: 'FaceProperties') -> 'Builder':
-        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.bottom(dev.ultreon.quantum.client.world.FaceProperties)"""
-        return 'Builder'.__wrap(super(__Builder, self).bottom(arg0))
+    def build(self) -> 'ModelProperties':
+        """public dev.ultreon.quantum.client.model.block.ModelProperties dev.ultreon.quantum.client.model.block.ModelProperties$Builder.build()"""
+        return 'ModelProperties'._wrap(super(Builder, self).build())
+
+    @overload
+    def top(self, arg0: 'FaceProperties') -> 'Builder':
+        """public dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties$Builder.top(dev.ultreon.quantum.client.world.FaceProperties)"""
+        return 'Builder'._wrap(super(_Builder, self).top(arg0))
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
@@ -348,121 +354,131 @@ class Builder():
  
  
 # CLASS: dev.ultreon.quantum.client.model.block.G3DModel
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
+import com.badlogic.gdx.math.Vector3 as _Vector3
+_Vector3 = _Vector3
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
 try:
     from pygdx.graphics import g3d
 except ImportError:
-    g3d = __import_once__("pygdx.graphics.g3d")
+    g3d = _import_once("pygdx.graphics.g3d")
 
+import java.lang.Object as _object
 from builtins import type
-import com.badlogic.gdx.math.Vector3 as __Vector3
-__Vector3 = __Vector3
 try:
     from pyquantum import client
 except ImportError:
-    client = __import_once__("pyquantum.client")
+    client = _import_once("pyquantum.client")
 
-import dev.ultreon.quantum.client.model.block.BlockModel as __BlockModel
-__BlockModel = __BlockModel
+import dev.ultreon.quantum.client.model.block.G3DModel as _G3DModel
+_G3DModel = _G3DModel
+import java.lang.String as _String
+_String = _String
 try:
     from pyquantum.client import render
 except ImportError:
-    render = __import_once__("pyquantum.client.render")
+    render = _import_once("pyquantum.client.render")
 
-import com.badlogic.gdx.graphics.g3d.Model as __Model
-__Model = __Model
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import dev.ultreon.quantum.util.Identifier as __Identifier
-__Identifier = __Identifier
-import java.lang.Object as __Object
-__Object = __Object
-import dev.ultreon.quantum.client.model.block.G3DModel as __G3DModel
-__G3DModel = __G3DModel
+import java.lang.Integer as _int
+import com.badlogic.gdx.graphics.g3d.Model as _Model
+_Model = _Model
 try:
     from pyquantum.client import world
 except ImportError:
-    world = __import_once__("pyquantum.client.world")
+    world = _import_once("pyquantum.client.world")
 
-import java.lang.Integer as __int
+import dev.ultreon.quantum.util.Identifier as _Identifier
+_Identifier = _Identifier
+import dev.ultreon.quantum.client.model.block.BlockModel as _BlockModel
+_BlockModel = _BlockModel
 try:
     from pygdx import math
 except ImportError:
-    math = __import_once__("pygdx.math")
+    math = _import_once("pygdx.math")
 
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class G3DModel():
     """dev.ultreon.quantum.client.model.block.G3DModel"""
  
     @staticmethod
-    def __wrap(java_value: __G3DModel) -> 'G3DModel':
+    def _wrap(java_value: _G3DModel) -> 'G3DModel':
         return G3DModel(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __G3DModel):
+    def __init__(self, __dynamic__: _G3DModel):
         """
         Dynamic initializer for G3DModel.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_G3DModel__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_G3DModel__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @overload
+    def __init__(self, arg0: 'Identifier', arg1: 'ModelConfig'):
+        """public dev.ultreon.quantum.client.model.block.G3DModel(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig)"""
+        val = _G3DModel(arg0, arg1)
+        self.__wrapper = val
+
+    @override
+    @overload
+    def getItemScale(self) -> 'math.Vector3':
+        """public default com.badlogic.gdx.math.Vector3 dev.ultreon.quantum.client.model.block.BlockModel.getItemScale()"""
+        return 'math.Vector3'._wrap(super(BlockModel, self).getItemScale())
+
+    @override
+    @overload
+    def getModel(self) -> 'g3d.Model':
+        """public com.badlogic.gdx.graphics.g3d.Model dev.ultreon.quantum.client.model.block.G3DModel.getModel()"""
+        return 'g3d.Model'._wrap(super(G3DModel, self).getModel())
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @override
-    @overload
-    def resourceId(self) -> 'util.Identifier':
-        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.client.model.block.G3DModel.resourceId()"""
-        return 'util.Identifier'.__wrap(super(G3DModel, self).resourceId())
-
-    @overload
-    def __init__(self, arg0: 'Identifier', arg1: 'ModelConfig'):
-        """public dev.ultreon.quantum.client.model.block.G3DModel(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig)"""
-        val = __G3DModel(arg0, arg1)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def isCustom(self) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.block.G3DModel.isCustom()"""
+        return bool._wrap(super(G3DModel, self).isCustom())
 
     @override
     @overload
@@ -472,33 +488,39 @@ class G3DModel():
 
     @override
     @overload
+    def render(self, arg0: 'Vector3', arg1: 'Scene3D'):
+        """public default void dev.ultreon.quantum.client.model.block.BlockModel.render(com.badlogic.gdx.math.Vector3,dev.ultreon.quantum.client.render.Scene3D)"""
+        super(_BlockModel, self).render(arg0, arg1)
+
+    @override
+    @overload
     def load(self, arg0: 'QuantumClient'):
         """public void dev.ultreon.quantum.client.model.block.G3DModel.load(dev.ultreon.quantum.client.QuantumClient)"""
-        super(__G3DModel, self).load(arg0)
+        super(_G3DModel, self).load(arg0)
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @overload
+    def __init__(self, arg0: 'Identifier'):
+        """public dev.ultreon.quantum.client.model.block.G3DModel(dev.ultreon.quantum.util.Identifier)"""
+        val = _G3DModel(arg0)
+        self.__wrapper = val
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
-    def getItemScale(self) -> 'math.Vector3':
-        """public default com.badlogic.gdx.math.Vector3 dev.ultreon.quantum.client.model.block.BlockModel.getItemScale()"""
-        return 'math.Vector3'.__wrap(super(BlockModel, self).getItemScale())
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def render(self, arg0: 'Vector3', arg1: 'Scene3D'):
-        """public default void dev.ultreon.quantum.client.model.block.BlockModel.render(com.badlogic.gdx.math.Vector3,dev.ultreon.quantum.client.render.Scene3D)"""
-        super(__BlockModel, self).render(arg0, arg1)
+    def getItemOffset(self) -> 'math.Vector3':
+        """public default com.badlogic.gdx.math.Vector3 dev.ultreon.quantum.client.model.block.BlockModel.getItemOffset()"""
+        return 'math.Vector3'._wrap(super(BlockModel, self).getItemOffset())
 
     @override
     @overload
@@ -508,15 +530,9 @@ class G3DModel():
 
     @override
     @overload
-    def getItemOffset(self) -> 'math.Vector3':
-        """public default com.badlogic.gdx.math.Vector3 dev.ultreon.quantum.client.model.block.BlockModel.getItemOffset()"""
-        return 'math.Vector3'.__wrap(super(BlockModel, self).getItemOffset())
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -534,113 +550,115 @@ class G3DModel():
     @overload
     def loadInto(self, arg0: 'BlockPos', arg1: 'ClientChunk'):
         """public void dev.ultreon.quantum.client.model.block.G3DModel.loadInto(dev.ultreon.quantum.world.BlockPos,dev.ultreon.quantum.client.world.ClientChunk)"""
-        super(__G3DModel, self).loadInto(arg0, arg1)
+        super(_G3DModel, self).loadInto(arg0, arg1)
 
     @override
     @overload
-    def getModel(self) -> 'g3d.Model':
-        """public com.badlogic.gdx.graphics.g3d.Model dev.ultreon.quantum.client.model.block.G3DModel.getModel()"""
-        return 'g3d.Model'.__wrap(super(G3DModel, self).getModel())
-
-    @override
-    @overload
-    def isCustom(self) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.block.G3DModel.isCustom()"""
-        return bool.__wrap(super(G3DModel, self).isCustom())
+    def resourceId(self) -> 'util.Identifier':
+        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.client.model.block.G3DModel.resourceId()"""
+        return 'util.Identifier'._wrap(super(G3DModel, self).resourceId())
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
+    @override
     @overload
-    def __init__(self, arg0: 'Identifier'):
-        """public dev.ultreon.quantum.client.model.block.G3DModel(dev.ultreon.quantum.util.Identifier)"""
-        val = __G3DModel(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.client.model.block.BakedModelRegistry
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
 try:
     from pyquantum.client import atlas
 except ImportError:
-    atlas = __import_once__("pyquantum.client.atlas")
+    atlas = _import_once("pyquantum.client.atlas")
 
-import dev.ultreon.quantum.client.model.block.BakedModelRegistry as __BakedModelRegistry
-__BakedModelRegistry = __BakedModelRegistry
+import dev.ultreon.quantum.client.model.block.BakedModelRegistry as _BakedModelRegistry
+_BakedModelRegistry = _BakedModelRegistry
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.client.atlas.TextureAtlas as _TextureAtlas
+_TextureAtlas = _TextureAtlas
 try:
     import pygcollect
 except ImportError:
-    pygcollect = __import_once__("pygcollect")
+    pygcollect = _import_once("pygcollect")
 
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import com.google.common.collect.ImmutableMap as __ImmutableMap
-__ImmutableMap = __ImmutableMap
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.Integer as _int
+import com.google.common.collect.ImmutableMap as _ImmutableMap
+_ImmutableMap = _ImmutableMap
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
-import dev.ultreon.quantum.client.atlas.TextureAtlas as __TextureAtlas
-__TextureAtlas = __TextureAtlas
+import java.lang.Class as _Class
+_Class = _Class
  
 class BakedModelRegistry():
     """dev.ultreon.quantum.client.model.block.BakedModelRegistry"""
  
     @staticmethod
-    def __wrap(java_value: __BakedModelRegistry) -> 'BakedModelRegistry':
+    def _wrap(java_value: _BakedModelRegistry) -> 'BakedModelRegistry':
         return BakedModelRegistry(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BakedModelRegistry):
+    def __init__(self, __dynamic__: _BakedModelRegistry):
         """
         Dynamic initializer for BakedModelRegistry.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BakedModelRegistry__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BakedModelRegistry__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public int dev.ultreon.quantum.client.model.block.BakedModelRegistry.hashCode()"""
-        return int.__wrap(super(BakedModelRegistry, self).hashCode())
-
-    @override
-    @overload
     def toString(self) -> str:
         """public java.lang.String dev.ultreon.quantum.client.model.block.BakedModelRegistry.toString()"""
-        return str.__wrap(super(BakedModelRegistry, self).toString())
+        return str._wrap(super(BakedModelRegistry, self).toString())
+
+    @overload
+    def atlas(self) -> 'atlas.TextureAtlas':
+        """public dev.ultreon.quantum.client.atlas.TextureAtlas dev.ultreon.quantum.client.model.block.BakedModelRegistry.atlas()"""
+        return 'atlas.TextureAtlas'._wrap(super(BakedModelRegistry, self).atlas())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @overload
+    def bakedModels(self) -> 'pygcollect.ImmutableMap':
+        """public com.google.common.collect.ImmutableMap<dev.ultreon.quantum.block.Block, java.util.List<dev.ultreon.libs.commons.v0.tuple.Pair<java.util.function.Predicate<dev.ultreon.quantum.block.state.BlockProperties>, dev.ultreon.quantum.client.model.block.BakedCubeModel>>> dev.ultreon.quantum.client.model.block.BakedModelRegistry.bakedModels()"""
+        return 'pygcollect.ImmutableMap'._wrap(super(BakedModelRegistry, self).bakedModels())
 
     @override
     @overload
@@ -648,17 +666,16 @@ class BakedModelRegistry():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.block.BakedModelRegistry.equals(java.lang.Object)"""
+        return bool._wrap(super(_BakedModelRegistry, self).equals(arg0))
+
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -666,17 +683,17 @@ class BakedModelRegistry():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
+    @override
     @overload
-    def bakedModels(self) -> 'pygcollect.ImmutableMap':
-        """public com.google.common.collect.ImmutableMap<dev.ultreon.quantum.block.Block, java.util.List<dev.ultreon.libs.commons.v0.tuple.Pair<java.util.function.Predicate<dev.ultreon.quantum.block.state.BlockProperties>, dev.ultreon.quantum.client.model.block.BakedCubeModel>>> dev.ultreon.quantum.client.model.block.BakedModelRegistry.bakedModels()"""
-        return 'pygcollect.ImmutableMap'.__wrap(super(BakedModelRegistry, self).bakedModels())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
+    @override
     @overload
-    def __init__(self, arg0: 'TextureAtlas', arg1: 'ImmutableMap'):
-        """public dev.ultreon.quantum.client.model.block.BakedModelRegistry(dev.ultreon.quantum.client.atlas.TextureAtlas,com.google.common.collect.ImmutableMap<dev.ultreon.quantum.block.Block, java.util.List<dev.ultreon.libs.commons.v0.tuple.Pair<java.util.function.Predicate<dev.ultreon.quantum.block.state.BlockProperties>, dev.ultreon.quantum.client.model.block.BakedCubeModel>>>)"""
-        val = __BakedModelRegistry(arg0, arg1)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def hashCode(self) -> int:
+        """public int dev.ultreon.quantum.client.model.block.BakedModelRegistry.hashCode()"""
+        return int._wrap(super(BakedModelRegistry, self).hashCode())
 
     @override
     @overload
@@ -685,97 +702,93 @@ class BakedModelRegistry():
         super(object, self).wait()
 
     @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.block.BakedModelRegistry.equals(java.lang.Object)"""
-        return bool.__wrap(super(__BakedModelRegistry, self).equals(arg0))
+    def __init__(self, arg0: 'TextureAtlas', arg1: 'ImmutableMap'):
+        """public dev.ultreon.quantum.client.model.block.BakedModelRegistry(dev.ultreon.quantum.client.atlas.TextureAtlas,com.google.common.collect.ImmutableMap<dev.ultreon.quantum.block.Block, java.util.List<dev.ultreon.libs.commons.v0.tuple.Pair<java.util.function.Predicate<dev.ultreon.quantum.block.state.BlockProperties>, dev.ultreon.quantum.client.model.block.BakedCubeModel>>>)"""
+        val = _BakedModelRegistry(arg0, arg1)
+        self.__wrapper = val
 
     @override
     @overload
     def dispose(self):
         """public void dev.ultreon.quantum.client.model.block.BakedModelRegistry.dispose()"""
-        super(BakedModelRegistry, self).dispose()
-
-    @overload
-    def atlas(self) -> 'atlas.TextureAtlas':
-        """public dev.ultreon.quantum.client.atlas.TextureAtlas dev.ultreon.quantum.client.model.block.BakedModelRegistry.atlas()"""
-        return 'atlas.TextureAtlas'.__wrap(super(BakedModelRegistry, self).atlas()) 
+        super(BakedModelRegistry, self).dispose() 
  
  
 # CLASS: dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Long as __long
-import dev.ultreon.quantum.client.model.block.G3DModel as __G3DModel_ModelConfig
-__ModelConfig = __G3DModel_ModelConfig.ModelConfig
-import java.lang.Float as __float
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
+import dev.ultreon.quantum.client.model.block.G3DModel as _G3DModel_ModelConfig
+_ModelConfig = _G3DModel_ModelConfig.ModelConfig
+import java.lang.String as _String
+_String = _String
+import java.lang.Float as _float
+import java.lang.Integer as _int
 try:
     from pygdx import math
 except ImportError:
-    math = __import_once__("pygdx.math")
+    math = _import_once("pygdx.math")
 
-import java.lang.Integer as __int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ModelConfig():
     """dev.ultreon.quantum.client.model.block.G3DModel.ModelConfig"""
  
     @staticmethod
-    def __wrap(java_value: __ModelConfig) -> 'ModelConfig':
+    def _wrap(java_value: _ModelConfig) -> 'ModelConfig':
         return ModelConfig(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ModelConfig):
+    def __init__(self, __dynamic__: _ModelConfig):
         """
         Dynamic initializer for ModelConfig.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ModelConfig__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ModelConfig__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    # public static final dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig.BLOCKBENCH
-    BLOCKBENCH: 'ModelConfig' = __wrap(__ModelConfig.BLOCKBENCH)
+    @overload
+    def scale(self, arg0: float) -> 'ModelConfig':
+        """public dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig.scale(float)"""
+        return 'ModelConfig'._wrap(super(_ModelConfig, self).scale(_float.valueOf(arg0)))
 
+    @overload
+    def translation(self, arg0: float, arg1: float, arg2: float) -> 'ModelConfig':
+        """public dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig.translation(float,float,float)"""
+        return 'ModelConfig'._wrap(super(_ModelConfig, self).translation(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2)))
 
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def scale(self, arg0: 'Vector3') -> 'ModelConfig':
-        """public dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig.scale(com.badlogic.gdx.math.Vector3)"""
-        return 'ModelConfig'.__wrap(super(__ModelConfig, self).scale(arg0))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -784,40 +797,27 @@ class ModelConfig():
         super(object, self).notifyAll()
 
     @overload
-    def __init__(self, ):
+    def __init__(self):
         """public dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig()"""
-        val = __ModelConfig()
-        self.__dict__ = val.__dict__
+        val = _ModelConfig()
         self.__wrapper = val
 
     @overload
-    def translation(self, arg0: 'Vector3') -> 'ModelConfig':
-        """public dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig.translation(com.badlogic.gdx.math.Vector3)"""
-        return 'ModelConfig'.__wrap(super(__ModelConfig, self).translation(arg0))
+    def scale(self, arg0: float, arg1: float, arg2: float) -> 'ModelConfig':
+        """public dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig.scale(float,float,float)"""
+        return 'ModelConfig'._wrap(super(_ModelConfig, self).scale(_float.valueOf(arg0), _float.valueOf(arg1), _float.valueOf(arg2)))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig()"""
-        val = __ModelConfig()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @overload
-    def scale(self, arg0: float) -> 'ModelConfig':
-        """public dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig.scale(float)"""
-        return 'ModelConfig'.__wrap(super(__ModelConfig, self).scale(__float.valueOf(arg0)))
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -825,11 +825,21 @@ class ModelConfig():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
+    @overload
+    def scale(self, arg0: 'Vector3') -> 'ModelConfig':
+        """public dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig.scale(com.badlogic.gdx.math.Vector3)"""
+        return 'ModelConfig'._wrap(super(_ModelConfig, self).scale(arg0))
+
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @overload
+    def translation(self, arg0: 'Vector3') -> 'ModelConfig':
+        """public dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig.translation(com.badlogic.gdx.math.Vector3)"""
+        return 'ModelConfig'._wrap(super(_ModelConfig, self).translation(arg0))
 
     @override
     @overload
@@ -838,137 +848,153 @@ class ModelConfig():
         super(object, self).wait()
 
     @overload
+    def __init__(self, ):
+        """public dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig()"""
+        val = _ModelConfig()
+        self.__wrapper = val
+
+    @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
+    @override
     @overload
-    def scale(self, arg0: float, arg1: float, arg2: float) -> 'ModelConfig':
-        """public dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig.scale(float,float,float)"""
-        return 'ModelConfig'.__wrap(super(__ModelConfig, self).scale(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2)))
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
-    @overload
-    def translation(self, arg0: float, arg1: float, arg2: float) -> 'ModelConfig':
-        """public dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig dev.ultreon.quantum.client.model.block.G3DModel$ModelConfig.translation(float,float,float)"""
-        return 'ModelConfig'.__wrap(super(__ModelConfig, self).translation(__float.valueOf(arg0), __float.valueOf(arg1), __float.valueOf(arg2))) 
+
+ModelConfig.BLOCKBENCH = ModelConfig._wrap(_BLOCKBENCH.BLOCKBENCH) 
  
  
 # CLASS: dev.ultreon.quantum.client.model.block.BlockModelRegistry
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 import java.util.function.Predicate as Predicate
 import java.util.function.Supplier as Supplier
 from builtins import str
 try:
     from pyquantum.client import texture
 except ImportError:
-    texture = __import_once__("pyquantum.client.texture")
+    texture = _import_once("pyquantum.client.texture")
 
 from pyquantum_helper import override
 try:
     from pyquantum import block
 except ImportError:
-    block = __import_once__("pyquantum.block")
+    block = _import_once("pyquantum.block")
 
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
 try:
     from pyquantum.client import atlas
 except ImportError:
-    atlas = __import_once__("pyquantum.client.atlas")
+    atlas = _import_once("pyquantum.client.atlas")
 
 try:
     from pyquantum import client
 except ImportError:
-    client = __import_once__("pyquantum.client")
+    client = _import_once("pyquantum.client")
 
-import dev.ultreon.quantum.client.model.block.BlockModel as __BlockModel
-__BlockModel = __BlockModel
-import dev.ultreon.quantum.client.model.block.BlockModelRegistry as __BlockModelRegistry
-__BlockModelRegistry = __BlockModelRegistry
-import dev.ultreon.quantum.client.model.block.BakedModelRegistry as __BakedModelRegistry
-__BakedModelRegistry = __BakedModelRegistry
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
+import dev.ultreon.quantum.client.model.block.BakedModelRegistry as _BakedModelRegistry
+_BakedModelRegistry = _BakedModelRegistry
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.client.model.block.BlockModelRegistry as _BlockModelRegistry
+_BlockModelRegistry = _BlockModelRegistry
+import dev.ultreon.quantum.client.atlas.TextureAtlas as _TextureAtlas
+_TextureAtlas = _TextureAtlas
+import java.lang.Integer as _int
 try:
     from pyquantum.block import state
 except ImportError:
-    state = __import_once__("pyquantum.block.state")
+    state = _import_once("pyquantum.block.state")
 
-import java.lang.String as __String
-__String = __String
 try:
     from pyquantum.client.model import model
 except ImportError:
-    model = __import_once__("pyquantum.client.model.model")
+    model = _import_once("pyquantum.client.model.model")
 
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import dev.ultreon.quantum.client.model.block.BlockModel as _BlockModel
+_BlockModel = _BlockModel
 from builtins import bool
-import dev.ultreon.quantum.client.atlas.TextureAtlas as __TextureAtlas
-__TextureAtlas = __TextureAtlas
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class BlockModelRegistry():
     """dev.ultreon.quantum.client.model.block.BlockModelRegistry"""
  
     @staticmethod
-    def __wrap(java_value: __BlockModelRegistry) -> 'BlockModelRegistry':
+    def _wrap(java_value: _BlockModelRegistry) -> 'BlockModelRegistry':
         return BlockModelRegistry(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BlockModelRegistry):
+    def __init__(self, __dynamic__: _BlockModelRegistry):
         """
         Dynamic initializer for BlockModelRegistry.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BlockModelRegistry__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BlockModelRegistry__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @staticmethod
+    @overload
+    def register(arg0: 'Block', arg1: 'Predicate', arg2: 'CubeModel'):
+        """public static void dev.ultreon.quantum.client.model.block.BlockModelRegistry.register(dev.ultreon.quantum.block.Block,java.util.function.Predicate<dev.ultreon.quantum.block.state.BlockProperties>,dev.ultreon.quantum.client.model.block.CubeModel)"""
+        _BlockModelRegistry.register(arg0, arg1, arg2)
+
+    @staticmethod
+    @overload
+    def registerCustom(arg0: 'Block', arg1: 'Predicate', arg2: 'Supplier'):
+        """public static void dev.ultreon.quantum.client.model.block.BlockModelRegistry.registerCustom(dev.ultreon.quantum.block.Block,java.util.function.Predicate<dev.ultreon.quantum.block.state.BlockProperties>,java.util.function.Supplier<dev.ultreon.quantum.client.model.block.BlockModel>)"""
+        _BlockModelRegistry.registerCustom(arg0, arg1, arg2)
+
+    @staticmethod
+    @overload
+    def bakeJsonModels(arg0: 'QuantumClient'):
+        """public static void dev.ultreon.quantum.client.model.block.BlockModelRegistry.bakeJsonModels(dev.ultreon.quantum.client.QuantumClient)"""
+        _BlockModelRegistry.bakeJsonModels(arg0)
+
+    @staticmethod
+    @overload
+    def registerDefault(arg0: 'Supplier'):
+        """public static void dev.ultreon.quantum.client.model.block.BlockModelRegistry.registerDefault(java.util.function.Supplier<dev.ultreon.quantum.block.Block>)"""
+        _BlockModelRegistry.registerDefault(arg0)
+
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @staticmethod
     @overload
     def get(arg0: 'BlockProperties') -> 'BlockModel':
         """public static dev.ultreon.quantum.client.model.block.BlockModel dev.ultreon.quantum.client.model.block.BlockModelRegistry.get(dev.ultreon.quantum.block.state.BlockProperties)"""
-        return BlockModel.__wrap(__BlockModelRegistry.get(arg0))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @staticmethod
-    @overload
-    def stitch(arg0: 'TextureManager') -> 'atlas.TextureAtlas':
-        """public static dev.ultreon.quantum.client.atlas.TextureAtlas dev.ultreon.quantum.client.model.block.BlockModelRegistry.stitch(dev.ultreon.quantum.client.texture.TextureManager)"""
-        return atlas.TextureAtlas.__wrap(__BlockModelRegistry.stitch(arg0))
-
-    @staticmethod
-    @overload
-    def register(arg0: 'Block', arg1: 'Predicate', arg2: 'CubeModel'):
-        """public static void dev.ultreon.quantum.client.model.block.BlockModelRegistry.register(dev.ultreon.quantum.block.Block,java.util.function.Predicate<dev.ultreon.quantum.block.state.BlockProperties>,dev.ultreon.quantum.client.model.block.CubeModel)"""
-        __BlockModelRegistry.register(arg0, arg1, arg2)
+        return BlockModel._wrap(_BlockModelRegistry.get(arg0))
 
     @override
     @overload
@@ -976,54 +1002,35 @@ class BlockModelRegistry():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
-    @staticmethod
-    @overload
-    def load(arg0: 'Json5ModelLoader'):
-        """public static void dev.ultreon.quantum.client.model.block.BlockModelRegistry.load(dev.ultreon.quantum.client.model.model.Json5ModelLoader)"""
-        __BlockModelRegistry.load(arg0)
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
     @overload
     def __init__(self):
         """public dev.ultreon.quantum.client.model.block.BlockModelRegistry()"""
-        val = __BlockModelRegistry()
-        self.__dict__ = val.__dict__
+        val = _BlockModelRegistry()
         self.__wrapper = val
-
-    @staticmethod
-    @overload
-    def bakeJsonModels(arg0: 'QuantumClient'):
-        """public static void dev.ultreon.quantum.client.model.block.BlockModelRegistry.bakeJsonModels(dev.ultreon.quantum.client.QuantumClient)"""
-        __BlockModelRegistry.bakeJsonModels(arg0)
 
     @staticmethod
     @overload
     def bake(arg0: 'TextureAtlas') -> 'BakedModelRegistry':
         """public static dev.ultreon.quantum.client.model.block.BakedModelRegistry dev.ultreon.quantum.client.model.block.BlockModelRegistry.bake(dev.ultreon.quantum.client.atlas.TextureAtlas)"""
-        return BakedModelRegistry.__wrap(__BlockModelRegistry.bake(arg0))
-
-    @staticmethod
-    @overload
-    def registerDefault(arg0: 'Block'):
-        """public static void dev.ultreon.quantum.client.model.block.BlockModelRegistry.registerDefault(dev.ultreon.quantum.block.Block)"""
-        __BlockModelRegistry.registerDefault(arg0)
+        return BakedModelRegistry._wrap(_BlockModelRegistry.bake(arg0))
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @staticmethod
     @overload
-    def registerCustom(arg0: 'Block', arg1: 'Predicate', arg2: 'Supplier'):
-        """public static void dev.ultreon.quantum.client.model.block.BlockModelRegistry.registerCustom(dev.ultreon.quantum.block.Block,java.util.function.Predicate<dev.ultreon.quantum.block.state.BlockProperties>,java.util.function.Supplier<dev.ultreon.quantum.client.model.block.BlockModel>)"""
-        __BlockModelRegistry.registerCustom(arg0, arg1, arg2)
+    def load(arg0: 'Json5ModelLoader'):
+        """public static void dev.ultreon.quantum.client.model.block.BlockModelRegistry.load(dev.ultreon.quantum.client.model.model.Json5ModelLoader)"""
+        _BlockModelRegistry.load(arg0)
 
     @override
     @overload
@@ -1031,23 +1038,29 @@ class BlockModelRegistry():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @staticmethod
-    @overload
-    def registerDefault(arg0: 'Supplier'):
-        """public static void dev.ultreon.quantum.client.model.block.BlockModelRegistry.registerDefault(java.util.function.Supplier<dev.ultreon.quantum.block.Block>)"""
-        __BlockModelRegistry.registerDefault(arg0)
-
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @staticmethod
+    @overload
+    def registerDefault(arg0: 'Block'):
+        """public static void dev.ultreon.quantum.client.model.block.BlockModelRegistry.registerDefault(dev.ultreon.quantum.block.Block)"""
+        _BlockModelRegistry.registerDefault(arg0)
 
     @staticmethod
     @overload
     def register(arg0: 'Supplier', arg1: 'Predicate', arg2: 'Supplier'):
         """public static void dev.ultreon.quantum.client.model.block.BlockModelRegistry.register(java.util.function.Supplier<dev.ultreon.quantum.block.Block>,java.util.function.Predicate<dev.ultreon.quantum.block.state.BlockProperties>,java.util.function.Supplier<dev.ultreon.quantum.client.model.block.CubeModel>)"""
-        __BlockModelRegistry.register(arg0, arg1, arg2)
+        _BlockModelRegistry.register(arg0, arg1, arg2)
+
+    @staticmethod
+    @overload
+    def stitch(arg0: 'TextureManager') -> 'atlas.TextureAtlas':
+        """public static dev.ultreon.quantum.client.atlas.TextureAtlas dev.ultreon.quantum.client.model.block.BlockModelRegistry.stitch(dev.ultreon.quantum.client.texture.TextureManager)"""
+        return atlas.TextureAtlas._wrap(_BlockModelRegistry.stitch(arg0))
 
     @override
     @overload
@@ -1058,151 +1071,145 @@ class BlockModelRegistry():
     @overload
     def __init__(self, ):
         """public dev.ultreon.quantum.client.model.block.BlockModelRegistry()"""
-        val = __BlockModelRegistry()
-        self.__dict__ = val.__dict__
+        val = _BlockModelRegistry()
         self.__wrapper = val
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0)) 
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.client.model.block.BakedCubeModel
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pygdx.graphics import g2d
 except ImportError:
-    g2d = __import_once__("pygdx.graphics.g2d")
+    g2d = _import_once("pygdx.graphics.g2d")
 
+import java.lang.Object as _Object
+_Object = _Object
 from builtins import type
-import dev.ultreon.quantum.client.model.BakedModel as __BakedModel
-__BakedModel = __BakedModel
 try:
     from pyquantum import client
 except ImportError:
-    client = __import_once__("pyquantum.client")
+    client = _import_once("pyquantum.client")
 
-import com.badlogic.gdx.graphics.g3d.Model as __Model
-__Model = __Model
-import java.lang.Class as __Class
-__Class = __Class
+import dev.ultreon.quantum.client.model.block.BakedCubeModel as _BakedCubeModel
+_BakedCubeModel = _BakedCubeModel
+import dev.ultreon.quantum.client.model.block.ModelProperties as _ModelProperties
+_ModelProperties = _ModelProperties
+import dev.ultreon.quantum.client.model.BakedModel as _BakedModel
+_BakedModel = _BakedModel
+import dev.ultreon.quantum.client.model.block.BlockModel as _BlockModel
+_BlockModel = _BlockModel
 try:
     from pygdx import math
 except ImportError:
-    math = __import_once__("pygdx.math")
+    math = _import_once("pygdx.math")
 
 from builtins import bool
-import dev.ultreon.quantum.client.model.block.BakedCubeModel as __BakedCubeModel
-__BakedCubeModel = __BakedCubeModel
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
+import com.badlogic.gdx.math.Vector3 as _Vector3
+_Vector3 = _Vector3
 from builtins import str
+import com.badlogic.gdx.graphics.g2d.TextureRegion as _TextureRegion
+_TextureRegion = _TextureRegion
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _object
 try:
     from pygdx.graphics import g3d
 except ImportError:
-    g3d = __import_once__("pygdx.graphics.g3d")
+    g3d = _import_once("pygdx.graphics.g3d")
 
-import com.badlogic.gdx.math.Vector3 as __Vector3
-__Vector3 = __Vector3
-import dev.ultreon.quantum.client.model.block.BlockModel as __BlockModel
-__BlockModel = __BlockModel
+import java.lang.String as _String
+_String = _String
 try:
     from pyquantum.client import render
 except ImportError:
-    render = __import_once__("pyquantum.client.render")
+    render = _import_once("pyquantum.client.render")
 
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import com.badlogic.gdx.graphics.g2d.TextureRegion as __TextureRegion
-__TextureRegion = __TextureRegion
-import java.lang.Long as __long
-import java.lang.String as __String
-__String = __String
-import dev.ultreon.quantum.util.Identifier as __Identifier
-__Identifier = __Identifier
-import java.lang.Object as __Object
-__Object = __Object
+import java.lang.Integer as _int
+import com.badlogic.gdx.graphics.g3d.Model as _Model
+_Model = _Model
 try:
     from pyquantum.client import world
 except ImportError:
-    world = __import_once__("pyquantum.client.world")
+    world = _import_once("pyquantum.client.world")
 
-import java.lang.Integer as __int
-import dev.ultreon.quantum.client.model.block.ModelProperties as __ModelProperties
-__ModelProperties = __ModelProperties
+import dev.ultreon.quantum.util.Identifier as _Identifier
+_Identifier = _Identifier
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class BakedCubeModel():
     """dev.ultreon.quantum.client.model.block.BakedCubeModel"""
  
     @staticmethod
-    def __wrap(java_value: __BakedCubeModel) -> 'BakedCubeModel':
+    def _wrap(java_value: _BakedCubeModel) -> 'BakedCubeModel':
         return BakedCubeModel(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BakedCubeModel):
+    def __init__(self, __dynamic__: _BakedCubeModel):
         """
         Dynamic initializer for BakedCubeModel.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BakedCubeModel__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BakedCubeModel__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
     def hashCode(self) -> int:
         """public int dev.ultreon.quantum.client.model.block.BakedCubeModel.hashCode()"""
-        return int.__wrap(super(BakedCubeModel, self).hashCode())
-
-    @overload
-    def north(self) -> 'g2d.TextureRegion':
-        """public com.badlogic.gdx.graphics.g2d.TextureRegion dev.ultreon.quantum.client.model.block.BakedCubeModel.north()"""
-        return 'g2d.TextureRegion'.__wrap(super(BakedCubeModel, self).north())
+        return int._wrap(super(BakedCubeModel, self).hashCode())
 
     @staticmethod
     @overload
-    def of(arg0: 'Identifier', arg1: 'TextureRegion', arg2: 'ModelProperties') -> 'BakedCubeModel':
-        """public static dev.ultreon.quantum.client.model.block.BakedCubeModel dev.ultreon.quantum.client.model.block.BakedCubeModel.of(dev.ultreon.quantum.util.Identifier,com.badlogic.gdx.graphics.g2d.TextureRegion,dev.ultreon.quantum.client.model.block.ModelProperties)"""
-        return BakedCubeModel.__wrap(__BakedCubeModel.of(arg0, arg1, arg2))
+    def defaultModel() -> 'BakedCubeModel':
+        """public static synchronized dev.ultreon.quantum.client.model.block.BakedCubeModel dev.ultreon.quantum.client.model.block.BakedCubeModel.defaultModel()"""
+        return BakedCubeModel._wrap(_BakedCubeModel.defaultModel())
 
-    @property
-    def properties(self) -> ModelProperties:
-        return ModelProperties.__wrap(super(__BakedCubeModel).properties())
-
-    @staticmethod
     @overload
-    def of(arg0: 'Identifier', arg1: 'TextureRegion', arg2: 'TextureRegion', arg3: 'TextureRegion', arg4: 'TextureRegion', arg5: 'TextureRegion', arg6: 'TextureRegion', arg7: 'ModelProperties') -> 'BakedCubeModel':
-        """public static dev.ultreon.quantum.client.model.block.BakedCubeModel dev.ultreon.quantum.client.model.block.BakedCubeModel.of(dev.ultreon.quantum.util.Identifier,com.badlogic.gdx.graphics.g2d.TextureRegion,com.badlogic.gdx.graphics.g2d.TextureRegion,com.badlogic.gdx.graphics.g2d.TextureRegion,com.badlogic.gdx.graphics.g2d.TextureRegion,com.badlogic.gdx.graphics.g2d.TextureRegion,com.badlogic.gdx.graphics.g2d.TextureRegion,dev.ultreon.quantum.client.model.block.ModelProperties)"""
-        return BakedCubeModel.__wrap(__BakedCubeModel.of(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7))
+    def equals(self, arg0: object) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.block.BakedCubeModel.equals(java.lang.Object)"""
+        return bool._wrap(super(_BakedCubeModel, self).equals(arg0))
 
     @override
     @overload
@@ -1211,32 +1218,45 @@ class BakedCubeModel():
         super(object, self).notifyAll()
 
     @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.block.BakedCubeModel.equals(java.lang.Object)"""
-        return bool.__wrap(super(__BakedCubeModel, self).equals(arg0))
+    def bottom(self) -> 'g2d.TextureRegion':
+        """public com.badlogic.gdx.graphics.g2d.TextureRegion dev.ultreon.quantum.client.model.block.BakedCubeModel.bottom()"""
+        return 'g2d.TextureRegion'._wrap(super(BakedCubeModel, self).bottom())
 
     @override
     @overload
-    def resourceId(self) -> 'util.Identifier':
-        """public final dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.client.model.BakedModel.resourceId()"""
-        return 'util.Identifier'.__wrap(super(model.BakedModel, self).resourceId())
+    def render(self, arg0: 'Vector3', arg1: 'Scene3D'):
+        """public default void dev.ultreon.quantum.client.model.block.BlockModel.render(com.badlogic.gdx.math.Vector3,dev.ultreon.quantum.client.render.Scene3D)"""
+        super(_BlockModel, self).render(arg0, arg1)
+
+    @staticmethod
+    @overload
+    def of(arg0: 'Identifier', arg1: 'TextureRegion', arg2: 'TextureRegion', arg3: 'TextureRegion', arg4: 'TextureRegion', arg5: 'TextureRegion', arg6: 'TextureRegion', arg7: 'ModelProperties') -> 'BakedCubeModel':
+        """public static dev.ultreon.quantum.client.model.block.BakedCubeModel dev.ultreon.quantum.client.model.block.BakedCubeModel.of(dev.ultreon.quantum.util.Identifier,com.badlogic.gdx.graphics.g2d.TextureRegion,com.badlogic.gdx.graphics.g2d.TextureRegion,com.badlogic.gdx.graphics.g2d.TextureRegion,com.badlogic.gdx.graphics.g2d.TextureRegion,com.badlogic.gdx.graphics.g2d.TextureRegion,com.badlogic.gdx.graphics.g2d.TextureRegion,dev.ultreon.quantum.client.model.block.ModelProperties)"""
+        return BakedCubeModel._wrap(_BakedCubeModel.of(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7))
 
     @staticmethod
     @overload
     def of(arg0: 'Identifier', arg1: 'TextureRegion') -> 'BakedCubeModel':
         """public static dev.ultreon.quantum.client.model.block.BakedCubeModel dev.ultreon.quantum.client.model.block.BakedCubeModel.of(dev.ultreon.quantum.util.Identifier,com.badlogic.gdx.graphics.g2d.TextureRegion)"""
-        return BakedCubeModel.__wrap(__BakedCubeModel.of(arg0, arg1))
-
-    @overload
-    def west(self) -> 'g2d.TextureRegion':
-        """public com.badlogic.gdx.graphics.g2d.TextureRegion dev.ultreon.quantum.client.model.block.BakedCubeModel.west()"""
-        return 'g2d.TextureRegion'.__wrap(super(BakedCubeModel, self).west())
+        return BakedCubeModel._wrap(_BakedCubeModel.of(arg0, arg1))
 
     @override
     @overload
     def getModel(self) -> 'g3d.Model':
         """public com.badlogic.gdx.graphics.g3d.Model dev.ultreon.quantum.client.model.BakedModel.getModel()"""
-        return 'g3d.Model'.__wrap(super(model.BakedModel, self).getModel())
+        return 'g3d.Model'._wrap(super(model.BakedModel, self).getModel())
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @override
+    @overload
+    def getItemOffset(self) -> 'math.Vector3':
+        """public default com.badlogic.gdx.math.Vector3 dev.ultreon.quantum.client.model.block.BlockModel.getItemOffset()"""
+        return 'math.Vector3'._wrap(super(BlockModel, self).getItemOffset())
 
     @override
     @overload
@@ -1246,83 +1266,83 @@ class BakedCubeModel():
 
     @override
     @overload
-    def getItemOffset(self) -> 'math.Vector3':
-        """public default com.badlogic.gdx.math.Vector3 dev.ultreon.quantum.client.model.block.BlockModel.getItemOffset()"""
-        return 'math.Vector3'.__wrap(super(BlockModel, self).getItemOffset())
-
-    @overload
-    def top(self) -> 'g2d.TextureRegion':
-        """public com.badlogic.gdx.graphics.g2d.TextureRegion dev.ultreon.quantum.client.model.block.BakedCubeModel.top()"""
-        return 'g2d.TextureRegion'.__wrap(super(BakedCubeModel, self).top())
-
-    @override
-    @overload
-    def loadInto(self, arg0: 'BlockPos', arg1: 'ClientChunk'):
-        """public default void dev.ultreon.quantum.client.model.block.BlockModel.loadInto(dev.ultreon.quantum.world.BlockPos,dev.ultreon.quantum.client.world.ClientChunk)"""
-        super(__BlockModel, self).loadInto(arg0, arg1)
-
-    @staticmethod
-    @overload
-    def defaultModel() -> 'BakedCubeModel':
-        """public static synchronized dev.ultreon.quantum.client.model.block.BakedCubeModel dev.ultreon.quantum.client.model.block.BakedCubeModel.defaultModel()"""
-        return BakedCubeModel.__wrap(__BakedCubeModel.defaultModel())
-
-    @override
-    @overload
     def toString(self) -> str:
         """public java.lang.String dev.ultreon.quantum.client.model.block.BakedCubeModel.toString()"""
-        return str.__wrap(super(BakedCubeModel, self).toString())
+        return str._wrap(super(BakedCubeModel, self).toString())
 
     @staticmethod
     @overload
     def of(arg0: 'Identifier', arg1: 'TextureRegion', arg2: 'TextureRegion', arg3: 'TextureRegion', arg4: 'TextureRegion', arg5: 'TextureRegion', arg6: 'TextureRegion') -> 'BakedCubeModel':
         """public static dev.ultreon.quantum.client.model.block.BakedCubeModel dev.ultreon.quantum.client.model.block.BakedCubeModel.of(dev.ultreon.quantum.util.Identifier,com.badlogic.gdx.graphics.g2d.TextureRegion,com.badlogic.gdx.graphics.g2d.TextureRegion,com.badlogic.gdx.graphics.g2d.TextureRegion,com.badlogic.gdx.graphics.g2d.TextureRegion,com.badlogic.gdx.graphics.g2d.TextureRegion,com.badlogic.gdx.graphics.g2d.TextureRegion)"""
-        return BakedCubeModel.__wrap(__BakedCubeModel.of(arg0, arg1, arg2, arg3, arg4, arg5, arg6))
+        return BakedCubeModel._wrap(_BakedCubeModel.of(arg0, arg1, arg2, arg3, arg4, arg5, arg6))
 
     @overload
-    def bottom(self) -> 'g2d.TextureRegion':
-        """public com.badlogic.gdx.graphics.g2d.TextureRegion dev.ultreon.quantum.client.model.block.BakedCubeModel.bottom()"""
-        return 'g2d.TextureRegion'.__wrap(super(BakedCubeModel, self).bottom())
+    def south(self) -> 'g2d.TextureRegion':
+        """public com.badlogic.gdx.graphics.g2d.TextureRegion dev.ultreon.quantum.client.model.block.BakedCubeModel.south()"""
+        return 'g2d.TextureRegion'._wrap(super(BakedCubeModel, self).south())
+
+    @override
+    @overload
+    def load(self, arg0: 'QuantumClient'):
+        """public void dev.ultreon.quantum.client.model.block.BakedCubeModel.load(dev.ultreon.quantum.client.QuantumClient)"""
+        super(_BakedCubeModel, self).load(arg0)
+
+    @overload
+    def top(self) -> 'g2d.TextureRegion':
+        """public com.badlogic.gdx.graphics.g2d.TextureRegion dev.ultreon.quantum.client.model.block.BakedCubeModel.top()"""
+        return 'g2d.TextureRegion'._wrap(super(BakedCubeModel, self).top())
 
     @overload
     def east(self) -> 'g2d.TextureRegion':
         """public com.badlogic.gdx.graphics.g2d.TextureRegion dev.ultreon.quantum.client.model.block.BakedCubeModel.east()"""
-        return 'g2d.TextureRegion'.__wrap(super(BakedCubeModel, self).east())
+        return 'g2d.TextureRegion'._wrap(super(BakedCubeModel, self).east())
 
-    @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def north(self) -> 'g2d.TextureRegion':
+        """public com.badlogic.gdx.graphics.g2d.TextureRegion dev.ultreon.quantum.client.model.block.BakedCubeModel.north()"""
+        return 'g2d.TextureRegion'._wrap(super(BakedCubeModel, self).north())
+
+    @staticmethod
+    @overload
+    def of(arg0: 'Identifier', arg1: 'TextureRegion', arg2: 'ModelProperties') -> 'BakedCubeModel':
+        """public static dev.ultreon.quantum.client.model.block.BakedCubeModel dev.ultreon.quantum.client.model.block.BakedCubeModel.of(dev.ultreon.quantum.util.Identifier,com.badlogic.gdx.graphics.g2d.TextureRegion,dev.ultreon.quantum.client.model.block.ModelProperties)"""
+        return BakedCubeModel._wrap(_BakedCubeModel.of(arg0, arg1, arg2))
 
     @override
     @overload
     def getItemScale(self) -> 'math.Vector3':
         """public default com.badlogic.gdx.math.Vector3 dev.ultreon.quantum.client.model.block.BlockModel.getItemScale()"""
-        return 'math.Vector3'.__wrap(super(BlockModel, self).getItemScale())
+        return 'math.Vector3'._wrap(super(BlockModel, self).getItemScale())
+
+    @staticmethod
+    @overload
+    def createModel(arg0: 'Identifier', arg1: 'TextureRegion', arg2: 'TextureRegion', arg3: 'TextureRegion', arg4: 'TextureRegion', arg5: 'TextureRegion', arg6: 'TextureRegion') -> 'g3d.Model':
+        """public static com.badlogic.gdx.graphics.g3d.Model dev.ultreon.quantum.client.model.block.BakedCubeModel.createModel(dev.ultreon.quantum.util.Identifier,com.badlogic.gdx.graphics.g2d.TextureRegion,com.badlogic.gdx.graphics.g2d.TextureRegion,com.badlogic.gdx.graphics.g2d.TextureRegion,com.badlogic.gdx.graphics.g2d.TextureRegion,com.badlogic.gdx.graphics.g2d.TextureRegion,com.badlogic.gdx.graphics.g2d.TextureRegion)"""
+        return g3d.Model._wrap(_BakedCubeModel.createModel(arg0, arg1, arg2, arg3, arg4, arg5, arg6))
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def render(self, arg0: 'Vector3', arg1: 'Scene3D'):
-        """public default void dev.ultreon.quantum.client.model.block.BlockModel.render(com.badlogic.gdx.math.Vector3,dev.ultreon.quantum.client.render.Scene3D)"""
-        super(__BlockModel, self).render(arg0, arg1)
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
     def isCustom(self) -> bool:
         """public boolean dev.ultreon.quantum.client.model.block.BakedCubeModel.isCustom()"""
-        return bool.__wrap(super(BakedCubeModel, self).isCustom())
+        return bool._wrap(super(BakedCubeModel, self).isCustom())
 
+    @override
     @overload
-    def south(self) -> 'g2d.TextureRegion':
-        """public com.badlogic.gdx.graphics.g2d.TextureRegion dev.ultreon.quantum.client.model.block.BakedCubeModel.south()"""
-        return 'g2d.TextureRegion'.__wrap(super(BakedCubeModel, self).south())
+    def loadInto(self, arg0: 'BlockPos', arg1: 'ClientChunk'):
+        """public default void dev.ultreon.quantum.client.model.block.BlockModel.loadInto(dev.ultreon.quantum.world.BlockPos,dev.ultreon.quantum.client.world.ClientChunk)"""
+        super(_BlockModel, self).loadInto(arg0, arg1)
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -1330,6 +1350,11 @@ class BakedCubeModel():
         """public default void dev.ultreon.quantum.client.model.block.BlockModel.dispose()"""
         super(BlockModel, self).dispose()
 
+    @overload
+    def west(self) -> 'g2d.TextureRegion':
+        """public com.badlogic.gdx.graphics.g2d.TextureRegion dev.ultreon.quantum.client.model.block.BakedCubeModel.west()"""
+        return 'g2d.TextureRegion'._wrap(super(BakedCubeModel, self).west())
+
     @override
     @overload
     def wait(self):
@@ -1338,78 +1363,81 @@ class BakedCubeModel():
 
     @override
     @overload
-    def load(self, arg0: 'QuantumClient'):
-        """public void dev.ultreon.quantum.client.model.block.BakedCubeModel.load(dev.ultreon.quantum.client.QuantumClient)"""
-        super(__BakedCubeModel, self).load(arg0)
+    def resourceId(self) -> 'util.Identifier':
+        """public final dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.client.model.BakedModel.resourceId()"""
+        return 'util.Identifier'._wrap(super(model.BakedModel, self).resourceId())
 
-    @staticmethod
-    @overload
-    def createModel(arg0: 'Identifier', arg1: 'TextureRegion', arg2: 'TextureRegion', arg3: 'TextureRegion', arg4: 'TextureRegion', arg5: 'TextureRegion', arg6: 'TextureRegion') -> 'g3d.Model':
-        """public static com.badlogic.gdx.graphics.g3d.Model dev.ultreon.quantum.client.model.block.BakedCubeModel.createModel(dev.ultreon.quantum.util.Identifier,com.badlogic.gdx.graphics.g2d.TextureRegion,com.badlogic.gdx.graphics.g2d.TextureRegion,com.badlogic.gdx.graphics.g2d.TextureRegion,com.badlogic.gdx.graphics.g2d.TextureRegion,com.badlogic.gdx.graphics.g2d.TextureRegion,com.badlogic.gdx.graphics.g2d.TextureRegion)"""
-        return g3d.Model.__wrap(__BakedCubeModel.createModel(arg0, arg1, arg2, arg3, arg4, arg5, arg6)) 
+    @property
+    def properties(self) -> ModelProperties:
+        return ModelProperties._wrap(super(_BakedCubeModel).properties()) 
  
  
 # CLASS: dev.ultreon.quantum.client.model.block.BlockModel
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
-import com.badlogic.gdx.math.Vector3 as __Vector3
-__Vector3 = __Vector3
+import com.badlogic.gdx.math.Vector3 as _Vector3
+_Vector3 = _Vector3
+import dev.ultreon.quantum.client.resources.LoadableResource as _LoadableResource
+_LoadableResource = _LoadableResource
 try:
     from pyquantum.client import world
 except ImportError:
-    world = __import_once__("pyquantum.client.world")
+    world = _import_once("pyquantum.client.world")
 
 try:
     from pyquantum import client
 except ImportError:
-    client = __import_once__("pyquantum.client")
+    client = _import_once("pyquantum.client")
 
-import dev.ultreon.quantum.client.model.block.BlockModel as __BlockModel
-__BlockModel = __BlockModel
+import dev.ultreon.quantum.client.model.block.BlockModel as _BlockModel
+_BlockModel = _BlockModel
 from abc import abstractmethod, ABC
 try:
     from pygdx import math
 except ImportError:
-    math = __import_once__("pygdx.math")
+    math = _import_once("pygdx.math")
 
 try:
     from pyquantum.client import render
 except ImportError:
-    render = __import_once__("pyquantum.client.render")
+    render = _import_once("pyquantum.client.render")
 
-import dev.ultreon.quantum.client.resources.LoadableResource as __LoadableResource
-__LoadableResource = __LoadableResource
  
-class BlockModel(ABC):
+class BlockModel():
     """dev.ultreon.quantum.client.model.block.BlockModel"""
  
     @staticmethod
-    def __wrap(java_value: __BlockModel) -> 'BlockModel':
+    def _wrap(java_value: _BlockModel) -> 'BlockModel':
         return BlockModel(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __BlockModel):
+    def __init__(self, __dynamic__: _BlockModel):
         """
         Dynamic initializer for BlockModel.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_BlockModel__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_BlockModel__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -1424,15 +1452,20 @@ class BlockModel(ABC):
         """public abstract dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.client.model.block.BlockModel.resourceId()"""
         pass
 
+    @overload
+    def getItemScale(self) -> 'math.Vector3':
+        """public default com.badlogic.gdx.math.Vector3 dev.ultreon.quantum.client.model.block.BlockModel.getItemScale()"""
+        return 'math.Vector3'._wrap(super(BlockModel, self).getItemScale())
+
     @abstractmethod
     def isCustom(self, ):
         """public abstract boolean dev.ultreon.quantum.client.model.block.BlockModel.isCustom()"""
         pass
 
     @overload
-    def getItemScale(self) -> 'math.Vector3':
-        """public default com.badlogic.gdx.math.Vector3 dev.ultreon.quantum.client.model.block.BlockModel.getItemScale()"""
-        return 'math.Vector3'.__wrap(super(BlockModel, self).getItemScale())
+    def loadInto(self, arg0: 'BlockPos', arg1: 'ClientChunk'):
+        """public default void dev.ultreon.quantum.client.model.block.BlockModel.loadInto(dev.ultreon.quantum.world.BlockPos,dev.ultreon.quantum.client.world.ClientChunk)"""
+        super(_BlockModel, self).loadInto(arg0, arg1)
 
     @abstractmethod
     def load(self, arg0: 'QuantumClient'):
@@ -1447,96 +1480,111 @@ class BlockModel(ABC):
     @overload
     def render(self, arg0: 'Vector3', arg1: 'Scene3D'):
         """public default void dev.ultreon.quantum.client.model.block.BlockModel.render(com.badlogic.gdx.math.Vector3,dev.ultreon.quantum.client.render.Scene3D)"""
-        super(__BlockModel, self).render(arg0, arg1)
+        super(_BlockModel, self).render(arg0, arg1)
 
     @overload
     def getItemOffset(self) -> 'math.Vector3':
         """public default com.badlogic.gdx.math.Vector3 dev.ultreon.quantum.client.model.block.BlockModel.getItemOffset()"""
-        return 'math.Vector3'.__wrap(super(BlockModel, self).getItemOffset())
-
-    @overload
-    def loadInto(self, arg0: 'BlockPos', arg1: 'ClientChunk'):
-        """public default void dev.ultreon.quantum.client.model.block.BlockModel.loadInto(dev.ultreon.quantum.world.BlockPos,dev.ultreon.quantum.client.world.ClientChunk)"""
-        super(__BlockModel, self).loadInto(arg0, arg1) 
+        return 'math.Vector3'._wrap(super(BlockModel, self).getItemOffset()) 
  
  
 # CLASS: dev.ultreon.quantum.client.model.block.CubeModel
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.util.Set as __Set
-__Set = __Set
 try:
     from pyquantum.client import atlas
 except ImportError:
-    atlas = __import_once__("pyquantum.client.atlas")
+    atlas = _import_once("pyquantum.client.atlas")
 
-import dev.ultreon.quantum.client.model.block.CubeModel as __CubeModel
-__CubeModel = __CubeModel
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.client.model.block.BakedCubeModel as _BakedCubeModel
+_BakedCubeModel = _BakedCubeModel
+import java.util.Set as _Set
+_Set = _Set
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
 import java.util.Set as Set
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import dev.ultreon.quantum.util.Identifier as __Identifier
-__Identifier = __Identifier
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.Integer as _int
+import dev.ultreon.quantum.util.Identifier as _Identifier
+_Identifier = _Identifier
 from builtins import bool
+import dev.ultreon.quantum.client.model.block.CubeModel as _CubeModel
+_CubeModel = _CubeModel
+import java.lang.Long as _long
 from builtins import int
-import dev.ultreon.quantum.client.model.block.BakedCubeModel as __BakedCubeModel
-__BakedCubeModel = __BakedCubeModel
+import java.lang.Class as _Class
+_Class = _Class
  
 class CubeModel():
     """dev.ultreon.quantum.client.model.block.CubeModel"""
  
     @staticmethod
-    def __wrap(java_value: __CubeModel) -> 'CubeModel':
+    def _wrap(java_value: _CubeModel) -> 'CubeModel':
         return CubeModel(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __CubeModel):
+    def __init__(self, __dynamic__: _CubeModel):
         """
         Dynamic initializer for CubeModel.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_CubeModel__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_CubeModel__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def back(self) -> 'util.Identifier':
+        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.client.model.block.CubeModel.back()"""
+        return 'util.Identifier'._wrap(super(CubeModel, self).back())
 
     @staticmethod
     @overload
-    def of(arg0: 'Identifier', arg1: 'Identifier', arg2: 'Identifier', arg3: 'Identifier', arg4: 'Identifier', arg5: 'Identifier', arg6: 'Identifier') -> 'CubeModel':
-        """public static dev.ultreon.quantum.client.model.block.CubeModel dev.ultreon.quantum.client.model.block.CubeModel.of(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier)"""
-        return CubeModel.__wrap(__CubeModel.of(arg0, arg1, arg2, arg3, arg4, arg5, arg6))
+    def of(arg0: 'Identifier', arg1: 'Identifier', arg2: 'Identifier', arg3: 'Identifier', arg4: 'Identifier', arg5: 'Identifier', arg6: 'ModelProperties') -> 'CubeModel':
+        """public static dev.ultreon.quantum.client.model.block.CubeModel dev.ultreon.quantum.client.model.block.CubeModel.of(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.client.model.block.ModelProperties)"""
+        return CubeModel._wrap(_CubeModel.of(arg0, arg1, arg2, arg3, arg4, arg5, arg6))
+
+    @overload
+    def front(self) -> 'util.Identifier':
+        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.client.model.block.CubeModel.front()"""
+        return 'util.Identifier'._wrap(super(CubeModel, self).front())
+
+    @staticmethod
+    @overload
+    def of(arg0: 'Identifier', arg1: 'Identifier', arg2: 'Identifier', arg3: 'Identifier', arg4: 'Identifier', arg5: 'ModelProperties') -> 'CubeModel':
+        """public static dev.ultreon.quantum.client.model.block.CubeModel dev.ultreon.quantum.client.model.block.CubeModel.of(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.client.model.block.ModelProperties)"""
+        return CubeModel._wrap(_CubeModel.of(arg0, arg1, arg2, arg3, arg4, arg5))
+
+    @overload
+    def right(self) -> 'util.Identifier':
+        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.client.model.block.CubeModel.right()"""
+        return 'util.Identifier'._wrap(super(CubeModel, self).right())
 
     @override
     @overload
@@ -1544,21 +1592,22 @@ class CubeModel():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @overload
+    def top(self) -> 'util.Identifier':
+        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.client.model.block.CubeModel.top()"""
+        return 'util.Identifier'._wrap(super(CubeModel, self).top())
+
     @staticmethod
     @overload
-    def of(arg0: 'Identifier', arg1: 'Identifier', arg2: 'Identifier', arg3: 'Identifier', arg4: 'Identifier', arg5: 'Identifier') -> 'CubeModel':
-        """public static dev.ultreon.quantum.client.model.block.CubeModel dev.ultreon.quantum.client.model.block.CubeModel.of(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier)"""
-        return CubeModel.__wrap(__CubeModel.of(arg0, arg1, arg2, arg3, arg4, arg5))
+    def of(arg0: 'Identifier', arg1: 'Identifier', arg2: 'Identifier', arg3: 'Identifier', arg4: 'ModelProperties') -> 'CubeModel':
+        """public static dev.ultreon.quantum.client.model.block.CubeModel dev.ultreon.quantum.client.model.block.CubeModel.of(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.client.model.block.ModelProperties)"""
+        return CubeModel._wrap(_CubeModel.of(arg0, arg1, arg2, arg3, arg4))
 
+    @override
     @overload
-    def resourceId(self) -> 'util.Identifier':
-        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.client.model.block.CubeModel.resourceId()"""
-        return 'util.Identifier'.__wrap(super(CubeModel, self).resourceId())
-
-    @overload
-    def bottom(self) -> 'util.Identifier':
-        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.client.model.block.CubeModel.bottom()"""
-        return 'util.Identifier'.__wrap(super(CubeModel, self).bottom())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -1567,106 +1616,95 @@ class CubeModel():
         super(object, self).notify()
 
     @overload
-    def top(self) -> 'util.Identifier':
-        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.client.model.block.CubeModel.top()"""
-        return 'util.Identifier'.__wrap(super(CubeModel, self).top())
-
-    @overload
-    def front(self) -> 'util.Identifier':
-        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.client.model.block.CubeModel.front()"""
-        return 'util.Identifier'.__wrap(super(CubeModel, self).front())
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String dev.ultreon.quantum.client.model.block.CubeModel.toString()"""
-        return str.__wrap(super(CubeModel, self).toString())
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public int dev.ultreon.quantum.client.model.block.CubeModel.hashCode()"""
-        return int.__wrap(super(CubeModel, self).hashCode())
-
-    @overload
-    def back(self) -> 'util.Identifier':
-        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.client.model.block.CubeModel.back()"""
-        return 'util.Identifier'.__wrap(super(CubeModel, self).back())
-
-    @staticmethod
-    @overload
-    def of(arg0: 'Identifier', arg1: 'Identifier', arg2: 'Identifier', arg3: 'Identifier', arg4: 'ModelProperties') -> 'CubeModel':
-        """public static dev.ultreon.quantum.client.model.block.CubeModel dev.ultreon.quantum.client.model.block.CubeModel.of(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.client.model.block.ModelProperties)"""
-        return CubeModel.__wrap(__CubeModel.of(arg0, arg1, arg2, arg3, arg4))
-
-    @staticmethod
-    @overload
-    def of(arg0: 'Identifier', arg1: 'Identifier', arg2: 'Identifier', arg3: 'Identifier', arg4: 'Identifier', arg5: 'ModelProperties') -> 'CubeModel':
-        """public static dev.ultreon.quantum.client.model.block.CubeModel dev.ultreon.quantum.client.model.block.CubeModel.of(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.client.model.block.ModelProperties)"""
-        return CubeModel.__wrap(__CubeModel.of(arg0, arg1, arg2, arg3, arg4, arg5))
-
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.block.CubeModel.equals(java.lang.Object)"""
-        return bool.__wrap(super(__CubeModel, self).equals(arg0))
-
-    @staticmethod
-    @overload
-    def of(arg0: 'Identifier', arg1: 'Identifier', arg2: 'Identifier', arg3: 'Identifier', arg4: 'Identifier', arg5: 'Identifier', arg6: 'ModelProperties') -> 'CubeModel':
-        """public static dev.ultreon.quantum.client.model.block.CubeModel dev.ultreon.quantum.client.model.block.CubeModel.of(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.client.model.block.ModelProperties)"""
-        return CubeModel.__wrap(__CubeModel.of(arg0, arg1, arg2, arg3, arg4, arg5, arg6))
-
-    @staticmethod
-    @overload
-    def of(arg0: 'Identifier', arg1: 'Identifier') -> 'CubeModel':
-        """public static dev.ultreon.quantum.client.model.block.CubeModel dev.ultreon.quantum.client.model.block.CubeModel.of(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier)"""
-        return CubeModel.__wrap(__CubeModel.of(arg0, arg1))
-
-    @overload
     def all(self) -> 'Set':
         """public java.util.Set<dev.ultreon.quantum.util.Identifier> dev.ultreon.quantum.client.model.block.CubeModel.all()"""
-        return 'Set'.__wrap(super(CubeModel, self).all())
-
-    @staticmethod
-    @overload
-    def of(arg0: 'Identifier', arg1: 'Identifier', arg2: 'Identifier', arg3: 'Identifier') -> 'CubeModel':
-        """public static dev.ultreon.quantum.client.model.block.CubeModel dev.ultreon.quantum.client.model.block.CubeModel.of(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier)"""
-        return CubeModel.__wrap(__CubeModel.of(arg0, arg1, arg2, arg3))
-
-    @override
-    @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @staticmethod
-    @overload
-    def of(arg0: 'Identifier', arg1: 'Identifier', arg2: 'Identifier', arg3: 'Identifier', arg4: 'Identifier') -> 'CubeModel':
-        """public static dev.ultreon.quantum.client.model.block.CubeModel dev.ultreon.quantum.client.model.block.CubeModel.of(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier)"""
-        return CubeModel.__wrap(__CubeModel.of(arg0, arg1, arg2, arg3, arg4))
-
-    @staticmethod
-    @overload
-    def of(arg0: 'Identifier', arg1: 'Identifier', arg2: 'ModelProperties') -> 'CubeModel':
-        """public static dev.ultreon.quantum.client.model.block.CubeModel dev.ultreon.quantum.client.model.block.CubeModel.of(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.client.model.block.ModelProperties)"""
-        return CubeModel.__wrap(__CubeModel.of(arg0, arg1, arg2))
-
-    @overload
-    def right(self) -> 'util.Identifier':
-        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.client.model.block.CubeModel.right()"""
-        return 'util.Identifier'.__wrap(super(CubeModel, self).right())
+        return 'Set'._wrap(super(CubeModel, self).all())
 
     @staticmethod
     @overload
     def of(arg0: 'Identifier', arg1: 'Identifier', arg2: 'Identifier', arg3: 'Identifier', arg4: 'Identifier', arg5: 'Identifier', arg6: 'Identifier', arg7: 'ModelProperties') -> 'CubeModel':
         """public static dev.ultreon.quantum.client.model.block.CubeModel dev.ultreon.quantum.client.model.block.CubeModel.of(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.client.model.block.ModelProperties)"""
-        return CubeModel.__wrap(__CubeModel.of(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7))
+        return CubeModel._wrap(_CubeModel.of(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7))
+
+    @staticmethod
+    @overload
+    def of(arg0: 'Identifier', arg1: 'Identifier', arg2: 'Identifier', arg3: 'Identifier', arg4: 'Identifier') -> 'CubeModel':
+        """public static dev.ultreon.quantum.client.model.block.CubeModel dev.ultreon.quantum.client.model.block.CubeModel.of(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier)"""
+        return CubeModel._wrap(_CubeModel.of(arg0, arg1, arg2, arg3, arg4))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public int dev.ultreon.quantum.client.model.block.CubeModel.hashCode()"""
+        return int._wrap(super(CubeModel, self).hashCode())
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.block.CubeModel.equals(java.lang.Object)"""
+        return bool._wrap(super(_CubeModel, self).equals(arg0))
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String dev.ultreon.quantum.client.model.block.CubeModel.toString()"""
+        return str._wrap(super(CubeModel, self).toString())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @staticmethod
+    @overload
+    def of(arg0: 'Identifier', arg1: 'Identifier', arg2: 'Identifier', arg3: 'Identifier', arg4: 'Identifier', arg5: 'Identifier') -> 'CubeModel':
+        """public static dev.ultreon.quantum.client.model.block.CubeModel dev.ultreon.quantum.client.model.block.CubeModel.of(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier)"""
+        return CubeModel._wrap(_CubeModel.of(arg0, arg1, arg2, arg3, arg4, arg5))
+
+    @staticmethod
+    @overload
+    def of(arg0: 'Identifier', arg1: 'Identifier', arg2: 'Identifier', arg3: 'Identifier') -> 'CubeModel':
+        """public static dev.ultreon.quantum.client.model.block.CubeModel dev.ultreon.quantum.client.model.block.CubeModel.of(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier)"""
+        return CubeModel._wrap(_CubeModel.of(arg0, arg1, arg2, arg3))
+
+    @staticmethod
+    @overload
+    def of(arg0: 'Identifier', arg1: 'Identifier') -> 'CubeModel':
+        """public static dev.ultreon.quantum.client.model.block.CubeModel dev.ultreon.quantum.client.model.block.CubeModel.of(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier)"""
+        return CubeModel._wrap(_CubeModel.of(arg0, arg1))
+
+    @overload
+    def left(self) -> 'util.Identifier':
+        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.client.model.block.CubeModel.left()"""
+        return 'util.Identifier'._wrap(super(CubeModel, self).left())
+
+    @staticmethod
+    @overload
+    def of(arg0: 'Identifier', arg1: 'Identifier', arg2: 'Identifier', arg3: 'Identifier', arg4: 'Identifier', arg5: 'Identifier', arg6: 'Identifier') -> 'CubeModel':
+        """public static dev.ultreon.quantum.client.model.block.CubeModel dev.ultreon.quantum.client.model.block.CubeModel.of(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier)"""
+        return CubeModel._wrap(_CubeModel.of(arg0, arg1, arg2, arg3, arg4, arg5, arg6))
+
+    @staticmethod
+    @overload
+    def of(arg0: 'Identifier', arg1: 'Identifier', arg2: 'ModelProperties') -> 'CubeModel':
+        """public static dev.ultreon.quantum.client.model.block.CubeModel dev.ultreon.quantum.client.model.block.CubeModel.of(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.client.model.block.ModelProperties)"""
+        return CubeModel._wrap(_CubeModel.of(arg0, arg1, arg2))
+
+    @overload
+    def bake(self, arg0: 'Identifier', arg1: 'TextureAtlas') -> 'BakedCubeModel':
+        """public dev.ultreon.quantum.client.model.block.BakedCubeModel dev.ultreon.quantum.client.model.block.CubeModel.bake(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.client.atlas.TextureAtlas)"""
+        return 'BakedCubeModel'._wrap(super(_CubeModel, self).bake(arg0, arg1))
+
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @overload
+    def resourceId(self) -> 'util.Identifier':
+        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.client.model.block.CubeModel.resourceId()"""
+        return 'util.Identifier'._wrap(super(CubeModel, self).resourceId())
 
     @override
     @overload
@@ -1675,115 +1713,107 @@ class CubeModel():
         super(object, self).wait()
 
     @overload
-    def left(self) -> 'util.Identifier':
-        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.client.model.block.CubeModel.left()"""
-        return 'util.Identifier'.__wrap(super(CubeModel, self).left())
-
-    @overload
-    def bake(self, arg0: 'Identifier', arg1: 'TextureAtlas') -> 'BakedCubeModel':
-        """public dev.ultreon.quantum.client.model.block.BakedCubeModel dev.ultreon.quantum.client.model.block.CubeModel.bake(dev.ultreon.quantum.util.Identifier,dev.ultreon.quantum.client.atlas.TextureAtlas)"""
-        return 'BakedCubeModel'.__wrap(super(__CubeModel, self).bake(arg0, arg1)) 
+    def bottom(self) -> 'util.Identifier':
+        """public dev.ultreon.quantum.util.Identifier dev.ultreon.quantum.client.model.block.CubeModel.bottom()"""
+        return 'util.Identifier'._wrap(super(CubeModel, self).bottom()) 
  
  
 # CLASS: dev.ultreon.quantum.client.model.block.ModelProperties
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 try:
     from pyquantum import world
 except ImportError:
-    world = __import_once__("pyquantum.world")
+    world = _import_once("pyquantum.world")
 
-import dev.ultreon.quantum.world.CubicDirection as __CubicDirection
-__CubicDirection = __CubicDirection
 from builtins import str
-import dev.ultreon.quantum.client.world.FaceProperties as __FaceProperties
-__FaceProperties = __FaceProperties
 from pyquantum_helper import override
-import java.lang.Object as __object
-import dev.ultreon.quantum.client.model.block.ModelProperties as __ModelProperties_Builder
-__Builder = __ModelProperties_Builder.Builder
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
+import dev.ultreon.quantum.client.world.FaceProperties as _FaceProperties
+_FaceProperties = _FaceProperties
+import dev.ultreon.quantum.client.model.block.ModelProperties as _ModelProperties_Builder
+_Builder = _ModelProperties_Builder.Builder
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.world.CubicDirection as _CubicDirection
+_CubicDirection = _CubicDirection
+import dev.ultreon.quantum.client.model.block.ModelProperties as _ModelProperties
+_ModelProperties = _ModelProperties
+import java.lang.Integer as _int
 try:
     from pyquantum.client import world
 except ImportError:
-    world = __import_once__("pyquantum.client.world")
+    world = _import_once("pyquantum.client.world")
 
-import java.lang.Integer as __int
 from builtins import bool
-import dev.ultreon.quantum.client.model.block.ModelProperties as __ModelProperties
-__ModelProperties = __ModelProperties
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ModelProperties():
     """dev.ultreon.quantum.client.model.block.ModelProperties"""
  
     @staticmethod
-    def __wrap(java_value: __ModelProperties) -> 'ModelProperties':
+    def _wrap(java_value: _ModelProperties) -> 'ModelProperties':
         return ModelProperties(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ModelProperties):
+    def __init__(self, __dynamic__: _ModelProperties):
         """
         Dynamic initializer for ModelProperties.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ModelProperties__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ModelProperties__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
+    @overload
+    def __init__(self, arg0: 'FaceProperties', arg1: 'CubicDirection'):
+        """public dev.ultreon.quantum.client.model.block.ModelProperties(dev.ultreon.quantum.client.world.FaceProperties,dev.ultreon.quantum.world.CubicDirection)"""
+        val = _ModelProperties(arg0, arg1)
+        self.__wrapper = val
+
     @property
-    def back(self) -> FaceProperties:
-        return FaceProperties.__wrap(super(__ModelProperties).back())
+    def top(self) -> FaceProperties:
+        return FaceProperties._wrap(super(_ModelProperties).top())
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean dev.ultreon.quantum.client.model.block.ModelProperties.equals(java.lang.Object)"""
+        return bool._wrap(super(_ModelProperties, self).equals(arg0))
 
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @property
-    def bottom(self) -> FaceProperties:
-        return FaceProperties.__wrap(super(__ModelProperties).bottom())
-
-    @property
-    def right(self) -> FaceProperties:
-        return FaceProperties.__wrap(super(__ModelProperties).right())
-
-    @overload
-    def __init__(self, arg0: 'FaceProperties', arg1: 'CubicDirection'):
-        """public dev.ultreon.quantum.client.model.block.ModelProperties(dev.ultreon.quantum.client.world.FaceProperties,dev.ultreon.quantum.world.CubicDirection)"""
-        val = __ModelProperties(arg0, arg1)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @property
-    def rotation(self) -> CubicDirection:
-        return CubicDirection.__wrap(super(__ModelProperties).rotation())
+    def hashCode(self) -> int:
+        """public int dev.ultreon.quantum.client.model.block.ModelProperties.hashCode()"""
+        return int._wrap(super(ModelProperties, self).hashCode())
 
     @override
     @overload
@@ -1791,43 +1821,31 @@ class ModelProperties():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
-    @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean dev.ultreon.quantum.client.model.block.ModelProperties.equals(java.lang.Object)"""
-        return bool.__wrap(super(__ModelProperties, self).equals(arg0))
+    @property
+    def rotation(self) -> CubicDirection:
+        return CubicDirection._wrap(super(_ModelProperties).rotation())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public int dev.ultreon.quantum.client.model.block.ModelProperties.hashCode()"""
-        return int.__wrap(super(ModelProperties, self).hashCode())
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @overload
+    def __init__(self, arg0: 'FaceProperties', arg1: 'FaceProperties', arg2: 'FaceProperties', arg3: 'FaceProperties', arg4: 'FaceProperties', arg5: 'FaceProperties', arg6: 'CubicDirection'):
+        """public dev.ultreon.quantum.client.model.block.ModelProperties(dev.ultreon.quantum.client.world.FaceProperties,dev.ultreon.quantum.client.world.FaceProperties,dev.ultreon.quantum.client.world.FaceProperties,dev.ultreon.quantum.client.world.FaceProperties,dev.ultreon.quantum.client.world.FaceProperties,dev.ultreon.quantum.client.world.FaceProperties,dev.ultreon.quantum.world.CubicDirection)"""
+        val = _ModelProperties(arg0, arg1, arg2, arg3, arg4, arg5, arg6)
+        self.__wrapper = val
+
+    @property
+    def right(self) -> FaceProperties:
+        return FaceProperties._wrap(super(_ModelProperties).right())
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @property
-    def front(self) -> FaceProperties:
-        return FaceProperties.__wrap(super(__ModelProperties).front())
-
-    @overload
-    def __init__(self, arg0: 'FaceProperties', arg1: 'FaceProperties', arg2: 'FaceProperties', arg3: 'FaceProperties', arg4: 'FaceProperties', arg5: 'FaceProperties', arg6: 'CubicDirection'):
-        """public dev.ultreon.quantum.client.model.block.ModelProperties(dev.ultreon.quantum.client.world.FaceProperties,dev.ultreon.quantum.client.world.FaceProperties,dev.ultreon.quantum.client.world.FaceProperties,dev.ultreon.quantum.client.world.FaceProperties,dev.ultreon.quantum.client.world.FaceProperties,dev.ultreon.quantum.client.world.FaceProperties,dev.ultreon.quantum.world.CubicDirection)"""
-        val = __ModelProperties(arg0, arg1, arg2, arg3, arg4, arg5, arg6)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @property
-    def top(self) -> FaceProperties:
-        return FaceProperties.__wrap(super(__ModelProperties).top())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -1835,9 +1853,25 @@ class ModelProperties():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
+    @override
+    @overload
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
     @property
-    def left(self) -> FaceProperties:
-        return FaceProperties.__wrap(super(__ModelProperties).left())
+    def bottom(self) -> FaceProperties:
+        return FaceProperties._wrap(super(_ModelProperties).bottom())
+
+    @property
+    def back(self) -> FaceProperties:
+        return FaceProperties._wrap(super(_ModelProperties).back())
+
+    @staticmethod
+    @overload
+    def builder() -> 'Builder':
+        """public static dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties.builder()"""
+        return Builder._wrap(_ModelProperties.builder())
 
     @override
     @overload
@@ -1845,8 +1879,10 @@ class ModelProperties():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
-    @staticmethod
-    @overload
-    def builder() -> 'Builder':
-        """public static dev.ultreon.quantum.client.model.block.ModelProperties$Builder dev.ultreon.quantum.client.model.block.ModelProperties.builder()"""
-        return Builder.__wrap(__ModelProperties.builder())
+    @property
+    def front(self) -> FaceProperties:
+        return FaceProperties._wrap(super(_ModelProperties).front())
+
+    @property
+    def left(self) -> FaceProperties:
+        return FaceProperties._wrap(super(_ModelProperties).left())

@@ -3,136 +3,129 @@ from overload import overload
 
 
  
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
+import dev.ultreon.quantum.network.PacketData as _PacketData
+_PacketData = _PacketData
+import dev.ultreon.quantum.network.system.IConnection as _IConnection
+_IConnection = _IConnection
+import java.lang.Object as _Object
+_Object = _Object
 from builtins import type
 try:
     from pyquantum import client
 except ImportError:
-    client = __import_once__("pyquantum.client")
+    client = _import_once("pyquantum.client")
 
 try:
     from pyquantum.network import packets
 except ImportError:
-    packets = __import_once__("pyquantum.network.packets")
+    packets = _import_once("pyquantum.network.packets")
 
-import dev.ultreon.quantum.network.system.MemoryConnection as __MemoryConnection
-__MemoryConnection = __MemoryConnection
-import dev.ultreon.quantum.network.system.IConnection as __IConnection
-__IConnection = __IConnection
+import dev.ultreon.quantum.client.network.system.ClientMemoryConnection as _ClientMemoryConnection
+_ClientMemoryConnection = _ClientMemoryConnection
 try:
     from pyquantum import text
 except ImportError:
-    text = __import_once__("pyquantum.text")
+    text = _import_once("pyquantum.text")
 
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __string
-import dev.ultreon.quantum.client.network.system.ClientMemoryConnection as __ClientMemoryConnection
-__ClientMemoryConnection = __ClientMemoryConnection
+import java.lang.String as _string
 from builtins import bool
 try:
     from pyquantum.network import stage
 except ImportError:
-    stage = __import_once__("pyquantum.network.stage")
+    stage = _import_once("pyquantum.network.stage")
 
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
-import dev.ultreon.quantum.util.Result as __Result
-__Result = __Result
-import dev.ultreon.quantum.network.PacketData as __PacketData
-__PacketData = __PacketData
+import java.lang.Object as _object
 import java.lang.Runnable as Runnable
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.network.system.MemoryConnection as _MemoryConnection
+_MemoryConnection = _MemoryConnection
 try:
     from pyquantum import log
 except ImportError:
-    log = __import_once__("pyquantum.log")
+    log = _import_once("pyquantum.log")
 
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import java.lang.Long as __long
 try:
     from pyquantum import network
 except ImportError:
-    network = __import_once__("pyquantum.network")
+    network = _import_once("pyquantum.network")
 
-import java.lang.String as __String
-__String = __String
+import dev.ultreon.quantum.util.Result as _Result
+_Result = _Result
+import java.lang.Integer as _int
 try:
     from pyquantum.server import player
 except ImportError:
-    player = __import_once__("pyquantum.server.player")
+    player = _import_once("pyquantum.server.player")
 
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.Long as _long
 try:
     from pyquantum.network import system
 except ImportError:
-    system = __import_once__("pyquantum.network.system")
+    system = _import_once("pyquantum.network.system")
 
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ClientMemoryConnection():
     """dev.ultreon.quantum.client.network.system.ClientMemoryConnection"""
  
     @staticmethod
-    def __wrap(java_value: __ClientMemoryConnection) -> 'ClientMemoryConnection':
+    def _wrap(java_value: _ClientMemoryConnection) -> 'ClientMemoryConnection':
         return ClientMemoryConnection(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ClientMemoryConnection):
+    def __init__(self, __dynamic__: _ClientMemoryConnection):
         """
         Dynamic initializer for ClientMemoryConnection.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ClientMemoryConnection__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ClientMemoryConnection__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     # public static final dev.ultreon.quantum.log.Logger dev.ultreon.quantum.network.system.IConnection.LOGGER
-    LOGGER: 'log.Logger' = __wrap(__log.Logger.LOGGER)
+    LOGGER: 'log.Logger' = _wrap(_log.Logger.LOGGER)
 
+
+    @overload
+    def __init__(self, arg0: 'QuantumClient'):
+        """public dev.ultreon.quantum.client.network.system.ClientMemoryConnection(dev.ultreon.quantum.client.QuantumClient)"""
+        val = _ClientMemoryConnection(arg0)
+        self.__wrapper = val
 
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def isConnecting(self) -> bool:
-        """public default boolean dev.ultreon.quantum.network.system.IConnection.isConnecting()"""
-        return bool.__wrap(super(system.IConnection, self).isConnecting())
-
-    @override
-    @overload
-    def setHandler(self, arg0: 'PacketHandler'):
-        """public void dev.ultreon.quantum.network.system.MemoryConnection.setHandler(OurHandler)"""
-        super(__system.MemoryConnection, self).setHandler(arg0)
-
-    @override
-    @overload
-    def isMemoryConnection(self) -> bool:
-        """public boolean dev.ultreon.quantum.network.system.MemoryConnection.isMemoryConnection()"""
-        return bool.__wrap(super(system.MemoryConnection, self).isMemoryConnection())
+    def getPing(self) -> int:
+        """public long dev.ultreon.quantum.network.system.MemoryConnection.getPing()"""
+        return int._wrap(super(system.MemoryConnection, self).getPing())
 
     @override
     @overload
@@ -140,12 +133,23 @@ class ClientMemoryConnection():
         """public void dev.ultreon.quantum.network.system.MemoryConnection.start()"""
         super(system.MemoryConnection, self).start()
 
+    @override
     @overload
-    def __init__(self, arg0: 'QuantumClient'):
-        """public dev.ultreon.quantum.client.network.system.ClientMemoryConnection(dev.ultreon.quantum.client.QuantumClient)"""
-        val = __ClientMemoryConnection(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def isConnecting(self) -> bool:
+        """public default boolean dev.ultreon.quantum.network.system.IConnection.isConnecting()"""
+        return bool._wrap(super(system.IConnection, self).isConnecting())
+
+    @override
+    @overload
+    def disconnect(self, arg0: 'TextObject'):
+        """public default void dev.ultreon.quantum.network.system.IConnection.disconnect(dev.ultreon.quantum.text.TextObject)"""
+        super(_system.IConnection, self).disconnect(arg0)
+
+    @override
+    @overload
+    def setOtherSide(self, arg0: 'MemoryConnection'):
+        """public void dev.ultreon.quantum.network.system.MemoryConnection.setOtherSide(dev.ultreon.quantum.network.system.MemoryConnection<TheirHandler, OurHandler>)"""
+        super(_system.MemoryConnection, self).setOtherSide(arg0)
 
     @override
     @overload
@@ -155,21 +159,15 @@ class ClientMemoryConnection():
 
     @override
     @overload
-    def onPing(self, arg0: int):
-        """public void dev.ultreon.quantum.network.system.MemoryConnection.onPing(long)"""
-        super(__system.MemoryConnection, self).onPing(__long.valueOf(arg0))
-
-    @override
-    @overload
     def isCompressed(self) -> bool:
         """public boolean dev.ultreon.quantum.network.system.MemoryConnection.isCompressed()"""
-        return bool.__wrap(super(system.MemoryConnection, self).isCompressed())
+        return bool._wrap(super(system.MemoryConnection, self).isCompressed())
 
     @override
     @overload
-    def getTheirPacketData(self) -> 'network.PacketData':
-        """public dev.ultreon.quantum.network.PacketData<TheirHandler> dev.ultreon.quantum.network.system.MemoryConnection.getTheirPacketData()"""
-        return 'network.PacketData'.__wrap(super(system.MemoryConnection, self).getTheirPacketData())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -177,40 +175,27 @@ class ClientMemoryConnection():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @override
     @overload
-    def getPing(self) -> int:
-        """public long dev.ultreon.quantum.network.system.MemoryConnection.getPing()"""
-        return int.__wrap(super(system.MemoryConnection, self).getPing())
+    def on3rdPartyDisconnect(self, arg0: str) -> 'util.Result':
+        """public dev.ultreon.quantum.util.Result<java.lang.Void> dev.ultreon.quantum.client.network.system.ClientMemoryConnection.on3rdPartyDisconnect(java.lang.String)"""
+        return 'util.Result'._wrap(super(_ClientMemoryConnection, self).on3rdPartyDisconnect(arg0))
 
     @override
     @overload
-    def send(self, arg0: 'Packet', arg1: 'PacketListener'):
-        """public void dev.ultreon.quantum.network.system.MemoryConnection.send(dev.ultreon.quantum.network.packets.Packet<? extends TheirHandler>,dev.ultreon.quantum.network.PacketListener)"""
-        super(__system.MemoryConnection, self).send(arg0, arg1)
+    def onPing(self, arg0: int):
+        """public void dev.ultreon.quantum.network.system.MemoryConnection.onPing(long)"""
+        super(_system.MemoryConnection, self).onPing(_long.valueOf(arg0))
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @override
-    @overload
-    def moveTo(self, arg0: 'PacketStage', arg1: 'PacketHandler'):
-        """public void dev.ultreon.quantum.network.system.MemoryConnection.moveTo(dev.ultreon.quantum.network.stage.PacketStage,OurHandler)"""
-        super(__system.MemoryConnection, self).moveTo(arg0, arg1)
+    def setHandler(self, arg0: 'PacketHandler'):
+        """public void dev.ultreon.quantum.network.system.MemoryConnection.setHandler(OurHandler)"""
+        super(_system.MemoryConnection, self).setHandler(arg0)
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
-
-    @override
-    @overload
-    def queue(self, arg0: 'Runnable'):
-        """public void dev.ultreon.quantum.network.system.MemoryConnection.queue(java.lang.Runnable)"""
-        super(__system.MemoryConnection, self).queue(arg0)
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
@@ -220,27 +205,21 @@ class ClientMemoryConnection():
 
     @override
     @overload
-    def disconnect(self, arg0: 'TextObject'):
-        """public default void dev.ultreon.quantum.network.system.IConnection.disconnect(dev.ultreon.quantum.text.TextObject)"""
-        super(__system.IConnection, self).disconnect(arg0)
-
-    @override
-    @overload
-    def send(self, arg0: 'Packet'):
-        """public void dev.ultreon.quantum.network.system.MemoryConnection.send(dev.ultreon.quantum.network.packets.Packet<? extends TheirHandler>)"""
-        super(__system.MemoryConnection, self).send(arg0)
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @override
-    @overload
     def isConnected(self) -> bool:
         """public boolean dev.ultreon.quantum.network.system.MemoryConnection.isConnected()"""
-        return bool.__wrap(super(system.MemoryConnection, self).isConnected())
+        return bool._wrap(super(system.MemoryConnection, self).isConnected())
+
+    @override
+    @overload
+    def disconnect(self, arg0: str):
+        """public void dev.ultreon.quantum.network.system.MemoryConnection.disconnect(java.lang.String)"""
+        super(_system.MemoryConnection, self).disconnect(arg0)
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -256,27 +235,45 @@ class ClientMemoryConnection():
 
     @override
     @overload
-    def setOtherSide(self, arg0: 'MemoryConnection'):
-        """public void dev.ultreon.quantum.network.system.MemoryConnection.setOtherSide(dev.ultreon.quantum.network.system.MemoryConnection<TheirHandler, OurHandler>)"""
-        super(__system.MemoryConnection, self).setOtherSide(arg0)
+    def send(self, arg0: 'Packet', arg1: 'PacketListener'):
+        """public void dev.ultreon.quantum.network.system.MemoryConnection.send(dev.ultreon.quantum.network.packets.Packet<? extends TheirHandler>,dev.ultreon.quantum.network.PacketListener)"""
+        super(_system.MemoryConnection, self).send(arg0, arg1)
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
-    def initiate(self, arg0: 'PacketHandler', arg1: 'Packet'):
-        """public default void dev.ultreon.quantum.network.system.IConnection.initiate(OurHandler,dev.ultreon.quantum.network.packets.Packet<? extends TheirHandler>)"""
-        super(__system.IConnection, self).initiate(arg0, arg1)
+    def getTheirPacketData(self) -> 'network.PacketData':
+        """public dev.ultreon.quantum.network.PacketData<TheirHandler> dev.ultreon.quantum.network.system.MemoryConnection.getTheirPacketData()"""
+        return 'network.PacketData'._wrap(super(system.MemoryConnection, self).getTheirPacketData())
+
+    @override
+    @overload
+    def moveTo(self, arg0: 'PacketStage', arg1: 'PacketHandler'):
+        """public void dev.ultreon.quantum.network.system.MemoryConnection.moveTo(dev.ultreon.quantum.network.stage.PacketStage,OurHandler)"""
+        super(_system.MemoryConnection, self).moveTo(arg0, arg1)
 
     @override
     @overload
     def getClass(self) -> 'type.Class':
         """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
+    def send(self, arg0: 'Packet'):
+        """public void dev.ultreon.quantum.network.system.MemoryConnection.send(dev.ultreon.quantum.network.packets.Packet<? extends TheirHandler>)"""
+        super(_system.MemoryConnection, self).send(arg0)
+
+    @override
+    @overload
+    def queue(self, arg0: 'Runnable'):
+        """public void dev.ultreon.quantum.network.system.MemoryConnection.queue(java.lang.Runnable)"""
+        super(_system.MemoryConnection, self).queue(arg0)
 
     @override
     @overload
@@ -284,163 +281,163 @@ class ClientMemoryConnection():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
-    @override
-    @overload
-    def disconnect(self, arg0: str):
-        """public void dev.ultreon.quantum.network.system.MemoryConnection.disconnect(java.lang.String)"""
-        super(__system.MemoryConnection, self).disconnect(arg0)
-
     @staticmethod
     @overload
     def getRx() -> int:
         """public static int dev.ultreon.quantum.network.system.MemoryConnection.getRx()"""
-        return int.__wrap(__MemoryConnection.getRx())
+        return int._wrap(_MemoryConnection.getRx())
+
+    @override
+    @overload
+    def isMemoryConnection(self) -> bool:
+        """public boolean dev.ultreon.quantum.network.system.MemoryConnection.isMemoryConnection()"""
+        return bool._wrap(super(system.MemoryConnection, self).isMemoryConnection())
+
+    @override
+    @overload
+    def initiate(self, arg0: 'PacketHandler', arg1: 'Packet'):
+        """public default void dev.ultreon.quantum.network.system.IConnection.initiate(OurHandler,dev.ultreon.quantum.network.packets.Packet<? extends TheirHandler>)"""
+        super(_system.IConnection, self).initiate(arg0, arg1)
 
     @override
     @overload
     def setPlayer(self, arg0: 'ServerPlayer'):
         """public void dev.ultreon.quantum.network.system.MemoryConnection.setPlayer(dev.ultreon.quantum.server.player.ServerPlayer)"""
-        super(__system.MemoryConnection, self).setPlayer(arg0)
+        super(_system.MemoryConnection, self).setPlayer(arg0)
 
+    @override
     @overload
-    def on3rdPartyDisconnect(self, arg0: str) -> 'util.Result':
-        """public dev.ultreon.quantum.util.Result<java.lang.Void> dev.ultreon.quantum.client.network.system.ClientMemoryConnection.on3rdPartyDisconnect(java.lang.String)"""
-        return 'util.Result'.__wrap(super(__ClientMemoryConnection, self).on3rdPartyDisconnect(arg0))
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
  
 # CLASS: dev.ultreon.quantum.client.network.system.ClientMemoryConnection
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
+import dev.ultreon.quantum.network.PacketData as _PacketData
+_PacketData = _PacketData
+import dev.ultreon.quantum.network.system.IConnection as _IConnection
+_IConnection = _IConnection
+import java.lang.Object as _Object
+_Object = _Object
 from builtins import type
 try:
     from pyquantum import client
 except ImportError:
-    client = __import_once__("pyquantum.client")
+    client = _import_once("pyquantum.client")
 
 try:
     from pyquantum.network import packets
 except ImportError:
-    packets = __import_once__("pyquantum.network.packets")
+    packets = _import_once("pyquantum.network.packets")
 
-import dev.ultreon.quantum.network.system.MemoryConnection as __MemoryConnection
-__MemoryConnection = __MemoryConnection
-import dev.ultreon.quantum.network.system.IConnection as __IConnection
-__IConnection = __IConnection
+import dev.ultreon.quantum.client.network.system.ClientMemoryConnection as _ClientMemoryConnection
+_ClientMemoryConnection = _ClientMemoryConnection
 try:
     from pyquantum import text
 except ImportError:
-    text = __import_once__("pyquantum.text")
+    text = _import_once("pyquantum.text")
 
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __string
-import dev.ultreon.quantum.client.network.system.ClientMemoryConnection as __ClientMemoryConnection
-__ClientMemoryConnection = __ClientMemoryConnection
+import java.lang.String as _string
 from builtins import bool
 try:
     from pyquantum.network import stage
 except ImportError:
-    stage = __import_once__("pyquantum.network.stage")
+    stage = _import_once("pyquantum.network.stage")
 
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
-import dev.ultreon.quantum.util.Result as __Result
-__Result = __Result
-import dev.ultreon.quantum.network.PacketData as __PacketData
-__PacketData = __PacketData
+import java.lang.Object as _object
 import java.lang.Runnable as Runnable
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.network.system.MemoryConnection as _MemoryConnection
+_MemoryConnection = _MemoryConnection
 try:
     from pyquantum import log
 except ImportError:
-    log = __import_once__("pyquantum.log")
+    log = _import_once("pyquantum.log")
 
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import java.lang.Long as __long
 try:
     from pyquantum import network
 except ImportError:
-    network = __import_once__("pyquantum.network")
+    network = _import_once("pyquantum.network")
 
-import java.lang.String as __String
-__String = __String
+import dev.ultreon.quantum.util.Result as _Result
+_Result = _Result
+import java.lang.Integer as _int
 try:
     from pyquantum.server import player
 except ImportError:
-    player = __import_once__("pyquantum.server.player")
+    player = _import_once("pyquantum.server.player")
 
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.Long as _long
 try:
     from pyquantum.network import system
 except ImportError:
-    system = __import_once__("pyquantum.network.system")
+    system = _import_once("pyquantum.network.system")
 
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ClientMemoryConnection():
     """dev.ultreon.quantum.client.network.system.ClientMemoryConnection"""
  
     @staticmethod
-    def __wrap(java_value: __ClientMemoryConnection) -> 'ClientMemoryConnection':
+    def _wrap(java_value: _ClientMemoryConnection) -> 'ClientMemoryConnection':
         return ClientMemoryConnection(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ClientMemoryConnection):
+    def __init__(self, __dynamic__: _ClientMemoryConnection):
         """
         Dynamic initializer for ClientMemoryConnection.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ClientMemoryConnection__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ClientMemoryConnection__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     # public static final dev.ultreon.quantum.log.Logger dev.ultreon.quantum.network.system.IConnection.LOGGER
-    LOGGER: 'log.Logger' = __wrap(__log.Logger.LOGGER)
+    LOGGER: 'log.Logger' = _wrap(_log.Logger.LOGGER)
 
+
+    @overload
+    def __init__(self, arg0: 'QuantumClient'):
+        """public dev.ultreon.quantum.client.network.system.ClientMemoryConnection(dev.ultreon.quantum.client.QuantumClient)"""
+        val = _ClientMemoryConnection(arg0)
+        self.__wrapper = val
 
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def isConnecting(self) -> bool:
-        """public default boolean dev.ultreon.quantum.network.system.IConnection.isConnecting()"""
-        return bool.__wrap(super(system.IConnection, self).isConnecting())
-
-    @override
-    @overload
-    def setHandler(self, arg0: 'PacketHandler'):
-        """public void dev.ultreon.quantum.network.system.MemoryConnection.setHandler(OurHandler)"""
-        super(__system.MemoryConnection, self).setHandler(arg0)
-
-    @override
-    @overload
-    def isMemoryConnection(self) -> bool:
-        """public boolean dev.ultreon.quantum.network.system.MemoryConnection.isMemoryConnection()"""
-        return bool.__wrap(super(system.MemoryConnection, self).isMemoryConnection())
+    def getPing(self) -> int:
+        """public long dev.ultreon.quantum.network.system.MemoryConnection.getPing()"""
+        return int._wrap(super(system.MemoryConnection, self).getPing())
 
     @override
     @overload
@@ -448,12 +445,23 @@ class ClientMemoryConnection():
         """public void dev.ultreon.quantum.network.system.MemoryConnection.start()"""
         super(system.MemoryConnection, self).start()
 
+    @override
     @overload
-    def __init__(self, arg0: 'QuantumClient'):
-        """public dev.ultreon.quantum.client.network.system.ClientMemoryConnection(dev.ultreon.quantum.client.QuantumClient)"""
-        val = __ClientMemoryConnection(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def isConnecting(self) -> bool:
+        """public default boolean dev.ultreon.quantum.network.system.IConnection.isConnecting()"""
+        return bool._wrap(super(system.IConnection, self).isConnecting())
+
+    @override
+    @overload
+    def disconnect(self, arg0: 'TextObject'):
+        """public default void dev.ultreon.quantum.network.system.IConnection.disconnect(dev.ultreon.quantum.text.TextObject)"""
+        super(_system.IConnection, self).disconnect(arg0)
+
+    @override
+    @overload
+    def setOtherSide(self, arg0: 'MemoryConnection'):
+        """public void dev.ultreon.quantum.network.system.MemoryConnection.setOtherSide(dev.ultreon.quantum.network.system.MemoryConnection<TheirHandler, OurHandler>)"""
+        super(_system.MemoryConnection, self).setOtherSide(arg0)
 
     @override
     @overload
@@ -463,21 +471,15 @@ class ClientMemoryConnection():
 
     @override
     @overload
-    def onPing(self, arg0: int):
-        """public void dev.ultreon.quantum.network.system.MemoryConnection.onPing(long)"""
-        super(__system.MemoryConnection, self).onPing(__long.valueOf(arg0))
-
-    @override
-    @overload
     def isCompressed(self) -> bool:
         """public boolean dev.ultreon.quantum.network.system.MemoryConnection.isCompressed()"""
-        return bool.__wrap(super(system.MemoryConnection, self).isCompressed())
+        return bool._wrap(super(system.MemoryConnection, self).isCompressed())
 
     @override
     @overload
-    def getTheirPacketData(self) -> 'network.PacketData':
-        """public dev.ultreon.quantum.network.PacketData<TheirHandler> dev.ultreon.quantum.network.system.MemoryConnection.getTheirPacketData()"""
-        return 'network.PacketData'.__wrap(super(system.MemoryConnection, self).getTheirPacketData())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -485,40 +487,27 @@ class ClientMemoryConnection():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @override
     @overload
-    def getPing(self) -> int:
-        """public long dev.ultreon.quantum.network.system.MemoryConnection.getPing()"""
-        return int.__wrap(super(system.MemoryConnection, self).getPing())
+    def on3rdPartyDisconnect(self, arg0: str) -> 'util.Result':
+        """public dev.ultreon.quantum.util.Result<java.lang.Void> dev.ultreon.quantum.client.network.system.ClientMemoryConnection.on3rdPartyDisconnect(java.lang.String)"""
+        return 'util.Result'._wrap(super(_ClientMemoryConnection, self).on3rdPartyDisconnect(arg0))
 
     @override
     @overload
-    def send(self, arg0: 'Packet', arg1: 'PacketListener'):
-        """public void dev.ultreon.quantum.network.system.MemoryConnection.send(dev.ultreon.quantum.network.packets.Packet<? extends TheirHandler>,dev.ultreon.quantum.network.PacketListener)"""
-        super(__system.MemoryConnection, self).send(arg0, arg1)
+    def onPing(self, arg0: int):
+        """public void dev.ultreon.quantum.network.system.MemoryConnection.onPing(long)"""
+        super(_system.MemoryConnection, self).onPing(_long.valueOf(arg0))
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @override
-    @overload
-    def moveTo(self, arg0: 'PacketStage', arg1: 'PacketHandler'):
-        """public void dev.ultreon.quantum.network.system.MemoryConnection.moveTo(dev.ultreon.quantum.network.stage.PacketStage,OurHandler)"""
-        super(__system.MemoryConnection, self).moveTo(arg0, arg1)
+    def setHandler(self, arg0: 'PacketHandler'):
+        """public void dev.ultreon.quantum.network.system.MemoryConnection.setHandler(OurHandler)"""
+        super(_system.MemoryConnection, self).setHandler(arg0)
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
-
-    @override
-    @overload
-    def queue(self, arg0: 'Runnable'):
-        """public void dev.ultreon.quantum.network.system.MemoryConnection.queue(java.lang.Runnable)"""
-        super(__system.MemoryConnection, self).queue(arg0)
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
@@ -528,27 +517,21 @@ class ClientMemoryConnection():
 
     @override
     @overload
-    def disconnect(self, arg0: 'TextObject'):
-        """public default void dev.ultreon.quantum.network.system.IConnection.disconnect(dev.ultreon.quantum.text.TextObject)"""
-        super(__system.IConnection, self).disconnect(arg0)
-
-    @override
-    @overload
-    def send(self, arg0: 'Packet'):
-        """public void dev.ultreon.quantum.network.system.MemoryConnection.send(dev.ultreon.quantum.network.packets.Packet<? extends TheirHandler>)"""
-        super(__system.MemoryConnection, self).send(arg0)
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @override
-    @overload
     def isConnected(self) -> bool:
         """public boolean dev.ultreon.quantum.network.system.MemoryConnection.isConnected()"""
-        return bool.__wrap(super(system.MemoryConnection, self).isConnected())
+        return bool._wrap(super(system.MemoryConnection, self).isConnected())
+
+    @override
+    @overload
+    def disconnect(self, arg0: str):
+        """public void dev.ultreon.quantum.network.system.MemoryConnection.disconnect(java.lang.String)"""
+        super(_system.MemoryConnection, self).disconnect(arg0)
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -564,27 +547,45 @@ class ClientMemoryConnection():
 
     @override
     @overload
-    def setOtherSide(self, arg0: 'MemoryConnection'):
-        """public void dev.ultreon.quantum.network.system.MemoryConnection.setOtherSide(dev.ultreon.quantum.network.system.MemoryConnection<TheirHandler, OurHandler>)"""
-        super(__system.MemoryConnection, self).setOtherSide(arg0)
+    def send(self, arg0: 'Packet', arg1: 'PacketListener'):
+        """public void dev.ultreon.quantum.network.system.MemoryConnection.send(dev.ultreon.quantum.network.packets.Packet<? extends TheirHandler>,dev.ultreon.quantum.network.PacketListener)"""
+        super(_system.MemoryConnection, self).send(arg0, arg1)
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
-    def initiate(self, arg0: 'PacketHandler', arg1: 'Packet'):
-        """public default void dev.ultreon.quantum.network.system.IConnection.initiate(OurHandler,dev.ultreon.quantum.network.packets.Packet<? extends TheirHandler>)"""
-        super(__system.IConnection, self).initiate(arg0, arg1)
+    def getTheirPacketData(self) -> 'network.PacketData':
+        """public dev.ultreon.quantum.network.PacketData<TheirHandler> dev.ultreon.quantum.network.system.MemoryConnection.getTheirPacketData()"""
+        return 'network.PacketData'._wrap(super(system.MemoryConnection, self).getTheirPacketData())
+
+    @override
+    @overload
+    def moveTo(self, arg0: 'PacketStage', arg1: 'PacketHandler'):
+        """public void dev.ultreon.quantum.network.system.MemoryConnection.moveTo(dev.ultreon.quantum.network.stage.PacketStage,OurHandler)"""
+        super(_system.MemoryConnection, self).moveTo(arg0, arg1)
 
     @override
     @overload
     def getClass(self) -> 'type.Class':
         """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
+    def send(self, arg0: 'Packet'):
+        """public void dev.ultreon.quantum.network.system.MemoryConnection.send(dev.ultreon.quantum.network.packets.Packet<? extends TheirHandler>)"""
+        super(_system.MemoryConnection, self).send(arg0)
+
+    @override
+    @overload
+    def queue(self, arg0: 'Runnable'):
+        """public void dev.ultreon.quantum.network.system.MemoryConnection.queue(java.lang.Runnable)"""
+        super(_system.MemoryConnection, self).queue(arg0)
 
     @override
     @overload
@@ -592,28 +593,35 @@ class ClientMemoryConnection():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
-    @override
-    @overload
-    def disconnect(self, arg0: str):
-        """public void dev.ultreon.quantum.network.system.MemoryConnection.disconnect(java.lang.String)"""
-        super(__system.MemoryConnection, self).disconnect(arg0)
-
     @staticmethod
     @overload
     def getRx() -> int:
         """public static int dev.ultreon.quantum.network.system.MemoryConnection.getRx()"""
-        return int.__wrap(__MemoryConnection.getRx())
+        return int._wrap(_MemoryConnection.getRx())
+
+    @override
+    @overload
+    def isMemoryConnection(self) -> bool:
+        """public boolean dev.ultreon.quantum.network.system.MemoryConnection.isMemoryConnection()"""
+        return bool._wrap(super(system.MemoryConnection, self).isMemoryConnection())
+
+    @override
+    @overload
+    def initiate(self, arg0: 'PacketHandler', arg1: 'Packet'):
+        """public default void dev.ultreon.quantum.network.system.IConnection.initiate(OurHandler,dev.ultreon.quantum.network.packets.Packet<? extends TheirHandler>)"""
+        super(_system.IConnection, self).initiate(arg0, arg1)
 
     @override
     @overload
     def setPlayer(self, arg0: 'ServerPlayer'):
         """public void dev.ultreon.quantum.network.system.MemoryConnection.setPlayer(dev.ultreon.quantum.server.player.ServerPlayer)"""
-        super(__system.MemoryConnection, self).setPlayer(arg0)
+        super(_system.MemoryConnection, self).setPlayer(arg0)
 
+    @override
     @overload
-    def on3rdPartyDisconnect(self, arg0: str) -> 'util.Result':
-        """public dev.ultreon.quantum.util.Result<java.lang.Void> dev.ultreon.quantum.client.network.system.ClientMemoryConnection.on3rdPartyDisconnect(java.lang.String)"""
-        return 'util.Result'.__wrap(super(__ClientMemoryConnection, self).on3rdPartyDisconnect(arg0))
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
@@ -622,103 +630,108 @@ class ClientMemoryConnection():
  
  
 # CLASS: dev.ultreon.quantum.client.network.system.ClientTcpConnection
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 import java.net.Socket as Socket
-import java.lang.Boolean as __boolean
+import dev.ultreon.quantum.network.system.IConnection as _IConnection
+_IConnection = _IConnection
+import java.lang.Object as _Object
+_Object = _Object
 from builtins import type
+import dev.ultreon.quantum.client.network.system.ClientTcpConnection as _ClientTcpConnection
+_ClientTcpConnection = _ClientTcpConnection
 try:
     from pyquantum.network import packets
 except ImportError:
-    packets = __import_once__("pyquantum.network.packets")
+    packets = _import_once("pyquantum.network.packets")
 
-import dev.ultreon.quantum.network.system.IConnection as __IConnection
-__IConnection = __IConnection
 try:
     from pyquantum import text
 except ImportError:
-    text = __import_once__("pyquantum.text")
+    text = _import_once("pyquantum.text")
 
-import dev.ultreon.quantum.client.network.system.ClientTcpConnection as __ClientTcpConnection
-__ClientTcpConnection = __ClientTcpConnection
-import java.net.Socket as __Socket
-__Socket = __Socket
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __string
+import dev.ultreon.quantum.network.system.Connection as _Connection
+_Connection = _Connection
+import java.lang.String as _string
+import java.lang.Boolean as _boolean
+import java.net.Socket as _Socket
+_Socket = _Socket
 from builtins import bool
 try:
     from pyquantum.network import stage
 except ImportError:
-    stage = __import_once__("pyquantum.network.stage")
+    stage = _import_once("pyquantum.network.stage")
 
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
-import dev.ultreon.quantum.util.Result as __Result
-__Result = __Result
-import dev.ultreon.quantum.network.system.Connection as __Connection
-__Connection = __Connection
+import java.lang.Object as _object
 import java.lang.Runnable as Runnable
+import java.lang.String as _String
+_String = _String
 try:
     from pyquantum import log
 except ImportError:
-    log = __import_once__("pyquantum.log")
+    log = _import_once("pyquantum.log")
 
 try:
     from pyquantum import util
 except ImportError:
-    util = __import_once__("pyquantum.util")
+    util = _import_once("pyquantum.util")
 
-import java.lang.Long as __long
 try:
     from pyquantum import network
 except ImportError:
-    network = __import_once__("pyquantum.network")
+    network = _import_once("pyquantum.network")
 
-import java.lang.String as __String
-__String = __String
+import dev.ultreon.quantum.util.Result as _Result
+_Result = _Result
+import java.lang.Integer as _int
 try:
     from pyquantum.server import player
 except ImportError:
-    player = __import_once__("pyquantum.server.player")
+    player = _import_once("pyquantum.server.player")
 
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ClientTcpConnection():
     """dev.ultreon.quantum.client.network.system.ClientTcpConnection"""
  
     @staticmethod
-    def __wrap(java_value: __ClientTcpConnection) -> 'ClientTcpConnection':
+    def _wrap(java_value: _ClientTcpConnection) -> 'ClientTcpConnection':
         return ClientTcpConnection(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ClientTcpConnection):
+    def __init__(self, __dynamic__: _ClientTcpConnection):
         """
         Dynamic initializer for ClientTcpConnection.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ClientTcpConnection__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ClientTcpConnection__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     # public static final dev.ultreon.quantum.log.Logger dev.ultreon.quantum.network.system.IConnection.LOGGER
-    LOGGER: 'log.Logger' = __wrap(__log.Logger.LOGGER)
+    LOGGER: 'log.Logger' = _wrap(_log.Logger.LOGGER)
 
 
     @override
@@ -729,38 +742,39 @@ class ClientTcpConnection():
 
     @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def isCompressed(self) -> bool:
+        """public boolean dev.ultreon.quantum.network.system.Connection.isCompressed()"""
+        return bool._wrap(super(system.Connection, self).isCompressed())
 
     @override
     @overload
-    def isConnecting(self) -> bool:
-        """public default boolean dev.ultreon.quantum.network.system.IConnection.isConnecting()"""
-        return bool.__wrap(super(system.IConnection, self).isConnecting())
+    def queue(self, arg0: 'Runnable'):
+        """public void dev.ultreon.quantum.network.system.Connection.queue(java.lang.Runnable)"""
+        super(_system.Connection, self).queue(arg0)
+
+    @override
+    @overload
+    def onPing(self, arg0: int):
+        """public void dev.ultreon.quantum.client.network.system.ClientTcpConnection.onPing(long)"""
+        super(_ClientTcpConnection, self).onPing(_long.valueOf(arg0))
 
     @staticmethod
     @overload
     def connectToServer(arg0: str, arg1: int) -> 'util.Result':
         """public static dev.ultreon.quantum.util.Result<dev.ultreon.quantum.client.network.system.ClientTcpConnection> dev.ultreon.quantum.client.network.system.ClientTcpConnection.connectToServer(java.lang.String,int)"""
-        return util.Result.__wrap(__ClientTcpConnection.connectToServer(arg0, __int.valueOf(arg1)))
+        return util.Result._wrap(_ClientTcpConnection.connectToServer(arg0, _int.valueOf(arg1)))
 
     @override
     @overload
-    def isReadOnly(self) -> bool:
-        """public boolean dev.ultreon.quantum.network.system.Connection.isReadOnly()"""
-        return bool.__wrap(super(system.Connection, self).isReadOnly())
+    def isConnecting(self) -> bool:
+        """public default boolean dev.ultreon.quantum.network.system.IConnection.isConnecting()"""
+        return bool._wrap(super(system.IConnection, self).isConnecting())
 
     @override
     @overload
-    def isMemoryConnection(self) -> bool:
-        """public boolean dev.ultreon.quantum.network.system.Connection.isMemoryConnection()"""
-        return bool.__wrap(super(system.Connection, self).isMemoryConnection())
-
-    @overload
-    def on3rdPartyDisconnect(self, arg0: str) -> 'util.Result':
-        """public dev.ultreon.quantum.util.Result<java.lang.Void> dev.ultreon.quantum.client.network.system.ClientTcpConnection.on3rdPartyDisconnect(java.lang.String)"""
-        return 'util.Result'.__wrap(super(__ClientTcpConnection, self).on3rdPartyDisconnect(arg0))
+    def disconnect(self, arg0: 'TextObject'):
+        """public default void dev.ultreon.quantum.network.system.IConnection.disconnect(dev.ultreon.quantum.text.TextObject)"""
+        super(_system.IConnection, self).disconnect(arg0)
 
     @override
     @overload
@@ -770,9 +784,9 @@ class ClientTcpConnection():
 
     @override
     @overload
-    def setCompressed(self, arg0: bool):
-        """public void dev.ultreon.quantum.network.system.Connection.setCompressed(boolean)"""
-        super(__system.Connection, self).setCompressed(__boolean.valueOf(arg0))
+    def isConnected(self) -> bool:
+        """public boolean dev.ultreon.quantum.network.system.Connection.isConnected()"""
+        return bool._wrap(super(system.Connection, self).isConnected())
 
     @override
     @overload
@@ -782,62 +796,73 @@ class ClientTcpConnection():
 
     @override
     @overload
+    def moveTo(self, arg0: 'PacketStage', arg1: 'PacketHandler'):
+        """public void dev.ultreon.quantum.network.system.Connection.moveTo(dev.ultreon.quantum.network.stage.PacketStage,OurHandler)"""
+        super(_system.Connection, self).moveTo(arg0, arg1)
+
+    @override
+    @overload
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
+
+    @override
+    @overload
     def notify(self):
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @override
+    @staticmethod
     @overload
-    def getSocket(self) -> 'Socket':
-        """public java.net.Socket dev.ultreon.quantum.network.system.Connection.getSocket()"""
-        return 'Socket'.__wrap(super(system.Connection, self).getSocket())
+    def handleReply(arg0: int):
+        """public static void dev.ultreon.quantum.network.system.Connection.handleReply(long)"""
+        _Connection.handleReply(_long.valueOf(arg0))
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getPing(self) -> int:
+        """public long dev.ultreon.quantum.network.system.Connection.getPing()"""
+        return int._wrap(super(system.Connection, self).getPing())
+
+    @override
+    @overload
+    def isMemoryConnection(self) -> bool:
+        """public boolean dev.ultreon.quantum.network.system.Connection.isMemoryConnection()"""
+        return bool._wrap(super(system.Connection, self).isMemoryConnection())
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
-
-    @staticmethod
-    @overload
-    def connectToLocalServer() -> 'util.Result':
-        """public static dev.ultreon.quantum.util.Result<dev.ultreon.quantum.client.network.system.ClientMemoryConnection> dev.ultreon.quantum.client.network.system.ClientTcpConnection.connectToLocalServer()"""
-        return util.Result.__wrap(__ClientTcpConnection.connectToLocalServer())
-
-    @override
-    @overload
-    def disconnect(self, arg0: 'TextObject'):
-        """public default void dev.ultreon.quantum.network.system.IConnection.disconnect(dev.ultreon.quantum.text.TextObject)"""
-        super(__system.IConnection, self).disconnect(arg0)
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
     def send(self, arg0: 'Packet'):
         """public void dev.ultreon.quantum.network.system.Connection.send(dev.ultreon.quantum.network.packets.Packet<? extends TheirHandler>)"""
-        super(__system.Connection, self).send(arg0)
+        super(_system.Connection, self).send(arg0)
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @overload
+    def on3rdPartyDisconnect(self, arg0: str) -> 'util.Result':
+        """public dev.ultreon.quantum.util.Result<java.lang.Void> dev.ultreon.quantum.client.network.system.ClientTcpConnection.on3rdPartyDisconnect(java.lang.String)"""
+        return 'util.Result'._wrap(super(_ClientTcpConnection, self).on3rdPartyDisconnect(arg0))
 
     @override
     @overload
-    def onPing(self, arg0: int):
-        """public void dev.ultreon.quantum.client.network.system.ClientTcpConnection.onPing(long)"""
-        super(__ClientTcpConnection, self).onPing(__long.valueOf(arg0))
+    def setPlayer(self, arg0: 'ServerPlayer'):
+        """public void dev.ultreon.quantum.network.system.Connection.setPlayer(dev.ultreon.quantum.server.player.ServerPlayer)"""
+        super(_system.Connection, self).setPlayer(arg0)
 
     @override
     @overload
-    def send(self, arg0: 'Packet', arg1: 'PacketListener'):
-        """public void dev.ultreon.quantum.network.system.Connection.send(dev.ultreon.quantum.network.packets.Packet<? extends TheirHandler>,dev.ultreon.quantum.network.PacketListener)"""
-        super(__system.Connection, self).send(arg0, arg1)
+    def setCompressed(self, arg0: bool):
+        """public void dev.ultreon.quantum.network.system.Connection.setCompressed(boolean)"""
+        super(_system.Connection, self).setCompressed(_boolean.valueOf(arg0))
 
     @override
     @overload
@@ -847,21 +872,27 @@ class ClientTcpConnection():
 
     @override
     @overload
-    def getPing(self) -> int:
-        """public long dev.ultreon.quantum.network.system.Connection.getPing()"""
-        return int.__wrap(super(system.Connection, self).getPing())
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def send(self, arg0: 'Packet', arg1: 'PacketListener'):
+        """public void dev.ultreon.quantum.network.system.Connection.send(dev.ultreon.quantum.network.packets.Packet<? extends TheirHandler>,dev.ultreon.quantum.network.PacketListener)"""
+        super(_system.Connection, self).send(arg0, arg1)
 
     @override
     @overload
-    def initiate(self, arg0: 'PacketHandler', arg1: 'Packet'):
-        """public default void dev.ultreon.quantum.network.system.IConnection.initiate(OurHandler,dev.ultreon.quantum.network.packets.Packet<? extends TheirHandler>)"""
-        super(__system.IConnection, self).initiate(arg0, arg1)
+    def getSocket(self) -> 'Socket':
+        """public java.net.Socket dev.ultreon.quantum.network.system.Connection.getSocket()"""
+        return 'Socket'._wrap(super(system.Connection, self).getSocket())
+
+    @override
+    @overload
+    def isReadOnly(self) -> bool:
+        """public boolean dev.ultreon.quantum.network.system.Connection.isReadOnly()"""
+        return bool._wrap(super(system.Connection, self).isReadOnly())
 
     @override
     @overload
@@ -869,35 +900,23 @@ class ClientTcpConnection():
         """public void dev.ultreon.quantum.network.system.Connection.start()"""
         super(system.Connection, self).start()
 
+    @staticmethod
+    @overload
+    def connectToLocalServer() -> 'util.Result':
+        """public static dev.ultreon.quantum.util.Result<dev.ultreon.quantum.client.network.system.ClientMemoryConnection> dev.ultreon.quantum.client.network.system.ClientTcpConnection.connectToLocalServer()"""
+        return util.Result._wrap(_ClientTcpConnection.connectToLocalServer())
+
     @override
     @overload
     def getClass(self) -> 'type.Class':
         """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def queue(self, arg0: 'Runnable'):
-        """public void dev.ultreon.quantum.network.system.Connection.queue(java.lang.Runnable)"""
-        super(__system.Connection, self).queue(arg0)
-
-    @override
-    @overload
-    def moveTo(self, arg0: 'PacketStage', arg1: 'PacketHandler'):
-        """public void dev.ultreon.quantum.network.system.Connection.moveTo(dev.ultreon.quantum.network.stage.PacketStage,OurHandler)"""
-        super(__system.Connection, self).moveTo(arg0, arg1)
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
     def disconnect(self, arg0: str):
         """public void dev.ultreon.quantum.network.system.Connection.disconnect(java.lang.String)"""
-        super(__system.Connection, self).disconnect(arg0)
-
-    @override
-    @overload
-    def isConnected(self) -> bool:
-        """public boolean dev.ultreon.quantum.network.system.Connection.isConnected()"""
-        return bool.__wrap(super(system.Connection, self).isConnected())
+        super(_system.Connection, self).disconnect(arg0)
 
     @override
     @overload
@@ -905,20 +924,14 @@ class ClientTcpConnection():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
-    @staticmethod
+    @override
     @overload
-    def handleReply(arg0: int):
-        """public static void dev.ultreon.quantum.network.system.Connection.handleReply(long)"""
-        __Connection.handleReply(__long.valueOf(arg0))
+    def initiate(self, arg0: 'PacketHandler', arg1: 'Packet'):
+        """public default void dev.ultreon.quantum.network.system.IConnection.initiate(OurHandler,dev.ultreon.quantum.network.packets.Packet<? extends TheirHandler>)"""
+        super(_system.IConnection, self).initiate(arg0, arg1)
 
     @override
     @overload
-    def setPlayer(self, arg0: 'ServerPlayer'):
-        """public void dev.ultreon.quantum.network.system.Connection.setPlayer(dev.ultreon.quantum.server.player.ServerPlayer)"""
-        super(__system.Connection, self).setPlayer(arg0)
-
-    @override
-    @overload
-    def isCompressed(self) -> bool:
-        """public boolean dev.ultreon.quantum.network.system.Connection.isCompressed()"""
-        return bool.__wrap(super(system.Connection, self).isCompressed())
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())

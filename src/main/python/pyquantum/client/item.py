@@ -3,104 +3,103 @@ from overload import overload
 
 
  
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 import java.util.function.Supplier as Supplier
 from builtins import str
+import com.badlogic.gdx.graphics.g3d.ModelInstance as _ModelInstance
+_ModelInstance = _ModelInstance
 from pyquantum_helper import override
-import dev.ultreon.quantum.client.item.ItemRenderer as __ItemRenderer
-__ItemRenderer = __ItemRenderer
-import com.badlogic.gdx.graphics.g3d.ModelInstance as __ModelInstance
-__ModelInstance = __ModelInstance
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
 try:
     from pygdx.graphics import g3d
 except ImportError:
-    g3d = __import_once__("pygdx.graphics.g3d")
+    g3d = _import_once("pygdx.graphics.g3d")
 
+import java.lang.Object as _object
 from builtins import type
 try:
     from pyquantum import item
 except ImportError:
-    item = __import_once__("pyquantum.item")
+    item = _import_once("pyquantum.item")
 
 try:
     from pyquantum import client
 except ImportError:
-    client = __import_once__("pyquantum.client")
+    client = _import_once("pyquantum.client")
 
+import java.lang.String as _String
+_String = _String
 try:
     from pyquantum.client.model import item
 except ImportError:
-    item = __import_once__("pyquantum.client.model.item")
+    item = _import_once("pyquantum.client.model.item")
 
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
+import com.badlogic.gdx.graphics.OrthographicCamera as _OrthographicCamera
+_OrthographicCamera = _OrthographicCamera
+import java.lang.Integer as _int
 try:
     from pyquantum.client import gui
 except ImportError:
-    gui = __import_once__("pyquantum.client.gui")
+    gui = _import_once("pyquantum.client.gui")
 
 try:
     from pyquantum.client.model import model
 except ImportError:
-    model = __import_once__("pyquantum.client.model.model")
+    model = _import_once("pyquantum.client.model.model")
 
-import com.badlogic.gdx.graphics.OrthographicCamera as __OrthographicCamera
-__OrthographicCamera = __OrthographicCamera
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
 try:
     from pygdx import graphics
 except ImportError:
-    graphics = __import_once__("pygdx.graphics")
+    graphics = _import_once("pygdx.graphics")
 
 from builtins import bool
+import dev.ultreon.quantum.client.item.ItemRenderer as _ItemRenderer
+_ItemRenderer = _ItemRenderer
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ItemRenderer():
     """dev.ultreon.quantum.client.item.ItemRenderer"""
  
     @staticmethod
-    def __wrap(java_value: __ItemRenderer) -> 'ItemRenderer':
+    def _wrap(java_value: _ItemRenderer) -> 'ItemRenderer':
         return ItemRenderer(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ItemRenderer):
+    def __init__(self, __dynamic__: _ItemRenderer):
         """
         Dynamic initializer for ItemRenderer.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ItemRenderer__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ItemRenderer__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def registerBlockModel(self, arg0: 'BlockItem', arg1: 'Supplier'):
-        """public void dev.ultreon.quantum.client.item.ItemRenderer.registerBlockModel(dev.ultreon.quantum.item.BlockItem,java.util.function.Supplier<dev.ultreon.quantum.client.model.block.BlockModel>)"""
-        super(__ItemRenderer, self).registerBlockModel(arg0, arg1)
+    def loadModels(self, arg0: 'QuantumClient'):
+        """public void dev.ultreon.quantum.client.item.ItemRenderer.loadModels(dev.ultreon.quantum.client.QuantumClient)"""
+        super(_ItemRenderer, self).loadModels(arg0)
 
     @overload
     def reload(self):
@@ -108,20 +107,21 @@ class ItemRenderer():
         super(ItemRenderer, self).reload()
 
     @overload
+    def __init__(self, arg0: 'QuantumClient'):
+        """public dev.ultreon.quantum.client.item.ItemRenderer(dev.ultreon.quantum.client.QuantumClient)"""
+        val = _ItemRenderer(arg0)
+        self.__wrapper = val
+
+    @overload
     def registerModel(self, arg0: 'Item', arg1: 'ItemModel'):
         """public void dev.ultreon.quantum.client.item.ItemRenderer.registerModel(dev.ultreon.quantum.item.Item,dev.ultreon.quantum.client.model.item.ItemModel)"""
-        super(__ItemRenderer, self).registerModel(arg0, arg1)
+        super(_ItemRenderer, self).registerModel(arg0, arg1)
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def render(self, arg0: 'Item', arg1: 'Renderer', arg2: int, arg3: int):
-        """public void dev.ultreon.quantum.client.item.ItemRenderer.render(dev.ultreon.quantum.item.Item,dev.ultreon.quantum.client.gui.Renderer,int,int)"""
-        super(__ItemRenderer, self).render(arg0, arg1, __int.valueOf(arg2), __int.valueOf(arg3))
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -130,9 +130,9 @@ class ItemRenderer():
         super(object, self).notifyAll()
 
     @overload
-    def getItemCam(self) -> 'graphics.OrthographicCamera':
-        """public com.badlogic.gdx.graphics.OrthographicCamera dev.ultreon.quantum.client.item.ItemRenderer.getItemCam()"""
-        return 'graphics.OrthographicCamera'.__wrap(super(ItemRenderer, self).getItemCam())
+    def resize(self, arg0: int, arg1: int):
+        """public void dev.ultreon.quantum.client.item.ItemRenderer.resize(int,int)"""
+        super(_ItemRenderer, self).resize(_int.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -142,25 +142,25 @@ class ItemRenderer():
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @overload
-    def registerModels(self, arg0: 'Json5ModelLoader'):
-        """public void dev.ultreon.quantum.client.item.ItemRenderer.registerModels(dev.ultreon.quantum.client.model.model.Json5ModelLoader)"""
-        super(__ItemRenderer, self).registerModels(arg0)
+    def createModelInstance(self, arg0: 'ItemStack') -> 'g3d.ModelInstance':
+        """public com.badlogic.gdx.graphics.g3d.ModelInstance dev.ultreon.quantum.client.item.ItemRenderer.createModelInstance(dev.ultreon.quantum.item.ItemStack)"""
+        return 'g3d.ModelInstance'._wrap(super(_ItemRenderer, self).createModelInstance(arg0))
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @overload
-    def loadModels(self, arg0: 'QuantumClient'):
-        """public void dev.ultreon.quantum.client.item.ItemRenderer.loadModels(dev.ultreon.quantum.client.QuantumClient)"""
-        super(__ItemRenderer, self).loadModels(arg0)
+    def render(self, arg0: 'Item', arg1: 'Renderer', arg2: int, arg3: int):
+        """public void dev.ultreon.quantum.client.item.ItemRenderer.render(dev.ultreon.quantum.item.Item,dev.ultreon.quantum.client.gui.Renderer,int,int)"""
+        super(_ItemRenderer, self).render(arg0, arg1, _int.valueOf(arg2), _int.valueOf(arg3))
 
     @override
     @overload
@@ -169,20 +169,20 @@ class ItemRenderer():
         super(object, self).notify()
 
     @overload
-    def createModelInstance(self, arg0: 'ItemStack') -> 'g3d.ModelInstance':
-        """public com.badlogic.gdx.graphics.g3d.ModelInstance dev.ultreon.quantum.client.item.ItemRenderer.createModelInstance(dev.ultreon.quantum.item.ItemStack)"""
-        return 'g3d.ModelInstance'.__wrap(super(__ItemRenderer, self).createModelInstance(arg0))
+    def registerModels(self, arg0: 'Json5ModelLoader'):
+        """public void dev.ultreon.quantum.client.item.ItemRenderer.registerModels(dev.ultreon.quantum.client.model.model.Json5ModelLoader)"""
+        super(_ItemRenderer, self).registerModels(arg0)
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @overload
-    def resize(self, arg0: int, arg1: int):
-        """public void dev.ultreon.quantum.client.item.ItemRenderer.resize(int,int)"""
-        super(__ItemRenderer, self).resize(__int.valueOf(arg0), __int.valueOf(arg1))
+    def registerBlockModel(self, arg0: 'BlockItem', arg1: 'Supplier'):
+        """public void dev.ultreon.quantum.client.item.ItemRenderer.registerBlockModel(dev.ultreon.quantum.item.BlockItem,java.util.function.Supplier<dev.ultreon.quantum.client.model.block.BlockModel>)"""
+        super(_ItemRenderer, self).registerBlockModel(arg0, arg1)
 
     @override
     @overload
@@ -191,119 +191,122 @@ class ItemRenderer():
         super(object, self).wait()
 
     @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+    def getItemCam(self) -> 'graphics.OrthographicCamera':
+        """public com.badlogic.gdx.graphics.OrthographicCamera dev.ultreon.quantum.client.item.ItemRenderer.getItemCam()"""
+        return 'graphics.OrthographicCamera'._wrap(super(ItemRenderer, self).getItemCam())
 
     @overload
-    def __init__(self, arg0: 'QuantumClient'):
-        """public dev.ultreon.quantum.client.item.ItemRenderer(dev.ultreon.quantum.client.QuantumClient)"""
-        val = __ItemRenderer(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
  
 # CLASS: dev.ultreon.quantum.client.item.ItemRenderer
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 import java.util.function.Supplier as Supplier
 from builtins import str
+import com.badlogic.gdx.graphics.g3d.ModelInstance as _ModelInstance
+_ModelInstance = _ModelInstance
 from pyquantum_helper import override
-import dev.ultreon.quantum.client.item.ItemRenderer as __ItemRenderer
-__ItemRenderer = __ItemRenderer
-import com.badlogic.gdx.graphics.g3d.ModelInstance as __ModelInstance
-__ModelInstance = __ModelInstance
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
 try:
     from pygdx.graphics import g3d
 except ImportError:
-    g3d = __import_once__("pygdx.graphics.g3d")
+    g3d = _import_once("pygdx.graphics.g3d")
 
+import java.lang.Object as _object
 from builtins import type
 try:
     from pyquantum import item
 except ImportError:
-    item = __import_once__("pyquantum.item")
+    item = _import_once("pyquantum.item")
 
 try:
     from pyquantum import client
 except ImportError:
-    client = __import_once__("pyquantum.client")
+    client = _import_once("pyquantum.client")
 
+import java.lang.String as _String
+_String = _String
 try:
     from pyquantum.client.model import item
 except ImportError:
-    item = __import_once__("pyquantum.client.model.item")
+    item = _import_once("pyquantum.client.model.item")
 
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
+import com.badlogic.gdx.graphics.OrthographicCamera as _OrthographicCamera
+_OrthographicCamera = _OrthographicCamera
+import java.lang.Integer as _int
 try:
     from pyquantum.client import gui
 except ImportError:
-    gui = __import_once__("pyquantum.client.gui")
+    gui = _import_once("pyquantum.client.gui")
 
 try:
     from pyquantum.client.model import model
 except ImportError:
-    model = __import_once__("pyquantum.client.model.model")
+    model = _import_once("pyquantum.client.model.model")
 
-import com.badlogic.gdx.graphics.OrthographicCamera as __OrthographicCamera
-__OrthographicCamera = __OrthographicCamera
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
 try:
     from pygdx import graphics
 except ImportError:
-    graphics = __import_once__("pygdx.graphics")
+    graphics = _import_once("pygdx.graphics")
 
 from builtins import bool
+import dev.ultreon.quantum.client.item.ItemRenderer as _ItemRenderer
+_ItemRenderer = _ItemRenderer
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ItemRenderer():
     """dev.ultreon.quantum.client.item.ItemRenderer"""
  
     @staticmethod
-    def __wrap(java_value: __ItemRenderer) -> 'ItemRenderer':
+    def _wrap(java_value: _ItemRenderer) -> 'ItemRenderer':
         return ItemRenderer(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ItemRenderer):
+    def __init__(self, __dynamic__: _ItemRenderer):
         """
         Dynamic initializer for ItemRenderer.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ItemRenderer__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ItemRenderer__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @overload
-    def registerBlockModel(self, arg0: 'BlockItem', arg1: 'Supplier'):
-        """public void dev.ultreon.quantum.client.item.ItemRenderer.registerBlockModel(dev.ultreon.quantum.item.BlockItem,java.util.function.Supplier<dev.ultreon.quantum.client.model.block.BlockModel>)"""
-        super(__ItemRenderer, self).registerBlockModel(arg0, arg1)
+    def loadModels(self, arg0: 'QuantumClient'):
+        """public void dev.ultreon.quantum.client.item.ItemRenderer.loadModels(dev.ultreon.quantum.client.QuantumClient)"""
+        super(_ItemRenderer, self).loadModels(arg0)
 
     @overload
     def reload(self):
@@ -311,20 +314,21 @@ class ItemRenderer():
         super(ItemRenderer, self).reload()
 
     @overload
+    def __init__(self, arg0: 'QuantumClient'):
+        """public dev.ultreon.quantum.client.item.ItemRenderer(dev.ultreon.quantum.client.QuantumClient)"""
+        val = _ItemRenderer(arg0)
+        self.__wrapper = val
+
+    @overload
     def registerModel(self, arg0: 'Item', arg1: 'ItemModel'):
         """public void dev.ultreon.quantum.client.item.ItemRenderer.registerModel(dev.ultreon.quantum.item.Item,dev.ultreon.quantum.client.model.item.ItemModel)"""
-        super(__ItemRenderer, self).registerModel(arg0, arg1)
+        super(_ItemRenderer, self).registerModel(arg0, arg1)
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def render(self, arg0: 'Item', arg1: 'Renderer', arg2: int, arg3: int):
-        """public void dev.ultreon.quantum.client.item.ItemRenderer.render(dev.ultreon.quantum.item.Item,dev.ultreon.quantum.client.gui.Renderer,int,int)"""
-        super(__ItemRenderer, self).render(arg0, arg1, __int.valueOf(arg2), __int.valueOf(arg3))
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -333,9 +337,9 @@ class ItemRenderer():
         super(object, self).notifyAll()
 
     @overload
-    def getItemCam(self) -> 'graphics.OrthographicCamera':
-        """public com.badlogic.gdx.graphics.OrthographicCamera dev.ultreon.quantum.client.item.ItemRenderer.getItemCam()"""
-        return 'graphics.OrthographicCamera'.__wrap(super(ItemRenderer, self).getItemCam())
+    def resize(self, arg0: int, arg1: int):
+        """public void dev.ultreon.quantum.client.item.ItemRenderer.resize(int,int)"""
+        super(_ItemRenderer, self).resize(_int.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -345,25 +349,25 @@ class ItemRenderer():
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @overload
-    def registerModels(self, arg0: 'Json5ModelLoader'):
-        """public void dev.ultreon.quantum.client.item.ItemRenderer.registerModels(dev.ultreon.quantum.client.model.model.Json5ModelLoader)"""
-        super(__ItemRenderer, self).registerModels(arg0)
+    def createModelInstance(self, arg0: 'ItemStack') -> 'g3d.ModelInstance':
+        """public com.badlogic.gdx.graphics.g3d.ModelInstance dev.ultreon.quantum.client.item.ItemRenderer.createModelInstance(dev.ultreon.quantum.item.ItemStack)"""
+        return 'g3d.ModelInstance'._wrap(super(_ItemRenderer, self).createModelInstance(arg0))
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @overload
-    def loadModels(self, arg0: 'QuantumClient'):
-        """public void dev.ultreon.quantum.client.item.ItemRenderer.loadModels(dev.ultreon.quantum.client.QuantumClient)"""
-        super(__ItemRenderer, self).loadModels(arg0)
+    def render(self, arg0: 'Item', arg1: 'Renderer', arg2: int, arg3: int):
+        """public void dev.ultreon.quantum.client.item.ItemRenderer.render(dev.ultreon.quantum.item.Item,dev.ultreon.quantum.client.gui.Renderer,int,int)"""
+        super(_ItemRenderer, self).render(arg0, arg1, _int.valueOf(arg2), _int.valueOf(arg3))
 
     @override
     @overload
@@ -372,20 +376,20 @@ class ItemRenderer():
         super(object, self).notify()
 
     @overload
-    def createModelInstance(self, arg0: 'ItemStack') -> 'g3d.ModelInstance':
-        """public com.badlogic.gdx.graphics.g3d.ModelInstance dev.ultreon.quantum.client.item.ItemRenderer.createModelInstance(dev.ultreon.quantum.item.ItemStack)"""
-        return 'g3d.ModelInstance'.__wrap(super(__ItemRenderer, self).createModelInstance(arg0))
+    def registerModels(self, arg0: 'Json5ModelLoader'):
+        """public void dev.ultreon.quantum.client.item.ItemRenderer.registerModels(dev.ultreon.quantum.client.model.model.Json5ModelLoader)"""
+        super(_ItemRenderer, self).registerModels(arg0)
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @overload
-    def resize(self, arg0: int, arg1: int):
-        """public void dev.ultreon.quantum.client.item.ItemRenderer.resize(int,int)"""
-        super(__ItemRenderer, self).resize(__int.valueOf(arg0), __int.valueOf(arg1))
+    def registerBlockModel(self, arg0: 'BlockItem', arg1: 'Supplier'):
+        """public void dev.ultreon.quantum.client.item.ItemRenderer.registerBlockModel(dev.ultreon.quantum.item.BlockItem,java.util.function.Supplier<dev.ultreon.quantum.client.model.block.BlockModel>)"""
+        super(_ItemRenderer, self).registerBlockModel(arg0, arg1)
 
     @override
     @overload
@@ -394,16 +398,20 @@ class ItemRenderer():
         super(object, self).wait()
 
     @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+    def getItemCam(self) -> 'graphics.OrthographicCamera':
+        """public com.badlogic.gdx.graphics.OrthographicCamera dev.ultreon.quantum.client.item.ItemRenderer.getItemCam()"""
+        return 'graphics.OrthographicCamera'._wrap(super(ItemRenderer, self).getItemCam())
 
     @overload
-    def __init__(self, arg0: 'QuantumClient'):
-        """public dev.ultreon.quantum.client.item.ItemRenderer(dev.ultreon.quantum.client.QuantumClient)"""
-        val = __ItemRenderer(arg0)
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  

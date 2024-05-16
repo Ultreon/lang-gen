@@ -4,70 +4,75 @@ from overload import overload
 
  
 from builtins import str
-import java.lang.Long as __long
+import dev.ultreon.quantum.item.food.Foods as _Foods
+_Foods = _Foods
 from pyquantum_helper import override
-import java.lang.Class as __Class
-__Class = __Class
-import dev.ultreon.quantum.item.food.Foods as __Foods
-__Foods = __Foods
-import java.lang.Object as __object
-import java.lang.String as __String
-__String = __String
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Integer as _int
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class Foods():
     """dev.ultreon.quantum.item.food.Foods"""
  
     @staticmethod
-    def __wrap(java_value: __Foods) -> 'Foods':
+    def _wrap(java_value: _Foods) -> 'Foods':
         return Foods(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Foods):
+    def __init__(self, __dynamic__: _Foods):
         """
         Dynamic initializer for Foods.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Foods__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Foods__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     # public static final dev.ultreon.quantum.item.food.FoodData dev.ultreon.quantum.item.food.Foods.RAW_BACON
-    RAW_BACON: 'FoodData' = __wrap(__FoodData.RAW_BACON)
+    RAW_BACON: 'FoodData' = _wrap(_FoodData.RAW_BACON)
 
     # public static final dev.ultreon.quantum.item.food.FoodData dev.ultreon.quantum.item.food.Foods.BACON
-    BACON: 'FoodData' = __wrap(__FoodData.BACON)
+    BACON: 'FoodData' = _wrap(_FoodData.BACON)
 
+
+    @overload
+    def __init__(self, ):
+        """public dev.ultreon.quantum.item.food.Foods()"""
+        val = _Foods()
+        self.__wrapper = val
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -77,22 +82,21 @@ class Foods():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @overload
-    def __init__(self, ):
+    def __init__(self):
         """public dev.ultreon.quantum.item.food.Foods()"""
-        val = __Foods()
-        self.__dict__ = val.__dict__
+        val = _Foods()
         self.__wrapper = val
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -100,99 +104,103 @@ class Foods():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.item.food.Foods()"""
-        val = __Foods()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
     @override
     @overload
     def wait(self):
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
  
 # CLASS: dev.ultreon.quantum.item.food.Foods
 from builtins import str
-import java.lang.Long as __long
+import dev.ultreon.quantum.item.food.Foods as _Foods
+_Foods = _Foods
 from pyquantum_helper import override
-import java.lang.Class as __Class
-__Class = __Class
-import dev.ultreon.quantum.item.food.Foods as __Foods
-__Foods = __Foods
-import java.lang.Object as __object
-import java.lang.String as __String
-__String = __String
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Integer as _int
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class Foods():
     """dev.ultreon.quantum.item.food.Foods"""
  
     @staticmethod
-    def __wrap(java_value: __Foods) -> 'Foods':
+    def _wrap(java_value: _Foods) -> 'Foods':
         return Foods(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Foods):
+    def __init__(self, __dynamic__: _Foods):
         """
         Dynamic initializer for Foods.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Foods__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Foods__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     # public static final dev.ultreon.quantum.item.food.FoodData dev.ultreon.quantum.item.food.Foods.RAW_BACON
-    RAW_BACON: 'FoodData' = __wrap(__FoodData.RAW_BACON)
+    RAW_BACON: 'FoodData' = _wrap(_FoodData.RAW_BACON)
 
     # public static final dev.ultreon.quantum.item.food.FoodData dev.ultreon.quantum.item.food.Foods.BACON
-    BACON: 'FoodData' = __wrap(__FoodData.BACON)
+    BACON: 'FoodData' = _wrap(_FoodData.BACON)
 
+
+    @overload
+    def __init__(self, ):
+        """public dev.ultreon.quantum.item.food.Foods()"""
+        val = _Foods()
+        self.__wrapper = val
 
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -202,22 +210,21 @@ class Foods():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @overload
-    def __init__(self, ):
+    def __init__(self):
         """public dev.ultreon.quantum.item.food.Foods()"""
-        val = __Foods()
-        self.__dict__ = val.__dict__
+        val = _Foods()
         self.__wrapper = val
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -225,29 +232,28 @@ class Foods():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.item.food.Foods()"""
-        val = __Foods()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
     @override
     @overload
     def wait(self):
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
@@ -257,63 +263,62 @@ class Foods():
  
 # CLASS: dev.ultreon.quantum.item.food.AppliedEffect
 from builtins import str
-import java.lang.Long as __long
 from pyquantum_helper import override
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.Object as __object
-import java.lang.String as __String
-__String = __String
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Integer as _int
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
-import dev.ultreon.quantum.item.food.AppliedEffect as __AppliedEffect
-__AppliedEffect = __AppliedEffect
+import dev.ultreon.quantum.item.food.AppliedEffect as _AppliedEffect
+_AppliedEffect = _AppliedEffect
+import java.lang.String as _String
+_String = _String
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class AppliedEffect():
     """dev.ultreon.quantum.item.food.AppliedEffect"""
  
     @staticmethod
-    def __wrap(java_value: __AppliedEffect) -> 'AppliedEffect':
+    def _wrap(java_value: _AppliedEffect) -> 'AppliedEffect':
         return AppliedEffect(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __AppliedEffect):
+    def __init__(self, __dynamic__: _AppliedEffect):
         """
         Dynamic initializer for AppliedEffect.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_AppliedEffect__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_AppliedEffect__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -323,15 +328,15 @@ class AppliedEffect():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -346,55 +351,65 @@ class AppliedEffect():
         super(object, self).wait()
 
     @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+    def __init__(self, arg0: 'StatusEffect', arg1: int, arg2: int):
+        """public dev.ultreon.quantum.item.food.AppliedEffect(dev.ultreon.quantum.item.food.StatusEffect,int,int)"""
+        val = _AppliedEffect(arg0, _int.valueOf(arg1), _int.valueOf(arg2))
+        self.__wrapper = val
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
 
     @overload
-    def __init__(self, arg0: 'StatusEffect', arg1: int, arg2: int):
-        """public dev.ultreon.quantum.item.food.AppliedEffect(dev.ultreon.quantum.item.food.StatusEffect,int,int)"""
-        val = __AppliedEffect(arg0, __int.valueOf(arg1), __int.valueOf(arg2))
-        self.__dict__ = val.__dict__
-        self.__wrapper = val 
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.item.food.FoodData$StatusEffectFactory
+import dev.ultreon.quantum.item.food.FoodData as _FoodData_StatusEffectFactory
+_StatusEffectFactory = _FoodData_StatusEffectFactory.StatusEffectFactory
 from abc import abstractmethod, ABC
-import dev.ultreon.quantum.item.food.FoodData as __FoodData_StatusEffectFactory
-__StatusEffectFactory = __FoodData_StatusEffectFactory.StatusEffectFactory
  
-class StatusEffectFactory(ABC):
+class StatusEffectFactory():
     """dev.ultreon.quantum.item.food.FoodData.StatusEffectFactory"""
  
     @staticmethod
-    def __wrap(java_value: __StatusEffectFactory) -> 'StatusEffectFactory':
+    def _wrap(java_value: _StatusEffectFactory) -> 'StatusEffectFactory':
         return StatusEffectFactory(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __StatusEffectFactory):
+    def __init__(self, __dynamic__: _StatusEffectFactory):
         """
         Dynamic initializer for StatusEffectFactory.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_StatusEffectFactory__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_StatusEffectFactory__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -408,75 +423,64 @@ class StatusEffectFactory(ABC):
 # CLASS: dev.ultreon.quantum.item.food.FoodData$Builder
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import dev.ultreon.quantum.item.food.FoodData as _FoodData_Builder
+_Builder = _FoodData_Builder.Builder
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.item.food.FoodData as __FoodData_Builder
-__Builder = __FoodData_Builder.Builder
-import dev.ultreon.quantum.item.food.FoodData as __FoodData
-__FoodData = __FoodData
-import java.lang.Long as __long
-import java.lang.Float as __float
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import dev.ultreon.quantum.item.food.FoodData as _FoodData
+_FoodData = _FoodData
+import java.lang.String as _String
+_String = _String
+import java.lang.Float as _float
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class Builder():
     """dev.ultreon.quantum.item.food.FoodData.Builder"""
  
     @staticmethod
-    def __wrap(java_value: __Builder) -> 'Builder':
+    def _wrap(java_value: _Builder) -> 'Builder':
         return Builder(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __Builder):
+    def __init__(self, __dynamic__: _Builder):
         """
         Dynamic initializer for Builder.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_Builder__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_Builder__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @overload
-    def build(self) -> 'FoodData':
-        """public dev.ultreon.quantum.item.food.FoodData dev.ultreon.quantum.item.food.FoodData$Builder.build()"""
-        return 'FoodData'.__wrap(super(Builder, self).build())
-
-    @overload
-    def saturation(self, arg0: float) -> 'Builder':
-        """public dev.ultreon.quantum.item.food.FoodData$Builder dev.ultreon.quantum.item.food.FoodData$Builder.saturation(float)"""
-        return 'Builder'.__wrap(super(__Builder, self).saturation(__float.valueOf(arg0)))
-
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
-
-    @override
-    @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -484,17 +488,27 @@ class Builder():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def build(self) -> 'FoodData':
+        """public dev.ultreon.quantum.item.food.FoodData dev.ultreon.quantum.item.food.FoodData$Builder.build()"""
+        return 'FoodData'._wrap(super(Builder, self).build())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
+
+    @override
+    @overload
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
+
+    @overload
+    def saturation(self, arg0: float) -> 'Builder':
+        """public dev.ultreon.quantum.item.food.FoodData$Builder dev.ultreon.quantum.item.food.FoodData$Builder.saturation(float)"""
+        return 'Builder'._wrap(super(_Builder, self).saturation(_float.valueOf(arg0)))
 
     @override
     @overload
@@ -508,87 +522,97 @@ class Builder():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
     @overload
     def food(self, arg0: int) -> 'Builder':
         """public dev.ultreon.quantum.item.food.FoodData$Builder dev.ultreon.quantum.item.food.FoodData$Builder.food(int)"""
-        return 'Builder'.__wrap(super(__Builder, self).food(__int.valueOf(arg0)))
+        return 'Builder'._wrap(super(_Builder, self).food(_int.valueOf(arg0)))
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0)) 
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.item.food.FoodData
-from pyquantum_helper import import_once as __import_once__
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 from pyquantum_helper import override
+import dev.ultreon.quantum.item.food.FoodData as _FoodData_Builder
+_Builder = _FoodData_Builder.Builder
 try:
     from pyquantum import entity
 except ImportError:
-    entity = __import_once__("pyquantum.entity")
+    entity = _import_once("pyquantum.entity")
 
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.item.food.FoodData as __FoodData_Builder
-__Builder = __FoodData_Builder.Builder
+import dev.ultreon.quantum.item.food.FoodData as _FoodData
+_FoodData = _FoodData
 from builtins import float
-import dev.ultreon.quantum.item.food.FoodData as __FoodData
-__FoodData = __FoodData
 from abc import abstractmethod, ABC
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.Float as __float
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import java.lang.Float as _float
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
-class FoodData(ABC):
+class FoodData():
     """dev.ultreon.quantum.item.food.FoodData"""
  
     @staticmethod
-    def __wrap(java_value: __FoodData) -> 'FoodData':
+    def _wrap(java_value: _FoodData) -> 'FoodData':
         return FoodData(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __FoodData):
+    def __init__(self, __dynamic__: _FoodData):
         """
         Dynamic initializer for FoodData.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_FoodData__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_FoodData__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
-    @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def getFood(self) -> int:
+        """public int dev.ultreon.quantum.item.food.FoodData.getFood()"""
+        return int._wrap(super(FoodData, self).getFood())
 
     @abstractmethod
     def onEaten(self, arg0: 'LivingEntity'):
@@ -597,16 +621,15 @@ class FoodData(ABC):
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
+    @staticmethod
     @overload
-    def __init__(self, arg0: int, arg1: float):
-        """public dev.ultreon.quantum.item.food.FoodData(int,float)"""
-        val = __FoodData(__int.valueOf(arg0), __float.valueOf(arg1))
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def builder() -> 'Builder':
+        """public static dev.ultreon.quantum.item.food.FoodData$Builder dev.ultreon.quantum.item.food.FoodData.builder()"""
+        return Builder._wrap(_FoodData.builder())
 
     @override
     @overload
@@ -614,27 +637,23 @@ class FoodData(ABC):
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @override
     @overload
-    def getSaturation(self) -> float:
-        """public float dev.ultreon.quantum.item.food.FoodData.getSaturation()"""
-        return float.__wrap(super(FoodData, self).getSaturation())
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @overload
+    def __init__(self, arg0: int, arg1: float):
+        """public dev.ultreon.quantum.item.food.FoodData(int,float)"""
+        val = _FoodData(_int.valueOf(arg0), _float.valueOf(arg1))
+        self.__wrapper = val
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @overload
-    def getFood(self) -> int:
-        """public int dev.ultreon.quantum.item.food.FoodData.getFood()"""
-        return int.__wrap(super(FoodData, self).getFood())
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @override
     @overload
@@ -642,17 +661,16 @@ class FoodData(ABC):
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
-    @staticmethod
     @overload
-    def builder() -> 'Builder':
-        """public static dev.ultreon.quantum.item.food.FoodData$Builder dev.ultreon.quantum.item.food.FoodData.builder()"""
-        return Builder.__wrap(__FoodData.builder())
+    def getSaturation(self) -> float:
+        """public float dev.ultreon.quantum.item.food.FoodData.getSaturation()"""
+        return float._wrap(super(FoodData, self).getSaturation())
 
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -663,59 +681,70 @@ class FoodData(ABC):
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0)) 
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode()) 
  
  
 # CLASS: dev.ultreon.quantum.item.food.StatusEffect
-from pyquantum_helper import import_once as __import_once__
-import dev.ultreon.quantum.item.food.StatusEffect as __StatusEffect
-__StatusEffect = __StatusEffect
+from pyquantum_helper import import_once as _import_once
 from builtins import str
 from pyquantum_helper import override
 try:
     from pyquantum import entity
 except ImportError:
-    entity = __import_once__("pyquantum.entity")
+    entity = _import_once("pyquantum.entity")
 
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import java.lang.Long as __long
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import dev.ultreon.quantum.item.food.StatusEffect as _StatusEffect
+_StatusEffect = _StatusEffect
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class StatusEffect():
     """dev.ultreon.quantum.item.food.StatusEffect"""
  
     @staticmethod
-    def __wrap(java_value: __StatusEffect) -> 'StatusEffect':
+    def _wrap(java_value: _StatusEffect) -> 'StatusEffect':
         return StatusEffect(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __StatusEffect):
+    def __init__(self, __dynamic__: _StatusEffect):
         """
         Dynamic initializer for StatusEffect.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_StatusEffect__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_StatusEffect__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
@@ -724,23 +753,12 @@ class StatusEffect():
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @overload
-    def onEnd(self, arg0: 'LivingEntity'):
-        """public void dev.ultreon.quantum.item.food.StatusEffect.onEnd(dev.ultreon.quantum.entity.LivingEntity)"""
-        super(__StatusEffect, self).onEnd(arg0)
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def onTick(self, arg0: 'LivingEntity'):
-        """public void dev.ultreon.quantum.item.food.StatusEffect.onTick(dev.ultreon.quantum.entity.LivingEntity)"""
-        super(__StatusEffect, self).onTick(arg0)
+    def onStart(self, arg0: 'LivingEntity'):
+        """public void dev.ultreon.quantum.item.food.StatusEffect.onStart(dev.ultreon.quantum.entity.LivingEntity)"""
+        super(_StatusEffect, self).onStart(arg0)
 
     @override
     @overload
@@ -748,24 +766,28 @@ class StatusEffect():
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
 
+    @overload
+    def __init__(self):
+        """public dev.ultreon.quantum.item.food.StatusEffect()"""
+        val = _StatusEffect()
+        self.__wrapper = val
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.item.food.StatusEffect()"""
-        val = __StatusEffect()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def onEnd(self, arg0: 'LivingEntity'):
+        """public void dev.ultreon.quantum.item.food.StatusEffect.onEnd(dev.ultreon.quantum.entity.LivingEntity)"""
+        super(_StatusEffect, self).onEnd(arg0)
 
     @override
     @overload
@@ -773,18 +795,17 @@ class StatusEffect():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
+    @overload
+    def __init__(self, ):
+        """public dev.ultreon.quantum.item.food.StatusEffect()"""
+        val = _StatusEffect()
+        self.__wrapper = val
+
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
-
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.item.food.StatusEffect()"""
-        val = __StatusEffect()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
@@ -793,11 +814,17 @@ class StatusEffect():
         super(object, self).wait()
 
     @overload
-    def onStart(self, arg0: 'LivingEntity'):
-        """public void dev.ultreon.quantum.item.food.StatusEffect.onStart(dev.ultreon.quantum.entity.LivingEntity)"""
-        super(__StatusEffect, self).onStart(arg0)
+    def onTick(self, arg0: 'LivingEntity'):
+        """public void dev.ultreon.quantum.item.food.StatusEffect.onTick(dev.ultreon.quantum.entity.LivingEntity)"""
+        super(_StatusEffect, self).onTick(arg0)
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())

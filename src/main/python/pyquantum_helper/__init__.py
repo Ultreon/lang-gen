@@ -53,3 +53,8 @@ def override(func: object) -> object:
     :return: the decorated function
     """
     return func
+
+
+class Test():
+    def __init__(self, name: str):
+        self.name = name

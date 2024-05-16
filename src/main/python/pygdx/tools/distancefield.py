@@ -5,92 +5,80 @@ from overload import overload
  
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
+import com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator as _DistanceFieldGenerator
+_DistanceFieldGenerator = _DistanceFieldGenerator
 from builtins import float
-import java.awt.image.BufferedImage as __BufferedImage
-__BufferedImage = __BufferedImage
-import com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator as __DistanceFieldGenerator
-__DistanceFieldGenerator = __DistanceFieldGenerator
-import java.awt.Color as __Color
-__Color = __Color
-import java.lang.Long as __long
-import java.lang.Float as __float
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
+import java.awt.image.BufferedImage as _BufferedImage
+_BufferedImage = _BufferedImage
+import java.lang.String as _String
+_String = _String
+import java.lang.Float as _float
+import java.lang.Integer as _int
 import java.awt.Color as Color
-import java.lang.Object as __Object
-__Object = __Object
+import java.awt.Color as _Color
+_Color = _Color
 import java.awt.image.BufferedImage as BufferedImage
-import java.lang.Integer as __int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class DistanceFieldGenerator():
     """com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator"""
  
     @staticmethod
-    def __wrap(java_value: __DistanceFieldGenerator) -> 'DistanceFieldGenerator':
+    def _wrap(java_value: _DistanceFieldGenerator) -> 'DistanceFieldGenerator':
         return DistanceFieldGenerator(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __DistanceFieldGenerator):
+    def __init__(self, __dynamic__: _DistanceFieldGenerator):
         """
         Dynamic initializer for DistanceFieldGenerator.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_DistanceFieldGenerator__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_DistanceFieldGenerator__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @overload
-    def setSpread(self, arg0: float):
-        """public void com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.setSpread(float)"""
-        super(__DistanceFieldGenerator, self).setSpread(__float.valueOf(arg0))
+    def __init__(self):
+        """public com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator()"""
+        val = _DistanceFieldGenerator()
+        self.__wrapper = val
+
+    @overload
+    def generateDistanceField(self, arg0: 'BufferedImage') -> 'BufferedImage':
+        """public java.awt.image.BufferedImage com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.generateDistanceField(java.awt.image.BufferedImage)"""
+        return 'BufferedImage'._wrap(super(_DistanceFieldGenerator, self).generateDistanceField(arg0))
 
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def __init__(self, ):
-        """public com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator()"""
-        val = __DistanceFieldGenerator()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @overload
-    def getDownscale(self) -> int:
-        """public int com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.getDownscale()"""
-        return int.__wrap(super(DistanceFieldGenerator, self).getDownscale())
-
-    @overload
-    def getSpread(self) -> float:
-        """public float com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.getSpread()"""
-        return float.__wrap(super(DistanceFieldGenerator, self).getSpread())
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -99,33 +87,42 @@ class DistanceFieldGenerator():
         super(object, self).notifyAll()
 
     @overload
-    def setDownscale(self, arg0: int):
-        """public void com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.setDownscale(int)"""
-        super(__DistanceFieldGenerator, self).setDownscale(__int.valueOf(arg0))
+    def setColor(self, arg0: 'Color'):
+        """public void com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.setColor(java.awt.Color)"""
+        super(_DistanceFieldGenerator, self).setColor(arg0)
+
+    @overload
+    def getSpread(self) -> float:
+        """public float com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.getSpread()"""
+        return float._wrap(super(DistanceFieldGenerator, self).getSpread())
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @staticmethod
+    @overload
+    def main(arg0: 'String'):
+        """public static void com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.main(java.lang.String[])"""
+        _DistanceFieldGenerator.main(arg0)
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @overload
-    def generateDistanceField(self, arg0: 'BufferedImage') -> 'BufferedImage':
-        """public java.awt.image.BufferedImage com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.generateDistanceField(java.awt.image.BufferedImage)"""
-        return 'BufferedImage'.__wrap(super(__DistanceFieldGenerator, self).generateDistanceField(arg0))
+    def getDownscale(self) -> int:
+        """public int com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.getDownscale()"""
+        return int._wrap(super(DistanceFieldGenerator, self).getDownscale())
 
     @overload
-    def __init__(self):
-        """public com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator()"""
-        val = __DistanceFieldGenerator()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def setSpread(self, arg0: float):
+        """public void com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.setSpread(float)"""
+        super(_DistanceFieldGenerator, self).setSpread(_float.valueOf(arg0))
 
     @override
     @overload
@@ -133,16 +130,22 @@ class DistanceFieldGenerator():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
+    @overload
+    def setDownscale(self, arg0: int):
+        """public void com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.setDownscale(int)"""
+        super(_DistanceFieldGenerator, self).setDownscale(_int.valueOf(arg0))
+
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @overload
-    def getColor(self) -> 'Color':
-        """public java.awt.Color com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.getColor()"""
-        return 'Color'.__wrap(super(DistanceFieldGenerator, self).getColor())
+    def __init__(self, ):
+        """public com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator()"""
+        val = _DistanceFieldGenerator()
+        self.__wrapper = val
 
     @override
     @overload
@@ -150,21 +153,21 @@ class DistanceFieldGenerator():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
-    @staticmethod
     @overload
-    def main(arg0: 'String'):
-        """public static void com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.main(java.lang.String[])"""
-        __DistanceFieldGenerator.main(arg0)
-
-    @overload
-    def setColor(self, arg0: 'Color'):
-        """public void com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.setColor(java.awt.Color)"""
-        super(__DistanceFieldGenerator, self).setColor(arg0)
+    def getColor(self) -> 'Color':
+        """public java.awt.Color com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.getColor()"""
+        return 'Color'._wrap(super(DistanceFieldGenerator, self).getColor())
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
@@ -172,92 +175,80 @@ class DistanceFieldGenerator():
 # CLASS: com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
+import com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator as _DistanceFieldGenerator
+_DistanceFieldGenerator = _DistanceFieldGenerator
 from builtins import float
-import java.awt.image.BufferedImage as __BufferedImage
-__BufferedImage = __BufferedImage
-import com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator as __DistanceFieldGenerator
-__DistanceFieldGenerator = __DistanceFieldGenerator
-import java.awt.Color as __Color
-__Color = __Color
-import java.lang.Long as __long
-import java.lang.Float as __float
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
+import java.awt.image.BufferedImage as _BufferedImage
+_BufferedImage = _BufferedImage
+import java.lang.String as _String
+_String = _String
+import java.lang.Float as _float
+import java.lang.Integer as _int
 import java.awt.Color as Color
-import java.lang.Object as __Object
-__Object = __Object
+import java.awt.Color as _Color
+_Color = _Color
 import java.awt.image.BufferedImage as BufferedImage
-import java.lang.Integer as __int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class DistanceFieldGenerator():
     """com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator"""
  
     @staticmethod
-    def __wrap(java_value: __DistanceFieldGenerator) -> 'DistanceFieldGenerator':
+    def _wrap(java_value: _DistanceFieldGenerator) -> 'DistanceFieldGenerator':
         return DistanceFieldGenerator(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __DistanceFieldGenerator):
+    def __init__(self, __dynamic__: _DistanceFieldGenerator):
         """
         Dynamic initializer for DistanceFieldGenerator.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_DistanceFieldGenerator__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_DistanceFieldGenerator__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @overload
-    def setSpread(self, arg0: float):
-        """public void com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.setSpread(float)"""
-        super(__DistanceFieldGenerator, self).setSpread(__float.valueOf(arg0))
+    def __init__(self):
+        """public com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator()"""
+        val = _DistanceFieldGenerator()
+        self.__wrapper = val
+
+    @overload
+    def generateDistanceField(self, arg0: 'BufferedImage') -> 'BufferedImage':
+        """public java.awt.image.BufferedImage com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.generateDistanceField(java.awt.image.BufferedImage)"""
+        return 'BufferedImage'._wrap(super(_DistanceFieldGenerator, self).generateDistanceField(arg0))
 
     @override
     @overload
     def wait(self, arg0: int, arg1: int):
         """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
-
-    @override
-    @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def __init__(self, ):
-        """public com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator()"""
-        val = __DistanceFieldGenerator()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
-
-    @overload
-    def getDownscale(self) -> int:
-        """public int com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.getDownscale()"""
-        return int.__wrap(super(DistanceFieldGenerator, self).getDownscale())
-
-    @overload
-    def getSpread(self) -> float:
-        """public float com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.getSpread()"""
-        return float.__wrap(super(DistanceFieldGenerator, self).getSpread())
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
@@ -266,33 +257,42 @@ class DistanceFieldGenerator():
         super(object, self).notifyAll()
 
     @overload
-    def setDownscale(self, arg0: int):
-        """public void com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.setDownscale(int)"""
-        super(__DistanceFieldGenerator, self).setDownscale(__int.valueOf(arg0))
+    def setColor(self, arg0: 'Color'):
+        """public void com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.setColor(java.awt.Color)"""
+        super(_DistanceFieldGenerator, self).setColor(arg0)
+
+    @overload
+    def getSpread(self) -> float:
+        """public float com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.getSpread()"""
+        return float._wrap(super(DistanceFieldGenerator, self).getSpread())
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @staticmethod
+    @overload
+    def main(arg0: 'String'):
+        """public static void com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.main(java.lang.String[])"""
+        _DistanceFieldGenerator.main(arg0)
 
     @override
     @overload
     def wait(self, arg0: int):
         """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
-
-    @override
-    @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+        super(_object, self).wait(_long.valueOf(arg0))
 
     @overload
-    def generateDistanceField(self, arg0: 'BufferedImage') -> 'BufferedImage':
-        """public java.awt.image.BufferedImage com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.generateDistanceField(java.awt.image.BufferedImage)"""
-        return 'BufferedImage'.__wrap(super(__DistanceFieldGenerator, self).generateDistanceField(arg0))
+    def getDownscale(self) -> int:
+        """public int com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.getDownscale()"""
+        return int._wrap(super(DistanceFieldGenerator, self).getDownscale())
 
     @overload
-    def __init__(self):
-        """public com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator()"""
-        val = __DistanceFieldGenerator()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def setSpread(self, arg0: float):
+        """public void com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.setSpread(float)"""
+        super(_DistanceFieldGenerator, self).setSpread(_float.valueOf(arg0))
 
     @override
     @overload
@@ -300,16 +300,22 @@ class DistanceFieldGenerator():
         """public final native void java.lang.Object.notify()"""
         super(object, self).notify()
 
+    @overload
+    def setDownscale(self, arg0: int):
+        """public void com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.setDownscale(int)"""
+        super(_DistanceFieldGenerator, self).setDownscale(_int.valueOf(arg0))
+
     @override
     @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @overload
-    def getColor(self) -> 'Color':
-        """public java.awt.Color com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.getColor()"""
-        return 'Color'.__wrap(super(DistanceFieldGenerator, self).getColor())
+    def __init__(self, ):
+        """public com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator()"""
+        val = _DistanceFieldGenerator()
+        self.__wrapper = val
 
     @override
     @overload
@@ -317,21 +323,21 @@ class DistanceFieldGenerator():
         """public final void java.lang.Object.wait() throws java.lang.InterruptedException"""
         super(object, self).wait()
 
-    @staticmethod
     @overload
-    def main(arg0: 'String'):
-        """public static void com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.main(java.lang.String[])"""
-        __DistanceFieldGenerator.main(arg0)
-
-    @overload
-    def setColor(self, arg0: 'Color'):
-        """public void com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.setColor(java.awt.Color)"""
-        super(__DistanceFieldGenerator, self).setColor(arg0)
+    def getColor(self) -> 'Color':
+        """public java.awt.Color com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator.getColor()"""
+        return 'Color'._wrap(super(DistanceFieldGenerator, self).getColor())
 
     @overload
     def equals(self, arg0: object) -> bool:
         """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  

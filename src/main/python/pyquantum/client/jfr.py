@@ -5,64 +5,69 @@ from overload import overload
  
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.client.jfr.ChunkBuildEvent as __ChunkBuildEvent
-__ChunkBuildEvent = __ChunkBuildEvent
-import java.lang.Long as __long
-import jdk.jfr.Event as __Event
-__Event = __Event
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import jdk.jfr.Event as _Event
+_Event = _Event
+import dev.ultreon.quantum.client.jfr.ChunkBuildEvent as _ChunkBuildEvent
+_ChunkBuildEvent = _ChunkBuildEvent
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ChunkBuildEvent():
     """dev.ultreon.quantum.client.jfr.ChunkBuildEvent"""
  
     @staticmethod
-    def __wrap(java_value: __ChunkBuildEvent) -> 'ChunkBuildEvent':
+    def _wrap(java_value: _ChunkBuildEvent) -> 'ChunkBuildEvent':
         return ChunkBuildEvent(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ChunkBuildEvent):
+    def __init__(self, __dynamic__: _ChunkBuildEvent):
         """
         Dynamic initializer for ChunkBuildEvent.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ChunkBuildEvent__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ChunkBuildEvent__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
-    @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def __init__(self):
+        """public dev.ultreon.quantum.client.jfr.ChunkBuildEvent()"""
+        val = _ChunkBuildEvent()
+        self.__wrapper = val
 
     @override
     @overload
@@ -72,41 +77,21 @@ class ChunkBuildEvent():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.client.jfr.ChunkBuildEvent()"""
-        val = __ChunkBuildEvent()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
-    def set(self, arg0: int, arg1: object):
-        """public void jdk.jfr.Event.set(int,java.lang.Object)"""
-        super(__Event, self).set(__int.valueOf(arg0), arg1)
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
     def notifyAll(self):
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
-
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.client.jfr.ChunkBuildEvent()"""
-        val = __ChunkBuildEvent()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
 
     @override
     @overload
@@ -115,15 +100,33 @@ class ChunkBuildEvent():
         super(object, self).wait()
 
     @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+    def __init__(self, ):
+        """public dev.ultreon.quantum.client.jfr.ChunkBuildEvent()"""
+        val = _ChunkBuildEvent()
+        self.__wrapper = val
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def set(self, arg0: int, arg1: object):
+        """public void jdk.jfr.Event.set(int,java.lang.Object)"""
+        super(_Event, self).set(_int.valueOf(arg0), arg1)
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
@@ -131,64 +134,69 @@ class ChunkBuildEvent():
 # CLASS: dev.ultreon.quantum.client.jfr.ChunkBuildEvent
 from builtins import str
 from pyquantum_helper import override
-import java.lang.Object as __object
+import java.lang.Object as _Object
+_Object = _Object
+import java.lang.Object as _object
 from builtins import type
-import dev.ultreon.quantum.client.jfr.ChunkBuildEvent as __ChunkBuildEvent
-__ChunkBuildEvent = __ChunkBuildEvent
-import java.lang.Long as __long
-import jdk.jfr.Event as __Event
-__Event = __Event
-import java.lang.Class as __Class
-__Class = __Class
-import java.lang.String as __String
-__String = __String
-import java.lang.Object as __Object
-__Object = __Object
-import java.lang.Integer as __int
+import java.lang.String as _String
+_String = _String
+import jdk.jfr.Event as _Event
+_Event = _Event
+import dev.ultreon.quantum.client.jfr.ChunkBuildEvent as _ChunkBuildEvent
+_ChunkBuildEvent = _ChunkBuildEvent
+import java.lang.Integer as _int
 from builtins import bool
+import java.lang.Long as _long
 from builtins import int
+import java.lang.Class as _Class
+_Class = _Class
  
 class ChunkBuildEvent():
     """dev.ultreon.quantum.client.jfr.ChunkBuildEvent"""
  
     @staticmethod
-    def __wrap(java_value: __ChunkBuildEvent) -> 'ChunkBuildEvent':
+    def _wrap(java_value: _ChunkBuildEvent) -> 'ChunkBuildEvent':
         return ChunkBuildEvent(__dynamic__=java_value)
  
     #
     # DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
     #
     @overload
-    def __init__(self, __dynamic__: __ChunkBuildEvent):
+    def __init__(self, __dynamic__: _ChunkBuildEvent):
         """
         Dynamic initializer for ChunkBuildEvent.
         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
  
         :param __dynamic__: The java object to wrap
         """
-        self.__dict__ = __dynamic__.__dict__
         self.__wrapper = __dynamic__
  
     def __getattr__(self, name: str):
+        print("Getting attribute %s" % name)
+        if name == "_ChunkBuildEvent__wrapper":
+            return object.__getattr__(self, name)
         return getattr(self.__wrapper, name)
  
-    def __setattr__(self, name: str, value: object):
-        return setattr(self.__wrapper, name, value)
+    def __setattr__(self, name: str, value: Any):
+        print("Setting attribute %s to %s" % (name, value))
+        if name == "_ChunkBuildEvent__wrapper":
+            return object.__setattr__(self, name, value)
+        setattr(self.__wrapper, name, value)
  
     def __delattr__(self, name: str):
         raise AttributeError("Cannot delete attribute '%s' from %s" % (name, self.__wrapper.__class__.__name__))
  
     @override
     @overload
-    def getClass(self) -> 'type.Class':
-        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
-        return 'type.Class'.__wrap(super(object, self).getClass())
+    def wait(self, arg0: int):
+        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0))
 
-    @override
     @overload
-    def wait(self, arg0: int, arg1: int):
-        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0), __int.valueOf(arg1))
+    def __init__(self):
+        """public dev.ultreon.quantum.client.jfr.ChunkBuildEvent()"""
+        val = _ChunkBuildEvent()
+        self.__wrapper = val
 
     @override
     @overload
@@ -198,41 +206,21 @@ class ChunkBuildEvent():
 
     @override
     @overload
-    def toString(self) -> str:
-        """public java.lang.String java.lang.Object.toString()"""
-        return str.__wrap(super(object, self).toString())
-
-    @overload
-    def __init__(self, ):
-        """public dev.ultreon.quantum.client.jfr.ChunkBuildEvent()"""
-        val = __ChunkBuildEvent()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
+    def getClass(self) -> 'type.Class':
+        """public final native java.lang.Class<?> java.lang.Object.getClass()"""
+        return 'type.Class'._wrap(super(object, self).getClass())
 
     @override
     @overload
-    def set(self, arg0: int, arg1: object):
-        """public void jdk.jfr.Event.set(int,java.lang.Object)"""
-        super(__Event, self).set(__int.valueOf(arg0), arg1)
-
-    @override
-    @overload
-    def hashCode(self) -> int:
-        """public native int java.lang.Object.hashCode()"""
-        return int.__wrap(super(object, self).hashCode())
+    def wait(self, arg0: int, arg1: int):
+        """public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException"""
+        super(_object, self).wait(_long.valueOf(arg0), _int.valueOf(arg1))
 
     @override
     @overload
     def notifyAll(self):
         """public final native void java.lang.Object.notifyAll()"""
         super(object, self).notifyAll()
-
-    @overload
-    def __init__(self):
-        """public dev.ultreon.quantum.client.jfr.ChunkBuildEvent()"""
-        val = __ChunkBuildEvent()
-        self.__dict__ = val.__dict__
-        self.__wrapper = val
 
     @override
     @overload
@@ -241,15 +229,33 @@ class ChunkBuildEvent():
         super(object, self).wait()
 
     @overload
-    def equals(self, arg0: object) -> bool:
-        """public boolean java.lang.Object.equals(java.lang.Object)"""
-        return bool.__wrap(super(__object, self).equals(arg0))
+    def __init__(self, ):
+        """public dev.ultreon.quantum.client.jfr.ChunkBuildEvent()"""
+        val = _ChunkBuildEvent()
+        self.__wrapper = val
 
     @override
     @overload
-    def wait(self, arg0: int):
-        """public final void java.lang.Object.wait(long) throws java.lang.InterruptedException"""
-        super(__object, self).wait(__long.valueOf(arg0))
+    def set(self, arg0: int, arg1: object):
+        """public void jdk.jfr.Event.set(int,java.lang.Object)"""
+        super(_Event, self).set(_int.valueOf(arg0), arg1)
+
+    @override
+    @overload
+    def toString(self) -> str:
+        """public java.lang.String java.lang.Object.toString()"""
+        return str._wrap(super(object, self).toString())
+
+    @overload
+    def equals(self, arg0: object) -> bool:
+        """public boolean java.lang.Object.equals(java.lang.Object)"""
+        return bool._wrap(super(_object, self).equals(arg0))
+
+    @override
+    @overload
+    def hashCode(self) -> int:
+        """public native int java.lang.Object.hashCode()"""
+        return int._wrap(super(object, self).hashCode())
 
  
  
