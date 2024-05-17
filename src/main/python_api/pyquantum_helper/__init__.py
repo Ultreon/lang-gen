@@ -55,6 +55,31 @@ def override(func: object) -> object:
     return func
 
 
-class Test():
-    def __init__(self, name: str):
-        self.name = name
+def final(clazz: object) -> object:
+    """
+    Marks a class as final.
+
+    :param clazz: The class to decorate
+    :return: the decorated class
+    """
+
+    clazz.__final__ = True
+
+    temp_init = clazz.__init__
+    temp_new = clazz.__new__
+
+    # noinspection PyArgumentList
+    def __init__(self, *args, **kwargs):
+        if self.__class__ != clazz:
+            raise TypeError(f"Cannot subclass {clazz.__name__} as it is final.")
+        return temp_init(self, *args, **kwargs)
+
+    # noinspection PyArgumentList
+    def __new__(cls):
+        if cls.__class__ != clazz:
+            raise TypeError(f"Cannot subclass {clazz.__name__} as it is final.")
+        return temp_new(cls)
+
+    clazz.__init__ = __init__
+    clazz.__new__ = __new__
+    return clazz

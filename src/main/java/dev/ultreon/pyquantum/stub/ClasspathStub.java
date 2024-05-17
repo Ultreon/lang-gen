@@ -1,28 +1,36 @@
-package dev.ultreon.pyquantum.wrap;
+package dev.ultreon.pyquantum.stub;
 
+import dev.ultreon.pyquantum.wrap.Converters;
+import dev.ultreon.pyquantum.wrap.PythonClassBuilder;
+import dev.ultreon.pyquantum.wrap.PythonFinalClassBuilder;
+import dev.ultreon.pyquantum.wrap.Wrapper;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.reflections.Reflections;
+import org.reflections.scanners.Scanners;
+import org.reflections.util.ConfigurationBuilder;
+
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.StringWriter;
 import java.lang.reflect.Modifier;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.net.URL;
+import java.nio.file.*;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.jar.JarEntry;
-import java.util.jar.JarInputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-public class JarWrapperBuilder extends WrapperBuilder {
-    private final JarInputStream jar;
-    private final Logger logger = Logger.getLogger("JarStubBuilder");
-    private final Map<String, StringWriter> pyClassBuilders = new HashMap<>();
+public class ClasspathStub extends Wrapper {
+    private final Logger logger = LogManager.getLogger("ClasspathWrapper");
+    private final Map<String, StringBuilder> pyClassBuilders = new HashMap<>();
+    @Deprecated
     private final Map<String, List<String>> pyImports = new HashMap<>();
     private final Set<Class<?>> classes = new HashSet<>();
     private final Set<String> packageNames = new HashSet<>();
 
-    public JarWrapperBuilder(Path input) throws IOException {
-        this.jar = new JarInputStream(Files.newInputStream(input));
+    public ClasspathStub() {
+
     }
 
     @Override
@@ -35,21 +43,76 @@ public class JarWrapperBuilder extends WrapperBuilder {
             throw new RuntimeException("Output path is not a directory: " + output);
         }
 
-        JarEntry entry;
-        while ((entry = jar.getNextJarEntry()) != null) {
-            if (!entry.isDirectory() && entry.getName().endsWith(".class")) {
-                try {
-                    if (entry.getName().startsWith("META-INF")
-                        || entry.getName().substring(0, entry.getName().length() - 6).contains(".")
-                        || entry.getName().contains("module-info")
-                        || entry.getName().contains("-")
-                        || entry.getName().contains("package-info")) {
-                        continue;
+        List<URL> urls = new ArrayList<>();
+
+        // Scan .jmod files in the JVM
+        Path fs = Paths.get(System.getProperty("java.home"));
+        Path root = fs.resolve("jmods");
+        if (Files.exists(root)) {
+            Files.walkFileTree(root, new SimpleFileVisitor<>() {
+                @Override
+                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+                    if (file.getFileName().toString().endsWith(".jmod")) {
+                        try (FileSystem fs = FileSystems.newFileSystem(file, Collections.emptyMap())) {
+                            urls.add(fs.getPath("/").toUri().toURL());
+                        }
                     }
-                    this.processEntry(entry);
-                } catch (ClassNotFoundException | NoClassDefFoundError e) {
-                    logger.log(Level.SEVERE, e.getMessage(), e);
+
+                    return FileVisitResult.CONTINUE;
                 }
+            });
+        }
+
+        Path libsDir = Paths.get("libs");
+        if (Files.exists(libsDir)) {
+            Files.walkFileTree(libsDir, new SimpleFileVisitor<>() {
+                @Override
+                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+                    if (file.getFileName().toString().endsWith(".jar")) {
+                        urls.add(file.toUri().toURL());
+                    }
+
+                    return FileVisitResult.CONTINUE;
+                }
+            });
+        }
+
+        String classPath = System.getProperty("java.class.path");
+        if (classPath != null) {
+            for (String path : classPath.split(File.pathSeparator)) {
+                if (!path.endsWith(".jar") && !path.endsWith(".jmod") && !path.endsWith(".zip")) continue;
+                urls.add(new File(path).toURI().toURL());
+            }
+        }
+
+        Reflections reflections = new Reflections(new ConfigurationBuilder()
+                .setUrls(Set.copyOf(urls))
+                .setScanners(Scanners.SubTypes.filterResultsBy((arg0) -> true)));
+
+
+        Set<String> allClasses = new HashSet<>(reflections.getAll(Scanners.SubTypes));
+
+        if (!allClasses.contains("org.reflections.Reflections")) {
+            throw new FileNotFoundException("java.util.UUID not found");
+        }
+        if (!allClasses.contains("java.util.UUID")) {
+            throw new FileNotFoundException("java.util.UUID not found");
+        }
+
+        if (!allClasses.contains("dev.ultreon.quantum.world.BlockPos")) {
+            throw new FileNotFoundException("dev.ultreon.quantum.world.BlockPos not found");
+        }
+
+        if (!allClasses.contains("dev.ultreon.quantum.registry.Registries")) {
+            throw new FileNotFoundException("dev.ultreon.quantum.registry.Registries not found");
+        }
+
+        for (String clazz : allClasses) {
+//            if (!clazz.startsWith("dev.ultreon.")) continue; // TODO TEMPORARY WHILE TESTING
+            try {
+                this.processEntry(clazz);
+            } catch (Throwable e) {
+                logger.warn("Failed to process class: " + clazz, e);
             }
         }
 
@@ -81,15 +144,22 @@ public class JarWrapperBuilder extends WrapperBuilder {
             return 0;
         }).toList()) {
             String transformedName = transformName(clazz);
-            StringWriter sw1 = new StringWriter();
-            StringWriter sw = this.pyClassBuilders.computeIfAbsent(transformedName, k -> sw1);
+            this.pyClassBuilders.computeIfAbsent(transformedName, k -> new StringBuilder());
+            this.pyImports.computeIfAbsent(transformedName, k -> new ArrayList<>());
+
+            StringBuilder sw1 = new StringBuilder();
+            StringBuilder sw = this.pyClassBuilders.get(transformedName);
 
             try {
-                List<String> build = new PythonFinalClassBuilder(clazz).build(sw1);
-
-                this.pyImports.computeIfAbsent(transformedName, k -> new ArrayList<>()).addAll(build);
+                if (Modifier.isFinal(clazz.getModifiers())) {
+                    var classBuilder = new PythonFinalClassBuilder(clazz);
+                    classBuilder.build(sw1);
+                } else {
+                    var classBuilder = new PythonClassBuilder(clazz);
+                    classBuilder.build(sw1);
+                }
             } catch (Throwable e) {
-                logger.log(Level.SEVERE, e.getMessage(), e);
+                logger.warn(e.getMessage());
             }
 
             sw.append("""
@@ -97,15 +167,22 @@ public class JarWrapperBuilder extends WrapperBuilder {
                     \s
                     \s
                     # CLASS: %s
-                    """.formatted(clazz.getName())).append(sw1.toString().trim());
+                    """.formatted(clazz.getName()));
+
+            String trim = sw1.toString().trim();
+            if (!trim.isEmpty()) {
+                sw.append(trim);
+            } else {
+                logger.warn(clazz.getName() + " has no content");
+            }
         }
 
-        for (Map.Entry<String, StringWriter> e : pyClassBuilders.entrySet()) {
+        for (Map.Entry<String, StringBuilder> e : pyClassBuilders.entrySet()) {
             Path path = output.resolve(e.getKey().replace('.', '/') + ".py");
             String value = pyClassBuilders.get(e.getKey()).toString();
             List<String> coll = pyImports.get(e.getKey());
             if (coll == null) {
-                logger.warning(e.getKey() + " has no imports");
+                logger.warn(e.getKey() + " has no imports");
                 coll = new ArrayList<>();
             }
             Set<String> strings = Set.copyOf(coll);
@@ -114,7 +191,7 @@ public class JarWrapperBuilder extends WrapperBuilder {
             String imports = (strings).stream().map(code -> {
                 if (code.startsWith("#py_import\n")) {
                     String substring = code.substring("#pyimport\n".length()).replace("\n", "").replace("\r", "");
-                    String s1 = null;
+                    String s1;
                     String s;
                     if (substring.startsWith("from ")) {
                         String replace = substring.replace("from ", "");
@@ -146,36 +223,49 @@ public class JarWrapperBuilder extends WrapperBuilder {
 
             if (importOnce.get()) {
                 imports = """
-                        from pyquantum_helper import import_once as _import_once
-                        """ + imports;
+                                  from pyquantum_helper import import_once as _import_once
+                                  """ + imports;
             }
 
             Files.createDirectories(path.getParent());
             Files.writeString(path, """
-                from __future__ import annotations
-                from overload import overload
-                """ + imports + "\n" + value.toString());
+                                            from __future__ import annotations
+                                            from overload import overload
+                                            """ + imports + "\n" + value);
         }
     }
 
-    private void processEntry(JarEntry entry) throws ClassNotFoundException {
+    private void processEntry(String className) throws ClassNotFoundException {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        Class<?> clazz = Class.forName(entry.getName().substring(0, entry.getName().length() - 6).replace('/', '.'), false, classLoader);
+        Class<?> clazz = Class.forName(className, false, classLoader);
 
-        if (clazz.isSynthetic()) {
-            return;
-        } else if (Modifier.isPrivate(clazz.getModifiers())) {
-            return;
-        } else if (!Modifier.isPublic(clazz.getModifiers()) && !Modifier.isProtected(clazz.getModifiers())) {
+        if (!Modifier.isPublic(clazz.getModifiers()) && !Modifier.isProtected(clazz.getModifiers())) {
+//            logger.warn(clazz.getName() + " is private");
             return;
         }
 
-        this.packageNames.add(clazz.getPackageName());
+        this.packageNames.add(className.substring(0, className.lastIndexOf('.')));
 
         this.classes.add(clazz);
     }
 
     private String transformName(Class<?> entry) {
+        String convert = Converters.convert(entry.getName());
+        if (convert != null && !convert.equals(entry.getName())) {
+            String packageName = entry.getPackageName();
+            String name = convert.substring(0, convert.lastIndexOf("."));
+
+            if (packageNames.stream().filter(p -> {
+                if (p.equals(packageName) || p.startsWith(packageName + ".")) return true;
+                int endIndex = p.lastIndexOf(".");
+                return p.substring(0, endIndex == -1 ? p.length() : endIndex).equals(packageName);
+            }).count() > 1) {
+                return name + ".__init__";
+            }
+
+            return name;
+        }
+
         String packageName = entry.getPackageName();
         String name = packageName;
         if (name.startsWith("dev.ultreon.quantum."))

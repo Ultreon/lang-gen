@@ -3,6 +3,8 @@ import org.jetbrains.gradle.ext.GradleTask
 import org.jetbrains.gradle.ext.runConfigurations
 import org.jetbrains.gradle.ext.settings
 import java.nio.file.Files
+import java.nio.file.Paths
+import java.nio.file.StandardCopyOption
 import java.nio.file.StandardOpenOption
 
 buildscript {
@@ -38,6 +40,7 @@ sourceSets {
     main {
         resources {
             srcDir("src/main/python")
+            srcDir("src/main/python_api")
         }
     }
 }
@@ -80,9 +83,26 @@ dependencies {
     implementation("org.graalvm.polyglot:polyglot:23.1.2")
     implementation("org.graalvm.polyglot:python:23.1.2")
 
-    implementation("dev.ultreon.quantum-voxel:quantum-desktop:wip~more-entities-SNAPSHOT")
-    implementation("com.badlogicgames.gdx:gdx-platform:1.12.1:natives-desktop")
-    implementation("com.badlogicgames.gdx:gdx-freetype-platform:1.12.1:natives-desktop")
+    implementation("dev.ultreon.quantum-voxel:quantum-desktop:wip~more-entities-SNAPSHOT") {
+        exclude("org.lwjgl.lwjgl")
+    }
+    implementation("dev.ultreon.quantum-voxel:quantum-server:wip~more-entities-SNAPSHOT") {
+        exclude("org.lwjgl.lwjgl")
+    }
+    implementation("dev.ultreon.quantum-voxel:quantum-client:wip~more-entities-SNAPSHOT") {
+        exclude("org.lwjgl.lwjgl")
+    }
+    implementation("dev.ultreon.quantum-voxel:quantum-gameprovider:wip~more-entities-SNAPSHOT") {
+        exclude("org.lwjgl.lwjgl")
+    }
+    implementation("com.badlogicgames.gdx:gdx-platform:1.12.1:natives-desktop") {
+        exclude("org.lwjgl.lwjgl")
+    }
+    implementation("com.badlogicgames.gdx:gdx-freetype-platform:1.12.1:natives-desktop") {
+        exclude("org.lwjgl.lwjgl")
+    }
+
+    implementation("org.reflections:reflections:0.10.2")
 }
 
 val pyz = tasks.register<Zip>("pyz") {
@@ -244,4 +264,10 @@ this.setupIdea()
 
 tasks.test {
     useJUnitPlatform()
+}
+
+val files = configurations["runtimeClasspath"]!!
+mkdir("$projectDir/libs")
+for (file in files) {
+    Files.copy(file.toPath(), Paths.get("$projectDir/libs/" + file.name), StandardCopyOption.REPLACE_EXISTING)
 }
