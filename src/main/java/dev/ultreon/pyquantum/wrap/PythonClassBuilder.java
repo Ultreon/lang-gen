@@ -123,8 +123,6 @@ public class PythonClassBuilder {
                 %4$s
                 \s
                 class %1$s(%2$s):
-                    \"""%3$s\"""
-                \s
                     @staticmethod
                     def _wrap(java_value: _%1$s) -> '%1$s':
                         return %1$s(__dynamic__=java_value)
@@ -135,10 +133,7 @@ public class PythonClassBuilder {
                     @overload
                     def __init__(self, __dynamic__: _%1$s):
                         \"""
-                        Dynamic initializer for %1$s.
                         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
-                \s
-                        :param __dynamic__: The java object to wrap
                         \"""
                         self.__wrapper = __dynamic__
                 \s
@@ -192,7 +187,6 @@ public class PythonClassBuilder {
         this.members.add("""
                 @abstractmethod
                 def %1$s(self, %3$s):
-                    \"""%2$s\"""
                     pass
                 """.formatted(
                 toJavaMemberName(method),
@@ -248,11 +242,7 @@ public class PythonClassBuilder {
             this.members.add("""
                     @overload
                     def __init__(self):
-                        \"""%1$s\"""
-                        # import java class
                     %3$s
-                    \s
-                        # constructor wrapping
                         val = _%2$s()
                         self.__wrapper = val
                     """.formatted(
@@ -265,11 +255,7 @@ public class PythonClassBuilder {
         this.members.add("""
                 @overload
                 def __init__(self, %3$s):
-                    \"""%1$s\"""
-                    # import java class
                 %5$s
-                \s
-                    # constructor wrapping
                     val = _%2$s(%4$s)
                     self.__wrapper = val
                 """.formatted(
@@ -493,7 +479,6 @@ public class PythonClassBuilder {
                 this.members.add(override + """
                         @overload
                         def %1$s(self):
-                            \"""%2$s\"""
                             self.__wrapper.%3$s()
                         """.formatted(
                         name,
@@ -507,7 +492,6 @@ public class PythonClassBuilder {
             this.members.add(override + """
                     @overload
                     def %1$s(self, %4$s):
-                        \"""%2$s\"""
                         self.__wrapper.%3$s(%5$s)
                     """.formatted(
                     name,
@@ -526,7 +510,6 @@ public class PythonClassBuilder {
                 this.members.add(override + """
                         @overload
                         def %1$s(self) -> %2$s:
-                            \"""%3$s\"""
                             # method wrapping and transform number to primitive %2$s
                             return _transform(self.__wrapper.%4$s()).%2$sValue()
                         """.formatted(
@@ -545,7 +528,6 @@ public class PythonClassBuilder {
             this.members.add(override + """
                     @overload
                     def %1$s(self) -> %2$s:
-                        \"""%3$s\"""
                         # import %2$s for return value
                     %6$s
                         # method wrapping
@@ -569,7 +551,6 @@ public class PythonClassBuilder {
             this.members.add(override + """
                     @overload
                     def %1$s(self, %5$s) -> '%2$s':
-                        \"""%3$s\"""
                         return _transform(self.__wrapper.%4$s(%6$s)).%2$sValue()
                     """.formatted(
                     name,

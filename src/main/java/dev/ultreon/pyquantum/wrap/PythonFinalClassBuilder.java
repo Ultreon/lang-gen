@@ -111,8 +111,6 @@ public class PythonFinalClassBuilder extends PythonClassBuilder {
                 \s
                 @final
                 class %1$s(%2$s):
-                    \"""%3$s\"""
-                \s
                     @staticmethod
                     def _wrap(java_value: _%1$s) -> '%1$s':
                         return %1$s(__dynamic__=java_value)
@@ -123,10 +121,7 @@ public class PythonFinalClassBuilder extends PythonClassBuilder {
                     @overload
                     def __init__(self, __dynamic__: _%1$s):
                         \"""
-                        Dynamic initializer for %1$s.
                         WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
-                \s
-                        :param __dynamic__: The java object to wrap
                         \"""
                         self.__wrapper = __dynamic__
                 \s

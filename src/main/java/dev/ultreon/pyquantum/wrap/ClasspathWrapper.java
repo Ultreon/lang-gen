@@ -1,21 +1,14 @@
 package dev.ultreon.pyquantum.wrap;
 
-import com.google.common.collect.Sets;
-import dev.ultreon.quantum.world.BlockPos;
-import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.lang3.ArrayUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.reflections.Reflections;
 import org.reflections.scanners.Scanners;
-import org.reflections.util.ClasspathHelper;
 import org.reflections.util.ConfigurationBuilder;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.lang.reflect.AnnotatedElement;
-import java.lang.reflect.Array;
 import java.lang.reflect.Modifier;
 import java.net.URL;
 import java.nio.file.*;
@@ -207,12 +200,10 @@ public class ClasspathWrapper extends Wrapper {
                         s = replace;
                     }
                     s = s.substring(s.lastIndexOf(".") + 1);
-                    code = """
-                            try:
-                                %1$s
-                            except ImportError:
-                                %3$s = _import_once("%2$s")
-                            """.formatted(
+                    code = ("try:\n" +
+                            "    %1$s\n" +
+                            "except ImportError:\n" +
+                            "    %3$s = _import_once(\"%2$s\")\n").formatted(
                             substring.replace("\n", "").replace("\r", ""),
                             s1,
                             s.replace(".", "_")
@@ -225,16 +216,12 @@ public class ClasspathWrapper extends Wrapper {
             }).collect(Collectors.joining("\n"));
 
             if (importOnce.get()) {
-                imports = """
-                                  from pyquantum_helper import import_once as _import_once
-                                  """ + imports;
+                imports = "from pyquantum_helper import import_once as _import_once\n%s".formatted(imports.trim());
             }
 
             Files.createDirectories(path.getParent());
-            Files.writeString(path, """
-                                            from __future__ import annotations
-                                            from overload import overload
-                                            """ + imports + "\n" + value);
+            Files.writeString(path, "from __future__ import annotations\n" +
+                                    "from overload import overload\n" + imports + value);
         }
     }
 
@@ -255,21 +242,13 @@ public class ClasspathWrapper extends Wrapper {
     private String transformName(Class<?> entry) {
         String convert = Converters.convert(entry.getName());
         if (convert != null && !convert.equals(entry.getName())) {
-            String packageName = entry.getPackageName();
-            String name = convert.substring(0, convert.lastIndexOf("."));
-
-            if (packageNames.stream().filter(p -> {
-                if (p.equals(packageName) || p.startsWith(packageName + ".")) return true;
-                int endIndex = p.lastIndexOf(".");
-                return p.substring(0, endIndex == -1 ? p.length() : endIndex).equals(packageName);
-            }).count() > 1) {
-                return name + ".__init__";
-            }
+            String packageName = entry.getName();
+            String name = convert;
 
             return name;
         }
 
-        String packageName = entry.getPackageName();
+        String packageName = entry.getName();
         String name = packageName;
         if (name.startsWith("dev.ultreon.quantum."))
             name = "pyquantum." + name.substring("dev.ultreon.quantum.".length());
