@@ -1,17 +1,18 @@
-package dev.ultreon.pyquantum.wrap;
+package dev.ultreon.langgen.python;
 
 import java.lang.reflect.*;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
 
-public class PythonFinalClassBuilder extends PythonClassBuilder {
-    public PythonFinalClassBuilder(Class<?> clazz) {
+public class PyFinalClassBuilder extends PyClassBuilder {
+    public PyFinalClassBuilder(Class<?> clazz) {
         super(clazz);
 
         addImport(toJavaImport(clazz));
     }
 
+    @Override
     public List<String> build(StringBuilder sw) {
         for (Field field : clazz.getFields()) {
             if (field.isSynthetic()) {

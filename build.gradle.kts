@@ -12,7 +12,7 @@ buildscript {
         mavenCentral()
         gradlePluginPortal()
     }
-
+""
     dependencies {
         classpath("com.linkedin.pygradle:pygradle-plugin:+")
     }
@@ -83,16 +83,16 @@ dependencies {
     implementation("org.graalvm.polyglot:polyglot:23.1.2")
     implementation("org.graalvm.polyglot:python:23.1.2")
 
-    implementation("dev.ultreon.quantum-voxel:quantum-desktop:wip~more-entities-SNAPSHOT") {
+    implementation("dev.ultreon.quantum-voxel:quantum-desktop:ed398498ec") {
         exclude("org.lwjgl.lwjgl")
     }
-    implementation("dev.ultreon.quantum-voxel:quantum-server:wip~more-entities-SNAPSHOT") {
+    implementation("dev.ultreon.quantum-voxel:quantum-server:ed398498ec") {
         exclude("org.lwjgl.lwjgl")
     }
-    implementation("dev.ultreon.quantum-voxel:quantum-client:wip~more-entities-SNAPSHOT") {
+    implementation("dev.ultreon.quantum-voxel:quantum-client:ed398498ec") {
         exclude("org.lwjgl.lwjgl")
     }
-    implementation("dev.ultreon.quantum-voxel:quantum-gameprovider:wip~more-entities-SNAPSHOT") {
+    implementation("dev.ultreon.quantum-voxel:quantum-gameprovider:ed398498ec") {
         exclude("org.lwjgl.lwjgl")
     }
     implementation("com.badlogicgames.gdx:gdx-platform:1.12.1:natives-desktop") {
@@ -120,6 +120,16 @@ val pyz = tasks.register<Zip>("pyz") {
     }
 
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+val jsNpmPack = tasks.register<Exec>("jsNpmPack") {
+    workingDir = file("${projectDir}/src/main/javascript/js")
+    commandLine = listOf("npm", "pack")
+}
+
+val tsNpmPack = tasks.register<Exec>("tsNpmPack") {
+    workingDir = file("${projectDir}/src/main/javascript/ts")
+    commandLine = listOf("npm", "pack")
 }
 
 tasks.build.configure {

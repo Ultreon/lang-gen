@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Create Python" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="dev.ultreon.langgen.Main" />
+    <module name="pyquantum-api.main" />
+    <option name="PROGRAM_PARAMETERS" value="--py -o src/main/python" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="dev.ultreon.langgen.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

@@ -1,17 +1,16 @@
-package dev.ultreon.pyquantum.wrap;
+package dev.ultreon.langgen.python;
 
+import dev.ultreon.langgen.api.ClassBuilder;
 import org.apache.commons.lang3.ArrayUtils;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.BufferedWriter;
-import java.io.IOException;
 import java.lang.reflect.*;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-public class PythonClassBuilder {
+public class PyClassBuilder implements ClassBuilder {
     protected final Class<?> clazz;
     protected final Set<String> imports = new HashSet<>();
     protected final Set<String> staticMembers = new HashSet<>();
@@ -19,12 +18,13 @@ public class PythonClassBuilder {
     protected final Set<String> postinit = new HashSet<>();
     private final Logger logger = Logger.getLogger("PythonClassBuilder");
 
-    public PythonClassBuilder(Class<?> clazz) {
+    public PyClassBuilder(Class<?> clazz) {
         this.clazz = clazz;
 
         addImport(toJavaImport(clazz));
     }
 
+    @Override
     public List<String> build(StringBuilder sw) {
         for (Field field : clazz.getFields()) {
             if (field.isSynthetic()) {
@@ -1125,7 +1125,7 @@ public class PythonClassBuilder {
             } else {
                 String convert = Converters.convert(type.getName());
                 if (convert != null) {
-                    return convert(clazz, type, type.getPackageName(), convert.substring(0, convert.lastIndexOf(".")));
+                    return convertImport(clazz, type, type.getPackageName(), convert.substring(0, convert.lastIndexOf(".")));
                 }
                 return toJavaImport0(type);
             }
@@ -1167,7 +1167,7 @@ public class PythonClassBuilder {
             } else {
                 String convert = Converters.convert(type.getName());
                 if (convert != null) {
-                    return convert(clazz, type, type.getPackageName(), convert.substring(0, convert.lastIndexOf(".")));
+                    return convertImport(clazz, type, type.getPackageName(), convert.substring(0, convert.lastIndexOf(".")));
                 }
                 return "import " + type.getName().replace("$", "_") + " as " + type.getSimpleName();
             }
@@ -1176,7 +1176,8 @@ public class PythonClassBuilder {
         }
     }
 
-    public String convert(Class<?> clazz, Class<?> type, String java, String python) {
+    @Override
+    public String convertImport(Class<?> clazz, Class<?> type, String java, String python) {
         String simpleName = type.getName();
         simpleName = simpleName.substring(simpleName.lastIndexOf(".") + 1);
         simpleName = simpleName.replace("$", "_");
