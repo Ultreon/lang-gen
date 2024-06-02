@@ -56,3 +56,5 @@ src/main/javascript-stub/*
 *.gz
 *.jar
 *.zip
+
+.idea/
