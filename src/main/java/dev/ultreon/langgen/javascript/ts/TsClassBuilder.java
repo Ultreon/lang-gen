@@ -8,6 +8,9 @@ import org.jetbrains.annotations.Nullable;
 import java.lang.reflect.*;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Logger;
@@ -20,9 +23,11 @@ public class TsClassBuilder implements AnyJsClassBuilder {
             /**
              * This is a wrapper for the {_%1$s} class.
              */
-            export %5$sclass %1$s%2$s {
+            export default %5$sclass %2$s {
             """;
     public static final String STUB_CONSTRUCTOR_ARGS = """
+            type CONSTR_ARGS_%7$s = %8$s;
+            
             /**
              * %1$s
             %5$s
@@ -32,11 +37,13 @@ public class TsClassBuilder implements AnyJsClassBuilder {
             }
             """;
     public static final String STUB_CONSTRUCTOR = """
+            type CONSTR_ARGS_%5$s = %6$s;
+            
             /**
              * %1$s
             %3$s
              */
-            %4$sconstructor() {
+            %4$scontructor() {
                 // Stub
             }
             """;
@@ -67,8 +74,6 @@ public class TsClassBuilder implements AnyJsClassBuilder {
                 this.addAbstractMethod(method);
                 continue;
             }
-
-            this.addMethod(method);
         }
         
         for (MethodInfo methodInfo : methodInfos.values()) {
@@ -417,7 +422,9 @@ public class TsClassBuilder implements AnyJsClassBuilder {
                 constructor.toGenericString(),
                 name,
                 toTsDocSignature(constructor),
-                toModifiers(constructor)
+                toModifiers(constructor),
+                name + hashMD5(constructor.toString()),
+                toTypeData(constructor.getParameters())
         ));
 
         this.members.add(STUB_CONSTRUCTOR_ARGS.formatted(
@@ -426,8 +433,31 @@ public class TsClassBuilder implements AnyJsClassBuilder {
                 toTsSignature(constructor.getParameters()),
                 toTsArgumentList(parameters),
                 toTsDocSignature(constructor),
-                toModifiers(constructor)
+                toModifiers(constructor),
+                name + hashMD5(constructor.toString()),
+                toTypeData(constructor.getParameters())
         ));
+    }
+
+    private String toTypeData(Parameter[] parameters) {
+        StringBuilder builder = new StringBuilder();
+        builder.append("{");
+
+        for (int i = 0; i < parameters.length; i++) {
+            if (i != 0) builder.append(", ");
+            builder.append(parameters[i].getName()).append(": ").append(toTsType(parameters[i].getType()));
+        }
+
+        builder.append("}");
+        return builder.toString();
+    }
+
+    private String hashMD5(String string) {
+        try {
+            return String.format("%032x", new BigInteger(1, MessageDigest.getInstance("MD5").digest(string.getBytes(StandardCharsets.UTF_8))));
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public String toTsArgumentList(Parameter[] parameters) {
@@ -502,6 +532,20 @@ public class TsClassBuilder implements AnyJsClassBuilder {
                 }
 
                 builder.append("...").append(value.getName()).append(": ").append(toTsType(componentType));
+                this.addImport(toTsImport(componentType));
+                if (i != parametersLength - 1) logger.warning("VarArgs not last parameter: " + value.getName());
+
+                continue;
+            }
+
+            if (value.getType().isArray()) {
+                Class<?> componentType = value.getType().getComponentType();
+                if (!Modifier.isPublic(componentType.getModifiers()) && !Modifier.isProtected(componentType.getModifiers())) {
+                    builder.append(value.getName()).append(": Object[]");
+                    continue;
+                }
+
+                builder.append(value.getName()).append(": ").append(toTsType(componentType)).append("[]");
                 this.addImport(toTsImport(componentType));
                 if (i != parametersLength - 1) logger.warning("VarArgs not last parameter: " + value.getName());
 

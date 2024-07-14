@@ -41,7 +41,7 @@ public class JsClassBuilder implements AnyJsClassBuilder {
             /**
              * This is a wrapper for the {_%1$s} class.
              */
-            export class %1$s {
+            export default class {
                 /**
                  * WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
                  * This is a wrapper for the {_%1$s} class.

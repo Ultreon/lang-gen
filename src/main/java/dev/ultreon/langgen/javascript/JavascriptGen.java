@@ -53,7 +53,7 @@ public class JavascriptGen implements LangGenerator {
 
         Converters.register("space.earlygrey.shapedrawer", "gdx_shapedrawer");
 
-        Converters.register("org.slf4j", "slf4py");
+        Converters.register("org.slf4j", "slf4js");
 
         Converters.register("com.badlogic.gdx", "libgdx");
         Converters.register("com.badlogic.ashley", "libgdx.ashley");
@@ -74,8 +74,8 @@ public class JavascriptGen implements LangGenerator {
         Converters.register("net.java.jogl", "jogl");
         Converters.register("net.java.jinput", "jinput");
         Converters.register("org.apache.groovy", "groovy._impl");
-        Converters.register("org.apache.logging.slf4j", "log4py.compat.slf4py");
-        Converters.register("org.apache.logging.log4j", "log4py");
+        Converters.register("org.apache.logging.slf4j", "log4js.compat.slf4js");
+        Converters.register("org.apache.logging.log4j", "log4js");
         Converters.register("org.bouncycastle", "bouncy");
 
         Converters.register("org.checkerframework", "checkerjs");
@@ -98,7 +98,7 @@ public class JavascriptGen implements LangGenerator {
         Converters.register("org.w3c", "w3c");
         Converters.register("org.xml", "xmljs");
 
-        Converters.register("org.slf4j", "slf4py");
+        Converters.register("org.slf4j", "slf4js");
 
         Converters.register("jna", "jna");
 
@@ -128,7 +128,7 @@ public class JavascriptGen implements LangGenerator {
         Converters.register("org.joml", "joml");
 
         Converters.register("org.apache.commons", "commonsjs");
-        Converters.register("org.apache.logging.log4j", "log4py");
+        Converters.register("org.apache.logging.log4j", "log4js");
 
         Converters.register("dev.ultreon.libs", "corelibs");
         Converters.register("dev.ultreon.data", "ultreon_data");

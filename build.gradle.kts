@@ -54,10 +54,13 @@ sourceSets {
 repositories {
     mavenCentral()
 
-    maven {
-        name = "QuantumGitHub"
-        url = uri("https://jitpack.io")
-    }
+    maven("https://gitlab.com/api/v4/projects/59634919/packages/maven")
+    maven("https://jitpack.io")
+    maven("https://maven.fabricmc.net")
+    maven("https://oss.sonatype.org/content/repositories/releases")
+    maven("https://oss.sonatype.org/content/repositories/snapshots")
+    maven("https://github.com/Ultreon/ultreon-data/raw/main/.mvnrepo/")
+    maven("https://github.com/Ultreon/corelibs/raw/main/.mvnrepo/")
 
     maven {
         name = "Jitpack"
@@ -83,16 +86,16 @@ dependencies {
     implementation("org.graalvm.polyglot:polyglot:23.1.2")
     implementation("org.graalvm.polyglot:python:23.1.2")
 
-    implementation("dev.ultreon.quantum-voxel:quantum-desktop:ed398498ec") {
+    implementation("dev.ultreon.quantum:quantum-desktop:0.1.0-edge.2024.28.7") {
         exclude("org.lwjgl.lwjgl")
     }
-    implementation("dev.ultreon.quantum-voxel:quantum-server:ed398498ec") {
+    implementation("dev.ultreon.quantum:quantum-server:0.1.0-edge.2024.28.7") {
         exclude("org.lwjgl.lwjgl")
     }
-    implementation("dev.ultreon.quantum-voxel:quantum-client:ed398498ec") {
+    implementation("dev.ultreon.quantum:quantum-client:0.1.0-edge.2024.28.7") {
         exclude("org.lwjgl.lwjgl")
     }
-    implementation("dev.ultreon.quantum-voxel:quantum-gameprovider:ed398498ec") {
+    implementation("dev.ultreon.quantum:quantum-gameprovider:0.1.0-edge.2024.28.7") {
         exclude("org.lwjgl.lwjgl")
     }
     implementation("com.badlogicgames.gdx:gdx-platform:1.12.1:natives-desktop") {
@@ -277,6 +280,7 @@ tasks.test {
 }
 
 val files = configurations["runtimeClasspath"]!!
+delete("$projectDir/libs")
 mkdir("$projectDir/libs")
 for (file in files) {
     Files.copy(file.toPath(), Paths.get("$projectDir/libs/" + file.name), StandardCopyOption.REPLACE_EXISTING)
