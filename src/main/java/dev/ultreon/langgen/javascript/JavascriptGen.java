@@ -7,11 +7,17 @@ import dev.ultreon.langgen.javascript.js.JsClassBuilder;
 import dev.ultreon.langgen.javascript.ts.TsClassBuilder;
 import dev.ultreon.langgen.javascript.ts.TsFinalClassBuilder;
 import joptsimple.OptionSet;
+import org.intellij.lang.annotations.Language;
 
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 public class JavascriptGen implements LangGenerator {
     private static boolean stub;
@@ -236,7 +242,70 @@ public class JavascriptGen implements LangGenerator {
         try {
             new SimpleClasspathBuilder(".mjs", JsClassBuilder::new, JsClassBuilder::new).build(output.resolve("js/"));
             new SimpleClasspathBuilder(".mts", TsFinalClassBuilder::new, TsClassBuilder::new).build(output.resolve("ts/"));
+
+            List<String> workspaces = new ArrayList<>();
+            for (Path file : Files.list(output.resolve("ts/")).toList()) {
+                if (!Files.isDirectory(file)) continue;
+                if (file.getFileName().toString().equals("node_modules")) continue;
+                if (file.getFileName().toString().startsWith(".")) continue;
+                if (file.getFileName().toString().endsWith("System Volume Information")) continue;
+
+                workspaces.add(file.getFileName().toString());
+            }
+
+            @Language("json")
+            String rootPackageJson = """
+                    {
+                        "type": "module",
+                        "name": "quantumjs",
+                        "version": "0.1.0",
+                        "authors": [
+                            {
+                                "name": "XyperCode"
+                            }
+                        ],
+                        "scripts": {
+                            "build": "tsc --build --verbose",
+                            "pack": "npm pack"
+                        },
+                        "private": false,
+                        "devDependencies": {
+                            "typescript": "^5.5.3"
+                        },
+                        "workspaces": []
+                    }
+                    """;
+
+            writeJson(output.resolve("ts/package.json"), rootPackageJson);
+
+            @Language("json")
+            String tsConfigJson = """
+                    {
+                       "include": [
+                          "**/*.mts"
+                       ],
+                       "compilerOptions": {
+                         "module": "ES2022",
+                         "moduleResolution": "Bundler",
+                         "noEmit": true,
+                         "allowJs": true,
+                         "allowImportingTsExtensions": true,
+                         "skipLibCheck": true
+                       }
+                    }
+                    """;
+
+            writeJson(output.resolve("ts/tsconfig.json"), tsConfigJson);
         } catch (Exception e) {
+            logger.log(Level.SEVERE, e.getMessage(), e);
+            System.exit(1);
+        }
+    }
+
+    private void writeJson(Path resolve, @Language("json") String formatted) {
+        try {
+            Files.writeString(resolve, formatted, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+        } catch (IOException e) {
             logger.log(Level.SEVERE, e.getMessage(), e);
             System.exit(1);
         }

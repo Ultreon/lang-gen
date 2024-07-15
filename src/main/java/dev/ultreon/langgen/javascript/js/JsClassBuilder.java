@@ -17,8 +17,14 @@ public class JsClassBuilder implements AnyJsClassBuilder {
             
             %4$s
             
+            class Wrapper {
+                constructor(java_value) {
+                    this._wrapper = java_value
+                }
+            }
+            
             function _wrap(java_value) {
-                return %1$s(_dynamic=java_value)
+                return %1$s(_dynamic=new Wrapper(java_value))
             }
             
             function doesExtend(ChildClass, ParentClass) {
@@ -42,18 +48,60 @@ public class JsClassBuilder implements AnyJsClassBuilder {
              * This is a wrapper for the {_%1$s} class.
              */
             export default class {
-                /**
-                 * WARNING: DO NOT USE THIS. THIS IS FOR THE JAVA WRAPPER ONLY!
-                 * This is a wrapper for the {_%1$s} class.
-                %5$s
-                 */
-                constructor(_dynamic) {
-                    this._wrapper = _dynamic
+                constructor() {
+                    var args = [];
+                    for (var _i = 0; _i < arguments.length; _i++) {
+                        args[_i] = arguments[_i];
+                    }
             
-                    // Replace this class with the actual class
-                    let customInstance = new _%1$s();
-                    Object.keys(customInstance).forEach((key) => {
-                      this[key] = customInstance[key];
+                    // Check for argument 0 being Wrapper (in this .mjs file)
+                    if (args[0] instanceof Wrapper) {
+                        return args[0]._wrapper;
+                    }
+            
+                    if (Object.getPrototypeOf(this) !== %2$s.prototype) {
+                        this["< dynamic >"] = new (Java.extend(Java.type("%1$s")))(this);
+            
+                        Object.keys(this._dynamic).forEach(key => {
+                            if (this[key] !== undefined) {
+                                return;
+                            }
+                            if (key == "< dynamic >") {
+                                throw new Error("Cannot overwrite the dynamic object");
+                            }
+                            if (key.startsWith("_")) {
+                                return;
+                            }
+                            Object.defineProperty(this, key, {
+                                get: function() {
+                                    return this._dynamic[key];
+                                },
+                                set: function(v) {
+                                    this._dynamic[key] = v;
+                                }
+                            });
+                        });
+                    }
+            
+                    this._dynamic = new (Java.type("%1$s"))(...args);
+                    Object.keys(this._dynamic).forEach(key => {
+                        if (this[key] !== undefined) {
+                            return;
+                        }
+                        if (key == "< dynamic >") {
+                            throw new Error("Cannot overwrite the dynamic object");
+                        }
+                        if (key.startsWith("_")) {
+                            return;
+                        }
+                        Object.defineProperty(this, key, {
+                            get: function() {
+                                return this._dynamic[key];
+                            },
+                            set: function(v) {
+                                this._dynamic[key] = v;
+                            }
+                        });
                     });
                 }
             """;
@@ -64,86 +112,6 @@ public class JsClassBuilder implements AnyJsClassBuilder {
              * This is a wrapper for the {_%1$s} class.
              */
             export class %1$s {
-            """;
-    public static final String CONSTRUCTOR_ARGS = """
-            /**
-             * %1$s
-            %5$s
-             */
-            constructor(%3$s) {
-                if (doesExtend(this, %2$s)) {
-                    let Ext = Java.extend(
-                        _%2$s
-                    );
-            
-                    // TODO: do something with this
-                    /*
-                    let backup = new Object();
-                    Object.keys(this).forEach((key) => {
-                        backup[key] = this[key];
-                    });
-                    */
-            
-                    let customInstance = new Ext(this);
-                    Object.keys(customInstance).forEach((key) => {
-                        this[key] = customInstance[key];
-                    });
-                } else {
-                    let customInstance = new _%2$s(this);
-                    Object.keys(customInstance).forEach((key) => {
-                        this[key] = customInstance[key];
-                    });
-                }
-            }
-            """;
-    public static final String STUB_CONSTRUCTOR_ARGS = """
-            /**
-             * %1$s
-            %5$s
-             */
-            constructor(%3$s) {
-                // Stub
-            }
-            """;
-    public static final String CONSTRUCTOR = """
-            /**
-             * %1$s
-            %3$s
-             */
-            constructor() {
-                if (doesExtend(this, %2$s)) {
-                    let Ext = Java.extend(
-                        _%2$s
-                    );
-            
-                    // TODO: do something with this
-                    /*
-                    let backup = new Object();
-                    Object.keys(this).forEach((key) => {
-                        backup[key] = this[key];
-                    });
-                    */
-            
-                    let customInstance = new Ext(this);
-                    Object.keys(customInstance).forEach((key) => {
-                        this[key] = customInstance[key];
-                    });
-                } else {
-                    let customInstance = new _%2$s(this);
-                    Object.keys(customInstance).forEach((key) => {
-                        this[key] = customInstance[key];
-                    });
-                }
-            }
-            """;
-    public static final String STUB_CONSTRUCTOR = """
-            /**
-             * %1$s
-            %3$s
-             */
-            constructor() {
-                // Stub
-            }
             """;
     protected final Class<?> clazz;
     protected final Set<String> imports = new HashSet<>();
@@ -165,26 +133,7 @@ public class JsClassBuilder implements AnyJsClassBuilder {
                 addConstField(field);
             } else if (Modifier.isStatic(field.getModifiers())) {
                 addStaticField(field);
-            } else {
-                addField(field);
             }
-        }
-
-        for (Method method : clazz.getMethods()) {
-            if (Modifier.isAbstract(method.getModifiers())) {
-                this.addAbstractMethod(method);
-                continue;
-            }
-
-            if (Modifier.isStatic(method.getModifiers())) {
-                this.addStaticMethod(method);
-            } else {
-                this.addMethod(method);
-            }
-        }
-
-        for (Constructor<?> constructor : clazz.getConstructors()) {
-            this.addConstructor(constructor);
         }
 
         List<String> imports = new ArrayList<>(this.imports);
@@ -194,9 +143,9 @@ public class JsClassBuilder implements AnyJsClassBuilder {
         AtomicBoolean importOnce = new AtomicBoolean(false);
         String collect = imports.stream().sorted(Comparator.reverseOrder()).collect(Collectors.joining("\n"));
         sw.append((JavascriptGen.isStub() ? STUB_FORMAT : CLASS_FORMAT).formatted(
-                toJsType(clazz).replace("$", "_").replace(".", "_"),
+                toJsType(clazz),
                 toJsClassSignature(clazz, clazz.getSuperclass(), clazz.getInterfaces()),
-                clazz.getName().replace("$", "_"),
+                clazz.getName(),
                 (importOnce.get() ? "import {import_once} from 'quantum-js/quantum-js/core';\n" : "") + collect,
                 JavascriptGen.isStub() ? " * @hideconstructor" : " * "));
 
@@ -432,8 +381,8 @@ public class JsClassBuilder implements AnyJsClassBuilder {
                  *
                 %4$s
                  */
-                %1$s(%3$s) {
-                    throw new Error("Not implemented");
+                %1$s() {
+                
                 }
                 """.formatted(
                 toJavaMemberName(method),
@@ -492,7 +441,7 @@ public class JsClassBuilder implements AnyJsClassBuilder {
             Class<?> type = p.getType();
             String name = type.getName();
             String[] split = name.split("\\.");
-            name = split[split.length - 1].replace("$", "_");
+            name = split[split.length - 1];
 
             String primitiveType = toJsPrimitiveType(type);
             return primitiveType != null
@@ -505,7 +454,7 @@ public class JsClassBuilder implements AnyJsClassBuilder {
         if (returnType != void.class) {
             String name = returnType.getName();
             String[] split = name.split("\\.");
-            name = split[split.length - 1].replace("$", "_");
+            name = split[split.length - 1];
 
             String primitiveType = toJsPrimitiveType(returnType);
             builder.append(primitiveType != null
@@ -563,7 +512,7 @@ public class JsClassBuilder implements AnyJsClassBuilder {
             Class<?> type = p.getType();
             String name = type.getName();
             String[] split = name.split("\\.");
-            name = split[split.length - 1].replace("$", "_");
+            name = split[split.length - 1];
 
             String primitiveType = toJsPrimitiveType(type);
             return primitiveType != null
@@ -620,7 +569,7 @@ public class JsClassBuilder implements AnyJsClassBuilder {
 
         String name = field.getType().getName();
         String[] split = name.split("\\.");
-        name = split[split.length - 1].replace("$", "_");
+        name = split[split.length - 1];
 
         String primitiveType = toJsPrimitiveType(field.getType());
         builder.append(primitiveType != null
@@ -667,30 +616,6 @@ public class JsClassBuilder implements AnyJsClassBuilder {
         if (code == null) return;
 
         this.imports.add(code);
-    }
-
-    public void addConstructor(Constructor<?> constructor) {
-        Parameter[] parameters = constructor.getParameters();
-        String name = constructor.getDeclaringClass().getName();
-        String[] split = name.split("\\.");
-        name = split[split.length - 1].replace('$', '_');
-        if (parameters.length == 0) {
-            this.members.add((JavascriptGen.isStub() ? STUB_CONSTRUCTOR : CONSTRUCTOR).formatted(
-                    constructor.toGenericString(),
-                    name,
-                    toJsDocSignature(constructor)
-            ));
-        }
-
-        this.members.add((JavascriptGen.isStub() ? STUB_CONSTRUCTOR_ARGS : CONSTRUCTOR_ARGS).formatted(
-                constructor.toGenericString(),
-                name,
-                toJsSignature(parameters),
-                toJsArgumentList(parameters),
-                toJsDocSignature(constructor)
-        ));
-
-        this.addImport(toJavaImport(constructor.getDeclaringClass()));
     }
 
     public String toJsArgumentList(Parameter[] parameters) {
@@ -800,7 +725,7 @@ public class JsClassBuilder implements AnyJsClassBuilder {
         } else {
             String name1 = type.getName();
             String[] split = name1.split("\\.");
-            return "new " + split[split.length - 1].replace("$", "_") + "(_dynamic=" + expr + ")";
+            return "new " + split[split.length - 1] + "(_dynamic=" + expr + ")";
         }
     }
 
@@ -1188,13 +1113,13 @@ public class JsClassBuilder implements AnyJsClassBuilder {
         if (returnType.getPackageName().equals(clazz.getPackageName())) {
             String name = returnType.getName();
             name = name.substring(name.lastIndexOf(".") + 1);
-            return name.replace("$", ".");
+            return name;
         }
 
         String name = returnType.getName();
         String[] split = name.split("\\.");
         
-        return split[split.length - 1].replace("$", "_");
+        return split[split.length - 1];
     }
 
     public @Nullable String toJavaType(Class<?> returnType, String prefix) {
@@ -1213,7 +1138,7 @@ public class JsClassBuilder implements AnyJsClassBuilder {
 
         String name = returnType.getName();
         String[] split = name.split("\\.");
-        String simpleName = split[split.length - 1].replace("$", "_");
+        String simpleName = split[split.length - 1];
         return prefix + simpleName;
     }
     
@@ -1518,7 +1443,7 @@ public class JsClassBuilder implements AnyJsClassBuilder {
         module = module.substring(0, endIndex == -1 ? module.length() : endIndex);
         int i = module.lastIndexOf('.');
         String[] split = type.getName().split("\\.");
-        String importName = split[split.length - 1].replace("$", "_");
+        String importName = split[split.length - 1];
         return "const _" + importName + " = Java.type('" + type.getName() + "');" + extra;
     }
 
@@ -1540,7 +1465,7 @@ public class JsClassBuilder implements AnyJsClassBuilder {
             if (type == String.class || type == void.class || type == Object.class)
                 return null;
             else {
-                String name = type.getName().replace("$", "_");
+                String name = type.getName();
                 String convert = Converters.convert(name);
                 if (convert == null) convert = name;
                 return convertImport(clazz, type, type.getPackageName(), convert);

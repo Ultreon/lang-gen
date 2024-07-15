@@ -1,5 +1,7 @@
 package dev.ultreon.langgen.api;
 
+import dev.ultreon.libs.commons.v0.util.ExceptionUtils;
+import dev.ultreon.quantum.util.ValidationError;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
@@ -61,8 +63,7 @@ public final class SimpleClasspathBuilder extends ClasspathBuilder {
             }
         } catch (GeneratorException e) {
             throw e;
-        } catch (Throwable e) {
-            logger.warn(e.getMessage(), e);
+        } catch (NoClassDefFoundError e) {
             return null;
         }
 

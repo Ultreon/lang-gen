@@ -53,18 +53,6 @@ public class JsFinalClassBuilder extends JsClassBuilder {
             }
         }
 
-        for (Constructor<?> constructor : clazz.getConstructors()) {
-            if (constructor.isSynthetic()) {
-                continue;
-            }
-
-            if (Modifier.isPrivate(constructor.getModifiers())) {
-                continue;
-            }
-
-            this.addConstructor(constructor);
-        }
-
         List<String> imports = new ArrayList<>(this.imports);
 
         sw.append("\n");
@@ -93,18 +81,46 @@ public class JsFinalClassBuilder extends JsClassBuilder {
                      * @constructor
                      */
                     constructor(_dynamic) {
-                        this._wrapper = _dynamic
+                        var args = [];
+                        for (var _i = 0; _i < arguments.length; _i++) {
+                            args[_i] = arguments[_i]._dynamic;
+                        }
                 
-                        // Replace this class with the actual class
-                        let customInstance = new _%1$s();
-                        Object.keys(customInstance).forEach((key) => {
-                          this[key] = customInstance[key];
+                        // Check for argument 0 being Wrapper (in this .mjs file)
+                        if (args[0] instanceof Wrapper) {
+                            this._dynamic = args.slice(1);
+                        }
+                
+                        if (Object.getPrototypeOf(this) !== %2$s.prototype) {
+                            throw new Error("Cannot call constructor on final class!");
+                        }
+                
+                        this["< dynamic >"] = new (Java.type("%1$s"))(...args);
+                
+                        Object.keys(this._dynamic).forEach(key => {
+                            if (this[key] !== undefined) {
+                                return;
+                            }
+                            if (key == "< dynamic >") {
+                                throw new Error("Cannot overwrite dynamic value!");
+                            }
+                            if (key.startsWith("_")) {
+                                return;
+                            }
+                            Object.defineProperty(this, key, {
+                                get: function() {
+                                    return this["< dynamic >"][key];
+                                },
+                                set: function(v) {
+                                    (this["< dynamic >"])[key] = v;
+                                }
+                            });
                         });
                     }
                 \s""".formatted(
-                toJsType(clazz).replace("'", "").replace("$", "_").replace(".", "_"),
+                toJsType(clazz).replace("'", ""),
                 toJsClassSignature(clazz, clazz.getSuperclass(), clazz.getInterfaces()),
-                clazz.getName().replace("$", "_"),
+                clazz.getName(),
                 collect));
 
         Set<String> staticMembers1 = staticMembers;

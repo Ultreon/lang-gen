@@ -3,6 +3,7 @@
     <option name="MAIN_CLASS_NAME" value="dev.ultreon.langgen.Main" />
     <module name="pyquantum-api.main" />
     <option name="PROGRAM_PARAMETERS" value="--js -o src/main/javascript" />
+    <option name="VM_PARAMETERS" value="-Xmx12G -Xms12G" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="dev.ultreon.langgen.*" />

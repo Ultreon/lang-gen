@@ -81,8 +81,8 @@ public abstract class ClasspathBuilder extends ClasspathWrapper implements NameT
                 this.writeFile(output, clazz.getName(), result);
             } catch (GeneratorException e) {
                 throw e;
-            } catch (Throwable e) {
-                getLogger().error("Failed to process class: {}", clazz, e);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
         }
     }
@@ -93,7 +93,7 @@ public abstract class ClasspathBuilder extends ClasspathWrapper implements NameT
                 processEntry(className);
             } catch (ClassNotFoundException | NoClassDefFoundError e) {
                 getLogger().warn("Class not found: {}", className);
-            } catch (Throwable e) {
+            } catch (Exception e) {
                 getLogger().error("Failed to process class: {}", className, e);
             }
         }
