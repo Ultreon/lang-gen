@@ -11,7 +11,6 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.function.Predicate;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
@@ -214,37 +213,6 @@ public class TsClassBuilder implements AnyJsClassBuilder {
         return sb.toString();
     }
 
-    public void addAbstractMethod(Method method) {
-        if (method.getParameters().length == 0) this.members.add("""
-                /**
-                 * WARNING: NOT IMPLEMENTED. DO NOT CALL UNLESS ON OVERRIDDEN FUNCTION
-                 * %2$s
-                 */
-                %4$s %1$s(): %5$s;
-                """.formatted(
-                toJavaMemberName(method.getName()),
-                method.toGenericString(),
-                toTsDocSignatureM(method),
-                toModifiers(method),
-                toTsType(method.getReturnType())
-        ));
-
-        this.members.add("""
-                /**
-                 * WARNING: NOT IMPLEMENTED. DO NOT CALL UNLESS ON OVERRIDDEN FUNCTION
-                 * %2$s
-                 */
-                %5$s %1$s(%3$s): %6$s;
-                """.formatted(
-                toJavaMemberName(method.getName()),
-                method.toGenericString(),
-                toTsSignature(method.getParameters()),
-                toTsDocSignatureM(method),
-                toModifiers(method),
-                toTsType(method.getReturnType())
-        ));
-    }
-
     public String toModifiers(Member member) {
         StringBuilder builder = new StringBuilder();
 
@@ -270,17 +238,6 @@ public class TsClassBuilder implements AnyJsClassBuilder {
         if ((member.getModifiers() & 0x00001000) != 0) builder.append("/*synthetic*/ ");
 
         return builder.toString();
-    }
-
-    private String toTsDocSignatureM(Method method) {
-        String formatted = """
-                 * AUTOMATICALLY GENERATED. DO NOT EDIT.
-                 * A wrapped Java method of %s
-                """.formatted(method.getDeclaringClass().getName());
-
-        if (Modifier.isFinal(method.getModifiers())) formatted += " * @final";
-
-        return " " + formatted.trim();
     }
 
     private String toTsDocSignature(Field field) {
@@ -319,11 +276,11 @@ public class TsClassBuilder implements AnyJsClassBuilder {
         String string = builder.toString();
         String s = " extends " + String.join(", ", superclasses);
         if (superclasses.isEmpty()) {
-            String tsImport = toTsImport(Object.class, true);
+            String tsImpor = toTsImport(Object.class, true);
             if (tsImport != null) {
-                addImport(tsImport.replace("import Object ", "import java$lang$Object "));
+                addImport(tsImport);
             }
-            return s + "java$lang$Object";
+            return s + "jlang$Object";
         }
         return s + string;
     }
@@ -366,67 +323,6 @@ public class TsClassBuilder implements AnyJsClassBuilder {
         else return null;
     }
 
-    public Object toTsSignature(Parameter[] parameters) {
-        StringBuilder builder = new StringBuilder();
-        for (int i = 0, parametersLength = parameters.length; i < parametersLength; i++) {
-            Parameter value = parameters[i];
-            if (i != 0) builder.append(", ");
-
-            Class<?> type = value.getType();
-            if (!Modifier.isPublic(type.getModifiers()) && !Modifier.isProtected(type.getModifiers())) {
-                builder.append(value.getName());
-                continue;
-            }
-
-            if (value.isVarArgs()) {
-                Class<?> componentType = value.getType().getComponentType();
-                if (!Modifier.isPublic(componentType.getModifiers()) && !Modifier.isProtected(componentType.getModifiers())) {
-                    builder.append("...").append(value.getName()).append(": Object");
-                    continue;
-                }
-
-                builder.append("...").append(value.getName()).append(": ").append(toTsType(componentType));
-                this.addImport(toTsImport(componentType));
-                if (i != parametersLength - 1) logger.warning("VarArgs not last parameter: " + value.getName());
-
-                continue;
-            }
-
-            if (value.getType().isArray()) {
-                Class<?> componentType = value.getType().getComponentType();
-                if (!Modifier.isPublic(componentType.getModifiers()) && !Modifier.isProtected(componentType.getModifiers())) {
-                    builder.append(value.getName()).append(": Object[]");
-                    continue;
-                }
-
-                builder.append(value.getName()).append(": ").append(toTsType(componentType)).append("[]");
-                this.addImport(toTsImport(componentType));
-                if (i != parametersLength - 1) logger.warning("VarArgs not last parameter: " + value.getName());
-
-                continue;
-            }
-
-            String primitiveType = toTsPrimitiveType(type);
-            if (primitiveType != null) builder.append("%1$s: %2$s".formatted(
-                    value.getName(),
-                    primitiveType
-            ));
-            else {
-                Class<?> t = value.getType();
-                while (t.isArray()) t = t.getComponentType();
-
-                builder.append("%1$s: %2$s".formatted(
-                        value.getName(),
-                        toTsType(t)
-                ));
-
-                this.addImport(toTsImport(t));
-            }
-        }
-
-        return builder.toString();
-    }
-
     public void addMethod(Method method) {
         TSMethod tsMethod = tsMethods.computeIfAbsent(method.getName(), TSMethod::new);
         tsMethod.addStruct(method, method.getParameters(), this::toTsType);
@@ -456,16 +352,9 @@ public class TsClassBuilder implements AnyJsClassBuilder {
 
         if (returnType.isArray()) return toTsType(returnType.getComponentType()) + "[]";
 
-        if (returnType.getPackageName().equals(clazz.getPackageName())) {
-            String name = returnType.getName();
-            name = name.substring(name.lastIndexOf(".") + 1);
-            return name;
-        }
-
-        String name = returnType.getName();
-        String[] split = name.split("\\.");
-
-        return split[split.length - 1];
+        String name = Converters.convert(returnType.getName());
+        if (name == null) name = returnType.getName().replace(".", "$");
+        return name.replace(".", "$");
     }
 
     public void addField(Field field) {

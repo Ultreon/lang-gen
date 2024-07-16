@@ -21,7 +21,11 @@ public class TSMethod extends TSArgumentStruct<Method> {
 
     @Override
     public void addStruct(Method member, Parameter[] content, Function<Class<?>, String> converter) {
-        this.returnType += "|" + converter.apply(member.getReturnType());
+        if (member.getReturnType().isAssignableFrom(member.getDeclaringClass())) {
+            this.returnType = "|any";
+        } else if (!this.returnType.equals("|any")) {
+            this.returnType += "|" + converter.apply(member.getReturnType());
+        }
         this.isStatic = Modifier.isStatic(member.getModifiers());
         boolean isAbstract1 = Modifier.isAbstract(member.getModifiers()) && !Modifier.isInterface(member.getDeclaringClass().getModifiers());
         if (isAbstract && !isAbstract1) {
@@ -31,9 +35,7 @@ public class TSMethod extends TSArgumentStruct<Method> {
         }
         this.modifiers = member.getModifiers();
 
-        if (Modifier.isPrivate(modifiers)) {
-            return;
-        } else if (!(Modifier.isPublic(modifiers) || Modifier.isProtected(modifiers))) {
+        if (!(Modifier.isPublic(modifiers) || Modifier.isProtected(modifiers))) {
             return;
         }
 
@@ -47,6 +49,10 @@ public class TSMethod extends TSArgumentStruct<Method> {
 
     @Override
     public String toString() {
+        if (structs.isEmpty() || structNames.isEmpty()) {
+            return "";
+        }
+
         String mods = "";
         if (Modifier.isPrivate(modifiers)) {
             mods += "private ";
@@ -58,10 +64,6 @@ public class TSMethod extends TSArgumentStruct<Method> {
 
         if (Modifier.isStatic(modifiers)) {
             mods += "static ";
-        }
-
-        if (Modifier.isAbstract(modifiers)) {
-            return mods + name + " (...argv: " + String.join("|", structNames) + "): " + returnType.substring(1) + ";";
         }
 
         return mods + name + " (...argv: " + String.join("|", structNames) + "): " + returnType.substring(1) + " { " + CONTENT.trim() + " }";

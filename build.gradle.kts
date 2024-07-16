@@ -12,9 +12,9 @@ buildscript {
         mavenCentral()
         gradlePluginPortal()
     }
-""
+
     dependencies {
-        classpath("com.linkedin.pygradle:pygradle-plugin:+")
+
     }
 }
 

@@ -6,6 +6,8 @@ import org.reflections.Reflections;
 import org.reflections.scanners.Scanners;
 import org.reflections.util.ConfigurationBuilder;
 
+import javax.swing.*;
+import java.awt.*;
 import java.io.File;
 import java.io.IOError;
 import java.io.IOException;
@@ -15,13 +17,83 @@ import java.net.URL;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.*;
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public abstract class ClasspathBuilder extends ClasspathWrapper implements NameTransformer {
     private final List<Class<?>> classes = new ArrayList<>();
     private final boolean ignorePrivate;
+    private @Nullable JLabel label = null;
+    private @Nullable JProgressBar progressBar = null;
+
+    static JFrame frame = new JFrame();
+    static JPanel contentPane = new JPanel();
+
+    ExecutorService executor = Executors.newFixedThreadPool(8);
+
+    static {
+        JPanel windowPane = new JPanel();
+        windowPane.setLayout(new GridBagLayout());
+        GridBagConstraints c = new GridBagConstraints();
+
+        // Center panel
+        c.gridx = 1;
+        c.gridy = 0;
+        c.gridwidth = 1;
+        c.gridheight = 1;
+        c.weightx = 1;
+        c.weighty = 1;
+        c.fill = GridBagConstraints.BOTH;
+        c.anchor = GridBagConstraints.NORTHWEST;
+        windowPane.add(contentPane, c);
+
+        JSeparator separator = new JSeparator();
+        c.gridx = 0;
+        c.gridy = 1;
+        c.gridwidth = 2;
+        c.gridheight = 1;
+        c.weightx = 1;
+        c.weighty = 0;
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.anchor = GridBagConstraints.SOUTHWEST;
+        windowPane.add(separator);
+
+        // Bottom panel
+        JPanel bottomPanel = new JPanel();
+        bottomPanel.setLayout(new FlowLayout(FlowLayout.RIGHT, 10, 10));
+        c.gridx = 0;
+        c.gridy = 2;
+        c.gridwidth = 2;
+        c.gridheight = 1;
+        c.weightx = 1;
+        c.weighty = 0;
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.anchor = GridBagConstraints.SOUTHWEST;
+        windowPane.add(bottomPanel, c);
+
+        // Close button
+        JButton closeButton = new JButton("Close");
+        closeButton.addActionListener(e -> frame.dispose());
+        bottomPanel.add(closeButton);
+
+        contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.Y_AXIS));
+        frame.setContentPane(windowPane);
+    }
 
     protected ClasspathBuilder(boolean ignorePrivate) {
         this.ignorePrivate = ignorePrivate;
+
+        SwingUtilities.invokeLater(() -> {
+            label = new JLabel("Generating...");
+            progressBar = new JProgressBar();
+            contentPane.add(label);
+            contentPane.add(progressBar);
+            frame.pack();
+            frame.setVisible(true);
+        });
     }
 
     @Override
@@ -70,25 +142,44 @@ public abstract class ClasspathBuilder extends ClasspathWrapper implements NameT
     }
 
     private void processClasses(Path output) {
+        int total = classes.size();
+        AtomicInteger count = new AtomicInteger();
         for (Class<?> clazz : classes) {
-            if (!Modifier.isPublic(clazz.getModifiers()) && !Modifier.isProtected(clazz.getModifiers())) continue;
-            if ((clazz.getModifiers() & 0x0000100) != 0) continue;
+            CompletableFuture.runAsync(() -> {
+                if (label != null && progressBar != null) {
+                    SwingUtilities.invokeLater(() -> {
+                        label.setText("Processing " + (100 * count.get() / total) + "% (" + count.get() + "/" + total + ") " + clazz.getSimpleName());
+                        progressBar.setMaximum(total);
+                        progressBar.setValue(count.incrementAndGet());
+                    });
+                }
+                if (!Modifier.isPublic(clazz.getModifiers()) && !Modifier.isProtected(clazz.getModifiers())) return;
+                if ((clazz.getModifiers() & 0x0000100) != 0) return;
 
-            try {
-                StringBuilder sw = new StringBuilder();
-                String result = this.visitClass(clazz, sw);
-                if (result == null) continue;
-                this.writeFile(output, clazz.getName(), result);
-            } catch (GeneratorException e) {
-                throw e;
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+                try {
+                    StringBuilder sw = new StringBuilder();
+                    String result = this.visitClass(clazz, sw);
+                    if (result == null) return;
+                    this.writeFile(output, clazz.getName(), result);
+                } catch (GeneratorException e) {
+                    throw e;
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }, executor);
         }
     }
 
     private void processEntries(Set<String> allClasses) {
         for (String className : allClasses) {
+            if (label != null && progressBar != null) {
+                SwingUtilities.invokeLater(() -> {
+                    label.setText("Pre-processing " + className);
+                    progressBar.setMaximum(allClasses.size());
+                    progressBar.setValue(progressBar.getValue() + 1);
+                });
+            }
+
             try {
                 processEntry(className);
             } catch (ClassNotFoundException | NoClassDefFoundError e) {
