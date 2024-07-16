@@ -1,5 +1,9 @@
 package dev.ultreon.langgen.api;
 
+import com.badlogic.gdx.utils.ObjectMap;
+import dev.ultreon.quantum.Mod;
+
+import java.lang.reflect.Modifier;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,6 +19,15 @@ public class PackageExclusions {
 
     public static boolean isExcluded(Class<?> type) {
         if (type == String.class) return false;
+        if (type == ObjectMap.class
+            || type == ObjectMap.Entry.class
+            || type == ObjectMap.Keys.class
+            || type == ObjectMap.Values.class
+            || type == ObjectMap.Entries.class
+        ) return true;
+        if (!(Modifier.isPublic(type.getModifiers())
+              || Modifier.isProtected(type.getModifiers()))) return true;
+
         for (String name : packageNames) {
             if (type.getName().startsWith(name + "."))
                 return true;

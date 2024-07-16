@@ -53,22 +53,16 @@ public class JavascriptGen implements LangGenerator {
         PackageExclusions.addExclusion("dev.ultreon.mixinprovider");
         PackageExclusions.addExclusion("dev.ultreon.gameprovider");
         PackageExclusions.addExclusion("net.java");
-        PackageExclusions.addExclusion("org.lwjgl.egl");
-        PackageExclusions.addExclusion("org.lwjgl.opencl");
-        PackageExclusions.addExclusion("org.lwjgl.nanovg");
-        PackageExclusions.addExclusion("org.lwjgl.nuklear");
-        PackageExclusions.addExclusion("org.lwjgl.stb");
-        PackageExclusions.addExclusion("org.lwjgl.vulkan");
-        PackageExclusions.addExclusion("org.lwjgl.assimp");
-        PackageExclusions.addExclusion("com.google.protobuf");
-        PackageExclusions.addExclusion("org.apache.logging.log4j");
-        PackageExclusions.addExclusion("org.apache.logging.slf4j");
+        PackageExclusions.addExclusion("org.lwjgl");
+        PackageExclusions.addExclusion("com.google");
+        PackageExclusions.addExclusion("org.apache");
         PackageExclusions.addExclusion("jsinterop");
         PackageExclusions.addExclusion("netscape");
         PackageExclusions.addExclusion("");
         PackageExclusions.addExclusion("jdk");
         PackageExclusions.addExclusion("sun");
-        PackageExclusions.addExclusion("java");
+        PackageExclusions.addExclusion("java.awt");
+        PackageExclusions.addExclusion("java.net");
         PackageExclusions.addExclusion("javax");
         PackageExclusions.addExclusion("jline");
         PackageExclusions.addExclusion("javassist");
@@ -116,6 +110,13 @@ public class JavascriptGen implements LangGenerator {
         PackageExclusions.addExclusion("org.junit");
         PackageExclusions.addExclusion("org.opentest4j");
         PackageExclusions.addExclusion("net.miginfocom");
+        PackageExclusions.addExclusion("org.spongepowered");
+        PackageExclusions.addExclusion("org.bouncycastle");
+        PackageExclusions.addExclusion("org.joml");
+        PackageExclusions.addExclusion("groovyjarjarantlr");
+        PackageExclusions.addExclusion("groovyjarjarantlr4");
+        PackageExclusions.addExclusion("groovyjarjarasm");
+        PackageExclusions.addExclusion("groovyjarjarpicocli");
 
         Converters.register("de.marhali.json5", "json5");
         Converters.register("com.crashinvaders.vfx", "vfx");
@@ -363,7 +364,7 @@ public class JavascriptGen implements LangGenerator {
             String tsConfigJson = """
                     {
                        "include": [
-                          "**/*.mts"
+                          "**/*.mjs"
                        ],
                        "compilerOptions": {
                          "module": "ES2022",

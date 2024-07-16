@@ -88,6 +88,26 @@ public class TsClassBuilder implements AnyJsClassBuilder {
                 collect + '\n' + argumentsCode,
                 toModifiers(clazz)));
 
+        StringBuilder content = new StringBuilder();
+        classContent(content);
+
+        sw.append("""
+                %3$s
+                }
+                
+                type $%1$s = _%1$s & %2$s & any;
+                
+                class %1$s implements $%1$s {
+                %3$s
+                }
+                
+                export default %1$s;
+                """.formatted(name, tsClassSignature, content));
+
+        return List.of();
+    }
+
+    private void classContent(StringBuilder sw) {
         Set<String> staticMembers1 = staticMembers;
         if (!staticMembers1.isEmpty()) {
             sw.append("\n");
@@ -160,14 +180,6 @@ public class TsClassBuilder implements AnyJsClassBuilder {
                 sw.append("\n");
             }
         }
-
-        sw.append("""
-                }
-                
-                export default %1$s;
-                """.formatted(name));
-
-        return List.of();
     }
 
     private <T> void recurseClasses(@Nullable Class<T> curClass) {
@@ -192,7 +204,7 @@ public class TsClassBuilder implements AnyJsClassBuilder {
             this.addMethod(method);
         }
 
-        for (Method method : Object.class.getDeclaredMethods()) {
+        for (Method method : Object.class.getMethods()) {
             this.addMethod(method);
         }
     }
@@ -253,7 +265,7 @@ public class TsClassBuilder implements AnyJsClassBuilder {
     }
 
     public String toTsClassSignature(Class<?> clazz, @Nullable Class<?> superclass, Class<?>... interfaces) {
-        StringBuilder builder = new StringBuilder();
+        String builder = "";
 
         if (clazz == superclass) {
             logger.warning("Class " + clazz.getName() + " is extending itself");
@@ -261,7 +273,7 @@ public class TsClassBuilder implements AnyJsClassBuilder {
 
         List<String> superclasses = new ArrayList<>();
 
-        if (superclass != null && superclass != Object.class) {
+        if (superclass != null && superclass != Object.class && !PackageExclusions.isExcluded(superclass)) {
             superclasses.add(toTsType(superclass));
 
             addImport(toTsImport(superclass));
@@ -269,21 +281,15 @@ public class TsClassBuilder implements AnyJsClassBuilder {
 
         for (Class<?> anInterface : interfaces) {
             if (anInterface == Object.class) continue;
-            superclasses.add(toTsType(anInterface));
+            if (PackageExclusions.isExcluded(anInterface)) continue;
+            String tsType = toTsType(anInterface);
+            superclasses.add(tsType);
 
             addImport(toTsImport(anInterface));
         }
 
-        String string = builder.toString();
-        String s = " extends " + String.join(", ", superclasses);
-        if (superclasses.isEmpty()) {
-            String tsImport = toTsImport(Object.class, true);
-            if (tsImport != null) {
-                addImport(tsImport);
-            }
-            return s + "jlang$Object";
-        }
-        return s + string;
+        String s = String.join(" & ", superclasses);
+        return s.isBlank() ? "any" : s;
     }
 
     public void addImport(@Nullable String code) {
@@ -349,6 +355,8 @@ public class TsClassBuilder implements AnyJsClassBuilder {
         if (returnType == Object.class) return "any";
         if (PackageExclusions.isExcluded(returnType)) return "any";
 
+        if (returnType == clazz) return name;
+
         String primitiveType = toTsPrimitiveType(returnType);
         if (primitiveType != null) return primitiveType;
 
@@ -356,6 +364,9 @@ public class TsClassBuilder implements AnyJsClassBuilder {
 
         String name = Converters.convert(returnType.getName());
         if (name == null) name = returnType.getName().replace(".", "$");
+
+        addImport(toTsImport(returnType));
+
         return name.replace(".", "$");
     }
 
@@ -712,7 +723,6 @@ public class TsClassBuilder implements AnyJsClassBuilder {
         if (type == null || PackageExclusions.isExcluded(type)) return null;
         if (type.isArray()) return toTsImport(type.getComponentType());
 
-
         try {
             if (forceObject && type == Object.class) {
                 String name = type.getName();
@@ -739,14 +749,10 @@ public class TsClassBuilder implements AnyJsClassBuilder {
         return """
                 %4$s
                 
-                interface $%2$s {
-                
-                }
-                
                 /**
                  * This is a wrapper for the {%1$s} Java class.
                  */
-                %5$sclass %1$s implements $ {
+                %5$sclass _%1$s {
                 """;
     }
 }

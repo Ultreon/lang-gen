@@ -20,10 +20,6 @@ public class TsFinalClassBuilder extends TsClassBuilder {
         return """
                 %4$s
                 
-                interface $%2$s {
-                
-                }
-                
                 /**
                  * This is a wrapper for the {%1$s} Java class.
                  * THIS CLASS IS GENERATED AND SHOULD NOT BE EDITED.
@@ -32,7 +28,7 @@ public class TsFinalClassBuilder extends TsClassBuilder {
                  *
                  * @final
                  */
-                %5$sclass %1$s implements $ {
+                %5$sclass _%1$s {
                 """;
     }
 }

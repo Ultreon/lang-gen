@@ -26,20 +26,20 @@ public interface AnyJsClassBuilder extends ClassBuilder {
             if (targetName.equals(javaName)) {
                 int endIndex = targetName.lastIndexOf(".");
                 if (endIndex == -1) {
-                    return "import " + importedName + " from './" + prefix + "/" + simpleName + ".mts'; // FIXME: Unchanged";
+                    return "import " + importedName + " from './" + prefix + "/" + simpleName + ".mjs'; // FIXME: Unchanged";
                 }
 
                 String pkg = targetName.substring(0, endIndex).replace(".", "/");
-                return "import " + importedName + " from './" + prefix + "/" + pkg + "/" + simpleName + ".mts'; // FIXME: Unchanged";
+                return "import " + importedName + " from './" + prefix + "/" + pkg + "/" + simpleName + ".mjs'; // FIXME: Unchanged";
             }
 
             int endIndex = targetName.lastIndexOf(".");
             if (endIndex == -1) {
-                return "import " + importedName + " from './" + prefix + "/" + simpleName + ".mts';";
+                return "import " + importedName + " from './" + prefix + "/" + simpleName + ".mjs';";
             }
 
             String pkg = targetName.substring(0, endIndex).replace(".", "/");
-            return "import " + importedName + " from './" + prefix + "/" + pkg + "/" + simpleName + ".mts';";
+            return "import " + importedName + " from './" + prefix + "/" + pkg + "/" + simpleName + ".mjs';";
         } catch (Exception e) {
             throw new Error("Something went wrong", e);
         }
