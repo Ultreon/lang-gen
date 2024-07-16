@@ -4,6 +4,7 @@ import dev.ultreon.langgen.api.PackageExclusions;
 import dev.ultreon.langgen.javascript.JavascriptGen;
 import dev.ultreon.langgen.api.Converters;
 import dev.ultreon.langgen.javascript.api.AnyJsClassBuilder;
+import kotlin.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -15,9 +16,7 @@ import java.util.stream.Collectors;
 
 public class JsClassBuilder implements AnyJsClassBuilder {
     public static final String CLASS_FORMAT = """
-                        
-            %4$s
-                        
+                    
             class Wrapper {
                 constructor(java_value) {
                     this._wrapper = java_value
@@ -25,7 +24,7 @@ public class JsClassBuilder implements AnyJsClassBuilder {
             }
                         
             function _wrap(java_value) {
-                return %1$s(new Wrapper(java_value))
+                return new %1$s(new Wrapper(java_value))
             }
                         
             function doesExtend(ChildClass, ParentClass) {
@@ -54,12 +53,33 @@ public class JsClassBuilder implements AnyJsClassBuilder {
                         
                 return array;
             }
-                        
+            
+            function isOfArrayType(array, type) {
+                if (!Array.isArray(array)) {
+                    return false;
+                }
+                          
+                const elementTypes = array.map(element => Object.prototype.toString.call(element));
+                const areSameType = elementTypes.every(type => type === elementTypes[0]);
+                          
+                return areSameType && elementTypes[0] === type.prototype.toString.call(element);
+            }
+               
+            function toOverload(array) {
+                if (!Array.isArray(array)) {
+                    throw new TypeError("Invalid data given to method! Overload check ultimately failed!");
+                }
+                          
+                return "(" + array.map(element => Object.prototype.toString.call(element)).join(", ") + ")";
+            }
+               
             /**
              * This is a wrapper for the {_%1$s} class.
              */
             class %1$s {
-                constructor() {
+                constructor() {        
+                    %4$s
+                        
                     let args = [];
                     for (let _i = 0; _i < arguments.length; _i++) {
                         args[_i] = arguments[_i];
@@ -71,9 +91,10 @@ public class JsClassBuilder implements AnyJsClassBuilder {
                     }
                         
                     if (Object.getPrototypeOf(this) !== %2$s.prototype) {
-                        this["< dynamic >"] = new (Java.extend(Java.type("%1$s")))(this);
+                        const dyn = new (Java.extend(Java.type("%3$s")))(this);
+                        this["< dynamic >"] = dyn;
                         
-                        Object.keys(this._dynamic).forEach(key => {
+                        Object.keys(dyn).forEach(key => {
                             if (this[key] !== undefined) {
                                 return;
                             }
@@ -85,17 +106,22 @@ public class JsClassBuilder implements AnyJsClassBuilder {
                             }
                             Object.defineProperty(this, key, {
                                 get: function() {
-                                    return this._dynamic[key];
+                                    return dyn[key];
                                 },
                                 set: function(v) {
-                                    this._dynamic[key] = v;
+                                    dyn[key] = v;
                                 }
                             });
                         });
+                        
+            %5$s
+                        return;
                     }
                         
-                    this._dynamic = new (Java.type("%1$s"))(...args);
-                    Object.keys(this._dynamic).forEach(key => {
+                    const dyn = new (Java.type("%3$s"))(...args);
+                    this["< dynamic >"] = dyn;
+                    
+                    Object.keys(this["< dynamic >"]).forEach(key => {
                         if (this[key] !== undefined) {
                             return;
                         }
@@ -107,13 +133,15 @@ public class JsClassBuilder implements AnyJsClassBuilder {
                         }
                         Object.defineProperty(this, key, {
                             get: function() {
-                                return this._dynamic[key];
+                                return this["< dynamic >"][key];
                             },
                             set: function(v) {
-                                this._dynamic[key] = v;
+                                this["< dynamic >"][key] = v;
                             }
                         });
                     });
+                    
+            %6$s
                 }
                         
                 static $$$WRAPPER$$$(element) {
@@ -149,6 +177,9 @@ public class JsClassBuilder implements AnyJsClassBuilder {
 
     @Override
     public List<String> build(StringBuilder sw) {
+        String methodInjectors12 = toInjectors(clazz.getMethods(), clazz.getFields(), clazz, 12, false);
+        String methodInjectors8 = toInjectors(clazz.getMethods(), clazz.getFields(), clazz, 8, false);
+
         for (Field field : clazz.getFields()) {
             if (Modifier.isStatic(field.getModifiers()) && Modifier.isFinal(field.getModifiers())) {
                 addConstField(field);
@@ -174,7 +205,8 @@ public class JsClassBuilder implements AnyJsClassBuilder {
                 toJsClassSignature(clazz, clazz.getSuperclass(), clazz.getInterfaces()),
                 clazz.getName(),
                 (importOnce.get() ? "import {import_once} from 'quantum-js/quantum-js/core';\n" : "") + collect,
-                JavascriptGen.isStub() ? " * @hideconstructor" : " * "));
+                methodInjectors12,
+                methodInjectors8));
 
         Set<String> staticMembers1 = staticMembers;
         if (!staticMembers1.isEmpty()) {
@@ -345,6 +377,11 @@ public class JsClassBuilder implements AnyJsClassBuilder {
             }
         }
 
+        sw.append("""
+                }
+                
+                """);
+
         if (!postinit.isEmpty()) {
             sw.append("\n");
             for (String member : postinit) {
@@ -357,14 +394,10 @@ public class JsClassBuilder implements AnyJsClassBuilder {
             }
         }
 
-        sw.append("""
-                }
-                                
-                export default %1$s
-                """.formatted(name));
-
         if (!JavascriptGen.isStub()) {
             sw.append("""
+                    export default %1$s
+                
                     /**
                      * Creates a new wrapper for the given java class
                      *
@@ -376,14 +409,109 @@ public class JsClassBuilder implements AnyJsClassBuilder {
                         if (extending.length > 0) {
                             JavaClass = Java.extend(javaClass, ...extending);
                         }
-                                        
+                    
                         return function(...args) {
                             return new JavaClass(...args);
                         }
                     }
-                    """);
+                    """.formatted(name));
         }
         return List.of();
+    }
+
+    private String toInjectors(Method[] methods, Field[] fields, Class<?> clazz, int indent, boolean isStatic) {
+        StringBuilder builder = new StringBuilder();
+        LinkedHashMap<String, List<Pair<String, Method>>> methodsByName = new LinkedHashMap<>();
+        LinkedHashMap<String, List<Pair<String, Field>>> fieldsByName = new LinkedHashMap<>();
+
+        for (Method method : methods) {
+            if (Modifier.isStatic(method.getModifiers()) != isStatic) continue;
+            if ((method.getName().equals("apply") || method.getName().equals("call") || method.getName().equals("bind")) && isStatic) continue;
+            StringBuilder paramBuilder = new StringBuilder();
+            paramBuilder.append("(");
+            for (Class<?> paramType : method.getParameterTypes()) {
+                paramBuilder.append(paramType.getName()).append(",");
+            }
+            if (!paramBuilder.isEmpty())
+                paramBuilder.deleteCharAt(paramBuilder.length() -1);
+
+            methodsByName.computeIfAbsent(method.getName(), v -> new ArrayList<>()).add(new Pair<>(paramBuilder + ")", method));
+        }
+
+        for (Field field : fields) {
+            if (Modifier.isStatic(field.getModifiers()) != isStatic) continue;
+            if ((field.getName().equals("apply") || field.getName().equals("call") || field.getName().equals("bind")) && isStatic) continue;
+            fieldsByName.computeIfAbsent(field.getName(), v -> new ArrayList<>()).add(new Pair<>(field.getName(), field));
+        }
+
+        for (var entry : methodsByName.sequencedEntrySet()) {
+            String name = entry.getKey();
+            List<Pair<String, Method>> value = entry.getValue();
+//            if (fieldsByName.containsKey(name)) {
+//                builder.append("dyn['").append(name).append("']").append(" = function() {\n    func = function(...args) {\n        ");
+//
+//                for (int i = 0, valueSize = value.size(); i < valueSize; i++) {
+//                    var methodData = value.get(i);
+//                    String signature = methodData.getFirst();
+//                    Method method = methodData.getSecond();
+//
+//                    if (i != 0) builder.append(" else ");
+//                    builder.append("if (args.length === ").append(method.getParameterCount());
+//
+//                    Class<?>[] parameterTypes = method.getParameterTypes();
+//                    for (int idx = 0, parameterTypesLength = parameterTypes.length; idx < parameterTypesLength; idx++) {
+//                        var type = parameterTypes[idx];
+//                        if (type.isArray())
+//                            builder.append(" && ").append("isOfArrayType(args[").append(idx).append("], ").append(toJsType(type.getComponentType())).append(")");
+//                        else
+//                            builder.append(" && ").append("args[").append(idx).append("] instanceof ").append(toJsType(type));
+//                    }
+//
+//                    builder.append(") {\n            ").append("func = dyn['").append(name).append("(").append(signature).append(")'](...args)").append("\n    }");
+//                }
+//
+//                builder.append("    }");
+//                builder.append("    function _get() { dyn['").append(name).append("'] }");
+//
+//                builder.append("""
+//                            return
+//                        }()
+//                        """);
+//
+//                continue;
+//            }
+
+            builder.append("dyn['").append(name).append("'] = function(...args) {\n    ");
+
+            for (int i = 0, valueSize = value.size(); i < valueSize; i++) {
+                var methodData = value.get(i);
+                String signature = methodData.getFirst();
+                Method method = methodData.getSecond();
+
+                if (i != 0) builder.append(" else ");
+                builder.append("if (args.length === ").append(method.getParameterCount());
+
+                Class<?>[] parameterTypes = method.getParameterTypes();
+                for (int idx = 0, parameterTypesLength = parameterTypes.length; idx < parameterTypesLength; idx++) {
+                    var type = parameterTypes[idx];
+                    if (type.isArray())
+                        builder.append(" && ").append("isOfArrayType(args[").append(idx).append("], ").append(toJsType(type.getComponentType())).append(")");
+                    else
+                        builder.append(" && ").append("args[").append(idx).append("] instanceof ").append(toJsType(type));
+                }
+
+                builder.append(") {\n        ").append("return dyn['").append(name).append("(").append(signature).append(")'](...args)").append("\n    }");
+            }
+
+            builder.append(" else { throw new TypeError(`No matching overload found for: ${toOverload(args)}`); }");
+            builder.append("\n}\n\n");
+        }
+
+        if (isStatic) {
+
+        }
+
+        return builder.toString().indent(indent);
     }
 
     public void addAbstractMethod(Method method) {
@@ -413,7 +541,7 @@ public class JsClassBuilder implements AnyJsClassBuilder {
                 %4$s
                  */
                 %1$s() {
-                                
+                
                 }
                 """.formatted(
                 toJavaMemberName(method),
@@ -963,6 +1091,12 @@ public class JsClassBuilder implements AnyJsClassBuilder {
         this.addImport(toJavaImport(method.getDeclaringClass()));
     }
 
+    @Nullable
+    private String toJavaImport1(Class<?> returnType) {
+        if (returnType.equals(clazz)) return "";
+        return toJavaImport(returnType);
+    }
+
     public @NotNull String toJsType(Class<?> returnType) {
         if (PackageExclusions.isExcluded(returnType)) return "Object";
 
@@ -1246,12 +1380,25 @@ public class JsClassBuilder implements AnyJsClassBuilder {
                      * @readonly
                      * @type {%3$s}
                      */
-                    static %2$s = %1$s.%2$s
+                    static %2$s
                     """.formatted(
                     toJavaType(field.getDeclaringClass()),
                     toJavaMemberName(field),
                     toJsType(field.getType())
 
+            ));
+            this.postinit.add("""
+                    /**
+                     * @static
+                     * @readonly
+                     * @type {%3$s}
+                     */
+                    %4$s.%2$s = %1$s.%2$s
+                    """.formatted(
+                    toJavaType(field.getDeclaringClass()),
+                    toJavaMemberName(field),
+                    toJsType(field.getType()),
+                    toJsType(field.getDeclaringClass())
             ));
             return;
         }
@@ -1273,12 +1420,25 @@ public class JsClassBuilder implements AnyJsClassBuilder {
                          * @readonly
                          * @type {%3$s}
                          */
-                        static %2$s = %1$s.%2$s
+                        static %2$s
                         """.formatted(
                         toJavaType(field.getDeclaringClass()),
                         toJavaMemberName(field),
                         toJsType(field.getType())
 
+                ));
+                this.postinit.add("""
+                    /**
+                     * @static
+                     * @readonly
+                     * @type {%3$s}
+                     */
+                    %4$s.%2$s = %1$s.%2$s
+                    """.formatted(
+                        toJavaType(field.getDeclaringClass()),
+                        toJavaMemberName(field),
+                        toJsType(field.getType()),
+                        toJsType(field.getDeclaringClass())
                 ));
                 return;
             }
@@ -1289,11 +1449,24 @@ public class JsClassBuilder implements AnyJsClassBuilder {
                      * @readonly
                      * @type {%3$s}
                      */
-                    static %2$s = convertArray(%1$s.%2$s, %3$s)
+                    static %2$s
                     """.formatted(
                     toJavaType(field.getDeclaringClass()),
                     toJavaMemberName(field),
                     toJsType(field.getType().getComponentType())
+            ));
+            this.postinit.add("""
+                    /**
+                     * @static
+                     * @readonly
+                     * @type {%3$s}
+                     */
+                    %4$s.%2$s = convertArray(%1$s.%2$s, %3$s)
+                    """.formatted(
+                    toJavaType(field.getDeclaringClass()),
+                    toJavaMemberName(field),
+                    toJsType(field.getType().getComponentType()),
+                    toJsType(field.getDeclaringClass())
             ));
             return;
         }
@@ -1304,12 +1477,25 @@ public class JsClassBuilder implements AnyJsClassBuilder {
                  * @readonly
                  * @type {%3$s}
                  */
-                static %2$s = %3$s.$$$WRAPPER$$$(%1$s.%2$s)
+                static %2$s
                 """.formatted(
                 toJavaType(field.getDeclaringClass()),
                 toJavaMemberName(field),
                 toJsType(field.getType())
+        ));
 
+        this.postinit.add("""
+                    /**
+                     * @static
+                     * @readonly
+                     * @type {%3$s}
+                     */
+                    %4$s.%2$s = %3$s.$$$WRAPPER$$$(%1$s.%2$s)
+                    """.formatted(
+                toJavaType(field.getDeclaringClass()),
+                toJavaMemberName(field),
+                toJsType(field.getType()),
+                toJsType(field.getDeclaringClass())
         ));
     }
 
