@@ -2,6 +2,7 @@ package dev.ultreon.langgen.javascript;
 
 import dev.ultreon.langgen.api.Converters;
 import dev.ultreon.langgen.api.LangGenerator;
+import dev.ultreon.langgen.api.PackageExclusions;
 import dev.ultreon.langgen.api.SimpleClasspathBuilder;
 import dev.ultreon.langgen.javascript.js.JsClassBuilder;
 import dev.ultreon.langgen.javascript.ts.TsClassBuilder;
@@ -39,6 +40,86 @@ public class JavascriptGen implements LangGenerator {
     @SuppressWarnings("SpellCheckingInspection")
     @Override
     public void registerConverters() {
+
+        PackageExclusions.addExclusion("com.apple");
+        PackageExclusions.addExclusion("java.rmi");
+        PackageExclusions.addExclusion("apple");
+        PackageExclusions.addExclusion("elemental2");
+        PackageExclusions.addExclusion("de.damios");
+        PackageExclusions.addExclusion("org.bouncycastle");
+        PackageExclusions.addExclusion("org.apache.groovy");
+        PackageExclusions.addExclusion("com.google.errorprone");
+        PackageExclusions.addExclusion("com.google.thirdparty");
+        PackageExclusions.addExclusion("dev.ultreon.mixinprovider");
+        PackageExclusions.addExclusion("dev.ultreon.gameprovider");
+        PackageExclusions.addExclusion("net.java");
+        PackageExclusions.addExclusion("org.lwjgl.egl");
+        PackageExclusions.addExclusion("org.lwjgl.opencl");
+        PackageExclusions.addExclusion("org.lwjgl.nanovg");
+        PackageExclusions.addExclusion("org.lwjgl.nuklear");
+        PackageExclusions.addExclusion("org.lwjgl.stb");
+        PackageExclusions.addExclusion("org.lwjgl.vulkan");
+        PackageExclusions.addExclusion("org.lwjgl.assimp");
+        PackageExclusions.addExclusion("com.google.protobuf");
+        PackageExclusions.addExclusion("org.apache.logging.log4j");
+        PackageExclusions.addExclusion("org.apache.logging.slf4j");
+        PackageExclusions.addExclusion("jsinterop");
+        PackageExclusions.addExclusion("netscape");
+        PackageExclusions.addExclusion("");
+        PackageExclusions.addExclusion("jdk");
+        PackageExclusions.addExclusion("sun");
+        PackageExclusions.addExclusion("java");
+        PackageExclusions.addExclusion("javax");
+        PackageExclusions.addExclusion("jline");
+        PackageExclusions.addExclusion("javassist");
+        PackageExclusions.addExclusion("joptsimple");
+        PackageExclusions.addExclusion("net.java");
+        PackageExclusions.addExclusion("org.codehaus");
+        PackageExclusions.addExclusion("org.checkerframework");
+        PackageExclusions.addExclusion("org.intellij");
+        PackageExclusions.addExclusion("org.jetbrains.annotations");
+        PackageExclusions.addExclusion("org.graalvm");
+        PackageExclusions.addExclusion("org.json");
+        PackageExclusions.addExclusion("org.jspecify");
+        PackageExclusions.addExclusion("org.mozilla");
+        PackageExclusions.addExclusion("org.objectweb");
+        PackageExclusions.addExclusion("org.oxbow");
+        PackageExclusions.addExclusion("org.reactivestreams");
+        PackageExclusions.addExclusion("org.reflections");
+        PackageExclusions.addExclusion("org.spongepowered");
+        PackageExclusions.addExclusion("org.tukaani");
+        PackageExclusions.addExclusion("org.w3c");
+        PackageExclusions.addExclusion("org.xml");
+        PackageExclusions.addExclusion("java.sql");
+        PackageExclusions.addExclusion("java.security");
+        PackageExclusions.addExclusion("java.management");
+        PackageExclusions.addExclusion("java.beans");
+        PackageExclusions.addExclusion("java.applet");
+        PackageExclusions.addExclusion("net.fabricmc.impl");
+        PackageExclusions.addExclusion("net.minecraft");
+        PackageExclusions.addExclusion("scala");
+        PackageExclusions.addExclusion("groovy");
+        PackageExclusions.addExclusion("kotlin");
+        PackageExclusions.addExclusion("kotlinx");
+        PackageExclusions.addExclusion("clojure");
+        PackageExclusions.addExclusion("junit");
+        PackageExclusions.addExclusion("oracle");
+        PackageExclusions.addExclusion("com.oracle");
+        PackageExclusions.addExclusion("com.sun");
+        PackageExclusions.addExclusion("io.javalin");
+        PackageExclusions.addExclusion("io.github.classgraph");
+        PackageExclusions.addExclusion("com.jcraft");
+        PackageExclusions.addExclusion("com.jme3");
+        PackageExclusions.addExclusion("javazoom");
+        PackageExclusions.addExclusion("org.ietf");
+        PackageExclusions.addExclusion("org.jcp");
+        PackageExclusions.addExclusion("org.junit");
+        PackageExclusions.addExclusion("org.opentest4j");
+        PackageExclusions.addExclusion("net.miginfocom");
+
+        Converters.register("de.marhali.json5", "json5");
+        Converters.register("com.crashinvaders.vfx", "vfx");
+        Converters.register("dev.ultreon.mixinprovider", "mixinprovider");
         Converters.register("org.lwjgl.egl", "egl");
         Converters.register("org.lwjgl.glfw", "glfw");
         Converters.register("org.lwjgl.opencl", "opencl");
@@ -57,7 +138,7 @@ public class JavascriptGen implements LangGenerator {
         Converters.register("com.google.common.collect", "gcollect");
         Converters.register("com.google.common", "gcommon");
 
-        Converters.register("space.earlygrey.shapedrawer", "gdx_shapedrawer");
+        Converters.register("space.earlygrey.shapedrawer", "shapedrawer");
 
         Converters.register("org.slf4j", "slf4js");
 
@@ -75,7 +156,7 @@ public class JavascriptGen implements LangGenerator {
         Converters.register("javazoom", "zoomjs");
         Converters.register("net.java.games.input", "inputjs");
         Converters.register("net.java.games", "javagames");
-        Converters.register("net.mgsx.gltf", "gdx_gltf");
+        Converters.register("net.mgsx.gltf", "gltf");
         Converters.register("net.miginfoccom", "miginfoccom");
         Converters.register("net.java.jogl", "jogl");
         Converters.register("net.java.jinput", "jinput");
@@ -140,8 +221,8 @@ public class JavascriptGen implements LangGenerator {
         Converters.register("dev.ultreon.data", "ultreon_data");
         Converters.register("dev.ultreon.ubo", "ubo");
         Converters.register("dev.ultreon.xeox.loader", "xeox");
-        Converters.register("dev.ultreon.quantumjs", "quantumjs._internal");
-        Converters.register("dev.ultreon.quantum", "quantumjs");
+        Converters.register("dev.ultreon.quantumjs", "game._internal");
+        Converters.register("dev.ultreon.quantum", "game");
 
         Converters.register("net.fabricmc.api", "fabric_api");
         Converters.register("net.fabricmc.impl", "fabric_impl");

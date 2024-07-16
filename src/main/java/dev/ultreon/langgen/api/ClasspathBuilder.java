@@ -251,6 +251,10 @@ public abstract class ClasspathBuilder extends ClasspathWrapper implements NameT
             return;
         }
 
+        if (PackageExclusions.isExcluded(clazz)) {
+            return;
+        }
+
         this.classes.add(clazz);
     }
 }

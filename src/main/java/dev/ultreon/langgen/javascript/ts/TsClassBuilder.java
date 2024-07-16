@@ -1,6 +1,7 @@
 package dev.ultreon.langgen.javascript.ts;
 
 import dev.ultreon.langgen.api.Converters;
+import dev.ultreon.langgen.api.PackageExclusions;
 import dev.ultreon.langgen.javascript.api.AnyJsClassBuilder;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -276,7 +277,7 @@ public class TsClassBuilder implements AnyJsClassBuilder {
         String string = builder.toString();
         String s = " extends " + String.join(", ", superclasses);
         if (superclasses.isEmpty()) {
-            String tsImpor = toTsImport(Object.class, true);
+            String tsImport = toTsImport(Object.class, true);
             if (tsImport != null) {
                 addImport(tsImport);
             }
@@ -346,6 +347,7 @@ public class TsClassBuilder implements AnyJsClassBuilder {
     public @NotNull String toTsType(@Nullable Class<?> returnType) {
         if (returnType == null) return "any";
         if (returnType == Object.class) return "any";
+        if (PackageExclusions.isExcluded(returnType)) return "any";
 
         String primitiveType = toTsPrimitiveType(returnType);
         if (primitiveType != null) return primitiveType;
@@ -707,8 +709,9 @@ public class TsClassBuilder implements AnyJsClassBuilder {
     }
 
     public @Nullable String toTsImport(@Nullable Class<?> type, boolean forceObject) {
-        if (type == null) return null;
+        if (type == null || PackageExclusions.isExcluded(type)) return null;
         if (type.isArray()) return toTsImport(type.getComponentType());
+
 
         try {
             if (forceObject && type == Object.class) {
