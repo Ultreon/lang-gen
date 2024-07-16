@@ -323,61 +323,86 @@ public class JavascriptGen implements LangGenerator {
 
         try {
             new SimpleClasspathBuilder(".mjs", JsClassBuilder::new, JsClassBuilder::new).build(output.resolve("js/"));
-            new SimpleClasspathBuilder(".mts", TsFinalClassBuilder::new, TsClassBuilder::new).build(output.resolve("ts/"));
+//            new SimpleClasspathBuilder(".mts", TsFinalClassBuilder::new, TsClassBuilder::new).build(output.resolve("ts/"));
 
-            List<String> workspaces = new ArrayList<>();
-            for (Path file : Files.list(output.resolve("ts/")).toList()) {
-                if (!Files.isDirectory(file)) continue;
-                if (file.getFileName().toString().equals("node_modules")) continue;
-                if (file.getFileName().toString().startsWith(".")) continue;
-                if (file.getFileName().toString().endsWith("System Volume Information")) continue;
-
-                workspaces.add(file.getFileName().toString());
-            }
-
+            // Javascript
             @Language("json")
-            String rootPackageJson = """
-                    {
-                        "type": "module",
-                        "name": "quantumjs",
-                        "version": "0.1.0",
-                        "authors": [
-                            {
-                                "name": "XyperCode"
-                            }
-                        ],
-                        "scripts": {
-                            "build": "tsc --build --verbose",
-                            "pack": "npm pack"
-                        },
-                        "private": false,
-                        "devDependencies": {
-                            "typescript": "^5.5.3"
-                        },
-                        "workspaces": []
-                    }
-                    """;
+            String jsPackageJson = """
+                {
+                    "type": "module",
+                    "name": "quantumjs",
+                    "version": "0.1.0",
+                    "authors": [
+                        {
+                            "name": "XyperCode"
+                        }
+                    ],
+                    "scripts": {
+                        "build": "npm pack",
+                        "pack": "npm pack"
+                    },
+                    "private": false,
+                    "devDependencies": {},
+                    "workspaces": []
+                }
+                """;
 
-            writeJson(output.resolve("ts/package.json"), rootPackageJson);
+            Files.writeString(output.resolve("js/package.json"), jsPackageJson);
 
-            @Language("json")
-            String tsConfigJson = """
-                    {
-                       "include": [
-                          "**/*.mjs"
-                       ],
-                       "compilerOptions": {
-                         "module": "ES2022",
-                         "moduleResolution": "Bundler",
-                         "noEmit": true,
-                         "allowJs": true,
-                         "allowImportingTsExtensions": true,
-                         "skipLibCheck": true
-                       }
-                    }
-                    """;
-
-            writeJson(output.resolve("ts/tsconfig.json"), tsConfigJson);
+//            // Typescript
+//            List<String> workspaces = new ArrayList<>();
+//            for (Path file : Files.list(output.resolve("ts/")).toList()) {
+//                if (!Files.isDirectory(file)) continue;
+//                if (file.getFileName().toString().equals("node_modules")) continue;
+//                if (file.getFileName().toString().startsWith(".")) continue;
+//                if (file.getFileName().toString().endsWith("System Volume Information")) continue;
+//
+//                workspaces.add(file.getFileName().toString());
+//            }
+//
+//            @Language("json")
+//            String rootPackageJson = """
+//                    {
+//                        "type": "module",
+//                        "name": "quantumjs",
+//                        "version": "0.1.0",
+//                        "authors": [
+//                            {
+//                                "name": "XyperCode"
+//                            }
+//                        ],
+//                        "scripts": {
+//                            "build": "tsc --build --verbose",
+//                            "pack": "npm pack"
+//                        },
+//                        "private": false,
+//                        "devDependencies": {
+//                            "typescript": "^5.5.3"
+//                        },
+//                        "workspaces": []
+//                    }
+//                    """;
+//
+//            writeJson(output.resolve("ts/package.json"), rootPackageJson);
+//
+//            @Language("json")
+//            String tsConfigJson = """
+//                    {
+//                       "include": [
+//                          "**/*.mjs"
+//                       ],
+//                       "compilerOptions": {
+//                         "module": "ES2022",
+//                         "moduleResolution": "Bundler",
+//                         "noEmit": true,
+//                         "allowJs": true,
+//                         "allowImportingTsExtensions": true,
+//                         "skipLibCheck": true
+//                       }
+//                    }
+//                    """;
+//
+//            writeJson(output.resolve("ts/tsconfig.json"), tsConfigJson);
         } catch (Exception e) {
             logger.log(Level.SEVERE, e.getMessage(), e);
             System.exit(1);
