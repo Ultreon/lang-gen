@@ -1,0 +1,3 @@
+[submodule "src/main/javascript"]
+	path = src/main/javascript
+	url = https://gitlab.com/ultreon/quantum-js/quantumjs
