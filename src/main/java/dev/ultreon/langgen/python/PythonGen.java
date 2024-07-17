@@ -226,7 +226,7 @@ public class PythonGen implements LangGenerator {
     }
 
     private void writeWrapper() throws IOException {
-        new SimpleClasspathBuilder(".py", PyFinalClassBuilder::new, PyClassBuilder::new).build(Paths.get("src/main/python"));
+        new SimpleClasspathBuilder(".py", PyFinalClassBuilder::new, PyClassBuilder::new).build(Paths.get("src/main/python/src"));
     }
 
     public void write(OptionSet options, Path output) {

@@ -1,3 +1,7 @@
 [submodule "src/main/javascript"]
 	path = src/main/javascript
 	url = https://gitlab.com/ultreon/quantum-js/quantumjs
+[submodule "python"]
+	path = src/main/python
+	url = https://gitlab.com/ultreon/pyquantum/bindings.git
+	branch = main
