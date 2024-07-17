@@ -1,7 +1,6 @@
 package dev.ultreon.langgen.javascript.js;
 
 import dev.ultreon.langgen.api.PackageExclusions;
-import dev.ultreon.langgen.javascript.JavascriptGen;
 import dev.ultreon.langgen.api.Converters;
 import dev.ultreon.langgen.javascript.api.AnyJsClassBuilder;
 import kotlin.Pair;
@@ -15,146 +14,65 @@ import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class JsClassBuilder implements AnyJsClassBuilder {
-    public static final String CLASS_FORMAT = """
-                    
-            class Wrapper {
-                constructor(java_value) {
-                    this._wrapper = java_value
-                }
-            }
-                        
-            function _wrap(java_value) {
-                return new %1$s(new Wrapper(java_value))
-            }
-                        
-            function doesExtend(ChildClass, ParentClass) {
-                // Access the prototype of the ChildClass
-                let prototype = ChildClass.prototype;
-                        
-                // Loop through the prototype chain
-                while (prototype != null) {
-                    // Check if the current prototype is the same as the ParentClass prototype
-                    if (prototype === ParentClass.prototype) {
-                        return true; // ChildClass extends ParentClass
+    public static final String CLASS_DEFINITION = """
+            class DynamicJavaExtender {
+                constructor(javaType) {
+                    if (new.target === DynamicJavaExtender) {
+                        throw new Error("DynamicJavaExtender should not be instantiated directly.");
                     }
-                    // Move up the prototype chain
-                    prototype = Object.getPrototypeOf(prototype);
+            
+                    this.javaType = javaType;
+                    this.extendedType = null;
+            
+                    // Dynamically set the extended type when the class is extended
+                    this.setExtendedType(new.target);
                 }
-                        
-                return false; // ChildClass does not extend ParentClass
-            }
-                        
-            function convertArray(array, clazz) {
-                let i = 0;
-                for (const elem in array) {
-                    array[i] = new (clazz)(clazz.$$$WRAPPER$$$(elem));
-                    i++;
+            
+                getExtendedType() {
+                    if (this.extendedType === null) {
+                        const JavaType = Java.type(this.javaType);
+                        if (%2$s) {
+                            this.extendedType = JavaType
+                        } else {
+                            this.extendedType = Java.extend(JavaType, {});
+                        }
+                    }
+                    return this.extendedType;
                 }
-                        
-                return array;
+            
+                setExtendedType(extendedClass) {
+                    const JavaType = Java.type(this.javaType);
+                    const extendedMethods = {};
+            
+                    if (%2$s) {
+                        return JavaType;
+                    }
+            
+                    // Copy methods from the extended class prototype to the extendedMethods object
+                    Object.getOwnPropertyNames(extendedClass.prototype).forEach(name => {
+                        if (name !== "constructor" && typeof extendedClass.prototype[name] === "function") {
+                            extendedMethods[name] = function() {
+                                return extendedClass.prototype[name].apply(this, arguments);
+                            };
+                        }
+                    });
+            
+                    this.extendedType = Java.extend(JavaType, extendedMethods);
+                }
+            
+                newInstance(...args) {
+                    const ExtendedType = this.getExtendedType();
+                    return new ExtendedType(...args);
+                }
             }
             
-            function isOfArrayType(array, type) {
-                if (!Array.isArray(array)) {
-                    return false;
+            export default class extends DynamicJavaExtender {
+                constructor() {
+                    super('%1$s');
+            
+                    const $ = this.newInstance(...arguments);
+                    return $;
                 }
-                          
-                const elementTypes = array.map(element => Object.prototype.toString.call(element));
-                const areSameType = elementTypes.every(type => type === elementTypes[0]);
-                          
-                return areSameType && elementTypes[0] === type.prototype.toString.call(element);
-            }
-               
-            function toOverload(array) {
-                if (!Array.isArray(array)) {
-                    throw new TypeError("Invalid data given to method! Overload check ultimately failed!");
-                }
-                          
-                return "(" + array.map(element => Object.prototype.toString.call(element)).join(", ") + ")";
-            }
-               
-            /**
-             * This is a wrapper for the {_%1$s} class.
-             */
-            class %1$s {
-                constructor() {        
-                    %4$s
-                        
-                    let args = [];
-                    for (let _i = 0; _i < arguments.length; _i++) {
-                        args[_i] = arguments[_i];
-                    }
-                        
-                    // Check for argument 0 being Wrapper (in this .mjs file)
-                    if (args[0] instanceof Wrapper) {
-                        return args[0]._wrapper;
-                    }
-                        
-                    if (Object.getPrototypeOf(this) !== %2$s.prototype) {
-                        const dyn = new (Java.extend(Java.type("%3$s")))(this);
-                        this["< dynamic >"] = dyn;
-                        
-                        Object.keys(dyn).forEach(key => {
-                            if (this[key] !== undefined) {
-                                return;
-                            }
-                            if (key === "< dynamic >") {
-                                throw new Error("Cannot overwrite the dynamic object");
-                            }
-                            if (key.startsWith("_")) {
-                                return;
-                            }
-                            Object.defineProperty(this, key, {
-                                get: function() {
-                                    return dyn[key];
-                                },
-                                set: function(v) {
-                                    dyn[key] = v;
-                                }
-                            });
-                        });
-                        
-            %5$s
-                        return;
-                    }
-                        
-                    const dyn = new (Java.type("%3$s"))(...args);
-                    this["< dynamic >"] = dyn;
-                    
-                    Object.keys(this["< dynamic >"]).forEach(key => {
-                        if (this[key] !== undefined) {
-                            return;
-                        }
-                        if (key === "< dynamic >") {
-                            throw new Error("Cannot overwrite the dynamic object");
-                        }
-                        if (key.startsWith("_")) {
-                            return;
-                        }
-                        Object.defineProperty(this, key, {
-                            get: function() {
-                                return this["< dynamic >"][key];
-                            },
-                            set: function(v) {
-                                this["< dynamic >"][key] = v;
-                            }
-                        });
-                    });
-                    
-            %6$s
-                }
-                        
-                static $$$WRAPPER$$$(element) {
-                    return _wrap(element);
-                }
-            """;
-    public static final String STUB_FORMAT = """
-                        
-            %4$s
-            /**
-             * This is a wrapper for the {_%1$s} class.
-             */
-            export class %1$s {
             """;
     protected final Class<?> clazz;
     protected final Set<String> imports = new HashSet<>();
@@ -177,22 +95,13 @@ public class JsClassBuilder implements AnyJsClassBuilder {
 
     @Override
     public List<String> build(StringBuilder sw) {
-        String methodInjectors12 = toInjectors(clazz.getMethods(), clazz.getFields(), clazz, 12, false);
-        String methodInjectors8 = toInjectors(clazz.getMethods(), clazz.getFields(), clazz, 8, false);
+        String injectors = toInjectors(clazz.getMethods(), clazz.getFields(), clazz, 12, false);
+        String methodInjectors12 = injectors.indent(12);
+        String methodInjectors8 = injectors.indent(8);
 
-        for (Field field : clazz.getFields()) {
-            if (Modifier.isStatic(field.getModifiers()) && Modifier.isFinal(field.getModifiers())) {
-                addConstField(field);
-            } else if (Modifier.isStatic(field.getModifiers())) {
-                addStaticField(field);
-            }
-        }
+        for (Field field : clazz.getFields()) if (Modifier.isStatic(field.getModifiers())) addStaticField(field);
 
-        for (Method field : clazz.getMethods()) {
-            if (Modifier.isStatic(field.getModifiers())) {
-                addStaticMethod(field);
-            }
-        }
+        for (Method field : clazz.getMethods()) if (Modifier.isStatic(field.getModifiers())) addStaticMethod(field);
 
         List<String> imports = new ArrayList<>(this.imports);
 
@@ -200,222 +109,170 @@ public class JsClassBuilder implements AnyJsClassBuilder {
 
         AtomicBoolean importOnce = new AtomicBoolean(false);
         String collect = imports.stream().sorted(Comparator.reverseOrder()).collect(Collectors.joining("\n"));
-        sw.append((JavascriptGen.isStub() ? STUB_FORMAT : CLASS_FORMAT).formatted(
-                name,
-                toJsClassSignature(clazz, clazz.getSuperclass(), clazz.getInterfaces()),
-                clazz.getName(),
-                (importOnce.get() ? "import {import_once} from 'quantum-js/quantum-js/core';\n" : "") + collect,
-                methodInjectors12,
-                methodInjectors8));
+//        sw.append((JavascriptGen.isStub() ? STUB_FORMAT : CLASS_FORMAT).formatted(
+//                name,
+//                toJsClassSignature(clazz, clazz.getSuperclass(), clazz.getInterfaces()),
+//                clazz.getName(),
+//                (importOnce.get() ? "import {import_once} from 'quantum-js/quantum-js/core';\n" : "") + collect,
+//                methodInjectors12,
+//                methodInjectors8));
+
+        sw.append(collect).append('\n');
+
+        sw.append(CLASS_DEFINITION.formatted(className, Modifier.isFinal(clazz.getModifiers())));
 
         Set<String> staticMembers1 = staticMembers;
         if (!staticMembers1.isEmpty()) {
             sw.append("\n");
             for (String member : staticMembers1.stream().sorted((o1, o2) -> {
-                if (o1.contains("constructor") && !o2.contains("constructor")) {
-                    return 1;
-                }
-                if (!o1.contains("constructor") && o2.contains("constructor")) {
-                    return -1;
-                }
+                if (o1.contains("constructor") && !o2.contains("constructor")) return 1;
+                if (!o1.contains("constructor") && o2.contains("constructor")) return -1;
 
-                if (o1.contains("static") && !o2.contains("static")) {
-                    return 1;
-                }
-                if (!o1.contains("static") && o2.contains("static")) {
-                    return -1;
-                }
+                if (o1.contains("static") && !o2.contains("static")) return 1;
+                if (!o1.contains("static") && o2.contains("static")) return -1;
 
-                if (o1.contains("abstract") && !o2.contains("abstract")) {
-                    return 1;
-                }
-                if (!o1.contains("abstract") && o2.contains("abstract")) {
-                    return -1;
-                }
+                if (o1.contains("abstract") && !o2.contains("abstract")) return 1;
+                if (!o1.contains("abstract") && o2.contains("abstract")) return -1;
 
-                if (o1.contains("final") && !o2.contains("final")) {
-                    return 1;
-                }
-                if (!o1.contains("final") && o2.contains("final")) {
-                    return -1;
-                }
+                if (o1.contains("final") && !o2.contains("final")) return 1;
+                if (!o1.contains("final") && o2.contains("final")) return -1;
 
-                if (o1.contains("private") && !o2.contains("private")) {
-                    return 1;
-                }
-                if (!o1.contains("private") && o2.contains("private")) {
-                    return -1;
-                }
+                if (o1.contains("private") && !o2.contains("private")) return 1;
+                if (!o1.contains("private") && o2.contains("private")) return -1;
 
-                if (o1.contains("protected") && !o2.contains("protected")) {
-                    return 1;
-                }
-                if (!o1.contains("protected") && o2.contains("protected")) {
-                    return -1;
-                }
+                if (o1.contains("protected") && !o2.contains("protected")) return 1;
+                if (!o1.contains("protected") && o2.contains("protected")) return -1;
 
-                if (o1.contains("public") && !o2.contains("public")) {
-                    return 1;
-                }
-                if (!o1.contains("public") && o2.contains("public")) {
-                    return -1;
-                }
+                if (o1.contains("public") && !o2.contains("public")) return 1;
+                if (!o1.contains("public") && o2.contains("public")) return -1;
 
-                if (o1.contains("function") && !o2.contains("function")) {
-                    return 1;
-                }
-                if (!o1.contains("function") && o2.contains("function")) {
-                    return -1;
-                }
+                if (o1.contains("function") && !o2.contains("function")) return 1;
+                if (!o1.contains("function") && o2.contains("function")) return -1;
 
                 String[] split = o1.trim().split("\n")[0].split("[_ ()\\[\\]\\-+/*|&^$\n\\s]");
                 for (int i = 0; i < split.length; i++) {
                     var s = split[i];
                     var s1 = o2.trim().split("\n")[0].split("[_ ()\\[\\]\\-+/*|&^$\n\\s]");
 
-                    if (i >= s1.length) {
-                        return -1;
-                    }
+                    if (i >= s1.length) return -1;
 
-                    if (!s.equals(s1[i])) {
-                        return s.compareTo(s1[i]);
-                    }
+                    if (!s.equals(s1[i])) return s.compareTo(s1[i]);
                 }
 
                 return o1.compareTo(o2);
-            }).toList()) {
-                List<String> list = member.lines().toList();
-                for (String line : list) {
-                    sw.append("    ").append(line);
-                    sw.append("\n");
-                }
-                sw.append("\n");
-            }
-        }
-        Set<String> members1 = members;
-        if (!members1.isEmpty()) {
-            sw.append("\n");
-            for (String member : members1.stream().sorted((o1, o2) -> {
-                if (o1.contains("constructor") && !o2.contains("constructor")) {
-                    return 1;
-                }
-                if (!o1.contains("constructor") && o2.contains("constructor")) {
-                    return -1;
-                }
-
-                if (o1.contains("static") && !o2.contains("static")) {
-                    return 1;
-                }
-                if (!o1.contains("static") && o2.contains("static")) {
-                    return -1;
-                }
-
-                if (o1.contains("abstract") && !o2.contains("abstract")) {
-                    return 1;
-                }
-                if (!o1.contains("abstract") && o2.contains("abstract")) {
-                    return -1;
-                }
-
-                if (o1.contains("final") && !o2.contains("final")) {
-                    return 1;
-                }
-                if (!o1.contains("final") && o2.contains("final")) {
-                    return -1;
-                }
-
-                if (o1.contains("private") && !o2.contains("private")) {
-                    return 1;
-                }
-                if (!o1.contains("private") && o2.contains("private")) {
-                    return -1;
-                }
-
-                if (o1.contains("protected") && !o2.contains("protected")) {
-                    return 1;
-                }
-                if (!o1.contains("protected") && o2.contains("protected")) {
-                    return -1;
-                }
-
-                if (o1.contains("public") && !o2.contains("public")) {
-                    return 1;
-                }
-                if (!o1.contains("public") && o2.contains("public")) {
-                    return -1;
-                }
-
-                if (o1.contains("function") && !o2.contains("function")) {
-                    return 1;
-                }
-                if (!o1.contains("function") && o2.contains("function")) {
-                    return -1;
-                }
-
-                String[] split = o1.trim().split("\n")[0].split("[_ ()\\[\\]\\-+/*|&^$\n\\s]");
-                for (int i = 0; i < split.length; i++) {
-                    var s = split[i];
-                    var s1 = o2.trim().split("\n")[0].split("[_ ()\\[\\]\\-+/*|&^$\n\\s]");
-
-                    if (i >= s1.length) {
-                        return -1;
-                    }
-
-                    if (!s.equals(s1[i])) {
-                        return s.compareTo(s1[i]);
-                    }
-                }
-
-                return o1.compareTo(o2);
-            }).toList()) {
-                List<String> list = member.lines().toList();
-                for (String line : list) {
-                    sw.append("    ").append(line);
-                    sw.append("\n");
-                }
-                sw.append("\n");
-            }
+            }).toList())
+                sw.append(member.indent(4));
         }
 
-        sw.append("""
-                }
-                
-                """);
+        sw.append("\n}");
 
-        if (!postinit.isEmpty()) {
-            sw.append("\n");
-            for (String member : postinit) {
-                List<String> list = member.lines().toList();
-                for (String line : list) {
-                    sw.append(line);
-                    sw.append("\n");
-                }
-                sw.append("\n");
-            }
-        }
+//        Set<String> members1 = members;
+//        if (!members1.isEmpty()) {
+//            sw.append("\n");
+//            for (String member : members1.stream().sorted((o1, o2) -> {
+//                if (o1.contains("constructor") && !o2.contains("constructor")) {
+//                    return 1;
+//                }
+//                if (!o1.contains("constructor") && o2.contains("constructor")) {
+//                    return -1;
+//                }
+//
+//                if (o1.contains("static") && !o2.contains("static")) {
+//                    return 1;
+//                }
+//                if (!o1.contains("static") && o2.contains("static")) {
+//                    return -1;
+//                }
+//
+//                if (o1.contains("abstract") && !o2.contains("abstract")) {
+//                    return 1;
+//                }
+//                if (!o1.contains("abstract") && o2.contains("abstract")) {
+//                    return -1;
+//                }
+//
+//                if (o1.contains("final") && !o2.contains("final")) {
+//                    return 1;
+//                }
+//                if (!o1.contains("final") && o2.contains("final")) {
+//                    return -1;
+//                }
+//
+//                if (o1.contains("private") && !o2.contains("private")) {
+//                    return 1;
+//                }
+//                if (!o1.contains("private") && o2.contains("private")) {
+//                    return -1;
+//                }
+//
+//                if (o1.contains("protected") && !o2.contains("protected")) {
+//                    return 1;
+//                }
+//                if (!o1.contains("protected") && o2.contains("protected")) {
+//                    return -1;
+//                }
+//
+//                if (o1.contains("public") && !o2.contains("public")) {
+//                    return 1;
+//                }
+//                if (!o1.contains("public") && o2.contains("public")) {
+//                    return -1;
+//                }
+//
+//                if (o1.contains("function") && !o2.contains("function")) {
+//                    return 1;
+//                }
+//                if (!o1.contains("function") && o2.contains("function")) {
+//                    return -1;
+//                }
+//
+//                String[] split = o1.trim().split("\n")[0].split("[_ ()\\[\\]\\-+/*|&^$\n\\s]");
+//                for (int i = 0; i < split.length; i++) {
+//                    var s = split[i];
+//                    var s1 = o2.trim().split("\n")[0].split("[_ ()\\[\\]\\-+/*|&^$\n\\s]");
+//
+//                    if (i >= s1.length) {
+//                        return -1;
+//                    }
+//
+//                    if (!s.equals(s1[i])) {
+//                        return s.compareTo(s1[i]);
+//                    }
+//                }
+//
+//                return o1.compareTo(o2);
+//            }).toList()) {
+//                List<String> list = member.lines().toList();
+//                for (String line : list) {
+//                    sw.append("    ").append(line);
+//                    sw.append("\n");
+//                }
+//                sw.append("\n");
+//            }
+//        }
+//
+//        sw.append("""
+//                }
+//
+//                """);
 
-        if (!JavascriptGen.isStub()) {
-            sw.append("""
-                    export default %1$s
-                
-                    /**
-                     * Creates a new wrapper for the given java class
-                     *
-                     * @param {string} javaClassName - the name of the java class
-                     * @param {...string} extending - the names of the classes to extend
-                     */
-                    function createJavaWrapper(javaClassName, ...extending) {
-                        let JavaClass = Java.type(javaClassName);
-                        if (extending.length > 0) {
-                            JavaClass = Java.extend(javaClass, ...extending);
-                        }
-                    
-                        return function(...args) {
-                            return new JavaClass(...args);
-                        }
-                    }
-                    """.formatted(name));
-        }
+//        if (!postinit.isEmpty()) {
+//            sw.append("\n");
+//            for (String member : postinit) {
+//                List<String> list = member.lines().toList();
+//                for (String line : list) {
+//                    sw.append(line);
+//                    sw.append("\n");
+//                }
+//                sw.append("\n");
+//            }
+//        }
+
+//        if (!JavascriptGen.isStub()) {
+//            sw.append("""
+//                    export default %1$s;
+//                    """.formatted(name));
+//        }
         return List.of();
     }
 
@@ -426,21 +283,40 @@ public class JsClassBuilder implements AnyJsClassBuilder {
 
         for (Method method : methods) {
             if (Modifier.isStatic(method.getModifiers()) != isStatic) continue;
-            if ((method.getName().equals("apply") || method.getName().equals("call") || method.getName().equals("bind")) && isStatic) continue;
+            if ((method.getName().equals("apply") || method.getName().equals("call") || method.getName().equals("bind")) && isStatic)
+                continue;
             StringBuilder paramBuilder = new StringBuilder();
-            paramBuilder.append("(");
             for (Class<?> paramType : method.getParameterTypes()) {
-                paramBuilder.append(paramType.getName()).append(",");
+                Class<?> cur = paramType;
+                StringBuilder postfix = new StringBuilder();
+                if (cur.isArray()) {
+                    cur = paramType.getComponentType();
+                    postfix.append("[]");
+
+                    if (cur.isArray()) {
+                        cur = paramType.getComponentType();
+                        postfix.append("[]");
+
+                        if (cur.isArray()) {
+                            cur = paramType.getComponentType();
+                            postfix.append("[]");
+
+                            if (cur.isArray()) throw new Error("Maximum array density reached");
+                        }
+                    }
+                }
+                paramBuilder.append(cur.getName()).append(postfix).append(",");
             }
             if (!paramBuilder.isEmpty())
-                paramBuilder.deleteCharAt(paramBuilder.length() -1);
+                paramBuilder.deleteCharAt(paramBuilder.length() - 1);
 
-            methodsByName.computeIfAbsent(method.getName(), v -> new ArrayList<>()).add(new Pair<>(paramBuilder + ")", method));
+            methodsByName.computeIfAbsent(method.getName(), v -> new ArrayList<>()).add(new Pair<>(paramBuilder.toString(), method));
         }
 
         for (Field field : fields) {
             if (Modifier.isStatic(field.getModifiers()) != isStatic) continue;
-            if ((field.getName().equals("apply") || field.getName().equals("call") || field.getName().equals("bind")) && isStatic) continue;
+            if ((field.getName().equals("apply") || field.getName().equals("call") || field.getName().equals("bind")) && isStatic)
+                continue;
             fieldsByName.computeIfAbsent(field.getName(), v -> new ArrayList<>()).add(new Pair<>(field.getName(), field));
         }
 
@@ -448,7 +324,7 @@ public class JsClassBuilder implements AnyJsClassBuilder {
             String name = entry.getKey();
             List<Pair<String, Method>> value = entry.getValue();
 //            if (fieldsByName.containsKey(name)) {
-//                builder.append("dyn['").append(name).append("']").append(" = function() {\n    func = function(...args) {\n        ");
+//                builder.append("this['").append(name).append("']").append(" = function() {\n    func = function(...args) {\n        ");
 //
 //                for (int i = 0, valueSize = value.size(); i < valueSize; i++) {
 //                    var methodData = value.get(i);
@@ -471,7 +347,7 @@ public class JsClassBuilder implements AnyJsClassBuilder {
 //                }
 //
 //                builder.append("    }");
-//                builder.append("    function _get() { dyn['").append(name).append("'] }");
+//                builder.append("    function _get() { this['").append(name).append("'] }");
 //
 //                builder.append("""
 //                            return
@@ -481,7 +357,7 @@ public class JsClassBuilder implements AnyJsClassBuilder {
 //                continue;
 //            }
 
-            builder.append("dyn['").append(name).append("'] = function(...args) {\n    ");
+            builder.append("this['").append(name).append("'] = function(...args) {\n    ");
 
             for (int i = 0, valueSize = value.size(); i < valueSize; i++) {
                 var methodData = value.get(i);
@@ -495,9 +371,9 @@ public class JsClassBuilder implements AnyJsClassBuilder {
                 for (int idx = 0, parameterTypesLength = parameterTypes.length; idx < parameterTypesLength; idx++) {
                     var type = parameterTypes[idx];
                     if (type.isArray())
-                        builder.append(" && ").append("isOfArrayType(args[").append(idx).append("], ").append(toJsType(type.getComponentType())).append(")");
+                        builder.append(" && ").append("isOfArrayType(args[").append(idx).append("], '").append(type.getComponentType().getName()).append("')");
                     else
-                        builder.append(" && ").append("args[").append(idx).append("] instanceof ").append(toJsType(type));
+                        builder.append(" && ").append("args[").append(idx).append("]['<< NAME >>'] === '").append(type.getName()).append("'");
                 }
 
                 builder.append(") {\n        ").append("return dyn['").append(name).append("(").append(signature).append(")'](...args)").append("\n    }");
@@ -511,27 +387,25 @@ public class JsClassBuilder implements AnyJsClassBuilder {
 
         }
 
-        return builder.toString().indent(indent);
+        return builder.toString();
     }
 
     public void addAbstractMethod(Method method) {
-        if (method.getParameters().length == 0) {
-            this.members.add("""
-                    /**
-                     * WARNING: NOT IMPLEMENTED. DO NOT CALL UNLESS ON OVERRIDDEN FUNCTION
-                     * %2$s
-                     *
-                    %3$s
-                     */
-                    %1$s() {
-                        throw new Error("Not implemented");
-                    }
-                    """.formatted(
-                    toJavaMemberName(method),
-                    method.toGenericString(),
-                    toJsDocSignature(method)
-            ));
-        }
+        if (method.getParameters().length == 0) this.members.add("""
+                /**
+                 * WARNING: NOT IMPLEMENTED. DO NOT CALL UNLESS ON OVERRIDDEN FUNCTION
+                 * %2$s
+                 *
+                %3$s
+                 */
+                %1$s() {
+                    throw new Error("Not implemented");
+                }
+                """.formatted(
+                toJavaMemberName(method),
+                method.toGenericString(),
+                toJsDocSignature(method)
+        ));
 
         this.members.add("""
                 /**
@@ -541,7 +415,7 @@ public class JsClassBuilder implements AnyJsClassBuilder {
                 %4$s
                  */
                 %1$s() {
-                
+                                
                 }
                 """.formatted(
                 toJavaMemberName(method),
@@ -560,41 +434,24 @@ public class JsClassBuilder implements AnyJsClassBuilder {
         builder.append(" * An wrapped Java method of ").append(method.getDeclaringClass().getName()).append("\n");
         builder.append(" * \n");
 
-        if (Modifier.isAbstract(method.getModifiers())) {
-            builder.append(" * @abstract\n");
-        }
+        if (Modifier.isAbstract(method.getModifiers())) builder.append(" * @abstract\n");
 
-        if (Modifier.isFinal(method.getModifiers())) {
-            builder.append(" * @final\n");
-        }
+        if (Modifier.isFinal(method.getModifiers())) builder.append(" * @final\n");
 
-        if (Modifier.isPrivate(method.getModifiers())) {
-            builder.append(" * @private\n");
-        }
+        if (Modifier.isPrivate(method.getModifiers())) builder.append(" * @private\n");
 
-        if (Modifier.isProtected(method.getModifiers())) {
-            builder.append(" * @protected\n");
-        }
+        if (Modifier.isProtected(method.getModifiers())) builder.append(" * @protected\n");
 
-        if (Modifier.isPublic(method.getModifiers())) {
-            builder.append(" * @public\n");
-        }
+        if (Modifier.isPublic(method.getModifiers())) builder.append(" * @public\n");
 
-        if (!Modifier.isStatic(method.getModifiers())) {
-            builder.append(" * @instance\n");
-        }
+        if (!Modifier.isStatic(method.getModifiers())) builder.append(" * @instance\n");
 
-        if (!Modifier.isPrivate(method.getModifiers()) && !Modifier.isProtected(method.getModifiers()) && !Modifier.isPublic(method.getModifiers())) {
+        if (!Modifier.isPrivate(method.getModifiers()) && !Modifier.isProtected(method.getModifiers()) && !Modifier.isPublic(method.getModifiers()))
             builder.append(" * @package\n");
-        }
 
-        if (Modifier.isStatic(method.getModifiers())) {
-            builder.append(" * @static\n");
-        }
+        if (Modifier.isStatic(method.getModifiers())) builder.append(" * @static\n");
 
-        if (method.isAnnotationPresent(Override.class)) {
-            builder.append(" * @override\n");
-        }
+        if (method.isAnnotationPresent(Override.class)) builder.append(" * @override\n");
 
         builder.append(" * @param {...args} any[] - AUTO GENERATED STUB\n");
 
@@ -618,9 +475,7 @@ public class JsClassBuilder implements AnyJsClassBuilder {
         builder.append(", ").append(toJavaType(clazz, "_"));
 
         String string = builder.toString();
-        if (string.startsWith(", ")) {
-            return string.substring(2);
-        }
+        if (string.startsWith(", ")) return string.substring(2);
         return string;
     }
 
@@ -635,41 +490,31 @@ public class JsClassBuilder implements AnyJsClassBuilder {
         builder.append("\n        ");
 
         for (int i = 0; i < parameters.length; i++) {
-            if (i != 0) {
-                builder.append(",\n        ");
-            }
+            if (i != 0) builder.append(",\n        ");
 
             Parameter parameter = parameters[i];
-            if (parameter.isVarArgs()) {
-                builder.append("...");
-            }
+            if (parameter.isVarArgs()) builder.append("...");
             builder.append(toJsArgument(parameter.getType(), parameter.getName()));
 
-            if (parameter.getType() == int.class) {
-                this.addImport("const _int = Java.type('java.lang.Integer')");
-            } else if (parameter.getType() == long.class) {
-                this.addImport("const _long = Java.type('java.lang.Long')");
-            } else if (parameter.getType() == float.class) {
+            if (parameter.getType() == int.class) this.addImport("const _int = Java.type('java.lang.Integer')");
+            else if (parameter.getType() == long.class) this.addImport("const _long = Java.type('java.lang.Long')");
+            else if (parameter.getType() == float.class)
                 this.addImport("const _float = Java.type('java.lang.Float')");
-            } else if (parameter.getType() == double.class) {
+            else if (parameter.getType() == double.class)
                 this.addImport("const _double = Java.type('java.lang.Double')");
-            } else if (parameter.getType() == boolean.class) {
+            else if (parameter.getType() == boolean.class)
                 this.addImport("const _boolean = Java.type('java.lang.Boolean')");
-            } else if (parameter.getType() == String.class) {
+            else if (parameter.getType() == String.class)
                 this.addImport("const _string = Java.type('java.lang.String')");
-            } else if (parameter.getType() == byte.class) {
-                this.addImport("const _byte = Java.type('java.lang.Byte')");
-            } else if (parameter.getType() == short.class) {
+            else if (parameter.getType() == byte.class) this.addImport("const _byte = Java.type('java.lang.Byte')");
+            else if (parameter.getType() == short.class)
                 this.addImport("const _short = Java.type('java.lang.Short')");
-            } else if (parameter.getType() == char.class) {
+            else if (parameter.getType() == char.class)
                 this.addImport("const _char = Java.type('java.lang.Character')");
-            } else if (parameter.getType() == void.class) {
-                this.addImport("const _void = Java.type('java.lang.Void')");
-            } else if (parameter.getType() == Object.class) {
+            else if (parameter.getType() == void.class) this.addImport("const _void = Java.type('java.lang.Void')");
+            else if (parameter.getType() == Object.class)
                 this.addImport("const _object = Java.type('java.lang.Object')");
-            } else {
-                this.addImport(toJavaImport(parameter.getType()));
-            }
+            else this.addImport(toJavaImport(parameter.getType()));
 
             this.addImport(toJsImport(parameter.getType()));
         }
@@ -680,76 +525,63 @@ public class JsClassBuilder implements AnyJsClassBuilder {
 
     @Nullable
     public String toJsPrimitiveType(Class<?> type) {
-        if (type == int.class) {
-            return "number";
-        } else if (type == long.class) {
-            return "number";
-        } else if (type == float.class) {
-            return "number";
-        } else if (type == double.class) {
-            return "number";
-        } else if (type == boolean.class) {
-            return "boolean";
-        } else if (type == String.class) {
-            return "string";
-        } else if (type == byte[].class) {
-            return "Uint8Array";
-        } else if (type == Object.class) {
-            return "Any";
-        } else if (type == byte.class) {
-            return "number";
-        } else if (type == short.class) {
-            return "number";
-        } else if (type == char.class) {
-            return "string";
-        } else if (type == void.class) {
-            return "void";
-        } else {
-            return null;
-        }
+        if (type == int.class) return "number";
+        else if (type == long.class) return "number";
+        else if (type == float.class) return "number";
+        else if (type == double.class) return "number";
+        else if (type == boolean.class) return "boolean";
+        else if (type == String.class) return "string";
+        else if (type == byte[].class) return "Uint8Array";
+        else if (type == Object.class) return "Any";
+        else if (type == byte.class) return "number";
+        else if (type == short.class) return "number";
+        else if (type == char.class) return "string";
+        else if (type == void.class) return "void";
+        else return null;
     }
 
     public String toJsArgument(Class<?> type, String expr) {
-        if (type.isArray()) {
-            return "convertArray(" + toJsArgument(type.getComponentType(), expr) + ", " + toJsType(type.getComponentType()) + ")";
-        }
+        if (type.isArray())
+            return "Java.to(" + toJsArgument(type.getComponentType(), expr) + ", " + toJsType(type.getComponentType()) + ")";
 
-        if (type == int.class) {
-            return "_int.valueOf(" + expr + ")";
-        } else if (type == long.class) {
-            return "_long.valueOf(" + expr + ")";
-        } else if (type == float.class) {
-            return "_float.valueOf(" + expr + ")";
-        } else if (type == double.class) {
-            return "_double.valueOf(" + expr + ")";
-        } else if (type == boolean.class) {
-            return "_boolean.valueOf(" + expr + ")";
-        } else if (type == String.class) {
-            return expr;
-        } else if (type == void.class) {
-            return "undefined";
-        } else if (type == byte[].class) {
-            return "bytes";
-        } else if (type == Object.class) {
-            return expr;
-        } else if (type == byte.class) {
-            return "_byte.valueOf(" + expr + ")";
-        } else if (type == short.class) {
-            return "_short.valueOf(" + expr + ")";
-        } else if (type == char.class) {
-            return "_char.valueOf(" + expr + ")";
-        } else {
-            return toJsType(type) + ".$$$WRAPPER$$$(" + expr + ")";
-        }
+        if (type == int.class) return "_int.valueOf(" + expr + ")";
+        else if (type == long.class) return "_long.valueOf(" + expr + ")";
+        else if (type == float.class) return "_float.valueOf(" + expr + ")";
+        else if (type == double.class) return "_double.valueOf(" + expr + ")";
+        else if (type == boolean.class) return "_boolean.valueOf(" + expr + ")";
+        else if (type == String.class) return expr;
+        else if (type == void.class) return "undefined";
+        else if (type == byte[].class) return "bytes";
+        else if (type == Object.class) return expr;
+        else if (type == byte.class) return "_byte.valueOf(" + expr + ")";
+        else if (type == short.class) return "_short.valueOf(" + expr + ")";
+        else if (type == char.class) return "_char.valueOf(" + expr + ")";
+        else return "Java.to(" + expr + ", Java.type(" + getTypeName(type) + "))";
+    }
+
+    private static @NotNull String getTypeName(Class<?> type) {
+        String prefix = "";
+        if (!type.isArray()) return type.getName() + prefix;
+        type = type.getComponentType();
+        prefix += "[]";
+        if (!type.isArray()) return type.getName() + prefix;
+        type = type.getComponentType();
+        prefix += "[]";
+        if (!type.isArray()) return type.getName() + prefix;
+        type = type.getComponentType();
+        prefix += "[]";
+        if (!type.isArray()) return type.getName() + prefix;
+        type = type.getComponentType();
+        prefix += "[]";
+        if (!type.isArray()) return type.getName() + prefix;
+        throw new Error("Too dense array type!");
     }
 
     public Object toJsSignature(Parameter[] parameters) {
         StringBuilder builder = new StringBuilder();
         for (int i = 0, parametersLength = parameters.length; i < parametersLength; i++) {
             Parameter value = parameters[i];
-            if (i != 0) {
-                builder.append(", ");
-            }
+            if (i != 0) builder.append(", ");
 
             Class<?> type = value.getType();
             if (!Modifier.isPublic(type.getModifiers()) && !Modifier.isProtected(type.getModifiers())) {
@@ -766,24 +598,19 @@ public class JsClassBuilder implements AnyJsClassBuilder {
 
                 builder.append("...").append(value.getName()).append(": ").append(toJsType(componentType));
                 this.addImport(toJsImport(componentType));
-                if (i != parametersLength - 1) {
-                    logger.warning("VarArgs not last parameter: " + value.getName());
-                }
+                if (i != parametersLength - 1) logger.warning("VarArgs not last parameter: " + value.getName());
 
                 continue;
             }
 
             String primitiveType = toJsPrimitiveType(type);
-            if (primitiveType != null) {
-                builder.append("%1$s".formatted(
-                        value.getName(),
-                        primitiveType
-                ));
-            } else {
+            if (primitiveType != null) builder.append("%1$s".formatted(
+                    value.getName(),
+                    primitiveType
+            ));
+            else {
                 Class<?> t = value.getType();
-                while (t.isArray()) {
-                    t = t.getComponentType();
-                }
+                while (t.isArray()) t = t.getComponentType();
 
                 builder.append("%1$s".formatted(
                         value.getName(),
@@ -803,25 +630,20 @@ public class JsClassBuilder implements AnyJsClassBuilder {
 
         String override = "";
         try {
-            if (clazz.getSuperclass() != null) {
-                clazz.getSuperclass().getMethod(name, method.getParameterTypes());
-            } else {
-                for (Class<?> interfaceClass : clazz.getInterfaces()) {
-                    try {
-                        interfaceClass.getMethod(name, method.getParameterTypes());
-                    } catch (NoSuchMethodException ignored) {
-
-                    }
-                }
-            }
-        } catch (NoSuchMethodException e) {
-            for (Class<?> interfaceClass : clazz.getInterfaces()) {
+            if (clazz.getSuperclass() != null) clazz.getSuperclass().getMethod(name, method.getParameterTypes());
+            else for (Class<?> interfaceClass : clazz.getInterfaces())
                 try {
                     interfaceClass.getMethod(name, method.getParameterTypes());
                 } catch (NoSuchMethodException ignored) {
 
                 }
-            }
+        } catch (NoSuchMethodException e) {
+            for (Class<?> interfaceClass : clazz.getInterfaces())
+                try {
+                    interfaceClass.getMethod(name, method.getParameterTypes());
+                } catch (NoSuchMethodException ignored) {
+
+                }
         }
 
         if (method.getReturnType() == void.class) {
@@ -955,9 +777,7 @@ public class JsClassBuilder implements AnyJsClassBuilder {
 
     private Object toJsMemberCall(Member member) {
         String javaMemberName = toJavaMemberName(member);
-        if (javaMemberName.startsWith("[")) {
-            return javaMemberName;
-        }
+        if (javaMemberName.startsWith("[")) return javaMemberName;
         return "." + javaMemberName;
     }
 
@@ -967,7 +787,7 @@ public class JsClassBuilder implements AnyJsClassBuilder {
         String s = toJsMemberName(method);
         Parameter[] parameters = method.getParameters();
         if (method.getReturnType() == void.class) {
-            this.members.add("""
+            this.staticMembers.add("""
                     /**
                      * %2$s
                      *
@@ -992,7 +812,7 @@ public class JsClassBuilder implements AnyJsClassBuilder {
 
         if (Number.class.isAssignableFrom(method.getReturnType()) || method.getReturnType() == String.class || method.getReturnType() == byte.class || method.getReturnType() == short.class || method.getReturnType() == int.class || method.getReturnType() == long.class || method.getReturnType() == boolean.class || method.getReturnType() == char.class || method.getReturnType() == float.class || method.getReturnType() == double.class) {
             this.addImport(toJsImport(method.getReturnType()));
-            this.members.add("""
+            this.staticMembers.add("""
                     /**
                      * %3$s
                      *
@@ -1019,16 +839,16 @@ public class JsClassBuilder implements AnyJsClassBuilder {
         if (method.getReturnType().isArray()) {
             if (Number.class.isAssignableFrom(method.getReturnType()) || method.getReturnType().getComponentType() == String.class || method.getReturnType().getComponentType() == byte.class || method.getReturnType().getComponentType() == short.class || method.getReturnType().getComponentType() == int.class || method.getReturnType().getComponentType() == long.class || method.getReturnType().getComponentType() == boolean.class || method.getReturnType().getComponentType() == char.class || method.getReturnType().getComponentType() == float.class || method.getReturnType().getComponentType() == double.class) {
 
-                this.members.add("""
-                    /**
-                     * %3$s
-                     *
-                    %9$s
-                     */
-                    static %1$s(...args) {
-                        return %4$s.%1$s(...args)
-                    }
-                    """.formatted(
+                this.staticMembers.add("""
+                        /**
+                         * %3$s
+                         *
+                        %9$s
+                         */
+                        static %1$s(...args) {
+                            return %4$s.%1$s(...args)
+                        }
+                        """.formatted(
                         s,
                         toJsType(method.getReturnType().getComponentType()),
                         method.toGenericString(),
@@ -1041,14 +861,14 @@ public class JsClassBuilder implements AnyJsClassBuilder {
                 ));
                 return;
             }
-            this.members.add("""
+            this.staticMembers.add("""
                     /**
                      * %3$s
                      *
                     %9$s
                      */
                     static %1$s(...args) {
-                        return convertArray(%2$s.$$$WRAPPER$$$(%4$s.%1$s(...args)))
+                        return Java.from(%4$s.%1$s(...args))
                     }
                     """.formatted(
                     s,
@@ -1065,14 +885,14 @@ public class JsClassBuilder implements AnyJsClassBuilder {
             return;
         }
 
-        this.members.add("""
+        this.staticMembers.add("""
                 /**
                  * %3$s
                  *
                 %9$s
                  */
                 static %1$s(...args) {
-                    return %2$s.$$$WRAPPER$$$(%4$s.%1$s(...args))
+                    return %4$s.%1$s(...args)
                 }
                 """.formatted(
                 s,
@@ -1100,18 +920,12 @@ public class JsClassBuilder implements AnyJsClassBuilder {
     public @NotNull String toJsType(Class<?> returnType) {
         if (PackageExclusions.isExcluded(returnType)) return "Object";
 
-        if (returnType.isArray()) {
-            return toJsType(returnType.getComponentType()) + "[]";
-        }
+        if (returnType.isArray()) return toJsType(returnType.getComponentType()) + "[]";
 
         String primitiveType = toJsPrimitiveType(returnType);
-        if (primitiveType != null) {
-            return primitiveType;
-        }
+        if (primitiveType != null) return primitiveType;
 
-        if (returnType == clazz) {
-            return this.name;
-        }
+        if (returnType == clazz) return this.name;
 
         String name = Converters.convert(returnType.getName());
         if (name == null) name = returnType.getName();
@@ -1121,14 +935,10 @@ public class JsClassBuilder implements AnyJsClassBuilder {
     }
 
     public @Nullable String toJavaType(Class<?> returnType, String prefix) {
-        if (returnType.isArray()) {
-            return toJsType(returnType.getComponentType()) + "[]";
-        }
+        if (returnType.isArray()) return toJsType(returnType.getComponentType()) + "[]";
 
         String primitiveType = toJsPrimitiveType(returnType);
-        if (primitiveType != null) {
-            return null;
-        }
+        if (primitiveType != null) return null;
 
         String name = returnType.getName();
         if (prefix == "_")
@@ -1137,9 +947,7 @@ public class JsClassBuilder implements AnyJsClassBuilder {
     }
 
     public void addField(Field field) {
-        if (Modifier.isPrivate(field.getModifiers())) {
-            return;
-        }
+        if (Modifier.isPrivate(field.getModifiers())) return;
 
         this.members.add("""
                 /**
@@ -1157,31 +965,68 @@ public class JsClassBuilder implements AnyJsClassBuilder {
                 toJsMemberCall(field)
         ));
 
-        if (!Modifier.isFinal(field.getModifiers())) {
-            this.members.add("""
-                    /**
-                     * Setter for the %1$s property.
-                     *
-                     * @instance
-                     * @param {%2$s} value - New value for %1$s
-                     */
-                    set %1$s(value) {
-                        super%3$s = value._wrapper%4$s;
-                    }
-                    """.formatted(
-                    toJsMemberName(field),
-                    toJsType(field.getType()),
-                    toJsMemberAssign(field),
-                    toJsMemberCall(field)
-            ));
-        }
+        if (!Modifier.isFinal(field.getModifiers())) this.members.add("""
+                /**
+                 * Setter for the %1$s property.
+                 *
+                 * @instance
+                 * @param {%2$s} value - New value for %1$s
+                 */
+                set %1$s(value) {
+                    super%3$s = value._wrapper%4$s;
+                }
+                """.formatted(
+                toJsMemberName(field),
+                toJsType(field.getType()),
+                toJsMemberAssign(field),
+                toJsMemberCall(field)
+        ));
 
         this.addImport(toJsImport(field.getType()));
         this.addImport(toJavaImport(field.getType()));
     }
 
     public void addStaticField(Field field) {
-        this.members.add("""
+        if (field.getType().isArray()) {
+            this.staticMembers.add("""
+                    /**
+                     * Getter for the %1$s property.
+                     *
+                     * @static
+                     * @return {%2$s} %4%s - Value of %1$s
+                     */
+                    static get %1$s() {
+                        return Java.from(%4$s.%3$s);
+                    }
+                    """.formatted(
+                    toJsMemberName(field),
+                    toJsType(field.getType().getComponentType()),
+                    toJavaMemberName(field),
+                    toJavaType(field.getDeclaringClass())
+            ));
+
+            if (!Modifier.isFinal(field.getModifiers())) this.staticMembers.add("""
+                    /**
+                     * Setter for the %1$s property.
+                     *
+                     * @static
+                     * @param {%2$s} value - Value of %1$s
+                     */
+                    static set %1$s(value) {
+                        _%4$s.%3$s = Java.to(value, %5$s);
+                    }
+                    """.formatted(
+                    toJsMemberName(field),
+                    toJsType(field.getType().getComponentType()),
+                    toJavaMemberName(field),
+                    toJsType(field.getDeclaringClass()),
+                    getTypeName(field.getType())
+            ));
+
+            return;
+        }
+
+        this.staticMembers.add("""
                 /**
                  * Getter for the %1$s property.
                  *
@@ -1189,16 +1034,16 @@ public class JsClassBuilder implements AnyJsClassBuilder {
                  * @return {%2$s} %4%s - Value of %1$s
                  */
                 static get %1$s() {
-                    return _%4$s.%3$s;
+                    return %4$s.%3$s;
                 }
                 """.formatted(
                 toJsMemberName(field),
-                field.getType().getSimpleName(),
+                toJsType(field.getType()),
                 toJavaMemberName(field),
-                toJsType(field.getDeclaringClass())
+                toJavaType(field.getDeclaringClass())
         ));
 
-        this.members.add("""
+        if (!Modifier.isFinal(field.getModifiers())) this.staticMembers.add("""
                 /**
                  * Setter for the %1$s property.
                  *
@@ -1206,7 +1051,7 @@ public class JsClassBuilder implements AnyJsClassBuilder {
                  * @param {%2$s} value - Value of %1$s
                  */
                 static set %1$s(value) {
-                    _%4$s.%3$s = value;
+                    _%4$s.%3$s = value["< dynamic >"];
                 }
                 """.formatted(
                 toJsMemberName(field),
@@ -1364,139 +1209,87 @@ public class JsClassBuilder implements AnyJsClassBuilder {
     }
 
     public void addConstField(Field field) {
-        if (field.getType() == byte.class ||
-            field.getType() == short.class ||
-            field.getType() == int.class ||
-            field.getType() == long.class ||
-            field.getType() == float.class ||
-            field.getType() == double.class ||
-            field.getType() == Object.class ||
-            field.getType() == void.class ||
-            field.getType() == String.class
-        ) {
-            this.staticMembers.add("""
-                    /**
-                     * @static
-                     * @readonly
-                     * @type {%3$s}
-                     */
-                    static %2$s
-                    """.formatted(
-                    toJavaType(field.getDeclaringClass()),
-                    toJavaMemberName(field),
-                    toJsType(field.getType())
-
-            ));
-            this.postinit.add("""
-                    /**
-                     * @static
-                     * @readonly
-                     * @type {%3$s}
-                     */
-                    %4$s.%2$s = %1$s.%2$s
-                    """.formatted(
-                    toJavaType(field.getDeclaringClass()),
-                    toJavaMemberName(field),
-                    toJsType(field.getType()),
-                    toJsType(field.getDeclaringClass())
-            ));
-            return;
-        }
-
-        if (field.getType().isArray()) {
-            if (field.getType().getComponentType() == byte.class ||
-                field.getType().getComponentType() == short.class ||
-                field.getType().getComponentType() == int.class ||
-                field.getType().getComponentType() == long.class ||
-                field.getType().getComponentType() == float.class ||
-                field.getType().getComponentType() == double.class ||
-                field.getType().getComponentType() == Object.class ||
-                field.getType().getComponentType() == void.class ||
-                field.getType().getComponentType() == String.class
-            ) {
-                this.staticMembers.add("""
-                        /**
-                         * @static
-                         * @readonly
-                         * @type {%3$s}
-                         */
-                        static %2$s
-                        """.formatted(
-                        toJavaType(field.getDeclaringClass()),
-                        toJavaMemberName(field),
-                        toJsType(field.getType())
-
-                ));
-                this.postinit.add("""
-                    /**
-                     * @static
-                     * @readonly
-                     * @type {%3$s}
-                     */
-                    %4$s.%2$s = %1$s.%2$s
-                    """.formatted(
-                        toJavaType(field.getDeclaringClass()),
-                        toJavaMemberName(field),
-                        toJsType(field.getType()),
-                        toJsType(field.getDeclaringClass())
-                ));
-                return;
-            }
-
-            this.staticMembers.add("""
-                    /**
-                     * @static
-                     * @readonly
-                     * @type {%3$s}
-                     */
-                    static %2$s
-                    """.formatted(
-                    toJavaType(field.getDeclaringClass()),
-                    toJavaMemberName(field),
-                    toJsType(field.getType().getComponentType())
-            ));
-            this.postinit.add("""
-                    /**
-                     * @static
-                     * @readonly
-                     * @type {%3$s}
-                     */
-                    %4$s.%2$s = convertArray(%1$s.%2$s, %3$s)
-                    """.formatted(
-                    toJavaType(field.getDeclaringClass()),
-                    toJavaMemberName(field),
-                    toJsType(field.getType().getComponentType()),
-                    toJsType(field.getDeclaringClass())
-            ));
-            return;
-        }
-
-        this.staticMembers.add("""
-                /**
-                 * @static
-                 * @readonly
-                 * @type {%3$s}
-                 */
-                static %2$s
-                """.formatted(
-                toJavaType(field.getDeclaringClass()),
-                toJavaMemberName(field),
-                toJsType(field.getType())
-        ));
-
-        this.postinit.add("""
-                    /**
-                     * @static
-                     * @readonly
-                     * @type {%3$s}
-                     */
-                    %4$s.%2$s = %3$s.$$$WRAPPER$$$(%1$s.%2$s)
-                    """.formatted(
-                toJavaType(field.getDeclaringClass()),
-                toJavaMemberName(field),
-                toJsType(field.getType()),
-                toJsType(field.getDeclaringClass())
-        ));
+//        if (field.getType() == byte.class ||
+//            field.getType() == short.class ||
+//            field.getType() == int.class ||
+//            field.getType() == long.class ||
+//            field.getType() == float.class ||
+//            field.getType() == double.class ||
+//            field.getType() == Object.class ||
+//            field.getType() == void.class ||
+//            field.getType() == String.class
+//        ) {
+//            this.staticMembers.add("""
+//                    /**
+//                     * @static
+//                     * @readonly
+//                     * @type {%3$s}
+//                     */
+//                    static %2$s = %1$s.%2$s
+//                    """.formatted(
+//                    toJavaType(field.getDeclaringClass()),
+//                    toJavaMemberName(field),
+//                    toJsType(field.getType())
+//
+//            ));
+//            return;
+//        }
+//
+//        if (field.getType().isArray()) {
+//            if (field.getType().getComponentType() == byte.class ||
+//                field.getType().getComponentType() == short.class ||
+//                field.getType().getComponentType() == int.class ||
+//                field.getType().getComponentType() == long.class ||
+//                field.getType().getComponentType() == float.class ||
+//                field.getType().getComponentType() == double.class ||
+//                field.getType().getComponentType() == Object.class ||
+//                field.getType().getComponentType() == void.class ||
+//                field.getType().getComponentType() == String.class
+//            ) {
+//                this.staticMembers.add("""
+//                        /**
+//                         * @static
+//                         * @readonly
+//                         * @type {%3$s}
+//                         */
+//                        static %2$s = %1$s.%2$s
+//                        """.formatted(
+//                        toJavaType(field.getDeclaringClass()),
+//                        toJavaMemberName(field),
+//                        toJsType(field.getType())
+//
+//                ));
+//                return;
+//            }
+//
+//            this.staticMembers.add("""
+//                    /**
+//                     * @static
+//                     * @readonly
+//                     * @type {%3$s}
+//                     */
+//                    static %2$s = convertArray(%1$s.%2$s, %3$s)
+//                    """.formatted(
+//                    toJavaType(field.getDeclaringClass()),
+//                    toJavaMemberName(field),
+//                    toJsType(field.getType().getComponentType())
+//            ));
+//            return;
+//        }
+//
+//        this.staticMembers.add("""
+//                /**
+//                 * @static
+//                 * @readonly
+//                 * @type {%3$s}
+//                 */
+//                static %2$s = %3$s.$$$WRAPPER$$$(%1$s.%2$s)
+//                """.formatted(
+//                toJavaType(field.getDeclaringClass()),
+//                toJavaMemberName(field),
+//                toJsType(field.getType())
+//
+//        ));
     }
 
     private @Nullable String toJavaType(Class<?> declaringClass) {
@@ -1505,33 +1298,21 @@ public class JsClassBuilder implements AnyJsClassBuilder {
 
     private Object toJsMemberAssign(Member member) {
         String javaMemberName = toJavaMemberName(member);
-        if (javaMemberName.startsWith("[")) {
-            return javaMemberName;
-        }
+        if (javaMemberName.startsWith("[")) return javaMemberName;
         return "." + javaMemberName;
     }
 
     public @Nullable String toJavaImport(@Nullable Class<?> type) {
-        if (type == null) {
-            return null;
-        }
+        if (type == null) return null;
 
-        if (PackageExclusions.isExcluded(type)) {
-            return null;
-        }
+        if (PackageExclusions.isExcluded(type)) return null;
 
-        if (type.isArray()) {
-            return toJavaImport(type.getComponentType());
-        }
+        if (type.isArray()) return toJavaImport(type.getComponentType());
 
-        if (type.isPrimitive()) {
-            return null;
-        }
+        if (type.isPrimitive()) return null;
 
         String extra = "";
-        if (Objects.equals(toJsImport(type), toJavaImport0(type))) {
-            extra = "\n" + toJavaImport0(type);
-        }
+        if (Objects.equals(toJsImport(type), toJavaImport0(type))) extra = "\n" + toJavaImport0(type);
 
         String importName = type.getName().replace(".", "$");
         return "const _" + importName + " = Java.type('" + type.getName() + "');" + extra;
